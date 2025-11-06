@@ -739,6 +739,16 @@
             box-shadow: 0 20px 60px rgba(232, 181, 99, 0.3);
         }
 
+        /* Counter fixed width to prevent layout shift */
+        .counter {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            min-width: 140px;
+            display: inline-block;
+            text-align: left;
+            will-change: contents;
+        }
+
         .manifesto-content {
             max-width: 1000px;
             margin: 0 auto;
@@ -1244,6 +1254,9 @@
     <div class="gradient-bg"></div>
 
     <header id="header">
+        <!-- Scroll Progress Bar -->
+        <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--gold), #d4a049); width: 0%; z-index: 10000; transition: width 0.1s ease;"></div>
+        
         <div class="header-content">
             <div class="logo-group">
                 <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP Boutique Marketing Bureau Gent Logo">
@@ -1394,8 +1407,8 @@
                     <div style="font-size: 14px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">Jaar Innovatie</div>
                 </div>
                 <div>
-                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">3×</div>
-                    <div style="font-size: 14px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">Merk van het Jaar</div>
+                    <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">200+</div>
+                    <div style="font-size: 14px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;">Succesvolle Campagnes</div>
                 </div>
                 <div>
                     <div style="font-size: 48px; font-weight: 700; margin-bottom: 8px;">100%</div>
@@ -1456,9 +1469,9 @@
                         <span style="font-size: 14px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Case Study</span>
                     </div>
                     
-                    <h3 style="font-size: 32px; font-weight: 700; margin-bottom: 24px; letter-spacing: -1px;">SEO Dominantie + 3× Award</h3>
+                    <h3 style="font-size: 32px; font-weight: 700; margin-bottom: 24px; letter-spacing: -1px;">SEO Dominantie</h3>
                     <p style="font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 48px; line-height: 1.6;">
-                        Complete rebranding, website en SEO strategie. Resultaat: marktleider.
+                        Complete rebranding, website en SEO strategie. Willems werd 3× Merk van het Jaar.
                     </p>
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
@@ -1473,15 +1486,10 @@
                     </div>
                     
                     <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <div style="display: flex; align-items: center; gap: 16px;">
-                            <div style="font-size: 40px; font-weight: 700; color: var(--gold);">+99</div>
-                            <div style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.4;">
-                                posities voor<br>hoofdkeyword
-                            </div>
-                            <div style="flex: 1;"></div>
-                            <div style="font-size: 32px; font-weight: 700; color: var(--gold);">3×</div>
-                            <div style="font-size: 14px; color: rgba(255,255,255,0.7);">
-                                Merk van<br>het Jaar
+                        <div style="display: flex; align-items: center; gap: 24px;">
+                            <div style="font-size: 48px; font-weight: 700; color: var(--gold);">+99</div>
+                            <div style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.5;">
+                                posities stijging voor hoofdkeyword "leefveranda met plat dak"
                             </div>
                         </div>
                     </div>
@@ -1729,6 +1737,16 @@
         // Parallax effect for hero decorations
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
+            
+            // Scroll progress bar
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrolled / docHeight) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+            
+            // Parallax circles
             const hero = document.querySelector('.hero');
             if (hero) {
                 const circles = hero.querySelectorAll('[style*="border-radius: 50%"]');
