@@ -496,11 +496,10 @@
         }
 
         .footer-brand img {
-            height: 24px;
-            max-width: 120px;
-            width: auto;
-            margin-bottom: 20px;
-            object-fit: contain;
+            height: 16px !important;
+            max-width: 80px !important;
+            width: auto !important;
+            margin-bottom: 16px;
         }
 
         .footer-info {
@@ -562,6 +561,13 @@
             .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             nav { display: none; }
+            
+            /* New video sections responsive */
+            section[style*="grid-template-columns: 1fr 1fr"] > div {
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
+                padding: 0 40px;
+            }
         }
 
         html { scroll-behavior: smooth; }
@@ -670,6 +676,31 @@
         </div>
     </section>
 
+    <section style="padding: 200px 80px; background: #f5f5f5;">
+        <div style="max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
+            <div style="position: relative; aspect-ratio: 9/16; border-radius: 8px; overflow: hidden; max-width: 400px;">
+                <video 
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                    controls
+                    poster=""
+                >
+                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>
+                <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">Social media in de horeca? Wij schreven de regels.</h2>
+                <p style="font-size: 20px; line-height: 1.6; color: #525252; margin-bottom: 24px;">
+                    <strong style="color: #0a0a0a;">Hof van Cleve</strong> werd de benchmark voor digitale marketing in de horeca. 
+                    Baanbrekende content strategie, authentiek storytelling, en engagement dat de industrie transformeerde.
+                </p>
+                <p style="font-size: 18px; line-height: 1.6; color: #666;">
+                    Van zero naar trendsetter. We veranderden hoe restaurants hun verhaal vertellen online.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="clients" class="clients-section">
         <div class="clients-wrapper">
             <div class="clients-header">
@@ -688,6 +719,34 @@
                 <div class="client"><img src="images/klanten/19.png" alt="Keolis"></div>
                 <div class="client"><img src="images/klanten/20.png" alt="Nuscience"></div>
                 <div class="client"><img src="images/klanten/17.png" alt="Medina"></div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 160px 80px; background: var(--black); color: var(--white);">
+        <div style="max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+            <div style="position: relative; aspect-ratio: 9/16; border-radius: 16px; overflow: hidden; max-width: 400px;">
+                <video 
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                    controls
+                    poster=""
+                >
+                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>
+                <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">
+                    Social media voor Hof van Cleve:<br>De horeca-industrie benchmark
+                </h2>
+                <p style="font-size: 20px; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 24px;">
+                    We veranderden de manier waarop social media in de horeca gedaan werd. 
+                    Hof van Cleve's digitale aanwezigheid werd <strong style="color: white;">dé referentie voor de hele sector</strong>.
+                </p>
+                <p style="font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.7);">
+                    Van content strategie tot dagelijkse executie — storytelling die de Michelin-ster ervaring 
+                    vertaalt naar social media. Authentiek, visueel sterk, consistent.
+                </p>
             </div>
         </div>
     </section>
