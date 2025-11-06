@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIP - Digital Marketing Boutique Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 80px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-right: 30px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 50px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 50px;
+            max-width: 750px;
+        }
+
+        /* Services */
+        .service {
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+        }
+
+        .service p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Clients */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .client {
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            color: #1a1a1a;
+            transition: border-color 0.2s;
+        }
+
+        .client:hover {
+            border-color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        footer h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer p, footer a {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CNIP</div>
+            <nav>
+                <a href="#diensten">Diensten</a>
+                <a href="#werkwijze">Werkwijze</a>
+                <a href="#klanten">Klanten</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Digital Readiness voor groeiende bedrijven</h1>
+                <p class="subtitle">
+                    We maken bedrijven klaar voor digitale groei. Als boutique agency focussen we op de fundamenten: 
+                    websites, SEO, e-mail marketing en social media. Strategisch, meetbaar en zonder nonsense.
+                </p>
+                <a href="#contact" class="cta-button">Start gesprek</a>
+            </div>
+        </section>
+
+        <section id="over">
+            <div class="container">
+                <h2>Boutique aanpak, grote impact</h2>
+                <p class="intro-text">
+                    De meeste bedrijven investeren in digitale marketing zonder de juiste fundamenten. 
+                    Ze hebben een website, maar geen strategie. Ze posten op social media, maar zonder resultaat. 
+                    Ze starten campagnes, maar weten niet wat werkt.
+                </p>
+                <p class="intro-text">
+                    Wij beginnen bij het begin: digital readiness. We zorgen dat je marketing infrastructuur 
+                    klopt voordat we groei realiseren. Geen quick fixes, maar duurzame resultaten.
+                </p>
+            </div>
+        </section>
+
+        <section id="diensten">
+            <div class="container">
+                <h2>Onze expertise</h2>
+                
+                <div class="service">
+                    <h3>Websites bouwen</h3>
+                    <p>
+                        Van strategie tot lancering. We bouwen websites dieConverteren, snelheid leveren, 
+                        en klaar zijn voor groei. Met focus op gebruikservaring en technische excellentie.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>SEO & SEA</h3>
+                    <p>
+                        Gevonden worden waar het ertoe doet. We optimaliseren voor zoekmachines en 
+                        runnen campagnes die ROI opleveren. Organisch en betaald, in balans.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>E-mail marketing</h3>
+                    <p>
+                        Direct contact met je klanten. We bouwen geautomatiseerde flows die verkopen, 
+                        binden en informeren. Van welkom tot winback.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Social media marketing</h3>
+                    <p>
+                        Zichtbaar en relevant. We creëren content die engagement genereert en 
+                        campagnes die converteren. Strategisch en consistent.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Digital Readiness Audit</h3>
+                    <p>
+                        Onze specialiteit: we analyseren je volledige digitale ecosysteem en geven een 
+                        concreet plan om klaar te zijn voor groei. In 3 weken weet je precies wat er moet gebeuren.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="werkwijze">
+            <div class="container">
+                <h2>Hoe we werken</h2>
+                
+                <div class="process-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Intake & Analyse</h3>
+                        <p>
+                            We duiken diep in je business, doelstellingen en huidige digitale situatie. 
+                            Wat werkt, wat niet, en waar liggen de kansen?
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Strategie & Roadmap</h3>
+                        <p>
+                            Je krijgt een concrete roadmap: quick wins, fundamentele verbeteringen en 
+                            langetermijn groeiprojecten. Alles geprioriteerd en meetbaar.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Uitvoering</h3>
+                        <p>
+                            We bouwen en implementeren. Van website tot campagnes, van SEO tot automation. 
+                            Stap voor stap, met continue rapportage.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Optimalisatie</h3>
+                        <p>
+                            Data-gedreven verbeteren. We meten, analyseren en optimaliseren continu 
+                            om resultaten te maximaliseren.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="klanten">
+            <div class="container">
+                <h2>Vertrouwd door</h2>
+                <div class="clients-grid">
+                    <div class="client">Hof van Cleve</div>
+                    <div class="client">DSM Keukens</div>
+                    <div class="client">Willems Veranda's</div>
+                    <div class="client">GE Healthcare</div>
+                    <div class="client">Sanskriet Brugge</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Start vandaag met digital readiness</h2>
+                <p class="intro-text">
+                    Klaar om je digitale marketing op orde te brengen? We starten met een vrijblijvend gesprek 
+                    over je uitdagingen en ambities.
+                </p>
+                <a href="mailto:info@cnip.be" class="cta-button">info@cnip.be</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>CNIP</h4>
+                    <p>
+                        Digital Marketing<br>
+                        Boutique Agency<br>
+                        België
+                    </p>
+                </div>
+                <div>
+                    <h4>Diensten</h4>
+                    <p>
+                        Websites bouwen<br>
+                        SEO & SEA<br>
+                        E-mail marketing<br>
+                        Social media<br>
+                        Digital Readiness
+                    </p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="mailto:info@cnip.be">info@cnip.be</a><br>
+                        <br>
+                        © 2024 CNIP
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
