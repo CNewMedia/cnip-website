@@ -137,10 +137,7 @@
 
         .hero-highlight {
             display: block;
-            background: linear-gradient(90deg, var(--black) 0%, var(--gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--gray);
         }
 
         .hero-text {
@@ -499,8 +496,11 @@
         }
 
         .footer-brand img {
-            height: 12px;
-            margin-bottom: 16px;
+            height: 24px;
+            max-width: 120px;
+            width: auto;
+            margin-bottom: 20px;
+            object-fit: contain;
         }
 
         .footer-info {
