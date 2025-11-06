@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CNIP — Boutique Marketing Bureau Gent | Innovatie Sinds 2002</title>
-    <meta name="description" content="CNIP is een boutique digitaal marketing bureau uit Gent. Trendsetters in video, social media en AI-marketing sinds 2002.">
+    <title>CNIP — Boutique Marketing Bureau Gent | Trendsetters Since 2002</title>
+    <meta name="description" content="CNIP is een boutique marketing bureau uit Gent. Trendsetters in video, social media en AI-marketing sinds 2002.">
     <style>
         * {
             margin: 0;
@@ -17,6 +17,11 @@
             --white: #ffffff;
             --gray: #666;
             --light-gray: #f5f5f5;
+            --gold: #E8B563;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -28,38 +33,45 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        /* Animated Gradient Background */
+        .gradient-bg {
             position: fixed;
             top: 0;
             right: 0;
-            width: 60%;
+            width: 70%;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(10,10,10,0.02) 0%, rgba(10,10,10,0.05) 100%);
+            background: linear-gradient(135deg, rgba(232,181,99,0.05) 0%, rgba(10,10,10,0.02) 100%);
             z-index: -1;
-            animation: pulse 8s ease-in-out infinite;
+            animation: breathe 12s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.05); }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+            50% { opacity: 0.6; transform: translateY(-20px) scale(1.05); }
         }
 
-        /* Header */
+        /* Glass Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
         }
 
         .header-content {
             max-width: 1600px;
             margin: 0 auto;
-            padding: 28px 80px;
+            padding: 24px 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -72,9 +84,12 @@
         }
 
         .logo-group img {
-            height: 40px;
-            display: block;
-            margin: 4px 0;
+            height: 42px;
+            transition: transform 0.3s;
+        }
+
+        .logo-group:hover img {
+            transform: scale(1.05);
         }
 
         .badge {
@@ -82,9 +97,10 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--gray);
-            padding: 4px 12px;
-            border: 1px solid #e5e5e5;
+            padding: 6px 14px;
+            border: 1px solid rgba(0,0,0,0.1);
             border-radius: 100px;
+            background: rgba(255,255,255,0.5);
         }
 
         nav a {
@@ -97,11 +113,22 @@
             transition: opacity 0.2s;
         }
 
-        nav a:hover {
-            opacity: 0.5;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
         }
 
-        /* Hero - Bold Statement */
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero with 3D */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -113,9 +140,19 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease forwards 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-label {
@@ -125,6 +162,8 @@
             color: var(--gray);
             margin-bottom: 32px;
             font-weight: 600;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
         }
 
         h1 {
@@ -133,36 +172,47 @@
             font-weight: 700;
             letter-spacing: -4px;
             margin-bottom: 48px;
-        }
-
-        .hero-highlight {
-            display: block;
-            color: var(--gray);
+            background: linear-gradient(135deg, var(--black) 0%, var(--gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-text {
-            font-size: 24px;
+            font-size: 26px;
             line-height: 1.5;
             color: var(--gray);
-            max-width: 600px;
+            max-width: 700px;
             margin-bottom: 64px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
         }
 
         .hero-stats {
             display: flex;
             gap: 80px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
         }
 
         .stat {
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
         }
 
         .stat-number {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 700;
             letter-spacing: -2px;
             margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--black), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stat-label {
@@ -172,25 +222,74 @@
             letter-spacing: 1px;
         }
 
-        /* Video Hint Section */
-        .video-section {
+        /* Reveal on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Video Section - HVC ONLY */
+        .showcase-video {
+            padding: 200px 80px;
             background: var(--black);
             color: var(--white);
-            padding: 200px 80px;
             position: relative;
             overflow: hidden;
         }
 
-        .video-grid {
+        .showcase-video::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(232,181,99,0.1), transparent);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .showcase-grid {
             max-width: 1600px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 120px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .video-content h2 {
+        .video-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            transition: transform 0.5s;
+        }
+
+        .video-container:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .showcase-content h2 {
             font-size: 64px;
             font-weight: 700;
             letter-spacing: -2px;
@@ -198,51 +297,29 @@
             margin-bottom: 40px;
         }
 
-        .video-content p {
+        .showcase-content p {
             font-size: 20px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            color: rgba(255,255,255,0.8);
             margin-bottom: 24px;
         }
 
-        .video-content strong {
-            color: var(--white);
+        .showcase-content strong {
+            color: var(--gold);
         }
 
-        .video-placeholder {
-            aspect-ratio: 16/9;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.4s;
-            cursor: pointer;
-        }
-
-        .video-placeholder:hover {
-            background: rgba(255,255,255,0.08);
-            transform: scale(1.02);
-        }
-
-        /* Timeline - Visual */
+        /* Timeline */
         .timeline-section {
             padding: 200px 80px;
             max-width: 1600px;
             margin: 0 auto;
         }
 
-        .timeline-header {
-            margin-bottom: 120px;
-        }
-
         .timeline-header h2 {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 700;
             letter-spacing: -3px;
-            margin-bottom: 32px;
+            margin-bottom: 120px;
         }
 
         .timeline-grid {
@@ -254,6 +331,7 @@
         .timeline-item {
             position: relative;
             padding-top: 80px;
+            transition: transform 0.3s;
         }
 
         .timeline-item::before {
@@ -261,20 +339,29 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 0;
             height: 3px;
-            background: var(--black);
+            background: linear-gradient(90deg, var(--black), var(--gold));
+            transition: width 0.6s;
+        }
+
+        .timeline-item.active::before {
+            width: 100%;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-8px);
         }
 
         .timeline-year {
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 16px;
-            letter-spacing: -0.5px;
+            color: var(--gold);
         }
 
         .timeline-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.5px;
@@ -286,7 +373,7 @@
             line-height: 1.6;
         }
 
-        /* Clients - Masonry */
+        /* Clients - Premium Grid */
         .clients-section {
             padding: 200px 80px;
             background: var(--light-gray);
@@ -297,37 +384,51 @@
             margin: 0 auto;
         }
 
-        .clients-header {
-            margin-bottom: 100px;
-        }
-
         .clients-header h2 {
-            font-size: 64px;
+            font-size: 72px;
             font-weight: 700;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
+            margin-bottom: 100px;
         }
 
         .clients-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 40px;
+            gap: 32px;
         }
 
         .client {
             aspect-ratio: 3/2;
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 32px;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .client::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232,181,99,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .client:hover::before {
+            left: 100%;
         }
 
         .client:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .client img {
@@ -336,7 +437,7 @@
             object-fit: contain;
             filter: grayscale(100%);
             opacity: 0.5;
-            transition: all 0.3s;
+            transition: all 0.4s;
         }
 
         .client:hover img {
@@ -344,7 +445,7 @@
             opacity: 1;
         }
 
-        /* Services - Bold Grid */
+        /* Services */
         .services {
             padding: 200px 80px;
             max-width: 1600px;
@@ -352,10 +453,10 @@
         }
 
         .services h2 {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 700;
             letter-spacing: -3px;
-            margin-bottom: 100px;
+            margin-bottom: 120px;
         }
 
         .services-grid {
@@ -367,10 +468,16 @@
         .service {
             border-top: 3px solid var(--black);
             padding-top: 32px;
+            transition: all 0.3s;
+        }
+
+        .service:hover {
+            border-color: var(--gold);
+            transform: translateX(8px);
         }
 
         .service h3 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
             letter-spacing: -1px;
             margin-bottom: 20px;
@@ -382,21 +489,42 @@
             color: var(--gray);
         }
 
-        /* Boutique Manifesto */
+        /* Manifesto */
         .manifesto {
             padding: 200px 80px;
             background: var(--black);
             color: var(--white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(232,181,99,0.1), transparent);
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
         }
 
         .manifesto-content {
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .manifesto h2 {
-            font-size: 80px;
+            font-size: 88px;
             font-weight: 700;
             letter-spacing: -3px;
             margin-bottom: 48px;
@@ -408,6 +536,10 @@
             line-height: 1.6;
             color: rgba(255,255,255,0.8);
             margin-bottom: 32px;
+        }
+
+        .manifesto strong {
+            color: var(--gold);
         }
 
         /* Certificates */
@@ -428,7 +560,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 12px 24px;
+            padding: 14px 28px;
             background: var(--white);
             border: 1px solid #e5e5e5;
             border-radius: 100px;
@@ -436,8 +568,9 @@
         }
 
         .cert:hover {
-            border-color: var(--black);
-            transform: scale(1.05);
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .cert img {
@@ -445,7 +578,7 @@
         }
 
         .cert span {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
         }
 
@@ -457,7 +590,7 @@
         }
 
         .cta h2 {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 700;
             letter-spacing: -3px;
             margin-bottom: 48px;
@@ -472,7 +605,24 @@
             font-size: 16px;
             font-weight: 600;
             border-radius: 8px;
-            transition: all 0.3s;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232,181,99,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
@@ -496,17 +646,17 @@
         }
 
         .footer-brand {
-            max-height: 30px;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        .footer-brand img {
-            height: 12px !important;
-            max-height: 12px !important;
-            max-width: 60px !important;
-            width: auto !important;
-            margin-bottom: 12px;
-            display: block;
+        /* CRITICAL: Use text logo in footer */
+        .footer-logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            color: var(--black);
         }
 
         .footer-info {
@@ -518,6 +668,11 @@
         .footer-info a {
             color: var(--black);
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-info a:hover {
+            color: var(--gold);
         }
 
         footer h4 {
@@ -535,11 +690,12 @@
             color: var(--black);
             text-decoration: none;
             margin-bottom: 12px;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
         }
 
         footer a:hover {
-            opacity: 0.5;
+            color: var(--gold);
+            padding-left: 4px;
         }
 
         .footer-bottom {
@@ -552,38 +708,26 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            .hero, .timeline-section, .clients-section, .services, .manifesto, .certs, .cta, footer {
+            .hero, .timeline-section, .clients-section, .services, .manifesto, .certs, .cta, footer,
+            .showcase-video {
                 padding-left: 40px;
                 padding-right: 40px;
             }
 
-            .header-content {
-                padding: 20px 40px;
-            }
-
             h1 { font-size: 56px; }
-            .video-grid { grid-template-columns: 1fr; gap: 60px; }
+            .showcase-grid { grid-template-columns: 1fr; gap: 60px; }
             .timeline-grid { grid-template-columns: repeat(2, 1fr); }
             .clients-grid { grid-template-columns: repeat(3, 1fr); }
             .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             nav { display: none; }
-            
-            /* New video sections responsive */
-            section[style*="grid-template-columns: 1fr 1fr"] > div {
-                grid-template-columns: 1fr !important;
-                gap: 60px !important;
-                padding: 0 40px;
-            }
         }
-
-        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <div class="gradient-bg"></div>
 
-    <header>
+    <header id="header">
         <div class="header-content">
             <div class="logo-group">
                 <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP">
@@ -601,18 +745,15 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-label">BOUTIQUE MARKETING BUREAU GENT</div>
-            <h1>
-                We leiden.<br>
-                <span class="hero-highlight">We volgen niet.</span>
-            </h1>
+            <h1>We leiden.<br>We volgen niet.</h1>
             <p class="hero-text">
-                Trendsetters in marketing sinds 2002. Van DSLR video-revolutie tot AI-gedreven campagnes. 
-                Hyper-gepersonaliseerd maatwerk. Geen templates. Geen massa.
+                Trendsetters in marketing sinds 2002. Pioneers in DSLR video, social media revolutie, 
+                en AI-gedreven campagnes. Hyper-gepersonaliseerd maatwerk. Nooit templates.
             </p>
             <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-number">23</div>
-                    <div class="stat-label">Jaar Innovatie</div>
+                    <div class="stat-label">Jaar Voorop</div>
                 </div>
                 <div class="stat">
                     <div class="stat-number">100%</div>
@@ -626,177 +767,116 @@
         </div>
     </section>
 
-    <section id="story" class="video-section">
-        <div class="video-grid">
-            <div class="video-content">
-                <h2>Toen DSLR video nieuw was, deden wij het al.</h2>
-                <p>
-                    <strong>High-end commercials voor DSM Keukens</strong> toen niemand anders het niveau haalde.
-                </p>
-                <p>
-                    We veranderden de manier waarop social media in de horeca gedaan werd. 
-                    <strong>Hof van Cleve's digitale strategie</strong> werd de benchmark voor de hele industrie.
-                </p>
-                <p>
-                    Internet en video, social media revolutie, AI-gedreven marketing — 
-                    telkens waren wij eerst. <strong>Altijd voorop.</strong>
-                </p>
-            </div>
-            <div style="position: relative; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden;">
-                <video 
-                    style="width: 100%; height: 100%; object-fit: cover;"
-                    controls
-                    poster=""
-                >
-                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+    <section id="story" class="showcase-video">
+        <div class="showcase-grid">
+            <div class="video-container reveal">
+                <video controls>
+                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/mp4">
                 </video>
+            </div>
+            <div class="showcase-content reveal">
+                <h2>De benchmark voor social media in horeca</h2>
+                <p>
+                    We schreven geschiedenis. Onze social media aanpak <strong>veranderde de hele sector</strong>. 
+                    Wat begon als innovatie werd de standaard.
+                </p>
+                <p>
+                    Van Michelin-ster storytelling tot dagelijkse content die fans creëert — 
+                    authentiek, visueel ijzersterk, strategisch doordacht.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="timeline-section">
+    <section class="timeline-section reveal">
         <div class="timeline-header">
             <h2>23 jaar voorop</h2>
         </div>
         <div class="timeline-grid">
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-year">2002</div>
                 <div class="timeline-title">De Start</div>
-                <div class="timeline-desc">Video & internet marketing pioneers in België</div>
+                <div class="timeline-desc">Video & internet marketing pioneers toen niemand het zag zitten</div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-year">2008</div>
                 <div class="timeline-title">DSLR Revolution</div>
-                <div class="timeline-desc">First movers in high-end video met DSLR technologie</div>
+                <div class="timeline-desc">Eerste in België met cinema-kwaliteit DSLR video productie</div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-year">2012</div>
                 <div class="timeline-title">Digital Pioneer</div>
-                <div class="timeline-desc">Inbound marketing en baanbrekende digitale campagnes</div>
+                <div class="timeline-desc">Baanbrekende social media campagnes die de horeca-industrie veranderden</div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item reveal">
                 <div class="timeline-year">2025</div>
                 <div class="timeline-title">AI-Driven</div>
-                <div class="timeline-desc">Voorop in marketing intelligence en automation</div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 200px 80px; background: #f5f5f5;">
-        <div style="max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center;">
-            <div style="position: relative; aspect-ratio: 9/16; border-radius: 8px; overflow: hidden; max-width: 400px;">
-                <video 
-                    style="width: 100%; height: 100%; object-fit: cover;"
-                    controls
-                    poster=""
-                >
-                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div>
-                <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">Social media in de horeca? Wij schreven de regels.</h2>
-                <p style="font-size: 20px; line-height: 1.6; color: #525252; margin-bottom: 24px;">
-                    <strong style="color: #0a0a0a;">Hof van Cleve</strong> werd de benchmark voor digitale marketing in de horeca. 
-                    Baanbrekende content strategie, authentiek storytelling, en engagement dat de industrie transformeerde.
-                </p>
-                <p style="font-size: 18px; line-height: 1.6; color: #666;">
-                    Van zero naar trendsetter. We veranderden hoe restaurants hun verhaal vertellen online.
-                </p>
+                <div class="timeline-desc">Voorop in marketing intelligence en automation op enterprise-niveau</div>
             </div>
         </div>
     </section>
 
     <section id="clients" class="clients-section">
         <div class="clients-wrapper">
-            <div class="clients-header">
+            <div class="clients-header reveal">
                 <h2>Vertrouwd door premium merken</h2>
             </div>
             <div class="clients-grid">
-                <div class="client"><img src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
-                <div class="client"><img src="images/klanten/7-2.png" alt="GE Healthcare"></div>
-                <div class="client"><img src="images/klanten/13.png" alt="DSM Keukens"></div>
-                <div class="client"><img src="images/klanten/3-4.png" alt="Willems"></div>
-                <div class="client"><img src="images/klanten/15.png" alt="BMW"></div>
-                <div class="client"><img src="images/klanten/1-4.png" alt="Decospan"></div>
-                <div class="client"><img src="images/klanten/8-2.png" alt="Citrosuco"></div>
-                <div class="client"><img src="images/klanten/11-1.png" alt="Haelvoet"></div>
-                <div class="client"><img src="images/klanten/4-2.png" alt="Skylux"></div>
-                <div class="client"><img src="images/klanten/19.png" alt="Keolis"></div>
-                <div class="client"><img src="images/klanten/20.png" alt="Nuscience"></div>
-                <div class="client"><img src="images/klanten/17.png" alt="Medina"></div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 160px 80px; background: var(--black); color: var(--white);">
-        <div style="max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
-            <div style="position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;">
-                <video 
-                    style="width: 100%; height: 100%; object-fit: cover;"
-                    controls
-                    poster=""
-                >
-                    <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div>
-                <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">
-                    De horeca-benchmark voor social media
-                </h2>
-                <p style="font-size: 20px; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 24px;">
-                    We veranderden de manier waarop social media in de horeca gedaan werd. 
-                    Onze digitale strategie werd <strong style="color: white;">dé referentie voor de hele sector</strong>.
-                </p>
-                <p style="font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.7);">
-                    Van content strategie tot dagelijkse executie — storytelling die de Michelin-ster ervaring 
-                    vertaalt naar social media. Authentiek, visueel sterk, consistent.
-                </p>
+                <div class="client reveal"><img src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
+                <div class="client reveal"><img src="images/klanten/7-2.png" alt="GE Healthcare"></div>
+                <div class="client reveal"><img src="images/klanten/13.png" alt="DSM Keukens"></div>
+                <div class="client reveal"><img src="images/klanten/3-4.png" alt="Willems"></div>
+                <div class="client reveal"><img src="images/klanten/15.png" alt="BMW"></div>
+                <div class="client reveal"><img src="images/klanten/1-4.png" alt="Decospan"></div>
+                <div class="client reveal"><img src="images/klanten/8-2.png" alt="Citrosuco"></div>
+                <div class="client reveal"><img src="images/klanten/11-1.png" alt="Haelvoet"></div>
+                <div class="client reveal"><img src="images/klanten/4-2.png" alt="Skylux"></div>
+                <div class="client reveal"><img src="images/klanten/19.png" alt="Keolis"></div>
+                <div class="client reveal"><img src="images/klanten/20.png" alt="Nuscience"></div>
+                <div class="client reveal"><img src="images/klanten/17.png" alt="Medina"></div>
             </div>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2>Onze expertise</h2>
+        <h2 class="reveal">Onze expertise</h2>
         <div class="services-grid">
-            <div class="service">
+            <div class="service reveal">
                 <h3>Video & Content</h3>
                 <p>
                     High-end commercials, branded content, social video. Van DSLR tot cinema. 
                     Concept tot final cut — alles in-house.
                 </p>
             </div>
-            <div class="service">
+            <div class="service reveal">
                 <h3>Digital Strategy</h3>
                 <p>
-                    Complete marketing roadmap en commercial systems. Voor diepgaande strategische trajecten 
-                    werken we via <strong>Oryen</strong> — ons strategisch merk voor business readiness.
+                    Complete marketing roadmap en commercial systems. Voor strategische trajecten 
+                    werken we via <strong>Oryen</strong> — ons strategisch merk.
                 </p>
             </div>
-            <div class="service">
+            <div class="service reveal">
                 <h3>Websites & Platforms</h3>
                 <p>
                     Custom-built. Geen templates. Clean code, razendsnel, SEO-ready. 
                     Gebouwd voor conversie en groei.
                 </p>
             </div>
-            <div class="service">
+            <div class="service reveal">
                 <h3>SEO & Google Ads</h3>
                 <p>
                     Technische SEO voor organische groei. ROI-focused ads met AI-powered optimalisatie. 
                     Meetbare resultaten.
                 </p>
             </div>
-            <div class="service">
+            <div class="service reveal">
                 <h3>Social Media</h3>
                 <p>
                     Van trendsetting campagnes tot dagelijkse content. We weten wat werkt — 
-                    we hebben het bewezen.
+                    we schreven de playbook.
                 </p>
             </div>
-            <div class="service">
+            <div class="service reveal">
                 <h3>Marketing Automation</h3>
                 <p>
                     AI-gedreven workflows. Lead nurturing, personalisatie op schaal, predictive analytics. 
@@ -807,15 +887,14 @@
     </section>
 
     <section class="manifesto">
-        <div class="manifesto-content">
+        <div class="manifesto-content reveal">
             <h2>Boutique betekent: hyper-gepersonaliseerd</h2>
             <p>
-                We doen geen massa. We nemen geen 20 klanten tegelijk aan. 
-                Elk project krijgt onze volledige aandacht en creativiteit.
+                We doen geen massa. Elk project krijgt onze volledige aandacht en creativiteit.
             </p>
             <p>
                 Van grote enterprise campagnes tot strategische video projecten — 
-                we behandelen alles met dezelfde zorg en innovatie.
+                alles met dezelfde zorg en innovatie.
             </p>
             <p>
                 <strong>Geen templates. Alleen maatwerk.</strong>
@@ -824,48 +903,27 @@
     </section>
 
     <section class="certs">
-        <h2 style="font-size: 48px; font-weight: 700; letter-spacing: -2px; margin-bottom: 24px;">Certified Expertise</h2>
+        <h2 class="reveal" style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 24px;">Certified Expertise</h2>
         <div class="cert-grid">
-            <div class="cert">
-                <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads">
-                <span>Google Ads</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/GA-certified.png" alt="Analytics">
-                <span>Analytics</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube">
-                <span>YouTube</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot">
-                <span>HubSpot Gold</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush">
-                <span>Semrush</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo">
-                <span>Leadinfo</span>
-            </div>
-            <div class="cert">
-                <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge">
-                <span>Cambridge</span>
-            </div>
+            <div class="cert reveal"><img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads"><span>Google Ads</span></div>
+            <div class="cert reveal"><img src="images/certificaten/GA-certified.png" alt="Analytics"><span>Analytics</span></div>
+            <div class="cert reveal"><img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube"><span>YouTube</span></div>
+            <div class="cert reveal"><img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot"><span>HubSpot Gold</span></div>
+            <div class="cert reveal"><img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush"><span>Semrush</span></div>
+            <div class="cert reveal"><img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo"><span>Leadinfo</span></div>
+            <div class="cert reveal"><img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge"><span>Cambridge</span></div>
         </div>
     </section>
 
     <section id="contact" class="cta">
-        <h2>Klaar voor maatwerk?</h2>
+        <h2 class="reveal">Klaar voor maatwerk?</h2>
         <a href="https://oryen.be/diensten/orientatiegesprek?hsCtaAttrib=192748998959" class="cta-button" target="_blank">Boek oriëntatiegesprek</a>
     </section>
 
     <footer>
         <div class="footer-grid">
-            <div>
-                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP">
+            <div class="footer-brand">
+                <div class="footer-logo-text">CNIP</div>
                 <div class="footer-info">
                     Boutique Marketing Bureau<br>
                     Trendsetters Since 2002<br><br>
@@ -893,7 +951,7 @@
             <div>
                 <h4>Connect</h4>
                 <a href="mailto:info@cnip.be">Email</a>
-                <a href="https://linkedin.com/company/cnipagency">LinkedIn</a>
+                <a href="https://linkedin.com/company/cnipagency" target="_blank">LinkedIn</a>
                 <a href="tel:+3293965883">Bellen</a>
                 <a href="https://oryen.be" target="_blank">Oryen (Strategy)</a>
             </div>
@@ -904,12 +962,50 @@
     </footer>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function (e) {
+        // Intersection Observer for reveals
+        const reveals = document.querySelectorAll('.reveal');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => observer.observe(reveal));
+        timelineItems.forEach(item => observer.observe(item));
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href'))?.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
     </script>
