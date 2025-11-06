@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CNIP - AI-Driven Marketing Since 2002</title>
+    <title>CNIP — Digital Marketing Since 2002</title>
     <style>
         * {
             margin: 0;
@@ -12,580 +12,422 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-            line-height: 1.5;
-            color: #0a0a0a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
             background: #ffffff;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
         /* Header */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            z-index: 1000;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 40px 0;
         }
 
         .header-content {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 24px 60px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -1px;
+        .logo-container img {
+            height: 36px;
+            width: auto;
         }
 
         .since {
-            font-size: 11px;
-            color: #737373;
-            text-transform: uppercase;
+            font-size: 12px;
+            color: #666;
             letter-spacing: 1px;
-            margin-left: 12px;
-        }
-
-        nav a {
-            color: #0a0a0a;
-            text-decoration: none;
-            margin-left: 48px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: opacity 0.2s;
-        }
-
-        nav a:hover {
-            opacity: 0.6;
         }
 
         /* Hero */
         .hero {
-            padding: 200px 0 120px;
-            position: relative;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            opacity: 0.03;
-            z-index: 0;
-        }
-
-        .hero-content {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 60px;
-            position: relative;
-            z-index: 1;
+            padding: 120px 40px 100px;
         }
 
         h1 {
-            font-size: clamp(56px, 8vw, 120px);
-            line-height: 0.95;
-            font-weight: 700;
-            letter-spacing: -3px;
-            margin-bottom: 32px;
-            max-width: 1100px;
+            font-size: 56px;
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+            color: #0a0a0a;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
+        .intro {
             font-size: 20px;
-            color: #525252;
-            max-width: 600px;
-            margin-bottom: 48px;
             line-height: 1.7;
+            color: #525252;
+            margin-bottom: 60px;
+            max-width: 700px;
         }
 
-        .cta-primary {
-            display: inline-block;
-            background: #0a0a0a;
-            color: white;
-            padding: 20px 48px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 100px;
-            transition: all 0.3s;
+        /* Section */
+        section {
+            border-top: 1px solid #e5e5e5;
+            padding: 100px 0;
         }
 
-        .cta-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        /* Trust Badge */
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            margin-top: 80px;
-            padding: 16px 32px;
-            background: rgba(99, 102, 241, 0.05);
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #6366f1;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Services - Asymmetric Layout */
-        .services {
-            padding: 160px 0;
-            max-width: 1400px;
+        .section-content {
+            max-width: 900px;
             margin: 0 auto;
-            padding-left: 60px;
-            padding-right: 60px;
+            padding: 0 40px;
         }
 
-        .section-label {
-            font-size: 12px;
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 60px;
+            color: #0a0a0a;
+        }
+
+        .small-title {
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #737373;
-            margin-bottom: 24px;
+            color: #999;
+            margin-bottom: 40px;
         }
 
-        .services h2 {
-            font-size: clamp(40px, 5vw, 72px);
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 80px;
-            max-width: 800px;
-        }
-
-        .services-layout {
+        /* Clients Grid - PROMINENT */
+        .clients-grid {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 40px;
+            margin-top: 60px;
         }
 
-        .service-item {
-            padding: 48px;
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-item:hover {
-            border-color: rgba(99, 102, 241, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 32px 64px rgba(0,0,0,0.08);
-        }
-
-        .service-item:nth-child(1) { grid-column: 1 / 7; }
-        .service-item:nth-child(2) { grid-column: 7 / 13; }
-        .service-item:nth-child(3) { grid-column: 1 / 6; }
-        .service-item:nth-child(4) { grid-column: 6 / 11; }
-        .service-item:nth-child(5) { grid-column: 11 / 13; grid-row: 2 / 4; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
-
-        .service-item h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .service-item p {
-            color: #525252;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-
-        .service-item:nth-child(5) p {
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* AI Section */
-        .ai-section {
-            padding: 160px 0;
-            background: #fafafa;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ai-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 120px;
-            align-items: center;
-        }
-
-        .ai-visual {
-            position: relative;
-            height: 500px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 32px;
+        .client-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 120px;
+            min-height: 80px;
+        }
+
+        .client-logo img {
+            max-width: 180px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Services - Simple List */
+        .services-list {
+            margin-top: 60px;
+        }
+
+        .service {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .service:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: #0a0a0a;
+        }
+
+        .service p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #525252;
+            max-width: 650px;
+        }
+
+        /* Certificates - Clean Grid */
+        .certificates {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 40px;
+        }
+
+        .cert {
+            text-align: center;
+        }
+
+        .cert img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 12px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .cert:hover img {
+            opacity: 1;
+        }
+
+        .cert-name {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* AI Section - Subtle */
+        .ai-highlight {
+            background: #fafafa;
+            padding: 80px 60px;
+            margin: 100px 0;
+        }
+
+        .ai-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .ai-content h2 {
-            font-size: clamp(36px, 4vw, 56px);
-            font-weight: 700;
-            letter-spacing: -2px;
             margin-bottom: 24px;
         }
 
         .ai-content p {
             font-size: 18px;
-            color: #525252;
             line-height: 1.7;
-            margin-bottom: 24px;
+            color: #525252;
+            margin-bottom: 20px;
         }
 
         .ai-stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 48px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .stat {
-            padding: 24px;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid rgba(0,0,0,0.06);
+        .stat-item {
+            text-align: center;
         }
 
-        .stat-value {
+        .stat-number {
             font-size: 40px;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 4px;
+            font-weight: 600;
+            color: #0a0a0a;
+            margin-bottom: 8px;
         }
 
         .stat-label {
             font-size: 13px;
-            color: #737373;
-        }
-
-        /* Clients */
-        .clients {
-            padding: 160px 0;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-left: 60px;
-            padding-right: 60px;
-        }
-
-        .clients h2 {
-            font-size: clamp(36px, 4vw, 56px);
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 64px;
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
-        }
-
-        .client-card {
-            aspect-ratio: 3/2;
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .client-card:hover {
-            border-color: rgba(99, 102, 241, 0.3);
-            transform: translateY(-4px);
-        }
-
-        /* Certificates - Compact */
-        .certificates {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 80px;
-        }
-
-        .cert-badge {
-            height: 48px;
-            padding: 0 20px;
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 100px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            transition: all 0.3s;
-        }
-
-        .cert-badge:hover {
-            border-color: #6366f1;
-            transform: scale(1.05);
-        }
-
-        .cert-badge img {
-            height: 24px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .cert-badge span {
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* Process */
-        .process {
-            padding: 160px 0;
-            background: #0a0a0a;
-            color: white;
-        }
-
-        .process-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-
-        .process h2 {
-            font-size: clamp(36px, 4vw, 56px);
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 80px;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 48px;
-        }
-
-        .step {
-            padding: 40px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-
-        .step:hover {
-            background: rgba(255,255,255,0.05);
-            transform: translateY(-4px);
-        }
-
-        .step-num {
-            font-size: 14px;
-            color: #6366f1;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-
-        .step h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .step p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
-        }
-
-        /* CTA */
-        .final-cta {
-            padding: 200px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-        }
-
-        .final-cta h2 {
-            font-size: clamp(48px, 6vw, 88px);
-            font-weight: 700;
-            letter-spacing: -3px;
-            margin-bottom: 32px;
-        }
-
-        .final-cta p {
-            font-size: 20px;
-            opacity: 0.9;
-            margin-bottom: 48px;
-        }
-
-        .cta-white {
-            background: white;
-            color: #0a0a0a;
-            padding: 20px 48px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 100px;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .cta-white:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: #0a0a0a;
-            color: white;
-            padding: 80px 0 40px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 64px;
-            margin-bottom: 64px;
-        }
-
-        .footer-brand {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .footer-tagline {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        footer h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            opacity: 0.5;
+            color: #999;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        footer a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
+        /* Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            padding: 40px 0;
+        }
+
+        .step-num {
             font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .process-step h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0a0a0a;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #0a0a0a;
+            color: white;
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 32px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 48px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: white;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-info {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .footer-info a {
+            color: #0a0a0a;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-info a:hover {
+            opacity: 0.6;
+        }
+
+        footer h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        footer a {
             display: block;
+            font-size: 14px;
+            color: #525252;
+            text-decoration: none;
             margin-bottom: 12px;
             transition: color 0.2s;
         }
 
         footer a:hover {
-            color: white;
+            color: #0a0a0a;
         }
 
         .footer-bottom {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 32px 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 40px 0;
+            border-top: 1px solid #e5e5e5;
             text-align: center;
-            color: rgba(255,255,255,0.4);
             font-size: 13px;
+            color: #999;
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .services-layout {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
             }
-            .service-item { grid-column: 1 !important; grid-row: auto !important; }
-            
-            .ai-grid {
-                grid-template-columns: 1fr;
-                gap: 64px;
+
+            h2 {
+                font-size: 28px;
             }
-            
-            .steps {
-                grid-template-columns: 1fr;
+
+            .intro {
+                font-size: 18px;
             }
-            
+
             .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 20px;
+            }
+
+            .client-logo img {
+                max-width: 140px;
+            }
+
+            .ai-stats,
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certificates {
                 grid-template-columns: repeat(3, 1fr);
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .header-content,
-            .hero-content,
-            .services,
-            .ai-grid,
-            .clients,
-            .process-content,
-            .footer-content {
-                padding: 0 32px;
-            }
-            
-            .hero {
-                padding: 140px 0 80px;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .clients-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .ai-stats {
-                grid-template-columns: 1fr;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 40px 60px;
+            }
+
+            .ai-highlight {
+                padding: 60px 40px;
+                margin: 60px 0;
+            }
+
+            .cta-section {
+                padding: 80px 40px;
             }
         }
 
@@ -597,233 +439,279 @@
 <body>
     <header>
         <div class="header-content">
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP" style="height: 32px; width: auto;">
-                <div class="since">Since 2002</div>
+            <div class="logo-container">
+                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP">
             </div>
-            <nav>
-                <a href="#services">Services</a>
-                <a href="#ai">AI-Driven</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="since">Since 2002</div>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>
-                We build<br>
-                <span class="gradient-text">AI-powered</span><br>
-                marketing engines
-            </h1>
-            <p class="hero-subtitle">
-                23 years of digital marketing excellence. Now supercharged with AI. 
-                We transform ambitious companies into data-driven growth machines.
+        <h1>We maken bedrijven klaar voor digitale groei</h1>
+        <p class="intro">
+            23 jaar ervaring in digital marketing. Gecombineerd met AI-technologie voor meetbare resultaten. 
+            Van strategie tot executie — we bouwen marketing systemen die schalen.
+        </p>
+    </section>
+
+    <section>
+        <div class="section-content">
+            <div class="small-title">Vertrouwd Door</div>
+            <h2>Premium merken kiezen voor CNIP</h2>
+            
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800714_2-Nov-04-2021-12-50-59-44-PM.png" alt="Peter Goossens - Hof van Cleve">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800715_7-2.png" alt="GE Healthcare">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800716_13.png" alt="DSM Keukens">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800714_3-4.png" alt="Willems Tuinkamers & Veranda's">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800716_15.png" alt="BMW Le Couter">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800714_1-4.png" alt="Decospan">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800715_8-2.png" alt="Citrosuco">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800715_11-1.png" alt="Haelvoet">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800714_4-2.png" alt="Skylux">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800717_19.png" alt="Keolis">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800717_20.png" alt="Nuscience">
+                </div>
+                <div class="client-logo">
+                    <img src="images/klanten/1762435800716_17.png" alt="Medina">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ai-highlight">
+        <div class="ai-content">
+            <div class="small-title">AI-Driven Marketing</div>
+            <h2>Data-gedreven groei op schaal</h2>
+            <p>
+                We combineren decennia marketing expertise met moderne AI-technologie. 
+                Machine learning optimaliseert campagnes in real-time, voorspelt klantgedrag, 
+                en automatiseert complexe workflows.
             </p>
-            <a href="#contact" class="cta-primary">Start your transformation</a>
+            <p>
+                Het resultaat: betere beslissingen, snellere optimalisatie, en meetbare ROI-verbetering.
+            </p>
             
-            <div class="trust-badge">
-                <div class="badge-dot"></div>
-                AI-FIRST AGENCY · TRUSTED SINCE 2002
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="section-label">WHAT WE DO</div>
-        <h2>Full-spectrum digital marketing, powered by intelligence</h2>
-        
-        <div class="services-layout">
-            <div class="service-item">
-                <h3>AI-Driven Strategy</h3>
-                <p>Machine learning algorithms analyse your data, predict trends, and recommend actions. Real-time optimization at scale.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Performance Websites</h3>
-                <p>Conversion-optimized, blazing fast, SEO-engineered websites. Built with modern frameworks and AI-powered personalization.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Intelligent SEO/SEA</h3>
-                <p>AI-powered keyword research, content optimization and bid management. Data-driven campaigns that maximize ROI.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Automated Marketing</h3>
-                <p>Hyper-personalized email flows, predictive send times, and behavioral triggers. Marketing that works 24/7.</p>
-            </div>
-            
-            <div class="service-item">
-                <h3>Digital<br>Readiness<br>Audit</h3>
-                <p style="color: rgba(255,255,255,0.9);">3-week deep dive into your marketing infrastructure. Get a concrete roadmap for AI-driven growth.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="ai" class="ai-section">
-        <div class="ai-grid">
-            <div class="ai-content">
-                <div class="section-label">AI-POWERED</div>
-                <h2>Built for the AI era, delivering results today</h2>
-                <p>
-                    We've been perfecting digital marketing since 2002. Now we're combining decades of expertise 
-                    with cutting-edge AI technology to deliver unprecedented results.
-                </p>
-                <p>
-                    Our proprietary AI models analyze millions of data points to optimize campaigns in real-time, 
-                    predict customer behavior, and automate complex workflows.
-                </p>
-                
-                <div class="ai-stats">
-                    <div class="stat">
-                        <div class="stat-value">10x</div>
-                        <div class="stat-label">Faster optimization</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">47%</div>
-                        <div class="stat-label">Avg. ROI increase</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Automated monitoring</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">100%</div>
-                        <div class="stat-label">Data-driven decisions</div>
-                    </div>
+            <div class="ai-stats">
+                <div class="stat-item">
+                    <div class="stat-number">23</div>
+                    <div class="stat-label">Jaar Ervaring</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10×</div>
+                    <div class="stat-label">Sneller</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Monitoring</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Data-Driven</div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="section-content">
+            <div class="small-title">Onze Diensten</div>
+            <h2>Full-stack digital marketing</h2>
             
-            <div class="ai-visual">
-                <div style="font-size: 24px; font-weight: 700; color: white; letter-spacing: 2px;">AI</div>
+            <div class="services-list">
+                <div class="service">
+                    <h3>Digital Readiness Audit</h3>
+                    <p>
+                        Complete analyse van je digitale infrastructuur. In 3 weken krijg je een concrete 
+                        roadmap met quick wins, fundamentele verbeteringen en groeiprojecten. Data-gedreven 
+                        en meetbaar.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Website Development</h3>
+                    <p>
+                        High-performance websites die converteren. Van strategie en UX design tot development 
+                        en SEO-optimalisatie. Modern, snel, en gebouwd voor groei.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>SEO & Google Ads</h3>
+                    <p>
+                        Organische groei via technische SEO en content. ROI-focused Google Ads campagnes. 
+                        AI-powered keyword research en bid management voor maximale efficiency.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Marketing Automation</h3>
+                    <p>
+                        Geautomatiseerde email flows, lead nurturing en behavioral triggers. Workflows die 
+                        24/7 werken. Hyper-personalisatie op schaal met predictive analytics.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3>Social Media Marketing</h3>
+                    <p>
+                        Strategic content die engagement genereert. Paid campaigns op LinkedIn, Instagram 
+                        en Facebook. Data-driven optimalisatie voor conversie.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="clients" class="clients">
-        <div class="section-label">TRUSTED BY</div>
-        <h2>Industry leaders choose CNIP</h2>
-        
-        <div class="clients-grid">
-            <div class="client-card">Hof van Cleve</div>
-            <div class="client-card">GE Healthcare</div>
-            <div class="client-card">DSM Keukens</div>
-            <div class="client-card">Willems Veranda's</div>
-            <div class="client-card">Sanskriet</div>
-        </div>
-        
-        <div style="margin-top: 80px;">
-            <div class="section-label">CERTIFIED EXPERTS</div>
+    <section style="background: #fafafa;">
+        <div class="section-content">
+            <div class="small-title">Expertise</div>
+            <h2>Certified & Recognized</h2>
+            
             <div class="certificates">
-                <div class="cert-badge">
+                <div class="cert">
                     <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads">
-                    <span>Google Ads</span>
+                    <div class="cert-name">Google Ads</div>
                 </div>
-                <div class="cert-badge">
+                <div class="cert">
                     <img src="images/certificaten/GA-certified.png" alt="Analytics">
-                    <span>Analytics</span>
+                    <div class="cert-name">Analytics</div>
                 </div>
-                <div class="cert-badge">
+                <div class="cert">
                     <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube">
-                    <span>YouTube</span>
+                    <div class="cert-name">YouTube</div>
                 </div>
-                <div class="cert-badge">
+                <div class="cert">
+                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot">
+                    <div class="cert-name">HubSpot Gold</div>
+                </div>
+                <div class="cert">
                     <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush">
-                    <span>Semrush</span>
+                    <div class="cert-name">Semrush</div>
                 </div>
-                <div class="cert-badge">
+                <div class="cert">
                     <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo">
-                    <span>Leadinfo</span>
+                    <div class="cert-name">Leadinfo</div>
                 </div>
-                <div class="cert-badge">
-                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold">
-                    <span>HubSpot Gold</span>
-                </div>
-                <div class="cert-badge">
+                <div class="cert">
                     <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge">
-                    <span>Cambridge Judge</span>
+                    <div class="cert-name">Cambridge</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="process">
-        <div class="process-content">
-            <div class="section-label" style="color: rgba(255,255,255,0.5);">HOW WE WORK</div>
-            <h2>Proven process, AI-enhanced execution</h2>
+    <section>
+        <div class="section-content">
+            <div class="small-title">Werkwijze</div>
+            <h2>Van strategie tot groei</h2>
             
-            <div class="steps">
-                <div class="step">
+            <div class="process-grid">
+                <div class="process-step">
                     <div class="step-num">01</div>
-                    <h3>Discovery</h3>
-                    <p>AI-powered analysis of your market, competitors, and opportunities. Data extraction and insight generation.</p>
+                    <h4>Discovery</h4>
+                    <p>
+                        Analyse van je business, markt en digitale infrastructuur. 
+                        Data extraction en opportunity identification.
+                    </p>
                 </div>
-                <div class="step">
+                <div class="process-step">
                     <div class="step-num">02</div>
-                    <h3>Strategy</h3>
-                    <p>Machine learning models predict outcomes and recommend optimal strategies. Humans validate and refine.</p>
+                    <h4>Strategy</h4>
+                    <p>
+                        Concrete roadmap met prioriteiten. Quick wins en langetermijn 
+                        groeiprojecten. Alles meetbaar.
+                    </p>
                 </div>
-                <div class="step">
+                <div class="process-step">
                     <div class="step-num">03</div>
-                    <h3>Execute</h3>
-                    <p>Rapid deployment with automated workflows. AI handles optimization while we focus on creative excellence.</p>
+                    <h4>Execute</h4>
+                    <p>
+                        We bouwen, lanceren en optimaliseren. Agile sprints met 
+                        continue testing en iteration.
+                    </p>
                 </div>
-                <div class="step">
+                <div class="process-step">
                     <div class="step-num">04</div>
-                    <h3>Scale</h3>
-                    <p>Continuous learning loops. AI identifies growth opportunities and implements improvements in real-time.</p>
+                    <h4>Scale</h4>
+                    <p>
+                        Data-driven optimalisatie. AI identificeert kansen en 
+                        implementeert verbeteringen.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="final-cta">
-        <h2>Ready to lead<br>your industry?</h2>
-        <p>Let's build your AI-powered marketing engine.</p>
-        <a href="mailto:info@cnip.be" class="cta-white">Start conversation</a>
+    <section class="cta-section">
+        <h2>Klaar voor digitale groei?</h2>
+        <p>Start met een vrijblijvende digital readiness scan.</p>
+        <a href="mailto:info@cnip.be" class="cta-button">Plan gesprek</a>
     </section>
 
     <footer>
         <div class="footer-content">
             <div>
-                <img src="images/logocnip/CNIP logo 25 wit op gray4.png" alt="CNIP" style="height: 28px; width: auto; margin-bottom: 16px;">
-                <div class="footer-tagline">
-                    AI-driven marketing agency.<br>
-                    Excellence since 2002.<br><br>
+                <div class="footer-brand">
+                    <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP">
+                </div>
+                <div class="footer-info">
+                    Digital Marketing Agency<br>
+                    Since 2002<br><br>
                     Ottergemsesteenweg Zuid 808<br>
                     9000 Gent, Belgium<br><br>
-                    <a href="tel:+3293965883" style="color: rgba(255,255,255,0.9);">+32 9 396 58 83</a>
+                    <a href="tel:+3293965883">+32 9 396 58 83</a><br>
+                    <a href="mailto:info@cnip.be">info@cnip.be</a>
                 </div>
             </div>
             <div>
                 <h4>Services</h4>
-                <a href="#services">AI Strategy</a>
+                <a href="#services">Digital Readiness</a>
                 <a href="#services">Websites</a>
-                <a href="#services">SEO & SEA</a>
+                <a href="#services">SEO & Ads</a>
                 <a href="#services">Automation</a>
+                <a href="#services">Social Media</a>
             </div>
             <div>
-                <h4>Company</h4>
-                <a href="#ai">About</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact">Contact</a>
+                <h4>Bedrijf</h4>
+                <a href="#clients">Klanten</a>
+                <a href="#process">Werkwijze</a>
+                <a href="#expertise">Expertise</a>
             </div>
             <div>
-                <h4>Connect</h4>
-                <a href="mailto:info@cnip.be">info@cnip.be</a>
+                <h4>Contact</h4>
+                <a href="mailto:info@cnip.be">Email</a>
                 <a href="https://linkedin.com/company/cnipagency" target="_blank">LinkedIn</a>
+                <a href="tel:+3293965883">Bel ons</a>
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 CNIP. All rights reserved. AI-Powered Marketing Excellence.
+            © 2025 CNIP. All rights reserved.
         </div>
     </footer>
 
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
