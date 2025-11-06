@@ -872,13 +872,202 @@
                 padding-right: 40px;
             }
 
-            h1 { font-size: 56px; }
+            .header-content {
+                padding: 20px 40px;
+            }
+
+            h1 { 
+                font-size: 64px;
+                letter-spacing: -2px;
+            }
+            
             .showcase-grid { grid-template-columns: 1fr; gap: 60px; }
             .timeline-grid { grid-template-columns: repeat(2, 1fr); }
             .clients-grid { grid-template-columns: repeat(3, 1fr); }
             .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             nav { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .hero, .timeline-section, .clients-section, .services, .manifesto, .certs, .cta, footer,
+            .showcase-video {
+                padding: 80px 24px !important;
+            }
+            
+            .header-content {
+                padding: 16px 24px;
+            }
+            
+            .logo-group img {
+                height: 36px;
+            }
+            
+            .badge {
+                font-size: 8px;
+                padding: 4px 10px;
+            }
+            
+            h1 { 
+                font-size: 48px !important;
+                letter-spacing: -1px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 32px;
+            }
+            
+            .hero-text {
+                font-size: 18px;
+                margin-bottom: 48px;
+            }
+            
+            .hero-stats {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+            
+            .stat-number {
+                font-size: 44px;
+            }
+            
+            .stat-label {
+                font-size: 12px;
+            }
+            
+            .showcase-video {
+                padding: 80px 24px !important;
+            }
+            
+            .showcase-content h2 {
+                font-size: 36px !important;
+                letter-spacing: -1px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .showcase-content p {
+                font-size: 16px;
+            }
+            
+            .timeline-header h2 {
+                font-size: 44px;
+                letter-spacing: -1px;
+            }
+            
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline-title {
+                font-size: 22px;
+            }
+            
+            .clients-header h2 {
+                font-size: 44px;
+                letter-spacing: -1px;
+                margin-bottom: 60px;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            
+            .client {
+                padding: 20px;
+                background: white !important;
+            }
+            
+            .client img {
+                filter: grayscale(0%) !important;
+                opacity: 1 !important;
+            }
+            
+            .services h2 {
+                font-size: 44px;
+                letter-spacing: -1px;
+                margin-bottom: 60px;
+            }
+            
+            .service {
+                padding-top: 24px;
+            }
+            
+            .service h3 {
+                font-size: 26px;
+                margin-bottom: 16px;
+            }
+            
+            .service p {
+                font-size: 16px;
+            }
+            
+            .manifesto {
+                padding: 100px 24px !important;
+            }
+            
+            .manifesto h2 {
+                font-size: 44px !important;
+                letter-spacing: -1px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 32px;
+            }
+            
+            .manifesto p {
+                font-size: 18px;
+            }
+            
+            .certs {
+                padding: 80px 24px !important;
+            }
+            
+            .certs h2 {
+                font-size: 36px !important;
+                letter-spacing: -1px !important;
+            }
+            
+            .certs p {
+                font-size: 16px !important;
+            }
+            
+            .cert-grid {
+                gap: 12px;
+                justify-content: center;
+            }
+            
+            .cert {
+                padding: 12px 20px;
+            }
+            
+            .cert img {
+                height: 20px;
+            }
+            
+            .cert span {
+                font-size: 11px;
+            }
+            
+            .cta {
+                padding: 100px 24px !important;
+            }
+            
+            .cta h2 {
+                font-size: 44px;
+                letter-spacing: -1px;
+                margin-bottom: 40px;
+            }
+            
+            .cta-button {
+                padding: 20px 48px;
+                font-size: 15px;
+            }
+            
+            .footer-grid {
+                gap: 40px;
+            }
         }
     </style>
 </head>
