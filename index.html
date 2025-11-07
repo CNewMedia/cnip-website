@@ -478,6 +478,83 @@
             color: var(--white);
         }
 
+        /* Certificates */
+        .certs {
+            padding: 160px 80px;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cert {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 36px;
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-radius: 100px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .cert::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 100px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--black) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .cert:hover::before {
+            opacity: 1;
+        }
+
+        .cert:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(232,181,99,0.2);
+        }
+
+        .cert img {
+            height: 28px;
+            filter: saturate(0.8);
+            transition: all 0.4s;
+        }
+
+        .cert:hover img {
+            filter: saturate(1);
+            transform: scale(1.1);
+        }
+
+        .cert span {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            color: var(--black);
+        }
+
+        .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 80px;
+            justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .cta-button {
             display: inline-block;
             padding: 24px 64px;
@@ -885,6 +962,37 @@
                 font-size: 15px;
             }
             
+            /* Certificates mobile */
+            .certs {
+                padding: 80px 24px !important;
+            }
+            
+            .certs h2 {
+                font-size: 36px !important;
+                letter-spacing: -1.5px !important;
+            }
+            
+            .certs p {
+                font-size: 16px !important;
+            }
+            
+            .cert-grid {
+                gap: 12px;
+                justify-content: center;
+            }
+            
+            .cert {
+                padding: 12px 20px;
+            }
+            
+            .cert img {
+                height: 20px;
+            }
+            
+            .cert span {
+                font-size: 11px;
+            }
+            
             /* Footer mobile */
             footer {
                 padding: 80px 24px 48px !important;
@@ -940,6 +1048,7 @@
             .clients-section h2,
             .services h2,
             .cta h2,
+            .certs h2,
             .impact-section h2 {
                 font-size: 32px !important;
             }
@@ -950,6 +1059,18 @@
             
             .counter {
                 font-size: 34px !important;
+            }
+            
+            .cert {
+                padding: 10px 16px !important;
+            }
+            
+            .cert img {
+                height: 18px !important;
+            }
+            
+            .cert span {
+                font-size: 10px !important;
             }
         }
     </style>
@@ -971,7 +1092,7 @@
     <header id="header">
         <div class="header-content">
             <div class="logo-group">
-                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP Logo" width="48" height="48">
+                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP Logo">
                 <span class="badge">Since 2002</span>
             </div>
             <nav>
@@ -1171,6 +1292,50 @@
             <div class="service">
                 <h3 style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">Marketing Automation</h3>
                 <p style="font-size: 18px; color: var(--gray);">AI-gedreven workflows. Personalisatie op schaal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="certs" style="padding: 160px 80px; max-width: 1600px; margin: 0 auto; position: relative;">
+        <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.1;"></div>
+        
+        <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; position: relative; z-index: 1;">Certified Expertise</h2>
+        <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 48px;">Erkend en gecertificeerd door de grootste platforms in digital marketing.</p>
+        
+        <div class="cert-grid" style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 80px; justify-content: center; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Gecertificeerd Partner" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Google Ads</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/GA-certified.png" alt="Google Analytics Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Analytics</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Marketing Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">YouTube</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner Badge" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">HubSpot Gold</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Semrush</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner Badge" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Leadinfo</span>
+            </div>
+            
+            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge Judge Business School" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
+                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Cambridge</span>
             </div>
         </div>
     </section>
