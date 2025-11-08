@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <!-- Lenis for ultra-smooth scrolling -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+    <!-- HubSpot Form Script -->
+    <script src="https://js.hsforms.net/forms/embed/v2.js" defer></script>
     
     <style>
         * {
@@ -479,14 +481,6 @@
             transform: translateX(8px);
         }
 
-        /* CTA */
-        .cta {
-            padding: 200px 80px;
-            background: var(--black);
-            text-align: center;
-            color: var(--white);
-        }
-
         /* Certificates */
         .certs {
             padding: 160px 80px;
@@ -564,48 +558,159 @@
             margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 24px 64px;
-            background: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.4s;
+        /* ============================================
+           HUBSPOT FORM STYLING
+           ============================================ */
+
+        .form-section {
             position: relative;
-            overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+        .form-container {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .cta-button:hover::before {
-            left: 100%;
+        .form-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px rgba(232, 181, 99, 0.2);
+            border-color: var(--gold);
         }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid #e5e5e5;
-            padding: 80px 80px 40px;
-            max-width: 1600px;
-            margin: 0 auto;
+        /* HubSpot Form Custom Styling */
+        .hs-form-frame iframe,
+        .hs-form-frame form {
+            width: 100% !important;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 60px;
+        .hs-form-frame .hs-form fieldset {
+            max-width: 100% !important;
+        }
+
+        .hs-form-frame .hs-form .hs-input {
+            width: 100% !important;
+            padding: 16px 20px !important;
+            background: rgba(255,255,255,0.08) !important;
+            border: 2px solid rgba(232, 181, 99, 0.2) !important;
+            border-radius: 12px !important;
+            color: var(--white) !important;
+            font-size: 15px !important;
+            transition: all 0.3s !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+        }
+
+        .hs-form-frame .hs-form .hs-input:focus {
+            background: rgba(255,255,255,0.12) !important;
+            border-color: var(--gold) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(232, 181, 99, 0.1) !important;
+        }
+
+        .hs-form-frame .hs-form .hs-input::placeholder {
+            color: rgba(255,255,255,0.5) !important;
+        }
+
+        .hs-form-frame .hs-form textarea.hs-input {
+            min-height: 120px !important;
+            resize: vertical !important;
+        }
+
+        .hs-form-frame .hs-form label {
+            color: var(--white) !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            margin-bottom: 8px !important;
+            display: block !important;
+        }
+
+        .hs-form-frame .hs-form .hs-error-msgs {
+            list-style: none !important;
+            padding: 0 !important;
+            margin-top: 8px !important;
+        }
+
+        .hs-form-frame .hs-form .hs-error-msgs li label {
+            color: #ff6b6b !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+        }
+
+        .hs-form-frame .hs-form .hs-button {
+            width: 100% !important;
+            padding: 20px 48px !important;
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a049 100%) !important;
+            color: var(--black) !important;
+            border: none !important;
+            border-radius: 12px !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            cursor: pointer !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            box-shadow: 0 10px 30px rgba(232, 181, 99, 0.3) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .hs-form-frame .hs-form .hs-button::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent) !important;
+            transition: left 0.5s !important;
+        }
+
+        .hs-form-frame .hs-form .hs-button:hover::before {
+            left: 100% !important;
+        }
+
+        .hs-form-frame .hs-form .hs-button:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 15px 40px rgba(232, 181, 99, 0.4) !important;
+        }
+
+        .hs-form-frame .hs-form .hs-button:active {
+            transform: translateY(-1px) !important;
+        }
+
+        .hs-form-frame .hs-form .hs-form-field {
+            margin-bottom: 24px !important;
+        }
+
+        .hs-form-frame .hs-form .legal-consent-container {
+            margin-top: 24px !important;
+        }
+
+        .hs-form-frame .hs-form .hs-richtext {
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 13px !important;
+            line-height: 1.6 !important;
+        }
+
+        .hs-form-frame .hs-form .hs-richtext a {
+            color: var(--gold) !important;
+            text-decoration: underline !important;
+        }
+
+        /* Checkbox Styling */
+        .hs-form-frame .hs-form input[type="checkbox"] {
+            width: 20px !important;
+            height: 20px !important;
+            margin-right: 10px !important;
+            accent-color: var(--gold) !important;
+        }
+
+        /* Select Dropdown */
+        .hs-form-frame .hs-form select.hs-input {
+            appearance: none !important;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23E8B563' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 20px center !important;
+            padding-right: 50px !important;
         }
 
         /* Scroll Progress */
@@ -663,6 +768,21 @@
             overflow-wrap: break-word;
         }
 
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 80px 80px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+
         /* ============================================
            MOBILE RESPONSIVE - PERFECT FOR IPHONE
            ============================================ */
@@ -704,8 +824,8 @@
             .timeline-section,
             .clients-section,
             .services,
-            .cta,
             .impact-section,
+            .form-section,
             footer {
                 padding: 80px 24px !important;
             }
@@ -878,8 +998,8 @@
             }
             
             .impact-card {
-                padding: 32px 20px !important; /* Reduced horizontal padding */
-                overflow: hidden; /* Prevent overflow */
+                padding: 32px 20px !important;
+                overflow: hidden;
             }
             
             .impact-card h3 {
@@ -900,7 +1020,7 @@
             
             /* COUNTER FIX - Prevent overflow */
             .counter {
-                font-size: 38px !important; /* Smaller on mobile */
+                font-size: 38px !important;
                 letter-spacing: -1px !important;
                 max-width: 100%;
                 overflow: hidden;
@@ -917,7 +1037,7 @@
             
             .impact-card > div[style*="grid-template-columns"] > div {
                 overflow: hidden;
-                min-width: 0; /* Allow flex shrinking */
+                min-width: 0;
             }
             
             .impact-card div[style*="font-size: 13px"] {
@@ -954,23 +1074,6 @@
                 line-height: 1.6 !important;
             }
             
-            /* CTA mobile */
-            .cta {
-                padding: 100px 24px !important;
-            }
-            
-            .cta h2 {
-                font-size: 36px !important;
-                letter-spacing: -1.5px !important;
-                margin-bottom: 40px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .cta-button {
-                padding: 20px 56px;
-                font-size: 15px;
-            }
-            
             /* Certificates mobile */
             .certs {
                 padding: 80px 24px !important;
@@ -1000,6 +1103,60 @@
             
             .cert span {
                 font-size: 11px;
+            }
+
+            /* FORM SECTION MOBILE */
+            .form-section {
+                padding: 100px 24px !important;
+            }
+            
+            .form-section > div {
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
+            }
+            
+            .form-section h2 {
+                font-size: 36px !important;
+                letter-spacing: -1.5px !important;
+            }
+            
+            .form-section p {
+                font-size: 16px !important;
+            }
+            
+            .form-container {
+                padding: 32px 24px !important;
+            }
+            
+            .hs-form-frame .hs-form .hs-input {
+                padding: 14px 16px !important;
+                font-size: 16px !important;
+            }
+            
+            .hs-form-frame .hs-form .hs-button {
+                padding: 18px 40px !important;
+                font-size: 15px !important;
+            }
+            
+            .form-section > div > div:first-child > div:last-child {
+                gap: 20px !important;
+            }
+            
+            .form-section > div > div:first-child > div:last-child > div {
+                gap: 12px !important;
+            }
+            
+            .form-section > div > div:first-child > div:last-child > div > div:first-child {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .form-section > div > div:first-child > div:last-child > div > div:last-child > div:first-child {
+                font-size: 15px !important;
+            }
+            
+            .form-section > div > div:first-child > div:last-child > div > div:last-child > div:last-child {
+                font-size: 13px !important;
             }
             
             /* Footer mobile */
@@ -1056,9 +1213,9 @@
             .timeline-section h2,
             .clients-section h2,
             .services h2,
-            .cta h2,
             .certs h2,
-            .impact-section h2 {
+            .impact-section h2,
+            .form-section h2 {
                 font-size: 32px !important;
             }
             
@@ -1310,53 +1467,104 @@
         </div>
     </section>
 
-    <section class="certs" style="padding: 160px 80px; max-width: 1600px; margin: 0 auto; position: relative;">
+    <section class="certs">
         <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.1;"></div>
         
         <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; position: relative; z-index: 1;">Certified Expertise</h2>
         <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 48px;">Erkend en gecertificeerd door de grootste platforms in digital marketing.</p>
         
-        <div class="cert-grid" style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 80px; justify-content: center; max-width: 1200px; margin-left: auto; margin-right: auto;">
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Gecertificeerd Partner" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Google Ads</span>
+        <div class="cert-grid">
+            <div class="cert">
+                <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Gecertificeerd Partner" loading="lazy">
+                <span>Google Ads</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/GA-certified.png" alt="Google Analytics Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Analytics</span>
+            <div class="cert">
+                <img src="images/certificaten/GA-certified.png" alt="Google Analytics Gecertificeerd" loading="lazy">
+                <span>Analytics</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Marketing Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">YouTube</span>
+            <div class="cert">
+                <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Marketing Gecertificeerd" loading="lazy">
+                <span>YouTube</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner Badge" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">HubSpot Gold</span>
+            <div class="cert">
+                <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner Badge" loading="lazy">
+                <span>HubSpot Gold</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner Gecertificeerd" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Semrush</span>
+            <div class="cert">
+                <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner Gecertificeerd" loading="lazy">
+                <span>Semrush</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner Badge" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Leadinfo</span>
+            <div class="cert">
+                <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner Badge" loading="lazy">
+                <span>Leadinfo</span>
             </div>
             
-            <div class="cert" style="display: flex; align-items: center; gap: 16px; padding: 20px 36px; background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%); border: 2px solid transparent; background-clip: padding-box; border-radius: 100px; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge Judge Business School" style="height: 28px; filter: saturate(0.8); transition: all 0.4s;" loading="lazy">
-                <span style="font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--black);">Cambridge</span>
+            <div class="cert">
+                <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge Judge Business School" loading="lazy">
+                <span>Cambridge</span>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="cta">
-        <h2 style="font-size: 80px; font-weight: 700; letter-spacing: -3px; margin-bottom: 48px;">Klaar voor maatwerk?</h2>
-        <a href="https://oryen.be/diensten/orientatiegesprek?hsCtaAttrib=192748998959" class="cta-button magnetic-button">Boek oriëntatiegesprek</a>
+    <!-- HUBSPOT FORM SECTION -->
+    <section id="contact" class="form-section" style="padding: 200px 80px; background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
+        <!-- Decorative elements -->
+        <div style="position: absolute; top: -10%; right: -5%; width: 400px; height: 400px; border: 3px solid var(--gold); border-radius: 50%; opacity: 0.05;"></div>
+        <div style="position: absolute; bottom: -15%; left: -8%; width: 500px; height: 500px; border: 3px solid var(--gold); border-radius: 50%; opacity: 0.05;"></div>
+        
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 1;">
+            <!-- Left Content -->
+            <div style="color: var(--white);">
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">LATEN WE PRATEN</div>
+                <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">Klaar voor maatwerk marketing?</h2>
+                <p style="font-size: 20px; color: rgba(255,255,255,0.7); margin-bottom: 48px; line-height: 1.6;">
+                    Boek een oriëntatiegesprek en ontdek hoe we jouw merk naar een hoger niveau tillen met hyper-gepersonaliseerde strategieën.
+                </p>
+                
+                <!-- Benefits List -->
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 48px; height: 48px; background: rgba(232, 181, 99, 0.1); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: var(--gold); font-size: 20px; font-weight: 700;">✓</span>
+                        </div>
+                        <div>
+                            <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Gratis strategie sessie</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">30 minuten persoonlijk advies</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 48px; height: 48px; background: rgba(232, 181, 99, 0.1); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: var(--gold); font-size: 20px; font-weight: 700;">✓</span>
+                        </div>
+                        <div>
+                            <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Geen verplichtingen</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Vrijblijvend kennismaken</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="width: 48px; height: 48px; background: rgba(232, 181, 99, 0.1); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: var(--gold); font-size: 20px; font-weight: 700;">✓</span>
+                        </div>
+                        <div>
+                            <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">23 jaar expertise</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Trendsetters sinds 2002</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Form Container -->
+            <div class="form-container" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(232, 181, 99, 0.2); border-radius: 24px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+                <div class="hs-form-frame" data-region="na1" data-form-id="931e0cb9-1fe2-47d3-8c18-ed19af6395dc" data-portal-id="20714913"></div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -1496,7 +1704,7 @@
                     canvas: canvas,
                     alpha: true,
                     antialias: !isMobile,
-                    powerPreference: 'high-performance' // Performance boost
+                    powerPreference: 'high-performance'
                 });
                 
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -1504,20 +1712,19 @@
 
                 // Create circles with 1/3 opening (like CNIP logo)
                 const circles = [];
-                const circleCount = isMobile ? 3 : 6; // More circles for depth
+                const circleCount = isMobile ? 3 : 6;
                 
                 for (let i = 0; i < circleCount; i++) {
-                    // Create arc geometry (270 degrees = 3/4 circle = 1/4 opening)
-                    const thetaStart = Math.PI * 0.25; // Start at 45 degrees
-                    const thetaLength = Math.PI * 1.5; // 270 degrees (1/4 open)
+                    const thetaStart = Math.PI * 0.25;
+                    const thetaLength = Math.PI * 1.5;
                     
                     const geometry = new THREE.RingGeometry(
-                        5 + i * 2.5,     // Inner radius
-                        5.3 + i * 2.5,   // Outer radius (thin ring)
-                        64,              // Segments
-                        1,               // Phi segments
-                        thetaStart,      // Start angle
-                        thetaLength      // Length of arc
+                        5 + i * 2.5,
+                        5.3 + i * 2.5,
+                        64,
+                        1,
+                        thetaStart,
+                        thetaLength
                     );
                     
                     const material = new THREE.MeshBasicMaterial({ 
@@ -1528,12 +1735,9 @@
                     });
                     const circle = new THREE.Mesh(geometry, material);
                     
-                    // Spread circles MORE in 3D space (less clustered)
-                    circle.position.z = -15 - (i * 8); // More distance
-                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 4); // More spread
-                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 3); // More spread
-                    
-                    // Random rotation for variety
+                    circle.position.z = -15 - (i * 8);
+                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 4);
+                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 3);
                     circle.rotation.z = (Math.PI / 6) * i;
                     
                     scene.add(circle);
@@ -1545,7 +1749,7 @@
                     });
                 }
 
-                // Add subtle particles (optimized count)
+                // Add subtle particles
                 const particlesGeometry = new THREE.BufferGeometry();
                 const particlesCount = isMobile ? 100 : 300;
                 const posArray = new Float32Array(particlesCount * 3);
@@ -1584,30 +1788,21 @@
                     requestAnimationFrame(animate3D);
                     time += 0.01;
                     
-                    // Animate circles elegantly
                     circles.forEach((circle, index) => {
-                        // Gentle rotation
                         circle.mesh.rotation.z += circle.rotationSpeed;
-                        
-                        // Subtle oscillation
                         circle.mesh.position.y += Math.sin(time + circle.oscillation) * 0.008;
                         circle.mesh.position.x += Math.cos(time + circle.oscillation) * 0.008;
-                        
-                        // Z-axis breathing for depth
                         circle.mesh.position.z = circle.initialZ + Math.sin(time * 0.5 + index) * 2;
                         
-                        // React to mouse (desktop only)
                         if (!isMobile) {
                             circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
                             circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
                         }
                         
-                        // Pulse opacity very subtly
                         const pulseSpeed = 0.4 + (index * 0.08);
                         circle.mesh.material.opacity = 0.07 + Math.sin(time * pulseSpeed) * 0.015;
                     });
                     
-                    // Gentle particle rotation
                     particlesMesh.rotation.y += 0.0002;
                     particlesMesh.rotation.x = Math.sin(time * 0.3) * 0.03;
                     
