@@ -556,127 +556,263 @@
             margin-right: auto;
         }
 
-        /* ============================================
-           HUBSPOT FORM STYLING
-           ============================================ */
+       /* ============================================
+   HUBSPOT FORM STYLING - AGGRESSIVE OVERRIDES
+   ============================================ */
 
-        .form-section {
-            position: relative;
-        }
+.form-section {
+    position: relative;
+}
 
-        .form-container {
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.form-container {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .form-container:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 40px 80px rgba(232, 181, 99, 0.2);
-            border-color: var(--gold);
-        }
+.form-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(232, 181, 99, 0.2);
+    border-color: var(--gold);
+}
 
-        /* HubSpot Form Custom Styling */
-        #hubspot-form-container .hs-form-field {
-            margin-bottom: 20px !important;
-        }
+/* SUPER AGGRESSIVE FORM STYLING */
+#hubspot-form-container * {
+    color: white !important;
+}
 
-        #hubspot-form-container .hs-form-field label {
-            color: white !important;
-            font-weight: 600 !important;
-            margin-bottom: 8px !important;
-            display: block !important;
-            font-size: 14px !important;
-        }
+#hubspot-form-container .hs-form {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
 
-        #hubspot-form-container input[type="text"],
-        #hubspot-form-container input[type="email"],
-        #hubspot-form-container input[type="tel"],
-        #hubspot-form-container textarea,
-        #hubspot-form-container select {
-            width: 100% !important;
-            padding: 14px 18px !important;
-            background: rgba(255,255,255,0.08) !important;
-            border: 2px solid rgba(232, 181, 99, 0.2) !important;
-            border-radius: 10px !important;
-            color: white !important;
-            font-size: 15px !important;
-            transition: all 0.3s !important;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-        }
+#hubspot-form-container .hs-form-field {
+    margin-bottom: 24px !important;
+}
 
-        #hubspot-form-container input:focus,
-        #hubspot-form-container textarea:focus,
-        #hubspot-form-container select:focus {
-            background: rgba(255,255,255,0.12) !important;
-            border-color: #E8B563 !important;
-            outline: none !important;
-            box-shadow: 0 0 0 3px rgba(232, 181, 99, 0.1) !important;
-        }
+#hubspot-form-container .hs-form-field > label,
+#hubspot-form-container .hs-form label,
+#hubspot-form-container label.hs-form-label {
+    color: white !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+    font-size: 14px !important;
+}
 
-        #hubspot-form-container ::placeholder {
-            color: rgba(255,255,255,0.4) !important;
-        }
+#hubspot-form-container input[type="text"],
+#hubspot-form-container input[type="email"],
+#hubspot-form-container input[type="tel"],
+#hubspot-form-container input[type="number"],
+#hubspot-form-container textarea,
+#hubspot-form-container select,
+#hubspot-form-container .hs-input {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: 2px solid rgba(232, 181, 99, 0.3) !important;
+    border-radius: 12px !important;
+    color: white !important;
+    font-size: 15px !important;
+    transition: all 0.3s ease !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    box-sizing: border-box !important;
+}
 
-        #hubspot-form-container textarea {
-            min-height: 100px !important;
-            resize: vertical !important;
-        }
+#hubspot-form-container input::placeholder,
+#hubspot-form-container textarea::placeholder {
+    color: rgba(255,255,255,0.5) !important;
+}
 
-        #hubspot-form-container .hs-button {
-            width: 100% !important;
-            padding: 18px 40px !important;
-            background: linear-gradient(135deg, #E8B563 0%, #d4a049 100%) !important;
-            color: #0a0a0a !important;
-            border: none !important;
-            border-radius: 10px !important;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            cursor: pointer !important;
-            transition: all 0.3s !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            box-shadow: 0 8px 20px rgba(232, 181, 99, 0.3) !important;
-        }
+#hubspot-form-container input:focus,
+#hubspot-form-container textarea:focus,
+#hubspot-form-container select:focus,
+#hubspot-form-container .hs-input:focus {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: #E8B563 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(232, 181, 99, 0.15) !important;
+}
 
-        #hubspot-form-container .hs-button:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 12px 30px rgba(232, 181, 99, 0.4) !important;
-        }
+#hubspot-form-container textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
 
-        #hubspot-form-container .hs-error-msgs {
-            color: #ff6b6b !important;
-            font-size: 13px !important;
-            list-style: none !important;
-            padding: 0 !important;
-            margin-top: 6px !important;
-        }
+#hubspot-form-container select {
+    appearance: none !important;
+    cursor: pointer !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23E8B563' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 20px center !important;
+    padding-right: 50px !important;
+}
 
-        #hubspot-form-container .hs-error-msgs li {
-            margin: 0 !important;
-        }
+/* SUBMIT BUTTON - GOLD STYLING */
+#hubspot-form-container .hs-button,
+#hubspot-form-container input[type="submit"],
+#hubspot-form-container button[type="submit"] {
+    width: 100% !important;
+    padding: 20px 48px !important;
+    background: linear-gradient(135deg, #E8B563 0%, #d4a049 100%) !important;
+    color: #0a0a0a !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    box-shadow: 0 10px 30px rgba(232, 181, 99, 0.4) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    margin-top: 12px !important;
+}
 
-        #hubspot-form-container .hs-richtext {
-            color: rgba(255,255,255,0.6) !important;
-            font-size: 13px !important;
-        }
+#hubspot-form-container .hs-button:hover,
+#hubspot-form-container input[type="submit"]:hover,
+#hubspot-form-container button[type="submit"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(232, 181, 99, 0.5) !important;
+    background: linear-gradient(135deg, #f0c270 0%, #e0b05a 100%) !important;
+}
 
-        #hubspot-form-container .hs-richtext a {
-            color: var(--gold) !important;
-        }
+#hubspot-form-container .hs-button:active {
+    transform: translateY(-1px) !important;
+}
 
-        #hubspot-form-container select {
-            appearance: none !important;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23E8B563' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
-            background-repeat: no-repeat !important;
-            background-position: right 18px center !important;
-            padding-right: 45px !important;
-        }
+/* CHECKBOX & RADIO STYLING */
+#hubspot-form-container input[type="checkbox"],
+#hubspot-form-container input[type="radio"] {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 12px !important;
+    accent-color: #E8B563 !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+}
 
-        #hubspot-form-container input[type="checkbox"] {
-            width: auto !important;
-            margin-right: 8px !important;
-            accent-color: var(--gold) !important;
-        }
+#hubspot-form-container .hs-form-booleancheckbox,
+#hubspot-form-container .hs-form-checkbox {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+}
+
+#hubspot-form-container .hs-form-booleancheckbox label,
+#hubspot-form-container .hs-form-checkbox label {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+#hubspot-form-container .hs-form-booleancheckbox-display {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+}
+
+#hubspot-form-container .hs-form-booleancheckbox-display input {
+    margin-top: 4px !important;
+}
+
+#hubspot-form-container .hs-form-booleancheckbox-display span,
+#hubspot-form-container .hs-form-checkbox label span {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* LEGAL TEXT & RICHTEXT */
+#hubspot-form-container .hs-richtext,
+#hubspot-form-container .hs-richtext p {
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 12px !important;
+}
+
+#hubspot-form-container .hs-richtext a {
+    color: #E8B563 !important;
+    text-decoration: underline !important;
+}
+
+#hubspot-form-container .hs-richtext a:hover {
+    color: #f0c270 !important;
+}
+
+/* ERROR MESSAGES */
+#hubspot-form-container .hs-error-msgs,
+#hubspot-form-container .hs-error-msg {
+    color: #ff6b6b !important;
+    font-size: 13px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 8px 0 0 0 !important;
+}
+
+#hubspot-form-container .hs-error-msgs li {
+    color: #ff6b6b !important;
+    margin: 4px 0 !important;
+}
+
+#hubspot-form-container .hs-error-msgs li label {
+    color: #ff6b6b !important;
+}
+
+/* REQUIRED FIELD INDICATOR */
+#hubspot-form-container .hs-form-required {
+    color: #E8B563 !important;
+}
+
+/* FIELDSET & LEGEND */
+#hubspot-form-container fieldset {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#hubspot-form-container legend {
+    color: white !important;
+    font-weight: 600 !important;
+    margin-bottom: 16px !important;
+}
+
+/* RECAPTCHA BADGE FIX */
+#hubspot-form-container .grecaptcha-badge {
+    opacity: 0.7 !important;
+}
+
+/* FORM DESCRIPTION TEXT */
+#hubspot-form-container .hs-form-desc,
+#hubspot-form-container .hs-field-desc {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 13px !important;
+    margin-top: 6px !important;
+}
+
+/* INPUT GROUPS (First Name / Last Name side by side) */
+#hubspot-form-container .hs-form-field:has(.hs-firstname),
+#hubspot-form-container .hs-form-field:has(.hs-lastname) {
+    display: inline-block !important;
+    width: calc(50% - 8px) !important;
+    margin-right: 16px !important;
+}
+
+#hubspot-form-container .hs-form-field:has(.hs-lastname) {
+    margin-right: 0 !important;
+}
+
+/* LOADING STATE */
+#hubspot-form-container .hs-loading {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+/* SUCCESS MESSAGE */
+#hubspot-form-container .submitted-message {
+    color: #E8B563 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    padding: 40px 20px !important;
+}
 
         /* Scroll Progress */
         .scroll-progress {
