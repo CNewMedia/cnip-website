@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
+    <!-- End Google Tag Manager -->
+    
+    <title>Bedankt! — CNIP Boutique Marketing Bureau Gent</title>
+    <meta name="description" content="Bedankt voor je interesse. We nemen zo snel mogelijk contact met je op.">
+    
+    <!-- Three.js for 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --gold: #E8B563;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            color: var(--black);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 3D Canvas Background */
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Glass Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 181, 99, 0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 24px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-group img {
+            height: 48px;
+            filter: drop-shadow(0 2px 10px rgba(232, 181, 99, 0.3));
+        }
+
+        /* Thank You Hero Section */
+        .thank-you-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 80px 80px;
+            position: relative;
+        }
+
+        .thank-you-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Success Icon Animation */
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 48px;
+            position: relative;
+            opacity: 0;
+            animation: fadeInScale 0.8s ease forwards 0.2s;
+        }
+
+        .success-circle {
+            width: 120px;
+            height: 120px;
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            position: relative;
+            animation: drawCircle 1s ease forwards;
+        }
+
+        .success-checkmark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+        }
+
+        .checkmark-stem {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: var(--gold);
+            left: 26px;
+            top: 10px;
+            transform: rotate(45deg);
+            transform-origin: bottom;
+            animation: drawStem 0.4s ease forwards 0.4s;
+            opacity: 0;
+        }
+
+        .checkmark-kick {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: var(--gold);
+            left: 14px;
+            top: 30px;
+            transform: rotate(-45deg);
+            transform-origin: bottom;
+            animation: drawKick 0.3s ease forwards 0.6s;
+            opacity: 0;
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes drawCircle {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes drawStem {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                height: 40px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes drawKick {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                height: 20px;
+                opacity: 1;
+            }
+        }
+
+        .thank-you-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -3px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .thank-you-text {
+            font-size: 22px;
+            line-height: 1.6;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 64px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--light-gray);
+            padding: 100px 80px;
+        }
+
+        .timeline-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .timeline-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-header p {
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            position: relative;
+        }
+
+        .timeline-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), #d4a049);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            box-shadow: 0 8px 20px rgba(232, 181, 99, 0.3);
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 1s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 48px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), #d4a049);
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(232, 181, 99, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 181, 99, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(0,0,0,0.05);
+            color: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        .btn-secondary:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Social Links */
+        .social-section {
+            padding: 80px 80px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .social-section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--light-gray);
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(232, 181, 99, 0.3);
+        }
+
+        .social-icon {
+            font-size: 20px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 80px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+        }
+
+        .contact-details {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+        }
+
+        .contact-value {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-value a:hover {
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 40px 80px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 20px 24px;
+            }
+
+            .logo-group img {
+                height: 40px;
+            }
+
+            .thank-you-hero {
+                padding: 100px 24px 60px;
+            }
+
+            h1 {
+                font-size: 40px !important;
+                letter-spacing: -2px !important;
+            }
+
+            .thank-you-text {
+                font-size: 18px;
+            }
+
+            .success-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 32px;
+            }
+
+            .success-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .timeline-section,
+            .social-section,
+            .contact-info {
+                padding: 60px 24px;
+            }
+
+            .timeline-header h2 {
+                font-size: 32px;
+            }
+
+            .timeline-steps {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            footer {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- 3D Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-group">
+                <img src="images/logocnip/CNIP logo 25 zwart.png" alt="CNIP Logo">
+            </div>
+        </div>
+    </header>
+
+    <section class="thank-you-hero">
+        <div class="thank-you-content">
+            <!-- Success Icon with Animation -->
+            <div class="success-icon">
+                <div class="success-circle">
+                    <div class="success-checkmark">
+                        <div class="checkmark-stem"></div>
+                        <div class="checkmark-kick"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thank-you-label">AANVRAAG ONTVANGEN</div>
+            <h1>Bedankt voor je interesse!</h1>
+            <p class="thank-you-text">
+                Je oriëntatiegesprek is aangevraagd. We nemen <strong>binnen 24 uur</strong> contact met je op om een afspraak in te plannen. Tot snel!
+            </p>
+
+            <div class="cta-buttons">
+                <a href="index.html#clients" class="btn btn-primary">Bekijk ons werk</a>
+                <a href="index.html" class="btn btn-secondary">Terug naar home</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-content">
+            <div class="timeline-header">
+                <h2>Wat gebeurt er nu?</h2>
+                <p>We zetten graag de volgende stappen voor je uit</p>
+            </div>
+
+            <div class="timeline-steps">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Bevestiging</div>
+                    <p class="step-description">Je ontvangt een bevestigingsmail met alle details van je aanvraag.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Contact</div>
+                    <p class="step-description">Binnen 24 uur nemen we contact op om een afspraak in te plannen die jou past.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Oriëntatiegesprek</div>
+                    <p class="step-description">30 minuten gratis strategie sessie waarin we jouw doelen en mogelijkheden bespreken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <h3>Volg ons terwijl je wacht</h3>
+        <div class="social-links">
+            <a href="https://linkedin.com/company/cnipagency" class="social-link" target="_blank" rel="noopener">
+                <span class="social-icon">in</span>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://instagram.com/cnip.be" class="social-link" target="_blank" rel="noopener">
+                <span class="social-icon">📷</span>
+                <span>Instagram</span>
+            </a>
+            <a href="https://facebook.com/cnipagency" class="social-link" target="_blank" rel="noopener">
+                <span class="social-icon">f</span>
+                <span>Facebook</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <h3>Liever direct contact?</h3>
+        <p>Geen probleem! Je kan ons altijd rechtstreeks bereiken.</p>
+        
+        <div class="contact-details">
+            <div class="contact-item">
+                <div class="contact-label">Telefoon</div>
+                <div class="contact-value"><a href="tel:+3293965883">+32 9 396 58 83</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:info@cnip.be">info@cnip.be</a></div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Adres</div>
+                <div class="contact-value">Ottergemsesteenweg Zuid 808<br>9000 Gent</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 CNIP — Boutique Marketing Bureau Gent</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            // ========================================
+            // THREE.JS - Same as homepage
+            // ========================================
+            if (typeof THREE !== 'undefined') {
+                const canvas = document.getElementById('webgl-canvas');
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ 
+                    canvas: canvas,
+                    alpha: true,
+                    antialias: true,
+                    powerPreference: 'high-performance'
+                });
+                
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+                const circles = [];
+                const circleCount = 6;
+                
+                for (let i = 0; i < circleCount; i++) {
+                    const thetaStart = Math.PI * 0.25;
+                    const thetaLength = Math.PI * 1.5;
+                    
+                    const geometry = new THREE.RingGeometry(
+                        5 + i * 2.5,
+                        5.3 + i * 2.5,
+                        64,
+                        1,
+                        thetaStart,
+                        thetaLength
+                    );
+                    
+                    const material = new THREE.MeshBasicMaterial({ 
+                        color: 0xE8B563,
+                        transparent: true,
+                        opacity: 0.07 - (i * 0.008),
+                        side: THREE.DoubleSide
+                    });
+                    const circle = new THREE.Mesh(geometry, material);
+                    
+                    circle.position.z = -15 - (i * 8);
+                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 4);
+                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 3);
+                    circle.rotation.z = (Math.PI / 6) * i;
+                    
+                    scene.add(circle);
+                    circles.push({
+                        mesh: circle,
+                        rotationSpeed: 0.0002 + (i * 0.00008),
+                        oscillation: i * 0.6,
+                        initialZ: circle.position.z
+                    });
+                }
+
+                const particlesGeometry = new THREE.BufferGeometry();
+                const particlesCount = 300;
+                const posArray = new Float32Array(particlesCount * 3);
+
+                for(let i = 0; i < particlesCount * 3; i++) {
+                    posArray[i] = (Math.random() - 0.5) * 100;
+                }
+
+                particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                const particlesMaterial = new THREE.PointsMaterial({
+                    size: 0.03,
+                    color: 0xE8B563,
+                    transparent: true,
+                    opacity: 0.15
+                });
+
+                const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+                scene.add(particlesMesh);
+
+                camera.position.z = 35;
+
+                let time = 0;
+                function animate3D() {
+                    requestAnimationFrame(animate3D);
+                    time += 0.01;
+                    
+                    circles.forEach((circle, index) => {
+                        circle.mesh.rotation.z += circle.rotationSpeed;
+                        circle.mesh.position.y += Math.sin(time + circle.oscillation) * 0.008;
+                        circle.mesh.position.x += Math.cos(time + circle.oscillation) * 0.008;
+                        circle.mesh.position.z = circle.initialZ + Math.sin(time * 0.5 + index) * 2;
+                        
+                        const pulseSpeed = 0.4 + (index * 0.08);
+                        circle.mesh.material.opacity = 0.07 + Math.sin(time * pulseSpeed) * 0.015;
+                    });
+                    
+                    particlesMesh.rotation.y += 0.0002;
+                    particlesMesh.rotation.x = Math.sin(time * 0.3) * 0.03;
+                    
+                    renderer.render(scene, camera);
+                }
+                animate3D();
+
+                window.addEventListener('resize', () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
+
+            // ========================================
+            // Confetti Effect (Optional - voor extra feest!)
+            // ========================================
+            function createConfetti() {
+                const colors = ['#E8B563', '#d4a049', '#0a0a0a'];
+                const confettiCount = 50;
+
+                for (let i = 0; i < confettiCount; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.style.position = 'fixed';
+                        confetti.style.width = '10px';
+                        confetti.style.height = '10px';
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.top = '-10px';
+                        confetti.style.opacity = '1';
+                        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                        confetti.style.zIndex = '9999';
+                        confetti.style.pointerEvents = 'none';
+                        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                        
+                        document.body.appendChild(confetti);
+
+                        const duration = 3000 + Math.random() * 2000;
+                        const endLeft = parseFloat(confetti.style.left) + (Math.random() - 0.5) * 100;
+                        
+                        confetti.animate([
+                            { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                            { transform: `translateY(${window.innerHeight + 10}px) translateX(${(Math.random() - 0.5) * 200}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                        ], {
+                            duration: duration,
+                            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                        }).onfinish = () => confetti.remove();
+                    }, i * 30);
+                }
+            }
+
+            // Trigger confetti after 500ms
+            setTimeout(createConfetti, 500);
+        });
+    </script>
+</body>
+</html>
