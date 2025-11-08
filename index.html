@@ -25,8 +25,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <!-- Lenis for ultra-smooth scrolling -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
-    <!-- HubSpot Form Script -->
-    <script src="https://js.hsforms.net/forms/embed/v2.js" defer></script>
     
     <style>
         * {
@@ -578,139 +576,106 @@
         }
 
         /* HubSpot Form Custom Styling */
-        .hs-form-frame iframe,
-        .hs-form-frame form {
-            width: 100% !important;
+        #hubspot-form-container .hs-form-field {
+            margin-bottom: 20px !important;
         }
 
-        .hs-form-frame .hs-form fieldset {
-            max-width: 100% !important;
+        #hubspot-form-container .hs-form-field label {
+            color: white !important;
+            font-weight: 600 !important;
+            margin-bottom: 8px !important;
+            display: block !important;
+            font-size: 14px !important;
         }
 
-        .hs-form-frame .hs-form .hs-input {
+        #hubspot-form-container input[type="text"],
+        #hubspot-form-container input[type="email"],
+        #hubspot-form-container input[type="tel"],
+        #hubspot-form-container textarea,
+        #hubspot-form-container select {
             width: 100% !important;
-            padding: 16px 20px !important;
+            padding: 14px 18px !important;
             background: rgba(255,255,255,0.08) !important;
             border: 2px solid rgba(232, 181, 99, 0.2) !important;
-            border-radius: 12px !important;
-            color: var(--white) !important;
+            border-radius: 10px !important;
+            color: white !important;
             font-size: 15px !important;
             transition: all 0.3s !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
         }
 
-        .hs-form-frame .hs-form .hs-input:focus {
+        #hubspot-form-container input:focus,
+        #hubspot-form-container textarea:focus,
+        #hubspot-form-container select:focus {
             background: rgba(255,255,255,0.12) !important;
-            border-color: var(--gold) !important;
+            border-color: #E8B563 !important;
             outline: none !important;
             box-shadow: 0 0 0 3px rgba(232, 181, 99, 0.1) !important;
         }
 
-        .hs-form-frame .hs-form .hs-input::placeholder {
-            color: rgba(255,255,255,0.5) !important;
+        #hubspot-form-container ::placeholder {
+            color: rgba(255,255,255,0.4) !important;
         }
 
-        .hs-form-frame .hs-form textarea.hs-input {
-            min-height: 120px !important;
+        #hubspot-form-container textarea {
+            min-height: 100px !important;
             resize: vertical !important;
         }
 
-        .hs-form-frame .hs-form label {
-            color: var(--white) !important;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            margin-bottom: 8px !important;
-            display: block !important;
-        }
-
-        .hs-form-frame .hs-form .hs-error-msgs {
-            list-style: none !important;
-            padding: 0 !important;
-            margin-top: 8px !important;
-        }
-
-        .hs-form-frame .hs-form .hs-error-msgs li label {
-            color: #ff6b6b !important;
-            font-size: 13px !important;
-            font-weight: 500 !important;
-        }
-
-        .hs-form-frame .hs-form .hs-button {
+        #hubspot-form-container .hs-button {
             width: 100% !important;
-            padding: 20px 48px !important;
-            background: linear-gradient(135deg, var(--gold) 0%, #d4a049 100%) !important;
-            color: var(--black) !important;
+            padding: 18px 40px !important;
+            background: linear-gradient(135deg, #E8B563 0%, #d4a049 100%) !important;
+            color: #0a0a0a !important;
             border: none !important;
-            border-radius: 12px !important;
+            border-radius: 10px !important;
             font-size: 16px !important;
             font-weight: 700 !important;
             cursor: pointer !important;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transition: all 0.3s !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
-            box-shadow: 0 10px 30px rgba(232, 181, 99, 0.3) !important;
-            position: relative !important;
-            overflow: hidden !important;
+            box-shadow: 0 8px 20px rgba(232, 181, 99, 0.3) !important;
         }
 
-        .hs-form-frame .hs-form .hs-button::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: -100% !important;
-            width: 100% !important;
-            height: 100% !important;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent) !important;
-            transition: left 0.5s !important;
+        #hubspot-form-container .hs-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 30px rgba(232, 181, 99, 0.4) !important;
         }
 
-        .hs-form-frame .hs-form .hs-button:hover::before {
-            left: 100% !important;
-        }
-
-        .hs-form-frame .hs-form .hs-button:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 15px 40px rgba(232, 181, 99, 0.4) !important;
-        }
-
-        .hs-form-frame .hs-form .hs-button:active {
-            transform: translateY(-1px) !important;
-        }
-
-        .hs-form-frame .hs-form .hs-form-field {
-            margin-bottom: 24px !important;
-        }
-
-        .hs-form-frame .hs-form .legal-consent-container {
-            margin-top: 24px !important;
-        }
-
-        .hs-form-frame .hs-form .hs-richtext {
-            color: rgba(255,255,255,0.7) !important;
+        #hubspot-form-container .hs-error-msgs {
+            color: #ff6b6b !important;
             font-size: 13px !important;
-            line-height: 1.6 !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin-top: 6px !important;
         }
 
-        .hs-form-frame .hs-form .hs-richtext a {
+        #hubspot-form-container .hs-error-msgs li {
+            margin: 0 !important;
+        }
+
+        #hubspot-form-container .hs-richtext {
+            color: rgba(255,255,255,0.6) !important;
+            font-size: 13px !important;
+        }
+
+        #hubspot-form-container .hs-richtext a {
             color: var(--gold) !important;
-            text-decoration: underline !important;
         }
 
-        /* Checkbox Styling */
-        .hs-form-frame .hs-form input[type="checkbox"] {
-            width: 20px !important;
-            height: 20px !important;
-            margin-right: 10px !important;
-            accent-color: var(--gold) !important;
-        }
-
-        /* Select Dropdown */
-        .hs-form-frame .hs-form select.hs-input {
+        #hubspot-form-container select {
             appearance: none !important;
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23E8B563' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") !important;
             background-repeat: no-repeat !important;
-            background-position: right 20px center !important;
-            padding-right: 50px !important;
+            background-position: right 18px center !important;
+            padding-right: 45px !important;
+        }
+
+        #hubspot-form-container input[type="checkbox"] {
+            width: auto !important;
+            margin-right: 8px !important;
+            accent-color: var(--gold) !important;
         }
 
         /* Scroll Progress */
@@ -1128,12 +1093,16 @@
                 padding: 32px 24px !important;
             }
             
-            .hs-form-frame .hs-form .hs-input {
+            #hubspot-form-container input[type="text"],
+            #hubspot-form-container input[type="email"],
+            #hubspot-form-container input[type="tel"],
+            #hubspot-form-container textarea,
+            #hubspot-form-container select {
                 padding: 14px 16px !important;
                 font-size: 16px !important;
             }
             
-            .hs-form-frame .hs-form .hs-button {
+            #hubspot-form-container .hs-button {
                 padding: 18px 40px !important;
                 font-size: 15px !important;
             }
@@ -1562,7 +1531,8 @@
             
             <!-- Right Form Container -->
             <div class="form-container" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(232, 181, 99, 0.2); border-radius: 24px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
-                <div class="hs-form-frame" data-region="na1" data-form-id="931e0cb9-1fe2-47d3-8c18-ed19af6395dc" data-portal-id="20714913"></div>
+                <!-- HubSpot Form Embed -->
+                <div id="hubspot-form-container"></div>
             </div>
         </div>
     </section>
@@ -1601,10 +1571,38 @@
         </div>
     </footer>
 
+    <!-- HubSpot Form Script -->
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
-        // Wait for Three.js to load
+        // Initialize website after all scripts load
         window.addEventListener('load', function() {
             initWebsite();
+            
+            // Load HubSpot form
+            if (window.hbspt) {
+                hbspt.forms.create({
+                    region: "na1",
+                    portalId: "20714913",
+                    formId: "931e0cb9-1fe2-47d3-8c18-ed19af6395dc",
+                    target: "#hubspot-form-container",
+                    css: "",
+                    onFormReady: function($form) {
+                        console.log('HubSpot form loaded successfully');
+                    },
+                    onFormSubmitted: function($form) {
+                        console.log('Form submission successful');
+                    }
+                });
+            } else {
+                console.error('HubSpot forms script not loaded');
+                document.getElementById('hubspot-form-container').innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">
+                        <p style="margin-bottom: 20px;">Formulier laden mislukt. Contacteer ons rechtstreeks:</p>
+                        <a href="mailto:info@cnip.be" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">info@cnip.be</a><br><br>
+                        <a href="tel:+3293965883" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">+32 9 396 58 83</a>
+                    </div>
+                `;
+            }
         });
 
         function initWebsite() {
@@ -1642,7 +1640,6 @@
                 let mouseX = 0, mouseY = 0;
                 let followerX = 0, followerY = 0;
 
-                // Cursor trail - reduced for subtlety
                 const trailLength = 5;
                 const trails = [];
                 
@@ -1661,7 +1658,6 @@
                     mouseX = e.clientX;
                     mouseY = e.clientY;
                     
-                    // Spotlight effect
                     spotlight.style.transform = `translate(${mouseX - 300}px, ${mouseY - 300}px)`;
                     spotlight.style.opacity = '1';
                 });
@@ -1673,7 +1669,6 @@
                     followerY += (mouseY - followerY) * 0.1;
                     cursorFollower.style.transform = `translate(${followerX - 4}px, ${followerY - 4}px)`;
                     
-                    // Animate trail
                     trails.forEach((trail, index) => {
                         const factor = 0.08 - (index * 0.012);
                         trail.x += (mouseX - trail.x) * factor;
@@ -1686,7 +1681,6 @@
                 }
                 animateCursor();
 
-                // Cursor hover effects
                 document.querySelectorAll('a, button, .magnetic-button, .client, .service').forEach(el => {
                     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
                     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
@@ -1694,7 +1688,7 @@
             }
 
             // ========================================
-            // THREE.JS - CIRCLES WITH 1/3 OPENING (Like CNIP logo!)
+            // THREE.JS - CIRCLES WITH 1/3 OPENING
             // ========================================
             if (typeof THREE !== 'undefined') {
                 const canvas = document.getElementById('webgl-canvas');
@@ -1710,7 +1704,6 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
 
-                // Create circles with 1/3 opening (like CNIP logo)
                 const circles = [];
                 const circleCount = isMobile ? 3 : 6;
                 
@@ -1749,7 +1742,6 @@
                     });
                 }
 
-                // Add subtle particles
                 const particlesGeometry = new THREE.BufferGeometry();
                 const particlesCount = isMobile ? 100 : 300;
                 const posArray = new Float32Array(particlesCount * 3);
@@ -1771,7 +1763,6 @@
 
                 camera.position.z = 35;
 
-                // Mouse interaction for circles (desktop only)
                 let targetRotationX = 0;
                 let targetRotationY = 0;
                 
@@ -1782,7 +1773,6 @@
                     });
                 }
 
-                // Animation loop
                 let time = 0;
                 function animate3D() {
                     requestAnimationFrame(animate3D);
@@ -1810,14 +1800,12 @@
                 }
                 animate3D();
 
-                // Responsive
                 window.addEventListener('resize', () => {
                     camera.aspect = window.innerWidth / window.innerHeight;
                     camera.updateProjectionMatrix();
                     renderer.setSize(window.innerWidth, window.innerHeight);
                 });
 
-                // Performance: Pause when not visible
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) {
                         renderer.setAnimationLoop(null);
@@ -1833,13 +1821,11 @@
             if (typeof gsap !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Hero animations
                 gsap.to('.hero-label', { opacity: 1, y: 0, duration: 1, delay: 0.2 });
                 gsap.to('h1', { opacity: 1, y: 0, duration: 1, delay: 0.4 });
                 gsap.to('.hero-text', { opacity: 1, y: 0, duration: 1, delay: 0.6 });
                 gsap.to('.hero-stats', { opacity: 1, y: 0, duration: 1, delay: 0.8 });
 
-                // Timeline items
                 gsap.utils.toArray('.timeline-item').forEach((item, i) => {
                     gsap.to(item, {
                         opacity: 1,
@@ -1853,7 +1839,6 @@
                     });
                 });
 
-                // Services
                 gsap.utils.toArray('.service').forEach((service, i) => {
                     gsap.to(service, {
                         opacity: 1,
@@ -1867,7 +1852,6 @@
                     });
                 });
 
-                // Showcase sections parallax (desktop only)
                 if (!isMobile) {
                     gsap.utils.toArray('.showcase-video').forEach((section) => {
                         const content = section.querySelector('.showcase-content');
@@ -1974,7 +1958,6 @@
                 updateCounter();
             };
 
-            // Trigger counters on scroll
             if (typeof ScrollTrigger !== 'undefined') {
                 ScrollTrigger.create({
                     trigger: '.impact-section',
