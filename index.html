@@ -12,6 +12,16 @@
     })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
     <!-- End Google Tag Manager -->
     
+    <!-- PERFORMANCE OPTIMIZATION: Preconnect to critical external origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://js.hsforms.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://snap.licdn.com">
+    <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
+    
     <!-- SEO Meta Tags -->
     <title>Marketing Bureau Gent | Video, SEO & Social Media | CNIP Since 2002</title>
     <meta name="description" content="CNIP is het toonaangevende marketing bureau in Gent. Gespecialiseerd in high-end video productie, SEO, social media en AI-marketing. 23 jaar expertise. Bekijk ons werk met Hof van Cleve, BMW en DSM Keukens.">
@@ -184,6 +194,7 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="images/logocnip/CNIP logo 25 zwart.png" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
     
     <!-- Three.js for 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
@@ -2066,15 +2077,23 @@
         </div>
     </footer>
 
-    <!-- HubSpot Form Script -->
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <!-- HubSpot Form Script - ASYNC DEFER FOR PERFORMANCE -->
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" async defer></script>
     <script>
         // Initialize website after all scripts load
         window.addEventListener('load', function() {
             initWebsite();
             
-            // Load HubSpot form
-            if (window.hbspt) {
+            // PERFORMANCE OPTIMIZATION: Lazy load HubSpot form using Intersection Observer
+            const formSection = document.querySelector('#contact');
+            const hubspotFormContainer = document.getElementById('hubspot-form-container');
+            
+            let formLoaded = false;
+            
+            const loadHubSpotForm = function() {
+                if (formLoaded || !window.hbspt) return;
+                formLoaded = true;
+                
                 hbspt.forms.create({
                     region: "na1",
                     portalId: "20714913",
@@ -2088,15 +2107,55 @@
                         console.log('Form submission successful');
                     }
                 });
+            };
+            
+            // Load form when user scrolls near the contact section
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                            // Wait for HubSpot script to load if not already loaded
+                            if (window.hbspt) {
+                                loadHubSpotForm();
+                            } else {
+                                // Poll for hbspt to be available
+                                const checkHbspt = setInterval(() => {
+                                    if (window.hbspt) {
+                                        clearInterval(checkHbspt);
+                                        loadHubSpotForm();
+                                    }
+                                }, 100);
+                                
+                                // Timeout after 10 seconds
+                                setTimeout(() => {
+                                    clearInterval(checkHbspt);
+                                    if (!formLoaded) {
+                                        hubspotFormContainer.innerHTML = `
+                                            <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">
+                                                <p style="margin-bottom: 20px;">Formulier laden mislukt. Contacteer ons rechtstreeks:</p>
+                                                <a href="mailto:info@cnip.be" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">info@cnip.be</a><br><br>
+                                                <a href="tel:+3293965883" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">+32 9 396 58 83</a>
+                                            </div>
+                                        `;
+                                    }
+                                }, 10000);
+                            }
+                            observer.disconnect();
+                        }
+                    });
+                }, {
+                    rootMargin: '300px' // Start loading 300px before the section is visible
+                });
+                
+                if (formSection) observer.observe(formSection);
             } else {
-                console.error('HubSpot forms script not loaded');
-                document.getElementById('hubspot-form-container').innerHTML = `
-                    <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">
-                        <p style="margin-bottom: 20px;">Formulier laden mislukt. Contacteer ons rechtstreeks:</p>
-                        <a href="mailto:info@cnip.be" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">info@cnip.be</a><br><br>
-                        <a href="tel:+3293965883" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">+32 9 396 58 83</a>
-                    </div>
-                `;
+                // Fallback for browsers without Intersection Observer
+                window.addEventListener('scroll', function() {
+                    const rect = formSection.getBoundingClientRect();
+                    if (rect.top < window.innerHeight + 300) {
+                        loadHubSpotForm();
+                    }
+                }, { passive: true });
             }
         });
 
@@ -2183,24 +2242,24 @@
             }
 
             // ========================================
-            // THREE.JS - CIRCLES WITH 1/3 OPENING
+            // THREE.JS - CIRCLES WITH 1/3 OPENING (PERFORMANCE OPTIMIZED)
             // ========================================
-            if (typeof THREE !== 'undefined') {
+            if (typeof THREE !== 'undefined' && !isMobile) {
                 const canvas = document.getElementById('webgl-canvas');
                 const scene = new THREE.Scene();
                 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
                 const renderer = new THREE.WebGLRenderer({ 
                     canvas: canvas,
                     alpha: true,
-                    antialias: !isMobile,
+                    antialias: false, // Disabled for performance
                     powerPreference: 'high-performance'
                 });
                 
                 renderer.setSize(window.innerWidth, window.innerHeight);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Limit pixel ratio for performance
 
                 const circles = [];
-                const circleCount = isMobile ? 3 : 6;
+                const circleCount = 6;
                 
                 for (let i = 0; i < circleCount; i++) {
                     const thetaStart = Math.PI * 0.25;
@@ -2238,7 +2297,7 @@
                 }
 
                 const particlesGeometry = new THREE.BufferGeometry();
-                const particlesCount = isMobile ? 100 : 300;
+                const particlesCount = 200; // Reduced from 300
                 const posArray = new Float32Array(particlesCount * 3);
 
                 for(let i = 0; i < particlesCount * 3; i++) {
@@ -2261,12 +2320,10 @@
                 let targetRotationX = 0;
                 let targetRotationY = 0;
                 
-                if (!isMobile) {
-                    document.addEventListener('mousemove', (e) => {
-                        targetRotationX = (e.clientY / window.innerHeight - 0.5) * 0.2;
-                        targetRotationY = (e.clientX / window.innerWidth - 0.5) * 0.2;
-                    });
-                }
+                document.addEventListener('mousemove', (e) => {
+                    targetRotationX = (e.clientY / window.innerHeight - 0.5) * 0.2;
+                    targetRotationY = (e.clientX / window.innerWidth - 0.5) * 0.2;
+                }, { passive: true });
 
                 let time = 0;
                 function animate3D() {
@@ -2279,10 +2336,8 @@
                         circle.mesh.position.x += Math.cos(time + circle.oscillation) * 0.008;
                         circle.mesh.position.z = circle.initialZ + Math.sin(time * 0.5 + index) * 2;
                         
-                        if (!isMobile) {
-                            circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
-                            circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
-                        }
+                        circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
+                        circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
                         
                         const pulseSpeed = 0.4 + (index * 0.08);
                         circle.mesh.material.opacity = 0.07 + Math.sin(time * pulseSpeed) * 0.015;
@@ -2301,6 +2356,7 @@
                     renderer.setSize(window.innerWidth, window.innerHeight);
                 });
 
+                // Pause animation when tab is not visible
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) {
                         renderer.setAnimationLoop(null);
@@ -2428,7 +2484,7 @@
                 const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPercent = (window.pageYOffset / docHeight) * 100;
                 document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
-            });
+            }, { passive: true });
 
             // ========================================
             // COUNTER ANIMATION
@@ -2478,7 +2534,7 @@
                 } else {
                     header.classList.remove('scrolled');
                 }
-            });
+            }, { passive: true });
 
             // ========================================
             // SMOOTH ANCHOR LINKS
