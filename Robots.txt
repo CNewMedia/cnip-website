@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /bedankt.html
+
+# Sitemap location
+Sitemap: https://cnip.be/sitemap.xml
+
+# Crawl delay (optional - prevents overloading)
+Crawl-delay: 1
