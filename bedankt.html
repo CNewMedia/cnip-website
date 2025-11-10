@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
+    <!-- Prevent search engine indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -658,7 +661,27 @@
     <script>
         window.addEventListener('load', function() {
             // ========================================
-            // THREE.JS - Same as homepage
+            // CONVERSIE TRACKING - Form Submit Event
+            // ========================================
+            // Trigger form_submit event naar Google Analytics via dataLayer
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'form_submit',
+                'form_name': 'CNIP Contact Form',
+                'form_destination': 'bedankt.html',
+                'form_type': 'orientatiegesprek'
+            });
+            
+            // Debug log (verwijder in productie als je wilt)
+            console.log('✅ Form submit event triggered for Google Analytics');
+            console.log('Event data:', {
+                event: 'form_submit',
+                form_name: 'CNIP Contact Form',
+                page: 'bedankt.html'
+            });
+
+            // ========================================
+            // THREE.JS - 3D Background Animation
             // ========================================
             if (typeof THREE !== 'undefined') {
                 const canvas = document.getElementById('webgl-canvas');
@@ -763,7 +786,7 @@
             }
 
             // ========================================
-            // Confetti Effect (Optional - voor extra feest!)
+            // Confetti Effect
             // ========================================
             function createConfetti() {
                 const colors = ['#E8B563', '#d4a049', '#0a0a0a'];
