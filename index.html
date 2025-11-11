@@ -999,6 +999,15 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
+            .founder-section > div {
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
+            }
+            .founder-section > div > div:last-child {
+                max-width: 320px;
+                margin: 0 auto;
+                position: static !important;
+            }
             .clients-grid { 
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1023,6 +1032,7 @@
             .hero,
             .showcase-video,
             .timeline-section,
+            .founder-section,
             .clients-section,
             .services,
             .impact-section,
@@ -1145,6 +1155,29 @@
             
             .timeline-item div:nth-child(3) {
                 font-size: 15px !important;
+            }
+            
+            /* Founder section mobile */
+            .founder-section {
+                padding: 100px 24px !important;
+            }
+            
+            .founder-section > div {
+                grid-template-columns: 1fr !important;
+                gap: 48px !important;
+            }
+            
+            .founder-section h2 {
+                font-size: 36px !important;
+                letter-spacing: -1.5px !important;
+                margin-bottom: 32px !important;
+            }
+            
+            .founder-section > div > div:last-child {
+                order: -1;
+                max-width: 240px;
+                margin: 0 auto 40px;
+                position: static !important;
             }
             
             .clients-section {
@@ -1557,6 +1590,69 @@
                     <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px;">AI-Driven</h3>
                     <p style="font-size: 15px; color: var(--gray);">Marketing intelligence op enterprise-niveau</p>
                 </article>
+            </div>
+        </section>
+
+        <section class="founder-section" style="padding: 200px 80px; max-width: 1400px; margin: 0 auto; position: relative;">
+            <div style="position: absolute; top: 15%; right: -5%; width: 300px; height: 300px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.05; z-index: 0;"></div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 80px; align-items: start; position: relative; z-index: 1;">
+                <div>
+                    <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">WAAROM CNIP BESTAAT</div>
+                    <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 40px; line-height: 1.1;">De zucht naar vernieuwing</h2>
+                    
+                    <div style="font-size: 18px; line-height: 1.8; color: var(--gray); margin-bottom: 32px;">
+                        <p style="margin-bottom: 24px;">
+                            Toen iedereen nog in televisie geloofde, zag ik internet en video samenkomen. Niet als hype, maar als fundamentele verschuiving. De toekomst lag niet bij logge structuren waar innovatie doodbloedt in vergaderingen.
+                        </p>
+                        <p style="margin-bottom: 24px; color: var(--black); font-weight: 500;">
+                            Daarom CNIP. Een plek waar vernieuwing niet tegen verzet aanloopt.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            <strong style="color: var(--black);">Boutique?</strong> Bewuste keuze. Elk merk heeft een uniek verhaal. Dat vraagt maatwerk, geen templates. Persoonlijke betrokkenheid, geen wisselende account managers die je verhaal niet kennen.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            Wat me drijft is simpel: <strong style="color: var(--black);">technische mogelijkheden begrijpen, inzetten, en vertalen naar business impact én creativiteit.</strong> Niet óf-óf. Beide.
+                        </p>
+                        <p style="margin-bottom: 24px;">
+                            AI nu? Dezelfde zucht. Niet omdat het trendy is, maar omdat de snelheid en impact gigantisch zijn. Resultaten waar grote teams niet bij kunnen. Niet goedkoper per se — maar wél effectiever.
+                        </p>
+                        <p style="margin-bottom: 32px; color: var(--black); font-size: 19px; font-weight: 500; line-height: 1.6;">
+                            23 jaar later nog steeds dezelfde passie: moeilijke materie helder maken. Innovatie toepassen. En ja, alles persoonlijk opvolgen.
+                        </p>
+                        <p style="font-style: italic; color: var(--gray); padding-left: 0; margin-bottom: 48px; font-size: 17px;">
+                            Boutique door keuze. Vooruitstrevend door obsessie.
+                        </p>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%); padding: 28px 32px; border-radius: 16px; border-left: 4px solid var(--gold);">
+                        <p style="font-size: 15px; color: var(--gray); margin-bottom: 12px;">
+                            <strong style="color: var(--black); font-size: 16px;">Zoek je meer dan marketing uitvoering?</strong>
+                        </p>
+                        <p style="font-size: 15px; color: var(--gray); line-height: 1.6;">
+                            <strong style="color: var(--black);">Oryen</strong> combineert marketing met sales transformatie en strategische doorlichting. Voor bedrijven die het volledige plaatje willen.
+                        </p>
+                        <a href="https://oryen.be" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 16px; color: var(--gold); font-weight: 600; text-decoration: none; font-size: 15px; border-bottom: 2px solid var(--gold); padding-bottom: 4px; transition: all 0.3s;">
+                            Ontdek Oryen →
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="position: sticky; top: 120px;">
+                    <div style="position: relative;">
+                        <!-- Option 1: Original photo - commented out -->
+                        <!-- <img src="https://oryen.be/hubfs/Christophe%20Dejaeghere.png" alt="Christophe Dejaeghere" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" loading="lazy"> -->
+                        
+                        <!-- Option 2: Alternative photo - ACTIVE -->
+                        <img src="https://oryen.be/hubfs/Christophe%20CNIP.png" alt="Christophe Dejaeghere" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" loading="lazy">
+                        
+                        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.08);">
+                            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; font-weight: 600;">Christophe Dejaeghere</div>
+                            <div style="font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 2px;">Founder</div>
+                            <div style="font-size: 12px; color: var(--gray);">Sinds 2002</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
