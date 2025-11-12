@@ -129,9 +129,6 @@
             overflow: visible !important;
         }
 
-        /* ============================================
-           CURSOR
-        ============================================ */
         .cursor {
             width: 20px;
             height: 20px;
@@ -154,9 +151,6 @@
             .cursor { display: none !important; }
         }
 
-        /* ============================================
-           PAGE LOADER
-        ============================================ */
         .page-loader {
             position: fixed;
             top: 0;
@@ -190,9 +184,6 @@
             50% { opacity: 0.7; transform: scale(1.05); }
         }
 
-        /* ============================================
-           HEADER
-        ============================================ */
         header {
             position: fixed;
             top: 0;
@@ -273,9 +264,6 @@
             width: 100%;
         }
 
-        /* ============================================
-           FLOATING HUB
-        ============================================ */
         .floating-hub {
             position: fixed;
             bottom: 40px;
@@ -343,9 +331,6 @@
             opacity: 1;
         }
 
-        /* ============================================
-           HERO
-        ============================================ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -472,9 +457,6 @@
             transform: translateY(-4px);
         }
 
-        /* ============================================
-           MARQUEE STATS
-        ============================================ */
         .marquee-section {
             padding: 100px 0;
             overflow: hidden;
@@ -510,9 +492,6 @@
             flex-shrink: 0;
         }
 
-        /* ============================================
-           SERVICES BENTO GRID
-        ============================================ */
         .services-section {
             padding: 200px 80px;
             max-width: 1600px;
@@ -635,9 +614,6 @@
             z-index: 2;
         }
 
-        /* ============================================
-           VIDEO SPLIT SCREEN
-        ============================================ */
         .video-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -717,11 +693,9 @@
             margin: 0 auto;
         }
 
-        /* ============================================
-           3D TIMELINE CAROUSEL
-        ============================================ */
+        /* FIX: Timeline met meer ruimte voor dots */
         .timeline-3d {
-            padding: 200px 80px 280px;
+            padding: 200px 80px 320px;
             position: relative;
             overflow: visible;
             background: linear-gradient(180deg, var(--black) 0%, var(--black) 85%, rgba(95, 66, 20, 0.15) 100%);
@@ -771,7 +745,7 @@
 
         .carousel-nav {
             position: absolute;
-            bottom: -80px;
+            bottom: -120px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -792,9 +766,7 @@
             transform: scale(1.5);
         }
 
-        /* ============================================
-           FOUNDER STORY - COMPACTER
-        ============================================ */
+        /* FIX: Founder card perfecte border */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -803,25 +775,24 @@
 
         .founder-grid {
             display: grid;
-            grid-template-columns: 1fr 320px;
+            grid-template-columns: 1fr 360px;
             gap: 100px;
             align-items: center;
         }
 
         .founder-card {
-            background: linear-gradient(135deg, rgba(232, 181, 99, 0.1) 0%, rgba(10, 10, 10, 0.8) 100%);
-            backdrop-filter: blur(40px);
-            border: 2px solid rgba(232, 181, 99, 0.3);
-            border-radius: 32px;
+            background: rgba(10, 10, 10, 0.95);
+            border: 3px solid var(--gold);
+            border-radius: 40px;
             padding: 0;
             transition: all 0.5s;
             position: sticky;
             top: 120px;
             overflow: hidden;
+            box-shadow: 0 20px 80px rgba(232, 181, 99, 0.2);
         }
 
         .founder-card:hover {
-            border-color: var(--gold);
             box-shadow: 0 40px 120px rgba(232, 181, 99, 0.5);
             transform: translateY(-12px) scale(1.02);
         }
@@ -829,12 +800,11 @@
         .founder-card img {
             width: 100%;
             display: block;
-            border-radius: 30px 30px 0 0;
         }
 
         .founder-info {
-            padding: 24px;
-            background: linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
+            padding: 28px;
+            background: rgba(10, 10, 10, 1);
         }
 
         .founder-label {
@@ -847,20 +817,17 @@
         }
 
         .founder-name {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 800;
             margin-bottom: 4px;
             color: var(--white);
         }
 
         .founder-role {
-            font-size: 13px;
+            font-size: 14px;
             opacity: 0.7;
         }
 
-        /* ============================================
-           CLIENTS GRID
-        ============================================ */
         .clients-section {
             padding: 200px 80px;
             max-width: 1600px;
@@ -908,9 +875,7 @@
             transform: scale(1.1);
         }
 
-        /* ============================================
-           IMPACT CASES - COMPACTER VOOR MOBIEL
-        ============================================ */
+        /* FIX: Impact cards - geen trillen, fixed width */
         .impact-section {
             padding: 200px 80px;
             max-width: 1600px;
@@ -958,7 +923,6 @@
             box-shadow: 0 50px 120px rgba(232, 181, 99, 0.4);
         }
 
-        /* FIX: Nieuwe layout zonder logo's */
         .impact-header {
             display: flex;
             justify-content: space-between;
@@ -985,6 +949,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 800;
+            flex-shrink: 0;
         }
 
         .impact-title {
@@ -1005,6 +970,7 @@
             z-index: 2;
         }
 
+        /* FIX: Counter met fixed width om trillen te voorkomen */
         .counter {
             font-size: 64px;
             font-weight: 900;
@@ -1012,6 +978,8 @@
             line-height: 1;
             margin-bottom: 8px;
             text-shadow: 0 0 40px rgba(232, 181, 99, 0.3);
+            min-width: 200px;
+            font-variant-numeric: tabular-nums;
         }
 
         .counter-label {
@@ -1031,9 +999,6 @@
             z-index: 2;
         }
 
-        /* ============================================
-           CERTIFICATIONS
-        ============================================ */
         .certs-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -1072,9 +1037,6 @@
             opacity: 1;
         }
 
-        /* ============================================
-           CONTACT FORM
-        ============================================ */
         .contact-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -1163,9 +1125,6 @@
             box-shadow: 0 20px 60px rgba(232, 181, 99, 0.5);
         }
 
-        /* ============================================
-           COOKIE BANNER
-        ============================================ */
         .cookie-banner {
             position: fixed;
             bottom: 32px;
@@ -1260,9 +1219,6 @@
             border-color: rgba(255, 255, 255, 0.4);
         }
 
-        /* ============================================
-           FOOTER
-        ============================================ */
         footer {
             border-top: 1px solid rgba(232, 181, 99, 0.1);
             padding: 80px 80px 40px;
@@ -1309,7 +1265,7 @@
         }
 
         /* ============================================
-           RESPONSIVE FIXES
+           RESPONSIVE - KRITISCH DOORGENOMEN
         ============================================ */
         @media (max-width: 1024px) {
             .header-content { padding: 20px 40px; }
@@ -1346,7 +1302,6 @@
             
             .hero,
             .services-section,
-            .timeline-3d,
             .founder-section,
             .clients-section,
             .impact-section,
@@ -1356,8 +1311,9 @@
                 padding: 80px 24px !important;
             }
             
+            /* FIX: Timeline extra ruimte */
             .timeline-3d {
-                padding-bottom: 200px !important;
+                padding: 100px 24px 240px !important;
             }
             
             .hero-title {
@@ -1404,12 +1360,24 @@
                 gap: 16px; 
             }
             
-            .carousel-container { height: 400px; }
+            /* FIX: Timeline cards kleiner */
+            .carousel-container { 
+                height: 350px; 
+            }
             
             .timeline-card { 
-                width: 300px; 
-                height: 350px; 
-                padding: 32px; 
+                width: 280px; 
+                height: 320px; 
+                padding: 28px; 
+            }
+
+            .timeline-card .year {
+                font-size: 60px;
+            }
+            
+            /* FIX: Carousel nav meer ruimte */
+            .carousel-nav {
+                bottom: -100px;
             }
             
             .footer-grid { grid-template-columns: 1fr; }
@@ -1441,42 +1409,64 @@
                 text-align: center;
             }
 
-            /* FIX: Impact cards compacter op mobiel */
+            /* FIX: Impact cards super compact */
             .impact-card {
-                padding: 32px 24px;
+                padding: 28px 20px;
+                max-width: 100%;
+            }
+
+            .impact-header {
+                margin-bottom: 24px;
+                flex-wrap: wrap;
+                gap: 12px;
             }
 
             .impact-title {
-                font-size: 28px;
+                font-size: 24px;
                 margin-bottom: 16px;
             }
 
             .impact-desc {
-                font-size: 15px;
-                margin-bottom: 32px;
+                font-size: 14px;
+                margin-bottom: 28px;
             }
 
             .counter {
-                font-size: 48px;
+                font-size: 40px;
+                min-width: 140px;
             }
 
             .counter-grid {
-                gap: 24px;
-                margin-top: 32px;
+                gap: 20px;
+                margin-top: 28px;
             }
 
-            /* FIX: Founder card kleiner */
+            .counter-label {
+                font-size: 10px;
+            }
+
+            /* FIX: Founder card perfect op mobiel */
+            .founder-grid {
+                grid-template-columns: 1fr;
+            }
+
             .founder-card {
-                max-width: 280px;
+                max-width: 300px;
                 margin: 0 auto;
+                border-width: 2px;
+                border-radius: 32px;
             }
 
             .founder-info {
                 padding: 20px;
             }
 
+            .founder-label {
+                font-size: 9px;
+            }
+
             .founder-name {
-                font-size: 16px;
+                font-size: 17px;
             }
 
             .founder-role {
@@ -1890,7 +1880,6 @@
     </footer>
 
     <script>
-        // FIX: ROBUUSTE SCROLL TO TOP
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
@@ -1907,7 +1896,6 @@
             }, 0);
         });
 
-        // Cookie Banner
         (function() {
             const cookieBanner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('cookie-accept');
