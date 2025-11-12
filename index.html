@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
+    <!-- Google Tag Manager - Alleen laden met toestemming -->
+    <script id="gtm-script">
+    // Check cookie consent
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    
+    if (cookieConsent === 'accepted') {
+        // Load GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+    }
+    </script>
     <!-- End Google Tag Manager -->
     
     <!-- PERFORMANCE OPTIMIZATION -->
@@ -944,6 +952,144 @@
             transition: width 0.1s ease;
         }
 
+        /* Cookie Banner Styling */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 2px solid var(--gold);
+            padding: 24px;
+            z-index: 10001;
+            animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cookie-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .cookie-icon {
+            font-size: 48px;
+            line-height: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .cookie-text h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .cookie-text p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .cookie-accept {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a049 100%);
+            color: var(--black);
+            box-shadow: 0 4px 15px rgba(232, 181, 99, 0.4);
+        }
+
+        .cookie-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 181, 99, 0.6);
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .cookie-icon {
+                font-size: 40px;
+            }
+
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cookie-btn {
+                width: 100%;
+                padding: 16px 24px;
+            }
+
+            .cookie-text h3 {
+                font-size: 18px;
+            }
+
+            .cookie-text p {
+                font-size: 14px;
+            }
+        }
+
         .impact-section {
             padding: 200px 80px;
             background: var(--black);
@@ -1496,6 +1642,87 @@
 
     <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <div class="cookie-icon">🍪</div>
+            <div class="cookie-text">
+                <h3>Cookies & Privacy</h3>
+                <p>We gebruiken cookies voor analytics om onze website te verbeteren. Jouw keuze wordt gerespecteerd.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-accept">Accepteren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-decline">Weigeren</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Management
+        (function() {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            
+            // Check if user already made a choice
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            
+            if (!cookieConsent) {
+                // Show banner if no choice was made
+                setTimeout(() => {
+                    cookieBanner.style.display = 'block';
+                }, 1000);
+            }
+            
+            // Accept cookies
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+                loadGTM();
+            });
+            
+            // Decline cookies
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                hideBanner();
+            });
+            
+            function hideBanner() {
+                cookieBanner.style.animation = 'slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 500);
+            }
+            
+            function loadGTM() {
+                // Load GTM if accepted
+                if (!window.dataLayer) {
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+                }
+            }
+            
+            // Add slideDown animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideDown {
+                    from {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateY(100%);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        })();
+    </script>
 
     <script>
         // Cursor initialisatie - direct na DOM load
