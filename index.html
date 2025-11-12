@@ -174,6 +174,7 @@
             --gray: #666;
             --light-gray: #f5f5f5;
             --gold: #E8B563;
+            --gold-dark: #9A7233; /* WCAG AA compliant voor tekst op wit */
         }
 
         html, body {
@@ -543,6 +544,14 @@
             width: 100%;
         }
 
+        /* FIX: Gebruik --gold-dark voor betere contrast */
+        .timeline-year {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--gold-dark);
+        }
+
         .clients-section {
             padding: 200px 80px;
             background: var(--light-gray);
@@ -706,6 +715,25 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        /* FIX: Gebruik --gold-dark voor betere contrast */
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold-dark);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .founder-name-label {
+            font-size: 11px;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
         
         @media (max-width: 1024px) {
@@ -1161,6 +1189,16 @@
             margin-bottom: 60px;
         }
 
+        /* FIX: Gebruik div met class in plaats van h4 */
+        .footer-heading {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
         @media (max-width: 1200px) {
             .showcase-grid { 
                 grid-template-columns: 1fr;
@@ -1583,7 +1621,7 @@
                 gap: 48px;
             }
             
-            .footer-grid h4 {
+            .footer-heading {
                 font-size: 10px;
                 margin-bottom: 20px;
             }
@@ -1689,7 +1727,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Cookie Banner Management
         (function() {
             const cookieBanner = document.getElementById('cookie-banner');
@@ -1920,22 +1958,22 @@
             <h2 style="font-size: 80px; font-weight: 700; letter-spacing: -3px; margin-bottom: 120px;">23 jaar voorop</h2>
             <div class="timeline-grid">
                 <article class="timeline-item">
-                    <div style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--gold);">2002</div>
+                    <div class="timeline-year">2002</div>
                     <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px;">De Start</h3>
                     <p style="font-size: 15px; color: var(--gray);">Video & internet marketing pioneers</p>
                 </article>
                 <article class="timeline-item">
-                    <div style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--gold);">2008</div>
+                    <div class="timeline-year">2008</div>
                     <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px;">DSLR Revolution</h3>
                     <p style="font-size: 15px; color: var(--gray);">Eerste in België met cinema-kwaliteit video</p>
                 </article>
                 <article class="timeline-item">
-                    <div style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--gold);">2012</div>
+                    <div class="timeline-year">2012</div>
                     <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px;">Digital Pioneer</h3>
                     <p style="font-size: 15px; color: var(--gray);">Baanbrekende social media campagnes</p>
                 </article>
                 <article class="timeline-item">
-                    <div style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--gold);">2025</div>
+                    <div class="timeline-year">2025</div>
                     <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 12px;">AI-Driven</h3>
                     <p style="font-size: 15px; color: var(--gray);">Marketing intelligence op enterprise-niveau</p>
                 </article>
@@ -1945,7 +1983,7 @@
         <section class="founder-section" style="padding: 200px 80px; max-width: 1400px; margin: 0 auto; position: relative;">
             <div style="display: grid; grid-template-columns: 1fr 220px; gap: 80px; align-items: start; position: relative; z-index: 1;">
                 <div>
-                    <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">WAAROM CNIP BESTAAT</div>
+                    <div class="section-label">WAAROM CNIP BESTAAT</div>
                     <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 40px; line-height: 1.1;">De zucht naar vernieuwing</h2>
                     
                     <div style="font-size: 18px; line-height: 1.8; color: var(--gray); margin-bottom: 32px;">
@@ -1990,7 +2028,7 @@
                         <img src="https://oryen.be/hubfs/Christophe%20CNIP.png" alt="Christophe Dejaeghere" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" loading="lazy">
                         
                         <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.08);">
-                            <div style="font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; font-weight: 600;">Christophe Dejaeghere</div>
+                            <div class="founder-name-label">Christophe Dejaeghere</div>
                             <div style="font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 2px;">Founder</div>
                             <div style="font-size: 12px; color: var(--gray);">Sinds 2002</div>
                         </div>
@@ -2019,7 +2057,7 @@
 
         <section class="impact-section">
             <div style="text-align: center; margin-bottom: 100px;">
-                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">BEWEZEN IMPACT</div>
+                <div class="section-label" style="text-align: center;">BEWEZEN IMPACT</div>
                 <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px;">Cijfers die spreken</h2>
                 <p style="font-size: 20px; color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto;">
                     Concrete resultaten voor toonaangevende merken.
@@ -2148,7 +2186,7 @@
         <section id="contact" class="form-section" style="padding: 200px 80px; background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
             <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 1;">
                 <div style="color: var(--white);">
-                    <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">LATEN WE PRATEN</div>
+                    <div class="section-label" style="color: var(--gold);">LATEN WE PRATEN</div>
                     <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; line-height: 1.1;">Klaar voor maatwerk marketing?</h2>
                     <p style="font-size: 20px; color: rgba(255,255,255,0.7); margin-bottom: 48px; line-height: 1.6;">
                         Boek een oriëntatiegesprek en ontdek hoe we jouw merk naar een hoger niveau tillen met hyper-gepersonaliseerde strategieën.
@@ -2198,29 +2236,31 @@
                         <!-- PROFESSIONELE ANTI-SPAM PROTECTIE -->
                         
                         <!-- Honeypot 1: Checkbox (standaard) -->
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+                        <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Bot verification field">
                         
-                        <!-- Honeypot 2: Fake email field (bots vullen dit in) -->
-                        <input type="text" name="email_confirm" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off">
+                        <!-- FIX: Honeypot 2 met correct label -->
+                        <label for="email_confirm_field" style="position: absolute; left: -9999px;">Email confirmation</label>
+                        <input type="text" id="email_confirm_field" name="email_confirm" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
                         
-                        <!-- Honeypot 3: Fake website field -->
-                        <input type="text" name="website" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off">
+                        <!-- FIX: Honeypot 3 met correct label -->
+                        <label for="website_field" style="position: absolute; left: -9999px;">Website</label>
+                        <input type="text" id="website_field" name="website" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
                         
                         <!-- Timestamp voor submit time check -->
-                        <input type="hidden" name="form_timestamp" id="form_timestamp" value="">
+                        <input type="hidden" name="form_timestamp" id="form_timestamp" value="" aria-hidden="true">
                         
                         <!-- 2-kolom layout voor naam en email -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                             <div>
-                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Naam *</label>
-                                <input type="text" name="name" required 
+                                <label for="name" style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Naam *</label>
+                                <input type="text" name="name" id="name" required 
                                        style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
                                        placeholder="Jouw naam">
                             </div>
                             
                             <div>
-                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Email *</label>
-                                <input type="email" name="email" required 
+                                <label for="email" style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Email *</label>
+                                <input type="email" name="email" id="email" required 
                                        style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
                                        placeholder="jouw@email.be">
                             </div>
@@ -2229,23 +2269,23 @@
                         <!-- 2-kolom layout voor bedrijf en telefoon -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                             <div>
-                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bedrijf</label>
-                                <input type="text" name="company" 
+                                <label for="company" style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bedrijf</label>
+                                <input type="text" name="company" id="company" 
                                        style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
                                        placeholder="Jouw bedrijf">
                             </div>
                             
                             <div>
-                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Telefoon</label>
-                                <input type="tel" name="phone" 
+                                <label for="phone" style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Telefoon</label>
+                                <input type="tel" name="phone" id="phone" 
                                        style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
                                        placeholder="+32 ...">
                             </div>
                         </div>
                         
                         <div style="margin-bottom: 24px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bericht *</label>
-                            <textarea name="message" required rows="4"
+                            <label for="message" style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bericht *</label>
+                            <textarea name="message" id="message" required rows="4"
                                       style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; resize: vertical; min-height: 100px;"
                                       placeholder="Vertel ons over jouw project..."></textarea>
                         </div>
@@ -2269,11 +2309,11 @@
                     Ottergemsesteenweg Zuid 808<br>
                     9000 Gent, België<br><br>
                     <a href="tel:+3293965883" style="color: var(--black); text-decoration: none;">+32 9 396 58 83</a><br>
-                    <a href="/cdn-cgi/l/email-protection#0861666e67486b666178266a6d" style="color: var(--black); text-decoration: none;"><span class="__cf_email__" data-cfemail="7c15121a133c1f12150c521e19"><span class="__cf_email__" data-cfemail="61080f070e21020f08114f0304">[email&#160;protected]</span></span></a>
+                    <a href="mailto:info@cnip.be" style="color: var(--black); text-decoration: none;">info@cnip.be</a>
                 </address>
             </div>
             <div>
-                <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 20px;">Diensten</h4>
+                <div class="footer-heading">Diensten</div>
                 <nav aria-label="Services">
                     <a href="#services" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Video</a>
                     <a href="#services" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Strategy</a>
@@ -2281,16 +2321,16 @@
                 </nav>
             </div>
             <div>
-                <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 20px;">Bedrijf</h4>
+                <div class="footer-heading">Bedrijf</div>
                 <nav aria-label="Company">
                     <a href="#story" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Verhaal</a>
                     <a href="#clients" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Werk</a>
                 </nav>
             </div>
             <div>
-                <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 20px;">Connect</h4>
+                <div class="footer-heading">Connect</div>
                 <nav aria-label="Social media">
-                    <a href="/cdn-cgi/l/email-protection#9bf2f5fdf4dbf8f5f2ebb5f9fe" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
+                    <a href="mailto:info@cnip.be" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
                     <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener noreferrer" style="display: block; font-size: 14px; color: var(--black); text-decoration: none;">LinkedIn</a>
                 </nav>
             </div>
@@ -2300,7 +2340,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Contact Form Styling + Anti-Spam Validatie
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contact-form');
