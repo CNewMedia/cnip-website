@@ -718,7 +718,7 @@
         }
 
         /* ============================================
-           3D TIMELINE CAROUSEL - FIX GRADIENT
+           3D TIMELINE CAROUSEL
         ============================================ */
         .timeline-3d {
             padding: 200px 80px 280px;
@@ -793,7 +793,7 @@
         }
 
         /* ============================================
-           FOUNDER STORY - STYLISCHE FOTO
+           FOUNDER STORY - COMPACTER
         ============================================ */
         .founder-section {
             padding: 200px 80px;
@@ -803,7 +803,7 @@
 
         .founder-grid {
             display: grid;
-            grid-template-columns: 1fr 380px;
+            grid-template-columns: 1fr 320px;
             gap: 100px;
             align-items: center;
         }
@@ -833,7 +833,7 @@
         }
 
         .founder-info {
-            padding: 32px;
+            padding: 24px;
             background: linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 1) 100%);
         }
 
@@ -842,19 +842,19 @@
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         .founder-name {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: var(--white);
         }
 
         .founder-role {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.7;
         }
 
@@ -909,7 +909,7 @@
         }
 
         /* ============================================
-           IMPACT CASES - BETTER LAYOUT
+           IMPACT CASES - COMPACTER VOOR MOBIEL
         ============================================ */
         .impact-section {
             padding: 200px 80px;
@@ -928,7 +928,7 @@
             backdrop-filter: blur(40px);
             border: 2px solid rgba(232, 181, 99, 0.2);
             border-radius: 32px;
-            padding: 60px;
+            padding: 48px;
             transition: all 0.5s;
             cursor: pointer;
             position: relative;
@@ -958,19 +958,13 @@
             box-shadow: 0 50px 120px rgba(232, 181, 99, 0.4);
         }
 
-        /* FIX: Case Study badge in corner */
-        .impact-tag {
-            position: absolute;
-            top: 32px;
-            left: 32px;
-            padding: 10px 20px;
-            background: rgba(232, 181, 99, 0.2);
-            border: 2px solid var(--gold);
-            border-radius: 100px;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
+        /* FIX: Nieuwe layout zonder logo's */
+        .impact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            position: relative;
             z-index: 2;
         }
 
@@ -979,28 +973,49 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 32px;
-            margin-top: 80px;
+            font-weight: 700;
         }
 
-        .impact-logo {
-            height: 50px;
+        .impact-tag {
+            padding: 8px 16px;
+            background: rgba(232, 181, 99, 0.2);
+            border: 2px solid var(--gold);
+            border-radius: 100px;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .impact-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .impact-desc {
+            font-size: 16px;
+            opacity: 0.8;
             margin-bottom: 40px;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
         }
 
         .counter {
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 900;
             color: var(--gold);
             line-height: 1;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             text-shadow: 0 0 40px rgba(232, 181, 99, 0.3);
         }
 
         .counter-label {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             opacity: 0.6;
             letter-spacing: 1.5px;
@@ -1010,12 +1025,14 @@
         .counter-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-top: 60px;
+            gap: 40px;
+            margin-top: 48px;
+            position: relative;
+            z-index: 2;
         }
 
         /* ============================================
-           CERTIFICATIONS - ORIGINELE KLEUREN
+           CERTIFICATIONS
         ============================================ */
         .certs-section {
             padding: 200px 80px;
@@ -1049,7 +1066,6 @@
             box-shadow: 0 20px 60px rgba(232, 181, 99, 0.3);
         }
 
-        /* FIX: Originele kleuren voor logo's */
         .cert-badge img {
             height: 36px;
             filter: none;
@@ -1425,12 +1441,46 @@
                 text-align: center;
             }
 
+            /* FIX: Impact cards compacter op mobiel */
+            .impact-card {
+                padding: 32px 24px;
+            }
+
+            .impact-title {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            .impact-desc {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+
             .counter {
-                font-size: 56px;
+                font-size: 48px;
             }
 
             .counter-grid {
-                gap: 32px;
+                gap: 24px;
+                margin-top: 32px;
+            }
+
+            /* FIX: Founder card kleiner */
+            .founder-card {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .founder-info {
+                padding: 20px;
+            }
+
+            .founder-name {
+                font-size: 16px;
+            }
+
+            .founder-role {
+                font-size: 12px;
             }
         }
     </style>
@@ -1672,13 +1722,12 @@
         </div>
         <div class="impact-grid">
             <div class="impact-card">
-                <span class="impact-tag">Case Study</span>
-                <div class="impact-client">Peter Goossens • Hof van Cleve</div>
-                <img src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" class="impact-logo">
-                <h3 style="font-size: 40px; font-weight: 800; margin-bottom: 24px; line-height: 1.2;">Social Media Revolutie</h3>
-                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 48px;">
-                    Van zero naar benchmark. We veranderden hoe horeca social media doet.
-                </p>
+                <div class="impact-header">
+                    <div class="impact-client">Peter Goossens • Hof van Cleve</div>
+                    <span class="impact-tag">Case Study</span>
+                </div>
+                <h3 class="impact-title">Social Media Revolutie</h3>
+                <p class="impact-desc">Van zero naar benchmark. We veranderden hoe horeca social media doet.</p>
                 <div class="counter-grid">
                     <div>
                         <div class="counter" data-target="50000">0</div>
@@ -1692,13 +1741,12 @@
             </div>
 
             <div class="impact-card">
-                <span class="impact-tag">Case Study</span>
-                <div class="impact-client">Willems Veranda</div>
-                <img src="images/klanten/3-4.png" alt="Willems" class="impact-logo">
-                <h3 style="font-size: 40px; font-weight: 800; margin-bottom: 24px; line-height: 1.2;">SEO Dominantie</h3>
-                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 48px;">
-                    Complete rebranding en SEO strategie. 3× Merk van het Jaar.
-                </p>
+                <div class="impact-header">
+                    <div class="impact-client">Willems Veranda</div>
+                    <span class="impact-tag">Case Study</span>
+                </div>
+                <h3 class="impact-title">SEO Dominantie</h3>
+                <p class="impact-desc">Complete rebranding en SEO strategie. 3× Merk van het Jaar.</p>
                 <div class="counter-grid">
                     <div>
                         <div class="counter" data-target="51">0</div>
@@ -1725,7 +1773,7 @@
                 <span>HubSpot Gold</span>
             </div>
             <div class="cert-badge">
-                <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge">
+                <img src="https://oryen.be/hubfs/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge">
                 <span>Cambridge</span>
             </div>
             <div class="cert-badge">
@@ -1842,10 +1890,21 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // FIX: ROBUUSTE SCROLL TO TOP
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        
+        window.addEventListener('beforeunload', function() {
             window.scrollTo(0, 0);
-            document.documentElement.scrollTop = 0;
-            document.body.scrollTop = 0;
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }, 0);
         });
 
         // Cookie Banner
