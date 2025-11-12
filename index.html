@@ -807,7 +807,7 @@
             border-color: var(--gold);
         }
 
-        /* CRITICAL: Foto met curved bovenkant */
+        /* CRITICAL: Foto - GEEN border-radius, parent doet masking */
         .founder-card img {
             width: 100%;
             height: 380px;
@@ -816,26 +816,13 @@
             display: block;
             margin: 0;
             padding: 0;
-            border-bottom: none;
         }
 
-        /* CRITICAL: Info box met curved ONDERKANT */
+        /* CRITICAL: Info box - GEEN border-radius, parent doet masking */
         .founder-info {
             padding: 28px;
             background: #000000;
             border-top: 3px solid var(--gold);
-            position: relative;
-            border-radius: 0 0 28px 28px;
-        }
-
-        .founder-info::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gold);
         }
 
         .founder-label {
@@ -885,11 +872,11 @@
             cursor: pointer;
             overflow: hidden;
             position: relative;
-            isolation: isolate;
         }
 
         .client-card::before,
         .client-card::after {
+            content: none !important;
             display: none !important;
         }
 
@@ -897,6 +884,7 @@
             transform: translateY(-12px) scale(1.05);
             border-color: var(--gold);
             box-shadow: 0 30px 80px rgba(232, 181, 99, 0.3);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .client-card img {
@@ -1535,11 +1523,6 @@
                 padding: 20px;
                 border-top-width: 2px;
                 background: #000000;
-                border-radius: 0 0 21px 21px;
-            }
-
-            .founder-info::before {
-                height: 2px;
             }
 
             .founder-label {
@@ -1610,7 +1593,6 @@
             
             .founder-info {
                 background: #000000;
-                border-radius: 0 0 18px 18px;
             }
         }
     </style>
