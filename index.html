@@ -259,7 +259,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.01); /* Bijna volledig transparant */
+            /* Fallback voor oude browsers */
+            background: rgba(255,255,255,0.1);
+            /* Modern glasmorphism */
+            background: rgba(255,255,255,0.01) !important;
             backdrop-filter: blur(40px) saturate(200%);
             -webkit-backdrop-filter: blur(40px) saturate(200%);
             border-bottom: 1px solid rgba(232, 181, 99, 0.08);
@@ -267,9 +270,16 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
         }
+        
+        /* Fallback voor browsers zonder backdrop-filter support */
+        @supports not (backdrop-filter: blur(40px)) {
+            header {
+                background: rgba(255,255,255,0.85) !important;
+            }
+        }
 
         header.scrolled {
-            background: rgba(255,255,255,0.96);
+            background: rgba(255,255,255,0.96) !important;
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             box-shadow: 0 4px 30px rgba(0,0,0,0.08);
@@ -2688,8 +2698,14 @@
             }
 
             const header = document.getElementById('header');
+            
+            // Check initial scroll position
+            if (window.pageYOffset > 300) {
+                header.classList.add('scrolled');
+            }
+            
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 100) {
+                if (window.pageYOffset > 300) { // Verhoogd naar 300px
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
