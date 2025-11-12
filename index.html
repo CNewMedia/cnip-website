@@ -225,7 +225,6 @@
             opacity: 0.5;
         }
 
-        /* ✅ WIJZIGING 1: Canvas opacity verhoogd van 0.8 naar 1.0 */
         #webgl-canvas {
             position: fixed;
             top: 0;
@@ -233,7 +232,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 1;
+            opacity: 0.8;
         }
 
         .spotlight {
@@ -616,13 +615,12 @@
         .cert {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 16px;
             padding: 20px 36px;
             background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
             border: 2px solid transparent;
             background-clip: padding-box;
-            border-radius: 20px;
+            border-radius: 100px;
             position: relative;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -655,7 +653,7 @@
         }
 
         .cert img {
-            height: 28px;
+            height: 42px;
             filter: saturate(0.8);
             transition: all 0.4s;
         }
@@ -672,7 +670,32 @@
             color: var(--black);
         }
 
+        /* Featured certs styling - for HubSpot and Cambridge */
+        .cert.featured {
+            padding: 24px 44px;
+            background: linear-gradient(135deg, rgba(232, 181, 99, 0.15) 0%, rgba(255,255,255,1) 100%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 8px 24px rgba(232,181,99,0.25);
+        }
 
+        .cert.featured img {
+            height: 48px;
+        }
+
+        .cert.featured span {
+            font-size: 16px;
+        }
+
+        .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 80px;
+            justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .form-section {
             position: relative;
@@ -996,9 +1019,8 @@
                 grid-template-columns: 1fr !important;
                 gap: 60px !important;
             }
-            /* ✅ WIJZIGING 2: max-width voor foto op tablet van 320px naar 200px */
             .founder-section > div > div:last-child {
-                max-width: 200px;
+                max-width: 320px;
                 margin: 0 auto;
                 position: static !important;
             }
@@ -1167,7 +1189,6 @@
                 margin-bottom: 32px !important;
             }
             
-            /* ✅ WIJZIGING 3: Mobile foto ook 200px */
             .founder-section > div > div:last-child {
                 order: -1;
                 max-width: 200px;
@@ -1305,38 +1326,35 @@
             
             .certs p {
                 font-size: 16px !important;
-                margin-bottom: 40px !important;
             }
             
-            /* Premium partners op mobile */
-            .certs > div:nth-of-type(2) {
-                flex-direction: column !important;
-                align-items: center !important;
-            }
-            
-            .certs > div:nth-of-type(2) .cert {
-                transform: scale(1) !important;
-                padding: 20px 32px !important;
-            }
-            
-            /* Andere certificaten op mobile */
-            .certs > div:nth-of-type(3) {
-                gap: 10px !important;
+            .cert-grid {
+                gap: 12px;
+                justify-content: center;
             }
             
             .cert {
-                padding: 10px 16px !important;
+                padding: 12px 20px;
+            }
+
+            .cert.featured {
+                padding: 16px 24px;
             }
             
             .cert img {
-                height: auto !important;
-                max-height: 20px !important;
-                width: auto !important;
-                object-fit: contain !important;
+                height: 32px;
+            }
+
+            .cert.featured img {
+                height: 36px;
             }
             
             .cert span {
-                font-size: 10px !important;
+                font-size: 11px;
+            }
+
+            .cert.featured span {
+                font-size: 12px;
             }
 
             .form-section {
@@ -1463,15 +1481,27 @@
             }
             
             .cert {
-                padding: 8px 12px !important;
+                padding: 10px 16px !important;
+            }
+
+            .cert.featured {
+                padding: 14px 20px !important;
             }
             
             .cert img {
-                max-height: 18px !important;
+                height: 28px !important;
+            }
+
+            .cert.featured img {
+                height: 32px !important;
             }
             
             .cert span {
-                font-size: 9px !important;
+                font-size: 10px !important;
+            }
+
+            .cert.featured span {
+                font-size: 11px !important;
             }
         }
     </style>
@@ -1604,10 +1634,7 @@
         </section>
 
         <section class="founder-section" style="padding: 200px 80px; max-width: 1400px; margin: 0 auto; position: relative;">
-            <div style="position: absolute; top: 15%; right: -5%; width: 300px; height: 300px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.05; z-index: 0;"></div>
-            
-            <!-- ✅ WIJZIGING 4: Grid column 280px gewijzigd naar 200px -->
-            <div style="display: grid; grid-template-columns: 1fr 200px; gap: 80px; align-items: start; position: relative; z-index: 1;">
+            <div style="display: grid; grid-template-columns: 1fr 220px; gap: 80px; align-items: start; position: relative; z-index: 1;">
                 <div>
                     <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">WAAROM CNIP BESTAAT</div>
                     <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 40px; line-height: 1.1;">De zucht naar vernieuwing</h2>
@@ -1766,60 +1793,50 @@
         </section>
 
         <section class="certs">
-            <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.1;"></div>
-            
             <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; position: relative; z-index: 1;">Certified Expertise</h2>
-            <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 48px;">Erkend en gecertificeerd door toonaangevende instellingen.</p>
+            <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 48px;">Erkend en gecertificeerd door de grootste platforms in digital marketing.</p>
             
-            <!-- TOP TIER - GROOT EN PROMINENT -->
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; max-width: 900px; margin: 0 auto 80px auto;">
-                <div class="cert" style="padding: 50px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
-                    <span style="font-size: 15px; font-weight: 600; text-align: center; color: var(--black);">HubSpot Gold Partner</span>
+            <div class="cert-grid">
+                <!-- Featured certifications - HubSpot & Cambridge first -->
+                <div class="cert featured">
+                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner" loading="lazy" width="48" height="48">
+                    <span>HubSpot Gold</span>
                 </div>
                 
-                <div class="cert" style="padding: 50px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                    <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge University - Digital Transformation" loading="lazy" style="height: 100px; width: auto; object-fit: contain;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 4px;">Cambridge University</div>
-                        <div style="font-size: 13px; color: var(--gold); font-weight: 500;">Digital Transformation</div>
-                    </div>
+                <div class="cert featured">
+                    <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge Digital Readiness" loading="lazy" width="48" height="48">
+                    <span>Digital Readiness</span>
                 </div>
-            </div>
-            
-            <!-- ANDERE CERTIFICATEN - GOED ZICHTBAAR -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
-                <div class="cert" style="padding: 28px 24px; display: flex; flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                    <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Certified" loading="lazy" style="height: 50px; width: auto; object-fit: contain;">
-                    <span style="font-size: 13px; font-weight: 500;">Google Ads</span>
+
+                <!-- Other certifications -->
+                <div class="cert">
+                    <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Certified" loading="lazy" width="42" height="42">
+                    <span>Google Ads</span>
                 </div>
                 
-                <div class="cert" style="padding: 28px 24px; display: flex; flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                    <img src="images/certificaten/GA-certified.png" alt="Google Analytics Certified" loading="lazy" style="height: 50px; width: auto; object-fit: contain;">
-                    <span style="font-size: 13px; font-weight: 500;">Analytics</span>
+                <div class="cert">
+                    <img src="images/certificaten/GA-certified.png" alt="Google Analytics Certified" loading="lazy" width="42" height="42">
+                    <span>Analytics</span>
                 </div>
                 
-                <div class="cert" style="padding: 28px 24px; display: flex; flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                    <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Certified" loading="lazy" style="height: 50px; width: auto; object-fit: contain;">
-                    <span style="font-size: 13px; font-weight: 500;">YouTube</span>
+                <div class="cert">
+                    <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Certified" loading="lazy" width="42" height="42">
+                    <span>YouTube</span>
                 </div>
                 
-                <div class="cert" style="padding: 28px 24px; display: flex; flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                    <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner" loading="lazy" style="height: 50px; width: auto; object-fit: contain;">
-                    <span style="font-size: 13px; font-weight: 500;">Semrush</span>
+                <div class="cert">
+                    <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner" loading="lazy" width="42" height="42">
+                    <span>Semrush</span>
                 </div>
                 
-                <div class="cert" style="padding: 28px 24px; display: flex; flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                    <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner" loading="lazy" style="height: 50px; width: auto; object-fit: contain;">
-                    <span style="font-size: 13px; font-weight: 500;">Leadinfo</span>
+                <div class="cert">
+                    <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner" loading="lazy" width="42" height="42">
+                    <span>Leadinfo</span>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="form-section" style="padding: 200px 80px; background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%); position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -10%; right: -5%; width: 400px; height: 400px; border: 3px solid var(--gold); border-radius: 50%; opacity: 0.05;"></div>
-            <div style="position: absolute; bottom: -15%; left: -8%; width: 500px; height: 500px; border: 3px solid var(--gold); border-radius: 50%; opacity: 0.05;"></div>
-            
             <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 1;">
                 <div style="color: var(--white);">
                     <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">LATEN WE PRATEN</div>
@@ -1877,7 +1894,7 @@
                     Ottergemsesteenweg Zuid 808<br>
                     9000 Gent, België<br><br>
                     <a href="tel:+3293965883" style="color: var(--black); text-decoration: none;">+32 9 396 58 83</a><br>
-                    <a href="/cdn-cgi/l/email-protection#b7ded9d1d8f7d4d9dec799d5d2" style="color: var(--black); text-decoration: none;"><span class="__cf_email__" data-cfemail="9df4f3fbf2ddfef3f4edb3fff8">[email&#160;protected]</span></a>
+                    <a href="mailto:info@cnip.be" style="color: var(--black); text-decoration: none;">info@cnip.be</a>
                 </address>
             </div>
             <div>
@@ -1898,7 +1915,7 @@
             <div>
                 <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 20px;">Connect</h4>
                 <nav aria-label="Social media">
-                    <a href="/cdn-cgi/l/email-protection#fe97909891be9d90978ed09c9b" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
+                    <a href="mailto:info@cnip.be" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
                     <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener noreferrer" style="display: block; font-size: 14px; color: var(--black); text-decoration: none;">LinkedIn</a>
                 </nav>
             </div>
@@ -1908,7 +1925,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" async defer></script>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" async defer></script>
     <script>
         window.addEventListener('load', function() {
             initWebsite();
@@ -2044,7 +2061,6 @@
                 });
             }
 
-            // ✅ WIJZIGING 5 & 6: THREE.JS MET VERHOOGDE OPACITY
             if (typeof THREE !== 'undefined' && !isMobile) {
                 const canvas = document.getElementById('webgl-canvas');
                 const scene = new THREE.Scene();
@@ -2060,15 +2076,15 @@
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
                 const circles = [];
-                const circleCount = 2;  // Slechts 2 cirkels voor maximale elegantie
+                const circleCount = 6;
                 
                 for (let i = 0; i < circleCount; i++) {
                     const thetaStart = Math.PI * 0.25;
                     const thetaLength = Math.PI * 1.5;
                     
                     const geometry = new THREE.RingGeometry(
-                        12 + i * 15,  // Grote start radius met extreme spacing
-                        12.6 + i * 15,  // Grote end radius
+                        5 + i * 2.5,
+                        5.3 + i * 2.5,
                         64,
                         1,
                         thetaStart,
@@ -2078,14 +2094,14 @@
                     const material = new THREE.MeshBasicMaterial({ 
                         color: 0xE8B563,
                         transparent: true,
-                        opacity: 0.25 - (i * 0.02),
+                        opacity: 0.07 - (i * 0.008),
                         side: THREE.DoubleSide
                     });
                     const circle = new THREE.Mesh(geometry, material);
                     
-                    circle.position.z = -30 - (i * 35);  // Extreme diepte
-                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 15);  // Extreme horizontaal
-                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 12);  // Extreme verticaal
+                    circle.position.z = -15 - (i * 8);
+                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 4);
+                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 3);
                     circle.rotation.z = (Math.PI / 6) * i;
                     
                     scene.add(circle);
@@ -2140,9 +2156,8 @@
                         circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
                         circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
                         
-                        // ✅ WIJZIGING: Pulse amplitude verhoogd en aangepast voor 4 cirkels
-                        const pulseSpeed = 0.3 + (index * 0.1);
-                        circle.mesh.material.opacity = 0.28 + Math.sin(time * pulseSpeed) * 0.06;
+                        const pulseSpeed = 0.4 + (index * 0.08);
+                        circle.mesh.material.opacity = 0.07 + Math.sin(time * pulseSpeed) * 0.015;
                     });
                     
                     particlesMesh.rotation.y += 0.0002;
@@ -2322,4 +2337,14 @@
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
                         if (lenis) {
-                            lenis.scrollTo(target, { du
+                            lenis.scrollTo(target, { duration: 1.5 });
+                        } else {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
