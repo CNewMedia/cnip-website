@@ -548,6 +548,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            isolation: isolate;
         }
 
         .service-card:hover {
@@ -573,11 +574,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(232, 181, 99, 0.1) 0%, transparent 100%);
+            background: linear-gradient(135deg, rgba(232, 181, 99, 0.08) 0%, transparent 100%);
             opacity: 0;
             transition: opacity 0.5s;
             border-radius: 24px;
             pointer-events: none;
+            z-index: 0;
         }
 
         .service-card:hover::before {
@@ -771,7 +773,7 @@
             transform: scale(1.5);
         }
 
-        /* FIX: FOUNDER CARD - KLEIN & GECROPPED */
+        /* FIX: FOUNDER CARD - PERFECTE BORDERS EN KLEINE FOTO */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -786,7 +788,7 @@
         }
 
         .founder-card {
-            background: var(--black);
+            background: #000000;
             border: 4px solid var(--gold);
             border-radius: 32px;
             overflow: hidden;
@@ -796,6 +798,7 @@
             box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
             width: 100%;
             max-width: 320px;
+            isolation: isolate;
         }
 
         .founder-card:hover {
@@ -804,19 +807,35 @@
             border-color: var(--gold);
         }
 
-        /* CRITICAL: Foto gecropped en klein */
+        /* CRITICAL: Foto met curved bovenkant */
         .founder-card img {
             width: 100%;
             height: 380px;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 20%;
             display: block;
+            margin: 0;
+            padding: 0;
+            border-bottom: none;
         }
 
+        /* CRITICAL: Info box met curved ONDERKANT */
         .founder-info {
             padding: 28px;
-            background: rgba(10, 10, 10, 1);
+            background: #000000;
             border-top: 3px solid var(--gold);
+            position: relative;
+            border-radius: 0 0 28px 28px;
+        }
+
+        .founder-info::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
         }
 
         .founder-label {
@@ -865,6 +884,13 @@
             transition: all 0.4s;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .client-card::before,
+        .client-card::after {
+            display: none !important;
         }
 
         .client-card:hover {
@@ -880,6 +906,8 @@
             filter: brightness(0) invert(1) grayscale(100%);
             opacity: 0.6;
             transition: all 0.4s;
+            position: relative;
+            z-index: 1;
         }
 
         .client-card:hover img {
@@ -1036,18 +1064,33 @@
             transition: all 0.4s;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .cert-badge::before,
+        .cert-badge::after {
+            display: none !important;
         }
 
         .cert-badge:hover {
             transform: translateY(-8px) scale(1.05);
             border-color: var(--gold);
             box-shadow: 0 20px 60px rgba(232, 181, 99, 0.3);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .cert-badge img {
             height: 36px;
             filter: none;
             opacity: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-badge span {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-section {
@@ -1378,17 +1421,18 @@
             }
             
             .carousel-container { 
-                height: 350px; 
+                height: 350px;
+                padding: 0 20px;
             }
             
             .timeline-card { 
-                width: 280px; 
+                width: 260px;
                 height: 320px; 
-                padding: 28px; 
+                padding: 24px; 
             }
 
             .timeline-card .year {
-                font-size: 60px;
+                font-size: 56px;
             }
             
             .carousel-nav {
@@ -1480,6 +1524,7 @@
                 margin: 0 auto;
                 border-width: 3px;
                 border-radius: 24px;
+                background: #000000;
             }
 
             .founder-card img {
@@ -1489,6 +1534,12 @@
             .founder-info {
                 padding: 20px;
                 border-top-width: 2px;
+                background: #000000;
+                border-radius: 0 0 21px 21px;
+            }
+
+            .founder-info::before {
+                height: 2px;
             }
 
             .founder-label {
@@ -1550,10 +1601,16 @@
 
             .founder-card {
                 max-width: 260px;
+                background: #000000;
             }
 
             .founder-card img {
                 height: 300px;
+            }
+            
+            .founder-info {
+                background: #000000;
+                border-radius: 0 0 18px 18px;
             }
         }
     </style>
@@ -1758,7 +1815,7 @@
                 <img src="https://oryen.be/hubfs/Christophe%20CNIP.png" alt="Christophe Dejaeghere">
                 <div class="founder-info">
                     <div class="founder-label">Christophe Dejaeghere</div>
-                    <div class="founder-name">Founder & CEO</div>
+                    <div class="founder-name">Founder</div>
                     <div class="founder-role">Sinds 2002</div>
                 </div>
             </div>
