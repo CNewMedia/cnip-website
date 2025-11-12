@@ -112,11 +112,9 @@
             --gold-dark: #5F4214;
         }
 
-        html, body {
+        html {
+            scroll-behavior: auto;
             overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -124,6 +122,9 @@
             background: var(--black);
             color: var(--white);
             cursor: none;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
         }
 
         h1, h2, h3, h4, h5, h6, p, div, span {
@@ -169,6 +170,7 @@
         .page-loader.hidden {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         .loader-text {
@@ -532,6 +534,7 @@
             grid-auto-rows: 300px;
         }
 
+        /* FIX: GEEN ACHTERGROND KADERS MEER BIJ HOVER */
         .service-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -539,7 +542,7 @@
             border-radius: 24px;
             padding: 48px;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             display: flex;
@@ -574,6 +577,7 @@
             opacity: 0;
             transition: opacity 0.5s;
             border-radius: 24px;
+            pointer-events: none;
         }
 
         .service-card:hover::before {
@@ -591,11 +595,12 @@
             line-height: 1;
             pointer-events: none;
             transition: all 0.5s;
+            z-index: 0;
         }
 
         .service-card:hover .service-number {
             -webkit-text-stroke: 1px rgba(232, 181, 99, 0.4);
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .service-title {
@@ -615,6 +620,7 @@
             z-index: 2;
         }
 
+        /* FIX: VIDEO OVERLAYS PERFECT GESYNCHRONISEERD */
         .video-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -637,11 +643,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s;
-        }
-
-        .video-side:hover video {
-            transform: scale(1.05);
         }
 
         .video-overlay {
@@ -654,12 +655,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 1;
-            transition: opacity 0.5s;
+            transition: background 0.5s ease;
+            pointer-events: none;
         }
 
         .video-side:hover .video-overlay {
-            opacity: 0.8;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.2) 100%);
         }
 
         .video-content {
@@ -667,6 +668,7 @@
             z-index: 2;
             text-align: center;
             padding: 60px;
+            pointer-events: none;
         }
 
         .video-label {
@@ -697,7 +699,7 @@
         .timeline-3d {
             padding: 200px 80px 320px;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
             background: linear-gradient(180deg, var(--black) 0%, var(--black) 85%, rgba(95, 66, 20, 0.15) 100%);
         }
 
@@ -705,6 +707,7 @@
             perspective: 2000px;
             height: 500px;
             position: relative;
+            overflow: hidden;
         }
 
         .carousel-track {
@@ -715,6 +718,7 @@
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* FIX: TIMELINE CARDS OVERFLOW HIDDEN */
         .timeline-card {
             position: absolute;
             width: 400px;
@@ -727,6 +731,7 @@
             transform-style: preserve-3d;
             transition: all 0.6s;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .timeline-card:hover {
@@ -766,7 +771,7 @@
             transform: scale(1.5);
         }
 
-        /* FIX: PERFECTE FOUNDER CARD - KLEINER & BINNEN KADER */
+        /* FIX: FOUNDER CARD - KLEIN & GECROPPED */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -775,7 +780,7 @@
 
         .founder-grid {
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: 1fr 320px;
             gap: 100px;
             align-items: center;
         }
@@ -783,14 +788,14 @@
         .founder-card {
             background: var(--black);
             border: 4px solid var(--gold);
-            border-radius: 36px;
+            border-radius: 32px;
             overflow: hidden;
             transition: all 0.5s;
             position: sticky;
             top: 120px;
             box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
             width: 100%;
-            max-width: 340px;
+            max-width: 320px;
         }
 
         .founder-card:hover {
@@ -799,15 +804,17 @@
             border-color: var(--gold);
         }
 
+        /* CRITICAL: Foto gecropped en klein */
         .founder-card img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 380px;
             object-fit: cover;
+            object-position: center top;
+            display: block;
         }
 
         .founder-info {
-            padding: 32px;
+            padding: 28px;
             background: rgba(10, 10, 10, 1);
             border-top: 3px solid var(--gold);
         }
@@ -817,19 +824,19 @@
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .founder-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             margin-bottom: 6px;
             color: var(--white);
         }
 
         .founder-role {
-            font-size: 15px;
+            font-size: 14px;
             opacity: 0.7;
         }
 
@@ -857,6 +864,7 @@
             justify-content: center;
             transition: all 0.4s;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .client-card:hover {
@@ -892,6 +900,7 @@
             gap: 40px;
         }
 
+        /* FIX: IMPACT CARDS OVERFLOW HIDDEN */
         .impact-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(40px);
@@ -1026,6 +1035,7 @@
             gap: 16px;
             transition: all 0.4s;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .cert-badge:hover {
@@ -1416,7 +1426,6 @@
                 font-size: 14px;
             }
 
-            /* FIX: Impact cards SUPER COMPACT */
             .impact-card {
                 padding: 24px 18px;
                 border-radius: 24px;
@@ -1461,17 +1470,20 @@
                 font-size: 9px;
             }
 
-            /* FIX: Founder card PERFECT op mobiel */
             .founder-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
             .founder-card {
-                max-width: 300px;
+                max-width: 280px;
                 margin: 0 auto;
                 border-width: 3px;
-                border-radius: 28px;
+                border-radius: 24px;
+            }
+
+            .founder-card img {
+                height: 320px;
             }
 
             .founder-info {
@@ -1493,7 +1505,6 @@
                 font-size: 12px;
             }
 
-            /* FIX: Contact form compacter */
             .contact-form {
                 padding: 40px 28px;
             }
@@ -1519,7 +1530,6 @@
             }
         }
 
-        /* FIX: Extra kleine schermen */
         @media (max-width: 375px) {
             .impact-card {
                 padding: 20px 14px;
@@ -1539,7 +1549,11 @@
             }
 
             .founder-card {
-                max-width: 280px;
+                max-width: 260px;
+            }
+
+            .founder-card img {
+                height: 300px;
             }
         }
     </style>
@@ -1589,7 +1603,7 @@
     <div class="floating-hub">
         <button class="hub-btn" onclick="window.location.hash='#contact'" data-tooltip="Contact">→</button>
         <button class="hub-btn" onclick="window.location.hash='#cases'" data-tooltip="Cases">↑</button>
-        <button class="hub-btn" onclick="scrollToTop()" data-tooltip="Top">⌃</button>
+        <button class="hub-btn" onclick="document.body.scrollIntoView({behavior:'instant',block:'start'})" data-tooltip="Top">⌃</button>
     </div>
 
     <!-- HERO -->
@@ -1949,60 +1963,30 @@
     </footer>
 
     <script>
-        // VERBETERDE SCROLL TO TOP FIX VOOR iPHONE
-        function scrollToTop() {
-            // Force scroll op meerdere manieren
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
+        // ULTIMATE iPhone SCROLL FIX - Direct naar top bij laden
+        (function() {
+            // Disable smooth scroll during initial load
+            document.documentElement.style.scrollBehavior = 'auto';
             
-            // Backup voor iOS
+            // Force scroll to top immediately
+            window.scrollTo(0, 0);
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        }
+            
+            // Disable scroll restoration
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            
+            // Force again after a tiny delay
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }, 0);
+        })();
 
-        // CRITICAL: Forceer scroll naar top bij laden op ALLE devices inclusief iPhone
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        
-        // Meerdere event listeners voor iOS compatibility
-        window.addEventListener('beforeunload', function() {
-            scrollToTop();
-        });
-        
-        window.addEventListener('pagehide', function() {
-            scrollToTop();
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            scrollToTop();
-            
-            // Extra forcering na loader
-            setTimeout(() => {
-                scrollToTop();
-            }, 100);
-            
-            setTimeout(() => {
-                scrollToTop();
-            }, 500);
-            
-            setTimeout(() => {
-                scrollToTop();
-            }, 1600);
-        });
-
-        // Forceer ook na load event
-        window.addEventListener('load', function() {
-            scrollToTop();
-            
-            setTimeout(() => {
-                scrollToTop();
-            }, 100);
-        });
-
+        // Cookie banner
         (function() {
             const cookieBanner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('cookie-accept');
@@ -2046,19 +2030,26 @@
             }
         })();
 
+        // Page loader with forced scroll after
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.querySelector('.page-loader').classList.add('hidden');
-                // Force scroll na loader
-                scrollToTop();
-            }, 1500);
+                // Force scroll again after loader disappears
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }, 100);
+            }, 1200);
         });
 
+        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.pageYOffset > 100);
         });
 
+        // Custom cursor
         const cursor = document.querySelector('.cursor');
         let mouseX = 0, mouseY = 0;
         document.addEventListener('mousemove', (e) => {
@@ -2076,6 +2067,7 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
 
+        // Timeline carousel
         const timelineData = [
             { year: 2002, title: 'De Start', desc: 'Video & internet marketing' },
             { year: 2008, title: 'DSLR Pioneers', desc: 'Cinema-kwaliteit voor bedrijven' },
@@ -2120,6 +2112,7 @@
             rotateCarousel(currentIndex);
         }, 4000);
 
+        // Counter animation
         const counters = document.querySelectorAll('.counter');
         const animateCounter = (counter) => {
             const target = parseInt(counter.getAttribute('data-target'));
@@ -2148,6 +2141,7 @@
 
         counters.forEach(counter => counterObserver.observe(counter));
 
+        // Smooth scroll library
         if (typeof Lenis !== 'undefined') {
             const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
             function raf(time) {
@@ -2157,6 +2151,7 @@
             requestAnimationFrame(raf);
         }
 
+        // GSAP animations
         if (typeof gsap !== 'undefined') {
             gsap.registerPlugin(ScrollTrigger);
             gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((item, i) => {
@@ -2170,6 +2165,7 @@
             });
         }
 
+        // Floating hub hide on scroll down
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
