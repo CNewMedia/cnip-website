@@ -116,6 +116,7 @@
         html, body {
             overflow-x: hidden;
             width: 100%;
+            max-width: 100vw;
         }
 
         body {
@@ -126,7 +127,7 @@
         }
 
         /* ============================================
-           CURSOR
+           CURSOR - Desktop only
         ============================================ */
         .cursor {
             width: 20px;
@@ -143,6 +144,11 @@
         .cursor.hover {
             transform: scale(2.5);
             background: rgba(232, 181, 99, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            body { cursor: default !important; }
+            .cursor { display: none !important; }
         }
 
         /* ============================================
@@ -265,7 +271,7 @@
         }
 
         /* ============================================
-           FLOATING HUB
+           FLOATING HUB - Met tooltips
         ============================================ */
         .floating-hub {
             position: fixed;
@@ -299,14 +305,40 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--black);
             transition: all 0.3s;
+            position: relative;
         }
 
         .hub-btn:hover {
             transform: scale(1.15);
+        }
+
+        /* Tooltip styling */
+        .hub-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: rgba(232, 181, 99, 0.95);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            letter-spacing: 0.5px;
+        }
+
+        .hub-btn:hover::before {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
         }
 
         /* ============================================
@@ -328,8 +360,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(232, 181, 99, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(232, 181, 99, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(232, 181, 99, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(232, 181, 99, 0.05) 0%, transparent 50%);
             animation: bgPulse 20s ease-in-out infinite;
         }
 
@@ -369,6 +401,7 @@
             background: linear-gradient(135deg, var(--white) 0%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             animation: titleReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -390,6 +423,8 @@
             display: inline-flex;
             gap: 24px;
             animation: fadeIn 1s ease-out 0.6s both;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .cta-primary {
@@ -503,6 +538,7 @@
             background: linear-gradient(135deg, var(--white) 0%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .services-bento {
@@ -590,16 +626,6 @@
             font-size: 16px;
             opacity: 0.8;
             line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-stat {
-            font-size: 80px;
-            font-weight: 900;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 12px;
             position: relative;
             z-index: 2;
         }
@@ -955,7 +981,7 @@
         }
 
         /* ============================================
-           CONTACT FORM - MODERN STYLE
+           CONTACT FORM
         ============================================ */
         .contact-section {
             padding: 200px 80px;
@@ -1046,7 +1072,7 @@
         }
 
         /* ============================================
-           COOKIE BANNER - MODERN MINIMAL
+           COOKIE BANNER
         ============================================ */
         .cookie-banner {
             position: fixed;
@@ -1191,7 +1217,7 @@
         }
 
         /* ============================================
-           RESPONSIVE
+           RESPONSIVE FIXES
         ============================================ */
         @media (max-width: 1024px) {
             .header-content { padding: 20px 40px; }
@@ -1199,7 +1225,10 @@
             
             .video-split { grid-template-columns: 1fr; }
             .services-bento { grid-template-columns: repeat(2, 1fr); }
-            .founder-grid, .impact-grid, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+            .founder-grid, .impact-grid, .contact-grid { 
+                grid-template-columns: 1fr; 
+                gap: 60px; 
+            }
             .clients-grid { grid-template-columns: repeat(3, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
             
@@ -1220,19 +1249,77 @@
         }
 
         @media (max-width: 768px) {
-            body { cursor: default; }
-            .cursor { display: none; }
+            /* Reset cursor */
+            body { cursor: default !important; }
+            .cursor { display: none !important; }
             
-            .hero, .services-section, .timeline-3d, .founder-section, 
-            .clients-section, .impact-section, .certs-section, 
-            .contact-section, footer { padding: 100px 24px; }
+            /* Tighter spacing voor mobiel */
+            .hero,
+            .services-section,
+            .timeline-3d,
+            .founder-section,
+            .clients-section,
+            .impact-section,
+            .certs-section,
+            .contact-section,
+            footer {
+                padding: 80px 24px !important;
+            }
             
-            .floating-hub { bottom: 20px; right: 20px; padding: 12px 20px; }
-            .services-bento { grid-template-columns: 1fr; gap: 16px; }
-            .service-card.large, .service-card.wide { grid-column: span 1; grid-row: span 1; }
-            .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            /* Hero title spacing fix */
+            .hero-title {
+                letter-spacing: -2px !important;
+                line-height: 1 !important;
+                margin-bottom: 40px !important;
+            }
+            
+            .hero-subtitle {
+                line-height: 1.4 !important;
+            }
+            
+            /* Section titles responsive spacing */
+            .section-title {
+                letter-spacing: -2px !important;
+                line-height: 1.1 !important;
+                word-break: break-word;
+            }
+            
+            .floating-hub { 
+                bottom: 20px; 
+                right: 20px; 
+                padding: 12px 20px; 
+            }
+            
+            .hub-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            
+            .services-bento { 
+                grid-template-columns: 1fr; 
+                gap: 16px; 
+            }
+            
+            .service-card.large, 
+            .service-card.wide { 
+                grid-column: span 1; 
+                grid-row: span 1; 
+            }
+            
+            .clients-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 16px; 
+            }
+            
             .carousel-container { height: 400px; }
-            .timeline-card { width: 300px; height: 350px; padding: 32px; }
+            
+            .timeline-card { 
+                width: 300px; 
+                height: 350px; 
+                padding: 32px; 
+            }
+            
             .footer-grid { grid-template-columns: 1fr; }
             
             .cookie-banner {
@@ -1247,6 +1334,20 @@
             
             .cookie-text p {
                 font-size: 13px;
+            }
+            
+            /* Fix hero CTA wrapping */
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -1268,12 +1369,12 @@
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h3>Cookies & Privacy</h3>
-                <p>We gebruiken cookies voor analytics om onze website te verbeteren. Jouw keuze wordt gerespecteerd en opgeslagen.</p>
+                <h3>Privacy & Cookies</h3>
+                <p>We gebruiken analytics cookies om deze site te verbeteren. Jouw keuze wordt gerespecteerd.</p>
             </div>
             <div class="cookie-buttons">
-                <button id="cookie-accept" class="cookie-btn cookie-accept">Accepteren</button>
-                <button id="cookie-decline" class="cookie-btn cookie-decline">Weigeren</button>
+                <button id="cookie-accept" class="cookie-btn cookie-accept">Accepteer</button>
+                <button id="cookie-decline" class="cookie-btn cookie-decline">Weiger</button>
             </div>
         </div>
     </div>
@@ -1293,10 +1394,11 @@
         </div>
     </header>
 
+    <!-- Floating Hub met tooltips -->
     <div class="floating-hub">
-        <button class="hub-btn" onclick="window.location.hash='#contact'">→</button>
-        <button class="hub-btn" onclick="window.location.hash='#cases'">↑</button>
-        <button class="hub-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⌃</button>
+        <button class="hub-btn" onclick="window.location.hash='#contact'" data-tooltip="Contact">→</button>
+        <button class="hub-btn" onclick="window.location.hash='#cases'" data-tooltip="Cases">↑</button>
+        <button class="hub-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-tooltip="Top">⌃</button>
     </div>
 
     <!-- HERO -->
@@ -1306,8 +1408,8 @@
             <div class="hero-eyebrow">Boutique Marketing Bureau • Gent • Since 2002</div>
             <h1 class="hero-title">We leiden.<br>We volgen<br>niet.</h1>
             <p class="hero-subtitle">
-                23 jaar first movers. Maandelijks meetbare resultaten.<br>
-                SEO, Social Media, Automation. Zonder bullshit.
+                23 jaar storytelling. Maandelijks meetbare resultaten.<br>
+                Video, SEO, Social. Keihard.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="cta-primary">Start Gesprek</a>
@@ -1319,19 +1421,19 @@
     <!-- MARQUEE -->
     <section class="marquee-section">
         <div class="marquee">
-            <span class="marquee-item">23 JAAR</span>
-            <span class="marquee-divider">/</span>
-            <span class="marquee-item">PIONEERS</span>
-            <span class="marquee-divider">/</span>
-            <span class="marquee-item">FIRST MOVERS</span>
-            <span class="marquee-divider">/</span>
-            <span class="marquee-item">INNOVATORS</span>
+            <span class="marquee-item">STORYTELLERS</span>
             <span class="marquee-divider">/</span>
             <span class="marquee-item">23 JAAR</span>
             <span class="marquee-divider">/</span>
-            <span class="marquee-item">PIONEERS</span>
+            <span class="marquee-item">VIDEO FIRST</span>
             <span class="marquee-divider">/</span>
-            <span class="marquee-item">FIRST MOVERS</span>
+            <span class="marquee-item">SYSTEM FREAKS</span>
+            <span class="marquee-divider">/</span>
+            <span class="marquee-item">STORYTELLERS</span>
+            <span class="marquee-divider">/</span>
+            <span class="marquee-item">23 JAAR</span>
+            <span class="marquee-divider">/</span>
+            <span class="marquee-item">VIDEO FIRST</span>
             <span class="marquee-divider">/</span>
         </div>
     </section>
@@ -1347,10 +1449,9 @@
             <div class="service-card large">
                 <div class="service-number">01</div>
                 <div>
-                    <h3 class="service-title">Cinema-Kwaliteit<br>Video</h3>
-                    <p class="service-desc">DSLR pioneers sinds 2008. Van concept tot color grading. Volledig in-house productie.</p>
+                    <h3 class="service-title">Video First</h3>
+                    <p class="service-desc">Van concept tot color grading. Volledig in-house productie sinds dag één.</p>
                 </div>
-                <div class="service-stat">2008</div>
             </div>
 
             <div class="service-card">
@@ -1394,8 +1495,8 @@
             <div class="video-overlay">
                 <div class="video-content">
                     <div class="video-label">Video Productie</div>
-                    <h2 class="video-title">High-End<br>Commercials</h2>
-                    <p class="video-text">Cinema-kwaliteit sinds 2008. Toen DSLR revolutionair was, waren wij de eersten.</p>
+                    <h2 class="video-title">Cinema-<br>Kwaliteit</h2>
+                    <p class="video-text">Toen DSLR revolutionair was, waren wij de eersten in België.</p>
                 </div>
             </div>
         </div>
@@ -1407,7 +1508,7 @@
                 <div class="video-content">
                     <div class="video-label">Social Media</div>
                     <h2 class="video-title">De<br>Benchmark</h2>
-                    <p class="video-text">We schreven geschiedenis. Onze social media aanpak veranderde de hele sector.</p>
+                    <p class="video-text">We schreven geschiedenis. Onze aanpak veranderde de hele sector.</p>
                 </div>
             </div>
         </div>
@@ -1581,7 +1682,7 @@
                         <div style="width: 60px; height: 60px; background: rgba(232, 181, 99, 0.1); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 900; color: var(--gold); flex-shrink: 0;">02</div>
                         <div style="padding-top: 8px;">
                             <div style="font-weight: 700; font-size: 18px; margin-bottom: 6px;">23 jaar expertise</div>
-                            <div style="font-size: 15px; opacity: 0.7;">First movers die dit echt kunnen</div>
+                            <div style="font-size: 15px; opacity: 0.7;">Storytellers die resultaat leveren</div>
                         </div>
                     </div>
                 </div>
@@ -1655,7 +1756,14 @@
     </footer>
 
     <script>
-        // Cookie Banner Management
+        // Auto scroll to top op page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }, 100);
+        });
+
+        // Cookie Banner
         (function() {
             const cookieBanner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('cookie-accept');
@@ -1730,10 +1838,10 @@
 
         // 3D Timeline
         const timelineData = [
-            { year: 2002, title: 'De Start', desc: 'Video & internet marketing pioneers' },
-            { year: 2008, title: 'DSLR Revolution', desc: 'Eerste in België met cinema-kwaliteit video' },
-            { year: 2012, title: 'Digital Pioneer', desc: 'Baanbrekende social media campagnes' },
-            { year: 2025, title: 'AI-Driven', desc: 'Marketing intelligence op enterprise-niveau' }
+            { year: 2002, title: 'De Start', desc: 'Video & internet marketing' },
+            { year: 2008, title: 'DSLR Pioneers', desc: 'Cinema-kwaliteit voor bedrijven' },
+            { year: 2012, title: 'Social Trendsetters', desc: 'De benchmark voor horeca' },
+            { year: 2025, title: 'AI-Driven', desc: 'Marketing op enterprise-niveau' }
         ];
 
         const carousel = document.getElementById('carousel');
