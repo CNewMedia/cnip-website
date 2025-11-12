@@ -1497,6 +1497,85 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
 
+    <script>
+        // Cursor initialisatie - direct na DOM load
+        (function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            
+            if (isMobile) return;
+
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let followerX = mouseX;
+            let followerY = mouseY;
+
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            const spotlight = document.querySelector('.spotlight');
+
+            const trailLength = 5;
+            const trails = [];
+            
+            for (let i = 0; i < trailLength; i++) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                document.body.appendChild(trail);
+                trails.push({
+                    element: trail,
+                    x: mouseX,
+                    y: mouseY
+                });
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                if (spotlight) {
+                    spotlight.style.transform = `translate(${mouseX - 300}px, ${mouseY - 300}px)`;
+                    spotlight.style.opacity = '1';
+                }
+            }, { passive: true });
+
+            function animateCursor() {
+                if (cursor) {
+                    cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+                }
+                
+                followerX += (mouseX - followerX) * 0.1;
+                followerY += (mouseY - followerY) * 0.1;
+                
+                if (cursorFollower) {
+                    cursorFollower.style.transform = `translate(${followerX - 4}px, ${followerY - 4}px)`;
+                }
+                
+                trails.forEach((trail, index) => {
+                    const factor = 0.08 - (index * 0.012);
+                    trail.x += (mouseX - trail.x) * factor;
+                    trail.y += (mouseY - trail.y) * factor;
+                    trail.element.style.transform = `translate(${trail.x - 2}px, ${trail.y - 2}px)`;
+                    trail.element.style.opacity = 0.4 - (index * 0.07);
+                });
+                
+                requestAnimationFrame(animateCursor);
+            }
+            
+            requestAnimationFrame(animateCursor);
+
+            // Hover effects - wacht op DOM
+            setTimeout(() => {
+                document.querySelectorAll('a, button, .magnetic-button, .client, .service, .cert').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        if (cursor) cursor.classList.add('hover');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        if (cursor) cursor.classList.remove('hover');
+                    });
+                });
+            }, 100);
+        })();
+    </script>
+
     <header id="header">
         <div class="header-content">
             <div class="logo-group">
@@ -1978,60 +2057,7 @@
                 requestAnimationFrame(raf);
             }
 
-            if (!isMobile) {
-                const cursor = document.querySelector('.cursor');
-                const cursorFollower = document.querySelector('.cursor-follower');
-                const spotlight = document.querySelector('.spotlight');
-
-                let mouseX = 0, mouseY = 0;
-                let followerX = 0, followerY = 0;
-
-                const trailLength = 5;
-                const trails = [];
-                
-                for (let i = 0; i < trailLength; i++) {
-                    const trail = document.createElement('div');
-                    trail.className = 'cursor-trail';
-                    document.body.appendChild(trail);
-                    trails.push({
-                        element: trail,
-                        x: 0,
-                        y: 0
-                    });
-                }
-
-                document.addEventListener('mousemove', (e) => {
-                    mouseX = e.clientX;
-                    mouseY = e.clientY;
-                    
-                    spotlight.style.transform = `translate(${mouseX - 300}px, ${mouseY - 300}px)`;
-                    spotlight.style.opacity = '1';
-                }, { passive: true });
-
-                function animateCursor() {
-                    cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
-                    
-                    followerX += (mouseX - followerX) * 0.1;
-                    followerY += (mouseY - followerY) * 0.1;
-                    cursorFollower.style.transform = `translate(${followerX - 4}px, ${followerY - 4}px)`;
-                    
-                    trails.forEach((trail, index) => {
-                        const factor = 0.08 - (index * 0.012);
-                        trail.x += (mouseX - trail.x) * factor;
-                        trail.y += (mouseY - trail.y) * factor;
-                        trail.element.style.transform = `translate(${trail.x - 2}px, ${trail.y - 2}px)`;
-                        trail.element.style.opacity = 0.4 - (index * 0.07);
-                    });
-                    
-                    requestAnimationFrame(animateCursor);
-                }
-                animateCursor();
-
-                document.querySelectorAll('a, button, .magnetic-button, .client, .service').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-                });
-            }
+            // Cursor is nu geïnitialiseerd bij pagina load (zie script boven)
 
             if (typeof THREE !== 'undefined' && !isMobile) {
                 const canvas = document.getElementById('webgl-canvas');
