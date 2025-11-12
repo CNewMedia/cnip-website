@@ -116,6 +116,7 @@
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -765,7 +766,7 @@
             transform: scale(1.5);
         }
 
-        /* FIX: PERFECTE FOUNDER CARD BORDER */
+        /* FIX: PERFECTE FOUNDER CARD - KLEINER & BINNEN KADER */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -774,7 +775,7 @@
 
         .founder-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
+            grid-template-columns: 1fr 340px;
             gap: 100px;
             align-items: center;
         }
@@ -788,6 +789,8 @@
             position: sticky;
             top: 120px;
             box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
+            width: 100%;
+            max-width: 340px;
         }
 
         .founder-card:hover {
@@ -800,6 +803,7 @@
             width: 100%;
             height: auto;
             display: block;
+            object-fit: cover;
         }
 
         .founder-info {
@@ -1280,7 +1284,7 @@
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
             
             .founder-card {
-                max-width: 500px;
+                max-width: 400px;
                 margin: 0 auto;
             }
             
@@ -1464,7 +1468,7 @@
             }
 
             .founder-card {
-                max-width: 280px;
+                max-width: 300px;
                 margin: 0 auto;
                 border-width: 3px;
                 border-radius: 28px;
@@ -1535,7 +1539,7 @@
             }
 
             .founder-card {
-                max-width: 260px;
+                max-width: 280px;
             }
         }
     </style>
@@ -1585,7 +1589,7 @@
     <div class="floating-hub">
         <button class="hub-btn" onclick="window.location.hash='#contact'" data-tooltip="Contact">→</button>
         <button class="hub-btn" onclick="window.location.hash='#cases'" data-tooltip="Cases">↑</button>
-        <button class="hub-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-tooltip="Top">⌃</button>
+        <button class="hub-btn" onclick="scrollToTop()" data-tooltip="Top">⌃</button>
     </div>
 
     <!-- HERO -->
@@ -1945,20 +1949,58 @@
     </footer>
 
     <script>
+        // VERBETERDE SCROLL TO TOP FIX VOOR iPHONE
+        function scrollToTop() {
+            // Force scroll op meerdere manieren
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            
+            // Backup voor iOS
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // CRITICAL: Forceer scroll naar top bij laden op ALLE devices inclusief iPhone
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
         
+        // Meerdere event listeners voor iOS compatibility
         window.addEventListener('beforeunload', function() {
-            window.scrollTo(0, 0);
+            scrollToTop();
+        });
+        
+        window.addEventListener('pagehide', function() {
+            scrollToTop();
         });
         
         document.addEventListener('DOMContentLoaded', function() {
+            scrollToTop();
+            
+            // Extra forcering na loader
             setTimeout(() => {
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-            }, 0);
+                scrollToTop();
+            }, 100);
+            
+            setTimeout(() => {
+                scrollToTop();
+            }, 500);
+            
+            setTimeout(() => {
+                scrollToTop();
+            }, 1600);
+        });
+
+        // Forceer ook na load event
+        window.addEventListener('load', function() {
+            scrollToTop();
+            
+            setTimeout(() => {
+                scrollToTop();
+            }, 100);
         });
 
         (function() {
@@ -2005,7 +2047,11 @@
         })();
 
         window.addEventListener('load', () => {
-            setTimeout(() => document.querySelector('.page-loader').classList.add('hidden'), 1500);
+            setTimeout(() => {
+                document.querySelector('.page-loader').classList.add('hidden');
+                // Force scroll na loader
+                scrollToTop();
+            }, 1500);
         });
 
         window.addEventListener('scroll', () => {
