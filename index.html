@@ -693,7 +693,6 @@
             margin: 0 auto;
         }
 
-        /* FIX: Timeline met meer ruimte voor dots */
         .timeline-3d {
             padding: 200px 80px 320px;
             position: relative;
@@ -766,7 +765,7 @@
             transform: scale(1.5);
         }
 
-        /* FIX: Founder card perfecte border */
+        /* FIX: PERFECTE FOUNDER CARD BORDER */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -775,56 +774,58 @@
 
         .founder-grid {
             display: grid;
-            grid-template-columns: 1fr 360px;
+            grid-template-columns: 1fr 400px;
             gap: 100px;
             align-items: center;
         }
 
         .founder-card {
-            background: rgba(10, 10, 10, 0.95);
-            border: 3px solid var(--gold);
-            border-radius: 40px;
-            padding: 0;
+            background: var(--black);
+            border: 4px solid var(--gold);
+            border-radius: 36px;
+            overflow: hidden;
             transition: all 0.5s;
             position: sticky;
             top: 120px;
-            overflow: hidden;
-            box-shadow: 0 20px 80px rgba(232, 181, 99, 0.2);
+            box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
         }
 
         .founder-card:hover {
-            box-shadow: 0 40px 120px rgba(232, 181, 99, 0.5);
+            box-shadow: 0 40px 120px rgba(232, 181, 99, 0.6);
             transform: translateY(-12px) scale(1.02);
+            border-color: var(--gold);
         }
 
         .founder-card img {
             width: 100%;
+            height: auto;
             display: block;
         }
 
         .founder-info {
-            padding: 28px;
+            padding: 32px;
             background: rgba(10, 10, 10, 1);
+            border-top: 3px solid var(--gold);
         }
 
         .founder-label {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .founder-name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             color: var(--white);
         }
 
         .founder-role {
-            font-size: 14px;
+            font-size: 15px;
             opacity: 0.7;
         }
 
@@ -875,7 +876,6 @@
             transform: scale(1.1);
         }
 
-        /* FIX: Impact cards - geen trillen, fixed width */
         .impact-section {
             padding: 200px 80px;
             max-width: 1600px;
@@ -970,7 +970,6 @@
             z-index: 2;
         }
 
-        /* FIX: Counter met fixed width om trillen te voorkomen */
         .counter {
             font-size: 64px;
             font-weight: 900;
@@ -1265,7 +1264,7 @@
         }
 
         /* ============================================
-           RESPONSIVE - KRITISCH DOORGENOMEN
+           RESPONSIVE - ULTRA KRITISCH
         ============================================ */
         @media (max-width: 1024px) {
             .header-content { padding: 20px 40px; }
@@ -1279,6 +1278,11 @@
             }
             .clients-grid { grid-template-columns: repeat(3, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            
+            .founder-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
             
             .cookie-content {
                 grid-template-columns: 1fr;
@@ -1308,12 +1312,11 @@
             .certs-section,
             .contact-section,
             footer {
-                padding: 80px 24px !important;
+                padding: 80px 20px !important;
             }
             
-            /* FIX: Timeline extra ruimte */
             .timeline-3d {
-                padding: 100px 24px 240px !important;
+                padding: 100px 20px 240px !important;
             }
             
             .hero-title {
@@ -1360,7 +1363,6 @@
                 gap: 16px; 
             }
             
-            /* FIX: Timeline cards kleiner */
             .carousel-container { 
                 height: 350px; 
             }
@@ -1375,7 +1377,6 @@
                 font-size: 60px;
             }
             
-            /* FIX: Carousel nav meer ruimte */
             .carousel-nav {
                 bottom: -100px;
             }
@@ -1407,70 +1408,134 @@
             .cta-secondary {
                 width: 100%;
                 text-align: center;
+                padding: 20px 36px;
+                font-size: 14px;
             }
 
-            /* FIX: Impact cards super compact */
+            /* FIX: Impact cards SUPER COMPACT */
             .impact-card {
-                padding: 28px 20px;
-                max-width: 100%;
+                padding: 24px 18px;
+                border-radius: 24px;
             }
 
             .impact-header {
-                margin-bottom: 24px;
+                margin-bottom: 20px;
                 flex-wrap: wrap;
-                gap: 12px;
+                gap: 10px;
+            }
+
+            .impact-client {
+                font-size: 10px;
+            }
+
+            .impact-tag {
+                padding: 6px 12px;
+                font-size: 8px;
             }
 
             .impact-title {
-                font-size: 24px;
-                margin-bottom: 16px;
+                font-size: 22px;
+                margin-bottom: 14px;
             }
 
             .impact-desc {
                 font-size: 14px;
-                margin-bottom: 28px;
+                margin-bottom: 24px;
             }
 
             .counter {
-                font-size: 40px;
-                min-width: 140px;
+                font-size: 36px;
+                min-width: 120px;
             }
 
             .counter-grid {
-                gap: 20px;
-                margin-top: 28px;
+                gap: 16px;
+                margin-top: 24px;
             }
 
             .counter-label {
-                font-size: 10px;
+                font-size: 9px;
             }
 
-            /* FIX: Founder card perfect op mobiel */
+            /* FIX: Founder card PERFECT op mobiel */
             .founder-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .founder-card {
-                max-width: 300px;
+                max-width: 280px;
                 margin: 0 auto;
-                border-width: 2px;
-                border-radius: 32px;
+                border-width: 3px;
+                border-radius: 28px;
             }
 
             .founder-info {
                 padding: 20px;
+                border-top-width: 2px;
             }
 
             .founder-label {
                 font-size: 9px;
+                margin-bottom: 8px;
             }
 
             .founder-name {
-                font-size: 17px;
+                font-size: 16px;
+                margin-bottom: 4px;
             }
 
             .founder-role {
                 font-size: 12px;
+            }
+
+            /* FIX: Contact form compacter */
+            .contact-form {
+                padding: 40px 28px;
+            }
+
+            .form-group {
+                margin-bottom: 24px;
+            }
+
+            .form-group label {
+                font-size: 11px;
+                margin-bottom: 8px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 14px 18px;
+                font-size: 15px;
+            }
+
+            .submit-btn {
+                padding: 18px;
+                font-size: 14px;
+            }
+        }
+
+        /* FIX: Extra kleine schermen */
+        @media (max-width: 375px) {
+            .impact-card {
+                padding: 20px 14px;
+            }
+
+            .impact-title {
+                font-size: 20px;
+            }
+
+            .impact-desc {
+                font-size: 13px;
+            }
+
+            .counter {
+                font-size: 32px;
+                min-width: 100px;
+            }
+
+            .founder-card {
+                max-width: 260px;
             }
         }
     </style>
