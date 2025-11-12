@@ -1978,68 +1978,40 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" async defer></script>
     <script>
-        window.addEventListener('load', function() {
-            initWebsite();
-            
-            const formSection = document.querySelector('#contact');
-            const hubspotFormContainer = document.getElementById('hubspot-form-container');
-            
-            let formLoaded = false;
-            
-            const loadHubSpotForm = function() {
-                if (formLoaded || !window.hbspt) return;
-                formLoaded = true;
-                
-                hbspt.forms.create({
-                    region: "na1",
-                    portalId: "20714913",
-                    formId: "931e0cb9-1fe2-47d3-8c18-ed19af6395dc",
-                    target: "#hubspot-form-container",
-                    css: "",
-                    onFormReady: function($form) {
-                        console.log('HubSpot form loaded');
-                    }
-                });
-            };
-            
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            if (window.hbspt) {
-                                loadHubSpotForm();
-                            } else {
-                                const checkHbspt = setInterval(() => {
-                                    if (window.hbspt) {
-                                        clearInterval(checkHbspt);
-                                        loadHubSpotForm();
-                                    }
-                                }, 100);
-                                
-                                setTimeout(() => {
-                                    clearInterval(checkHbspt);
-                                    if (!formLoaded) {
-                                        hubspotFormContainer.innerHTML = `
-                                            <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">
-                                                <p style="margin-bottom: 20px;">Formulier laden mislukt. Contacteer ons:</p>
-                                                <a href="mailto:info@cnip.be" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">info@cnip.be</a>
-                                            </div>
-                                        `;
-                                    }
-                                }, 10000);
-                            }
-                            observer.disconnect();
-                        }
+        // HubSpot Formulier Laden - Simpele aanpak
+        function loadHubSpotForm() {
+            if (window.hbspt) {
+                try {
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "20714913",
+                        formId: "931e0cb9-1fe2-47d3-8c18-ed19af6395dc",
+                        target: "#hubspot-form-container",
+                        css: ""
                     });
-                }, {
-                    rootMargin: '300px'
-                });
-                
-                if (formSection) observer.observe(formSection);
+                    console.log('HubSpot form loaded successfully');
+                } catch (error) {
+                    console.error('HubSpot form error:', error);
+                    document.getElementById('hubspot-form-container').innerHTML = 
+                        '<div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7);">' +
+                        '<p style="margin-bottom: 20px;">Formulier laden mislukt. Contacteer ons:</p>' +
+                        '<a href="mailto:info@cnip.be" style="color: #E8B563; text-decoration: none; font-weight: 700; font-size: 18px;">info@cnip.be</a>' +
+                        '</div>';
+                }
+            } else {
+                // Probeer opnieuw over 200ms
+                setTimeout(loadHubSpotForm, 200);
             }
-        });
+        }
 
-        function initWebsite() {
+        // Start laden zodra DOM ready is
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadHubSpotForm);
+        } else {
+            loadHubSpotForm();
+        }
+
+        window.addEventListener('load', function() {
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
             
             let lenis;
