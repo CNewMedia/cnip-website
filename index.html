@@ -2582,19 +2582,45 @@
                 const updateCounter = () => {
                     current += increment;
                     if (current < target) {
-                        counter.textContent = Math.floor(current).toLocaleString();
+                        counter.textContent = Math.floor(current).toLocaleString('nl-BE');
                         requestAnimationFrame(updateCounter);
                     } else {
-                        counter.textContent = target.toLocaleString();
+                        counter.textContent = target.toLocaleString('nl-BE');
                     }
                 };
                 updateCounter();
             };
 
+            // Gebruik IntersectionObserver als fallback (werkt altijd)
+            const observerOptions = {
+                root: null,
+                threshold: 0.3,
+                rootMargin: '0px'
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        if (!counter.classList.contains('counted')) {
+                            counter.classList.add('counted');
+                            animateCounter(counter);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observeer alle counters
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            // Extra: gebruik ook ScrollTrigger als het beschikbaar is (voor betere performance)
             if (typeof ScrollTrigger !== 'undefined') {
                 ScrollTrigger.create({
                     trigger: '.impact-section',
-                    start: 'top 50%',
+                    start: 'top 70%',
+                    once: true,
                     onEnter: () => {
                         counters.forEach(counter => {
                             if (!counter.classList.contains('counted')) {
