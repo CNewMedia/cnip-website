@@ -1313,23 +1313,38 @@
             
             .certs p {
                 font-size: 16px !important;
+                margin-bottom: 40px !important;
             }
             
-            .cert-grid {
-                gap: 12px;
-                justify-content: center;
+            /* Premium partners op mobile */
+            .certs > div:nth-of-type(2) {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            
+            .certs > div:nth-of-type(2) .cert {
+                transform: scale(1) !important;
+                padding: 20px 32px !important;
+            }
+            
+            /* Andere certificaten op mobile */
+            .certs > div:nth-of-type(3) {
+                gap: 10px !important;
             }
             
             .cert {
-                padding: 12px 20px;
+                padding: 10px 16px !important;
             }
             
             .cert img {
-                height: 20px;
+                height: auto !important;
+                max-height: 20px !important;
+                width: auto !important;
+                object-fit: contain !important;
             }
             
             .cert span {
-                font-size: 11px;
+                font-size: 10px !important;
             }
 
             .form-section {
@@ -1456,15 +1471,15 @@
             }
             
             .cert {
-                padding: 10px 16px !important;
+                padding: 8px 12px !important;
             }
             
             .cert img {
-                height: 18px !important;
+                max-height: 18px !important;
             }
             
             .cert span {
-                font-size: 10px !important;
+                font-size: 9px !important;
             }
         }
     </style>
@@ -1762,42 +1777,46 @@
             <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.1;"></div>
             
             <h2 style="font-size: 64px; font-weight: 700; letter-spacing: -2px; margin-bottom: 32px; position: relative; z-index: 1;">Certified Expertise</h2>
-            <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 48px;">Erkend en gecertificeerd door de grootste platforms in digital marketing.</p>
+            <p style="font-size: 20px; color: var(--gray); max-width: 600px; margin-bottom: 64px;">Erkend en gecertificeerd door de grootste platforms in digital marketing.</p>
             
-            <div class="cert-grid">
-                <div class="cert">
-                    <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Certified" loading="lazy" width="28" height="28">
-                    <span>Google Ads</span>
+            <!-- ✅ PREMIUM PARTNERS - Prominent -->
+            <div style="display: flex; gap: 32px; justify-content: center; margin-bottom: 48px; flex-wrap: wrap;">
+                <div class="cert" style="padding: 28px 48px; transform: scale(1.15);">
+                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner" loading="lazy" style="height: 48px; width: auto; object-fit: contain;">
+                    <span style="font-size: 16px;">HubSpot Gold Partner</span>
                 </div>
                 
-                <div class="cert">
-                    <img src="images/certificaten/GA-certified.png" alt="Google Analytics Certified" loading="lazy" width="28" height="28">
-                    <span>Analytics</span>
+                <div class="cert" style="padding: 28px 48px; transform: scale(1.15);">
+                    <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge University" loading="lazy" style="height: 48px; width: auto; object-fit: contain;">
+                    <span style="font-size: 16px;">Cambridge University</span>
+                </div>
+            </div>
+            
+            <!-- ✅ ANDERE CERTIFICATEN - Kleiner en subtiel -->
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; max-width: 900px; margin: 0 auto; opacity: 0.7;">
+                <div class="cert" style="padding: 14px 24px;">
+                    <img src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Certified" loading="lazy" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-size: 12px;">Google Ads</span>
                 </div>
                 
-                <div class="cert">
-                    <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Certified" loading="lazy" width="28" height="28">
-                    <span>YouTube</span>
+                <div class="cert" style="padding: 14px 24px;">
+                    <img src="images/certificaten/GA-certified.png" alt="Google Analytics Certified" loading="lazy" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-size: 12px;">Analytics</span>
                 </div>
                 
-                <div class="cert">
-                    <img src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner" loading="lazy" width="28" height="28">
-                    <span>HubSpot Gold</span>
+                <div class="cert" style="padding: 14px 24px;">
+                    <img src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Certified" loading="lazy" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-size: 12px;">YouTube</span>
                 </div>
                 
-                <div class="cert">
-                    <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner" loading="lazy" width="28" height="28">
-                    <span>Semrush</span>
+                <div class="cert" style="padding: 14px 24px;">
+                    <img src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner" loading="lazy" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-size: 12px;">Semrush</span>
                 </div>
                 
-                <div class="cert">
-                    <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner" loading="lazy" width="28" height="28">
-                    <span>Leadinfo</span>
-                </div>
-                
-                <div class="cert">
-                    <img src="images/certificaten/logo-university-of-cambridge-judge-business-school (1) (1).png" alt="Cambridge University" loading="lazy" width="28" height="28">
-                    <span>Cambridge</span>
+                <div class="cert" style="padding: 14px 24px;">
+                    <img src="images/certificaten/partner-badge-leadinfo (1) (1).png" alt="Leadinfo Partner" loading="lazy" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-size: 12px;">Leadinfo</span>
                 </div>
             </div>
         </section>
@@ -2046,15 +2065,15 @@
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
                 const circles = [];
-                const circleCount = 6;
+                const circleCount = 4;  // ✅ Verminderd van 6 naar 4 cirkels
                 
                 for (let i = 0; i < circleCount; i++) {
                     const thetaStart = Math.PI * 0.25;
                     const thetaLength = Math.PI * 1.5;
                     
                     const geometry = new THREE.RingGeometry(
-                        5 + i * 2.5,
-                        5.3 + i * 2.5,
+                        6 + i * 4,      // ✅ Verhoogd van 2.5 naar 4 voor meer spacing
+                        6.4 + i * 4,    // ✅ Iets dikkere lijnen
                         64,
                         1,
                         thetaStart,
@@ -2065,15 +2084,15 @@
                     const material = new THREE.MeshBasicMaterial({ 
                         color: 0xE8B563,
                         transparent: true,
-                        opacity: 0.25 - (i * 0.02),  // Was: 0.07 - (i * 0.008)
+                        opacity: 0.28 - (i * 0.04),  // ✅ Verhoogd voor minder cirkels
                         side: THREE.DoubleSide
                     });
                     const circle = new THREE.Mesh(geometry, material);
                     
-                    circle.position.z = -15 - (i * 8);
-                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 4);
-                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 3);
-                    circle.rotation.z = (Math.PI / 6) * i;
+                    circle.position.z = -20 - (i * 12);  // ✅ Verhoogd van 8 naar 12 voor meer depth spacing
+                    circle.position.x = (i % 2 === 0 ? 1 : -1) * (i * 6);  // ✅ Verhoogd van 4 naar 6
+                    circle.position.y = (i % 2 === 0 ? -1 : 1) * (i * 5);  // ✅ Verhoogd van 3 naar 5
+                    circle.rotation.z = (Math.PI / 5) * i;  // ✅ Aangepaste rotatie
                     
                     scene.add(circle);
                     circles.push({
@@ -2127,9 +2146,9 @@
                         circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
                         circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
                         
-                        // ✅ WIJZIGING: Pulse amplitude verhoogd voor betere zichtbaarheid
-                        const pulseSpeed = 0.4 + (index * 0.08);
-                        circle.mesh.material.opacity = 0.25 + Math.sin(time * pulseSpeed) * 0.05;  // Was: 0.07 + ... * 0.015
+                        // ✅ WIJZIGING: Pulse amplitude verhoogd en aangepast voor 4 cirkels
+                        const pulseSpeed = 0.3 + (index * 0.1);
+                        circle.mesh.material.opacity = 0.28 + Math.sin(time * pulseSpeed) * 0.06;
                     });
                     
                     particlesMesh.rotation.y += 0.0002;
