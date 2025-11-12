@@ -3,7 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Google Tag Manager - Alleen laden met toestemming -->
+    <script id="gtm-script">
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    if (cookieConsent === 'accepted') {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+    }
+    </script>
+    
+    <!-- PERFORMANCE OPTIMIZATION -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
+    
+    <!-- SEO Meta Tags -->
     <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
+    <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en AI-marketing. 23 jaar expertise. Vertrouwd door premium merken.">
+    <meta name="keywords" content="CNIP, marketing bureau, marketing bureau Gent, video productie, SEO, social media marketing, Google Ads, reclamebureau Gent">
+    
+    <!-- Canonical & Language -->
+    <link rel="canonical" href="https://cnip.be/">
+    <link rel="alternate" hreflang="nl-be" href="https://cnip.be/">
+    <link rel="alternate" hreflang="nl" href="https://cnip.be/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cnip.be/">
+    <meta property="og:title" content="CNIP | Marketing Bureau Gent | Video, SEO & Social Media">
+    <meta property="og:description" content="Boutique marketing bureau in Gent sinds 2002. Specialists in video, SEO en social media. Vertrouwd door Hof van Cleve, BMW, DSM Keukens.">
+    <meta property="og:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="og:site_name" content="CNIP">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cnip.be/">
+    <meta name="twitter:title" content="CNIP | Marketing Bureau Gent">
+    <meta name="twitter:description" content="Boutique marketing bureau in Gent sinds 2002. Video, SEO, social media.">
+    <meta name="twitter:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MarketingAgency",
+      "name": "CNIP",
+      "alternateName": "CNIP Marketing Bureau",
+      "description": "Boutique marketing bureau in Gent sinds 2002. Gespecialiseerd in video productie, SEO, social media en AI-marketing.",
+      "url": "https://cnip.be",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cnip.be/images/logocnip/CNIP logo 25 zwart.png",
+        "width": 200,
+        "height": 60
+      },
+      "telephone": "+3293965883",
+      "email": "info@cnip.be",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ottergemsesteenweg Zuid 808",
+        "addressLocality": "Gent",
+        "postalCode": "9000",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.0259",
+        "longitude": "3.7043"
+      },
+      "foundingDate": "2002",
+      "slogan": "We leiden. We volgen niet.",
+      "sameAs": [
+        "https://linkedin.com/company/cnipagency",
+        "https://www.instagram.com/cnip.be"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47"
+      }
+    }
+    </script>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -54,6 +143,42 @@
         .cursor.hover {
             transform: scale(2.5);
             background: rgba(232, 181, 99, 0.2);
+        }
+
+        /* ============================================
+           PAGE LOADER
+        ============================================ */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s, visibility 0.6s;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-text {
+            font-size: 120px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
         }
 
         /* ============================================
@@ -348,7 +473,7 @@
         }
 
         /* ============================================
-           SERVICES GRID
+           SERVICES BENTO GRID
         ============================================ */
         .services-section {
             padding: 200px 80px;
@@ -480,7 +605,7 @@
         }
 
         /* ============================================
-           VIDEO SHOWCASES (SPLIT SCREEN)
+           VIDEO SPLIT SCREEN
         ============================================ */
         .video-split {
             display: grid;
@@ -562,7 +687,7 @@
         }
 
         /* ============================================
-           3D TIMELINE
+           3D TIMELINE CAROUSEL
         ============================================ */
         .timeline-3d {
             padding: 200px 80px;
@@ -830,7 +955,7 @@
         }
 
         /* ============================================
-           CONTACT
+           CONTACT FORM - MODERN STYLE
         ============================================ */
         .contact-section {
             padding: 200px 80px;
@@ -846,7 +971,7 @@
         }
 
         .contact-form {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(40px);
             border: 1px solid rgba(232, 181, 99, 0.2);
             border-radius: 32px;
@@ -921,6 +1046,103 @@
         }
 
         /* ============================================
+           COOKIE BANNER - MODERN MINIMAL
+        ============================================ */
+        .cookie-banner {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 900px;
+            width: calc(100% - 64px);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(232, 181, 99, 0.3);
+            border-radius: 24px;
+            padding: 32px 40px;
+            z-index: 10001;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateX(-50%) translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cookie-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .cookie-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .cookie-text p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .cookie-accept {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a049 100%);
+            color: var(--black);
+            box-shadow: 0 4px 15px rgba(232, 181, 99, 0.4);
+        }
+
+        .cookie-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 181, 99, 0.6);
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cookie-decline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ============================================
            FOOTER
         ============================================ */
         footer {
@@ -980,6 +1202,21 @@
             .founder-grid, .impact-grid, .contact-grid { grid-template-columns: 1fr; gap: 60px; }
             .clients-grid { grid-template-columns: repeat(3, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            
+            .cookie-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -997,48 +1234,49 @@
             .carousel-container { height: 400px; }
             .timeline-card { width: 300px; height: 350px; padding: 32px; }
             .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--black);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.6s, visibility 0.6s;
-        }
-
-        .page-loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-text {
-            font-size: 120px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.05); }
+            
+            .cookie-banner {
+                bottom: 16px;
+                width: calc(100% - 32px);
+                padding: 24px 28px;
+            }
+            
+            .cookie-text h3 {
+                font-size: 16px;
+            }
+            
+            .cookie-text p {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-text">CNIP</div>
     </div>
 
+    <!-- Cursor -->
     <div class="cursor"></div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3>Cookies & Privacy</h3>
+                <p>We gebruiken cookies voor analytics om onze website te verbeteren. Jouw keuze wordt gerespecteerd en opgeslagen.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-accept">Accepteren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-decline">Weigeren</button>
+            </div>
+        </div>
+    </div>
 
     <header id="header">
         <div class="header-content">
@@ -1417,15 +1655,62 @@
     </footer>
 
     <script>
+        // Cookie Banner Management
+        (function() {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    cookieBanner.style.display = 'block';
+                }, 2000);
+            }
+            
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                hideBanner();
+                loadGTM();
+            });
+            
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                hideBanner();
+            });
+            
+            function hideBanner() {
+                cookieBanner.style.opacity = '0';
+                cookieBanner.style.transform = 'translateX(-50%) translateY(20px)';
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 300);
+            }
+            
+            function loadGTM() {
+                if (!window.dataLayer) {
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+                }
+            }
+        })();
+
+        // Page Loader
         window.addEventListener('load', () => {
             setTimeout(() => document.querySelector('.page-loader').classList.add('hidden'), 1500);
         });
 
+        // Header Scroll
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.pageYOffset > 100);
         });
 
+        // Cursor
         const cursor = document.querySelector('.cursor');
         let mouseX = 0, mouseY = 0;
         document.addEventListener('mousemove', (e) => {
@@ -1443,6 +1728,7 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
 
+        // 3D Timeline
         const timelineData = [
             { year: 2002, title: 'De Start', desc: 'Video & internet marketing pioneers' },
             { year: 2008, title: 'DSLR Revolution', desc: 'Eerste in België met cinema-kwaliteit video' },
@@ -1487,6 +1773,7 @@
             rotateCarousel(currentIndex);
         }, 4000);
 
+        // Counter Animation
         const counters = document.querySelectorAll('.counter');
         const animateCounter = (counter) => {
             const target = parseInt(counter.getAttribute('data-target'));
@@ -1515,6 +1802,7 @@
 
         counters.forEach(counter => counterObserver.observe(counter));
 
+        // Smooth Scroll
         if (typeof Lenis !== 'undefined') {
             const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
             function raf(time) {
@@ -1524,6 +1812,7 @@
             requestAnimationFrame(raf);
         }
 
+        // GSAP Animations
         if (typeof gsap !== 'undefined') {
             gsap.registerPlugin(ScrollTrigger);
             gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((item, i) => {
@@ -1537,6 +1826,7 @@
             });
         }
 
+        // Hide Floating Hub on scroll down
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
