@@ -773,7 +773,7 @@
             transform: scale(1.5);
         }
 
-        /* FIX: FOUNDER CARD - PERFECTE BORDERS EN KLEINE FOTO */
+        /* DRASTISCHE FIX: FOUNDER CARD - ULTRA SIMPEL */
         .founder-section {
             padding: 200px 80px;
             max-width: 1400px;
@@ -788,46 +788,40 @@
         }
 
         .founder-card {
-            background: #000000;
-            border: 4px solid var(--gold);
+            width: 100%;
+            max-width: 320px;
+            background: #0a0a0a;
+            border: 4px solid #E8B563;
             border-radius: 32px;
             overflow: hidden;
+            box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
             transition: all 0.5s;
             position: sticky;
             top: 120px;
-            box-shadow: 0 20px 80px rgba(232, 181, 99, 0.3);
-            width: 100%;
-            max-width: 320px;
-            isolation: isolate;
         }
 
         .founder-card:hover {
-            box-shadow: 0 40px 120px rgba(232, 181, 99, 0.6);
             transform: translateY(-12px) scale(1.02);
-            border-color: var(--gold);
+            box-shadow: 0 40px 120px rgba(232, 181, 99, 0.6);
         }
 
-        /* CRITICAL: Foto - GEEN border-radius, parent doet masking */
         .founder-card img {
             width: 100%;
             height: 380px;
             object-fit: cover;
             object-position: center 20%;
             display: block;
-            margin: 0;
-            padding: 0;
         }
 
-        /* CRITICAL: Info box - GEEN border-radius, parent doet masking */
         .founder-info {
             padding: 28px;
-            background: #000000;
-            border-top: 3px solid var(--gold);
+            background: #0a0a0a;
+            border-top: 3px solid #E8B563;
         }
 
         .founder-label {
             font-size: 11px;
-            color: var(--gold);
+            color: #E8B563;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -838,12 +832,13 @@
             font-size: 20px;
             font-weight: 800;
             margin-bottom: 6px;
-            color: var(--white);
+            color: #ffffff;
         }
 
         .founder-role {
             font-size: 14px;
             opacity: 0.7;
+            color: #ffffff;
         }
 
         .clients-section {
@@ -861,7 +856,6 @@
         .client-card {
             aspect-ratio: 3/2;
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
             border: 1px solid rgba(232, 181, 99, 0.1);
             border-radius: 16px;
             padding: 32px;
@@ -871,18 +865,11 @@
             transition: all 0.4s;
             cursor: pointer;
             overflow: hidden;
-            position: relative;
-        }
-
-        .client-card::before,
-        .client-card::after {
-            content: none !important;
-            display: none !important;
         }
 
         .client-card:hover {
             transform: translateY(-12px) scale(1.05);
-            border-color: var(--gold);
+            border-color: #E8B563;
             box-shadow: 0 30px 80px rgba(232, 181, 99, 0.3);
             background: rgba(255, 255, 255, 0.05);
         }
@@ -894,8 +881,6 @@
             filter: brightness(0) invert(1) grayscale(100%);
             opacity: 0.6;
             transition: all 0.4s;
-            position: relative;
-            z-index: 1;
         }
 
         .client-card:hover img {
@@ -1042,7 +1027,6 @@
 
         .cert-badge {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
             border: 2px solid rgba(232, 181, 99, 0.2);
             border-radius: 100px;
             padding: 18px 32px;
@@ -1052,33 +1036,21 @@
             transition: all 0.4s;
             cursor: pointer;
             overflow: hidden;
-            position: relative;
-            isolation: isolate;
-        }
-
-        .cert-badge::before,
-        .cert-badge::after {
-            display: none !important;
         }
 
         .cert-badge:hover {
             transform: translateY(-8px) scale(1.05);
-            border-color: var(--gold);
+            border-color: #E8B563;
             box-shadow: 0 20px 60px rgba(232, 181, 99, 0.3);
             background: rgba(255, 255, 255, 0.08);
         }
 
         .cert-badge img {
             height: 36px;
-            filter: none;
-            opacity: 1;
-            position: relative;
-            z-index: 1;
         }
 
         .cert-badge span {
-            position: relative;
-            z-index: 1;
+            color: #ffffff;
         }
 
         .contact-section {
@@ -1512,7 +1484,6 @@
                 margin: 0 auto;
                 border-width: 3px;
                 border-radius: 24px;
-                background: #000000;
             }
 
             .founder-card img {
@@ -1522,7 +1493,6 @@
             .founder-info {
                 padding: 20px;
                 border-top-width: 2px;
-                background: #000000;
             }
 
             .founder-label {
@@ -1584,15 +1554,10 @@
 
             .founder-card {
                 max-width: 260px;
-                background: #000000;
             }
 
             .founder-card img {
                 height: 300px;
-            }
-            
-            .founder-info {
-                background: #000000;
             }
         }
     </style>
