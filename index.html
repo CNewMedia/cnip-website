@@ -225,6 +225,7 @@
             opacity: 0.5;
         }
 
+        /* ✅ WIJZIGING 1: Canvas opacity verhoogd van 0.8 naar 1.0 */
         #webgl-canvas {
             position: fixed;
             top: 0;
@@ -232,7 +233,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.8;
+            opacity: 1;
         }
 
         .spotlight {
@@ -1003,8 +1004,9 @@
                 grid-template-columns: 1fr !important;
                 gap: 60px !important;
             }
+            /* ✅ WIJZIGING 2: max-width voor foto op tablet van 320px naar 200px */
             .founder-section > div > div:last-child {
-                max-width: 320px;
+                max-width: 200px;
                 margin: 0 auto;
                 position: static !important;
             }
@@ -1173,9 +1175,10 @@
                 margin-bottom: 32px !important;
             }
             
+            /* ✅ WIJZIGING 3: Mobile foto ook 200px */
             .founder-section > div > div:last-child {
                 order: -1;
-                max-width: 240px;
+                max-width: 200px;
                 margin: 0 auto 40px;
                 position: static !important;
             }
@@ -1596,7 +1599,8 @@
         <section class="founder-section" style="padding: 200px 80px; max-width: 1400px; margin: 0 auto; position: relative;">
             <div style="position: absolute; top: 15%; right: -5%; width: 300px; height: 300px; border: 2px solid var(--gold); border-radius: 50%; opacity: 0.05; z-index: 0;"></div>
             
-            <div style="display: grid; grid-template-columns: 1fr 280px; gap: 80px; align-items: start; position: relative; z-index: 1;">
+            <!-- ✅ WIJZIGING 4: Grid column 280px gewijzigd naar 200px -->
+            <div style="display: grid; grid-template-columns: 1fr 200px; gap: 80px; align-items: start; position: relative; z-index: 1;">
                 <div>
                     <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 24px; font-weight: 700;">WAAROM CNIP BESTAAT</div>
                     <h2 style="font-size: 56px; font-weight: 700; letter-spacing: -2px; margin-bottom: 40px; line-height: 1.1;">De zucht naar vernieuwing</h2>
@@ -1640,10 +1644,6 @@
                 
                 <div style="position: sticky; top: 120px;">
                     <div style="position: relative;">
-                        <!-- Option 1: Original photo - commented out -->
-                        <!-- <img src="https://oryen.be/hubfs/Christophe%20Dejaeghere.png" alt="Christophe Dejaeghere" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" loading="lazy"> -->
-                        
-                        <!-- Option 2: Alternative photo - ACTIVE -->
                         <img src="https://oryen.be/hubfs/Christophe%20CNIP.png" alt="Christophe Dejaeghere" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" loading="lazy">
                         
                         <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.08);">
@@ -2030,6 +2030,7 @@
                 });
             }
 
+            // ✅ WIJZIGING 5 & 6: THREE.JS MET VERHOOGDE OPACITY
             if (typeof THREE !== 'undefined' && !isMobile) {
                 const canvas = document.getElementById('webgl-canvas');
                 const scene = new THREE.Scene();
@@ -2060,10 +2061,11 @@
                         thetaLength
                     );
                     
+                    // ✅ WIJZIGING: Opacity verhoogd van 0.07 naar 0.25 voor betere zichtbaarheid
                     const material = new THREE.MeshBasicMaterial({ 
                         color: 0xE8B563,
                         transparent: true,
-                        opacity: 0.07 - (i * 0.008),
+                        opacity: 0.25 - (i * 0.02),  // Was: 0.07 - (i * 0.008)
                         side: THREE.DoubleSide
                     });
                     const circle = new THREE.Mesh(geometry, material);
@@ -2125,8 +2127,9 @@
                         circle.mesh.rotation.x += (targetRotationX - circle.mesh.rotation.x) * 0.015;
                         circle.mesh.rotation.y += (targetRotationY - circle.mesh.rotation.y) * 0.015;
                         
+                        // ✅ WIJZIGING: Pulse amplitude verhoogd voor betere zichtbaarheid
                         const pulseSpeed = 0.4 + (index * 0.08);
-                        circle.mesh.material.opacity = 0.07 + Math.sin(time * pulseSpeed) * 0.015;
+                        circle.mesh.material.opacity = 0.25 + Math.sin(time * pulseSpeed) * 0.05;  // Was: 0.07 + ... * 0.015
                     });
                     
                     particlesMesh.rotation.y += 0.0002;
