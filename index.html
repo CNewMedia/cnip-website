@@ -259,17 +259,20 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(232, 181, 99, 0.1);
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid rgba(232, 181, 99, 0.05);
             z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         header.scrolled {
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(232, 181, 99, 0.15);
         }
 
         .header-content {
@@ -1514,17 +1517,28 @@
                 padding: 32px 24px !important;
             }
             
+            /* Mobile: formulier velden terug naar 1 kolom */
+            #contact-form > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            
             #hubspot-form-container input[type="text"],
             #hubspot-form-container input[type="email"],
             #hubspot-form-container input[type="tel"],
             #hubspot-form-container textarea,
-            #hubspot-form-container select {
-                padding: 14px 16px !important;
+            #hubspot-form-container select,
+            #contact-form input[type="text"],
+            #contact-form input[type="email"],
+            #contact-form input[type="tel"],
+            #contact-form textarea {
+                padding: 12px 16px !important;
                 font-size: 16px !important;
             }
             
-            #hubspot-form-container .hs-button {
-                padding: 18px 40px !important;
+            #hubspot-form-container .hs-button,
+            #contact-form button[type="submit"] {
+                padding: 16px 40px !important;
                 font-size: 15px !important;
             }
             
@@ -2162,7 +2176,7 @@
                     </div>
                 </div>
                 
-                <div class="form-container" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(232, 181, 99, 0.2); border-radius: 24px; padding: 48px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+                <div class="form-container" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(232, 181, 99, 0.2); border-radius: 20px; padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
                     <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
                         <!-- Web3Forms Access Key -->
                         <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
@@ -2173,43 +2187,49 @@
                         <!-- Honeypot Spam Protection -->
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         
-                        <div style="margin-bottom: 24px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 10px; font-size: 14px;">Naam *</label>
-                            <input type="text" name="name" required 
-                                   style="width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 12px; color: white; font-size: 15px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
-                                   placeholder="Jouw naam">
+                        <!-- 2-kolom layout voor naam en email -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Naam *</label>
+                                <input type="text" name="name" required 
+                                       style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+                                       placeholder="Jouw naam">
+                            </div>
+                            
+                            <div>
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Email *</label>
+                                <input type="email" name="email" required 
+                                       style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+                                       placeholder="jouw@email.be">
+                            </div>
+                        </div>
+                        
+                        <!-- 2-kolom layout voor bedrijf en telefoon -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bedrijf</label>
+                                <input type="text" name="company" 
+                                       style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+                                       placeholder="Jouw bedrijf">
+                            </div>
+                            
+                            <div>
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Telefoon</label>
+                                <input type="tel" name="phone" 
+                                       style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
+                                       placeholder="+32 ...">
+                            </div>
                         </div>
                         
                         <div style="margin-bottom: 24px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 10px; font-size: 14px;">Email *</label>
-                            <input type="email" name="email" required 
-                                   style="width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 12px; color: white; font-size: 15px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
-                                   placeholder="jouw@email.be">
-                        </div>
-                        
-                        <div style="margin-bottom: 24px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 10px; font-size: 14px;">Bedrijf</label>
-                            <input type="text" name="company" 
-                                   style="width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 12px; color: white; font-size: 15px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
-                                   placeholder="Jouw bedrijf">
-                        </div>
-                        
-                        <div style="margin-bottom: 24px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 10px; font-size: 14px;">Telefoon</label>
-                            <input type="tel" name="phone" 
-                                   style="width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 12px; color: white; font-size: 15px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
-                                   placeholder="+32 ...">
-                        </div>
-                        
-                        <div style="margin-bottom: 32px;">
-                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 10px; font-size: 14px;">Bericht *</label>
-                            <textarea name="message" required rows="5"
-                                      style="width: 100%; padding: 16px 20px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 12px; color: white; font-size: 15px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; resize: vertical; min-height: 120px;"
+                            <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 13px;">Bericht *</label>
+                            <textarea name="message" required rows="4"
+                                      style="width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.1); border: 2px solid rgba(232, 181, 99, 0.3); border-radius: 10px; color: white; font-size: 14px; transition: all 0.3s ease; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; resize: vertical; min-height: 100px;"
                                       placeholder="Vertel ons over jouw project..."></textarea>
                         </div>
                         
                         <button type="submit" id="submit-btn"
-                                style="width: 100%; padding: 20px 48px; background: linear-gradient(135deg, #E8B563 0%, #d4a049 100%); color: #0a0a0a; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 30px rgba(232, 181, 99, 0.4); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+                                style="width: 100%; padding: 16px 40px; background: linear-gradient(135deg, #E8B563 0%, #d4a049 100%); color: #0a0a0a; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 10px 30px rgba(232, 181, 99, 0.4); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
                             Verstuur Bericht
                         </button>
                     </form>
@@ -2227,7 +2247,7 @@
                     Ottergemsesteenweg Zuid 808<br>
                     9000 Gent, België<br><br>
                     <a href="tel:+3293965883" style="color: var(--black); text-decoration: none;">+32 9 396 58 83</a><br>
-                    <a href="mailto:info@cnip.be" style="color: var(--black); text-decoration: none;"><span class="__cf_email__" data-cfemail="7c15121a133c1f12150c521e19">info@cnip.be</span></a>
+                    <a href="/cdn-cgi/l/email-protection#0861666e67486b666178266a6d" style="color: var(--black); text-decoration: none;"><span class="__cf_email__" data-cfemail="7c15121a133c1f12150c521e19"><span class="__cf_email__" data-cfemail="61080f070e21020f08114f0304">[email&#160;protected]</span></span></a>
                 </address>
             </div>
             <div>
@@ -2248,7 +2268,7 @@
             <div>
                 <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 20px;">Connect</h4>
                 <nav aria-label="Social media">
-                    <a href="mailto:info@cnip.be" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
+                    <a href="/cdn-cgi/l/email-protection#9bf2f5fdf4dbf8f5f2ebb5f9fe" style="display: block; font-size: 14px; color: var(--black); text-decoration: none; margin-bottom: 12px;">Email</a>
                     <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener noreferrer" style="display: block; font-size: 14px; color: var(--black); text-decoration: none;">LinkedIn</a>
                 </nav>
             </div>
@@ -2258,7 +2278,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Contact Form Styling
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contact-form');
@@ -2266,12 +2286,12 @@
             
             if (form) {
                 // Focus styling voor inputs
-                const inputs = form.querySelectorAll('input:not([type="hidden"]), textarea');
+                const inputs = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]), textarea');
                 inputs.forEach(input => {
                     input.addEventListener('focus', function() {
                         this.style.background = 'rgba(255,255,255,0.15)';
                         this.style.borderColor = '#E8B563';
-                        this.style.boxShadow = '0 0 0 4px rgba(232, 181, 99, 0.15)';
+                        this.style.boxShadow = '0 0 0 3px rgba(232, 181, 99, 0.15)';
                     });
                     
                     input.addEventListener('blur', function() {
@@ -2284,8 +2304,8 @@
                 // Submit button hover
                 if (submitBtn) {
                     submitBtn.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-3px)';
-                        this.style.boxShadow = '0 15px 40px rgba(232, 181, 99, 0.5)';
+                        this.style.transform = 'translateY(-2px)';
+                        this.style.boxShadow = '0 12px 35px rgba(232, 181, 99, 0.5)';
                         this.style.background = 'linear-gradient(135deg, #f0c270 0%, #e0b05a 100%)';
                     });
                     
@@ -2601,14 +2621,4 @@
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
                         if (lenis) {
-                            lenis.scrollTo(target, { duration: 2 });
-                        } else {
-                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                            lenis.scrollTo(target, { du
