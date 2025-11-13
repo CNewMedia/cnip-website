@@ -71,7 +71,7 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563}
+    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
     html{overflow-x:hidden}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 
@@ -114,7 +114,6 @@
     .section-title{font-size:clamp(40px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .services-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:280px}
 
-    /* FIX grijze randen: consistent hover + glow */
     .service-card{
       background:rgba(255,255,255,.035);
       border:1px solid rgba(232,181,99,.16);
@@ -136,7 +135,6 @@
     .service-title{font-size:26px;font-weight:800;margin-bottom:10px}
     .service-desc{opacity:.88;line-height:1.55}
 
-    /* VIDEO: posters + metadata only for faster Safari */
     .video-split{display:grid;grid-template-columns:1fr 1fr;min-height:86vh}
     .video-side{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
     .video-side video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -146,7 +144,6 @@
     .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
     .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
 
-    /* TIMELINE 3D: klik + hover-tilt */
     .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative}
     .carousel-container{perspective:1500px;height:460px;position:relative}
     .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
@@ -157,24 +154,24 @@
     .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,181,99,.35);cursor:pointer;transition:transform .2s, background .2s}
     .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
 
-    /* FOUNDER (Safari-safe) */
+    /* FOUNDER — kleiner en verfijnd */
     .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .founder-grid{display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:center}
-    .founder-card{width:100%;max-width:320px;position:sticky;top:100px;background:#0a0a0a;border:4px solid var(--gold);border-radius:24px;box-shadow:0 18px 70px rgba(232,181,99,.26)}
-    .founder-media{width:100%;aspect-ratio:320/380;border-radius:18px 18px 0 0;overflow:hidden;background:#0b0b0b}
+    .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
+    .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
+    .founder-media{width:100%;aspect-ratio:13/16;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
     .founder-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
-    .founder-info{padding:22px;border-top:3px solid var(--gold)}
+    .founder-info{padding:18px;border-top:2px solid var(--gold)}
     .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
-    .founder-name{font-size:18px;font-weight:800;margin-bottom:4px}
-    .founder-role{font-size:13px;opacity:.75}
+    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
+    .founder-role{font-size:12px;opacity:.75}
 
-    /* CLIENTS: sterk hover “light up” */
+    /* CLIENTS — geen kleurverandering, wel subtiele zoom */
     .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
     .client-card{aspect-ratio:3/2;padding:24px;background:rgba(255,255,255,.05);border:1px solid rgba(232,181,99,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
-    .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.6;transition:filter .25s, opacity .25s, transform .25s}
-    .client-card:hover{transform:translateY(-8px);border-color:var(--gold);background:rgba(255,255,255,.08);box-shadow:0 16px 60px rgba(232,181,99,.25)}
-    .client-card:hover img{filter:brightness(1) invert(0) grayscale(0);opacity:1;transform:scale(1.06)}
+    .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.8;transition:transform .25s}
+    .client-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.07);box-shadow:0 14px 50px rgba(232,181,99,.22)}
+    .client-card:hover img{transform:scale(1.06)} /* kleur blijft identiek */
 
     /* IMPACT */
     .impact-section{padding:140px 80px;max-width:1600px;margin:0 auto}
@@ -190,15 +187,33 @@
     .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
     .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
 
-    /* CERTS: “light up” sterkere hover */
+    /* CERTS — grotere logo’s, zwart tekst op hover, classy highlight */
     .certs-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .cert-grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-    .cert-badge{padding:14px 24px;border-radius:999px;background:rgba(255,255,255,.05);border:2px solid rgba(232,181,99,.22);display:flex;align-items:center;gap:12px;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
-    .cert-badge img{height:30px;filter:grayscale(1) brightness(.9);opacity:.8;transition:filter .25s, opacity .25s, transform .25s}
-    .cert-badge span{transition:color .25s}
-    .cert-badge:hover{transform:translateY(-6px) scale(1.04);border-color:var(--gold);background:rgba(232,181,99,.12);box-shadow:0 16px 60px rgba(232,181,99,.28)}
-    .cert-badge:hover img{filter:grayscale(0) brightness(1.1);opacity:1;transform:scale(1.05)}
-    .cert-badge:hover span{color:#0a0a0a}
+    .cert-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+    .cert-badge{
+      padding:16px 26px;border-radius:999px;background:rgba(255,255,255,.06);
+      border:2px solid rgba(232,181,99,.24);
+      display:flex;align-items:center;gap:14px;
+      transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
+      will-change:transform;
+      position:relative; overflow:hidden;
+    }
+    .cert-badge::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
+      transform:translateX(-120%); transition:transform .5s ease;
+    }
+    .cert-badge:hover::after{ transform:translateX(120%) }
+    .cert-badge img{height:42px;opacity:.95;transition:transform .25s}
+    .cert-badge span{color:#ffffff;transition:color .25s}
+    .cert-badge:hover{
+      transform:translateY(-6px) scale(1.03);
+      border-color:var(--gold);
+      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
+      box-shadow:0 18px 60px rgba(232,181,99,.28);
+    }
+    .cert-badge:hover img{transform:scale(1.08)}
+    .cert-badge:hover span{color:#0a0a0a} /* wit -> zwart */
 
     /* CONTACT */
     .contact-section{padding:140px 80px;max-width:1400px;margin:0 auto}
@@ -211,7 +226,6 @@
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
     .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
 
-    /* COOKIES */
     .cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
     .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
     .cookie-buttons{display:flex;gap:10px}
@@ -219,7 +233,6 @@
     .cookie-accept{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
     .cookie-decline{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff}
 
-    /* FOOTER */
     footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 80px 36px;max-width:1600px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:36px}
     .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
@@ -227,7 +240,6 @@
     .footer-grid a:hover{color:var(--gold)}
     .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
 
-    /* RESPONSIVE */
     @media (max-width:1024px){
       .header-content{padding:18px 40px}
       nav{display:none}
@@ -244,8 +256,10 @@
       .clients-grid{grid-template-columns:repeat(2,1fr)}
       .carousel-container{height:340px}
       .timeline-card{width:260px;height:320px;padding:22px}
-      .founder-card{max-width:280px;margin:0 auto}
-      .founder-media{aspect-ratio:280/320;border-radius:16px 16px 0 0}
+      .founder-grid{grid-template-columns:1fr;gap:36px}
+      .founder-card{max-width:240px;margin:0 auto}
+      .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
+      .cert-badge img{height:38px}
     }
     @media (prefers-reduced-motion:reduce){
       *{animation:none!important;transition:none!important}
@@ -258,7 +272,6 @@
 
   <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
-  <!-- Cookies -->
   <div class="cookie-banner" id="cookie-banner">
     <div class="cookie-content">
       <div class="cookie-text">
@@ -290,7 +303,6 @@
     <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'instant'})">⌃</button>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -304,7 +316,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
   <section class="marquee-section">
     <div class="marquee">
       <span class="marquee-item">STORYTELLERS</span><span class="marquee-divider">/</span>
@@ -317,7 +328,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="services-section">
     <div class="section-header">
       <div class="section-eyebrow">Onze Expertise</div>
@@ -359,7 +369,6 @@
     </div>
   </section>
 
-  <!-- VIDEO SPLIT -->
   <section class="video-split">
     <div class="video-side">
       <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-dsm.jpg">
@@ -374,7 +383,6 @@
       </div>
     </div>
     <div class="video-side">
-      <!-- MOV blijft zwaar; preload=metadata + poster versnelt Safari -->
       <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-hvc24.jpg">
         <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/quicktime">
       </video>
@@ -388,7 +396,6 @@
     </div>
   </section>
 
-  <!-- TIMELINE -->
   <section id="story" class="timeline-3d">
     <div class="section-header">
       <div class="section-eyebrow">Onze Journey</div>
@@ -400,7 +407,6 @@
     <div class="carousel-nav" id="carouselNav"></div>
   </section>
 
-  <!-- FOUNDER -->
   <section class="founder-section">
     <div class="founder-grid">
       <div>
@@ -416,7 +422,7 @@
 
       <div class="founder-card">
         <div class="founder-media">
-          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="640" height="760" loading="eager" decoding="auto" fetchpriority="high">
+          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="520" height="640" loading="eager" decoding="auto" fetchpriority="high">
         </div>
         <div class="founder-info">
           <div class="founder-label">Christophe Dejaeghere</div>
@@ -427,7 +433,6 @@
     </div>
   </section>
 
-  <!-- CLIENTS -->
   <section id="clients" class="clients-section">
     <div class="section-header">
       <div class="section-eyebrow">Sociale Proof</div>
@@ -449,7 +454,6 @@
     </div>
   </section>
 
-  <!-- IMPACT -->
   <section id="cases" class="impact-section">
     <div class="section-header">
       <div class="section-eyebrow">Bewezen Resultaten</div>
@@ -496,7 +500,6 @@
     </div>
   </section>
 
-  <!-- CERTS -->
   <section class="certs-section">
     <div class="section-header">
       <div class="section-eyebrow">Validatie</div>
@@ -512,7 +515,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <div class="contact-grid">
       <div>
@@ -555,7 +557,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -592,14 +593,12 @@
   </footer>
 
   <script>
-    /* Fast initial paint (esp. Safari) */
     (function(){
       document.documentElement.style.scrollBehavior='auto';
       if('scrollRestoration' in history){history.scrollRestoration='manual'}
       window.addEventListener('load',()=>{ setTimeout(()=>{ const pl=document.querySelector('.page-loader'); if(pl) pl.classList.add('hidden'); },500) });
     })();
 
-    /* Cookie banner */
     (function(){
       const banner=document.getElementById('cookie-banner');
       const accept=document.getElementById('cookie-accept');
@@ -611,14 +610,12 @@
       if(decline) decline.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','declined')}catch(e){}; if(banner) banner.style.display='none' });
     })();
 
-    /* Header style on scroll */
     window.addEventListener('scroll',()=>{ 
       const h=document.getElementById('header'); 
       if(!h) return; 
       h.classList.toggle('scrolled', window.pageYOffset>100);
     });
 
-    /* Timeline carousel: click focus + hover tilt + gentle mouse parallax */
     const timelineData=[
       {year:2002,title:'De Start',desc:'Video & internet marketing'},
       {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven'},
@@ -635,8 +632,8 @@
       timelineData.forEach((it,i)=>{
         const card=document.createElement('div'); card.className='timeline-card';
         card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
-        card.addEventListener('click',()=>rotateTo(i));   // klik = naar voren
-        card.addEventListener('mousemove', (e)=>tiltCard(card,e)); // hover tilt
+        card.addEventListener('click',()=>rotateTo(i));
+        card.addEventListener('mousemove', (e)=>tiltCard(card,e));
         card.addEventListener('mouseleave', ()=>card.style.transform = card.dataset.baseTransform);
         carousel.appendChild(card);
 
@@ -660,7 +657,6 @@
         [...document.querySelectorAll('.carousel-dot')].forEach((d,k)=>d.classList.toggle('active',k===n));
       }
 
-      // zachte parallax op container hover
       container.addEventListener('mousemove',(e)=>{
         const r=container.getBoundingClientRect();
         const x=(e.clientX-r.left)/r.width-0.5;
@@ -678,11 +674,9 @@
         card.style.transform=card.dataset.baseTransform+` rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
       }
 
-      // auto-rotate
       setInterval(()=>{ idx=(idx+1)%timelineData.length; rotateTo(idx); }, 4200);
     })();
 
-    /* Counters */
     (function(){
       const cs=document.querySelectorAll('.counter');
       const io=new IntersectionObserver(es=>{
@@ -701,7 +695,6 @@
       cs.forEach(c=>io.observe(c));
     })();
 
-    /* Light scroll animations (kept modest for Safari perf) */
     window.addEventListener('load', ()=>{
       if(typeof gsap!=='undefined'){
         gsap.registerPlugin(ScrollTrigger);
@@ -711,11 +704,9 @@
       }
     });
 
-    /* Safari-specific: disable heavy smooth scroll libs (none used), lower shadow cost via UA */
     (function(){
       const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if(isSafari){
-        // Reduce shadow on Safari to speed up paint
         const style=document.createElement('style');
         style.textContent=`
           .client-card:hover{box-shadow:0 12px 40px rgba(232,181,99,.2)}
