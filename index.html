@@ -23,6 +23,10 @@
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
   <link rel="preload" as="image" href="/images/christophecnip.png" imagesrcset="/images/christophecnip.png 1x">
+  
+  <!-- Preload GSAP voor snellere animaties -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+  <link rel="modulepreload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
 
   <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
   <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en AI-marketing. 23 jaar expertise. Vertrouwd door premium merken.">
@@ -71,7 +75,17 @@
     *{margin:0;padding:0;box-sizing:border-box;min-width:0}
     :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
     html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;position:relative;width:100%}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Roboto,Arial,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      overflow-x:hidden;
+      position:relative;
+      width:100%;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
     img,video,svg,canvas,iframe{max-width:100%;height:auto;display:block}
 
     .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
@@ -514,10 +528,35 @@
       .cookie-btn{flex:1}
     }
     
+    /* Safari-specifieke optimalisaties */
+    @supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+      .timeline-card-3d{
+        -webkit-backdrop-filter:blur(30px) saturate(180%);
+      }
+      .contact-form{
+        -webkit-backdrop-filter:blur(24px);
+      }
+      header{
+        -webkit-backdrop-filter:blur(24px);
+      }
+    }
+    
+    /* Force GPU acceleration voor Safari */
+    .timeline-card-3d,
+    .service-card,
+    .client-card,
+    .impact-card,
+    .cert-badge{
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0);
+      -webkit-font-smoothing:antialiased;
+    }
+    
     @media (prefers-reduced-motion:reduce){
       *,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
       .carousel-3d-container{transition:none!important}
       .timeline-card-3d{transition:none!important}
+      .page-loader .loader-text{animation:none!important}
     }
   </style>
 </head>
@@ -813,16 +852,43 @@
   </footer>
 
   <script>
-    // Page loader
+    // Ultra-fast page loader met Safari optimalisatie
     (function(){
-      const hide=()=>{
-        const pl=document.querySelector('.page-loader'); 
-        if(pl) pl.classList.add('hidden')
+      const pl = document.querySelector('.page-loader');
+      let hidden = false;
+      
+      const hide = () => {
+        if(hidden || !pl) return;
+        hidden = true;
+        pl.classList.add('hidden');
+        // Forceer reflow voor Safari
+        void pl.offsetHeight;
+        setTimeout(() => {
+          if(pl && pl.parentNode) {
+            pl.style.display = 'none';
+          }
+        }, 600);
       };
-      if(document.readyState!=='loading') setTimeout(hide,150);
-      window.addEventListener('load',hide);
-      document.addEventListener('DOMContentLoaded',hide);
-      setTimeout(hide,3000);
+      
+      // Multiple triggers voor betrouwbaarheid
+      if(document.readyState === 'complete') {
+        setTimeout(hide, 100);
+      } else if(document.readyState === 'interactive') {
+        setTimeout(hide, 300);
+      }
+      
+      window.addEventListener('load', () => setTimeout(hide, 100));
+      document.addEventListener('DOMContentLoaded', () => setTimeout(hide, 200));
+      
+      // Fallback voor trage netwerken
+      setTimeout(hide, 2000);
+      
+      // Safari specifieke check
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      if(isSafari) {
+        // Safari heeft soms vertraging, forceer snellere hide
+        setTimeout(hide, 800);
+      }
     })();
 
     // Cookie banner
@@ -850,7 +916,7 @@
       h.classList.toggle('scrolled', window.pageYOffset>100);
     }, {passive: true});
 
-    // ULTRA-MODERNE 3D CAROUSEL - Gesture Based, No Buttons
+      // ULTRA-MODERNE 3D CAROUSEL - Gesture Based, Safari Optimized
     (function(){
       const timelineData=[
         {year:2002,title:'De Start',desc:'Video & internet marketing pionieren in een wereld die nog moet ontwaken.'},
@@ -871,6 +937,9 @@
       let currentX = 0;
       let rotation = 0;
       const totalCards = timelineData.length;
+      
+      // Safari detection
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
       // Maak de cards
       timelineData.forEach((item, index) => {
@@ -881,6 +950,11 @@
           <h3>${item.title}</h3>
           <p>${item.desc}</p>
         `;
+        // Safari GPU acceleration
+        if(isSafari) {
+          card.style.webkitTransform = 'translateZ(0)';
+          card.style.willChange = 'transform, opacity';
+        }
         container.appendChild(card);
 
         // Maak progress indicators
@@ -917,19 +991,20 @@
           
           const rotateY = -(offset * angle + rotation);
 
-          const transformStyle = `
-            translate(-50%, -50%) 
-            translate3d(${x}px, 0, ${z}px) 
-            rotateY(${rotateY}deg) 
-            scale(${scale})
-          `;
+          const transformStyle = `translate(-50%, -50%) translate3d(${x}px, 0, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
 
           if(animated) {
             card.style.transform = transformStyle;
+            if(isSafari) card.style.webkitTransform = transformStyle;
           } else {
             card.style.transition = 'none';
             card.style.transform = transformStyle;
-            setTimeout(() => card.style.transition = '', 0);
+            if(isSafari) card.style.webkitTransform = transformStyle;
+            // Force reflow
+            void card.offsetHeight;
+            setTimeout(() => {
+              card.style.transition = '';
+            }, 0);
           }
 
           card.style.opacity = opacity;
@@ -989,7 +1064,7 @@
         if(!isDragging) return;
         currentX = e.clientX;
         const diff = currentX - startX;
-        rotation = diff * 0.2; // Sensitivity
+        rotation = diff * 0.2;
         updateCarousel(false);
       });
 
@@ -1052,19 +1127,21 @@
         if(e.key === 'ArrowRight') nextSlide();
       });
 
-      // Mouse wheel navigation (modern touch)
-      let wheelTimeout;
-      container.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        clearTimeout(wheelTimeout);
-        wheelTimeout = setTimeout(() => {
-          if(e.deltaY > 0) {
-            nextSlide();
-          } else if(e.deltaY < 0) {
-            prevSlide();
-          }
-        }, 50);
-      }, {passive: false});
+      // Mouse wheel navigation - disabled op Safari voor betere performance
+      if(!isSafari) {
+        let wheelTimeout;
+        container.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            if(e.deltaY > 0) {
+              nextSlide();
+            } else if(e.deltaY < 0) {
+              prevSlide();
+            }
+          }, 50);
+        }, {passive: false});
+      }
 
       // Auto-rotate met pauze op interactie
       let autoRotate = setInterval(nextSlide, 6000);
@@ -1084,18 +1161,25 @@
       container.addEventListener('mouseleave', resumeAuto);
       container.addEventListener('touchstart', pauseAuto, {passive: true});
 
-      // Responsive resize
+      // Responsive resize met debounce
       let resizeTimeout;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
           updateCarousel(false);
-        }, 100);
-      });
+        }, 150);
+      }, {passive: true});
 
-      // Initial render
-      updateCarousel(false);
-      setTimeout(() => updateCarousel(true), 100);
+      // Initial render - gefaseerd voor Safari
+      if(isSafari) {
+        setTimeout(() => {
+          updateCarousel(false);
+          setTimeout(() => updateCarousel(true), 100);
+        }, 100);
+      } else {
+        updateCarousel(false);
+        setTimeout(() => updateCarousel(true), 50);
+      }
     })();
 
     // Counter animations
