@@ -4,91 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <script>
-    (function(){
-      try{
-        const c = localStorage.getItem('cookieConsent');
-        if (c === 'accepted') {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-M3QJK6VR');
-        }
-      }catch(e){}
-    })();
-  </script>
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
-  <link rel="preload" as="image" href="/images/christophecnip.png" imagesrcset="/images/christophecnip.png 1x">
-  
-  <!-- Preload GSAP voor snellere animaties -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
-  <link rel="modulepreload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
-
   <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
-  <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en AI-marketing. 23 jaar expertise. Vertrouwd door premium merken.">
-  <link rel="canonical" href="https://cnip.be/">
-  <link rel="alternate" hreflang="nl-be" href="https://cnip.be/">
-  <link rel="alternate" hreflang="nl" href="https://cnip.be/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cnip.be/">
-  <meta property="og:title" content="CNIP | Marketing Bureau Gent | Video, SEO & Social Media">
-  <meta property="og:description" content="Boutique marketing bureau in Gent sinds 2002. Specialists in video, SEO en social media. Vertrouwd door Hof van Cleve, BMW, DSM Keukens.">
-  <meta property="og:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
-  <meta property="og:locale" content="nl_BE">
-  <meta property="og:site_name" content="CNIP">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://cnip.be/">
-  <meta name="twitter:title" content="CNIP | Marketing Bureau Gent">
-  <meta name="twitter:description" content="Boutique marketing bureau in Gent sinds 2002. Video, SEO, social media.">
-  <meta name="twitter:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MarketingAgency",
-    "name":"CNIP",
-    "alternateName":"CNIP Marketing Bureau",
-    "description":"Boutique marketing bureau in Gent sinds 2002. Gespecialiseerd in video productie, SEO, social media en AI-marketing.",
-    "url":"https://cnip.be",
-    "logo":{"@type":"ImageObject","url":"https://cnip.be/images/logocnip/CNIP%20logo%2025%20zwart.png","width":200,"height":60},
-    "telephone":"+3293965883",
-    "email":"info@cnip.be",
-    "address":{"@type":"PostalAddress","streetAddress":"Ottergemsesteenweg Zuid 808","addressLocality":"Gent","postalCode":"9000","addressCountry":"BE"},
-    "geo":{"@type":"GeoCoordinates","latitude":"51.0259","longitude":"3.7043"},
-    "foundingDate":"2002",
-    "slogan":"We leiden. We volgen niet.",
-    "sameAs":["https://linkedin.com/company/cnipagency","https://www.instagram.com/cnip.be"],
-    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}
-  }
-  </script>
-
+  <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Creatief, cijfers, kwaliteit. 23 jaar expertise.">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;min-width:0}
-    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
-    html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth}
+    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563}
+    html{-webkit-text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth}
     body{
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Roboto,Arial,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
       background:var(--black);
       color:var(--white);
       overflow-x:hidden;
-      position:relative;
-      width:100%;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      text-rendering:optimizeLegibility;
     }
-    img,video,svg,canvas,iframe{max-width:100%;height:auto;display:block}
+    img,video{max-width:100%;height:auto;display:block}
 
-    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
+    /* Loader */
+    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
     .page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
     .loader-text{
       font-size:clamp(72px,15vw,180px);
@@ -97,63 +33,53 @@
       background-size:200% auto;
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      background-clip:text;
       animation:shimmer 3s ease-in-out infinite;
       letter-spacing:-4px;
     }
-    @keyframes shimmer{
-      0%{background-position:200% center}
-      100%{background-position:-200% center}
-    }
+    @keyframes shimmer{to{background-position:-200% center}}
 
-    header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.85);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000}
-    .header-content{max-width:1600px;margin:0 auto;padding:22px 80px;display:flex;justify-content:space-between;align-items:center}
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.9);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000;padding:22px 80px}
+    .header-content{max-width:1600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
     .logo-text{font-size:28px;font-weight:900;letter-spacing:-.5px}
     .badge{font-size:9px;color:var(--gold);padding:6px 12px;border:1px solid rgba(232,181,99,.3);border-radius:999px;margin-left:10px}
     nav{display:flex;gap:28px}
-    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative}
-    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
-    nav a:hover::after{width:100%}
+    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative;transition:color .2s}
+    nav a:hover{color:var(--gold)}
 
-    .floating-hub{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:900;display:flex;gap:10px}
-    .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer;color:#0a0a0a;font-size:18px}
-
+    /* Hero */
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
-    @supports (height:100svh){ .hero{min-height:100svh} }
-    @supports (height:100dvh){ .hero{min-height:100dvh} }
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
     .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
-    .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px}
+    .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
     .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .cta-primary{padding:16px 32px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;font-weight:800;letter-spacing:1px;transition:transform .2s,box-shadow .2s}
+    .cta-primary,.cta-secondary{padding:16px 32px;border-radius:999px;text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
+    .cta-primary{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
     .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
-    .cta-secondary{padding:16px 32px;border-radius:999px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
-    .cta-secondary:hover{background:rgba(232,181,99,.1);transform:translateY(-2px)}
+    .cta-secondary{border:2px solid var(--gold);color:var(--gold)}
+    .cta-secondary:hover{background:rgba(232,181,99,.1)}
 
-    /* Verwijderd - marquee section niet meer nodig */
-
+    /* Services */
     .services-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .section-header{text-align:center;margin-bottom:64px}
     .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
-    .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .services-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:280px}
-
     .service-card{
       background:rgba(255,255,255,.035);
       border:1px solid rgba(232,181,99,.16);
       border-radius:20px;
       padding:34px;
       position:relative;
-      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
-      will-change:transform;
+      transition:all .3s ease;
     }
     .service-card:hover{
       transform:translateY(-8px);
       border-color:var(--gold);
       background:rgba(255,255,255,.05);
-      box-shadow:0 20px 60px rgba(232,181,99,.22), 0 0 0 1px rgba(232,181,99,.08) inset;
+      box-shadow:0 20px 60px rgba(232,181,99,.22);
     }
     .service-card.large{grid-column:span 2;grid-row:span 2}
     .service-card.wide{grid-column:span 2}
@@ -161,33 +87,160 @@
     .service-title{font-size:26px;font-weight:800;margin-bottom:10px}
     .service-desc{opacity:.88;line-height:1.55}
 
-    .video-split{display:grid;grid-template-columns:1fr 1fr;min-height:86vh}
-    @supports (height:100svh){ .video-split{min-height:86svh} }
-    .video-side{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .video-side video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .video-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(10,10,10,.7), rgba(10,10,10,.35));display:flex;align-items:center;justify-content:center;pointer-events:none}
-    .video-content{text-align:center;padding:42px}
-    .video-label{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-    .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
-    .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
+    /* WORK SHOWCASE */
+    .work-section{
+      padding:180px 0;
+      background:linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+    }
+    .work-section .section-header{padding:0 20px;margin-bottom:100px}
+    .work-grid{
+      max-width:1600px;
+      margin:0 auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:32px;
+    }
+    .work-card{
+      grid-column:span 1;
+    }
+    .work-item{
+      position:relative;
+      border-radius:20px;
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(232,181,99,.15);
+      transition:all .5s cubic-bezier(.4,0,.2,1);
+      cursor:pointer;
+    }
+    .work-item::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:radial-gradient(circle, rgba(232,181,99,.15) 0%, transparent 70%);
+      opacity:0;
+      transition:opacity .6s ease;
+      pointer-events:none;
+      z-index:1;
+    }
+    .work-item:hover::before{
+      opacity:1;
+    }
+    .work-item:hover{
+      transform:translateY(-12px);
+      border-color:var(--gold);
+      box-shadow:0 40px 100px rgba(232,181,99,.3), 0 0 0 1px rgba(232,181,99,.1) inset;
+    }
+    .work-visual{
+      position:relative;
+      width:100%;
+      aspect-ratio:4/3;
+      overflow:hidden;
+    }
+    .work-card:first-child .work-visual{
+      aspect-ratio:3/4;
+    }
+    .work-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s cubic-bezier(.4,0,.2,1), filter .8s ease;
+      filter:brightness(1) saturate(1);
+    }
+    .work-item:hover .work-visual img{
+      transform:scale(1.08);
+      filter:brightness(1.1) saturate(1.2);
+    }
+    .work-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(10,10,10,.2) 30%,
+        rgba(10,10,10,.7) 60%, 
+        rgba(10,10,10,.95) 100%);
+      padding:40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      opacity:0;
+      transition:opacity .5s cubic-bezier(.4,0,.2,1);
+      backdrop-filter:blur(0px);
+      z-index:2;
+    }
+    .work-item:hover .work-overlay{
+      opacity:1;
+      backdrop-filter:blur(8px);
+    }
+    .work-tag{
+      display:inline-block;
+      padding:10px 20px;
+      background:rgba(232,181,99,.15);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(232,181,99,.6);
+      border-radius:999px;
+      font-size:10px;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:900;
+      margin-bottom:20px;
+      align-self:flex-start;
+      box-shadow:0 4px 20px rgba(232,181,99,.2), inset 0 1px 0 rgba(255,255,255,.1);
+      transition:all .3s ease;
+    }
+    .work-item:hover .work-tag{
+      background:rgba(232,181,99,.25);
+      border-color:var(--gold);
+      box-shadow:0 6px 30px rgba(232,181,99,.4), inset 0 1px 0 rgba(255,255,255,.2);
+      transform:translateY(-2px);
+    }
+    .work-title{
+      font-size:clamp(28px, 4vw, 48px);
+      font-weight:900;
+      margin-bottom:12px;
+      line-height:1.1;
+    }
+    .work-desc{
+      font-size:16px;
+      opacity:.85;
+      line-height:1.6;
+      margin-bottom:24px;
+    }
+    .work-stats{
+      display:flex;
+      gap:32px;
+      padding-top:20px;
+      border-top:1px solid rgba(232,181,99,.3);
+    }
+    .work-stat{display:flex;flex-direction:column}
+    .work-stat-num{
+      font-size:clamp(24px, 3vw, 36px);
+      font-weight:900;
+      color:var(--gold);
+      line-height:1;
+      margin-bottom:6px;
+    }
+    .work-stat-label{
+      font-size:12px;
+      opacity:.7;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .work-card .work-overlay{padding:28px}
+    .work-card .work-title{font-size:clamp(20px, 3vw, 28px)}
+    .work-card .work-desc{font-size:14px}
 
-    /* ULTRA-MODERNE 3D CAROUSEL - 2025 STATE OF THE ART */
+    /* 3D CAROUSEL */
     .timeline-3d{
-      padding:180px 0 160px;
-      background:radial-gradient(ellipse at 50% 0%, rgba(232,181,99,.08) 0%, transparent 60%),
-                 linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 100%);
+      padding:160px 0;
+      background:radial-gradient(ellipse at 50% 0%, rgba(232,181,99,.08) 0%, transparent 60%);
       position:relative;
       overflow:hidden;
     }
-    
-    .timeline-3d .section-header{
-      padding:0 20px;
-      margin-bottom:100px;
-      position:relative;
-      z-index:2;
-    }
-    
-    /* Particle background effect */
     .timeline-3d::before{
       content:'';
       position:absolute;
@@ -199,26 +252,21 @@
       background:radial-gradient(circle, rgba(232,181,99,.15) 0%, transparent 70%);
       border-radius:50%;
       filter:blur(80px);
-      opacity:.4;
       animation:pulse 8s ease-in-out infinite;
     }
-    
     @keyframes pulse{
       0%, 100%{transform:translateX(-50%) scale(1);opacity:.4}
       50%{transform:translateX(-50%) scale(1.2);opacity:.6}
     }
-    
     .carousel-3d-wrapper{
       perspective:2500px;
       width:100%;
       min-height:600px;
-      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:0 20px;
     }
-    
     .carousel-3d-container{
       position:relative;
       width:100%;
@@ -226,35 +274,23 @@
       height:500px;
       transform-style:preserve-3d;
       cursor:grab;
-      user-select:none;
     }
-    
-    .carousel-3d-container.grabbing{
-      cursor:grabbing;
-    }
-    
+    .carousel-3d-container.grabbing{cursor:grabbing}
     .timeline-card-3d{
       position:absolute;
       width:100%;
       max-width:440px;
       min-height:420px;
-      background:linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
-      backdrop-filter:blur(30px) saturate(180%);
+      background:linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      backdrop-filter:blur(30px);
       border:1px solid rgba(232,181,99,.2);
       border-radius:32px;
       padding:48px;
       top:50%;
       left:50%;
-      transform-origin:center center;
       transition:all 1s cubic-bezier(.25,.46,.45,.94);
-      box-shadow:
-        0 40px 120px rgba(0,0,0,.5),
-        inset 0 1px 0 rgba(255,255,255,.1),
-        0 0 80px rgba(232,181,99,.1);
-      overflow:hidden;
+      box-shadow:0 40px 120px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.1);
     }
-    
-    /* Glow effect op actieve card */
     .timeline-card-3d::before{
       content:'';
       position:absolute;
@@ -264,44 +300,31 @@
       height:200%;
       background:radial-gradient(circle, rgba(232,181,99,.15) 0%, transparent 70%);
       opacity:0;
-      transition:opacity 1s ease;
+      transition:opacity 1s;
       pointer-events:none;
     }
-    
-    .timeline-card-3d.active::before{
-      opacity:1;
-    }
-    
+    .timeline-card-3d.active::before{opacity:1}
     .timeline-card-3d .year{
       font-size:clamp(64px,12vw,96px);
       font-weight:900;
-      background:linear-gradient(135deg, var(--gold) 0%, #fff 100%);
+      background:linear-gradient(135deg, var(--gold), #fff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
-      background-clip:text;
       margin-bottom:20px;
-      text-shadow:0 0 60px rgba(232,181,99,.8);
       line-height:.9;
       letter-spacing:-3px;
-      position:relative;
     }
-    
     .timeline-card-3d h3{
       font-size:clamp(28px,5vw,40px);
       font-weight:800;
       margin-bottom:16px;
-      color:#fff;
       line-height:1.2;
     }
-    
     .timeline-card-3d p{
       font-size:clamp(16px,3vw,20px);
       opacity:.85;
       line-height:1.7;
-      color:rgba(255,255,255,.9);
     }
-    
-    /* Minimale progress indicator onderaan */
     .carousel-3d-progress{
       position:absolute;
       bottom:40px;
@@ -311,7 +334,6 @@
       gap:8px;
       z-index:100;
     }
-    
     .progress-line{
       width:60px;
       height:3px;
@@ -319,9 +341,9 @@
       border-radius:2px;
       position:relative;
       overflow:hidden;
-      transition:all .4s ease;
+      transition:all .4s;
+      cursor:pointer;
     }
-    
     .progress-line::after{
       content:'';
       position:absolute;
@@ -330,20 +352,10 @@
       width:0;
       height:100%;
       background:linear-gradient(90deg, var(--gold), #fff);
-      border-radius:2px;
-      transition:width .4s ease;
+      transition:width .4s;
       box-shadow:0 0 12px var(--gold);
     }
-    
-    .progress-line.active::after{
-      width:100%;
-    }
-    
-    .progress-line.active{
-      background:rgba(232,181,99,.4);
-    }
-    
-    /* Swipe hint voor mobiel */
+    .progress-line.active::after{width:100%}
     .swipe-hint{
       position:absolute;
       bottom:100px;
@@ -359,69 +371,58 @@
       pointer-events:none;
       display:none;
     }
-    
     @keyframes fadeInOut{
       0%, 100%{opacity:0;transform:translateX(-50%) translateY(0)}
       50%{opacity:1;transform:translateX(-50%) translateY(-10px)}
     }
-    
-    @media (max-width:1024px){
-      .swipe-hint{display:block}
-      .carousel-3d-wrapper{min-height:550px}
-      .timeline-card-3d{max-width:380px;min-height:380px;padding:36px}
-    }
-    
-    @media (max-width:768px){
-      .timeline-3d{padding:120px 0 100px}
-      .timeline-3d .section-header{margin-bottom:60px}
-      .carousel-3d-wrapper{min-height:480px}
-      .carousel-3d-container{max-width:340px;height:450px}
-      .timeline-card-3d{
-        max-width:320px;
-        min-height:340px;
-        padding:32px;
-        border-radius:24px;
-      }
-      .carousel-3d-progress{bottom:20px}
-      .progress-line{width:40px;height:2px}
-      .swipe-hint{bottom:70px;font-size:12px}
-    }
 
-    /* FOUNDER */
-    .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
-    .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
-    .founder-media{width:100%;aspect-ratio:13/16;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
-    .founder-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-    .founder-info{padding:18px;border-top:2px solid var(--gold)}
-    .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
-    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
-    .founder-role{font-size:12px;opacity:.75}
-
-    /* CLIENTS */
+    /* Clients */
     .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-    .client-card{aspect-ratio:3/2;padding:24px;background:rgba(255,255,255,.05);border:1px solid rgba(232,181,99,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
-    .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.8;transition:transform .25s}
-    .client-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.07);box-shadow:0 14px 50px rgba(232,181,99,.22)}
+    .client-card{
+      aspect-ratio:3/2;
+      padding:24px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(232,181,99,.12);
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all .25s;
+    }
+    .client-card img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      filter:brightness(0) invert(1) grayscale(1);
+      opacity:.8;
+      transition:transform .25s;
+    }
+    .client-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--gold);
+      background:rgba(255,255,255,.07);
+      box-shadow:0 14px 50px rgba(232,181,99,.22);
+    }
     .client-card:hover img{transform:scale(1.06)}
 
-    /* IMPACT (Case studies) */
+    /* Impact */
     .impact-section{padding:140px 0;max-width:1600px;margin:0 auto}
     .impact-section .section-header{padding:0 20px}
     .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 20px}
-    .impact-grid>*{min-width:0}
     .impact-card{
       background:rgba(255,255,255,.035);
       backdrop-filter:blur(26px);
       border:2px solid rgba(232,181,99,.22);
       border-radius:24px;
       padding:26px;
-      transition:transform .25s, border-color .25s, box-shadow .25s;
-      width:100%;
-      overflow:hidden;
+      transition:all .25s;
     }
-    .impact-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 36px 110px rgba(232,181,99,.33)}
+    .impact-card:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
+      box-shadow:0 36px 110px rgba(232,181,99,.33);
+    }
     .impact-header{display:flex;justify-content:space-between;margin-bottom:14px}
     .impact-client{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
     .impact-tag{padding:6px 12px;border-radius:999px;border:2px solid var(--gold);font-size:9px}
@@ -431,47 +432,30 @@
     .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
     .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
 
-    /* CERTS */
-    .certs-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .cert-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-    .cert-badge{
-      padding:16px 26px;border-radius:999px;background:rgba(255,255,255,.06);
-      border:2px solid rgba(232,181,99,.24);
-      display:flex;align-items:center;gap:14px;
-      transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
-      will-change:transform;position:relative;overflow:hidden;
-    }
-    .cert-badge::after{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
-      transform:translateX(-120%);transition:transform .5s ease;
-    }
-    .cert-badge:hover::after{transform:translateX(120%)}
-    .cert-badge img{height:42px;opacity:.95;transition:transform .25s}
-    .cert-badge span{color:#ffffff;transition:color .25s}
-    .cert-badge:hover{transform:translateY(-6px) scale(1.03);border-color:var(--gold);background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));box-shadow:0 18px 60px rgba(232,181,99,.28)}
-    .cert-badge:hover img{transform:scale(1.08)}
-    .cert-badge:hover span{color:#0a0a0a}
-
-    /* CONTACT */
+    /* Contact */
     .contact-section{padding:140px 0;max-width:1400px;margin:0 auto}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:0 20px}
-    .contact-form{background:rgba(255,255,255,.035);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.2);border-radius:24px;padding:32px;transition:transform .25s, box-shadow .25s, border-color .25s}
-    .contact-form:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 28px 80px rgba(232,181,99,.22)}
+    .contact-form{
+      background:rgba(255,255,255,.035);
+      backdrop-filter:blur(24px);
+      border:1px solid rgba(232,181,99,.2);
+      border-radius:24px;
+      padding:32px;
+      transition:all .25s;
+    }
+    .contact-form:hover{
+      transform:translateY(-6px);
+      border-color:var(--gold);
+      box-shadow:0 28px 80px rgba(232,181,99,.22);
+    }
     .form-group{margin-bottom:18px}
     .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px}
+    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px;font-family:inherit}
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
-    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer;transition:transform .2s,box-shadow .2s}
-    .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
+    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer;transition:transform .2s}
+    .submit-btn:hover{transform:translateY(-2px)}
 
-    .cookie-banner{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
-    .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
-    .cookie-buttons{display:flex;gap:10px}
-    .cookie-btn{padding:11px 18px;border-radius:12px;border:none;font-weight:800;letter-spacing:.5px;cursor:pointer}
-    .cookie-accept{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
-    .cookie-decline{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff}
-
+    /* Footer */
     footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 20px 36px;max-width:1600px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:36px}
     .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
@@ -479,121 +463,78 @@
     .footer-grid a:hover{color:var(--gold)}
     .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
 
+    /* Founder Badge */
+    .founder-badge{
+      position:fixed;
+      bottom:30px;
+      left:30px;
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      overflow:hidden;
+      border:3px solid var(--gold);
+      cursor:pointer;
+      transition:transform .3s;
+      z-index:999;
+      box-shadow:0 8px 32px rgba(232,181,99,.3);
+    }
+    .founder-badge:hover{transform:scale(1.15)}
+    .founder-badge img{width:100%;height:100%;object-fit:cover}
+
+    /* Responsive */
     @media (max-width:1024px){
-      .header-content{padding:18px 40px}
+      header{padding:18px 40px}
       nav{display:none}
-      .video-split{grid-template-columns:1fr}
       .services-bento{grid-template-columns:repeat(2,1fr)}
-      .founder-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+      .work-grid{grid-template-columns:1fr;gap:28px}
+      .work-card{grid-column:span 1}
+      .work-card:first-child .work-visual{aspect-ratio:4/3}
       .clients-grid{grid-template-columns:repeat(3,1fr)}
       .footer-grid{grid-template-columns:1fr 1fr}
       .impact-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr;gap:48px}
       .swipe-hint{display:block}
-      .carousel-3d-wrapper{min-height:550px}
-      .timeline-card-3d{max-width:380px;min-height:380px;padding:36px}
     }
     
     @media (max-width:768px){
-      html{scroll-behavior:auto}
       .hero{padding:120px 20px 80px}
-      .services-section,.founder-section,.clients-section,.certs-section{padding:60px 20px}
+      .services-section,.clients-section{padding:60px 20px}
       .services-bento{grid-template-columns:1fr}
       .service-card.large,.service-card.wide{grid-column:span 1;grid-row:span 1}
       .clients-grid{grid-template-columns:repeat(2,1fr)}
-      .founder-grid{grid-template-columns:1fr;gap:36px}
-      .founder-card{max-width:240px;margin:0 auto;position:relative;top:0}
-      .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
-      .cert-badge img{height:38px}
-      .impact-section{padding:80px 0}
-      .contact-section{padding:80px 0}
-      .counter{font-size:clamp(26px,9vw,40px)}
-      .timeline-3d{padding:100px 0 80px}
-      .timeline-3d .section-header{margin-bottom:50px}
+      .work-section{padding:80px 0}
+      .work-grid{gap:24px}
+      .work-stats{flex-direction:column;gap:16px}
+      .work-overlay{padding:28px}
+      .timeline-3d{padding:100px 0}
       .carousel-3d-wrapper{min-height:480px}
       .carousel-3d-container{max-width:340px;height:450px}
-      .timeline-card-3d{
-        max-width:300px;
-        min-height:320px;
-        padding:28px;
-        border-radius:24px;
-      }
-      .timeline-card-3d .year{font-size:clamp(52px,10vw,72px)}
-      .timeline-card-3d h3{font-size:clamp(22px,4vw,28px)}
-      .timeline-card-3d p{font-size:clamp(15px,3vw,17px)}
-      .carousel-3d-progress{bottom:20px}
+      .timeline-card-3d{max-width:300px;min-height:320px;padding:28px}
       .progress-line{width:40px;height:2px}
       .swipe-hint{bottom:70px;font-size:12px}
-      .cookie-content{grid-template-columns:1fr;gap:12px}
-      .cookie-buttons{width:100%;justify-content:stretch}
-      .cookie-btn{flex:1}
-    }
-    
-    /* Safari-specifieke optimalisaties */
-    @supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
-      .timeline-card-3d{
-        -webkit-backdrop-filter:blur(30px) saturate(180%);
-      }
-      .contact-form{
-        -webkit-backdrop-filter:blur(24px);
-      }
-      header{
-        -webkit-backdrop-filter:blur(24px);
-      }
-    }
-    
-    /* Force GPU acceleration voor Safari */
-    .timeline-card-3d,
-    .service-card,
-    .client-card,
-    .impact-card,
-    .cert-badge{
-      -webkit-transform:translateZ(0);
-      transform:translateZ(0);
-      -webkit-font-smoothing:antialiased;
-    }
-    
-    @media (prefers-reduced-motion:reduce){
-      *,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-      .carousel-3d-container{transition:none!important}
-      .timeline-card-3d{transition:none!important}
-      .page-loader .loader-text{animation:none!important}
+      .contact-section,.impact-section{padding:80px 0}
+      .founder-badge{width:60px;height:60px;bottom:20px;left:20px}
+      .footer-grid{grid-template-columns:1fr;text-align:center}
     }
   </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
   <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
-  <div class="cookie-banner" id="cookie-banner">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <h3 style="color:var(--gold);margin:0 0 6px 0">Privacy & Cookies</h3>
-        <p style="margin:0;opacity:.8">We gebruiken analytics cookies om deze site te verbeteren. Jouw keuze wordt gerespecteerd.</p>
-      </div>
-      <div class="cookie-buttons">
-        <button class="cookie-btn cookie-accept" id="cookie-accept">Accepteer</button>
-        <button class="cookie-btn cookie-decline" id="cookie-decline">Weiger</button>
-      </div>
-    </div>
-  </div>
-
-  <header id="header">
+  <header>
     <div class="header-content">
       <div class="logo-text">CNIP <span class="badge">Since 2002</span></div>
       <nav>
+        <a href="#work">Work</a>
         <a href="#story">Story</a>
-        <a href="#cases">Cases</a>
         <a href="#clients">Klanten</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <div class="floating-hub">
-    <button class="hub-btn" onclick="location.hash='#contact'" aria-label="Naar contact">→</button>
-    <button class="hub-btn" onclick="location.hash='#cases'" aria-label="Naar cases">↑</button>
-    <button class="hub-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Naar boven">⌃</button>
+  <div class="founder-badge">
+    <img src="/images/christophecnip.png" alt="Christophe - Founder">
   </div>
 
   <section class="hero">
@@ -601,17 +542,15 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Boutique Marketing Bureau • Gent • Since 2002</div>
       <h1 class="hero-title">We leiden.<br>We volgen<br>niet.</h1>
-      <p class="hero-subtitle">23 jaar storytelling. Maandelijks meetbare resultaten.<br>Video, SEO, Social. Keihard.</p>
+      <p class="hero-subtitle">Creatief. Cijfers. Kwaliteit.<br>23 jaar geen bullshit.</p>
       <div class="hero-cta">
         <a class="cta-primary" href="#contact">Start Gesprek</a>
-        <a class="cta-secondary" href="#cases">Bekijk Cases</a>
+        <a class="cta-secondary" href="#work">Bekijk Work</a>
       </div>
     </div>
   </section>
 
-  <!-- Marquee verwijderd voor cleaner design -->
-
-  <section id="services" class="services-section">
+  <section class="services-section">
     <div class="section-header">
       <div class="section-eyebrow">Onze Expertise</div>
       <h2 class="section-title">Alles wat je<br>merk nodig heeft</h2>
@@ -652,6 +591,79 @@
     </div>
   </section>
 
+  <section id="work" class="work-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Selected Work</div>
+      <h2 class="section-title">Verhalen met<br>Impact</h2>
+    </div>
+    
+    <div class="work-grid">
+      <div class="work-card work-item">
+        <div class="work-visual">
+          <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve - 3 Michelin Sterren" loading="lazy">
+        </div>
+        <div class="work-overlay">
+          <span class="work-tag">Social Media</span>
+          <h3 class="work-title">Hof van Cleve</h3>
+          <p class="work-desc">Van zero naar 50.000 volgers. De social media benchmark voor haute cuisine.</p>
+          <div class="work-stats">
+            <div class="work-stat">
+              <div class="work-stat-num">50K+</div>
+              <div class="work-stat-label">Volgers</div>
+            </div>
+            <div class="work-stat">
+              <div class="work-stat-num">2.5M+</div>
+              <div class="work-stat-label">Views/maand</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="work-card work-item">
+        <div class="work-visual">
+          <img src="/images/Willems_05092024.jpg" alt="Willems Veranda - SEO Dominantie" loading="lazy">
+        </div>
+        <div class="work-overlay">
+          <span class="work-tag">SEO & Rebranding</span>
+          <h3 class="work-title">Willems Veranda</h3>
+          <p class="work-desc">3× Merk van het Jaar. Complete SEO dominantie in outdoor living.</p>
+          <div class="work-stats">
+            <div class="work-stat">
+              <div class="work-stat-num">51</div>
+              <div class="work-stat-label">Keywords Top 3</div>
+            </div>
+            <div class="work-stat">
+              <div class="work-stat-num">77</div>
+              <div class="work-stat-label">Keywords Top 10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="work-card work-item">
+        <div class="work-visual">
+          <img src="/images/cman71_a_behind_the_scenes_image_that_is_hyper_realistic-_It_is_9cc3d994-63a6-47e6-a7b2-04c6fd13a17f.png" alt="Authentic Brand Storytelling" loading="lazy">
+        </div>
+        <div class="work-overlay">
+          <span class="work-tag">Brand Storytelling</span>
+          <h3 class="work-title">Authenticiteit</h3>
+          <p class="work-desc">De kracht van echtheid. We brengen de ziel van je merk naar boven.</p>
+        </div>
+      </div>
+      
+      <div class="work-card work-item">
+        <div class="work-visual">
+          <img src="/images/Logo design 6 (1).jpg" alt="Logo Design & Brand Identity" loading="lazy">
+        </div>
+        <div class="work-overlay">
+          <span class="work-tag">Brand Identity</span>
+          <h3 class="work-title">Brand Design</h3>
+          <p class="work-desc">Tijdloze identiteiten die groeien met je merk. Van logo tot brand guidelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="story" class="timeline-3d">
     <div class="section-header">
       <div class="section-eyebrow">Onze Journey</div>
@@ -666,36 +678,10 @@
     <div class="carousel-3d-progress" id="carouselProgress"></div>
   </section>
 
-  <section class="founder-section">
-    <div class="founder-grid">
-      <div>
-        <div class="section-eyebrow">Waarom CNIP Bestaat</div>
-        <h2 class="section-title" style="margin-bottom: 26px;">De zucht naar<br>vernieuwing</h2>
-        <div style="font-size:20px;line-height:1.8;opacity:.9">
-          <p style="margin-bottom:16px">Toen iedereen nog in televisie geloofde, zag ik internet en video samenkomen. Niet als hype, maar als fundamentele verschuiving.</p>
-          <p style="margin-bottom:16px;color:var(--gold);font-weight:700">Daarom CNIP. Een plek waar vernieuwing niet tegen verzet aanloopt.</p>
-          <p style="margin-bottom:16px"><strong>Boutique?</strong> Bewuste keuze. Elk merk heeft een uniek verhaal. Dat vraagt maatwerk, geen templates.</p>
-          <p style="margin-bottom:0;font-style:italic;opacity:.8">23 jaar later nog steeds dezelfde passie: moeilijke materie helder maken. Innovatie toepassen.</p>
-        </div>
-      </div>
-
-      <div class="founder-card">
-        <div class="founder-media">
-          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="520" height="640" loading="eager" decoding="auto" fetchpriority="high">
-        </div>
-        <div class="founder-info">
-          <div class="founder-label">Christophe Dejaeghere</div>
-          <div class="founder-name">Founder</div>
-          <div class="founder-role">Sinds 2002</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="clients" class="clients-section">
     <div class="section-header">
-      <div class="section-eyebrow">Sociale Proof</div>
-      <h2 class="section-title">Vertrouwd Door<br>Premium Merken</h2>
+      <div class="section-eyebrow">Vertrouwd Door</div>
+      <h2 class="section-title">Premium Merken</h2>
     </div>
     <div class="clients-grid">
       <div class="client-card"><img loading="lazy" src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
@@ -704,16 +690,10 @@
       <div class="client-card"><img loading="lazy" src="images/klanten/3-4.png" alt="Willems"></div>
       <div class="client-card"><img loading="lazy" src="images/klanten/15.png" alt="BMW"></div>
       <div class="client-card"><img loading="lazy" src="images/klanten/1-4.png" alt="Decospan"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/8-2.png" alt="Citrosuco"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/11-1.png" alt="Haelvoet"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/4-2.png" alt="Skylux"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/19.png" alt="Keolis"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/20.png" alt="Nuscience"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/17.png" alt="Medina"></div>
     </div>
   </section>
 
-  <section id="cases" class="impact-section">
+  <section class="impact-section">
     <div class="section-header">
       <div class="section-eyebrow">Bewezen Resultaten</div>
       <h2 class="section-title">Cijfers Die<br>Spreken</h2>
@@ -759,42 +739,16 @@
     </div>
   </section>
 
-  <section class="certs-section">
-    <div class="section-header">
-      <div class="section-eyebrow">Validatie</div>
-      <h2 class="section-title">Certified<br>Expertise</h2>
-    </div>
-    <div class="cert-grid">
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold"><span>HubSpot Gold</span></div>
-      <div class="cert-badge"><img loading="lazy" src="https://oryen.be/hubfs/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge"><span>Cambridge</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads"><span>Google Ads</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/GA-certified.png" alt="Analytics"><span>Analytics</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube"><span>YouTube</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush"><span>Semrush</span></div>
-    </div>
-  </section>
-
   <section id="contact" class="contact-section">
     <div class="contact-grid">
       <div>
         <div class="section-eyebrow">Laten We Praten</div>
         <h2 class="section-title" style="margin-bottom: 28px;">Klaar voor<br>resultaten?</h2>
         <p style="font-size: 20px; opacity: .9; line-height: 1.6; margin-bottom: 36px;">Gratis strategie sessie. Vrijblijvend kennismaken. Maandelijks meetbare impact.</p>
-        <div style="display:flex;flex-direction:column;gap:22px">
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900;flex-shrink:0">01</div>
-            <div><div style="font-weight:800">30 minuten persoonlijk advies</div><div style="opacity:.7">Strategie sessie zonder verplichtingen</div></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900;flex-shrink:0">02</div>
-            <div><div style="font-weight:800">23 jaar expertise</div><div style="opacity:.7">Storytellers die resultaat leveren</div></div>
-          </div>
-        </div>
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
         <div class="form-group">
           <label for="name">Naam *</label>
           <input id="name" name="name" type="text" required>
@@ -819,9 +773,8 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <div style="font-size:22px;font-weight:900;margin-bottom:14px;letter-spacing:-.5px">CNIP</div>
+        <div style="font-size:22px;font-weight:900;margin-bottom:14px">CNIP</div>
         <address style="opacity:.8;line-height:1.8;font-size:14px;font-style:normal">
-          Boutique Marketing Bureau<br>
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
@@ -830,229 +783,129 @@
       </div>
       <div>
         <div class="footer-heading">Diensten</div>
-        <a href="#services">SEO & Ads</a>
-        <a href="#services">Social Media</a>
-        <a href="#services">Automation</a>
         <a href="#services">Video</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Social Media</a>
       </div>
       <div>
         <div class="footer-heading">Bedrijf</div>
         <a href="#story">Story</a>
+        <a href="#work">Work</a>
         <a href="#clients">Klanten</a>
-        <a href="#cases">Cases</a>
       </div>
       <div>
         <div class="footer-heading">Connect</div>
         <a href="mailto:info@cnip.be">Email</a>
-        <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://linkedin.com/company/cnipagency">LinkedIn</a>
+        <a href="https://instagram.com/cnip.be">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 CNIP — Marketing Bureau Gent • Since 2002</div>
+    <div class="footer-bottom">© 2025 CNIP — Since 2002</div>
   </footer>
 
   <script>
-    // Ultra-fast page loader met Safari optimalisatie
+    // Page loader
     (function(){
       const pl = document.querySelector('.page-loader');
-      let hidden = false;
-      
       const hide = () => {
-        if(hidden || !pl) return;
-        hidden = true;
+        if(!pl) return;
         pl.classList.add('hidden');
-        // Forceer reflow voor Safari
-        void pl.offsetHeight;
-        setTimeout(() => {
-          if(pl && pl.parentNode) {
-            pl.style.display = 'none';
-          }
-        }, 600);
+        setTimeout(() => { if(pl.parentNode) pl.style.display = 'none' }, 600);
       };
-      
-      // Multiple triggers voor betrouwbaarheid
-      if(document.readyState === 'complete') {
-        setTimeout(hide, 100);
-      } else if(document.readyState === 'interactive') {
-        setTimeout(hide, 300);
-      }
-      
+      if(document.readyState === 'complete') setTimeout(hide, 100);
       window.addEventListener('load', () => setTimeout(hide, 100));
-      document.addEventListener('DOMContentLoaded', () => setTimeout(hide, 200));
-      
-      // Fallback voor trage netwerken
       setTimeout(hide, 2000);
-      
-      // Safari specifieke check
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      if(isSafari) {
-        // Safari heeft soms vertraging, forceer snellere hide
-        setTimeout(hide, 800);
-      }
     })();
 
-    // Cookie banner
+    // 3D CAROUSEL
     (function(){
-      const banner=document.getElementById('cookie-banner');
-      const accept=document.getElementById('cookie-accept');
-      const decline=document.getElementById('cookie-decline');
-      let c=null;
-      try{ c=localStorage.getItem('cookieConsent'); }catch(e){}
-      if(!c){ setTimeout(()=>{ if(banner) banner.style.display='block' },1200) }
-      if(accept) accept.addEventListener('click',()=>{ 
-        try{localStorage.setItem('cookieConsent','accepted')}catch(e){}; 
-        if(banner) banner.style.display='none' 
-      });
-      if(decline) decline.addEventListener('click',()=>{ 
-        try{localStorage.setItem('cookieConsent','declined')}catch(e){}; 
-        if(banner) banner.style.display='none' 
-      });
-    })();
-
-    // Header scroll effect
-    window.addEventListener('scroll',()=>{ 
-      const h=document.getElementById('header'); 
-      if(!h) return; 
-      h.classList.toggle('scrolled', window.pageYOffset>100);
-    }, {passive: true});
-
-      // ULTRA-MODERNE 3D CAROUSEL - Gesture Based, Safari Optimized
-    (function(){
-      const timelineData=[
-        {year:2002,title:'De Start',desc:'Video & internet marketing pionieren in een wereld die nog moet ontwaken.'},
-        {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven. We zetten de standaard voor professionele videoproductie.'},
-        {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca social media. Verhalen die viraal gaan.'},
-        {year:2025,title:'AI-Driven',desc:'Marketing automation op enterprise-niveau met cutting-edge AI integratie.'}
+      const data=[
+        {year:2002,title:'De Start',desc:'Video & internet marketing pionieren.'},
+        {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven.'},
+        {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca social media.'},
+        {year:2025,title:'AI-Driven',desc:'Marketing automation op enterprise-niveau.'}
       ];
 
       const container = document.getElementById('carousel3d');
-      const progressContainer = document.getElementById('carouselProgress');
-      
-      if(!container || !progressContainer) return;
+      const progress = document.getElementById('carouselProgress');
+      if(!container || !progress) return;
 
       let currentIndex = 0;
       let isAnimating = false;
       let isDragging = false;
       let startX = 0;
-      let currentX = 0;
       let rotation = 0;
-      const totalCards = timelineData.length;
-      
-      // Safari detection
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      // Maak de cards
-      timelineData.forEach((item, index) => {
+      data.forEach((item, i) => {
         const card = document.createElement('div');
         card.className = 'timeline-card-3d';
-        card.innerHTML = `
-          <div class="year">${item.year}</div>
-          <h3>${item.title}</h3>
-          <p>${item.desc}</p>
-        `;
-        // Safari GPU acceleration
-        if(isSafari) {
-          card.style.webkitTransform = 'translateZ(0)';
-          card.style.willChange = 'transform, opacity';
-        }
+        card.innerHTML = `<div class="year">${item.year}</div><h3>${item.title}</h3><p>${item.desc}</p>`;
         container.appendChild(card);
 
-        // Maak progress indicators
         const line = document.createElement('div');
         line.className = 'progress-line';
-        if(index === 0) line.classList.add('active');
-        line.addEventListener('click', () => goToSlide(index));
-        progressContainer.appendChild(line);
+        if(i === 0) line.classList.add('active');
+        line.addEventListener('click', () => goToSlide(i));
+        progress.appendChild(line);
       });
 
       const cards = container.querySelectorAll('.timeline-card-3d');
-      const progressLines = progressContainer.querySelectorAll('.progress-line');
+      const lines = progress.querySelectorAll('.progress-line');
 
-      function updateCarousel(animated = true) {
-        if(!animated) isAnimating = false;
-
-        const angle = 360 / totalCards;
+      function update(animated = true) {
+        const angle = 360 / data.length;
         const radius = window.innerWidth < 768 ? 380 : 520;
 
-        cards.forEach((card, index) => {
-          const offset = (index - currentIndex + totalCards) % totalCards;
+        cards.forEach((card, i) => {
+          const offset = (i - currentIndex + data.length) % data.length;
           const theta = (offset * angle - rotation) * (Math.PI / 180);
-          
           const x = Math.sin(theta) * radius;
           const z = Math.cos(theta) * radius - radius;
-          
-          // Exponential scaling voor dramatisch effect
-          const distanceFactor = Math.abs(offset) / totalCards;
-          const scale = offset === 0 ? 1 : Math.max(0.4, 1 - (distanceFactor * 1.2));
-          
-          // Opacity curve
-          const opacityBase = offset === 0 ? 1 : 0.15;
-          const opacity = Math.max(opacityBase, opacityBase + ((1 - Math.abs(z) / (radius * 2)) * 0.3));
-          
+          const scale = offset === 0 ? 1 : Math.max(0.4, 1 - (Math.abs(offset) / data.length * 1.2));
+          const opacity = offset === 0 ? 1 : 0.15;
           const rotateY = -(offset * angle + rotation);
 
-          const transformStyle = `translate(-50%, -50%) translate3d(${x}px, 0, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
-
-          if(animated) {
-            card.style.transform = transformStyle;
-            if(isSafari) card.style.webkitTransform = transformStyle;
-          } else {
-            card.style.transition = 'none';
-            card.style.transform = transformStyle;
-            if(isSafari) card.style.webkitTransform = transformStyle;
-            // Force reflow
-            void card.offsetHeight;
-            setTimeout(() => {
-              card.style.transition = '';
-            }, 0);
-          }
+          const style = `translate(-50%, -50%) translate3d(${x}px, 0, ${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+          if(!animated) card.style.transition = 'none';
+          card.style.transform = style;
+          if(!animated) void card.offsetHeight;
+          if(!animated) setTimeout(() => card.style.transition = '', 0);
 
           card.style.opacity = opacity;
-          card.style.zIndex = offset === 0 ? 100 : Math.round(50 - Math.abs(offset) * 10);
-          card.style.pointerEvents = offset === 0 ? 'auto' : 'none';
-          
-          // Active state voor glow effect
-          if(offset === 0) {
-            card.classList.add('active');
-          } else {
-            card.classList.remove('active');
-          }
+          card.style.zIndex = offset === 0 ? 100 : 50 - Math.abs(offset) * 10;
+          card.classList.toggle('active', offset === 0);
         });
 
-        // Update progress
-        progressLines.forEach((line, index) => {
-          line.classList.toggle('active', index === currentIndex);
-        });
+        lines.forEach((line, i) => line.classList.toggle('active', i === currentIndex));
       }
 
-      function goToSlide(index) {
-        if(isAnimating || index === currentIndex) return;
+      function goToSlide(i) {
+        if(isAnimating || i === currentIndex) return;
         isAnimating = true;
-        currentIndex = index;
+        currentIndex = i;
         rotation = 0;
-        updateCarousel();
+        update();
         setTimeout(() => { isAnimating = false; }, 1000);
       }
 
-      function nextSlide() {
+      function next() {
         if(isAnimating) return;
         isAnimating = true;
-        currentIndex = (currentIndex + 1) % totalCards;
+        currentIndex = (currentIndex + 1) % data.length;
         rotation = 0;
-        updateCarousel();
+        update();
         setTimeout(() => { isAnimating = false; }, 1000);
       }
 
-      function prevSlide() {
+      function prev() {
         if(isAnimating) return;
         isAnimating = true;
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        currentIndex = (currentIndex - 1 + data.length) % data.length;
         rotation = 0;
-        updateCarousel();
+        update();
         setTimeout(() => { isAnimating = false; }, 1000);
       }
 
-      // Mouse drag
       container.addEventListener('mousedown', (e) => {
         isDragging = true;
         startX = e.clientX;
@@ -1062,34 +915,18 @@
 
       document.addEventListener('mousemove', (e) => {
         if(!isDragging) return;
-        currentX = e.clientX;
-        const diff = currentX - startX;
-        rotation = diff * 0.2;
-        updateCarousel(false);
+        rotation = (e.clientX - startX) * 0.2;
+        update(false);
       });
 
       document.addEventListener('mouseup', () => {
         if(!isDragging) return;
         isDragging = false;
         container.classList.remove('grabbing');
-        
-        const threshold = 50;
-        if(Math.abs(rotation) > threshold) {
-          if(rotation < 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        } else {
-          rotation = 0;
-          updateCarousel();
-        }
+        Math.abs(rotation) > 50 ? (rotation < 0 ? next() : prev()) : (rotation = 0, update());
       });
 
-      // Touch swipe
       let touchStartX = 0;
-      let touchCurrentX = 0;
-
       container.addEventListener('touchstart', (e) => {
         isDragging = true;
         touchStartX = e.touches[0].clientX;
@@ -1098,131 +935,64 @@
 
       container.addEventListener('touchmove', (e) => {
         if(!isDragging) return;
-        touchCurrentX = e.touches[0].clientX;
-        const diff = touchCurrentX - touchStartX;
-        rotation = diff * 0.15;
-        updateCarousel(false);
+        rotation = (e.touches[0].clientX - touchStartX) * 0.15;
+        update(false);
       }, {passive: true});
 
       container.addEventListener('touchend', () => {
         if(!isDragging) return;
         isDragging = false;
-        
-        const threshold = 40;
-        if(Math.abs(rotation) > threshold) {
-          if(rotation < 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        } else {
-          rotation = 0;
-          updateCarousel();
-        }
-      }, {passive: true});
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowLeft') prevSlide();
-        if(e.key === 'ArrowRight') nextSlide();
+        Math.abs(rotation) > 40 ? (rotation < 0 ? next() : prev()) : (rotation = 0, update());
       });
 
-      // Mouse wheel navigation - disabled op Safari voor betere performance
-      if(!isSafari) {
-        let wheelTimeout;
-        container.addEventListener('wheel', (e) => {
-          e.preventDefault();
-          clearTimeout(wheelTimeout);
-          wheelTimeout = setTimeout(() => {
-            if(e.deltaY > 0) {
-              nextSlide();
-            } else if(e.deltaY < 0) {
-              prevSlide();
-            }
-          }, 50);
-        }, {passive: false});
-      }
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowLeft') prev();
+        if(e.key === 'ArrowRight') next();
+      });
 
-      // Auto-rotate met pauze op interactie
-      let autoRotate = setInterval(nextSlide, 6000);
-      
-      const pauseAuto = () => {
-        clearInterval(autoRotate);
-        autoRotate = null;
-      };
-      
-      const resumeAuto = () => {
-        if(!autoRotate) {
-          autoRotate = setInterval(nextSlide, 6000);
-        }
-      };
+      let auto = setInterval(next, 6000);
+      container.addEventListener('mouseenter', () => clearInterval(auto));
+      container.addEventListener('mouseleave', () => { auto = setInterval(next, 6000) });
 
-      container.addEventListener('mouseenter', pauseAuto);
-      container.addEventListener('mouseleave', resumeAuto);
-      container.addEventListener('touchstart', pauseAuto, {passive: true});
-
-      // Responsive resize met debounce
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          updateCarousel(false);
-        }, 150);
-      }, {passive: true});
-
-      // Initial render - gefaseerd voor Safari
-      if(isSafari) {
-        setTimeout(() => {
-          updateCarousel(false);
-          setTimeout(() => updateCarousel(true), 100);
-        }, 100);
-      } else {
-        updateCarousel(false);
-        setTimeout(() => updateCarousel(true), 50);
-      }
+      update(false);
+      setTimeout(() => update(true), 50);
     })();
 
-    // Counter animations
+    // Counters
     (function(){
-      const cs=document.querySelectorAll('.counter');
-      const io=new IntersectionObserver(es=>{
-        es.forEach(e=>{
+      const counters = document.querySelectorAll('.counter');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
           if(e.isIntersecting && !e.target.dataset.done){
-            e.target.dataset.done=1;
-            const t=parseInt(e.target.getAttribute('data-target'),10)||0;
-            const st=performance.now(); 
-            const du=1600;
+            e.target.dataset.done = 1;
+            const target = parseInt(e.target.getAttribute('data-target'), 10);
+            const start = performance.now();
+            const duration = 1600;
             (function step(ts){
-              const p=Math.min((ts-st)/du,1); 
-              const v=Math.floor((1-Math.pow(1-p,4))*t);
-              e.target.textContent=v.toLocaleString('nl-BE'); 
-              if(p<1) requestAnimationFrame(step);
-            })(st);
+              const progress = Math.min((ts - start) / duration, 1);
+              const value = Math.floor((1 - Math.pow(1 - progress, 4)) * target);
+              e.target.textContent = value.toLocaleString('nl-BE');
+              if(progress < 1) requestAnimationFrame(step);
+            })(start);
           }
         })
-      },{threshold:.2});
-      cs.forEach(c=>io.observe(c));
+      }, {threshold: .2});
+      counters.forEach(c => io.observe(c));
     })();
 
-    // GSAP animations (alleen als GSAP geladen is)
-    window.addEventListener('load', ()=>{
-      if(typeof gsap!=='undefined' && typeof ScrollTrigger !== 'undefined'){
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((el,i)=>{
-          gsap.from(el,{
-            opacity:0,
-            y:40,
-            duration:.6,
-            delay:i*0.03,
-            scrollTrigger:{
-              trigger:el,
-              start:'top 88%',
-              once: true
-            }
-          });
+    // GSAP animations
+    if(typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray('.service-card, .work-item, .client-card, .impact-card').forEach((el, i) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 40,
+          duration: .6,
+          delay: i * 0.03,
+          scrollTrigger: {trigger: el, start: 'top 88%', once: true}
         });
-      }
-    });
+      });
+    }
   </script>
 </body>
 </html>
