@@ -2,11 +2,7 @@
 <html lang="nl-BE">
 <head>
   <meta charset="UTF-8">
-  <!-- FIX: correcte viewport voor iOS + safe areas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <!-- Als je pinch-zoom volledig wil blokkeren (minder toegankelijk): 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"> 
-  -->
 
   <!-- GTM (fires only after consent) -->
   <script>
@@ -76,10 +72,8 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
-    /* FIX: voorkom iOS auto text-zoom en horizontale scroll */
     html{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
-    /* FIX: media mogen nooit breder dan viewport worden */
     img,svg,video,canvas,iframe{max-width:100%;height:auto}
 
     .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
@@ -95,15 +89,12 @@
     nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
     nav a:hover::after{width:100%}
 
-    /* FIX: respecteer safe-area op iPhone */
     .floating-hub{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:900;display:flex;gap:10px}
     .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer}
 
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
-    /* FIX: modern viewport-eenheden voor iOS */
-    @supports (height:100svh){ .hero{ min-height:100svh } }
-    @supports (height:100dvh){ .hero{ min-height:100dvh } }
-
+    @supports (height:100svh){ .hero{min-height:100svh} }
+    @supports (height:100dvh){ .hero{min-height:100dvh} }
     .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
     .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
@@ -156,17 +147,17 @@
     .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
     .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
 
-    .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative}
-    .carousel-container{perspective:1500px;height:460px;position:relative;overflow:hidden} /* FIX: clip carousel */
-    .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
-    .timeline-card{position:absolute;width:360px;height:400px;background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(232,181,99,.2);border-radius:20px;padding:34px;overflow:hidden;transform-origin:center center;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;will-change:transform}
+    .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative;z-index:1}
+    .carousel-container{perspective:1500px;height:460px;position:relative;overflow:hidden;z-index:2}
+    .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1);will-change:transform}
+    .timeline-card{position:absolute;width:360px;height:400px;background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(232,181,99,.2);border-radius:20px;padding:34px;overflow:hidden;transform-origin:center center;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
     .timeline-card:hover{box-shadow:0 24px 80px rgba(232,181,99,.28);border-color:var(--gold);transform:translateZ(6px) scale(1.03)}
     .timeline-card .year{font-size:68px;font-weight:900;color:var(--gold);margin-bottom:14px;text-shadow:0 0 30px rgba(232,181,99,.35)}
-    .carousel-nav{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);display:flex;gap:14px}
+    .carousel-nav{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);display:flex;gap:14px;z-index:3}
     .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,181,99,.35);cursor:pointer;transition:transform .2s, background .2s}
     .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
 
-    /* FOUNDER — kleiner en verfijnd */
+    /* FOUNDER */
     .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
     .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
     .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
@@ -177,29 +168,29 @@
     .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
     .founder-role{font-size:12px;opacity:.75}
 
-    /* CLIENTS — geen kleurverandering, wel subtiele zoom */
+    /* CLIENTS */
     .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
     .client-card{aspect-ratio:3/2;padding:24px;background:rgba(255,255,255,.05);border:1px solid rgba(232,181,99,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
     .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.8;transition:transform .25s}
     .client-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.07);box-shadow:0 14px 50px rgba(232,181,99,.22)}
-    .client-card:hover img{transform:scale(1.06)} /* kleur blijft identiek */
+    .client-card:hover img{transform:scale(1.06)}
 
     /* IMPACT */
     .impact-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .impact-card{background:rgba(255,255,255,.035);backdrop-filter:blur(26px);border:2px solid rgba(232,181,99,.22);border-radius:24px;padding:34px;transition:transform .3s, border-color .3s, box-shadow .3s;will-change:transform}
+    .impact-card{background:rgba(255,255,255,.035);backdrop-filter:blur(26px);border:2px solid rgba(232,181,99,.22);border-radius:24px;padding:34px;transition:transform .3s, border-color .3s, box-shadow .3s;will-change:transform;max-width:100%}
     .impact-card:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 36px 110px rgba(232,181,99,.33)}
     .impact-header{display:flex;justify-content:space-between;margin-bottom:18px}
     .impact-client{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
     .impact-tag{padding:6px 12px;border-radius:999px;border:2px solid var(--gold);font-size:9px}
     .impact-title{font-size:28px;font-weight:800;margin-bottom:10px}
     .impact-desc{opacity:.86;margin-bottom:22px}
-    .counter{font-size:48px;font-weight:900;color:var(--gold)}
+    .counter{font-size:clamp(36px,12vw,48px);font-weight:900;color:var(--gold)}
     .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
     .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
 
-    /* CERTS — grotere logo’s, zwart tekst op hover, classy highlight */
+    /* CERTS */
     .certs-section{padding:140px 80px;max-width:1400px;margin:0 auto}
     .cert-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
     .cert-badge{
@@ -207,25 +198,19 @@
       border:2px solid rgba(232,181,99,.24);
       display:flex;align-items:center;gap:14px;
       transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
-      will-change:transform;
-      position:relative; overflow:hidden;
+      will-change:transform;position:relative;overflow:hidden
     }
     .cert-badge::after{
-      content:""; position:absolute; inset:0; pointer-events:none;
+      content:"";position:absolute;inset:0;pointer-events:none;
       background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
-      transform:translateX(-120%); transition:transform .5s ease;
+      transform:translateX(-120%);transition:transform .5s ease
     }
-    .cert-badge:hover::after{ transform:translateX(120%) }
+    .cert-badge:hover::after{transform:translateX(120%)}
     .cert-badge img{height:42px;opacity:.95;transition:transform .25s}
     .cert-badge span{color:#ffffff;transition:color .25s}
-    .cert-badge:hover{
-      transform:translateY(-6px) scale(1.03);
-      border-color:var(--gold);
-      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
-      box-shadow:0 18px 60px rgba(232,181,99,.28);
-    }
+    .cert-badge:hover{transform:translateY(-6px) scale(1.03);border-color:var(--gold);background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));box-shadow:0 18px 60px rgba(232,181,99,.28)}
     .cert-badge:hover img{transform:scale(1.08)}
-    .cert-badge:hover span{color:#0a0a0a} /* wit -> zwart */
+    .cert-badge:hover span{color:#0a0a0a}
 
     /* CONTACT */
     .contact-section{padding:140px 80px;max-width:1400px;margin:0 auto}
@@ -234,12 +219,10 @@
     .contact-form:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 28px 80px rgba(232,181,99,.22)}
     .form-group{margin-bottom:20px}
     .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-    /* FIX: 16px om iOS 'zoom on focus' te voorkomen */
     .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px}
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
     .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
 
-    /* FIX: safe-area voor cookie banner */
     .cookie-banner{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
     .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
     .cookie-buttons{display:flex;gap:10px}
@@ -268,12 +251,16 @@
       .services-bento{grid-template-columns:1fr}
       .service-card.large,.service-card.wide{grid-column:span 1;grid-row:span 1}
       .clients-grid{grid-template-columns:repeat(2,1fr)}
-      .carousel-container{height:340px}
-      .timeline-card{width:260px;height:320px;padding:22px}
+      .carousel-container{height:auto;perspective:none;overflow:visible}
+      .carousel-track{position:relative;left:auto;top:auto;display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 8px 16px;-webkit-overflow-scrolling:touch}
+      .timeline-card{position:relative;width:auto;height:auto;transform:none!important;scroll-snap-align:center}
+      .carousel-nav{bottom:-66px}
+      .timeline-card .year{font-size:48px}
       .founder-grid{grid-template-columns:1fr;gap:36px}
       .founder-card{max-width:240px;margin:0 auto}
       .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
       .cert-badge img{height:38px}
+      .impact-grid{gap:20px}
     }
     @media (prefers-reduced-motion:reduce){
       *{animation:none!important;transition:none!important}
@@ -314,7 +301,6 @@
   <div class="floating-hub">
     <button class="hub-btn" onclick="location.hash='#contact'">→</button>
     <button class="hub-btn" onclick="location.hash='#cases'">↑</button>
-    <!-- FIX: 'instant' -> 'auto' (Safari kent 'instant' niet) -->
     <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'auto'})">⌃</button>
   </div>
 
@@ -608,12 +594,17 @@
   </footer>
 
   <script>
+    /* Loader: DOMContentLoaded + load + hard fallback */
     (function(){
-      document.documentElement.style.scrollBehavior='auto';
+      const hide = ()=>{ const pl=document.querySelector('.page-loader'); if(pl && !pl.classList.contains('hidden')) pl.classList.add('hidden') };
+      document.addEventListener('DOMContentLoaded',()=>setTimeout(hide,300));
+      window.addEventListener('load',()=>setTimeout(hide,300));
+      setTimeout(hide,3000);
       if('scrollRestoration' in history){history.scrollRestoration='manual'}
-      window.addEventListener('load',()=>{ setTimeout(()=>{ const pl=document.querySelector('.page-loader'); if(pl) pl.classList.add('hidden'); },500) });
+      document.documentElement.style.scrollBehavior='auto';
     })();
 
+    /* Cookie banner */
     (function(){
       const banner=document.getElementById('cookie-banner');
       const accept=document.getElementById('cookie-accept');
@@ -625,73 +616,103 @@
       if(decline) decline.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','declined')}catch(e){}; if(banner) banner.style.display='none' });
     })();
 
+    /* Header scroll state */
     window.addEventListener('scroll',()=>{ 
       const h=document.getElementById('header'); 
       if(!h) return; 
       h.classList.toggle('scrolled', window.pageYOffset>100);
     });
 
+    /* Timeline data */
     const timelineData=[
       {year:2002,title:'De Start',desc:'Video & internet marketing'},
       {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven'},
       {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca'},
       {year:2025,title:'AI-Driven',desc:'Marketing op enterprise-niveau'}
     ];
+
+    /* Carousel: 3D desktop, scroll-snap fallback op mobiel */
     (function(){
       const container=document.getElementById('carouselContainer');
-      const carousel=document.getElementById('carousel');
+      const track=document.getElementById('carousel');
       const nav=document.getElementById('carouselNav');
-      if(!container||!carousel||!nav) return;
+      if(!container||!track||!nav) return;
 
       let idx=0;
-      timelineData.forEach((it,i)=>{
-        const card=document.createElement('div'); card.className='timeline-card';
-        card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
-        card.addEventListener('click',()=>rotateTo(i));
-        card.addEventListener('mousemove', (e)=>tiltCard(card,e));
-        card.addEventListener('mouseleave', ()=>card.style.transform = card.dataset.baseTransform);
-        carousel.appendChild(card);
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
+      // Build cards + dots
+      timelineData.forEach((it,i)=>{
+        const card=document.createElement('div');
+        card.className='timeline-card';
+        card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
+        track.appendChild(card);
         const dot=document.createElement('div'); dot.className='carousel-dot'; if(i===0) dot.classList.add('active');
-        dot.addEventListener('click',()=>rotateTo(i));
         nav.appendChild(dot);
       });
 
-      const cards=[...document.querySelectorAll('.timeline-card')];
-      const radius=540;
-      cards.forEach((c,i)=>{
-        const angle=(360/timelineData.length)*i;
-        const base=`translate(-50%,-50%) rotateY(${angle}deg) translateZ(${radius}px)`;
-        c.style.transform=base;
-        c.dataset.baseTransform=base;
-      });
+      const cards=[...track.children];
 
-      function rotateTo(n){
-        idx=n;
-        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateY(${-(360/timelineData.length)*n}deg)`;
-        [...document.querySelectorAll('.carousel-dot')].forEach((d,k)=>d.classList.toggle('active',k===n));
+      if(isMobile){
+        // Mobile fallback: horizontal scroll-snap
+        const scrollToIndex = (n)=> cards[n]?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+        nav.querySelectorAll('.carousel-dot').forEach((d,i)=>d.addEventListener('click',()=>scrollToIndex(i)));
+        const updateActive=()=>{
+          const center=track.scrollLeft+track.clientWidth/2;
+          let best=0,bestDist=Infinity;
+          cards.forEach((c,i)=>{ const mid=c.offsetLeft+c.clientWidth/2; const dist=Math.abs(mid-center); if(dist<bestDist){bestDist=dist;best=i;} });
+          idx=best;
+          nav.querySelectorAll('.carousel-dot').forEach((d,k)=>d.classList.toggle('active',k===idx));
+        };
+        track.addEventListener('scroll',updateActive,{passive:true});
+        updateActive();
+      } else {
+        // Desktop 3D ring
+        function computeRadius(){
+          const w=container.clientWidth||window.innerWidth;
+          const cw=cards[0]?.offsetWidth||320;
+          return Math.max(cw*0.9, Math.min(w*0.45, 520));
+        }
+        let radius=computeRadius();
+
+        function layout(){
+          radius=computeRadius();
+          cards.forEach((c,i)=>{
+            const angle=(360/cards.length)*i;
+            const base=`translate(-50%,-50%) rotateY(${angle}deg) translateZ(${radius}px)`;
+            c.style.transform=base;
+            c.dataset.baseTransform=base;
+            c.onmousemove=(e)=>tiltCard(c,e);
+            c.onmouseleave=()=>{ c.style.transform=c.dataset.baseTransform; };
+            c.onclick=()=>rotateTo(i);
+          });
+          rotateTo(idx,true);
+        }
+        function rotateTo(n,immediate){
+          idx=n;
+          if(immediate){ track.style.transition='none'; }
+          track.style.transform=`translateX(-50%) translateY(-50%) rotateY(${-(360/cards.length)*n}deg)`;
+          if(immediate){ requestAnimationFrame(()=>{ track.style.transition=''; }); }
+          nav.querySelectorAll('.carousel-dot').forEach((d,k)=>d.classList.toggle('active',k===n));
+        }
+        function tiltCard(card,e){
+          const r=card.getBoundingClientRect();
+          const x=(e.clientX-r.left)/r.width-0.5;
+          const y=(e.clientY-r.top)/r.height-0.5;
+          const rx=y*-6, ry=x*6;
+          card.style.transform=card.dataset.baseTransform+` rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+        }
+        nav.querySelectorAll('.carousel-dot').forEach((d,i)=>d.addEventListener('click',()=>rotateTo(i)));
+        window.addEventListener('resize',layout);
+        window.addEventListener('orientationchange',()=>setTimeout(layout,300));
+        layout();
+        const pr=window.matchMedia('(prefers-reduced-motion: reduce)');
+        let auto; const start=()=>{ clearInterval(auto); if(!pr.matches){ auto=setInterval(()=>rotateTo((idx+1)%cards.length),4200); } };
+        start(); pr.addEventListener?.('change',start);
       }
-
-      container.addEventListener('mousemove',(e)=>{
-        const r=container.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-0.5;
-        const y=(e.clientY-r.top)/r.height-0.5;
-        const rotX=y*2.5, rotY=-x*2.5;
-        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateX(${rotX}deg) rotateY(${-(360/timelineData.length)*idx + rotY}deg)`;
-      });
-      container.addEventListener('mouseleave',()=>rotateTo(idx));
-
-      function tiltCard(card,e){
-        const r=card.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-0.5;
-        const y=(e.clientY-r.top)/r.height-0.5;
-        const rx=y*-6, ry=x*6;
-        card.style.transform=card.dataset.baseTransform+` rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
-      }
-
-      setInterval(()=>{ idx=(idx+1)%timelineData.length; rotateTo(idx); }, 4200);
     })();
 
+    /* Counters */
     (function(){
       const cs=document.querySelectorAll('.counter');
       const io=new IntersectionObserver(es=>{
@@ -710,6 +731,7 @@
       cs.forEach(c=>io.observe(c));
     })();
 
+    /* Reveal animations */
     window.addEventListener('load', ()=>{
       if(typeof gsap!=='undefined'){
         gsap.registerPlugin(ScrollTrigger);
@@ -719,6 +741,7 @@
       }
     });
 
+    /* Safari hover shadows */
     (function(){
       const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       if(isSafari){
