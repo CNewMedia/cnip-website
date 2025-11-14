@@ -438,6 +438,57 @@
     .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
     .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
 
+    /* Certificaten */
+    .certs-section{padding:80px 20px;max-width:1400px;margin:0 auto}
+    .cert-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top:40px;
+    }
+    .cert-badge{
+      padding:14px 22px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:2px solid rgba(232,181,99,.24);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      transition:all .3s;
+      position:relative;
+      overflow:hidden;
+    }
+    .cert-badge::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
+      transform:translateX(-120%);
+      transition:transform .5s ease;
+    }
+    .cert-badge:hover::after{transform:translateX(120%)}
+    .cert-badge img{
+      height:36px;
+      opacity:.95;
+      transition:transform .25s;
+    }
+    .cert-badge span{
+      color:#ffffff;
+      font-size:14px;
+      font-weight:700;
+      transition:color .25s;
+    }
+    .cert-badge:hover{
+      transform:translateY(-4px) scale(1.03);
+      border-color:var(--gold);
+      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
+      box-shadow:0 12px 40px rgba(232,181,99,.28);
+    }
+    .cert-badge:hover img{transform:scale(1.08)}
+    .cert-badge:hover span{color:var(--black)}
+
     /* Contact */
     .contact-section{padding:80px 20px;max-width:1400px;margin:0 auto}
     .contact-grid{display:grid;grid-template-columns:1fr;gap:40px}
@@ -496,6 +547,11 @@
       .clients-grid{grid-template-columns:repeat(6,1fr);gap:18px}
       .impact-section{padding:140px 40px}
       .impact-grid{grid-template-columns:1fr 1fr;gap:28px}
+      .certs-section{padding:140px 80px}
+      .cert-grid{gap:16px}
+      .cert-badge{padding:16px 26px}
+      .cert-badge img{height:42px}
+      .cert-badge span{font-size:15px}
       .contact-section{padding:140px 40px}
       .contact-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
       .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;text-align:left}
@@ -601,7 +657,7 @@
       
       <div class="work-item">
         <div class="work-visual">
-          <img src="/images/Willems_05092024.jpg" alt="Willems Veranda" loading="lazy">
+          <img src="/images/willems_2.jpg" alt="Willems Veranda" loading="lazy">
         </div>
         <div class="work-overlay">
           <span class="work-tag">SEO & Rebranding</span>
@@ -776,6 +832,39 @@
             <div class="counter-label">Keywords Top 10</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certs-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Validatie</div>
+      <h2 class="section-title">Certified<br>Expertise</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-badge">
+        <img loading="lazy" src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold">
+        <span>HubSpot Gold</span>
+      </div>
+      <div class="cert-badge">
+        <img loading="lazy" src="https://oryen.be/hubfs/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge">
+        <span>Cambridge</span>
+      </div>
+      <div class="cert-badge">
+        <img loading="lazy" src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads">
+        <span>Google Ads</span>
+      </div>
+      <div class="cert-badge">
+        <img loading="lazy" src="images/certificaten/GA-certified.png" alt="Analytics">
+        <span>Analytics</span>
+      </div>
+      <div class="cert-badge">
+        <img loading="lazy" src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube">
+        <span>YouTube</span>
+      </div>
+      <div class="cert-badge">
+        <img loading="lazy" src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush">
+        <span>Semrush</span>
       </div>
     </div>
   </section>
