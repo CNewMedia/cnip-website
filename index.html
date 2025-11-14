@@ -2,7 +2,11 @@
 <html lang="nl-BE">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=5.0, maximum-scale=5.0">
+  <!-- FIX: correcte viewport voor iOS + safe areas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Als je pinch-zoom volledig wil blokkeren (minder toegankelijk): 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"> 
+  -->
 
   <!-- GTM (fires only after consent) -->
   <script>
@@ -72,8 +76,11 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
-    html{overflow-x:hidden}
+    /* FIX: voorkom iOS auto text-zoom en horizontale scroll */
+    html{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+    /* FIX: media mogen nooit breder dan viewport worden */
+    img,svg,video,canvas,iframe{max-width:100%;height:auto}
 
     .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
     .page-loader.hidden{opacity:0;visibility:hidden}
@@ -88,10 +95,15 @@
     nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
     nav a:hover::after{width:100%}
 
-    .floating-hub{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;gap:10px}
+    /* FIX: respecteer safe-area op iPhone */
+    .floating-hub{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:900;display:flex;gap:10px}
     .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer}
 
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
+    /* FIX: modern viewport-eenheden voor iOS */
+    @supports (height:100svh){ .hero{ min-height:100svh } }
+    @supports (height:100dvh){ .hero{ min-height:100dvh } }
+
     .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
     .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
@@ -145,7 +157,7 @@
     .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
 
     .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative}
-    .carousel-container{perspective:1500px;height:460px;position:relative}
+    .carousel-container{perspective:1500px;height:460px;position:relative;overflow:hidden} /* FIX: clip carousel */
     .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
     .timeline-card{position:absolute;width:360px;height:400px;background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(232,181,99,.2);border-radius:20px;padding:34px;overflow:hidden;transform-origin:center center;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;will-change:transform}
     .timeline-card:hover{box-shadow:0 24px 80px rgba(232,181,99,.28);border-color:var(--gold);transform:translateZ(6px) scale(1.03)}
@@ -222,11 +234,13 @@
     .contact-form:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 28px 80px rgba(232,181,99,.22)}
     .form-group{margin-bottom:20px}
     .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff}
+    /* FIX: 16px om iOS 'zoom on focus' te voorkomen */
+    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px}
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
     .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
 
-    .cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
+    /* FIX: safe-area voor cookie banner */
+    .cookie-banner{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
     .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
     .cookie-buttons{display:flex;gap:10px}
     .cookie-btn{padding:11px 18px;border-radius:12px;border:none;font-weight:800;letter-spacing:.5px;cursor:pointer}
@@ -300,7 +314,8 @@
   <div class="floating-hub">
     <button class="hub-btn" onclick="location.hash='#contact'">→</button>
     <button class="hub-btn" onclick="location.hash='#cases'">↑</button>
-    <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'instant'})">⌃</button>
+    <!-- FIX: 'instant' -> 'auto' (Safari kent 'instant' niet) -->
+    <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'auto'})">⌃</button>
   </div>
 
   <section class="hero">
