@@ -1,722 +1,799 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=5.0, maximum-scale=5.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=5.0, maximum-scale=5.0">
 
-  <!-- GTM (fires only after consent) -->
-  <script>
-    (function(){
-      try{
-        const c = localStorage.getItem('cookieConsent');
-        if (c === 'accepted') {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-M3QJK6VR');
-        }
-      }catch(e){}
-    })();
-  </script>
+    <script>
+    (function(){
+      try{
+        const c = localStorage.getItem('cookieConsent');
+        if (c === 'accepted') {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+        }
+      }catch(e){}
+    })();
+  </script>
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
-  <link rel="preload" as="image" href="/images/christophecnip.png" imagesrcset="/images/christophecnip.png 1x">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://3375589.fs1.hubspotusercontent-na1.net">
+  <link rel="preload" as="image" href="/images/christophecnip.png" imagesrcset="/images/christophecnip.png 1x">
 
-  <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
-  <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en AI-marketing. 23 jaar expertise. Vertrouwd door premium merken.">
-  <link rel="canonical" href="https://cnip.be/">
-  <link rel="alternate" hreflang="nl-be" href="https://cnip.be/">
-  <link rel="alternate" hreflang="nl" href="https://cnip.be/">
+  <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
+  <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en AI-marketing. 23 jaar expertise. Vertrouwd door premium merken.">
+  <link rel="canonical" href="https://cnip.be/">
+  <link rel="alternate" hreflang="nl-be" href="https://cnip.be/">
+  <link rel="alternate" hreflang="nl" href="https://cnip.be/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cnip.be/">
-  <meta property="og:title" content="CNIP | Marketing Bureau Gent | Video, SEO & Social Media">
-  <meta property="og:description" content="Boutique marketing bureau in Gent sinds 2002. Specialists in video, SEO en social media. Vertrouwd door Hof van Cleve, BMW, DSM Keukens.">
-  <meta property="og:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
-  <meta property="og:locale" content="nl_BE">
-  <meta property="og:site_name" content="CNIP">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cnip.be/">
+  <meta property="og:title" content="CNIP | Marketing Bureau Gent | Video, SEO & Social Media">
+  <meta property="og:description" content="Boutique marketing bureau in Gent sinds 2002. Specialists in video, SEO en social media. Vertrouwd door Hof van Cleve, BMW, DSM Keukens.">
+  <meta property="og:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:site_name" content="CNIP">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://cnip.be/">
-  <meta name="twitter:title" content="CNIP | Marketing Bureau Gent">
-  <meta name="twitter:description" content="Boutique marketing bureau in Gent sinds 2002. Video, SEO, social media.">
-  <meta name="twitter:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://cnip.be/">
+  <meta name="twitter:title" content="CNIP | Marketing Bureau Gent">
+  <meta name="twitter:description" content="Boutique marketing bureau in Gent sinds 2002. Video, SEO, social media.">
+  <meta name="twitter:image" content="https://cnip.be/images/logocnip/CNIP-logo-og.jpg">
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MarketingAgency",
-    "name":"CNIP",
-    "alternateName":"CNIP Marketing Bureau",
-    "description":"Boutique marketing bureau in Gent sinds 2002. Gespecialiseerd in video productie, SEO, social media en AI-marketing.",
-    "url":"https://cnip.be",
-    "logo":{"@type":"ImageObject","url":"https://cnip.be/images/logocnip/CNIP%20logo%2025%20zwart.png","width":200,"height":60},
-    "telephone":"+3293965883",
-    "email":"info@cnip.be",
-    "address":{"@type":"PostalAddress","streetAddress":"Ottergemsesteenweg Zuid 808","addressLocality":"Gent","postalCode":"9000","addressCountry":"BE"},
-    "geo":{"@type":"GeoCoordinates","latitude":"51.0259","longitude":"3.7043"},
-    "foundingDate":"2002",
-    "slogan":"We leiden. We volgen niet.",
-    "sameAs":["https://linkedin.com/company/cnipagency","https://www.instagram.com/cnip.be"],
-    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}
-  }
-  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MarketingAgency",
+    "name":"CNIP",
+    "alternateName":"CNIP Marketing Bureau",
+    "description":"Boutique marketing bureau in Gent sinds 2002. Gespecialiseerd in video productie, SEO, social media en AI-marketing.",
+    "url":"https://cnip.be",
+    "logo":{"@type":"ImageObject","url":"https://cnip.be/images/logocnip/CNIP%20logo%2025%20zwart.png","width":200,"height":60},
+    "telephone":"+3293965883",
+    "email":"info@cnip.be",
+    "address":{"@type":"PostalAddress","streetAddress":"Ottergemsesteenweg Zuid 808","addressLocality":"Gent","postalCode":"9000","addressCountry":"BE"},
+    "geo":{"@type":"GeoCoordinates","latitude":"51.0259","longitude":"3.7043"},
+    "foundingDate":"2002",
+    "slogan":"We leiden. We volgen niet.",
+    "sameAs":["https://linkedin.com/company/cnipagency","https://www.instagram.com/cnip.be"],
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}
+  }
+  </script>
 
-  <!-- libs (defer) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
-    html{overflow-x:hidden}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
+    html{overflow-x:hidden}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
 
-    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
-    .page-loader.hidden{opacity:0;visibility:hidden}
-    .loader-text{font-size:88px;font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
+    .page-loader.hidden{opacity:0;visibility:hidden}
+    .loader-text{font-size:88px;font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-    header{position:fixed;top:0;width:100%;background:rgba(10,10,10,.85);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000}
-    .header-content{max-width:1600px;margin:0 auto;padding:22px 80px;display:flex;justify-content:space-between;align-items:center}
-    .logo-text{font-size:28px;font-weight:900;letter-spacing:-.5px}
-    .badge{font-size:9px;color:var(--gold);padding:6px 12px;border:1px solid rgba(232,181,99,.3);border-radius:999px;margin-left:10px}
-    nav{display:flex;gap:28px}
-    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative}
-    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
-    nav a:hover::after{width:100%}
+    header{position:fixed;top:0;width:100%;background:rgba(10,10,10,.85);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000}
+    .header-content{max-width:1600px;margin:0 auto;padding:22px 80px;display:flex;justify-content:space-between;align-items:center}
+    .logo-text{font-size:28px;font-weight:900;letter-spacing:-.5px}
+    .badge{font-size:9px;color:var(--gold);padding:6px 12px;border:1px solid rgba(232,181,99,.3);border-radius:999px;margin-left:10px}
+    nav{display:flex;gap:28px}
+    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s}
+    nav a:hover::after{width:100%}
 
-    .floating-hub{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;gap:10px}
-    .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer}
+    .floating-hub{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;gap:10px}
+    .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer}
 
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
-    .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
-    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
-    .hero-title{font-size:clamp(56px,10vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
-    .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
-    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .cta-primary{padding:16px 32px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;font-weight:800;letter-spacing:1px}
-    .cta-secondary{padding:16px 32px;border-radius:999px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:800;letter-spacing:1px}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
+    .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1} /* Z-index 1 voor de content */
+    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+    .hero-title{font-size:clamp(56px,10vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
+    .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
+    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .cta-primary{padding:16px 32px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;font-weight:800;letter-spacing:1px}
+    .cta-secondary{padding:16px 32px;border-radius:999px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:800;letter-spacing:1px}
 
-    .marquee-section{padding:60px 0;border-block:1px solid rgba(232,181,99,.18);overflow:hidden}
-    .marquee{display:flex;white-space:nowrap;animation:marq 40s linear infinite}
-    @keyframes marq{to{transform:translateX(-50%)}}
-    .marquee-item,.marquee-divider{padding:0 40px;font-size:56px;font-weight:900}
-    .marquee-item{-webkit-text-stroke:2px rgba(232,181,99,.3);color:transparent}
-    .marquee-divider{color:var(--gold)}
+    .marquee-section{padding:60px 0;border-block:1px solid rgba(232,181,99,.18);overflow:hidden}
+    .marquee{display:flex;white-space:nowrap;animation:marq 40s linear infinite}
+    @keyframes marq{to{transform:translateX(-50%)}}
+    .marquee-item,.marquee-divider{padding:0 40px;font-size:56px;font-weight:900}
+    .marquee-item{-webkit-text-stroke:2px rgba(232,181,99,.3);color:transparent}
+    .marquee-divider{color:var(--gold)}
 
-    .services-section{padding:140px 80px;max-width:1600px;margin:0 auto}
-    .section-header{text-align:center;margin-bottom:64px}
-    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
-    .section-title{font-size:clamp(40px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .services-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:280px}
+    .services-section{padding:140px 80px;max-width:1600px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:64px}
+    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+    .section-title{font-size:clamp(40px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .services-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:280px}
 
-    .service-card{
-      background:rgba(255,255,255,.035);
-      border:1px solid rgba(232,181,99,.16);
-      border-radius:20px;
-      padding:34px;
-      position:relative;
-      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
-      will-change:transform;
-    }
-    .service-card:hover{
-      transform:translateY(-8px);
-      border-color:var(--gold);
-      background:rgba(255,255,255,.05);
-      box-shadow:0 20px 60px rgba(232,181,99,.22), 0 0 0 1px rgba(232,181,99,.08) inset;
-    }
-    .service-card.large{grid-column:span 2;grid-row:span 2}
-    .service-card.wide{grid-column:span 2}
-    .service-number{position:absolute;top:-10px;right:14px;font-size:92px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(232,181,99,.25);pointer-events:none}
-    .service-title{font-size:26px;font-weight:800;margin-bottom:10px}
-    .service-desc{opacity:.88;line-height:1.55}
+    .service-card{
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(232,181,99,.16);
+      border-radius:20px;
+      padding:34px;
+      position:relative;
+      transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+      will-change:transform;
+    }
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
+      background:rgba(255,255,255,.05);
+      box-shadow:0 20px 60px rgba(232,181,99,.22), 0 0 0 1px rgba(232,181,99,.08) inset;
+    }
+    .service-card.large{grid-column:span 2;grid-row:span 2}
+    .service-card.wide{grid-column:span 2}
+    .service-number{position:absolute;top:-10px;right:14px;font-size:92px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(232,181,99,.25);pointer-events:none}
+    .service-title{font-size:26px;font-weight:800;margin-bottom:10px}
+    .service-desc{opacity:.88;line-height:1.55}
 
-    .video-split{display:grid;grid-template-columns:1fr 1fr;min-height:86vh}
-    .video-side{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .video-side video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .video-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(10,10,10,.7), rgba(10,10,10,.35));display:flex;align-items:center;justify-content:center;pointer-events:none}
-    .video-content{text-align:center;padding:42px}
-    .video-label{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-    .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
-    .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
+    .video-split{display:grid;grid-template-columns:1fr 1fr;min-height:86vh}
+    .video-side{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .video-side video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .video-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(10,10,10,.7), rgba(10,10,10,.35));display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .video-content{text-align:center;padding:42px}
+    .video-label{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+    .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
+    .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
 
-    .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative}
-    .carousel-container{perspective:1500px;height:460px;position:relative}
-    .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
-    .timeline-card{position:absolute;width:360px;height:400px;background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(232,181,99,.2);border-radius:20px;padding:34px;overflow:hidden;transform-origin:center center;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;will-change:transform}
-    .timeline-card:hover{box-shadow:0 24px 80px rgba(232,181,99,.28);border-color:var(--gold);transform:translateZ(6px) scale(1.03)}
-    .timeline-card .year{font-size:68px;font-weight:900;color:var(--gold);margin-bottom:14px;text-shadow:0 0 30px rgba(232,181,99,.35)}
-    .carousel-nav{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);display:flex;gap:14px}
-    .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,181,99,.35);cursor:pointer;transition:transform .2s, background .2s}
-    .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
+    .timeline-3d{padding:140px 80px 240px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);overflow:hidden;position:relative}
+    .carousel-container{perspective:1500px;height:460px;position:relative}
+    .carousel-track{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+    .timeline-card{position:absolute;width:360px;height:400px;background:rgba(255,255,255,.05);backdrop-filter:blur(16px);border:1px solid rgba(232,181,99,.2);border-radius:20px;padding:34px;overflow:hidden;transform-origin:center center;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;will-change:transform}
+    .timeline-card:hover{box-shadow:0 24px 80px rgba(232,181,99,.28);border-color:var(--gold);transform:translateZ(6px) scale(1.03)}
+    .timeline-card .year{font-size:68px;font-weight:900;color:var(--gold);margin-bottom:14px;text-shadow:0 0 30px rgba(232,181,99,.35)}
+    .carousel-nav{position:absolute;bottom:-96px;left:50%;transform:translateX(-50%);display:flex;gap:14px}
+    .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,181,99,.35);cursor:pointer;transition:transform .2s, background .2s}
+    .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
 
-    /* FOUNDER — kleiner en verfijnd */
-    .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
-    .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
-    .founder-media{width:100%;aspect-ratio:13/16;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
-    .founder-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
-    .founder-info{padding:18px;border-top:2px solid var(--gold)}
-    .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
-    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
-    .founder-role{font-size:12px;opacity:.75}
+    /* FOUNDER — kleiner en verfijnd */
+    .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
+    .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
+    .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
+    .founder-media{width:100%;aspect-ratio:13/16;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
+    .founder-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+    .founder-info{padding:18px;border-top:2px solid var(--gold)}
+    .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
+    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
+    .founder-role{font-size:12px;opacity:.75}
 
-    /* CLIENTS — geen kleurverandering, wel subtiele zoom */
-    .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
-    .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-    .client-card{aspect-ratio:3/2;padding:24px;background:rgba(255,255,255,.05);border:1px solid rgba(232,181,99,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
-    .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.8;transition:transform .25s}
-    .client-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.07);box-shadow:0 14px 50px rgba(232,181,99,.22)}
-    .client-card:hover img{transform:scale(1.06)} /* kleur blijft identiek */
+    /* CLIENTS — geen kleurverandering, wel subtiele zoom */
+    .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
+    .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+    .client-card{aspect-ratio:3/2;padding:24px;background:rgba(255,255,255,.05);border:1px solid rgba(232,181,99,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;will-change:transform}
+    .client-card img{max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1) grayscale(1);opacity:.8;transition:transform .25s}
+    .client-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(255,255,255,.07);box-shadow:0 14px 50px rgba(232,181,99,.22)}
+    .client-card:hover img{transform:scale(1.06)} /* kleur blijft identiek */
 
-    /* IMPACT */
-    .impact-section{padding:140px 80px;max-width:1600px;margin:0 auto}
-    .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .impact-card{background:rgba(255,255,255,.035);backdrop-filter:blur(26px);border:2px solid rgba(232,181,99,.22);border-radius:24px;padding:34px;transition:transform .3s, border-color .3s, box-shadow .3s;will-change:transform}
-    .impact-card:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 36px 110px rgba(232,181,99,.33)}
-    .impact-header{display:flex;justify-content:space-between;margin-bottom:18px}
-    .impact-client{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
-    .impact-tag{padding:6px 12px;border-radius:999px;border:2px solid var(--gold);font-size:9px}
-    .impact-title{font-size:28px;font-weight:800;margin-bottom:10px}
-    .impact-desc{opacity:.86;margin-bottom:22px}
-    .counter{font-size:48px;font-weight:900;color:var(--gold)}
-    .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
-    .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
+    /* IMPACT */
+    .impact-section{padding:140px 80px;max-width:1600px;margin:0 auto}
+    .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .impact-card{background:rgba(255,255,255,.035);backdrop-filter:blur(26px);border:2px solid rgba(232,181,99,.22);border-radius:24px;padding:34px;transition:transform .3s, border-color .3s, box-shadow .3s;will-change:transform}
+    .impact-card:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 36px 110px rgba(232,181,99,.33)}
+    .impact-header{display:flex;justify-content:space-between;margin-bottom:18px}
+    .impact-client{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.75}
+    .impact-tag{padding:6px 12px;border-radius:999px;border:2px solid var(--gold);font-size:9px}
+    .impact-title{font-size:28px;font-weight:800;margin-bottom:10px}
+    .impact-desc{opacity:.86;margin-bottom:22px}
+    .counter{font-size:48px;font-weight:900;color:var(--gold)}
+    .counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+    .counter-label{font-size:10px;opacity:.65;text-transform:uppercase;letter-spacing:1px}
 
-    /* CERTS — grotere logo’s, zwart tekst op hover, classy highlight */
-    .certs-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .cert-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-    .cert-badge{
-      padding:16px 26px;border-radius:999px;background:rgba(255,255,255,.06);
-      border:2px solid rgba(232,181,99,.24);
-      display:flex;align-items:center;gap:14px;
-      transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
-      will-change:transform;
-      position:relative; overflow:hidden;
-    }
-    .cert-badge::after{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
-      transform:translateX(-120%); transition:transform .5s ease;
-    }
-    .cert-badge:hover::after{ transform:translateX(120%) }
-    .cert-badge img{height:42px;opacity:.95;transition:transform .25s}
-    .cert-badge span{color:#ffffff;transition:color .25s}
-    .cert-badge:hover{
-      transform:translateY(-6px) scale(1.03);
-      border-color:var(--gold);
-      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
-      box-shadow:0 18px 60px rgba(232,181,99,.28);
-    }
-    .cert-badge:hover img{transform:scale(1.08)}
-    .cert-badge:hover span{color:#0a0a0a} /* wit -> zwart */
+    /* CERTS — grotere logo’s, zwart tekst op hover, classy highlight */
+    .certs-section{padding:140px 80px;max-width:1400px;margin:0 auto}
+    .cert-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+    .cert-badge{
+      padding:16px 26px;border-radius:999px;background:rgba(255,255,255,.06);
+      border:2px solid rgba(232,181,99,.24);
+      display:flex;align-items:center;gap:14px;
+      transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
+      will-change:transform;
+      position:relative; overflow:hidden;
+    }
+    .cert-badge::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
+      transform:translateX(-120%); transition:transform .5s ease;
+    }
+    .cert-badge:hover::after{ transform:translateX(120%) }
+    .cert-badge img{height:42px;opacity:.95;transition:transform .25s}
+    .cert-badge span{color:#ffffff;transition:color .25s}
+    .cert-badge:hover{
+      transform:translateY(-6px) scale(1.03);
+      border-color:var(--gold);
+      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
+      box-shadow:0 18px 60px rgba(232,181,99,.28);
+    }
+    .cert-badge:hover img{transform:scale(1.08)}
+    .cert-badge:hover span{color:#0a0a0a} /* wit -> zwart */
 
-    /* CONTACT */
-    .contact-section{padding:140px 80px;max-width:1400px;margin:0 auto}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-    .contact-form{background:rgba(255,255,255,.035);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.2);border-radius:24px;padding:40px;transition:transform .25s, box-shadow .25s, border-color .25s}
-    .contact-form:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 28px 80px rgba(232,181,99,.22)}
-    .form-group{margin-bottom:20px}
-    .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff}
-    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
-    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
+    /* CONTACT */
+    .contact-section{padding:140px 80px;max-width:1400px;margin:0 auto}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .contact-form{background:rgba(255,255,255,.035);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.2);border-radius:24px;padding:40px;transition:transform .25s, box-shadow .25s, border-color .25s}
+    .contact-form:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 28px 80px rgba(232,181,99,.22)}
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
 
-    .cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
-    .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
-    .cookie-buttons{display:flex;gap:10px}
-    .cookie-btn{padding:11px 18px;border-radius:12px;border:none;font-weight:800;letter-spacing:.5px;cursor:pointer}
-    .cookie-accept{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
-    .cookie-decline{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff}
+    .cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
+    .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .cookie-buttons{display:flex;gap:10px}
+    .cookie-btn{padding:11px 18px;border-radius:12px;border:none;font-weight:800;letter-spacing:.5px;cursor:pointer}
+    .cookie-accept{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
+    .cookie-decline{background:transparent;border:2px solid rgba(255,255,255,.25);color:#fff}
 
-    footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 80px 36px;max-width:1600px;margin:0 auto}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:36px}
-    .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
-    .footer-grid a{color:rgba(255,255,255,.75);text-decoration:none;display:block;margin-bottom:8px}
-    .footer-grid a:hover{color:var(--gold)}
-    .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
+    footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 80px 36px;max-width:1600px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:36px}
+    .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
+    .footer-grid a{color:rgba(255,255,255,.75);text-decoration:none;display:block;margin-bottom:8px}
+    .footer-grid a:hover{color:var(--gold)}
+    .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
 
-    @media (max-width:1024px){
-      .header-content{padding:18px 40px}
-      nav{display:none}
-      .video-split{grid-template-columns:1fr}
-      .services-bento{grid-template-columns:repeat(2,1fr)}
-      .founder-grid,.impact-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
-      .clients-grid{grid-template-columns:repeat(3,1fr)}
-      .footer-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:768px){
-      .hero,.services-section,.founder-section,.clients-section,.impact-section,.certs-section,.contact-section,footer{padding:60px 20px}
-      .services-bento{grid-template-columns:1fr}
-      .service-card.large,.service-card.wide{grid-column:span 1;grid-row:span 1}
-      .clients-grid{grid-template-columns:repeat(2,1fr)}
-      .carousel-container{height:340px}
-      .timeline-card{width:260px;height:320px;padding:22px}
-      .founder-grid{grid-template-columns:1fr;gap:36px}
-      .founder-card{max-width:240px;margin:0 auto}
-      .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
-      .cert-badge img{height:38px}
-    }
-    @media (prefers-reduced-motion:reduce){
-      *{animation:none!important;transition:none!important}
-    }
-  </style>
+    @media (max-width:1024px){
+      .header-content{padding:18px 40px}
+      nav{display:none}
+      .video-split{grid-template-columns:1fr}
+      .services-bento{grid-template-columns:repeat(2,1fr)}
+      .founder-grid,.impact-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+      .clients-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:768px){
+      .hero,.services-section,.founder-section,.clients-section,.impact-section,.certs-section,.contact-section,footer{padding:60px 20px}
+      .services-bento{grid-template-columns:1fr}
+      .service-card.large,.service-card.wide{grid-column:span 1;grid-row:span 1}
+      .clients-grid{grid-template-columns:repeat(2,1fr)}
+      .carousel-container{height:340px}
+      .timeline-card{width:260px;height:320px;padding:22px}
+      .founder-grid{grid-template-columns:1fr;gap:36px}
+      .founder-card{max-width:240px;margin:0 auto}
+      .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
+      .cert-badge img{height:38px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important}
+    }
+  </style>
 </head>
 <body>
-  <!-- GTM (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="page-loader"><div class="loader-text">CNIP</div></div>
+  <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
-  <div class="cookie-banner" id="cookie-banner">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        <h3 style="color:var(--gold);margin:0 0 6px 0">Privacy & Cookies</h3>
-        <p style="margin:0;opacity:.8">We gebruiken analytics cookies om deze site te verbeteren. Jouw keuze wordt gerespecteerd.</p>
-      </div>
-      <div class="cookie-buttons">
-        <button class="cookie-btn cookie-accept" id="cookie-accept">Accepteer</button>
-        <button class="cookie-btn cookie-decline" id="cookie-decline">Weiger</button>
-      </div>
-    </div>
-  </div>
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3 style="color:var(--gold);margin:0 0 6px 0">Privacy & Cookies</h3>
+        <p style="margin:0;opacity:.8">We gebruiken analytics cookies om deze site te verbeteren. Jouw keuze wordt gerespecteerd.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-accept" id="cookie-accept">Accepteer</button>
+        <button class="cookie-btn cookie-decline" id="cookie-decline">Weiger</button>
+      </div>
+    </div>
+  </div>
 
-  <header id="header">
-    <div class="header-content">
-      <div class="logo-text">CNIP <span class="badge">Since 2002</span></div>
-      <nav>
-        <a href="#story">Story</a>
-        <a href="#cases">Cases</a>
-        <a href="#clients">Klanten</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <header id="header">
+    <div class="header-content">
+      <div class="logo-text">CNIP <span class="badge">Since 2002</span></div>
+      <nav>
+        <a href="#story">Story</a>
+        <a href="#cases">Cases</a>
+        <a href="#clients">Klanten</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="floating-hub">
-    <button class="hub-btn" onclick="location.hash='#contact'">→</button>
-    <button class="hub-btn" onclick="location.hash='#cases'">↑</button>
-    <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'instant'})">⌃</button>
-  </div>
+  <div class="floating-hub">
+    <button class="hub-btn" onclick="location.hash='#contact'">→</button>
+    <button class="hub-btn" onclick="location.hash='#cases'">↑</button>
+    <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'instant'})">⌃</button>
+  </div>
 
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Boutique Marketing Bureau • Gent • Since 2002</div>
-      <h1 class="hero-title">We leiden.<br>We volgen<br>niet.</h1>
-      <p class="hero-subtitle">23 jaar storytelling. Maandelijks meetbare resultaten.<br>Video, SEO, Social. Keihard.</p>
-      <div class="hero-cta">
-        <a class="cta-primary" href="#contact">Start Gesprek</a>
-        <a class="cta-secondary" href="#cases">Bekijk Cases</a>
-      </div>
-    </div>
-  </section>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <canvas id="hero-3d-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
+        <div class="hero-content">
+      <div class="hero-eyebrow">Boutique Marketing Bureau • Gent • Since 2002</div>
+      <h1 class="hero-title">We leiden.<br>We volgen<br>niet.</h1>
+      <p class="hero-subtitle">23 jaar storytelling. Maandelijks meetbare resultaten.<br>Video, SEO, Social. Keihard.</p>
+      <div class="hero-cta">
+        <a class="cta-primary" href="#contact">Start Gesprek</a>
+        <a class="cta-secondary" href="#cases">Bekijk Cases</a>
+      </div>
+    </div>
+  </section>
 
-  <section class="marquee-section">
-    <div class="marquee">
-      <span class="marquee-item">STORYTELLERS</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">23 JAAR</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">INNOVATION FIRST</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">SYSTEM FREAKS</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">STORYTELLERS</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">23 JAAR</span><span class="marquee-divider">/</span>
-      <span class="marquee-item">INNOVATION FIRST</span><span class="marquee-divider">/</span>
-    </div>
-  </section>
+  <section class="marquee-section">
+    <div class="marquee">
+      <span class="marquee-item">STORYTELLERS</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">23 JAAR</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">INNOVATION FIRST</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">SYSTEM FREAKS</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">STORYTELLERS</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">23 JAAR</span><span class="marquee-divider">/</span>
+      <span class="marquee-item">INNOVATION FIRST</span><span class="marquee-divider">/</span>
+    </div>
+  </section>
 
-  <section id="services" class="services-section">
-    <div class="section-header">
-      <div class="section-eyebrow">Onze Expertise</div>
-      <h2 class="section-title">Alles wat je<br>merk nodig heeft</h2>
-    </div>
-    <div class="services-bento">
-      <div class="service-card large">
-        <div class="service-number">01</div>
-        <div>
-          <h3 class="service-title">Innovation<br>First</h3>
-          <p class="service-desc">Video, internet en metrics. Toen niemand het zag, bouwden wij de fundamenten.</p>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-number">02</div>
-        <h3 class="service-title">SEO</h3>
-        <p class="service-desc">Technisch + Content. Groei je vindbaarheid.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">03</div>
-        <h3 class="service-title">Social<br>Media</h3>
-        <p class="service-desc">Verhalen die de benchmark worden.</p>
-      </div>
-      <div class="service-card wide">
-        <div class="service-number">04</div>
-        <h3 class="service-title">Marketing Automation</h3>
-        <p class="service-desc">HubSpot workflows + AI. Data-driven personalisatie op schaal.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">05</div>
-        <h3 class="service-title">Websites</h3>
-        <p class="service-desc">Custom-built. SEO-ready. Conversie-focused.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">06</div>
-        <h3 class="service-title">Google<br>Ads</h3>
-        <p class="service-desc">ROI-focused met AI-optimalisatie.</p>
-      </div>
-    </div>
-  </section>
+  <section id="services" class="services-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Onze Expertise</div>
+      <h2 class="section-title">Alles wat je<br>merk nodig heeft</h2>
+      </div>
+    <div class="services-bento">
+      <div class="service-card large">
+        <div class="service-number">01</div>
+        <div>
+          <h3 class="service-title">Innovation<br>First</h3>
+          <p class="service-desc">Video, internet en metrics. Toen niemand het zag, bouwden wij de fundamenten.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3 class="service-title">SEO</h3>
+        <p class="service-desc">Technisch + Content. Groei je vindbaarheid.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3 class="service-title">Social<br>Media</h3>
+        <p class="service-desc">Verhalen die de benchmark worden.</p>
+      </div>
+      <div class="service-card wide">
+        <div class="service-number">04</div>
+        <h3 class="service-title">Marketing Automation</h3>
+        <p class="service-desc">HubSpot workflows + AI. Data-driven personalisatie op schaal.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <h3 class="service-title">Websites</h3>
+        <p class="service-desc">Custom-built. SEO-ready. Conversie-focused.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <h3 class="service-title">Google<br>Ads</h3>
+        <p class="service-desc">ROI-focused met AI-optimalisatie.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="video-split">
-    <div class="video-side">
-      <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-dsm.jpg">
-        <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4" type="video/mp4">
-      </video>
-      <div class="video-overlay">
-        <div class="video-content">
-          <div class="video-label">Video Productie</div>
-          <h2 class="video-title">Cinema-<br>Kwaliteit</h2>
-          <p class="video-text">Toen DSLR revolutionair was, waren wij de eersten in België.</p>
-        </div>
-      </div>
-    </div>
-    <div class="video-side">
-      <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-hvc24.jpg">
-        <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/quicktime">
-      </video>
-      <div class="video-overlay">
-        <div class="video-content">
-          <div class="video-label">Social Media</div>
-          <h2 class="video-title">De<br>Benchmark</h2>
-          <p class="video-text">We schreven geschiedenis. Onze aanpak veranderde de hele sector.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="video-split">
+    <div class="video-side">
+      <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-dsm.jpg">
+        <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <div class="video-content">
+          <div class="video-label">Video Productie</div>
+          <h2 class="video-title">Cinema-<br>Kwaliteit</h2>
+          <p class="video-text">Toen DSLR revolutionair was, waren wij de eersten in België.</p>
+        </div>
+      </div>
+    </div>
+    <div class="video-side">
+      <video autoplay muted playsinline loop preload="metadata" poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/poster-hvc24.jpg">
+        <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/HVC24.mov" type="video/quicktime">
+      </video>
+      <div class="video-overlay">
+        <div class="video-content">
+          <div class="video-label">Social Media</div>
+          <h2 class="video-title">De<br>Benchmark</h2>
+          <p class="video-text">We schreven geschiedenis. Onze aanpak veranderde de hele sector.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="story" class="timeline-3d">
-    <div class="section-header">
-      <div class="section-eyebrow">Onze Journey</div>
-      <h2 class="section-title">23 Jaar Voorop</h2>
-    </div>
-    <div class="carousel-container" id="carouselContainer">
-      <div class="carousel-track" id="carousel"></div>
-    </div>
-    <div class="carousel-nav" id="carouselNav"></div>
-  </section>
+  <section id="story" class="timeline-3d">
+    <div class="section-header">
+      <div class="section-eyebrow">Onze Journey</div>
+      <h2 class="section-title">23 Jaar Voorop</h2>
+    </div>
+    <div class="carousel-container" id="carouselContainer">
+      <div class="carousel-track" id="carousel"></div>
+    </div>
+    <div class="carousel-nav" id="carouselNav"></div>
+  </section>
 
-  <section class="founder-section">
-    <div class="founder-grid">
-      <div>
-        <div class="section-eyebrow">Waarom CNIP Bestaat</div>
-        <h2 class="section-title" style="margin-bottom: 26px;">De zucht naar<br>vernieuwing</h2>
-        <div style="font-size:20px;line-height:1.8;opacity:.9">
-          <p style="margin-bottom:16px">Toen iedereen nog in televisie geloofde, zag ik internet en video samenkomen. Niet als hype, maar als fundamentele verschuiving.</p>
-          <p style="margin-bottom:16px;color:var(--gold);font-weight:700">Daarom CNIP. Een plek waar vernieuwing niet tegen verzet aanloopt.</p>
-          <p style="margin-bottom:16px"><strong>Boutique?</strong> Bewuste keuze. Elk merk heeft een uniek verhaal. Dat vraagt maatwerk, geen templates.</p>
-          <p style="margin-bottom:0;font-style:italic;opacity:.8">23 jaar later nog steeds dezelfde passie: moeilijke materie helder maken. Innovatie toepassen.</p>
-        </div>
-      </div>
+  <section class="founder-section">
+    <div class="founder-grid">
+      <div>
+        <div class="section-eyebrow">Waarom CNIP Bestaat</div>
+        <h2 class="section-title" style="margin-bottom: 26px;">De zucht naar<br>vernieuwing</h2>
+        <div style="font-size:20px;line-height:1.8;opacity:.9">
+          <p style="margin-bottom:16px">Toen iedereen nog in televisie geloofde, zag ik internet en video samenkomen. Niet als hype, maar als fundamentele verschuiving.</p>
+          <p style="margin-bottom:16px;color:var(--gold);font-weight:700">Daarom CNIP. Een plek waar vernieuwing niet tegen verzet aanloopt.</p>
+          <p style="margin-bottom:16px"><strong>Boutique?</strong> Bewuste keuze. Elk merk heeft een uniek verhaal. Dat vraagt maatwerk, geen templates.</p>
+          <p style="margin-bottom:0;font-style:italic;opacity:.8">23 jaar later nog steeds dezelfde passie: moeilijke materie helder maken. Innovatie toepassen.</p>
+        </div>
+      </div>
 
-      <div class="founder-card">
-        <div class="founder-media">
-          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="520" height="640" loading="eager" decoding="auto" fetchpriority="high">
-        </div>
-        <div class="founder-info">
-          <div class="founder-label">Christophe Dejaeghere</div>
-          <div class="founder-name">Founder</div>
-          <div class="founder-role">Sinds 2002</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="founder-card">
+        <div class="founder-media">
+          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="520" height="640" loading="eager" decoding="auto" fetchpriority="high">
+          </div>
+        <div class="founder-info">
+          <div class="founder-label">Christophe Dejaeghere</div>
+          <div class="founder-name">Founder</div>
+          <div class="founder-role">Sinds 2002</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="clients" class="clients-section">
-    <div class="section-header">
-      <div class="section-eyebrow">Sociale Proof</div>
-      <h2 class="section-title">Vertrouwd Door<br>Premium Merken</h2>
-    </div>
-    <div class="clients-grid">
-      <div class="client-card"><img loading="lazy" src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/7-2.png" alt="GE Healthcare"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/13.png" alt="DSM Keukens"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/3-4.png" alt="Willems"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/15.png" alt="BMW"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/1-4.png" alt="Decospan"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/8-2.png" alt="Citrosuco"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/11-1.png" alt="Haelvoet"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/4-2.png" alt="Skylux"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/19.png" alt="Keolis"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/20.png" alt="Nuscience"></div>
-      <div class="client-card"><img loading="lazy" src="images/klanten/17.png" alt="Medina"></div>
-    </div>
-  </section>
+  <section id="clients" class="clients-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Sociale Proof</div>
+      <h2 class="section-title">Vertrouwd Door<br>Premium Merken</h2>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card"><img loading="lazy" src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/7-2.png" alt="GE Healthcare"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/13.png" alt="DSM Keukens"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/3-4.png" alt="Willems"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/15.png" alt="BMW"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/1-4.png" alt="Decospan"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/8-2.png" alt="Citrosuco"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/11-1.png" alt="Haelvoet"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/4-2.png" alt="Skylux"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/19.png" alt="Keolis"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/20.png" alt="Nuscience"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/17.png" alt="Medina"></div>
+    </div>
+  </section>
 
-  <section id="cases" class="impact-section">
-    <div class="section-header">
-      <div class="section-eyebrow">Bewezen Resultaten</div>
-      <h2 class="section-title">Cijfers Die<br>Spreken</h2>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-card">
-        <div class="impact-header">
-          <div class="impact-client">Peter Goossens • Hof van Cleve</div>
-          <span class="impact-tag">Case Study</span>
-        </div>
-        <h3 class="impact-title">Social Media Revolutie</h3>
-        <p class="impact-desc">Van zero naar benchmark. We veranderden hoe horeca social media doet.</p>
-        <div class="counter-grid">
-          <div>
-            <div class="counter" data-target="50000">0</div>
-            <div class="counter-label">Volgers</div>
-          </div>
-          <div>
-            <div class="counter" data-target="300000">0</div>
-            <div class="counter-label">Impressies/maand</div>
-          </div>
-        </div>
-      </div>
+  <section id="cases" class="impact-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Bewezen Resultaten</div>
+      <h2 class="section-title">Cijfers Die<br>Spreken</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-header">
+          <div class="impact-client">Peter Goossens • Hof van Cleve</div>
+          <span class="impact-tag">Case Study</span>
+        </div>
+        <h3 class="impact-title">Social Media Revolutie</h3>
+        <p class="impact-desc">Van zero naar benchmark. We veranderden hoe horeca social media doet.</p>
+        <div class="counter-grid">
+          <div>
+            <div class="counter" data-target="50000">0</div>
+            <div class="counter-label">Volgers</div>
+          </div>
+          <div>
+            <div class="counter" data-target="300000">0</div>
+            <div class="counter-label">Impressies/maand</div>
+          </div>
+        </div>
+      </div>
 
-      <div class="impact-card">
-        <div class="impact-header">
-          <div class="impact-client">Willems Veranda</div>
-          <span class="impact-tag">Case Study</span>
-        </div>
-        <h3 class="impact-title">SEO Dominantie</h3>
-        <p class="impact-desc">Complete rebranding en SEO strategie. 3× Merk van het Jaar.</p>
-        <div class="counter-grid">
-          <div>
-            <div class="counter" data-target="51">0</div>
-            <div class="counter-label">Keywords Top 3</div>
-          </div>
-          <div>
-            <div class="counter" data-target="77">0</div>
-            <div class="counter-label">Keywords Top 10</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="impact-card">
+        <div class="impact-header">
+          <div class="impact-client">Willems Veranda</div>
+          <span class="impact-tag">Case Study</span>
+        </div>
+        <h3 class="impact-title">SEO Dominantie</h3>
+        <p class="impact-desc">Complete rebranding en SEO strategie. 3× Merk van het Jaar.</p>
+        <div class="counter-grid">
+          <div>
+            <div class="counter" data-target="51">0</div>
+            <div class="counter-label">Keywords Top 3</div>
+          </div>
+          <div>
+            <div class="counter" data-target="77">0</div>
+            <div class="counter-label">Keywords Top 10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="certs-section">
-    <div class="section-header">
-      <div class="section-eyebrow">Validatie</div>
-      <h2 class="section-title">Certified<br>Expertise</h2>
-    </div>
-    <div class="cert-grid">
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold"><span>HubSpot Gold</span></div>
-      <div class="cert-badge"><img loading="lazy" src="https://oryen.be/hubfs/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge"><span>Cambridge</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads"><span>Google Ads</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/GA-certified.png" alt="Analytics"><span>Analytics</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube"><span>YouTube</span></div>
-      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush"><span>Semrush</span></div>
-    </div>
-  </section>
+  <section class="certs-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Validatie</div>
+      <h2 class="section-title">Certified<br>Expertise</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-badge"><img loading="lazy" src="images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold"><span>HubSpot Gold</span></div>
+      <div class="cert-badge"><img loading="lazy" src="https://oryen.be/hubfs/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge"><span>Cambridge</span></div>
+      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Google-Adwords-Certification.png" alt="Google Ads"><span>Google Ads</span></div>
+      <div class="cert-badge"><img loading="lazy" src="images/certificaten/GA-certified.png" alt="Analytics"><span>Analytics</span></div>
+      <div class="cert-badge"><img loading="lazy" src="images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube"><span>YouTube</span></div>
+      <div class="cert-badge"><img loading="lazy" src="images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush"><span>Semrush</span></div>
+    </div>
+  </section>
 
-  <section id="contact" class="contact-section">
-    <div class="contact-grid">
-      <div>
-        <div class="section-eyebrow">Laten We Praten</div>
-        <h2 class="section-title" style="margin-bottom: 28px;">Klaar voor<br>resultaten?</h2>
-        <p style="font-size: 20px; opacity: .9; line-height: 1.6; margin-bottom: 36px;">Gratis strategie sessie. Vrijblijvend kennismaken. Maandelijks meetbare impact.</p>
-        <div style="display:flex;flex-direction:column;gap:22px">
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">01</div>
-            <div><div style="font-weight:800">30 minuten persoonlijk advies</div><div style="opacity:.7">Strategie sessie zonder verplichtingen</div></div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">02</div>
-            <div><div style="font-weight:800">23 jaar expertise</div><div style="opacity:.7">Storytellers die resultaat leveren</div></div>
-          </div>
-        </div>
-      </div>
+  <section id="contact" class="contact-section">
+    <div class="contact-grid">
+      <div>
+        <div class="section-eyebrow">Laten We Praten</div>
+        <h2 class="section-title" style="margin-bottom: 28px;">Klaar voor<br>resultaten?</h2>
+        <p style="font-size: 20px; opacity: .9; line-height: 1.6; margin-bottom: 36px;">Gratis strategie sessie. Vrijblijvend kennismaken. Maandelijks meetbare impact.</p>
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">01</div>
+            <div><div style="font-weight:800">30 minuten persoonlijk advies</div><div style="opacity:.7">Strategie sessie zonder verplichtingen</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">02</div>
+            <div><div style="font-weight:800">23 jaar expertise</div><div style="opacity:.7">Storytellers die resultaat leveren</div></div>
+          </div>
+        </div>
+      </div>
 
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
-        <div class="form-group">
-          <label for="name">Naam *</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div class="form-group">
-          <label for="company">Bedrijf</label>
-          <input id="company" name="company" type="text">
-        </div>
-        <div class="form-group">
-          <label for="message">Bericht *</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button class="submit-btn" type="submit">Verstuur Bericht</button>
-      </form>
-    </div>
-  </section>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
+        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+        <div class="form-group">
+          <label for="name">Naam *</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="form-group">
+          <label for="company">Bedrijf</label>
+          <input id="company" name="company" type="text">
+          </div>
+        <div class="form-group">
+          <label for="message">Bericht *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Verstuur Bericht</button>
+      </form>
+    </div>
+  </section>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div style="font-size:22px;font-weight:900;margin-bottom:14px;letter-spacing:-.5px">CNIP</div>
-        <address style="opacity:.8;line-height:1.8;font-size:14px">
-          Boutique Marketing Bureau<br>
-          Ottergemsesteenweg Zuid 808<br>
-          9000 Gent, België<br><br>
-          <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
-        </address>
-      </div>
-      <div>
-        <div class="footer-heading">Diensten</div>
-        <a href="#services">SEO & Ads</a>
-        <a href="#services">Social Media</a>
-        <a href="#services">Automation</a>
-        <a href="#services">Video</a>
-      </div>
-      <div>
-        <div class="footer-heading">Bedrijf</div>
-        <a href="#story">Story</a>
-        <a href="#clients">Klanten</a>
-        <a href="#cases">Cases</a>
-      </div>
-      <div>
-        <div class="footer-heading">Connect</div>
-        <a href="mailto:info@cnip.be">Email</a>
-        <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2025 CNIP — Marketing Bureau Gent • Since 2002</div>
-  </footer>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="font-size:22px;font-weight:900;margin-bottom:14px;letter-spacing:-.5px">CNIP</div>
+        <address style="opacity:.8;line-height:1.8;font-size:14px">
+          Boutique Marketing Bureau<br>
+          Ottergemsesteenweg Zuid 808<br>
+          9000 Gent, België<br><br>
+          <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
+        </address>
+      </div>
+      <div>
+        <div class="footer-heading">Diensten</div>
+        <a href="#services">SEO & Ads</a>
+        <a href="#services">Social Media</a>
+        <a href="#services">Automation</a>
+        <a href="#services">Video</a>
+      </div>
+      <div>
+        <div class="footer-heading">Bedrijf</div>
+        <a href="#story">Story</a>
+        <a href="#clients">Klanten</a>
+        <a href="#cases">Cases</a>
+      </div>
+      <div>
+        <div class="footer-heading">Connect</div>
+        <a href="mailto:info@cnip.be">Email</a>
+        <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 CNIP — Marketing Bureau Gent • Since 2002</div>
+  </footer>
 
-  <script>
-    (function(){
-      document.documentElement.style.scrollBehavior='auto';
-      if('scrollRestoration' in history){history.scrollRestoration='manual'}
-      window.addEventListener('load',()=>{ setTimeout(()=>{ const pl=document.querySelector('.page-loader'); if(pl) pl.classList.add('hidden'); },500) });
-    })();
+  <script>
+    (function(){
+      document.documentElement.style.scrollBehavior='auto';
+      if('scrollRestoration' in history){history.scrollRestoration='manual'}
+      window.addEventListener('load',()=>{ setTimeout(()=>{ const pl=document.querySelector('.page-loader'); if(pl) pl.classList.add('hidden'); },500) });
+    })();
 
-    (function(){
-      const banner=document.getElementById('cookie-banner');
-      const accept=document.getElementById('cookie-accept');
-      const decline=document.getElementById('cookie-decline');
-      let c=null;
-      try{ c=localStorage.getItem('cookieConsent'); }catch(e){}
-      if(!c){ setTimeout(()=>{ if(banner) banner.style.display='block' },1200) }
-      if(accept) accept.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','accepted')}catch(e){}; if(banner) banner.style.display='none' });
-      if(decline) decline.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','declined')}catch(e){}; if(banner) banner.style.display='none' });
-    })();
+    (function(){
+      const banner=document.getElementById('cookie-banner');
+      const accept=document.getElementById('cookie-accept');
+      const decline=document.getElementById('cookie-decline');
+      let c=null;
+      try{ c=localStorage.getItem('cookieConsent'); }catch(e){}
+      if(!c){ setTimeout(()=>{ if(banner) banner.style.display='block' },1200) }
+      if(accept) accept.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','accepted')}catch(e){}; if(banner) banner.style.display='none' });
+      if(decline) decline.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','declined')}catch(e){}; if(banner) banner.style.display='none' });
+    })();
 
-    window.addEventListener('scroll',()=>{ 
-      const h=document.getElementById('header'); 
-      if(!h) return; 
-      h.classList.toggle('scrolled', window.pageYOffset>100);
-    });
+    window.addEventListener('scroll',()=>{ 
+      const h=document.getElementById('header'); 
+      if(!h) return; 
+      h.classList.toggle('scrolled', window.pageYOffset>100);
+    });
 
-    const timelineData=[
-      {year:2002,title:'De Start',desc:'Video & internet marketing'},
-      {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven'},
-      {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca'},
-      {year:2025,title:'AI-Driven',desc:'Marketing op enterprise-niveau'}
-    ];
-    (function(){
-      const container=document.getElementById('carouselContainer');
-      const carousel=document.getElementById('carousel');
-      const nav=document.getElementById('carouselNav');
-      if(!container||!carousel||!nav) return;
+    const timelineData=[
+      {year:2002,title:'De Start',desc:'Video & internet marketing'},
+      {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven'},
+      {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca'},
+      {year:2025,title:'AI-Driven',desc:'Marketing op enterprise-niveau'}
+    ];
+    (function(){
+      const container=document.getElementById('carouselContainer');
+      const carousel=document.getElementById('carousel');
+      const nav=document.getElementById('carouselNav');
+      if(!container||!carousel||!nav) return;
 
-      let idx=0;
-      timelineData.forEach((it,i)=>{
-        const card=document.createElement('div'); card.className='timeline-card';
-        card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
-        card.addEventListener('click',()=>rotateTo(i));
-        card.addEventListener('mousemove', (e)=>tiltCard(card,e));
-        card.addEventListener('mouseleave', ()=>card.style.transform = card.dataset.baseTransform);
-        carousel.appendChild(card);
+      let idx=0;
+      timelineData.forEach((it,i)=>{
+        const card=document.createElement('div'); card.className='timeline-card';
+        card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
+        card.addEventListener('click',()=>rotateTo(i));
+        card.addEventListener('mousemove', (e)=>tiltCard(card,e));
+        card.addEventListener('mouseleave', ()=>card.style.transform = card.dataset.baseTransform);
+        carousel.appendChild(card);
 
-        const dot=document.createElement('div'); dot.className='carousel-dot'; if(i===0) dot.classList.add('active');
-        dot.addEventListener('click',()=>rotateTo(i));
-        nav.appendChild(dot);
-      });
+        const dot=document.createElement('div'); dot.className='carousel-dot'; if(i===0) dot.classList.add('active');
+        dot.addEventListener('click',()=>rotateTo(i));
+        nav.appendChild(dot);
+      });
 
-      const cards=[...document.querySelectorAll('.timeline-card')];
-      const radius=540;
-      cards.forEach((c,i)=>{
-        const angle=(360/timelineData.length)*i;
-        const base=`translate(-50%,-50%) rotateY(${angle}deg) translateZ(${radius}px)`;
-        c.style.transform=base;
-        c.dataset.baseTransform=base;
-      });
+      const cards=[...document.querySelectorAll('.timeline-card')];
+      const radius=540;
+      cards.forEach((c,i)=>{
+        const angle=(360/timelineData.length)*i;
+        const base=`translate(-50%,-50%) rotateY(${angle}deg) translateZ(${radius}px)`;
+        c.style.transform=base;
+        c.dataset.baseTransform=base;
+      });
 
-      function rotateTo(n){
-        idx=n;
-        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateY(${-(360/timelineData.length)*n}deg)`;
-        [...document.querySelectorAll('.carousel-dot')].forEach((d,k)=>d.classList.toggle('active',k===n));
-      }
+      function rotateTo(n){
+        idx=n;
+        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateY(${-(360/timelineData.length)*n}deg)`;
+        [...document.querySelectorAll('.carousel-dot')].forEach((d,k)=>d.classList.toggle('active',k===n));
+      }
 
-      container.addEventListener('mousemove',(e)=>{
-        const r=container.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-0.5;
-        const y=(e.clientY-r.top)/r.height-0.5;
-        const rotX=y*2.5, rotY=-x*2.5;
-        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateX(${rotX}deg) rotateY(${-(360/timelineData.length)*idx + rotY}deg)`;
-      });
-      container.addEventListener('mouseleave',()=>rotateTo(idx));
+      container.addEventListener('mousemove',(e)=>{
+        const r=container.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-0.5;
+        const y=(e.clientY-r.top)/r.height-0.5;
+        const rotX=y*2.5, rotY=-x*2.5;
+        carousel.style.transform=`translateX(-50%) translateY(-50%) rotateX(${rotX}deg) rotateY(${-(360/timelineData.length)*idx + rotY}deg)`;
+      });
+      container.addEventListener('mouseleave',()=>rotateTo(idx));
 
-      function tiltCard(card,e){
-        const r=card.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-0.5;
-        const y=(e.clientY-r.top)/r.height-0.5;
-        const rx=y*-6, ry=x*6;
-        card.style.transform=card.dataset.baseTransform+` rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
-      }
+      function tiltCard(card,e){
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-0.5;
+        const y=(e.clientY-r.top)/r.height-0.5;
+        const rx=y*-6, ry=x*6;
+        card.style.transform=card.dataset.baseTransform+` rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+      }
 
-      setInterval(()=>{ idx=(idx+1)%timelineData.length; rotateTo(idx); }, 4200);
-    })();
+      setInterval(()=>{ idx=(idx+1)%timelineData.length; rotateTo(idx); }, 4200);
+    })();
 
-    (function(){
-      const cs=document.querySelectorAll('.counter');
-      const io=new IntersectionObserver(es=>{
-        es.forEach(e=>{
-          if(e.isIntersecting && !e.target.dataset.done){
-            e.target.dataset.done=1;
-            const t=parseInt(e.target.getAttribute('data-target'),10)||0;
-            const st=performance.now(); const du=1600;
-            (function step(ts){
-              const p=Math.min((ts-st)/du,1); const v=Math.floor((1-Math.pow(1-p,4))*t);
-              e.target.textContent=v.toLocaleString('nl-BE'); if(p<1) requestAnimationFrame(step);
-            })(st);
-          }
-        })
-      },{threshold:.2});
-      cs.forEach(c=>io.observe(c));
-    })();
+    (function(){
+      const cs=document.querySelectorAll('.counter');
+      const io=new IntersectionObserver(es=>{
+        es.forEach(e=>{
+          if(e.isIntersecting && !e.target.dataset.done){
+            e.target.dataset.done=1;
+            const t=parseInt(e.target.getAttribute('data-target'),10)||0;
+            const st=performance.now(); const du=1600;
+            (function step(ts){
+              const p=Math.min((ts-st)/du,1); const v=Math.floor((1-Math.pow(1-p,4))*t);
+              e.target.textContent=v.toLocaleString('nl-BE'); if(p<1) requestAnimationFrame(step);
+            })(st);
+          }
+        })
+      },{threshold:.2});
+      cs.forEach(c=>io.observe(c));
+    })();
 
-    window.addEventListener('load', ()=>{
-      if(typeof gsap!=='undefined'){
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((el,i)=>{
-          gsap.from(el,{opacity:0,y:40,duration:.6,delay:i*0.03,scrollTrigger:{trigger:el,start:'top 88%'}});
+    window.addEventListener('load', ()=>{
+      if(typeof gsap!=='undefined'){
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((el,i)=>{
+          gsap.from(el,{opacity:0,y:40,duration:.6,delay:i*0.03,scrollTrigger:{trigger:el,start:'top 88%'}});
+        });
+      }
+    });
+
+    (function(){
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      if(isSafari){
+        const style=document.createElement('style');
+        style.textContent=`
+          .client-card:hover{box-shadow:0 12px 40px rgba(232,181,99,.2)}
+          .cert-badge:hover{box-shadow:0 12px 40px rgba(232,181,99,.22)}
+          .impact-card:hover{box-shadow:0 28px 90px rgba(232,181,99,.26)}
+          .timeline-card:hover{box-shadow:0 18px 60px rgba(232,181,99,.24)}
+        `;
+        document.head.appendChild(style);
+      }
+    })();
+
+    /* === NIEUWE THREE.JS 3D CODE === */
+    (function() {
+        // Controleer of Three.js geladen is en of de canvas bestaat
+        if (typeof THREE === 'undefined') return;
+        const canvas = document.getElementById('hero-3d-canvas');
+        if (!canvas) return;
+
+        // 1. Setup Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        // Zorg ervoor dat de camera aspect ratio correct is
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        // Alpha: true zorgt voor een transparante achtergrond zodat je CSS-achtergrond zichtbaar blijft
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        camera.position.z = 5;
+
+        // 2. Maak een Roterend Object (Icosahedron/bol met veel vlakken)
+        const geometry = new THREE.IcosahedronGeometry(1.5, 0); 
+        const material = new THREE.MeshPhongMaterial({ 
+            color: 0xE8B563, // Goudkleur (var(--gold))
+            flatShading: false, // Smooth shading voor een betere look
+            shininess: 80
         });
-      }
-    });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
 
-    (function(){
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      if(isSafari){
-        const style=document.createElement('style');
-        style.textContent=`
-          .client-card:hover{box-shadow:0 12px 40px rgba(232,181,99,.2)}
-          .cert-badge:hover{box-shadow:0 12px 40px rgba(232,181,99,.22)}
-          .impact-card:hover{box-shadow:0 28px 90px rgba(232,181,99,.26)}
-          .timeline-card:hover{box-shadow:0 18px 60px rgba(232,181,99,.24)}
-        `;
-        document.head.appendChild(style);
-      }
+        // 3. Voeg Licht toe (cruciaal voor 3D)
+        const ambientLight = new THREE.AmbientLight(0x404040, 3); // Zacht omgevingslicht
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xFFFFFF, 50, 100); // Fel wit licht
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // 4. Animatie Loop (Frame voor Frame)
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Basis Rotatie (langzaam en constant)
+            sphere.rotation.x += 0.001;
+            sphere.rotation.y += 0.002;
+
+            renderer.render(scene, camera);
+        }
+
+        // 5. Muiseffect Toevoegen (Gebruikt GSAP voor vloeiende beweging!)
+        function onMouseMove(event) {
+            const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            if (typeof gsap !== 'undefined') {
+                gsap.to(sphere.rotation, { 
+                    x: mouseY * 0.4, 
+                    y: mouseX * 0.4, 
+                    duration: 1.5, 
+                    ease: "power2.out" 
+                });
+            } else {
+                // Fallback zonder GSAP als het nog niet geladen is
+                sphere.rotation.x = mouseY * 0.4;
+                sphere.rotation.y = mouseX * 0.4;
+            }
+        }
+
+        window.addEventListener('mousemove', onMouseMove);
+
+        // 6. Responsive aanpassen
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
     })();
-  </script>
+  </script>
 </body>
 </html>
