@@ -70,13 +70,13 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box;min-width:0}
     :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--gold-2:#D7A24E}
-    html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+    html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;position:relative;width:100%}
     img,video,svg,canvas,iframe{max-width:100%;height:auto;display:block}
 
     .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .4s ease,visibility .4s ease}
     .page-loader.hidden{opacity:0;visibility:hidden}
-    .loader-text{font-size:88px;font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .loader-text{font-size:88px;font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
     header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.85);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000}
     .header-content{max-width:1600px;margin:0 auto;padding:22px 80px;display:flex;justify-content:space-between;align-items:center}
@@ -88,7 +88,7 @@
     nav a:hover::after{width:100%}
 
     .floating-hub{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:900;display:flex;gap:10px}
-    .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer}
+    .hub-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--gold);font-weight:800;cursor:pointer;color:#0a0a0a;font-size:18px}
 
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 80px 100px;position:relative}
     @supports (height:100svh){ .hero{min-height:100svh} }
@@ -96,11 +96,13 @@
     .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%),radial-gradient(circle at 70% 50%, rgba(232,181,99,.05), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
     .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
-    .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
+    .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px}
     .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .cta-primary{padding:16px 32px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;font-weight:800;letter-spacing:1px}
-    .cta-secondary{padding:16px 32px;border-radius:999px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:800;letter-spacing:1px}
+    .cta-primary{padding:16px 32px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;font-weight:800;letter-spacing:1px;transition:transform .2s,box-shadow .2s}
+    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
+    .cta-secondary{padding:16px 32px;border-radius:999px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
+    .cta-secondary:hover{background:rgba(232,181,99,.1);transform:translateY(-2px)}
 
     .marquee-section{padding:60px 0;border-block:1px solid rgba(232,181,99,.18);overflow:hidden}
     .marquee{display:flex;white-space:nowrap;animation:marq 40s linear infinite}
@@ -112,7 +114,7 @@
     .services-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .section-header{text-align:center;margin-bottom:64px}
     .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
-    .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .services-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-rows:280px}
 
     .service-card{
@@ -146,36 +148,130 @@
     .video-title{font-size:clamp(30px,5vw,60px);font-weight:900;margin-bottom:12px}
     .video-text{font-size:18px;opacity:.9;max-width:520px;margin:0 auto}
 
-    /* TIMELINE — robuuste scroll-snap slider (iOS/Safari proof) */
-    .timeline-3d{padding:140px 0 120px;background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);position:relative}
-    .timeline-3d .section-header{padding:0 20px}
-    .carousel-container{
-      overflow-x:auto; overflow-y:hidden;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-      padding:6px 20px;          /* side padding for nice edges */
-      scroll-padding:0 20px;     /* center alignment */
-      scrollbar-width:none;
-    }
-    .carousel-container::-webkit-scrollbar{display:none}
-    .carousel-track{display:flex;gap:18px;position:relative}
-    .timeline-card{
-      flex:0 0 clamp(260px, calc(100vw - 64px), 360px);
-      min-height:320px;
-      background:rgba(255,255,255,.05);
-      backdrop-filter:blur(16px);
-      border:1px solid rgba(232,181,99,.25);
-      border-radius:20px;
-      padding:24px;
+    /* NIEUWE 3D CAROUSEL */
+    .timeline-3d{
+      padding:140px 0 120px;
+      background:linear-gradient(180deg,#0a0a0a 0%, #0a0a0a 85%, rgba(95,66,20,.15) 100%);
+      position:relative;
       overflow:hidden;
-      scroll-snap-align:center;
-      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
-    .timeline-card:hover{box-shadow:0 24px 80px rgba(232,181,99,.28);border-color:var(--gold);transform:translateY(-3px)}
-    .timeline-card .year{font-size:60px;font-weight:900;color:var(--gold);margin-bottom:10px;text-shadow:0 0 30px rgba(232,181,99,.35)}
-    .carousel-nav{margin:18px 20px 0;display:flex;gap:12px;justify-content:center}
-    .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,181,99,.35);cursor:pointer;transition:transform .2s, background .2s}
-    .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
+    .timeline-3d .section-header{padding:0 20px;margin-bottom:80px}
+    
+    .carousel-3d-wrapper{
+      perspective:2000px;
+      width:100%;
+      height:450px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    
+    .carousel-3d-container{
+      position:relative;
+      width:380px;
+      height:400px;
+      transform-style:preserve-3d;
+      transition:transform .8s cubic-bezier(.4,0,.2,1);
+    }
+    
+    .timeline-card-3d{
+      position:absolute;
+      width:360px;
+      min-height:360px;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(20px);
+      border:2px solid rgba(232,181,99,.3);
+      border-radius:24px;
+      padding:36px;
+      top:50%;
+      left:50%;
+      transform-origin:center center;
+      transition:all .8s cubic-bezier(.4,0,.2,1);
+      box-shadow:0 25px 80px rgba(0,0,0,.4);
+    }
+    
+    .timeline-card-3d .year{
+      font-size:72px;
+      font-weight:900;
+      color:var(--gold);
+      margin-bottom:16px;
+      text-shadow:0 0 40px rgba(232,181,99,.5);
+      line-height:1;
+    }
+    
+    .timeline-card-3d h3{
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:12px;
+      color:#fff;
+    }
+    
+    .timeline-card-3d p{
+      font-size:18px;
+      opacity:.85;
+      line-height:1.6;
+    }
+    
+    /* Navigation controls */
+    .carousel-3d-nav{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      align-items:center;
+      margin-top:60px;
+      position:relative;
+      z-index:10;
+    }
+    
+    .carousel-3d-btn{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:rgba(232,181,99,.15);
+      border:2px solid var(--gold);
+      color:var(--gold);
+      font-size:24px;
+      font-weight:900;
+      cursor:pointer;
+      transition:all .3s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    
+    .carousel-3d-btn:hover{
+      background:var(--gold);
+      color:#0a0a0a;
+      transform:scale(1.1);
+      box-shadow:0 8px 30px rgba(232,181,99,.4);
+    }
+    
+    .carousel-3d-btn:active{
+      transform:scale(.95);
+    }
+    
+    .carousel-3d-indicators{
+      display:flex;
+      gap:12px;
+    }
+    
+    .carousel-3d-dot{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:rgba(232,181,99,.3);
+      border:2px solid rgba(232,181,99,.5);
+      cursor:pointer;
+      transition:all .3s ease;
+    }
+    
+    .carousel-3d-dot.active{
+      background:var(--gold);
+      border-color:var(--gold);
+      transform:scale(1.3);
+      box-shadow:0 0 20px rgba(232,181,99,.6);
+    }
 
     /* FOUNDER */
     .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
@@ -252,7 +348,8 @@
     .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
     .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px}
     .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
-    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer}
+    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
 
     .cookie-banner{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:900px;width:calc(100% - 48px);background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border:1px solid rgba(232,181,99,.3);border-radius:20px;padding:22px 26px;z-index:12000;display:none}
     .cookie-content{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
@@ -277,23 +374,50 @@
       .clients-grid{grid-template-columns:repeat(3,1fr)}
       .footer-grid{grid-template-columns:1fr 1fr}
       .impact-grid{grid-template-columns:1fr}
+      
+      /* Mobile 3D carousel aanpassingen */
+      .carousel-3d-wrapper{height:420px}
+      .carousel-3d-container{width:320px;height:380px}
+      .timeline-card-3d{width:300px;min-height:340px;padding:28px}
+      .timeline-card-3d .year{font-size:60px}
+      .timeline-card-3d h3{font-size:26px}
+      .timeline-card-3d p{font-size:16px}
     }
+    
     @media (max-width:768px){
+      html{scroll-behavior:auto}
       .hero{padding:120px 20px 80px}
       .services-section,.founder-section,.clients-section,.certs-section{padding:60px 20px}
       .services-bento{grid-template-columns:1fr}
       .service-card.large,.service-card.wide{grid-column:span 1;grid-row:span 1}
       .clients-grid{grid-template-columns:repeat(2,1fr)}
       .founder-grid{grid-template-columns:1fr;gap:36px}
-      .founder-card{max-width:240px;margin:0 auto}
+      .founder-card{max-width:240px;margin:0 auto;position:relative;top:0}
       .founder-media{aspect-ratio:3/4;border-radius:16px 16px 0 0}
       .cert-badge img{height:38px}
       .impact-section{padding:80px 0}
       .contact-section{padding:80px 0}
       .counter{font-size:clamp(26px,9vw,40px)}
+      
+      /* Kleinere 3D carousel voor mobiel */
+      .carousel-3d-wrapper{height:380px}
+      .carousel-3d-container{width:280px;height:340px}
+      .timeline-card-3d{width:260px;min-height:300px;padding:24px}
+      .timeline-card-3d .year{font-size:52px}
+      .timeline-card-3d h3{font-size:22px}
+      .timeline-card-3d p{font-size:15px}
+      .carousel-3d-btn{width:48px;height:48px;font-size:20px}
+      .carousel-3d-nav{margin-top:40px}
+      
+      .cookie-content{grid-template-columns:1fr;gap:12px}
+      .cookie-buttons{width:100%;justify-content:stretch}
+      .cookie-btn{flex:1}
     }
+    
     @media (prefers-reduced-motion:reduce){
-      *{animation:none!important;transition:none!important}
+      *,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+      .carousel-3d-container{transition:none!important}
+      .timeline-card-3d{transition:none!important}
     }
   </style>
 </head>
@@ -328,9 +452,9 @@
   </header>
 
   <div class="floating-hub">
-    <button class="hub-btn" onclick="location.hash='#contact'">→</button>
-    <button class="hub-btn" onclick="location.hash='#cases'">↑</button>
-    <button class="hub-btn" onclick="window.scrollTo({top:0,left:0,behavior:'auto'})">⌃</button>
+    <button class="hub-btn" onclick="location.hash='#contact'" aria-label="Naar contact">→</button>
+    <button class="hub-btn" onclick="location.hash='#cases'" aria-label="Naar cases">↑</button>
+    <button class="hub-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Naar boven">⌃</button>
   </div>
 
   <section class="hero">
@@ -404,10 +528,16 @@
       <div class="section-eyebrow">Onze Journey</div>
       <h2 class="section-title">23 Jaar Voorop</h2>
     </div>
-    <div class="carousel-container" id="carouselContainer">
-      <div class="carousel-track" id="carousel"></div>
+    
+    <div class="carousel-3d-wrapper">
+      <div class="carousel-3d-container" id="carousel3d"></div>
     </div>
-    <div class="carousel-nav" id="carouselNav"></div>
+    
+    <div class="carousel-3d-nav">
+      <button class="carousel-3d-btn" id="prevBtn" aria-label="Vorige">‹</button>
+      <div class="carousel-3d-indicators" id="indicators"></div>
+      <button class="carousel-3d-btn" id="nextBtn" aria-label="Volgende">›</button>
+    </div>
   </section>
 
   <section class="founder-section">
@@ -526,11 +656,11 @@
         <p style="font-size: 20px; opacity: .9; line-height: 1.6; margin-bottom: 36px;">Gratis strategie sessie. Vrijblijvend kennismaken. Maandelijks meetbare impact.</p>
         <div style="display:flex;flex-direction:column;gap:22px">
           <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">01</div>
+            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900;flex-shrink:0">01</div>
             <div><div style="font-weight:800">30 minuten persoonlijk advies</div><div style="opacity:.7">Strategie sessie zonder verplichtingen</div></div>
           </div>
           <div style="display:flex;gap:14px;align-items:flex-start">
-            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900">02</div>
+            <div style="width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900;flex-shrink:0">02</div>
             <div><div style="font-weight:800">23 jaar expertise</div><div style="opacity:.7">Storytellers die resultaat leveren</div></div>
           </div>
         </div>
@@ -553,7 +683,7 @@
         </div>
         <div class="form-group">
           <label for="message">Bericht *</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" rows="4" required></textarea>
         </div>
         <button class="submit-btn" type="submit">Verstuur Bericht</button>
       </form>
@@ -564,7 +694,7 @@
     <div class="footer-grid">
       <div>
         <div style="font-size:22px;font-weight:900;margin-bottom:14px;letter-spacing:-.5px">CNIP</div>
-        <address style="opacity:.8;line-height:1.8;font-size:14px">
+        <address style="opacity:.8;line-height:1.8;font-size:14px;font-style:normal">
           Boutique Marketing Bureau<br>
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
@@ -596,16 +726,19 @@
   </footer>
 
   <script>
+    // Page loader
     (function(){
-      const hide=()=>{const pl=document.querySelector('.page-loader'); if(pl) pl.classList.add('hidden')};
+      const hide=()=>{
+        const pl=document.querySelector('.page-loader'); 
+        if(pl) pl.classList.add('hidden')
+      };
       if(document.readyState!=='loading') setTimeout(hide,150);
       window.addEventListener('load',hide);
       document.addEventListener('DOMContentLoaded',hide);
       setTimeout(hide,3000);
-      if('scrollRestoration' in history){history.scrollRestoration='manual'}
-      document.documentElement.style.scrollBehavior='auto';
     })();
 
+    // Cookie banner
     (function(){
       const banner=document.getElementById('cookie-banner');
       const accept=document.getElementById('cookie-accept');
@@ -613,63 +746,171 @@
       let c=null;
       try{ c=localStorage.getItem('cookieConsent'); }catch(e){}
       if(!c){ setTimeout(()=>{ if(banner) banner.style.display='block' },1200) }
-      if(accept) accept.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','accepted')}catch(e){}; if(banner) banner.style.display='none' });
-      if(decline) decline.addEventListener('click',()=>{ try{localStorage.setItem('cookieConsent','declined')}catch(e){}; if(banner) banner.style.display='none' });
+      if(accept) accept.addEventListener('click',()=>{ 
+        try{localStorage.setItem('cookieConsent','accepted')}catch(e){}; 
+        if(banner) banner.style.display='none' 
+      });
+      if(decline) decline.addEventListener('click',()=>{ 
+        try{localStorage.setItem('cookieConsent','declined')}catch(e){}; 
+        if(banner) banner.style.display='none' 
+      });
     })();
 
+    // Header scroll effect
     window.addEventListener('scroll',()=>{ 
       const h=document.getElementById('header'); 
       if(!h) return; 
       h.classList.toggle('scrolled', window.pageYOffset>100);
-    });
+    }, {passive: true});
 
-    const timelineData=[
-      {year:2002,title:'De Start',desc:'Video & internet marketing'},
-      {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven'},
-      {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca'},
-      {year:2025,title:'AI-Driven',desc:'Marketing op enterprise-niveau'}
-    ];
-
+    // 3D CAROUSEL - NIEUWE IMPLEMENTATIE
     (function(){
-      const container=document.getElementById('carouselContainer');
-      const track=document.getElementById('carousel');
-      const nav=document.getElementById('carouselNav');
-      if(!container||!track||!nav) return;
+      const timelineData=[
+        {year:2002,title:'De Start',desc:'Video & internet marketing pionieren in een wereld die nog moet ontwaken.'},
+        {year:2008,title:'DSLR Pioneers',desc:'Cinema-kwaliteit voor bedrijven. We zetten de standaard voor professionele videoproductie.'},
+        {year:2012,title:'Social Trendsetters',desc:'De benchmark voor horeca social media. Verhalen die viraal gaan.'},
+        {year:2025,title:'AI-Driven',desc:'Marketing automation op enterprise-niveau met cutting-edge AI integratie.'}
+      ];
 
-      track.innerHTML=''; nav.innerHTML='';
-      timelineData.forEach((it,i)=>{
-        const card=document.createElement('div');
-        card.className='timeline-card';
-        card.innerHTML=`<div class="year">${it.year}</div><h3 style="font-size:24px;font-weight:800;margin-bottom:8px">${it.title}</h3><p style="opacity:.86">${it.desc}</p>`;
-        track.appendChild(card);
+      const container = document.getElementById('carousel3d');
+      const indicators = document.getElementById('indicators');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      if(!container || !indicators) return;
 
-        const dot=document.createElement('div');
-        dot.className='carousel-dot';
-        if(i===0) dot.classList.add('active');
-        dot.addEventListener('click',()=>card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}));
-        nav.appendChild(dot);
+      let currentIndex = 0;
+      let isAnimating = false;
+      const totalCards = timelineData.length;
+
+      // Maak de cards
+      timelineData.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'timeline-card-3d';
+        card.innerHTML = `
+          <div class="year">${item.year}</div>
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+        `;
+        container.appendChild(card);
+
+        // Maak indicators
+        const dot = document.createElement('div');
+        dot.className = 'carousel-3d-dot';
+        if(index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        indicators.appendChild(dot);
       });
 
-      const cards=[...track.children];
-      const dots=[...nav.children];
+      const cards = container.querySelectorAll('.timeline-card-3d');
+      const dots = indicators.querySelectorAll('.carousel-3d-dot');
 
-      const io=new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            const index=cards.indexOf(entry.target);
-            dots.forEach((d,k)=>d.classList.toggle('active',k===index));
-          }
+      function updateCarousel() {
+        if(isAnimating) return;
+        isAnimating = true;
+
+        const angle = (360 / totalCards);
+        const radius = 420;
+
+        cards.forEach((card, index) => {
+          const offset = (index - currentIndex + totalCards) % totalCards;
+          const theta = offset * angle * (Math.PI / 180);
+          
+          const x = Math.sin(theta) * radius;
+          const z = Math.cos(theta) * radius - radius;
+          const scale = 0.6 + (Math.cos(theta) * 0.4);
+          const opacity = offset === 0 ? 1 : 0.3 + (Math.cos(theta) * 0.3);
+          const rotateY = -offset * angle;
+
+          card.style.transform = `
+            translate(-50%, -50%) 
+            translate3d(${x}px, 0, ${z}px) 
+            rotateY(${rotateY}deg) 
+            scale(${scale})
+          `;
+          card.style.opacity = opacity;
+          card.style.zIndex = offset === 0 ? 10 : Math.round((1 - Math.abs(offset / totalCards)) * 5);
+          card.style.pointerEvents = offset === 0 ? 'auto' : 'none';
         });
-      },{root:container,threshold:0.6});
-      cards.forEach(c=>io.observe(c));
 
-      let idx=0;
-      const next=()=>{ idx=(idx+1)%cards.length; cards[idx].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}); };
-      let timer=setInterval(next,4200);
-      container.addEventListener('pointerdown',()=>{clearInterval(timer);});
-      container.addEventListener('touchstart',()=>{clearInterval(timer);},{passive:true});
+        // Update indicators
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+
+        setTimeout(() => { isAnimating = false; }, 800);
+      }
+
+      function goToSlide(index) {
+        if(isAnimating || index === currentIndex) return;
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        if(isAnimating) return;
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        if(isAnimating) return;
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateCarousel();
+      }
+
+      // Event listeners
+      if(prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if(nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+      // Touch/swipe support voor mobiel
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if(touchEndX < touchStartX - swipeThreshold) {
+          nextSlide();
+        }
+        if(touchEndX > touchStartX + swipeThreshold) {
+          prevSlide();
+        }
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowLeft') prevSlide();
+        if(e.key === 'ArrowRight') nextSlide();
+      });
+
+      // Auto-rotate (optioneel - kan je uitschakelen)
+      let autoRotate = setInterval(nextSlide, 5000);
+      
+      // Stop auto-rotate bij interactie
+      [prevBtn, nextBtn, container].forEach(el => {
+        if(el) {
+          el.addEventListener('mouseenter', () => clearInterval(autoRotate));
+          el.addEventListener('mouseleave', () => {
+            clearInterval(autoRotate);
+            autoRotate = setInterval(nextSlide, 5000);
+          });
+        }
+      });
+
+      // Initial render
+      updateCarousel();
     })();
 
+    // Counter animations
     (function(){
       const cs=document.querySelectorAll('.counter');
       const io=new IntersectionObserver(es=>{
@@ -677,10 +918,13 @@
           if(e.isIntersecting && !e.target.dataset.done){
             e.target.dataset.done=1;
             const t=parseInt(e.target.getAttribute('data-target'),10)||0;
-            const st=performance.now(); const du=1600;
+            const st=performance.now(); 
+            const du=1600;
             (function step(ts){
-              const p=Math.min((ts-st)/du,1); const v=Math.floor((1-Math.pow(1-p,4))*t);
-              e.target.textContent=v.toLocaleString('nl-BE'); if(p<1) requestAnimationFrame(step);
+              const p=Math.min((ts-st)/du,1); 
+              const v=Math.floor((1-Math.pow(1-p,4))*t);
+              e.target.textContent=v.toLocaleString('nl-BE'); 
+              if(p<1) requestAnimationFrame(step);
             })(st);
           }
         })
@@ -688,28 +932,25 @@
       cs.forEach(c=>io.observe(c));
     })();
 
+    // GSAP animations (alleen als GSAP geladen is)
     window.addEventListener('load', ()=>{
-      if(typeof gsap!=='undefined'){
+      if(typeof gsap!=='undefined' && typeof ScrollTrigger !== 'undefined'){
         gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray('.client-card, .service-card, .impact-card, .cert-badge').forEach((el,i)=>{
-          gsap.from(el,{opacity:0,y:40,duration:.6,delay:i*0.03,scrollTrigger:{trigger:el,start:'top 88%'}});
+          gsap.from(el,{
+            opacity:0,
+            y:40,
+            duration:.6,
+            delay:i*0.03,
+            scrollTrigger:{
+              trigger:el,
+              start:'top 88%',
+              once: true
+            }
+          });
         });
       }
     });
-
-    (function(){
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      if(isSafari){
-        const style=document.createElement('style');
-        style.textContent=`
-          .client-card:hover{box-shadow:0 12px 40px rgba(232,181,99,.2)}
-          .cert-badge:hover{box-shadow:0 12px 40px rgba(232,181,99,.22)}
-          .impact-card:hover{box-shadow:0 28px 90px rgba(232,181,99,.26)}
-          .timeline-card:hover{box-shadow:0 18px 60px rgba(232,181,99,.24)}
-        `;
-        document.head.appendChild(style);
-      }
-    })();
   </script>
 </body>
 </html>
