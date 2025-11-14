@@ -143,6 +143,9 @@
     .work-card:first-child .work-visual{
       aspect-ratio:3/4;
     }
+    .work-landscape .work-visual{
+      aspect-ratio:16/9;
+    }
     .work-visual img{
       width:100%;
       height:100%;
@@ -376,6 +379,17 @@
       50%{opacity:1;transform:translateX(-50%) translateY(-10px)}
     }
 
+    /* FOUNDER */
+    .founder-section{padding:140px 80px;max-width:1400px;margin:0 auto}
+    .founder-grid{display:grid;grid-template-columns:1fr 260px;gap:72px;align-items:center}
+    .founder-card{width:100%;max-width:260px;position:sticky;top:100px;background:#0a0a0a;border:3px solid var(--gold);border-radius:20px;box-shadow:0 14px 60px rgba(232,181,99,.24)}
+    .founder-media{width:100%;aspect-ratio:13/16;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
+    .founder-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+    .founder-info{padding:18px;border-top:2px solid var(--gold)}
+    .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
+    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
+    .founder-role{font-size:12px;opacity:.75}
+
     /* Clients */
     .clients-section{padding:140px 80px;max-width:1600px;margin:0 auto}
     .clients-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
@@ -506,6 +520,10 @@
       .work-grid{gap:24px}
       .work-stats{flex-direction:column;gap:16px}
       .work-overlay{padding:28px}
+      .founder-section{padding:60px 20px}
+      .founder-grid{grid-template-columns:1fr;gap:36px}
+      .founder-card{max-width:240px;margin:0 auto;position:relative;top:0}
+      .founder-media{aspect-ratio:3/4}
       .timeline-3d{padding:100px 0}
       .carousel-3d-wrapper{min-height:480px}
       .carousel-3d-container{max-width:340px;height:450px}
@@ -619,7 +637,7 @@
         </div>
       </div>
       
-      <div class="work-card work-item">
+      <div class="work-card work-item work-landscape">
         <div class="work-visual">
           <img src="/images/Willems_05092024.jpg" alt="Willems Veranda - SEO Dominantie" loading="lazy">
         </div>
@@ -642,7 +660,7 @@
       
       <div class="work-card work-item">
         <div class="work-visual">
-          <img src="/images/cman71_a_behind_the_scenes_image_that_is_hyper_realistic-_It_is_9cc3d994-63a6-47e6-a7b2-04c6fd13a17f.png" alt="Authentic Brand Storytelling" loading="lazy">
+          <img src="/images/cman71_a_behind_the_scenes_image_that_is_hyper_realistic-_It_is_9cc3d994-63a6-4765-a598-d24794a6e52c%20copy.jpg" alt="Authentic Brand Storytelling" loading="lazy">
         </div>
         <div class="work-overlay">
           <span class="work-tag">Brand Storytelling</span>
@@ -678,6 +696,32 @@
     <div class="carousel-3d-progress" id="carouselProgress"></div>
   </section>
 
+  <section class="founder-section">
+    <div class="founder-grid">
+      <div>
+        <div class="section-eyebrow">Waarom CNIP Bestaat</div>
+        <h2 class="section-title" style="margin-bottom: 26px;">De zucht naar<br>vernieuwing</h2>
+        <div style="font-size:20px;line-height:1.8;opacity:.9">
+          <p style="margin-bottom:16px">Toen iedereen nog in televisie geloofde, zag ik internet en video samenkomen. Niet als hype, maar als fundamentele verschuiving.</p>
+          <p style="margin-bottom:16px;color:var(--gold);font-weight:700">Daarom CNIP. Een plek waar vernieuwing niet tegen verzet aanloopt.</p>
+          <p style="margin-bottom:16px"><strong>Boutique?</strong> Bewuste keuze. Elk merk heeft een uniek verhaal. Dat vraagt maatwerk, geen templates.</p>
+          <p style="margin-bottom:0;font-style:italic;opacity:.8">23 jaar later nog steeds dezelfde passie: moeilijke materie helder maken. Innovatie toepassen.</p>
+        </div>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-media">
+          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere" width="520" height="640" loading="lazy">
+        </div>
+        <div class="founder-info">
+          <div class="founder-label">Christophe Dejaeghere</div>
+          <div class="founder-name">Founder</div>
+          <div class="founder-role">Sinds 2002</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="clients" class="clients-section">
     <div class="section-header">
       <div class="section-eyebrow">Vertrouwd Door</div>
@@ -690,6 +734,27 @@
       <div class="client-card"><img loading="lazy" src="images/klanten/3-4.png" alt="Willems"></div>
       <div class="client-card"><img loading="lazy" src="images/klanten/15.png" alt="BMW"></div>
       <div class="client-card"><img loading="lazy" src="images/klanten/1-4.png" alt="Decospan"></div>
+    </div>
+  </section>
+
+  <section id="clients" class="clients-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Vertrouwd Door</div>
+      <h2 class="section-title">Premium Merken</h2>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card"><img loading="lazy" src="images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/7-2.png" alt="GE Healthcare"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/13.png" alt="DSM Keukens"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/3-4.png" alt="Willems"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/15.png" alt="BMW"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/1-4.png" alt="Decospan"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/8-2.png" alt="Citrosuco"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/11-1.png" alt="Haelvoet"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/4-2.png" alt="Skylux"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/19.png" alt="Keolis"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/20.png" alt="Nuscience"></div>
+      <div class="client-card"><img loading="lazy" src="images/klanten/17.png" alt="Medina"></div>
     </div>
   </section>
 
@@ -804,7 +869,7 @@
   </footer>
 
   <script>
-    // Page loader
+    // Page loader - LONGER visibility
     (function(){
       const pl = document.querySelector('.page-loader');
       const hide = () => {
@@ -812,9 +877,20 @@
         pl.classList.add('hidden');
         setTimeout(() => { if(pl.parentNode) pl.style.display = 'none' }, 600);
       };
-      if(document.readyState === 'complete') setTimeout(hide, 100);
-      window.addEventListener('load', () => setTimeout(hide, 100));
-      setTimeout(hide, 2000);
+      
+      // Minimum 4 seconden zichtbaar
+      const minTime = 4000;
+      const startTime = Date.now();
+      
+      if(document.readyState === 'complete') {
+        const elapsed = Date.now() - startTime;
+        setTimeout(hide, Math.max(0, minTime - elapsed));
+      } else {
+        window.addEventListener('load', () => {
+          const elapsed = Date.now() - startTime;
+          setTimeout(hide, Math.max(0, minTime - elapsed));
+        });
+      }
     })();
 
     // 3D CAROUSEL
