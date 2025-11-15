@@ -249,8 +249,16 @@
       transform:translate(-50%, -50%) scale(1.1);
       background:var(--gold);
     }
-    .work-video.playing .play-btn{opacity:0;pointer-events:none}
-    .work-video.playing .work-overlay{opacity:0!important}
+    .work-video.playing .play-btn{
+      opacity:0!important;
+      pointer-events:none!important;
+      visibility:hidden!important;
+    }
+    .work-video.playing .work-overlay{
+      opacity:0!important;
+      pointer-events:none!important;
+      visibility:hidden!important;
+    }
 
     /* 3D Timeline */
     .timeline-3d{
@@ -773,11 +781,12 @@
       <div class="work-item work-video">
         <div class="work-visual">
           <video 
-            poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4#t=0.1"
+            poster="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4#t=1"
             preload="metadata"
             loop
             muted
-            playsinline>
+            playsinline
+            webkit-playsinline>
             <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4" type="video/mp4">
           </video>
           <button class="play-btn" aria-label="Play"></button>
@@ -1078,13 +1087,25 @@
         e.stopPropagation();
         const video = this.previousElementSibling;
         const card = this.closest('.work-video');
+        const overlay = card ? card.querySelector('.work-overlay') : null;
+        
         if(video && video.tagName === 'VIDEO') {
           if(video.paused) {
             video.play();
-            if(card) card.classList.add('playing');
+            if(card) {
+              card.classList.add('playing');
+              // Safari fix - force hide
+              this.style.display = 'none';
+              if(overlay) overlay.style.display = 'none';
+            }
           } else {
             video.pause();
-            if(card) card.classList.remove('playing');
+            if(card) {
+              card.classList.remove('playing');
+              // Safari fix - force show
+              this.style.display = 'flex';
+              if(overlay) overlay.style.display = 'flex';
+            }
           }
         }
       });
