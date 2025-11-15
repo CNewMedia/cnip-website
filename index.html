@@ -250,6 +250,7 @@
       background:var(--gold);
     }
     .work-video.playing .play-btn{opacity:0;pointer-events:none}
+    .work-video.playing .work-overlay{opacity:0!important}
 
     /* 3D Timeline */
     .timeline-3d{
@@ -382,6 +383,81 @@
     .founder-text{font-size:clamp(16px,4vw,20px);line-height:1.8;opacity:.9}
     .founder-text p{margin-bottom:16px}
     .founder-text strong{color:var(--gold);font-weight:700}
+
+    /* Oryen Section */
+    .oryen-section{
+      padding:100px 20px;
+      background:linear-gradient(135deg, rgba(232,181,99,.08) 0%, transparent 50%);
+      position:relative;
+      overflow:hidden;
+    }
+    .oryen-section::before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(232,181,99,.12) 0%, transparent 70%);
+      border-radius:50%;
+      filter:blur(80px);
+    }
+    .oryen-grid{
+      max-width:1400px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:50px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .oryen-logo-container{
+      text-align:center;
+      padding:40px;
+      background:rgba(255,255,255,.02);
+      border:2px solid rgba(232,181,99,.2);
+      border-radius:24px;
+      transition:all .3s;
+    }
+    .oryen-logo-container:hover{
+      border-color:var(--gold);
+      box-shadow:0 20px 60px rgba(232,181,99,.25);
+      transform:translateY(-4px);
+    }
+    .oryen-logo{
+      max-width:280px;
+      height:auto;
+      margin:0 auto;
+      filter:brightness(1.1);
+    }
+    .oryen-content{text-align:center}
+    .oryen-text{
+      font-size:clamp(16px,4vw,18px);
+      line-height:1.8;
+      opacity:.9;
+      max-width:800px;
+      margin:0 auto 32px;
+    }
+    .oryen-text p{margin-bottom:16px}
+    .oryen-text strong{font-weight:700}
+    .oryen-btn{
+      display:inline-block;
+      padding:16px 32px;
+      background:linear-gradient(135deg,var(--gold),#d4a049);
+      color:#0a0a0a;
+      text-decoration:none;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:1px;
+      transition:all .3s;
+      font-size:16px;
+    }
+    .oryen-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 32px rgba(232,181,99,.4);
+    }
 
     /* Clients - EEN BLOK! */
     .clients-section{padding:80px 20px;max-width:1600px;margin:0 auto}
@@ -557,6 +633,10 @@
       .founder-card{position:sticky;top:100px}
       .founder-media{aspect-ratio:13/16}
       .founder-text{font-size:20px}
+      .oryen-section{padding:140px 80px}
+      .oryen-grid{grid-template-columns:400px 1fr;gap:80px;text-align:left}
+      .oryen-content{text-align:left}
+      .oryen-text{text-align:left;font-size:18px}
       .clients-section{padding:140px 80px}
       .clients-grid{grid-template-columns:repeat(6,1fr);gap:18px}
       .impact-section{padding:140px 40px}
@@ -592,7 +672,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Boutique Marketing Bureau • Gent • Since 2002</div>
       <h1 class="hero-title">We leiden.<br>We volgen<br>niet.</h1>
-      <p class="hero-subtitle">Creatief. Cijfers. Kwaliteit.<br>23 jaar geen bullshit.</p>
+      <p class="hero-subtitle">Creatief. Cijfers. Kwaliteit.<br>23 jaar expertise in marketing.</p>
       <div class="hero-cta">
         <a class="cta-primary" href="#contact">Start Gesprek</a>
         <a class="cta-secondary" href="#work">Bekijk Work</a>
@@ -693,7 +773,7 @@
       <div class="work-item work-video">
         <div class="work-visual">
           <video 
-            poster="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop&q=80"
+            poster="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&h=800&fit=crop&q=80"
             preload="metadata"
             loop
             muted
@@ -779,6 +859,29 @@
           <div class="founder-name">Founder</div>
           <div class="founder-role">Sinds 2002</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="oryen-section">
+    <div class="oryen-grid">
+      <div class="oryen-logo-container">
+        <img src="/images/Oryen_logo_v5112025.png" alt="Oryen" class="oryen-logo">
+      </div>
+      
+      <div class="oryen-content">
+        <div class="section-eyebrow">Ons Zustermerk</div>
+        <h2 class="section-title" style="margin-bottom: 26px;">Systemen die<br>renderen</h2>
+        <div class="oryen-text">
+          <p><strong>Oryen</strong> is ons strategisch consulting merk. Waar CNIP focust op marketing en content, gaat Oryen dieper op strategie, digitale transformatie en commerciële automatisatie.</p>
+          <p style="color:var(--gold);font-weight:700">Voor bedrijven die écht willen groeien.</p>
+          <p><strong>Track 1: Marketing Systems</strong><br>
+          Digital transformation, marketing automation en HubSpot implementatie voor bedrijven van €5-50M omzet.</p>
+          <p><strong>Track 2: Commercial Operations</strong><br>
+          Sales team optimalisatie, commerciële audits en 90-dagen transformatieprogramma's voor bedrijven van €1-30M omzet.</p>
+          <p style="margin-bottom:0"><strong>De kracht?</strong> Wij bouwen systemen. En zorgen dat ze renderen.</p>
+        </div>
+        <a href="https://oryen.be" target="_blank" rel="noopener" class="oryen-btn">Ontdek Oryen →</a>
       </div>
     </div>
   </section>
