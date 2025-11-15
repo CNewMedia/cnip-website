@@ -26,6 +26,7 @@
     /* Loader */
     .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
     .page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .page-loader.force-hide{display:none!important}
     .loader-text{
       font-size:clamp(72px,15vw,180px);
       font-weight:900;
@@ -661,6 +662,9 @@
   </style>
 </head>
 <body>
+  <!-- Force scroll top inline -->
+  <script>window.scrollTo(0,0);</script>
+  
   <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
   <header>
@@ -1060,26 +1064,58 @@
   </footer>
 
   <script>
-    // Page loader - 2.5 seconden
+    // FORCE scroll to top IMMEDIATELY
+    if('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    
+    // Page loader - 2.5 seconden + FALLBACK
     (function(){
       const pl = document.querySelector('.page-loader');
       const hide = () => {
         if(!pl) return;
         pl.classList.add('hidden');
-        setTimeout(() => { if(pl.parentNode) pl.style.display = 'none' }, 600);
+        setTimeout(() => { 
+          if(pl.parentNode) {
+            pl.classList.add('force-hide');
+            pl.style.display = 'none';
+          }
+        }, 600);
       };
+      
       const minTime = 2500;
       const startTime = Date.now();
+      
+      // iPad/Safari fallback - FORCE hide na 4 seconden
+      const fallbackTimer = setTimeout(() => {
+        console.log('Fallback hide triggered');
+        hide();
+      }, 4000);
+      
       if(document.readyState === 'complete') {
         const elapsed = Date.now() - startTime;
-        setTimeout(hide, Math.max(0, minTime - elapsed));
+        setTimeout(() => {
+          clearTimeout(fallbackTimer);
+          hide();
+        }, Math.max(0, minTime - elapsed));
       } else {
         window.addEventListener('load', () => {
           const elapsed = Date.now() - startTime;
-          setTimeout(hide, Math.max(0, minTime - elapsed));
+          setTimeout(() => {
+            clearTimeout(fallbackTimer);
+            hide();
+          }, Math.max(0, minTime - elapsed));
         });
       }
     })();
+
+    // Extra scroll to top after loader
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
 
     // Video
     document.querySelectorAll('.play-btn').forEach(btn => {
