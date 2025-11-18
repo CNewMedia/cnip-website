@@ -1,0 +1,4 @@
+# Redirect www naar non-www (aanbevolen)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.cnip\.be [NC]
+RewriteRule ^(.*)$ https://cnip.be/$1 [L,R=301]
