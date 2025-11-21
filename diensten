@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+
+  <!-- SEO: Primary Meta Tags -->
+  <title>Diensten | CNIP Marketing Bureau Gent | Video, SEO, Social Media & Automation</title>
+  <meta name="description" content="Ontdek de diensten van CNIP: Video productie, SEO, Social Media, Marketing Automation, Website Development en Google Ads. 23 jaar expertise voor premium merken.">
+  <meta name="keywords" content="video productie, SEO diensten, social media marketing, marketing automation, website ontwikkeling, google ads, gent">
+  <meta name="author" content="CNIP">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://cnip.be/diensten.html">
+  
+  <!-- SEO: Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cnip.be/diensten.html">
+  <meta property="og:title" content="Diensten | CNIP Marketing Bureau Gent">
+  <meta property="og:description" content="Video productie, SEO, Social Media, Marketing Automation en meer. 23 jaar expertise voor premium merken.">
+  <meta property="og:image" content="https://cnip.be/images/og-image.jpg">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;min-width:0}
+    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563}
+    html{-webkit-text-size-adjust:100%;overflow-x:hidden;scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    img,video{max-width:100%;height:auto;display:block}
+
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.95);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000;padding:22px 40px}
+    .header-content{max-width:1600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .logo-text{font-size:28px;font-weight:900;letter-spacing:-.5px;text-decoration:none;color:var(--white)}
+    .badge{font-size:9px;color:var(--gold);padding:6px 12px;border:1px solid rgba(232,181,99,.3);border-radius:999px;margin-left:10px}
+    nav{display:flex;gap:28px}
+    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative;transition:color .2s}
+    nav a:hover{color:var(--gold)}
+
+    /* Hero */
+    .hero{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:160px 40px 80px;position:relative;background:radial-gradient(ellipse at 50% 30%, rgba(232,181,99,.12) 0%, transparent 60%)}
+    .hero-content{max-width:1200px;text-align:center;position:relative;z-index:1}
+    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px;font-weight:600}
+    .hero-title{font-size:clamp(48px,9vw,120px);font-weight:900;line-height:1.1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
+    .hero-subtitle{font-size:clamp(18px,2.5vw,24px);opacity:.9;line-height:1.6;max-width:800px;margin:0 auto 36px}
+
+    /* Services Grid */
+    .services-section{padding:100px 20px;max-width:1600px;margin:0 auto}
+    .services-intro{text-align:center;max-width:900px;margin:0 auto 80px;font-size:clamp(18px,3vw,22px);opacity:.9;line-height:1.7}
+    .services-grid{display:grid;grid-template-columns:1fr;gap:28px}
+    
+    .service-detail{
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(232,181,99,.16);
+      border-radius:24px;
+      padding:40px;
+      position:relative;
+      transition:all .4s ease;
+      overflow:hidden;
+    }
+    .service-detail::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-50%;
+      width:200%;
+      height:200%;
+      background:radial-gradient(circle, rgba(232,181,99,.08) 0%, transparent 70%);
+      opacity:0;
+      transition:opacity .5s;
+      pointer-events:none;
+      z-index:0;
+    }
+    .service-detail:hover::before{opacity:1}
+    .service-detail:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
+      background:rgba(255,255,255,.05);
+      box-shadow:0 24px 70px rgba(232,181,99,.25);
+    }
+    .service-detail:hover .service-visual img,
+    .service-detail:hover .service-visual video{
+      transform:scale(1.08);
+      filter:brightness(1.05) saturate(1.15);
+    }
+    
+    .service-visual{
+      width:100%;
+      height:320px;
+      border-radius:16px;
+      overflow:hidden;
+      margin-bottom:32px;
+      position:relative;
+      background:#0b0b0b;
+    }
+    .service-visual img,
+    .service-visual video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .8s cubic-bezier(.4,0,.2,1), filter .5s;
+      filter:brightness(.92) saturate(.98);
+    }
+    .service-visual::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent 0%, rgba(10,10,10,.4) 100%);
+      pointer-events:none;
+    }
+    
+    .service-content{position:relative;z-index:1}
+    .service-header{margin-bottom:24px}
+    .service-number{font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+    .service-title{font-size:clamp(26px,5vw,38px);font-weight:900;margin-bottom:16px;line-height:1.2}
+    .service-desc{font-size:clamp(15px,3vw,18px);opacity:.88;line-height:1.7;margin-bottom:32px}
+    
+    .service-features{margin-bottom:32px}
+    .service-features h4{font-size:16px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;font-weight:800}
+    .feature-list{display:grid;gap:14px}
+    .feature-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      font-size:15px;
+      opacity:.85;
+      line-height:1.6;
+    }
+    .feature-item::before{
+      content:'✓';
+      color:var(--gold);
+      font-weight:900;
+      font-size:18px;
+      flex-shrink:0;
+    }
+    
+    .service-stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+      gap:20px;
+      padding:24px 0;
+      border-top:1px solid rgba(232,181,99,.2);
+      border-bottom:1px solid rgba(232,181,99,.2);
+      margin-bottom:28px;
+    }
+    .stat-item{text-align:center}
+    .stat-number{font-size:clamp(28px,6vw,42px);font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px}
+    .stat-label{font-size:11px;opacity:.7;text-transform:uppercase;letter-spacing:1px}
+    
+    .service-cta{display:inline-flex;align-items:center;gap:8px;padding:16px 28px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;text-decoration:none;border-radius:999px;font-weight:800;letter-spacing:1px;transition:all .3s;font-size:15px}
+    .service-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,181,99,.4)}
+
+    /* Process Section */
+    .process-section{
+      padding:100px 20px;
+      background:linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+    }
+    .section-header{text-align:center;margin-bottom:72px}
+    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;font-weight:800}
+    .section-title{font-size:clamp(36px,7vw,72px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    
+    .process-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px}
+    .process-step{
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(232,181,99,.12);
+      border-radius:20px;
+      padding:32px;
+      position:relative;
+      transition:all .3s;
+    }
+    .process-step:hover{
+      border-color:rgba(232,181,99,.4);
+      background:rgba(255,255,255,.04);
+      transform:translateX(8px);
+    }
+    .step-number{
+      position:absolute;
+      top:20px;
+      right:20px;
+      font-size:64px;
+      font-weight:900;
+      color:transparent;
+      -webkit-text-stroke:1px rgba(232,181,99,.2);
+    }
+    .step-title{font-size:clamp(22px,4vw,28px);font-weight:800;margin-bottom:12px}
+    .step-desc{opacity:.85;line-height:1.6;font-size:16px}
+
+    /* CTA Section */
+    .cta-section{
+      padding:120px 20px;
+      background:radial-gradient(ellipse at 50% 50%, rgba(232,181,99,.1) 0%, transparent 70%);
+      text-align:center;
+    }
+    .cta-content{max-width:900px;margin:0 auto}
+    .cta-title{font-size:clamp(36px,7vw,64px);font-weight:900;margin-bottom:24px;line-height:1.2}
+    .cta-text{font-size:clamp(16px,3vw,20px);opacity:.9;line-height:1.7;margin-bottom:40px}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .cta-primary,.cta-secondary{padding:18px 36px;border-radius:999px;text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .3s;font-size:16px}
+    .cta-primary{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
+    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(232,181,99,.5)}
+    .cta-secondary{border:2px solid var(--gold);color:var(--gold)}
+    .cta-secondary:hover{background:rgba(232,181,99,.1)}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 20px 36px;max-width:1600px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:36px;text-align:center}
+    .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px;font-weight:800}
+    .footer-grid a{color:rgba(255,255,255,.75);text-decoration:none;display:block;margin-bottom:8px;transition:color .2s}
+    .footer-grid a:hover{color:var(--gold)}
+    .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
+
+    /* Desktop */
+    @media (min-width:768px){
+      header{padding:22px 80px}
+      .hero{padding:180px 80px 100px}
+      .services-section{padding:140px 80px}
+      .services-grid{grid-template-columns:1fr;gap:48px}
+      .service-detail{padding:56px}
+      .service-visual{height:380px}
+      .service-stats{grid-template-columns:repeat(3, 1fr);gap:32px}
+      .process-section{padding:140px 80px}
+      .process-grid{grid-template-columns:repeat(2, 1fr);gap:32px}
+      .cta-section{padding:160px 80px}
+      .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo-text">CNIP <span class="badge">Since 2002</span></a>
+      <nav>
+        <a href="/#work">Work</a>
+        <a href="/#story">Story</a>
+        <a href="/#clients">Klanten</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Onze Diensten</div>
+        <h1 class="hero-title">Marketing die<br>écht werkt</h1>
+        <p class="hero-subtitle">Van strategie tot uitvoering. Van concept tot conversie. Alles wat je merk nodig heeft om te groeien, onder één dak.</p>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="services-intro">
+        <p><strong style="color:var(--gold)">23 jaar expertise</strong> in het bouwen van merken die blijven. Geen trendy buzzwords, geen holle beloftes. Wel proven strategieën, cinema-kwaliteit content, en meetbare resultaten voor premium merken zoals Hof van Cleve, Willems Veranda en BMW.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Video Productie -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <video poster="/images/DSMKeukens commercial.jpg" preload="none" loop muted playsinline webkit-playsinline>
+              <source src="https://3375589.fs1.hubspotusercontent-na1.net/hubfs/3375589/DSMKeukens.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">01 • Video Productie</div>
+              <h2 class="service-title">Cinema Quality.<br>Web Ready.</h2>
+            </div>
+            
+            <p class="service-desc">Verhalen vertellen in filmkwaliteit sinds 2002. Van concept tot post-productie, we creëren video's die niet alleen mooi zijn, maar ook converteren. Voor web, social media, events en broadcast.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Producties</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">23</div>
+                <div class="stat-label">Jaar Ervaring</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">Cinema</div>
+                <div class="stat-label">Kwaliteit</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Wat we doen:</h4>
+              <div class="feature-list">
+                <div class="feature-item">Concept ontwikkeling en storyboarding</div>
+                <div class="feature-item">Cinema-kwaliteit opnames (4K/6K/8K)</div>
+                <div class="feature-item">Professional color grading en post-productie</div>
+                <div class="feature-item">Social media optimalisatie (alle formaten)</div>
+                <div class="feature-item">Corporate, product en brand video's</div>
+                <div class="feature-item">Event videografie en livestreaming</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Start Project →</a>
+          </div>
+        </article>
+
+        <!-- SEO -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <img src="/images/willems_2.jpg" alt="Willems Veranda SEO Success" loading="lazy">
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">02 • SEO</div>
+              <h2 class="service-title">Domineer je<br>markt online</h2>
+            </div>
+            
+            <p class="service-desc">Data-driven SEO strategie die werkt. Technische optimalisatie, content die rankt, en continue monitoring. Bewezen resultaten: 51+ keywords in Top 3 voor Willems Veranda, complete dominantie in hun sector.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">51</div>
+                <div class="stat-label">Keywords Top 3</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">77</div>
+                <div class="stat-label">Keywords Top 10</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">300%</div>
+                <div class="stat-label">Avg. Groei</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Onze aanpak:</h4>
+              <div class="feature-list">
+                <div class="feature-item">Technische SEO audit en optimalisatie</div>
+                <div class="feature-item">Keyword research en competitie-analyse</div>
+                <div class="feature-item">Content strategie die rankt en converteert</div>
+                <div class="feature-item">Local SEO voor lokale dominantie</div>
+                <div class="feature-item">Maandelijkse rapportage en optimalisatie</div>
+                <div class="feature-item">Link building met white-hat strategieën</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Gratis SEO Audit →</a>
+          </div>
+        </article>
+
+        <!-- Social Media -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve Social Media Success" loading="lazy">
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">03 • Social Media</div>
+              <h2 class="service-title">De benchmark<br>in je sector</h2>
+            </div>
+            
+            <p class="service-desc">Van zero naar 50.000+ volgers voor Hof van Cleve. We creëren geen content, we bouwen communities. Authentieke verhalen die resoneren, content die de benchmark wordt in je industrie.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Volgers Gegroeid</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">2.5M+</div>
+                <div class="stat-label">Views/Maand</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">8.5%</div>
+                <div class="stat-label">Avg. Engagement</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Wat we bieden:</h4>
+              <div class="feature-list">
+                <div class="feature-item">Content strategie en planning (alle platforms)</div>
+                <div class="feature-item">Professional content creatie (foto + video)</div>
+                <div class="feature-item">Community management en engagement</div>
+                <div class="feature-item">Influencer partnerships en collaboraties</div>
+                <div class="feature-item">Social media advertising (Meta, LinkedIn, TikTok)</div>
+                <div class="feature-item">Analytics en performance optimization</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Boost Social →</a>
+          </div>
+        </article>
+
+        <!-- Marketing Automation -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <img src="/images/Website portfolio (11) (1).jpg" alt="Marketing Automation & HubSpot" loading="lazy">
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">04 • Marketing Automation</div>
+              <h2 class="service-title">Systemen die<br>renderen</h2>
+            </div>
+            
+            <p class="service-desc">HubSpot Gold Partner. We bouwen marketing machines die draaien terwijl je slaapt. Van lead nurturing tot customer retention, met AI-driven personalisatie op schaal. Voor bedrijven van €5-50M omzet.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">Gold</div>
+                <div class="stat-label">HubSpot Partner</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Powered</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Automatisch</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Onze expertise:</h4>
+              <div class="feature-list">
+                <div class="feature-item">HubSpot implementatie en onboarding</div>
+                <div class="feature-item">Workflow automation en lead nurturing</div>
+                <div class="feature-item">Email marketing campagnes en sequences</div>
+                <div class="feature-item">CRM integratie en data synchronisatie</div>
+                <div class="feature-item">Lead scoring en segmentatie</div>
+                <div class="feature-item">Analytics dashboards en ROI tracking</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Automatiseer Nu →</a>
+          </div>
+        </article>
+
+        <!-- Website Development -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <img src="/images/Logo design 6 (1).jpg" alt="Website Development & Design" loading="lazy">
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">05 • Website Development</div>
+              <h2 class="service-title">Websites die<br>converteren</h2>
+            </div>
+            
+            <p class="service-desc">Custom-built voor jouw merk. SEO-ready vanaf dag één. Conversie-focused design en ontwikkeling. Van brochure sites tot complexe e-commerce platforms. Websites die groeien met je bedrijf.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">Custom</div>
+                <div class="stat-label">Maatwerk</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">SEO</div>
+                <div class="stat-label">Optimized</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">Fast</div>
+                <div class="stat-label">Performance</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Onze service:</h4>
+              <div class="feature-list">
+                <div class="feature-item">UX/UI design en prototyping</div>
+                <div class="feature-item">Responsive development (mobile-first)</div>
+                <div class="feature-item">CMS integratie (WordPress, HubSpot CMS)</div>
+                <div class="feature-item">E-commerce platforms (WooCommerce, Shopify)</div>
+                <div class="feature-item">Performance optimalisatie en SEO</div>
+                <div class="feature-item">Onderhoud, hosting en security</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Plan Website →</a>
+          </div>
+        </article>
+
+        <!-- Google Ads -->
+        <article class="service-detail">
+          <div class="service-visual">
+            <img src="/images/Website portfolio (11) (1).jpg" alt="Google Ads & PPC Advertising" loading="lazy">
+          </div>
+          
+          <div class="service-content">
+            <div class="service-header">
+              <div class="service-number">06 • Google Ads</div>
+              <h2 class="service-title">ROI-focused<br>advertising</h2>
+            </div>
+            
+            <p class="service-desc">Google gecertificeerd. AI-optimized campaigns die meetbare resultaten leveren. Van Search tot Display, Shopping tot YouTube. Voor B2B en premium merken die kwaliteit leads zoeken, geen vanity metrics.</p>
+            
+            <div class="service-stats">
+              <div class="stat-item">
+                <div class="stat-number">Google</div>
+                <div class="stat-label">Certified</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Optimized</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">ROI</div>
+                <div class="stat-label">Focused</div>
+              </div>
+            </div>
+            
+            <div class="service-features">
+              <h4>Wat we doen:</h4>
+              <div class="feature-list">
+                <div class="feature-item">Campaign strategie en setup</div>
+                <div class="feature-item">Keyword research en competitive analysis</div>
+                <div class="feature-item">Ad copy en creative development</div>
+                <div class="feature-item">Landing page optimalisatie voor conversies</div>
+                <div class="feature-item">Bid management en budget optimalisatie</div>
+                <div class="feature-item">Conversion tracking en detailed reporting</div>
+              </div>
+            </div>
+            
+            <a href="/#contact" class="service-cta">Start Campagne →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="section-header">
+        <div class="section-eyebrow">Hoe We Werken</div>
+        <h2 class="section-title">Van Strategie<br>tot Succes</h2>
+      </div>
+      
+      <div class="process-grid">
+        <article class="process-step">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Kennismaken & Analyse</h3>
+          <p class="step-desc">We starten met een grondige analyse van je merk, markt en doelstellingen. Wat maakt jouw business uniek? Waar liggen de kansen? Een gratis strategiesessie waarin we je uitdagingen in kaart brengen.</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Strategie & Planning</h3>
+          <p class="step-desc">Op basis van de analyse bouwen we een datagedreven strategie. Concrete doelen, duidelijke KPI's, en een roadmap naar succes. Geen fluff, wel een plan dat werkt.</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Uitvoering & Creatie</h3>
+          <p class="step-desc">Hier komt het bij elkaar: strategie ontmoet creativiteit. Van video productie tot content creatie, van website development tot automation setup. Cinema-kwaliteit, gebouwd op data.</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Meten & Optimaliseren</h3>
+          <p class="step-desc">Maandelijkse rapportage, continue optimalisatie, meetbare groei. We geloven in transparantie: je ziet exact wat werkt en wat we verbeteren. Marketing die aantoonbaar rendeert.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-content">
+        <div class="section-eyebrow">Klaar Voor Groei?</div>
+        <h2 class="cta-title">Laten we jouw<br>verhaal schrijven</h2>
+        <p class="cta-text">Gratis strategiesessie. Vrijblijvend kennismaken. Binnen 24u concrete voorstellen. Voor merken die het menen en klaar zijn voor meetbare impact.</p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="cta-primary">Start Gesprek</a>
+          <a href="mailto:info@cnip.be" class="cta-secondary">Mail Direct</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="font-size:22px;font-weight:900;margin-bottom:14px">CNIP</div>
+        <address style="opacity:.8;line-height:1.8;font-size:14px;font-style:normal">
+          Ottergemsesteenweg Zuid 808<br>
+          9000 Gent, België<br><br>
+          <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
+        </address>
+      </div>
+      <div>
+        <div class="footer-heading">Diensten</div>
+        <a href="#services">Video Productie</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Social Media</a>
+        <a href="#services">Marketing Automation</a>
+      </div>
+      <div>
+        <div class="footer-heading">Bedrijf</div>
+        <a href="/#story">Story</a>
+        <a href="/#work">Work</a>
+        <a href="/#clients">Klanten</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div>
+        <div class="footer-heading">Connect</div>
+        <a href="mailto:info@cnip.be">Email</a>
+        <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 CNIP — Since 2002 | Boutique Marketing Bureau Gent</div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if(href !== '#' && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) {
+            target.scrollIntoView({behavior: 'smooth', block: 'start'});
+          }
+        }
+      });
+    });
+
+    // GSAP Animations
+    if(typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      gsap.utils.toArray('.service-detail').forEach((el, i) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 60,
+          duration: 0.8,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            once: true
+          }
+        });
+      });
+      
+      gsap.utils.toArray('.process-step').forEach((el, i) => {
+        gsap.from(el, {
+          opacity: 0,
+          x: -40,
+          duration: 0.7,
+          delay: i * 0.15,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            once: true
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
