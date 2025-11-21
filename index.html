@@ -989,42 +989,27 @@
     }
     window.scrollTo(0, 0);
     
-    // Page loader
+    // Page loader - simplified and faster
     (function(){
       const pl = document.querySelector('.page-loader');
-      const hide = () => {
-        if(!pl) return;
+      if(!pl) return;
+      
+      const hideLoader = () => {
         pl.classList.add('hidden');
         setTimeout(() => { 
-          if(pl.parentNode) {
-            pl.classList.add('force-hide');
-            pl.style.display = 'none';
-          }
+          pl.classList.add('force-hide');
+          pl.style.display = 'none';
         }, 600);
       };
       
-      const minTime = 2500;
-      const startTime = Date.now();
+      // Hide after max 1.5 seconds regardless of load state
+      setTimeout(hideLoader, 1500);
       
-      const fallbackTimer = setTimeout(() => {
-        console.log('Fallback hide triggered');
-        hide();
-      }, 4000);
-      
+      // Or hide when page is loaded (whichever comes first)
       if(document.readyState === 'complete') {
-        const elapsed = Date.now() - startTime;
-        setTimeout(() => {
-          clearTimeout(fallbackTimer);
-          hide();
-        }, Math.max(0, minTime - elapsed));
+        hideLoader();
       } else {
-        window.addEventListener('load', () => {
-          const elapsed = Date.now() - startTime;
-          setTimeout(() => {
-            clearTimeout(fallbackTimer);
-            hide();
-          }, Math.max(0, minTime - elapsed));
-        });
+        window.addEventListener('load', hideLoader, { once: true });
       }
     })();
 
