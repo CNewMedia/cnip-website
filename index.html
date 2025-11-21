@@ -121,22 +121,6 @@
     }
     img,video{max-width:100%;height:auto;display:block}
 
-    /* Loader */
-    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
-    .page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-    .page-loader.force-hide{display:none!important}
-    .loader-text{
-      font-size:clamp(72px,15vw,180px);
-      font-weight:900;
-      background:linear-gradient(135deg,#fff 0%,var(--gold) 50%,#fff 100%);
-      background-size:200% auto;
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:shimmer 3s ease-in-out infinite;
-      letter-spacing:-4px;
-    }
-    @keyframes shimmer{to{background-position:-200% center}}
-
     /* Header */
     header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.9);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000;padding:22px 40px}
     .header-content{max-width:1600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
@@ -653,8 +637,6 @@
 <body>
   <!-- Force scroll top inline -->
   <script>window.scrollTo(0,0);</script>
-  
-  <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
   <header>
     <div class="header-content">
@@ -988,30 +970,6 @@
       history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-    
-    // Page loader - simplified and faster
-    (function(){
-      const pl = document.querySelector('.page-loader');
-      if(!pl) return;
-      
-      const hideLoader = () => {
-        pl.classList.add('hidden');
-        setTimeout(() => { 
-          pl.classList.add('force-hide');
-          pl.style.display = 'none';
-        }, 600);
-      };
-      
-      // Hide after max 1.5 seconds regardless of load state
-      setTimeout(hideLoader, 1500);
-      
-      // Or hide when page is loaded (whichever comes first)
-      if(document.readyState === 'complete') {
-        hideLoader();
-      } else {
-        window.addEventListener('load', hideLoader, { once: true });
-      }
-    })();
 
     document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo(0, 0);
