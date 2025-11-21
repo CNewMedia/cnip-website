@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 
   <!-- SEO: Primary Meta Tags -->
-  <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media sinds 2002</title>
-  <meta name="description" content="CNIP is een boutique marketing bureau in Gent sinds 2002. Gespecialiseerd in video productie, SEO, social media en marketing automation. 23 jaar expertise voor premium merken zoals Hof van Cleve, Willems Veranda en BMW.">
+  <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media</title>
+  <meta name="description" content="CNIP is een boutique marketing bureau in Gent. Gespecialiseerd in video productie, SEO, social media en marketing automation. Premium merken zoals Hof van Cleve, Willems Veranda en BMW.">
   <meta name="keywords" content="marketing bureau gent, video productie, SEO, social media marketing, marketing automation, boutique agency, HubSpot partner">
   <meta name="author" content="CNIP">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -559,6 +559,42 @@
     .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer;transition:transform .2s}
     .submit-btn:hover{transform:translateY(-2px)}
 
+    /* Floating CTA Button */
+    .floating-cta{
+      position:fixed;
+      bottom:24px;
+      right:24px;
+      background:linear-gradient(135deg,var(--gold),#d4a049);
+      color:#0a0a0a;
+      padding:16px 28px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:15px;
+      letter-spacing:0.5px;
+      text-decoration:none;
+      box-shadow:0 8px 32px rgba(232,181,99,.5);
+      z-index:999;
+      transition:all .3s;
+      opacity:0;
+      transform:translateY(100px);
+    }
+    .floating-cta.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .floating-cta:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 40px rgba(232,181,99,.6);
+    }
+    @media (max-width:767px){
+      .floating-cta{
+        bottom:16px;
+        right:16px;
+        padding:14px 24px;
+        font-size:14px;
+      }
+    }
+
     /* Footer */
     footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 20px 36px;max-width:1600px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:36px;text-align:center}
@@ -632,13 +668,16 @@
     </div>
   </header>
 
+  <!-- Floating CTA -->
+  <a href="#contact" class="floating-cta" id="floatingCta">Gratis strategiesessie →</a>
+
   <main>
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
         <div class="hero-eyebrow">Boutique Marketing Bureau Gent</div>
         <h1 class="hero-title">Marketing die<br>vooruit denkt</h1>
-        <p class="hero-subtitle">Creatief. Cijfers. Kwaliteit.</p>
+        <p class="hero-subtitle">Creatief. Data. Resultaat.</p>
         <div class="hero-cta">
           <a class="cta-primary" href="#contact">Start Gesprek</a>
           <a class="cta-secondary" href="#work">Bekijk Work</a>
@@ -656,18 +695,18 @@
           <div class="service-number">01</div>
           <div>
             <h3 class="service-title">Video<br>Productie</h3>
-            <p class="service-desc">Cinema-kwaliteit content. Van trends naar resultaat. 500+ producties voor premium merken.</p>
+            <p class="service-desc">Cinema-kwaliteit video's die converteren. 500+ producties.</p>
           </div>
         </article>
         <article class="service-card">
           <div class="service-number">02</div>
           <h3 class="service-title">SEO</h3>
-          <p class="service-desc">Technisch + content SEO. 51+ keywords top 3. Meetbare groei.</p>
+          <p class="service-desc">51+ keywords top 3. Meetbare organische groei.</p>
         </article>
         <article class="service-card">
           <div class="service-number">03</div>
           <h3 class="service-title">Social<br>Media</h3>
-          <p class="service-desc">Van 0 naar 50.000+ volgers. Content die resoneert en converteert.</p>
+          <p class="service-desc">0 → 50k volgers met authentieke content.</p>
         </article>
         <article class="service-card wide">
           <div class="service-number">04</div>
@@ -736,6 +775,17 @@
           </div>
         </article>
         
+        <article class="work-item">
+          <div class="work-visual">
+            <img src="/images/Logo design 6 (1).jpg" alt="Tijdloze brand identity design" loading="lazy">
+          </div>
+          <div class="work-overlay">
+            <span class="work-tag">Brand Identity</span>
+            <h3 class="work-title">Brand Design</h3>
+            <p class="work-desc">Tijdloze identiteiten die groeien met je merk.</p>
+          </div>
+        </article>
+        
         <article class="work-item work-video">
           <div class="work-visual">
             <video 
@@ -751,16 +801,16 @@
           </div>
           <div class="work-overlay">
             <span class="work-tag">Video Production</span>
-            <h3 class="work-title">Cinema Quality</h3>
-            <p class="work-desc">Filmkwaliteit verhalen. 500+ producties in 23 jaar.</p>
+            <h3 class="work-title">DSM Keukens</h3>
+            <p class="work-desc">Jarenlange merkverhalen in filmkwaliteit. Premium video-content.</p>
             <div class="work-stats">
               <div class="work-stat">
-                <div class="work-stat-num">500+</div>
-                <div class="work-stat-label">Video's</div>
+                <div class="work-stat-num">5+</div>
+                <div class="work-stat-label">Jaar partnership</div>
               </div>
               <div class="work-stat">
-                <div class="work-stat-num">23</div>
-                <div class="work-stat-label">Jaar</div>
+                <div class="work-stat-num">Cinema</div>
+                <div class="work-stat-label">Kwaliteit</div>
               </div>
             </div>
           </div>
@@ -774,9 +824,7 @@
           <div class="section-eyebrow">Waarom CNIP Bestaat</div>
           <h2 class="section-title" style="margin-bottom: 26px;">Voor merken die<br>het menen</h2>
           <div class="founder-text">
-            <p>Wij bouwen strategieën voor premium merken (€5-50M). Geen tactics, wel partnerships. Resultaat boven hypes.</p>
-            <p><strong>Sinds 2002.</strong> Boutique door keuze. Elk merk verdient aandacht, geen template. Diepgang boven volume. Impact boven vanity metrics.</p>
-            <p style="margin-bottom:0">23 jaar expertise. HubSpot Gold, Google, Cambridge gecertificeerd. Een track record van merken die groeien.</p>
+            <p style="margin-bottom:0">Wij werken alleen met premium merken (€5-50M) die resultaat boven hypes zetten. Boutique door keuze. Geen juniors, geen templates — alleen senior expertise en langetermijn-partnerships.</p>
           </div>
         </div>
 
@@ -803,7 +851,7 @@
           <div class="section-eyebrow">Ons Zustermerk</div>
           <h2 class="section-title" style="margin-bottom: 26px;">Systemen die<br>renderen</h2>
           <div class="oryen-text">
-            <p>Oryen: zuster voor digitale transformatie en sales-systemen. Voor €1-50M bedrijven klaar voor schaalbare groei.</p>
+            <p style="margin-bottom:0">Oryen: ons zusterbedrijf voor sales- en marketing-systemen die écht renderen. Voor bedrijven vanaf €1M klaar voor schaalbare groei.</p>
           </div>
           <a href="https://oryen.be" target="_blank" rel="noopener" class="oryen-btn">Ontdek Oryen →</a>
         </div>
@@ -869,7 +917,8 @@
         <div>
           <div class="section-eyebrow">Laten We Praten</div>
           <h2 class="section-title" style="margin-bottom: 28px;">Klaar voor<br>meetbare impact?</h2>
-          <p style="font-size: clamp(18px,4vw,22px); opacity: .95; line-height: 1.6; margin-bottom: 24px; font-weight: 600;">Boek je gratis strategie sessie.</p>
+          <p style="font-size: clamp(18px,4vw,22px); opacity: .95; line-height: 1.6; margin-bottom: 12px; font-weight: 600;">Boek je gratis strategiesessie (30 min)</p>
+          <p style="font-size: clamp(14px,3vw,16px); opacity: .8; line-height: 1.6; margin-bottom: 24px;">Geen verkooppraatje — enkel concrete quick wins voor jouw merk.</p>
         </div>
 
         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -906,7 +955,7 @@
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
+          <a href="/cdn-cgi/l/email-protection#3851565e57785b565148165a5d" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="dbb2b5bdb49bb8b5b2abf5b9be">[email&#160;protected]</span></a>
         </address>
       </div>
       <div>
@@ -925,15 +974,15 @@
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="mailto:info@cnip.be">Email</a>
+        <a href="/cdn-cgi/l/email-protection#86efe8e0e9c6e5e8eff6a8e4e3">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 CNIP — Since 2002 | Boutique Marketing Bureau Gent</div>
+    <div class="footer-bottom">© 2025 CNIP | Boutique Marketing Bureau Gent</div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // FORCE scroll to top IMMEDIATELY
     if('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -983,6 +1032,24 @@
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
+      
+      // Floating CTA visibility
+      const floatingCta = document.getElementById('floatingCta');
+      const hero = document.querySelector('.hero');
+      
+      if(floatingCta && hero) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if(!entry.isIntersecting) {
+              floatingCta.classList.add('visible');
+            } else {
+              floatingCta.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        observer.observe(hero);
+      }
     });
 
     // Video
@@ -1016,16 +1083,4 @@
     // GSAP
     if(typeof gsap !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('.service-card, .work-item, .client-card').forEach((el, i) => {
-        gsap.from(el, {
-          opacity: 0,
-          y: 40,
-          duration: .6,
-          delay: i * 0.03,
-          scrollTrigger: {trigger: el, start: 'top 88%', once: true}
-        });
-      });
-    }
-  </script>
-</body>
-</html>
+      gsap.utils.toArray('.service-card, .work-item, .client-car
