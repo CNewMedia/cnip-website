@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTM Debug Test - CNIP</title>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(232,181,99,0.3);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    h1 {
+      color: #E8B563;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    h2 {
+      color: #E8B563;
+      margin: 30px 0 15px 0;
+      font-size: 20px;
+    }
+    .status-box {
+      background: rgba(255,255,255,0.03);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+    .status-box.success {
+      border-color: #4ade80;
+      background: rgba(74,222,128,0.1);
+    }
+    .status-box.error {
+      border-color: #ef4444;
+      background: rgba(239,68,68,0.1);
+    }
+    .status-box.warning {
+      border-color: #f59e0b;
+      background: rgba(245,158,11,0.1);
+    }
+    .status-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .status-title::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .success .status-title::before { background: #4ade80; }
+    .error .status-title::before { background: #ef4444; }
+    .warning .status-title::before { background: #f59e0b; }
+    
+    code {
+      background: rgba(0,0,0,0.5);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #E8B563;
+      font-size: 14px;
+    }
+    pre {
+      background: rgba(0,0,0,0.5);
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 10px 0;
+      border: 1px solid rgba(232,181,99,0.2);
+    }
+    .test-button {
+      background: linear-gradient(135deg, #E8B563, #d4a049);
+      color: #0a0a0a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 10px 10px 0;
+      transition: transform 0.2s;
+    }
+    .test-button:hover {
+      transform: translateY(-2px);
+    }
+    .info-text {
+      opacity: 0.85;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+      opacity: 0.9;
+    }
+    .highlight {
+      color: #E8B563;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="container">
+    <h1>🔍 Google Tag Manager Diagnostiek</h1>
+    
+    <div class="status-box" id="mainStatus">
+      <div class="status-title">Bezig met checken...</div>
+      <div class="info-text">Even geduld terwijl we GTM testen...</div>
+    </div>
+
+    <h2>Automatische Checks</h2>
+    
+    <div class="status-box" id="dataLayerCheck">
+      <div class="status-title">DataLayer Status</div>
+      <div id="dataLayerInfo" class="info-text">Checken...</div>
+    </div>
+
+    <div class="status-box" id="gtmScriptCheck">
+      <div class="status-title">GTM Script Status</div>
+      <div id="gtmScriptInfo" class="info-text">Checken...</div>
+    </div>
+
+    <div class="status-box" id="networkCheck">
+      <div class="status-title">Netwerk Connectie</div>
+      <div id="networkInfo" class="info-text">Checken...</div>
+    </div>
+
+    <h2>Container Info</h2>
+    <div class="status-box">
+      <div class="info-text">
+        <strong>Container ID:</strong> <code>GTM-M3QJK6VR</code><br>
+        <strong>Current URL:</strong> <code id="currentUrl"></code><br>
+        <strong>Hostname:</strong> <code id="hostname"></code>
+      </div>
+    </div>
+
+    <h2>Event Testing</h2>
+    <div class="status-box">
+      <p class="info-text" style="margin-bottom: 15px;">Test of events correct worden verzonden naar GTM:</p>
+      <button class="test-button" onclick="testEvent('button_click')">Test Button Click Event</button>
+      <button class="test-button" onclick="testEvent('page_view')">Test Page View Event</button>
+      <div id="eventTestResult" style="margin-top: 15px;"></div>
+    </div>
+
+    <h2>DataLayer Contents</h2>
+    <div class="status-box">
+      <pre id="dataLayerContents">Loading...</pre>
+    </div>
+
+    <h2>Mogelijke Problemen & Oplossingen</h2>
+    <div class="status-box warning" id="solutions">
+      <div class="info-text">
+        <p style="margin-bottom: 15px;"><strong>Als GTM niet werkt, controleer het volgende:</strong></p>
+        <ul>
+          <li><strong>Ad Blockers:</strong> Schakel uBlock, AdBlock, Privacy Badger etc. uit</li>
+          <li><strong>Browser Extensions:</strong> Test in incognito mode (Ctrl+Shift+N)</li>
+          <li><strong>Firewall/Proxy:</strong> Controleer of googletagmanager.com niet geblokkeerd is</li>
+          <li><strong>Container ID:</strong> Verifieer dat GTM-M3QJK6VR correct is in je GTM account</li>
+          <li><strong>GTM Publicatie:</strong> Zorg dat je container gepubliceerd is (niet alleen draft)</li>
+          <li><strong>Domain Whitelist:</strong> Check GTM instellingen voor domain restrictions</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Preview Mode Instructies</h2>
+    <div class="status-box">
+      <div class="info-text">
+        <ol style="list-style: decimal; padding-left: 25px;">
+          <li>Open je <strong>Google Tag Manager</strong> workspace</li>
+          <li>Klik rechtsboven op <span class="highlight">"Preview"</span></li>
+          <li>Voer deze URL in: <code id="previewUrl"></code></li>
+          <li>Klik op <span class="highlight">"Connect"</span></li>
+          <li>Deze pagina zou automatisch moeten herladen met Tag Assistant</li>
+        </ol>
+        <p style="margin-top: 15px;"><strong>Zie je Tag Assistant niet?</strong> Dan is er een connectieprobleem.</p>
+      </div>
+    </div>
+
+    <h2>Developer Console Info</h2>
+    <div class="status-box">
+      <div class="info-text">
+        <p style="margin-bottom: 10px;">Open de browser console (F12) en check:</p>
+        <ul>
+          <li>Zijn er <span class="highlight" style="color: #ef4444;">rode errors</span>?</li>
+          <li>Type <code>dataLayer</code> en druk Enter - zie je een array?</li>
+          <li>Type <code>google_tag_manager</code> en druk Enter - zie je een object?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // Store initial time
+    const startTime = Date.now();
+    let checksComplete = 0;
+    const totalChecks = 3;
+
+    // Helper function to update status
+    function updateStatus(elementId, status, title, info) {
+      const element = document.getElementById(elementId);
+      element.className = `status-box ${status}`;
+      element.querySelector('.status-title').textContent = title;
+      element.querySelector('.info-text').innerHTML = info;
+      checksComplete++;
+      updateMainStatus();
+    }
+
+    function updateMainStatus() {
+      if (checksComplete >= totalChecks) {
+        const hasErrors = document.querySelectorAll('.status-box.error').length > 0;
+        const mainStatus = document.getElementById('mainStatus');
+        
+        if (hasErrors) {
+          mainStatus.className = 'status-box error';
+          mainStatus.querySelector('.status-title').textContent = '❌ GTM heeft problemen';
+          mainStatus.querySelector('.info-text').innerHTML = 'Zie de details hieronder en volg de oplossingen.';
+        } else {
+          mainStatus.className = 'status-box success';
+          mainStatus.querySelector('.status-title').textContent = '✅ GTM lijkt correct geïnstalleerd';
+          mainStatus.querySelector('.info-text').innerHTML = 'Gebruik nu Preview Mode in GTM om de volledige connectie te testen.';
+        }
+      }
+    }
+
+    // Test event function
+    function testEvent(eventName) {
+      try {
+        window.dataLayer.push({
+          'event': eventName,
+          'timestamp': new Date().toISOString(),
+          'test': true
+        });
+        
+        document.getElementById('eventTestResult').innerHTML = `
+          <div style="color: #4ade80; margin-top: 10px;">
+            ✓ Event "${eventName}" verzonden naar dataLayer<br>
+            <small style="opacity: 0.7;">Check GTM Preview Mode om te zien of het event aankomt</small>
+          </div>
+        `;
+        
+        // Update dataLayer display
+        setTimeout(updateDataLayerDisplay, 500);
+      } catch(e) {
+        document.getElementById('eventTestResult').innerHTML = `
+          <div style="color: #ef4444; margin-top: 10px;">
+            ✗ Error: ${e.message}
+          </div>
+        `;
+      }
+    }
+
+    // Check 1: DataLayer
+    function checkDataLayer() {
+      setTimeout(() => {
+        if (typeof window.dataLayer !== 'undefined' && Array.isArray(window.dataLayer)) {
+          updateStatus(
+            'dataLayerCheck',
+            'success',
+            '✓ DataLayer Gevonden',
+            `DataLayer is correct geïnitialiseerd met <strong>${window.dataLayer.length}</strong> events.`
+          );
+        } else {
+          updateStatus(
+            'dataLayerCheck',
+            'error',
+            '✗ DataLayer Niet Gevonden',
+            'DataLayer is niet geïnitialiseerd. Dit is een kritiek probleem.'
+          );
+        }
+      }, 500);
+    }
+
+    // Check 2: GTM Script
+    function checkGTMScript() {
+      setTimeout(() => {
+        const gtmScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+        
+        if (gtmScripts.length > 0) {
+          let scriptInfo = `Gevonden: <strong>${gtmScripts.length}</strong> GTM script(s)<br>`;
+          gtmScripts.forEach((script, index) => {
+            scriptInfo += `<code style="font-size: 12px;">${script.src}</code><br>`;
+          });
+          
+          updateStatus(
+            'gtmScriptCheck',
+            'success',
+            '✓ GTM Script Geladen',
+            scriptInfo
+          );
+        } else {
+          updateStatus(
+            'gtmScriptCheck',
+            'error',
+            '✗ GTM Script Niet Gevonden',
+            'Het GTM script is niet geladen. Check je internet connectie en ad blockers.'
+          );
+        }
+      }, 1000);
+    }
+
+    // Check 3: Network/Google Tag Manager object
+    function checkGTMObject() {
+      setTimeout(() => {
+        if (typeof google_tag_manager !== 'undefined') {
+          const containerKeys = Object.keys(google_tag_manager);
+          const hasContainer = containerKeys.some(key => key.includes('GTM-M3QJK6VR'));
+          
+          if (hasContainer) {
+            updateStatus(
+              'networkCheck',
+              'success',
+              '✓ GTM Container Actief',
+              `Google Tag Manager object gevonden met container <code>GTM-M3QJK6VR</code>. Dit betekent dat GTM succesvol geladen is!`
+            );
+          } else {
+            updateStatus(
+              'networkCheck',
+              'warning',
+              '⚠ GTM Object Gevonden, maar Container Onduidelijk',
+              `Google Tag Manager is geladen, maar we kunnen de specifieke container niet verifiëren. Gevonden containers: <code>${containerKeys.join(', ')}</code>`
+            );
+          }
+        } else {
+          updateStatus(
+            'networkCheck',
+            'error',
+            '✗ GTM Object Niet Gevonden',
+            'Het <code>google_tag_manager</code> object bestaat niet. Dit betekent dat GTM niet succesvol geladen is.<br><br><strong>Mogelijke oorzaken:</strong><ul><li>Ad blocker blokkeert GTM</li><li>Netwerk/Firewall blokkeert googletagmanager.com</li><li>Script load timeout</li></ul>'
+          );
+        }
+      }, 2000);
+    }
+
+    // Update DataLayer display
+    function updateDataLayerDisplay() {
+      try {
+        document.getElementById('dataLayerContents').textContent = 
+          JSON.stringify(window.dataLayer, null, 2);
+      } catch(e) {
+        document.getElementById('dataLayerContents').textContent = 
+          'Error displaying dataLayer: ' + e.message;
+      }
+    }
+
+    // Set URL info
+    document.getElementById('currentUrl').textContent = window.location.href;
+    document.getElementById('hostname').textContent = window.location.hostname;
+    document.getElementById('previewUrl').textContent = window.location.href;
+
+    // Run all checks
+    checkDataLayer();
+    checkGTMScript();
+    checkGTMObject();
+
+    // Initial dataLayer display
+    updateDataLayerDisplay();
+
+    // Update dataLayer display every 2 seconds
+    setInterval(updateDataLayerDisplay, 2000);
+
+    // Send initial page view
+    window.dataLayer.push({
+      'event': 'page_view',
+      'page_title': document.title,
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
+
+    // Log to console
+    console.log('%c🔍 GTM Debug Mode Active', 'color: #E8B563; font-size: 16px; font-weight: bold;');
+    console.log('DataLayer:', window.dataLayer);
+    console.log('GTM Object:', typeof google_tag_manager !== 'undefined' ? google_tag_manager : 'NOT FOUND');
+  </script>
+</body>
+</html>
