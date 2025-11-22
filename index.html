@@ -8,8 +8,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
 <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Security & Performance -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
 
   <!-- SEO: Primary Meta Tags -->
   <title>CNIP | Marketing Bureau Gent | Video, SEO & Social Media</title>
@@ -734,6 +741,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
   <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
   <header>
@@ -1035,7 +1043,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="/cdn-cgi/l/email-protection#3851565e57785b565148165a5d" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="dbb2b5bdb49bb8b5b2abf5b9be">[email&#160;protected]</span></a>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
         </address>
       </div>
       <div>
@@ -1054,7 +1062,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="/cdn-cgi/l/email-protection#86efe8e0e9c6e5e8eff6a8e4e3">Email</a>
+        <a href="mailto:info@cnip.be">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -1063,6 +1071,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script>
+    // Initialize dataLayer for GTM
+    window.dataLayer = window.dataLayer || [];
+    
+    // Push initial page view
+    window.dataLayer.push({
+      'event': 'page_view',
+      'page_title': document.title,
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
+
     // Page loader - premium but fast
     (function(){
       const pl = document.querySelector('.page-loader');
@@ -1102,6 +1121,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         observer.observe(hero);
       }
+
+      // Track CTA clicks
+      document.querySelectorAll('.cta-primary, .cta-secondary, .floating-cta').forEach(button => {
+        button.addEventListener('click', function(e) {
+          window.dataLayer.push({
+            'event': 'cta_click',
+            'cta_text': this.textContent.trim(),
+            'cta_location': this.classList.contains('floating-cta') ? 'floating' : 'hero'
+          });
+        });
+      });
+
+      // Track form submission
+      const contactForm = document.querySelector('.contact-form');
+      if(contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          window.dataLayer.push({
+            'event': 'form_submission',
+            'form_name': 'contact_form'
+          });
+        });
+      }
     });
 
     // Video
@@ -1120,6 +1161,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               this.style.display = 'none';
               if(overlay) overlay.style.display = 'none';
             }
+            // Track video play
+            window.dataLayer.push({
+              'event': 'video_play',
+              'video_title': 'DSM Keukens'
+            });
           } else {
             video.pause();
             if(card) {
