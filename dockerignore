@@ -1,0 +1,37 @@
+# .dockerignore for CNIP.be
+# Exclude files that shouldn't be in the Docker image
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Not needed on Fly.io
+.htaccess
+
+# Fly.io
+.fly
+
+# Temporary files
+*.tmp
+*.log
