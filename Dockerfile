@@ -7,14 +7,14 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy website files
-COPY . /app/public
+COPY . /usr/share/nginx/html
 
 # Create nginx user if not exists
-RUN addgroup -g 1000 -S nginx 2>/dev/null || true
-RUN adduser -u 1000 -D -S -G nginx nginx 2>/dev/null || true
+RUN addgroup -g 101 -S nginx 2>/dev/null || true
+RUN adduser -u 101 -D -S -G nginx nginx 2>/dev/null || true
 
 # Set permissions
-RUN chown -R nginx:nginx /app/public
+RUN chown -R nginx:nginx /usr/share/nginx/html
 
 # Expose port (Fly.io uses 8080 internally)
 EXPOSE 8080

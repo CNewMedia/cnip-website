@@ -54,7 +54,7 @@ echo "📊 App info:"
 flyctl info
 echo ""
 echo "🌐 Your site is live at:"
-flyctl status --json | grep -o '"hostname":"[^"]*"' | cut -d'"' -f4 | head -1
+flyctl status --json 2>/dev/null | grep -o '"hostname":"[^"]*"' | cut -d'"' -f4 | head -1 || echo "https://cnip-website.fly.dev"
 echo ""
 echo "📝 Next steps:"
 echo "  1. Setup custom domain: flyctl certs create cnip.be"

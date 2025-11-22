@@ -35,3 +35,6 @@ yarn-error.log
 # Temporary files
 *.tmp
 *.log
+
+# Deployment scripts
+deploy.sh
