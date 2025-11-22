@@ -1,0 +1,44 @@
+# fly.toml - Fly.io configuration for CNIP.be
+
+app = "cnip-website"
+primary_region = "ams" # Amsterdam (closest to Belgium)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # Environment variables (if needed)
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+    method = "GET"
+    path = "/"
+
+[http_service.concurrency]
+  type = "requests"
+  hard_limit = 200
+  soft_limit = 100
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+# Custom domain configuration
+[[services.ports]]
+  handlers = ["http"]
+  port = 80
+  force_https = true
+
+[[services.ports]]
+  handlers = ["tls", "http"]
+  port = 443
