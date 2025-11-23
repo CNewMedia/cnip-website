@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  (function(w,d,s,l,i){
+    if(!w[l]){w[l]=[];}
+    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    j.onerror=function(){console.warn('GTM failed to load');};
+    if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
+  })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO: Primary Meta Tags -->
+  <title>Case: 240 Leads per Maand met HubSpot | CNIP</title>
+  <meta name="description" content="Hoe een Belgisch bouwbedrijf evolueerde van schommelende aanvragen naar gemiddeld 240 leads per maand. Met een rustig uitgebouwd HubSpot– en multichannel-systeem, uitgewerkt over meerdere jaren.">
+  <meta name="author" content="CNIP">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
+  <meta property="og:title" content="Case: 240 Leads per Maand met HubSpot | CNIP">
+  <meta property="og:description" content="Van onvoorspelbare maanden naar een stabiel ritme van 240 leads per maand. Een langetermijn-case in de bouwsector, met HubSpot als ruggengraat.">
+  <meta property="og:image" content="https://cnip.be/images/bouwbedrijf-case-og.jpg">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:site_name" content="CNIP">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case: 240 Leads per Maand met HubSpot">
+  <meta name="twitter:description" content="Multichannel leadgeneratie in de bouw: HubSpot, SEO, Google Ads en social zorgen samen voor een voorspelbare pipeline.">
+  <meta name="twitter:image" content="https://cnip.be/images/bouwbedrijf-case-og.jpg">
+  <meta name="twitter:url" content="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
+  
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Case: 240 Leads per Maand met HubSpot in de Bouwsector",
+    "description": "Hoe CNIP samen met een Belgisch bouwbedrijf stap voor stap een stabiel leadritme uitbouwde: gemiddeld 240 leads per maand via een geïntegreerd HubSpot- en multichannel-systeem.",
+    "image": "https://cnip.be/images/bouwbedrijf-case-og.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "CNIP",
+      "url": "https://cnip.be"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CNIP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cnip.be/images/cnip-logo.png"
+      }
+    },
+    "datePublished": "2025-11-23",
+    "dateModified": "2025-11-23",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cnip.be/cases/case-bouwbedrijf-belgie.html"
+    },
+    "inLanguage": "nl-BE"
+  }
+  </script>
+  
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cnip.be"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cases",
+        "item": "https://cnip.be/cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bouwbedrijf België",
+        "item": "https://cnip.be/cases/case-bouwbedrijf-belgie.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage (compact, minder salesy) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe zijn jullie op gemiddeld 240 leads per maand gekomen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We hebben stap voor stap een multichannel-systeem uitgebouwd met HubSpot als centrale laag. SEO, Google Ads en social media kregen elk een duidelijke rol. Dat zorgde voor een stabiel ritme in plaats van pieken en dalen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Waarom kozen jullie voor HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Omdat het één duidelijke omgeving biedt voor landingspagina’s, formulieren, e-mailflows, rapportering en salesopvolging. Marketing en sales kijken naar dezelfde realiteit, wat beslissingen eenvoudiger maakt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat gebeurde er tijdens de vertraging in de bouwsector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Waar veel spelers een duidelijke terugval zagen in aanvragen, bleef de leadstroom hier op peil. Door de spreiding over verschillende kanalen en een sterke online basis was het systeem minder kwetsbaar."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#0a0a0a;--white:#fff;--orange:#FF6B35;--blue:#3b82f6;--green:#22c55e;--gray:#6b7280}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.7;
+      font-size:18px;
+    }
+    img{max-width:100%;height:auto;display:block}
+    
+    a:focus,button:focus{outline:2px solid var(--orange);outline-offset:4px}
+    
+    .skip-link{
+      position:fixed;
+      top:-100px;
+      left:0;
+      background:var(--orange);
+      color:var(--white);
+      padding:12px 24px;
+      text-decoration:none;
+      font-weight:700;
+      z-index:10001;
+    }
+    .skip-link:focus{top:0;opacity:1;outline:3px solid var(--white)}
+    
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      background:rgba(10,10,10,.95);
+      backdrop-filter:blur(24px);
+      border-bottom:1px solid rgba(255,107,53,.12);
+      z-index:1000;
+      padding:22px 40px;
+    }
+    .header-content{
+      max-width:1600px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo-text{
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:-.5px;
+      text-decoration:none;
+      color:var(--white);
+    }
+    .badge{
+      font-size:9px;
+      color:var(--orange);
+      padding:6px 12px;
+      border:1px solid rgba(255,107,53,.3);
+      border-radius:999px;
+      margin-left:10px;
+    }
+    
+    .breadcrumb-wrapper{
+      background:rgba(10,10,10,.6);
+      border-bottom:1px solid rgba(255,107,53,.08);
+      padding:16px 0;
+      margin-top:72px;
+    }
+    .breadcrumb-nav{
+      max-width:1600px;
+      margin:0 auto;
+      padding:0 40px;
+    }
+    .breadcrumb-list{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:13px;
+      font-weight:600;
+    }
+    .breadcrumb-link{
+      color:rgba(255,255,255,.65);
+      text-decoration:none;
+      transition:all .2s;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 8px;
+      border-radius:6px;
+    }
+    .breadcrumb-link:hover{
+      color:var(--orange);
+      background:rgba(255,107,53,.08);
+    }
+    .breadcrumb-separator{
+      color:rgba(255,107,53,.3);
+      user-select:none;
+      font-size:10px;
+    }
+    .breadcrumb-current{
+      color:var(--orange);
+      font-weight:700;
+      padding:4px 8px;
+    }
+    
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:140px 24px 80px;
+      background:radial-gradient(circle at 50% 50%,rgba(255,107,53,.12),transparent 70%);
+    }
+    .hero-badge{
+      display:inline-block;
+      padding:10px 24px;
+      background:rgba(255,107,53,.15);
+      border:1px solid var(--orange);
+      border-radius:999px;
+      color:var(--orange);
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:28px;
+    }
+    .hero h1{
+      font-size:clamp(40px,8vw,80px);
+      font-weight:900;
+      line-height:1.05;
+      margin-bottom:32px;
+      background:linear-gradient(135deg,#fff,var(--orange));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero-subtitle{
+      font-size:clamp(18px,2.5vw,24px);
+      opacity:.9;
+      line-height:1.5;
+      max-width:800px;
+      margin:0 auto 40px;
+    }
+    .hero-meta{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      margin-bottom:40px;
+      font-size:13px;
+      opacity:.7;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hero-meta-item{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:20px;
+      max-width:700px;
+      margin:0 auto;
+    }
+    .hero-stat{
+      padding:20px;
+      background:rgba(255,255,255,.05);
+      border-radius:12px;
+      border:1px solid rgba(255,107,53,.15);
+    }
+    .hero-stat-number{
+      font-size:36px;
+      font-weight:900;
+      color:var(--orange);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .hero-stat-label{
+      font-size:11px;
+      opacity:.8;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+    
+    .section{
+      padding:80px 24px;
+    }
+    .section-alt{
+      background:rgba(255,255,255,.02);
+    }
+    .section-title{
+      font-size:clamp(32px,6vw,56px);
+      font-weight:900;
+      margin-bottom:32px;
+      text-align:center;
+      background:linear-gradient(135deg,#fff,var(--orange));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    
+    .context-box{
+      max-width:750px;
+      margin:40px auto;
+      padding:40px;
+      background:rgba(255,255,255,.04);
+      border-left:4px solid var(--orange);
+      border-radius:12px;
+      font-size:17px;
+      line-height:1.8;
+    }
+    .context-box p{
+      margin-bottom:20px;
+    }
+    .context-box strong{
+      color:var(--orange);
+    }
+    
+    .exec-summary{
+      max-width:800px;
+      margin:60px auto 0;
+      padding:36px;
+      background:linear-gradient(135deg,rgba(255,107,53,.1),rgba(255,107,53,.03));
+      border:2px solid var(--orange);
+      border-radius:16px;
+    }
+    .exec-heading{
+      font-size:13px;
+      color:var(--orange);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:20px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .exec-grid{
+      display:grid;
+      gap:20px;
+    }
+    .exec-item strong{
+      color:var(--orange);
+      display:block;
+      margin-bottom:8px;
+    }
+    .exec-item p{
+      font-size:16px;
+      line-height:1.6;
+    }
+    
+    .challenge-solution{
+      display:grid;
+      gap:32px;
+      margin-top:60px;
+    }
+    .cs-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,107,53,.2);
+      border-radius:16px;
+      padding:32px;
+      transition:all .3s;
+    }
+    .cs-card:hover{
+      transform:translateY(-4px);
+      border-color:var(--orange);
+      box-shadow:0 20px 60px rgba(255,107,53,.2);
+    }
+    .cs-header{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      margin-bottom:24px;
+    }
+    .cs-icon{
+      width:56px;
+      height:56px;
+      background:rgba(255,107,53,.15);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+    .cs-title{
+      font-size:28px;
+      font-weight:900;
+    }
+    .cs-content p{
+      margin-bottom:16px;
+      opacity:.9;
+    }
+    .cs-list{
+      list-style:none;
+      margin-top:20px;
+    }
+    .cs-list li{
+      padding-left:28px;
+      position:relative;
+      margin-bottom:12px;
+      opacity:.9;
+    }
+    .cs-list li:before{
+      content:'→';
+      position:absolute;
+      left:0;
+      color:var(--orange);
+      font-weight:900;
+    }
+    
+    .channel-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+      margin-top:60px;
+    }
+    .channel-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,107,53,.2);
+      border-radius:16px;
+      padding:32px;
+      text-align:center;
+      transition:all .3s;
+      position:relative;
+      overflow:hidden;
+    }
+    .channel-card:hover{
+      transform:translateY(-4px);
+      border-color:var(--orange);
+      box-shadow:0 16px 48px rgba(255,107,53,.2);
+    }
+    .channel-percentage{
+      font-size:56px;
+      font-weight:900;
+      color:var(--orange);
+      line-height:1;
+      margin-bottom:12px;
+    }
+    .channel-label{
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      opacity:.9;
+      margin-bottom:16px;
+      font-weight:700;
+    }
+    .channel-desc{
+      font-size:14px;
+      opacity:.7;
+      line-height:1.5;
+    }
+    
+    .impact-grid{
+      display:grid;
+      gap:20px;
+      margin-top:60px;
+    }
+    .impact-card{
+      background:rgba(255,255,255,.03);
+      border-left:4px solid var(--orange);
+      border-radius:8px;
+      padding:24px;
+      transition:all .3s;
+    }
+    .impact-card:hover{
+      background:rgba(255,255,255,.05);
+      transform:translateX(8px);
+    }
+    .impact-number{
+      font-size:11px;
+      color:var(--orange);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .impact-title{
+      font-size:20px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+    .impact-desc{
+      opacity:.85;
+      line-height:1.6;
+    }
+    
+    .cta-section{
+      padding:80px 24px;
+      background:linear-gradient(135deg,rgba(255,107,53,.08),transparent);
+    }
+    .cta-box{
+      max-width:800px;
+      margin:0 auto;
+      text-align:center;
+      padding:60px 40px;
+      background:rgba(255,255,255,.04);
+      border:2px solid rgba(255,107,53,.3);
+      border-radius:24px;
+    }
+    .cta-box h2{
+      font-size:clamp(32px,5vw,48px);
+      font-weight:900;
+      margin-bottom:20px;
+      background:linear-gradient(135deg,#fff,var(--orange));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .cta-box p{
+      font-size:18px;
+      opacity:.9;
+      margin-bottom:32px;
+      line-height:1.6;
+    }
+    .cta-buttons{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .btn-primary,.btn-secondary{
+      padding:16px 32px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:1px;
+      transition:all .3s;
+      display:inline-block;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--orange),#e85a25);
+      color:var(--white);
+    }
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(255,107,53,.4);
+    }
+    .btn-secondary{
+      border:2px solid var(--orange);
+      color:var(--orange);
+    }
+    .btn-secondary:hover{
+      background:rgba(255,107,53,.1);
+    }
+    
+    footer{
+      border-top:1px solid rgba(255,107,53,.12);
+      padding:60px 20px 36px;
+      max-width:1600px;
+      margin:0 auto;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:40px;
+      margin-bottom:36px;
+      text-align:center;
+    }
+    .footer-heading{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--orange);
+      margin-bottom:12px;
+      font-weight:700;
+    }
+    .footer-grid a{
+      color:rgba(255,255,255,.75);
+      text-decoration:none;
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+      transition:color .2s;
+    }
+    .footer-grid a:hover{
+      color:var(--orange);
+    }
+    .footer-bottom{
+      text-align:center;
+      font-size:12px;
+      opacity:.65;
+      border-top:1px solid rgba(255,107,53,.12);
+      padding-top:20px;
+      margin-top:20px;
+    }
+    
+    .back-to-top{
+      position:fixed;
+      bottom:24px;
+      right:24px;
+      width:48px;
+      height:48px;
+      background:linear-gradient(135deg,var(--orange),#e85a25);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      font-size:24px;
+      cursor:pointer;
+      box-shadow:0 4px 16px rgba(255,107,53,.4);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(20px);
+      transition:all .3s;
+      z-index:999;
+      border:none;
+    }
+    .back-to-top.visible{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+    .back-to-top:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(255,107,53,.6);
+    }
+    
+    @media (min-width:768px){
+      header{padding:22px 80px}
+      .breadcrumb-nav{padding:0 80px}
+      .hero{padding:140px 80px 100px}
+      .section{padding:140px 80px}
+      .context-box{font-size:18px}
+      .footer-grid{
+        grid-template-columns:2fr 1fr 1fr 1fr;
+        gap:56px;
+        text-align:left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Spring naar inhoud</a>
+  
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo-text">CNIP <span class="badge">Since 2002</span></a>
+    </div>
+  </header>
+
+  <div class="breadcrumb-wrapper">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" class="breadcrumb-link" itemprop="item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="breadcrumb-separator">•</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/cases" class="breadcrumb-link" itemprop="item">
+            <span itemprop="name">Cases</span>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li class="breadcrumb-separator">•</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">Bouwbedrijf België</span>
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">Case • Bouw & HubSpot</div>
+        <h1>240 leads per maand<br>zonder paniekpieken</h1>
+        <p class="hero-subtitle">
+          Een Belgisch bouwbedrijf dat van schommelende aanvragen naar een rustig, voorspelbaar leadritme ging. 
+          Met HubSpot als ruggengraat en een duidelijke rol voor SEO, Google Ads en social.
+        </p>
+        
+        <div class="hero-meta">
+          <span class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            5 min leestijd
+          </span>
+          <span class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Historische case 2018–2023
+          </span>
+          <span class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Multichannel leadgeneratie
+          </span>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">240</div>
+            <div class="hero-stat-label">Leads/maand</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">±40%</div>
+            <div class="hero-stat-label">SEO & inbound</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">±35%</div>
+            <div class="hero-stat-label">Google Ads</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">±25%</div>
+            <div class="hero-stat-label">Social & direct</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Over dit project</h2>
+        
+        <div class="context-box">
+          <p>
+            <strong>Sector:</strong> Bouw & constructie<br>
+            <strong>Omzetorde:</strong> €10–50M<br>
+            <strong>Markt:</strong> België (Vlaanderen & Wallonië)<br>
+            <strong>Rol CNIP:</strong> Digitale leadgeneratie & HubSpot-implementatie<br>
+            <strong>Periode:</strong> 2018–2023
+          </p>
+          
+          <p>
+            De commerciële motor van dit bouwbedrijf draaide vooral op klassieke kanalen: beurzen, mond-tot-mondreclame 
+            en een netwerk dat door de jaren heen gegroeid was. Online waren er wel campagnes, maar zonder overzicht of 
+            duidelijke lijn. De ene maand stond de telefoon roodgloeiend, de andere maand was het stil.
+          </p>
+          
+          <p>
+            Hun vraag aan CNIP was helder: 
+            <em>"Help ons van die onrust af. We willen weten waar onze leads vandaan komen, en een systeem dat 
+            gemiddeld 200+ leads per maand aanbrengt."</em>
+          </p>
+          
+          <p>
+            In plaats van één trucje of snelle campagne, hebben we samen een systeem gebouwd. HubSpot als centrale laag, 
+            met SEO, Google Ads, social en offline campagnes die elkaar versterken. Geen spektakel, wel een stevige basis 
+            die ook in moeilijkere marktomstandigheden bleef werken.
+          </p>
+        </div>
+        
+        <div class="exec-summary">
+          <div class="exec-heading">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+            Resultaat in cijfers
+          </div>
+          <div class="exec-grid">
+            <div class="exec-item">
+              <strong>Leadritme:</strong>
+              <p>
+                Gemiddeld 240 leads per maand, meerdere jaren op rij. Geen diepe dalen meer, 
+                maar een ritme waar sales op kon plannen.
+              </p>
+            </div>
+            <div class="exec-item">
+              <strong>Verdeling kanalen:</strong>
+              <p>
+                Gedeelde trek: ongeveer 40% via SEO & inbound content, 35% via Google Ads 
+                en 25% via social en direct verkeer. Eén systeem, verschillende instroompunten.
+              </p>
+            </div>
+            <div class="exec-item">
+              <strong>Effect in moeilijke markt:</strong>
+              <p>
+                Terwijl de bouwsector vertraagde en aanvragen in de markt terugliepen, 
+                bleef de leadflow van dit bedrijf op peil dankzij de spreiding over kanalen 
+                en een sterke online basis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Uitdaging & aanpak</h2>
+        
+        <div class="challenge-solution">
+          <article class="cs-card">
+            <div class="cs-header">
+              <div class="cs-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <h3 class="cs-title">De uitdaging</h3>
+            </div>
+            <div class="cs-content">
+              <p>
+                <strong>Inconsistente instroom:</strong> sommige maanden 150 leads, andere maanden 
+                amper de helft. Niemand wist exact waarom. Marketing en sales keken naar andere cijfers 
+                en spraken een andere taal.
+              </p>
+              
+              <p><strong>Wat ontbrak:</strong></p>
+              <ul class="cs-list">
+                <li>Een centraal systeem om alle leads en campagnes te volgen</li>
+                <li>Duidelijkheid over welke kanalen écht werkten</li>
+                <li>Sterke landingspagina’s met een duidelijke call-to-action</li>
+                <li>Een basis voor SEO: structuur, content en techniek</li>
+                <li>Afstemming tussen offline campagnes (TV/radio) en online opvolging</li>
+              </ul>
+              
+              <p>
+                <strong>Doelbeeld:</strong> een voorspelbaar leadritme van 200–300 leads per maand, 
+                verdeeld over meerdere kanalen zodat het bedrijf niet afhankelijk is van één bron.
+              </p>
+            </div>
+          </article>
+          
+          <article class="cs-card">
+            <div class="cs-header">
+              <div class="cs-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <h3 class="cs-title">De aanpak</h3>
+            </div>
+            <div class="cs-content">
+              <p>
+                <strong>HubSpot als cockpit:</strong> eerst hebben we orde gebracht. 
+                Formulieren, landingspagina’s, e-mails, campagnes en rapporten kwamen samen in HubSpot. 
+                Eén waarheid, voor zowel marketing als sales.
+              </p>
+              
+              <p><strong>Multichannel, maar rustig opgebouwd:</strong></p>
+              <ul class="cs-list">
+                <li><strong>SEO & content:</strong> duidelijke themapagina’s, blogs en FAQ’s rond de belangrijkste zoekvragen</li>
+                <li><strong>Google Ads:</strong> campagnes die inhoudelijk aansloten op de landingspagina’s, met strakke opvolging van kost per lead</li>
+                <li><strong>Social:</strong> altijd-on content en gerichte acties om verkeer en zichtbaarheid op te bouwen</li>
+                <li><strong>Offline → online:</strong> TV- en radiocampagnes leidden naar specifieke HubSpot-pagina’s, zodat impact meetbaar werd</li>
+                <li><strong>Nurturing:</strong> eenvoudige maar duidelijke e-mailflows voor wie nog niet klaar was om meteen te kopen</li>
+              </ul>
+              
+              <p>
+                <strong>Resultaat:</strong> een systeem dat niet hangt aan één campagne of persoon, 
+                maar dat draait op duidelijke bouwstenen. Met 240 leads per maand als nieuwe norm.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Verdeling per kanaal</h2>
+        
+        <div class="channel-grid">
+          <article class="channel-card">
+            <div class="channel-percentage">40%</div>
+            <div class="channel-label">SEO & inbound</div>
+            <p class="channel-desc">
+              Structurele content en goed ingerichte landingspagina’s. Minder spectaculair op korte termijn, 
+              maar cruciaal voor de stabiele basis.
+            </p>
+          </article>
+          
+          <article class="channel-card">
+            <div class="channel-percentage">35%</div>
+            <div class="channel-label">Google Ads</div>
+            <p class="channel-desc">
+              Gericht verkeer met duidelijke intentie. Ads versterkten wat al werkte via SEO en boden ruimte om 
+              sneller te schakelen wanneer nodig.
+            </p>
+          </article>
+          
+          <article class="channel-card">
+            <div class="channel-percentage">25%</div>
+            <div class="channel-label">Social & direct</div>
+            <p class="channel-desc">
+              Social media, rechtstreeks verkeer en herbezoeken. Ondersteunend, maar sterk voor merkherkenning 
+              en herhaalaankopen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Wat het opleverde</h2>
+        
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-number">Impact 01</div>
+            <h3 class="impact-title">Voorspelbare pipeline</h3>
+            <p class="impact-desc">
+              Van “we zien wel wat binnenkomt” naar een leadritme waar je rond kunt plannen. 
+              Sales kreeg elke maand voldoende volume om de targets realistisch te halen.
+            </p>
+          </article>
+          
+          <article class="impact-card">
+            <div class="impact-number">Impact 02</div>
+            <h3 class="impact-title">Minder kwetsbaar in moeilijke tijden</h3>
+            <p class="impact-desc">
+              Doordat de instroom over meerdere kanalen gespreid was, bleef het volume overeind toen 
+              de vraag in de markt zakte. Geen paniekstop op marketing, maar rustig bijsturen.
+            </p>
+          </article>
+          
+          <article class="impact-card">
+            <div class="impact-number">Impact 03</div>
+            <h3 class="impact-title">Betere gesprekken voor sales</h3>
+            <p class="impact-desc">
+              Leads kwamen binnen met meer context: via content, via nurturing of via gerichte campagnes. 
+              Minder koude gesprekken, meer inhoudelijke dossiers.
+            </p>
+          </article>
+          
+          <article class="impact-card">
+            <div class="impact-number">Impact 04</div>
+            <h3 class="impact-title">Sterker merk in de regio</h3>
+            <p class="impact-desc">
+              De combinatie van TV/radio voor zichtbaarheid en digitale kanalen voor conversie zorgde ervoor 
+              dat het merk “top of mind” werd in zijn segment.
+            </p>
+          </article>
+          
+          <article class="impact-card">
+            <div class="impact-number">Impact 05</div>
+            <h3 class="impact-title">Rust in de cijfers</h3>
+            <p class="impact-desc">
+              HubSpot-rapporten maakten helder welke kanalen hun werk deden en welke niet. 
+              Discussies over gevoel maakten plaats voor gesprekken over data en keuzes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-box">
+        <h2>Wil je ook rust in je leadstroom?</h2>
+        <p>
+          CNIP helpt bedrijven om hun commerciële systeem op te zetten of te hertekenen. 
+          Niet met nog meer tools, maar met een duidelijke structuur en een eerlijk beeld van wat haalbaar is. 
+          HubSpot kan daar een onderdeel van zijn – maar het vertrekpunt is altijd: wat heb jij echt nodig?
+        </p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Plan een gesprek</a>
+          <a href="/cases" class="btn-secondary">Bekijk andere cases</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div style="font-size:22px;font-weight:900;margin-bottom:14px">CNIP</div>
+        <address style="opacity:.8;line-height:1.8;font-size:14px;font-style:normal">
+          Ottergemsesteenweg Zuid 808<br>
+          9000 Gent, België<br><br>
+          <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
+        </address>
+      </div>
+      <div>
+        <div class="footer-heading">Wat we doen</div>
+        <a href="/#services">Commerciële systemen</a>
+        <a href="/#services">Leadgeneratie & funnels</a>
+        <a href="/#services">HubSpot & automatisatie</a>
+        <a href="/#services">SEO & performance</a>
+      </div>
+      <div>
+        <div class="footer-heading">Over CNIP</div>
+        <a href="/#story">Onze aanpak</a>
+        <a href="/cases">Cases</a>
+        <a href="/#clients">Klanten</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div>
+        <div class="footer-heading">Connect</div>
+        <a href="mailto:info@cnip.be">E-mail</a>
+        <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 CNIP, Gent — Structuur voor commerciële groei</div>
+  </footer>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Terug naar boven">
+    ↑
+  </button>
+
+  <script>
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // GSAP animations
+    if(typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.hero-stat', {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+        delay: 0.3
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
