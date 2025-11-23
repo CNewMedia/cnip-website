@@ -173,7 +173,7 @@
         "name": "Hoelang duurt het om SEO resultaten te zien?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In deze case study duurde het 6 jaar om naar 535 keywords te groeien. De eerste significante resultaten kwamen na 1-2 jaar, maar de echte compound growth kwam na jaar 3-4. SEO is een marathon, geen sprint."
+          "text": "In deze case study duurde het 6 jaar om naar 535 keywords te groeien. De eerste significante resultaten kwamen na 1-2 jaar, maar de echte exponentiële groei kwam na jaar 3-4. SEO is een marathon, geen sprint."
         }
       },
       {
@@ -181,7 +181,7 @@
         "name": "Wat gebeurt er met SEO bij een website migration?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Website migrations zijn het meest risicovolle moment voor SEO. In deze case verloren we 248 keywords (-38%) en 21% traffic binnen 12 maanden na de transition. Zonder proper redirects, documentatie en technical planning kan jaren werk in weken verdwijnen."
+          "text": "Website migrations zijn het meest risicovolle moment voor SEO. In deze case verloren we 248 keywords (-38%) en 21% traffic binnen 12 maanden na de overgang. Zonder correcte redirects, documentatie en technische planning kan jaren werk in weken verdwijnen."
         }
       },
       {
@@ -189,7 +189,7 @@
         "name": "Wat zijn de belangrijkste SEO metrics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In deze case study: 51 keywords top 3, 77 keywords top 10, 535 totale rankings, +28% visibility groei. Focus op long-tail keywords die buying intent tonen, niet alleen op high-volume generic terms."
+          "text": "In deze case study: 51 keywords top 3, 77 keywords top 10, 535 totale rankings, +28% visibility groei. Focus op long-tail keywords die koopintentie tonen, niet alleen op generieke termen met hoog zoekvolume."
         }
       },
       {
@@ -197,7 +197,7 @@
         "name": "Hoelang duurt SEO recovery na rankings verlies?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "6 jaar opbouwen, 1 jaar verliezen, 2-3 jaar recovery. Prevention is altijd goedkoper dan recovery. Google's vertrouwen moet opnieuw verdiend worden vanaf nul."
+          "text": "6 jaar opbouwen, 1 jaar verliezen, 2-3 jaar herstel. Preventie is altijd goedkoper dan herstel. Google's vertrouwen moet opnieuw verdiend worden vanaf nul."
         }
       }
     ]
@@ -260,8 +260,8 @@
 
     /* Accessibility: Skip to content */
     .skip-link{
-      position:absolute;
-      top:-40px;
+      position:fixed;
+      top:-100px;
       left:0;
       background:var(--gold);
       color:var(--black);
@@ -270,9 +270,13 @@
       font-weight:700;
       z-index:10001;
       border-radius:0 0 8px 0;
+      opacity:0;
+      pointer-events:none;
     }
     .skip-link:focus{
       top:0;
+      opacity:1;
+      pointer-events:auto;
       outline:3px solid var(--white);
       outline-offset:2px;
     }
@@ -528,6 +532,7 @@
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:24px;
       margin-top:48px;
+      justify-items:center;
     }
     .achievement-card{
       background:rgba(34,197,94,.08);
@@ -535,6 +540,8 @@
       border-radius:16px;
       padding:32px;
       transition:all .3s;
+      width:100%;
+      max-width:350px;
     }
     .achievement-card:hover{
       border-color:var(--green);
@@ -565,6 +572,7 @@
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:28px;
       margin-top:48px;
+      justify-items:center;
     }
     .lesson-card{
       background:rgba(255,255,255,.04);
@@ -572,6 +580,8 @@
       border-radius:16px;
       padding:32px;
       transition:all .3s;
+      width:100%;
+      max-width:380px;
     }
     .lesson-card:hover{
       border-color:var(--gold);
@@ -713,29 +723,48 @@
     </div>
   </header>
 
-  <!-- Breadcrumbs for UX & SEO -->
-  <nav aria-label="Breadcrumb" style="max-width:1600px;margin:0 auto;padding:100px 40px 0;font-size:13px;opacity:.6">
-    <ol style="list-style:none;display:flex;gap:8px;flex-wrap:wrap" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" style="color:inherit;text-decoration:none" itemprop="item">
-          <span itemprop="name">Home</span>
-        </a>
-        <meta itemprop="position" content="1" />
-        <span style="margin:0 4px">/</span>
-      </li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/#work" style="color:inherit;text-decoration:none" itemprop="item">
-          <span itemprop="name">Case Studies</span>
-        </a>
-        <meta itemprop="position" content="2" />
-        <span style="margin:0 4px">/</span>
-      </li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--gold)">Willems Veranda</span>
-        <meta itemprop="position" content="3" />
-      </li>
-    </ol>
-  </nav>
+  <!-- Modern 2026 Breadcrumb Navigation -->
+  <div style="background:var(--black);padding:20px 0;position:relative;z-index:100">
+    <nav aria-label="Breadcrumb" style="max-width:1600px;margin:0 auto;padding:0 40px">
+      <div style="
+        display:inline-flex;
+        align-items:center;
+        gap:12px;
+        padding:12px 24px;
+        background:rgba(232,181,99,.08);
+        backdrop-filter:blur(20px);
+        -webkit-backdrop-filter:blur(20px);
+        border:1px solid rgba(232,181,99,.25);
+        border-radius:999px;
+        font-size:13px;
+        font-weight:600;
+        transition:all .3s ease;
+        box-shadow:0 4px 16px rgba(232,181,99,.1);
+      ">
+        <ol style="list-style:none;display:flex;align-items:center;gap:10px;margin:0" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" style="display:flex;align-items:center">
+            <a href="/" style="color:rgba(255,255,255,.8);text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:8px" itemprop="item" onmouseenter="this.style.color='var(--gold)';this.style.background='rgba(232,181,99,.1)'" onmouseleave="this.style.color='rgba(255,255,255,.8)';this.style.background='transparent'">
+              <span style="font-size:15px">🏠</span>
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li style="color:rgba(232,181,99,.5);user-select:none;font-size:16px">→</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" style="display:flex;align-items:center">
+            <a href="/#work" style="color:rgba(255,255,255,.8);text-decoration:none;transition:all .2s;padding:4px 8px;border-radius:8px" itemprop="item" onmouseenter="this.style.color='var(--gold)';this.style.background='rgba(232,181,99,.1)'" onmouseleave="this.style.color='rgba(255,255,255,.8)';this.style.background='transparent'">
+              <span itemprop="name">Work</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li style="color:rgba(232,181,99,.5);user-select:none;font-size:16px">→</li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name" style="color:var(--gold);font-weight:800;padding:4px 8px">Willems Veranda</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </div>
+    </nav>
+  </div>
 
   <main id="main-content">
     <section class="hero">
@@ -780,14 +809,14 @@
         <h2 class="section-title" id="context">De Context</h2>
         
         <!-- Table of Contents -->
-        <nav aria-label="Inhoudsopgave" style="max-width:700px;margin:0 auto 48px;padding:24px;background:rgba(232,181,99,.08);border-left:3px solid var(--gold);border-radius:12px">
-          <div style="font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:700">Inhoudsopgave</div>
-          <ol style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px">
-            <li><a href="#context" style="color:inherit;text-decoration:none;opacity:.9">→ De Context</a></li>
-            <li><a href="#journey" style="color:inherit;text-decoration:none;opacity:.9">→ De Journey (2018-2025)</a></li>
-            <li><a href="#achievements" style="color:inherit;text-decoration:none;opacity:.9">→ Wat We Bereikten</a></li>
-            <li><a href="#lessons" style="color:inherit;text-decoration:none;opacity:.9">→ Lessons Learned</a></li>
-            <li><a href="#contact" style="color:inherit;text-decoration:none;opacity:.9">→ Start Jouw Groei</a></li>
+        <nav aria-label="Inhoudsopgave" style="max-width:700px;margin:0 auto 48px;padding:24px 28px;background:rgba(255,255,255,.04);border-left:3px solid rgba(232,181,99,.4);border-radius:12px">
+          <div style="font-size:12px;color:rgba(232,181,99,.9);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:700">Inhoudsopgave</div>
+          <ol style="list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15px">
+            <li><a href="#context" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ De Context</a></li>
+            <li><a href="#journey" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ De Journey (2018-2025)</a></li>
+            <li><a href="#achievements" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Wat We Bereikten</a></li>
+            <li><a href="#lessons" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Lessons Learned</a></li>
+            <li><a href="#contact" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Start Jouw Groei</a></li>
           </ol>
         </nav>
         
@@ -801,7 +830,7 @@
           
           <p>
             Van 2018 tot 2024 bouwde CNIP de SEO aanwezigheid op voor Willems Veranda's. 
-            Technical foundation, content strategie, link building. 
+            Technische basis, content strategie, linkopbouw. 
             Jaar na jaar groeide de organische visibility.
           </p>
           
@@ -828,17 +857,17 @@
               </p>
             </div>
             <div>
-              <strong style="color:var(--orange)">Post-Transition Impact (2024-2025):</strong>
+              <strong style="color:var(--orange)">Impact Na Overgang (2024-2025):</strong>
               <p style="margin-top:8px;font-size:16px;line-height:1.6">
                 248 keywords verloren (-38%) • 1,600 bezoekers/maand verloren (-21%) • 
-                Geschatte revenue impact: €540K/jaar • Recovery tijd: 2-3 jaar
+                Geschatte omzetimpact: €540K/jaar • Hersteltijd: 2-3 jaar
               </p>
             </div>
             <div>
               <strong style="color:var(--white)">Key Lessons:</strong>
               <p style="margin-top:8px;font-size:16px;line-height:1.6">
-                SEO is marathon (6+ jaar) • Transitions = highest risk • Documentation cruciaal • 
-                Long-tail keywords = echte waarde • Partnership > vendor mentality
+                SEO is marathon (6+ jaar) • Overgangen = grootste risico • Documentatie cruciaal • 
+                Long-tail keywords = echte waarde • Partnerschap > leverancier mentaliteit
               </p>
             </div>
           </div>
@@ -875,8 +904,8 @@
             </p>
             
             <p class="phase-description">
-              <strong>De Doorbraak (2021-2024):</strong> De compound effect van jaren SEO werk begon te renderen. 
-              Rankings accelereerden. Content ecosystem was volledig opgebouwd. 
+              <strong>De Doorbraak (2021-2024):</strong> Het cumulatief effect van jaren SEO werk begon te renderen. 
+              Rankings accelereerden. Content ecosysteem was volledig opgebouwd. 
               Google vertrouwde de site volledig.
             </p>
             
@@ -905,7 +934,7 @@
               <div class="phase-icon">🔄</div>
               <div class="phase-meta">
                 <div class="phase-year">Oktober 2024</div>
-                <div class="phase-title">De Transition</div>
+                <div class="phase-title">De Overgang</div>
               </div>
             </div>
             
@@ -915,7 +944,7 @@
             </p>
             
             <p class="phase-description">
-              <strong>Het Risico:</strong> Website transitions zijn het meest risicovolle moment voor SEO. 
+              <strong>Het Risico:</strong> Website overgangen zijn het meest risicovolle moment voor SEO. 
               6 jaar van vertrouwen opbouwen bij Google kan in weken verdwijnen als redirects en 
               technical setup niet perfect zijn.
             </p>
@@ -931,7 +960,7 @@
             </div>
             
             <p class="phase-description">
-              12 maanden na de transition checken we de publieke SEO data via Semrush. 
+              12 maanden na de overgang checken we de publieke SEO data via Semrush. 
               De cijfers vertellen een duidelijk verhaal.
             </p>
             
@@ -952,7 +981,7 @@
             
             <p class="phase-description" style="margin-top:20px;font-style:italic;opacity:.8;font-size:15px">
               <strong>Note:</strong> Dit is geen attack op het nieuwe bureau of op Willems' beslissing. 
-              Dit is wat gebeurt bij transitions - vaak, overal. Het is een structureel probleem, 
+              Dit is wat gebeurt bij overgangen - vaak, overal. Het is een structureel probleem, 
               geen individueel falen.
             </p>
           </div>
@@ -1020,10 +1049,10 @@
           
           <div class="lesson-card">
             <div class="lesson-number">2</div>
-            <div class="lesson-title">Transitions = Highest Risk</div>
+            <div class="lesson-title">Overgangen = Grootste Risico</div>
             <div class="lesson-text">
               Website migrations en bureau switches zijn waar SEO het meest kwetsbaar is. 
-              Zonder perfect knowledge transfer crasht alles.
+              Zonder perfecte kennisoverdracht crasht alles.
             </div>
           </div>
           
@@ -1040,17 +1069,17 @@
             <div class="lesson-number">4</div>
             <div class="lesson-title">Documentatie Is Alles</div>
             <div class="lesson-text">
-              Bij een transition moet elk URL, elke redirect gedocumenteerd zijn. 
+              Bij een overgang moet elk URL, elke redirect gedocumenteerd zijn. 
               Zonder die documentatie begint het nieuwe team vanaf nul.
             </div>
           </div>
           
           <div class="lesson-card">
             <div class="lesson-number">5</div>
-            <div class="lesson-title">Recovery Duurt Langer</div>
+            <div class="lesson-title">Herstel Duurt Langer</div>
             <div class="lesson-text">
               6 jaar opbouwen. 1 jaar verliezen. 2-3 jaar recovery. 
-              Prevention is altijd cheaper dan recovery.
+              Preventie is altijd goedkoper dan herstel.
             </div>
           </div>
           
@@ -1108,8 +1137,8 @@
         real-world SEO implementatie voor Willems Veranda's, een B2C bedrijf in de outdoor living sector in België.
         <br><br>
         <strong>Key Takeaways voor SEO Professionals:</strong> Long-term SEO vereist 3-5+ jaar consistent werk. 
-        Website migrations zijn high-risk zonder proper planning. Long-tail keywords drijven buying intent. 
-        Documentatie en knowledge transfer zijn cruciaal. Partnership mentality > vendor relationship.
+        Website migrations zijn hoogrisicovolle momenten zonder de juiste planning. Long-tail keywords drijven koopintentie. 
+        Documentatie en kennisoverdracht zijn cruciaal. Partnerschap mentaliteit > leverancier relatie.
       </p>
       <p style="margin-top:24px">
         <strong>Gerelateerde Topics:</strong> 
@@ -1121,7 +1150,7 @@
         <a href="/" style="color:inherit;text-decoration:none">← Terug naar CNIP.be</a> | 
         CNIP Marketing Bureau | Boutique SEO & Marketing Expertise | Gent, België | Sinds 2002 | 
         <a href="tel:+3293965883" style="color:inherit">+32 9 396 58 83</a> | 
-        <a href="mailto:info@cnip.be" style="color:inherit">info@cnip.be</a>
+        <a href="/cdn-cgi/l/email-protection#b0d9ded6dff0d3ded9c09ed2d5" style="color:inherit"><span class="__cf_email__" data-cfemail="cba2a5ada48ba8a5a2bbe5a9ae">[email&#160;protected]</span></a>
       </p>
     </div>
   </footer>
@@ -1131,7 +1160,7 @@
     ↑
   </button>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Back to top button visibility
     const backToTop = document.querySelector('.back-to-top');
     if(backToTop) {
@@ -1192,12 +1221,4 @@
     // Track reading progress for analytics (optional)
     let maxScroll = 0;
     window.addEventListener('scroll', () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      if(scrollPercent > maxScroll) {
-        maxScroll = Math.round(scrollPercent);
-        // Could send to GTM: dataLayer.push({'event': 'scroll_depth', 'percent': maxScroll});
-      }
-    });
-  </script>
-</body>
-</html>
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) *
