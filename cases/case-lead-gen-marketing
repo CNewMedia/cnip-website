@@ -21,37 +21,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- SEO: Primary Meta Tags -->
-  <title>Case: 240 Leads per Maand met HubSpot | CNIP</title>
-  <meta name="description" content="Hoe een Belgisch bouwbedrijf evolueerde van schommelende aanvragen naar gemiddeld 240 leads per maand. Met een rustig uitgebouwd HubSpot– en multichannel-systeem, uitgewerkt over meerdere jaren.">
+  <title>240 Leads per Maand met HubSpot & Multi-channel Marketing | CNIP</title>
+  <meta name="description" content="Hoe een Belgisch bouwbedrijf evolueerde van losse acties naar 240 leads per maand. HubSpot als centrale hub, SEO, Google Ads en social media in één multi-channel strategie.">
+  <meta name="keywords" content="hubspot marketing, leadgeneratie, inbound marketing, google ads, seo, bouwsector marketing, multi-channel marketing, marketing bureau gent">
   <meta name="author" content="CNIP">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
   <!-- Canonical -->
-  <link rel="canonical" href="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
+  <link rel="canonical" href="https://cnip.be/cases/case-lead-gen-marketing.html">
   
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
-  <meta property="og:title" content="Case: 240 Leads per Maand met HubSpot | CNIP">
-  <meta property="og:description" content="Van onvoorspelbare maanden naar een stabiel ritme van 240 leads per maand. Een langetermijn-case in de bouwsector, met HubSpot als ruggengraat.">
+  <meta property="og:url" content="https://cnip.be/cases/case-lead-gen-marketing.html">
+  <meta property="og:title" content="240 Leads per Maand met HubSpot & Multi-channel Marketing | CNIP">
+  <meta property="og:description" content="Van onvoorspelbare maanden naar stabiele 240 leads/maand. HubSpot, SEO, Google Ads en social media in één systeem.">
   <meta property="og:image" content="https://cnip.be/images/bouwbedrijf-case-og.jpg">
   <meta property="og:locale" content="nl_BE">
   <meta property="og:site_name" content="CNIP">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Case: 240 Leads per Maand met HubSpot">
-  <meta name="twitter:description" content="Multichannel leadgeneratie in de bouw: HubSpot, SEO, Google Ads en social zorgen samen voor een voorspelbare pipeline.">
+  <meta name="twitter:title" content="240 Leads per Maand met HubSpot & Multi-channel Marketing">
+  <meta name="twitter:description" content="Multi-channel leadgeneratie met HubSpot als centrale hub. SEO, Google Ads en social werken samen.">
   <meta name="twitter:image" content="https://cnip.be/images/bouwbedrijf-case-og.jpg">
-  <meta name="twitter:url" content="https://cnip.be/cases/case-bouwbedrijf-belgie.html">
+  <meta name="twitter:url" content="https://cnip.be/cases/case-lead-gen-marketing.html">
   
   <!-- Structured Data: Article -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Case: 240 Leads per Maand met HubSpot in de Bouwsector",
-    "description": "Hoe CNIP samen met een Belgisch bouwbedrijf stap voor stap een stabiel leadritme uitbouwde: gemiddeld 240 leads per maand via een geïntegreerd HubSpot- en multichannel-systeem.",
+    "headline": "240 Leads per Maand: HubSpot Marketing Case in de Bouwsector",
+    "description": "Case van CNIP: van inconsistente leadinstroom naar gemiddeld 240 leads per maand met HubSpot en een multi-channel marketingaanpak voor een Belgisch bouwbedrijf.",
     "image": "https://cnip.be/images/bouwbedrijf-case-og.jpg",
     "author": {
       "@type": "Organization",
@@ -70,9 +71,18 @@
     "dateModified": "2025-11-23",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://cnip.be/cases/case-bouwbedrijf-belgie.html"
+      "@id": "https://cnip.be/cases/case-lead-gen-marketing.html"
     },
-    "inLanguage": "nl-BE"
+    "keywords": [
+      "HubSpot marketing",
+      "Leadgeneratie",
+      "Inbound marketing",
+      "Google Ads",
+      "SEO",
+      "Multi-channel marketing"
+    ],
+    "inLanguage": "nl-BE",
+    "wordCount": 1100
   }
   </script>
   
@@ -97,14 +107,14 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Bouwbedrijf België",
-        "item": "https://cnip.be/cases/case-bouwbedrijf-belgie.html"
+        "name": "240 leads per maand",
+        "item": "https://cnip.be/cases/case-lead-gen-marketing.html"
       }
     ]
   }
   </script>
 
-  <!-- Structured Data: FAQPage (compact, minder salesy) -->
+  <!-- Structured Data: FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -112,10 +122,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Hoe zijn jullie op gemiddeld 240 leads per maand gekomen?",
+        "name": "Hoe zijn jullie tot 240 leads per maand gekomen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We hebben stap voor stap een multichannel-systeem uitgebouwd met HubSpot als centrale laag. SEO, Google Ads en social media kregen elk een duidelijke rol. Dat zorgde voor een stabiel ritme in plaats van pieken en dalen."
+          "text": "We hebben HubSpot uitgerold als centrale hub en een multi-channel aanpak opgezet: inbound content en SEO, Google Ads en social media. Elk kanaal kreeg een duidelijke rol in de funnel, wat zorgde voor stabiele leadinstroom."
         }
       },
       {
@@ -123,15 +133,23 @@
         "name": "Waarom kozen jullie voor HubSpot?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Omdat het één duidelijke omgeving biedt voor landingspagina’s, formulieren, e-mailflows, rapportering en salesopvolging. Marketing en sales kijken naar dezelfde realiteit, wat beslissingen eenvoudiger maakt."
+          "text": "HubSpot gaf één overzicht voor marketing, sales en rapportering. Landingspagina's, formulieren, e-mail, lead nurturing en analytics zaten in hetzelfde systeem, wat optimaliseren simpel maakte."
         }
       },
       {
         "@type": "Question",
-        "name": "Wat gebeurde er tijdens de vertraging in de bouwsector?",
+        "name": "Hoe bleef de leadgeneratie stabiel tijdens de bouwcrisis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Waar veel spelers een duidelijke terugval zagen in aanvragen, bleef de leadstroom hier op peil. Door de spreiding over verschillende kanalen en een sterke online basis was het systeem minder kwetsbaar."
+          "text": "Doordat de instroom niet van één kanaal afhing. Organisch verkeer, ads en social media droegen elk bij. Wanneer één kanaal terugviel, ving de rest de klap op en bleef de totale flow overeind."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welke kanalen brachten de meeste leads binnen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ongeveer 40% kwam uit inbound en SEO, 35% uit Google Ads en 25% via social media. Die mix zorgde voor een gezonde spreiding tussen organische en betaalde leads."
         }
       }
     ]
@@ -715,7 +733,7 @@
         </li>
         <li class="breadcrumb-separator">•</li>
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <span class="breadcrumb-current" itemprop="name">Bouwbedrijf België</span>
+          <span class="breadcrumb-current" itemprop="name">240 leads per maand</span>
           <meta itemprop="position" content="3" />
         </li>
       </ol>
@@ -725,11 +743,12 @@
   <main id="main-content">
     <section class="hero">
       <div class="container">
-        <div class="hero-badge">Case • Bouw & HubSpot</div>
-        <h1>240 leads per maand<br>zonder paniekpieken</h1>
+        <div class="hero-badge">Case</div>
+        <h1>240 Leads per Maand<br>Met HubSpot</h1>
         <p class="hero-subtitle">
-          Een Belgisch bouwbedrijf dat van schommelende aanvragen naar een rustig, voorspelbaar leadritme ging. 
-          Met HubSpot als ruggengraat en een duidelijke rol voor SEO, Google Ads en social.
+          Van wisselende maanden naar een stabiele stroom van 240 leads. 
+          Een Belgisch bouwbedrijf dat zijn marketingstructuur hertekent: HubSpot als centrale hub, 
+          SEO, Google Ads en social media die elkaar versterken.
         </p>
         
         <div class="hero-meta">
@@ -739,11 +758,11 @@
           </span>
           <span class="hero-meta-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            Historische case 2018–2023
+            November 2025
           </span>
           <span class="hero-meta-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Multichannel leadgeneratie
+            Multi-channel leadgeneratie
           </span>
         </div>
         
@@ -753,16 +772,16 @@
             <div class="hero-stat-label">Leads/maand</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number">±40%</div>
-            <div class="hero-stat-label">SEO & inbound</div>
+            <div class="hero-stat-number">40%</div>
+            <div class="hero-stat-label">Inbound + SEO</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number">±35%</div>
+            <div class="hero-stat-number">35%</div>
             <div class="hero-stat-label">Google Ads</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number">±25%</div>
-            <div class="hero-stat-label">Social & direct</div>
+            <div class="hero-stat-number">25%</div>
+            <div class="hero-stat-label">Social media</div>
           </div>
         </div>
       </div>
@@ -770,62 +789,66 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Over dit project</h2>
+        <h2 class="section-title">Over Dit Project</h2>
         
         <div class="context-box">
           <p>
             <strong>Sector:</strong> Bouw & constructie<br>
-            <strong>Omzetorde:</strong> €10–50M<br>
+            <strong>Omzet:</strong> €10–50M<br>
             <strong>Markt:</strong> België (Vlaanderen & Wallonië)<br>
-            <strong>Rol CNIP:</strong> Digitale leadgeneratie & HubSpot-implementatie<br>
+            <strong>Partner:</strong> CNIP (Gent)<br>
             <strong>Periode:</strong> 2018–2023
           </p>
           
           <p>
-            De commerciële motor van dit bouwbedrijf draaide vooral op klassieke kanalen: beurzen, mond-tot-mondreclame 
-            en een netwerk dat door de jaren heen gegroeid was. Online waren er wel campagnes, maar zonder overzicht of 
-            duidelijke lijn. De ene maand stond de telefoon roodgloeiend, de andere maand was het stil.
+            Een toonaangevend bouwbedrijf in België wilde hun commerciële machine opschalen. 
+            Er kwamen wel leads binnen, maar de pieken en dalen maakten plannen moeilijk: 
+            sommige maanden 150, andere maanden amper 80.
           </p>
           
           <p>
-            Hun vraag aan CNIP was helder: 
-            <em>"Help ons van die onrust af. We willen weten waar onze leads vandaan komen, en een systeem dat 
-            gemiddeld 200+ leads per maand aanbrengt."</em>
+            Hun vraag aan CNIP: 
+            <em>“Help ons naar een stabiel niveau van 200–300 kwalitatieve leads per maand, 
+            en zorg ervoor dat we niet van één kanaal afhankelijk zijn.”</em>
           </p>
           
           <p>
-            In plaats van één trucje of snelle campagne, hebben we samen een systeem gebouwd. HubSpot als centrale laag, 
-            met SEO, Google Ads, social en offline campagnes die elkaar versterken. Geen spektakel, wel een stevige basis 
-            die ook in moeilijkere marktomstandigheden bleef werken.
+            Dit is het verhaal van hoe we met HubSpot, SEO, Google Ads en social media een 
+            crisisbestendige leadmachine bouwden. Geen trucjes, maar een structuur die blijft werken.
           </p>
         </div>
         
         <div class="exec-summary">
           <div class="exec-heading">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
-            Resultaat in cijfers
+            Resultaten in het kort
           </div>
           <div class="exec-grid">
             <div class="exec-item">
-              <strong>Leadritme:</strong>
+              <strong>Bereikt (2018–2023):</strong>
               <p>
-                Gemiddeld 240 leads per maand, meerdere jaren op rij. Geen diepe dalen meer, 
-                maar een ritme waar sales op kon plannen.
+                Gemiddeld 240 leads per maand • 
+                Verdelen over kanalen: ±40% inbound/SEO, 35% Google Ads, 25% social media • 
+                Minder volatiele pipeline tijdens de bouwcrisis • 
+                TV en radio versterkten de online campagnes.
               </p>
             </div>
             <div class="exec-item">
-              <strong>Verdeling kanalen:</strong>
+              <strong>Aanpak:</strong>
               <p>
-                Gedeelde trek: ongeveer 40% via SEO & inbound content, 35% via Google Ads 
-                en 25% via social en direct verkeer. Eén systeem, verschillende instroompunten.
+                Implementatie van HubSpot • Landingspagina's en formulieren op maat • 
+                SEO-strategie rond relevante zoekwoorden • 
+                Gericht Google Ads-beheer • 
+                Social media die merk en vraag tegelijk opbouwen.
               </p>
             </div>
             <div class="exec-item">
-              <strong>Effect in moeilijke markt:</strong>
+              <strong>Wat we geleerd hebben:</strong>
               <p>
-                Terwijl de bouwsector vertraagde en aanvragen in de markt terugliepen, 
-                bleef de leadflow van dit bedrijf op peil dankzij de spreiding over kanalen 
-                en een sterke online basis.
+                Multi-channel werkt beter dan één kanaal pushen • 
+                Eén platform voor data en rapportering is cruciaal • 
+                Organische en betaalde kanalen versterken elkaar • 
+                Lange termijn samenwerking levert de grootste sprongen op.
               </p>
             </div>
           </div>
@@ -835,7 +858,7 @@
 
     <section class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Uitdaging & aanpak</h2>
+        <h2 class="section-title">De uitdaging & de oplossing</h2>
         
         <div class="challenge-solution">
           <article class="cs-card">
@@ -847,23 +870,23 @@
             </div>
             <div class="cs-content">
               <p>
-                <strong>Inconsistente instroom:</strong> sommige maanden 150 leads, andere maanden 
-                amper de helft. Niemand wist exact waarom. Marketing en sales keken naar andere cijfers 
-                en spraken een andere taal.
+                <strong>Inconsistente leadinstroom:</strong> De organisatie draaide goed, 
+                maar het commerciële systeem was kwetsbaar. Campagnes werden per kanaal bedacht, 
+                zonder overkoepelende structuur.
               </p>
               
-              <p><strong>Wat ontbrak:</strong></p>
+              <p><strong>Concreet:</strong></p>
               <ul class="cs-list">
-                <li>Een centraal systeem om alle leads en campagnes te volgen</li>
-                <li>Duidelijkheid over welke kanalen écht werkten</li>
-                <li>Sterke landingspagina’s met een duidelijke call-to-action</li>
-                <li>Een basis voor SEO: structuur, content en techniek</li>
-                <li>Afstemming tussen offline campagnes (TV/radio) en online opvolging</li>
+                <li>Afhankelijkheid van beurzen en offline acties</li>
+                <li>Geen centrale marketing- en salesdatabase</li>
+                <li>Beperkte zichtbaarheid in zoekresultaten</li>
+                <li>Weinig opvolging van warme websitebezoekers</li>
+                <li>Een sterk merk, maar versnipperde digitale aanwezigheid</li>
               </ul>
               
               <p>
-                <strong>Doelbeeld:</strong> een voorspelbaar leadritme van 200–300 leads per maand, 
-                verdeeld over meerdere kanalen zodat het bedrijf niet afhankelijk is van één bron.
+                <strong>Doelstelling:</strong> 200–300 leads per maand, voorspelbaar, 
+                met een gezonde mix tussen organische en betaalde kanalen.
               </p>
             </div>
           </article>
@@ -873,27 +896,26 @@
               <div class="cs-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
               </div>
-              <h3 class="cs-title">De aanpak</h3>
+              <h3 class="cs-title">De oplossing</h3>
             </div>
             <div class="cs-content">
               <p>
-                <strong>HubSpot als cockpit:</strong> eerst hebben we orde gebracht. 
-                Formulieren, landingspagina’s, e-mails, campagnes en rapporten kwamen samen in HubSpot. 
-                Eén waarheid, voor zowel marketing als sales.
+                <strong>HubSpot als cockpit:</strong> We kozen HubSpot als centraal systeem 
+                waar marketing, sales en rapportering samenkomen. Eén waarheid, één funnel.
               </p>
               
-              <p><strong>Multichannel, maar rustig opgebouwd:</strong></p>
+              <p><strong>De multi-channel aanpak:</strong></p>
               <ul class="cs-list">
-                <li><strong>SEO & content:</strong> duidelijke themapagina’s, blogs en FAQ’s rond de belangrijkste zoekvragen</li>
-                <li><strong>Google Ads:</strong> campagnes die inhoudelijk aansloten op de landingspagina’s, met strakke opvolging van kost per lead</li>
-                <li><strong>Social:</strong> altijd-on content en gerichte acties om verkeer en zichtbaarheid op te bouwen</li>
-                <li><strong>Offline → online:</strong> TV- en radiocampagnes leidden naar specifieke HubSpot-pagina’s, zodat impact meetbaar werd</li>
-                <li><strong>Nurturing:</strong> eenvoudige maar duidelijke e-mailflows voor wie nog niet klaar was om meteen te kopen</li>
+                <li><strong>Inbound & content (40%):</strong> Landingspagina's, gidsen en tools rond kernvragen van klanten</li>
+                <li><strong>SEO:</strong> Technische optimalisatie en content rond zoektermen met duidelijke koopintentie</li>
+                <li><strong>Google Ads (35%):</strong> Zoekcampagnes op warme intenties, aangevuld met remarketing</li>
+                <li><strong>Social media (25%):</strong> Facebook, Instagram en LinkedIn voor zichtbaarheid en leadforms</li>
+                <li><strong>TV/Radio:</strong> Merkcampagnes die online conversie versterken, geen losstaande silo</li>
               </ul>
               
               <p>
-                <strong>Resultaat:</strong> een systeem dat niet hangt aan één campagne of persoon, 
-                maar dat draait op duidelijke bouwstenen. Met 240 leads per maand als nieuwe norm.
+                <strong>Effect:</strong> een systeem dat niet instort als één kanaal onder druk komt, 
+                maar blijft draaien door de spreiding en de gezamenlijke funnel.
               </p>
             </div>
           </article>
@@ -908,10 +930,10 @@
         <div class="channel-grid">
           <article class="channel-card">
             <div class="channel-percentage">40%</div>
-            <div class="channel-label">SEO & inbound</div>
+            <div class="channel-label">Inbound & SEO</div>
             <p class="channel-desc">
-              Structurele content en goed ingerichte landingspagina’s. Minder spectaculair op korte termijn, 
-              maar cruciaal voor de stabiele basis.
+              Content die antwoorden geeft op echte vragen, gecombineerd met een stevige SEO-basis. 
+              De rustig groeiende motor met de langste levensduur.
             </p>
           </article>
           
@@ -919,17 +941,17 @@
             <div class="channel-percentage">35%</div>
             <div class="channel-label">Google Ads</div>
             <p class="channel-desc">
-              Gericht verkeer met duidelijke intentie. Ads versterkten wat al werkte via SEO en boden ruimte om 
-              sneller te schakelen wanneer nodig.
+              Gerichte search-campagnes en remarketing. Ideaal om snel op te schalen 
+              en pieken in vraag mee op te vangen.
             </p>
           </article>
           
           <article class="channel-card">
             <div class="channel-percentage">25%</div>
-            <div class="channel-label">Social & direct</div>
+            <div class="channel-label">Social media</div>
             <p class="channel-desc">
-              Social media, rechtstreeks verkeer en herbezoeken. Ondersteunend, maar sterk voor merkherkenning 
-              en herhaalaankopen.
+              Facebook, Instagram en LinkedIn voor merkbekendheid, social proof 
+              en leadforms. Goed voor bereik én directe instroom.
             </p>
           </article>
         </div>
@@ -938,51 +960,52 @@
 
     <section class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Wat het opleverde</h2>
+        <h2 class="section-title">Business impact</h2>
         
         <div class="impact-grid">
           <article class="impact-card">
             <div class="impact-number">Impact 01</div>
             <h3 class="impact-title">Voorspelbare pipeline</h3>
             <p class="impact-desc">
-              Van “we zien wel wat binnenkomt” naar een leadritme waar je rond kunt plannen. 
-              Sales kreeg elke maand voldoende volume om de targets realistisch te halen.
+              Van 80–150 leads naar een stabiel gemiddelde van rond de 240 leads per maand. 
+              Sales kon plannen, prioriteren en capaciteit beter inrichten.
             </p>
           </article>
           
           <article class="impact-card">
             <div class="impact-number">Impact 02</div>
-            <h3 class="impact-title">Minder kwetsbaar in moeilijke tijden</h3>
+            <h3 class="impact-title">Crisisbestendige groei</h3>
             <p class="impact-desc">
-              Doordat de instroom over meerdere kanalen gespreid was, bleef het volume overeind toen 
-              de vraag in de markt zakte. Geen paniekstop op marketing, maar rustig bijsturen.
+              Waar veel spelers in de bouwsector een terugval zagen, 
+              bleef deze klant doordraaien. Niet omdat de markt makkelijk was, 
+              maar omdat de instroom breder gespreid en beter opgebouwd was.
             </p>
           </article>
           
           <article class="impact-card">
             <div class="impact-number">Impact 03</div>
-            <h3 class="impact-title">Betere gesprekken voor sales</h3>
+            <h3 class="impact-title">Betere leadkwaliteit</h3>
             <p class="impact-desc">
-              Leads kwamen binnen met meer context: via content, via nurturing of via gerichte campagnes. 
-              Minder koude gesprekken, meer inhoudelijke dossiers.
+              Via HubSpot-nurturing kwamen meer leads binnen die al een stuk van het traject 
+              hadden afgelegd. Het sales team sprak minder met “kijkers” en meer met kopers.
             </p>
           </article>
           
           <article class="impact-card">
             <div class="impact-number">Impact 04</div>
-            <h3 class="impact-title">Sterker merk in de regio</h3>
+            <h3 class="impact-title">Sterker merk</h3>
             <p class="impact-desc">
-              De combinatie van TV/radio voor zichtbaarheid en digitale kanalen voor conversie zorgde ervoor 
-              dat het merk “top of mind” werd in zijn segment.
+              TV en radio maakten het merk top-of-mind, digitale kanalen zorgden voor conversie. 
+              Samen zorgden ze voor een duidelijke voorkeurspositie in hun regio.
             </p>
           </article>
           
           <article class="impact-card">
             <div class="impact-number">Impact 05</div>
-            <h3 class="impact-title">Rust in de cijfers</h3>
+            <h3 class="impact-title">Data-gedreven beslissingen</h3>
             <p class="impact-desc">
-              HubSpot-rapporten maakten helder welke kanalen hun werk deden en welke niet. 
-              Discussies over gevoel maakten plaats voor gesprekken over data en keuzes.
+              HubSpot-rapporten gaven helder inzicht in wat werkte en wat niet. 
+              Budgetverschuivingen gebeurden op basis van cijfers, niet op buikgevoel.
             </p>
           </article>
         </div>
@@ -991,15 +1014,15 @@
 
     <section class="cta-section">
       <div class="cta-box">
-        <h2>Wil je ook rust in je leadstroom?</h2>
+        <h2>Klaar voor stabiele leadinstroom?</h2>
         <p>
-          CNIP helpt bedrijven om hun commerciële systeem op te zetten of te hertekenen. 
-          Niet met nog meer tools, maar met een duidelijke structuur en een eerlijk beeld van wat haalbaar is. 
-          HubSpot kan daar een onderdeel van zijn – maar het vertrekpunt is altijd: wat heb jij echt nodig?
+          CNIP helpt bouw- en installatiebedrijven een commerciële structuur te bouwen 
+          die niet leunt op één kanaal. HubSpot als cockpit, heldere funnels, 
+          en een marketingmachine die je bedrijf versterkt in plaats van opzadelt met ruis.
         </p>
         <div class="cta-buttons">
           <a href="/#contact" class="btn-primary">Plan een gesprek</a>
-          <a href="/cases" class="btn-secondary">Bekijk andere cases</a>
+          <a href="/cases" class="btn-secondary">Bekijk meer cases</a>
         </div>
       </div>
     </section>
@@ -1018,26 +1041,26 @@
       </div>
       <div>
         <div class="footer-heading">Wat we doen</div>
-        <a href="/#services">Commerciële systemen</a>
-        <a href="/#services">Leadgeneratie & funnels</a>
-        <a href="/#services">HubSpot & automatisatie</a>
-        <a href="/#services">SEO & performance</a>
+        <a href="/#services">HubSpot & systemen</a>
+        <a href="/#services">Leadgeneratie</a>
+        <a href="/#services">SEO & content</a>
+        <a href="/#services">Google Ads</a>
       </div>
       <div>
         <div class="footer-heading">Over CNIP</div>
-        <a href="/#story">Onze aanpak</a>
+        <a href="/#story">Story</a>
         <a href="/cases">Cases</a>
         <a href="/#clients">Klanten</a>
         <a href="/#contact">Contact</a>
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="mailto:info@cnip.be">E-mail</a>
+        <a href="mailto:info@cnip.be">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 CNIP, Gent — Structuur voor commerciële groei</div>
+    <div class="footer-bottom">© 2025 CNIP | Gent | Structuur voor commerciële groei</div>
   </footer>
 
   <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Terug naar boven">
