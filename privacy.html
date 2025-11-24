@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Privacybeleid — CNIP</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gold: #E8B563;
+            --gold-dim: rgba(232,181,99,.12);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--black);
+            color: rgba(255,255,255,.85);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            background: rgba(10,10,10,.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gold-dim);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 900;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .back-btn {
+            font-size: 13px;
+            color: rgba(255,255,255,.6);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 999px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(232,181,99,.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 8px 16px;
+            border: 1px solid rgba(232,181,99,.3);
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255,255,255,.5);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px 120px;
+        }
+
+        /* TOC */
+        .toc {
+            background: rgba(255,255,255,.03);
+            border: 1px solid var(--gold-dim);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 64px;
+        }
+
+        .toc-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-list a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+
+        .toc-list a::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .toc-list a:hover {
+            color: var(--gold);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gold-dim);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .section-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold);
+            background: rgba(232,181,99,.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin: 28px 0 12px;
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,.8);
+        }
+
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,.8);
+        }
+
+        li::marker {
+            color: var(--gold);
+        }
+
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .data-table th {
+            background: rgba(232,181,99,.08);
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .data-table tr:hover td {
+            background: rgba(255,255,255,.02);
+        }
+
+        /* Info boxes */
+        .info-box {
+            background: rgba(232,181,99,.05);
+            border-left: 3px solid var(--gold);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(232,181,99,.1), rgba(232,181,99,.02));
+            border: 1px solid rgba(232,181,99,.2);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .contact-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--gold-dim);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: rgba(255,255,255,.4);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+
+            .hero {
+                padding: 140px 20px 60px;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            .toc {
+                padding: 24px;
+            }
+
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 20px;
+                flex-wrap: wrap;
+            }
+
+            .data-table {
+                font-size: 13px;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-text">CNIP</a>
+        <a href="/" class="back-btn">← Terug naar site</a>
+    </header>
+
+    <div class="hero">
+        <span class="hero-badge">Juridisch Document</span>
+        <h1>Privacybeleid</h1>
+        <p class="hero-sub">Hoe wij omgaan met uw persoonsgegevens conform de Algemene Verordening Gegevensbescherming (AVG/GDPR)</p>
+    </div>
+
+    <main>
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <p class="toc-title">Inhoudstafel</p>
+            <ul class="toc-list">
+                <li><a href="#verwerkingsverantwoordelijke">Verwerkingsverantwoordelijke</a></li>
+                <li><a href="#gegevens">Welke gegevens</a></li>
+                <li><a href="#doeleinden">Verwerkingsdoeleinden</a></li>
+                <li><a href="#rechtsgrond">Rechtsgrond</a></li>
+                <li><a href="#cookies">Cookies & tracking</a></li>
+                <li><a href="#derden">Delen met derden</a></li>
+                <li><a href="#bewaartermijn">Bewaartermijnen</a></li>
+                <li><a href="#rechten">Uw rechten</a></li>
+                <li><a href="#beveiliging">Beveiliging</a></li>
+                <li><a href="#wijzigingen">Wijzigingen</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section 1 -->
+        <section id="verwerkingsverantwoordelijke">
+            <h2><span class="section-num">01</span> Verwerkingsverantwoordelijke</h2>
+            
+            <p>Dit privacybeleid is van toepassing op alle persoonsgegevens die CNIP verwerkt van bezoekers en gebruikers van deze website.</p>
+            
+            <div class="contact-card">
+                <h4>Verantwoordelijke voor de verwerking</h4>
+                <p><strong>CNIP</strong></p>
+                <p>Ondernemingsnummer: BE 0478.506.146</p>
+                <p>E-mail: <a href="mailto:info@cnip.be">info@cnip.be</a></p>
+            </div>
+
+            <p>Voor vragen over dit privacybeleid of de verwerking van uw persoonsgegevens kunt u contact opnemen via bovenstaande gegevens.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="gegevens">
+            <h2><span class="section-num">02</span> Welke persoonsgegevens verwerken wij</h2>
+            
+            <p>Wij verwerken uitsluitend persoonsgegevens die u zelf aan ons verstrekt of die noodzakelijk zijn voor de werking van onze website. Hieronder vindt u een overzicht:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Categorie</th>
+                        <th>Gegevens</th>
+                        <th>Bron</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Contactgegevens</td>
+                        <td>Naam, e-mailadres, telefoonnummer</td>
+                        <td>Contactformulier</td>
+                    </tr>
+                    <tr>
+                        <td>Communicatie</td>
+                        <td>Inhoud van berichten en correspondentie</td>
+                        <td>Contactformulier, e-mail</td>
+                    </tr>
+                    <tr>
+                        <td>Technische gegevens</td>
+                        <td>IP-adres (geanonimiseerd), browsertype, apparaattype</td>
+                        <td>Automatisch bij websitebezoek</td>
+                    </tr>
+                    <tr>
+                        <td>Gebruiksgegevens</td>
+                        <td>Bezochte pagina's, sessieduur, interacties</td>
+                        <td>Analytics cookies (mits toestemming)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <p><strong>Geen bijzondere persoonsgegevens.</strong> Wij verwerken geen bijzondere categorieën van persoonsgegevens zoals gegevens over gezondheid, politieke opvattingen, religieuze overtuigingen of strafrechtelijke gegevens.</p>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="doeleinden">
+            <h2><span class="section-num">03</span> Verwerkingsdoeleinden</h2>
+            
+            <p>Wij verwerken uw persoonsgegevens uitsluitend voor de volgende, welbepaalde doeleinden:</p>
+
+            <h3>Communicatie en dienstverlening</h3>
+            <ul>
+                <li>Het beantwoorden van uw vragen en verzoeken via het contactformulier</li>
+                <li>Het opvolgen van potentiële samenwerkingen en offerteaanvragen</li>
+                <li>Het onderhouden van de zakelijke relatie met bestaande klanten</li>
+            </ul>
+
+            <h3>Website-analyse en optimalisatie</h3>
+            <ul>
+                <li>Het analyseren van bezoekersgedrag om onze website te verbeteren</li>
+                <li>Het meten van de effectiviteit van onze marketinginspanningen</li>
+                <li>Het verzekeren van de technische werking en beveiliging van de website</li>
+            </ul>
+
+            <h3>Wettelijke verplichtingen</h3>
+            <ul>
+                <li>Het voldoen aan fiscale en boekhoudkundige verplichtingen</li>
+                <li>Het naleven van wettelijke bewaartermijnen</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="rechtsgrond">
+            <h2><span class="section-num">04</span> Rechtsgrond voor verwerking</h2>
+            
+            <p>Iedere verwerking van persoonsgegevens berust op een geldige rechtsgrond conform artikel 6 van de Algemene Verordening Gegevensbescherming (AVG):</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Verwerking</th>
+                        <th>Rechtsgrond</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Verwerking contactformulier</td>
+                        <td>Uitvoering van een overeenkomst of precontractuele maatregelen (art. 6.1.b AVG)</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics cookies</td>
+                        <td>Toestemming (art. 6.1.a AVG)</td>
+                    </tr>
+                    <tr>
+                        <td>Noodzakelijke cookies</td>
+                        <td>Gerechtvaardigd belang (art. 6.1.f AVG)</td>
+                    </tr>
+                    <tr>
+                        <td>Facturatie en boekhouding</td>
+                        <td>Wettelijke verplichting (art. 6.1.c AVG)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <p><strong>Toestemming intrekken.</strong> Voor zover de verwerking gebaseerd is op uw toestemming, heeft u te allen tijde het recht deze toestemming in te trekken. Dit doet geen afbreuk aan de rechtmatigheid van de verwerking vóór de intrekking.</p>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="cookies">
+            <h2><span class="section-num">05</span> Cookies en tracking technologieën</h2>
+            
+            <p>Onze website maakt gebruik van cookies en vergelijkbare technologieën. Een cookie is een klein tekstbestand dat bij uw bezoek aan onze website op uw apparaat wordt geplaatst.</p>
+
+            <h3>Noodzakelijke cookies</h3>
+            <p>Deze cookies zijn essentieel voor de werking van de website en kunnen niet worden uitgeschakeld. Zij worden alleen geplaatst als reactie op uw handelingen, zoals het instellen van uw privacyvoorkeuren.</p>
+
+            <h3>Analytische cookies</h3>
+            <p>Wij gebruiken Google Analytics om inzicht te krijgen in hoe bezoekers onze website gebruiken. Deze cookies worden alleen geplaatst na uw uitdrukkelijke toestemming.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Cookie</th>
+                        <th>Aanbieder</th>
+                        <th>Doel</th>
+                        <th>Bewaartermijn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_ga</td>
+                        <td>Google Analytics</td>
+                        <td>Onderscheiden van gebruikers</td>
+                        <td>2 jaar</td>
+                    </tr>
+                    <tr>
+                        <td>_ga_*</td>
+                        <td>Google Analytics</td>
+                        <td>Sessiestate bewaren</td>
+                        <td>2 jaar</td>
+                    </tr>
+                    <tr>
+                        <td>cookieConsent</td>
+                        <td>CNIP (first-party)</td>
+                        <td>Uw cookievoorkeuren onthouden</td>
+                        <td>1 jaar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cookies beheren</h3>
+            <p>Bij uw eerste bezoek aan onze website wordt u gevraagd om toestemming voor niet-essentiële cookies. U kunt uw voorkeuren te allen tijde wijzigen door uw browserinstellingen aan te passen of door uw cookies te verwijderen.</p>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="derden">
+            <h2><span class="section-num">06</span> Delen met derden</h2>
+            
+            <p>Wij verkopen, verhuren of verhandelen uw persoonsgegevens nooit aan derden. Wij delen uw gegevens uitsluitend in de volgende gevallen:</p>
+
+            <h3>Verwerkers</h3>
+            <p>Wij maken gebruik van dienstverleners die in onze opdracht persoonsgegevens verwerken. Met deze verwerkers hebben wij verwerkersovereenkomsten afgesloten om de beveiliging en vertrouwelijkheid van uw gegevens te waarborgen:</p>
+
+            <ul>
+                <li><strong>Google LLC</strong> — Analytics en Tag Manager (VS, EU-US Data Privacy Framework)</li>
+                <li><strong>Web3Forms</strong> — Verwerking contactformulier</li>
+                <li><strong>Fly.io</strong> — Website hosting</li>
+            </ul>
+
+            <h3>Internationale doorgifte</h3>
+            <p>Sommige van onze verwerkers zijn gevestigd buiten de Europese Economische Ruimte. In dat geval zorgen wij ervoor dat er passende waarborgen zijn getroffen, zoals:</p>
+            <ul>
+                <li>Adequaatheidsbesluiten van de Europese Commissie</li>
+                <li>EU-US Data Privacy Framework certificering</li>
+                <li>Standaard contractuele bepalingen (SCCs)</li>
+            </ul>
+
+            <h3>Wettelijke verplichtingen</h3>
+            <p>Wij kunnen verplicht zijn uw gegevens te delen met overheidsinstanties of toezichthoudende autoriteiten indien de wet dit vereist.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="bewaartermijn">
+            <h2><span class="section-num">07</span> Bewaartermijnen</h2>
+            
+            <p>Wij bewaren uw persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor zij zijn verzameld, tenzij een langere bewaartermijn wettelijk is vereist.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Gegevens</th>
+                        <th>Bewaartermijn</th>
+                        <th>Reden</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Contactformulier inzendingen</td>
+                        <td>2 jaar na laatste contact</td>
+                        <td>Opvolging potentiële klanten</td>
+                    </tr>
+                    <tr>
+                        <td>Klantcorrespondentie</td>
+                        <td>7 jaar na einde relatie</td>
+                        <td>Wettelijke bewaarplicht</td>
+                    </tr>
+                    <tr>
+                        <td>Facturen en boekhouding</td>
+                        <td>7 jaar</td>
+                        <td>Fiscale wetgeving België</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics data</td>
+                        <td>14 maanden</td>
+                        <td>Google Analytics standaard</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Na afloop van de toepasselijke bewaartermijn worden uw gegevens veilig verwijderd of geanonimiseerd.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="rechten">
+            <h2><span class="section-num">08</span> Uw rechten</h2>
+            
+            <p>Op grond van de Algemene Verordening Gegevensbescherming beschikt u over de volgende rechten met betrekking tot uw persoonsgegevens:</p>
+
+            <ul>
+                <li><strong>Recht op inzage</strong> — U kunt opvragen welke persoonsgegevens wij van u verwerken en een kopie hiervan ontvangen.</li>
+                <li><strong>Recht op rectificatie</strong> — U kunt verzoeken om onjuiste of onvolledige gegevens te corrigeren of aan te vullen.</li>
+                <li><strong>Recht op gegevenswissing</strong> — U kunt in bepaalde gevallen verzoeken om verwijdering van uw persoonsgegevens ("recht om vergeten te worden").</li>
+                <li><strong>Recht op beperking</strong> — U kunt verzoeken om de verwerking van uw gegevens tijdelijk te beperken.</li>
+                <li><strong>Recht op overdraagbaarheid</strong> — U kunt uw gegevens in een gestructureerd, gangbaar en machineleesbaar formaat ontvangen.</li>
+                <li><strong>Recht van bezwaar</strong> — U kunt bezwaar maken tegen verwerking op basis van gerechtvaardigde belangen.</li>
+                <li><strong>Recht om toestemming in te trekken</strong> — Voor zover de verwerking gebaseerd is op toestemming, kunt u deze te allen tijde intrekken.</li>
+            </ul>
+
+            <div class="contact-card">
+                <h4>Verzoek indienen</h4>
+                <p>U kunt uw rechten uitoefenen door contact met ons op te nemen via:</p>
+                <p>E-mail: <a href="mailto:info@cnip.be">info@cnip.be</a></p>
+                <p style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,.6);">Wij reageren binnen 30 dagen op uw verzoek. In complexe gevallen kan deze termijn met 60 dagen worden verlengd, waarover wij u tijdig informeren.</p>
+            </div>
+
+            <h3>Klacht indienen</h3>
+            <p>Indien u van mening bent dat wij uw persoonsgegevens niet conform de wetgeving verwerken, heeft u het recht een klacht in te dienen bij de toezichthoudende autoriteit:</p>
+            <p><strong>Gegevensbeschermingsautoriteit (GBA)</strong><br>
+            Drukpersstraat 35, 1000 Brussel<br>
+            <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">www.gegevensbeschermingsautoriteit.be</a></p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="beveiliging">
+            <h2><span class="section-num">09</span> Beveiliging</h2>
+            
+            <p>Wij nemen de bescherming van uw persoonsgegevens serieus en hebben passende technische en organisatorische maatregelen getroffen om een beveiligingsniveau te waarborgen dat past bij de risico's:</p>
+
+            <ul>
+                <li>Versleutelde verbindingen (HTTPS/TLS) voor alle dataoverdracht</li>
+                <li>Toegangsbeperking tot persoonsgegevens op need-to-know basis</li>
+                <li>Regelmatige beveiligingsupdates en monitoring</li>
+                <li>Beveiligde hosting bij gerenommeerde dienstverleners</li>
+                <li>Verwerkersovereenkomsten met alle derde partijen</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Datalek melden.</strong> Ondanks onze beveiligingsmaatregelen is geen enkele gegevensoverdracht via internet of elektronische opslag volledig veilig. Indien u een beveiligingslek vermoedt, neem dan onmiddellijk contact met ons op via <a href="mailto:info@cnip.be">info@cnip.be</a>.</p>
+            </div>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="wijzigingen">
+            <h2><span class="section-num">10</span> Wijzigingen aan dit privacybeleid</h2>
+            
+            <p>Wij behouden ons het recht voor dit privacybeleid te wijzigen. Wijzigingen worden op deze pagina gepubliceerd met een aangepaste "laatst bijgewerkt" datum.</p>
+
+            <p>Bij wezenlijke wijzigingen die van invloed kunnen zijn op uw rechten, zullen wij u hierover actief informeren via de website of, indien beschikbaar, per e-mail.</p>
+
+            <p>Wij adviseren u dit privacybeleid regelmatig te raadplegen om op de hoogte te blijven van hoe wij uw gegevens beschermen.</p>
+
+            <div class="info-box">
+                <p><strong>Laatste update:</strong> November 2025</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 CNIP — BTW BE 0478.506.146</p>
+    </footer>
+</body>
+</html>
