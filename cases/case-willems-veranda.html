@@ -91,7 +91,7 @@
   }
   </script>
   
-  <!-- SEO: Structured Data - Case Study (for LLMs) -->
+  <!-- SEO: Structured Data - CreativeWork (for LLMs) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -197,7 +197,7 @@
         "name": "Hoelang duurt SEO recovery na rankings verlies?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "6 jaar opbouwen, 1 jaar verliezen, 2-3 jaar herstel. Preventie is altijd goedkoper dan herstel. Google's vertrouwen moet opnieuw verdiend worden vanaf nul."
+          "text": "6 jaar opbouwen, 1 jaar verliezen, 2-3 jaar herstel. Het niveau van keywords en traffic herstellen duurt meestal veel langer dan het verlies zelf. Google's vertrouwen moet opnieuw verdiend worden vanaf nul."
         }
       }
     ]
@@ -699,6 +699,124 @@
       box-shadow:0 8px 24px rgba(232,181,99,.6);
     }
     
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #1a1a1a;
+      border: 1px solid rgba(232,181,99,.2);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      color: #fff;
+      z-index: 9999;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      animation: slideUp 0.4s ease-out;
+      max-width: calc(100% - 40px);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .cookie-banner.hidden {
+      display: none;
+    }
+
+    .cookie-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .cookie-banner p {
+      margin: 0;
+      color: rgba(255,255,255,.9);
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cookie-btn.accept {
+      background: linear-gradient(135deg, #E8B563, #d4a049);
+      color: #0a0a0a;
+    }
+
+    .cookie-btn.accept:hover {
+      transform: scale(1.05);
+    }
+
+    .cookie-btn.decline {
+      background: transparent;
+      color: rgba(255,255,255,.6);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .cookie-btn.decline:hover {
+      border-color: rgba(255,255,255,.4);
+      color: #fff;
+    }
+
+    .cookie-link {
+      color: rgba(255,255,255,.4);
+      font-size: 11px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .cookie-link:hover {
+      color: #E8B563;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .cookie-banner {
+        flex-wrap: wrap;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        max-width: none;
+      }
+      
+      .cookie-banner p {
+        flex: 1 1 100%;
+        order: 1;
+      }
+      
+      .cookie-icon {
+        order: 0;
+      }
+      
+      .cookie-buttons {
+        order: 2;
+        margin-top: 8px;
+      }
+      
+      .cookie-link {
+        order: 3;
+        margin-top: 8px;
+        margin-left: auto;
+      }
+    }
+
     /* Desktop */
     @media (min-width:768px){
       header{padding:22px 80px}
@@ -711,171 +829,6 @@
     }
   </style>
 </head>
-  <!-- 
-  COOKIE BANNER - Plak dit NET VOOR </body> in alle pagina's
-  Vriendelijk, klein, niet vervelend 🍪
--->
-
-<div id="cookieBanner" class="cookie-banner">
-    <span class="cookie-icon">🍪</span>
-    <p>Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="cookie-btn accept">Prima</button>
-        <button onclick="declineCookies()" class="cookie-btn decline">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-link">Meer info</a>
-</div>
-
-<style>
-.cookie-banner {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #1a1a1a;
-    border: 1px solid rgba(232,181,99,.2);
-    border-radius: 16px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    color: #fff;
-    z-index: 9999;
-    box-shadow: 0 8px 32px rgba(0,0,0,.4);
-    animation: slideUp 0.4s ease-out;
-    max-width: calc(100% - 40px);
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.cookie-banner.hidden {
-    display: none;
-}
-
-.cookie-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.cookie-banner p {
-    margin: 0;
-    color: rgba(255,255,255,.9);
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.cookie-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.cookie-btn.accept {
-    background: linear-gradient(135deg, #E8B563, #d4a049);
-    color: #0a0a0a;
-}
-
-.cookie-btn.accept:hover {
-    transform: scale(1.05);
-}
-
-.cookie-btn.decline {
-    background: transparent;
-    color: rgba(255,255,255,.6);
-    border: 1px solid rgba(255,255,255,.2);
-}
-
-.cookie-btn.decline:hover {
-    border-color: rgba(255,255,255,.4);
-    color: #fff;
-}
-
-.cookie-link {
-    color: rgba(255,255,255,.4);
-    font-size: 11px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.cookie-link:hover {
-    color: #E8B563;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .cookie-banner {
-        flex-wrap: wrap;
-        bottom: 12px;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-    }
-    
-    .cookie-banner p {
-        flex: 1 1 100%;
-        order: 1;
-    }
-    
-    .cookie-icon {
-        order: 0;
-    }
-    
-    .cookie-buttons {
-        order: 2;
-        margin-top: 8px;
-    }
-    
-    .cookie-link {
-        order: 3;
-        margin-top: 8px;
-        margin-left: auto;
-    }
-}
-</style>
-
-<script>
-// Check of consent al gegeven is
-(function() {
-    var consent = localStorage.getItem('cookieConsent');
-    if (consent === 'accepted') {
-        // Laad GA4 (GTM doet dit al via je bestaande setup)
-        document.getElementById('cookieBanner').classList.add('hidden');
-    } else if (consent === 'declined') {
-        document.getElementById('cookieBanner').classList.add('hidden');
-        // Disable GA4 cookies
-        window['ga-disable-G-XXXXXXX'] = true;
-    }
-})();
-
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // GTM is al geladen, dus analytics werkt automatisch
-}
-
-function declineCookies() {
-    localStorage.setItem('cookieConsent', 'declined');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // Optioneel: verwijder bestaande cookies
-    document.cookie.split(";").forEach(function(c) {
-        if (c.trim().startsWith("_ga")) {
-            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        }
-    });
-}
-</script>
 <body>
   <!-- Skip to content link for accessibility -->
   <a href="#main-content" class="skip-link">Spring naar inhoud</a>
@@ -924,7 +877,8 @@ function declineCookies() {
         <h1>Willems Veranda's:<br>6 Jaar SEO Bureau Succes</h1>
         <p class="hero-subtitle">
           Van onzichtbaar naar marktleider. Van 0 naar 51 keywords in de top 3. 
-          Een case study over wat we opbouwden - en wat SEO continuïteit betekent.
+          Een case study over wat we opbouwden in rankings, visibility en traffic – 
+          en wat SEO continuïteit betekent.
         </p>
         
         <!-- Reading time & metadata -->
@@ -939,7 +893,7 @@ function declineCookies() {
           </span>
           <span style="display:flex;align-items:center;gap:6px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-            Data-driven
+            Data-driven SEO
           </span>
         </div>
         
@@ -975,7 +929,7 @@ function declineCookies() {
             <li><a href="#context" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ De Context</a></li>
             <li><a href="#journey" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ De Journey (2018-2025)</a></li>
             <li><a href="#achievements" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Wat We Bereikten</a></li>
-            <li><a href="#lessons" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Lessons Learned</a></li>
+            <li><a href="#lessons" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Lessons Learned (SEO)</a></li>
             <li><a href="#contact" style="color:inherit;text-decoration:none;opacity:.85;transition:opacity .2s">→ Start Jouw Groei</a></li>
           </ol>
         </nav>
@@ -989,18 +943,18 @@ function declineCookies() {
           </p>
           
           <p>
-            Van 2018 tot 2024 bouwde CNIP de SEO aanwezigheid op voor Willems Veranda's. 
-            Technische basis, content strategie, linkopbouw. 
-            Jaar na jaar groeide de organische visibility.
+            Van 2018 tot 2024 bouwde CNIP de SEO-aanwezigheid op voor Willems Veranda's. 
+            Technische basis, keyword-architectuur, contentstrategie en linkprofiel. 
+            Jaar na jaar groeiden rankings, visibility en organische traffic.
           </p>
           
           <p>
             In oktober 2024 besloot het bedrijf om met een ander digitaal marketing bureau te werken. 
-            Een nieuwe website werd gelanceerd. Een nieuw team nam over.
+            Een nieuwe website werd gelanceerd, met een nieuwe URL-structuur en contentopbouw.
           </p>
           
           <p>
-            Dit is het verhaal van die 6 jaar opbouw - en wat er daarna gebeurde.
+            Dit is het verhaal van die 6 jaar opbouw – in keywords en traffic – en wat er daarna gebeurde.
           </p>
         </div>
         
@@ -1008,7 +962,7 @@ function declineCookies() {
         <div style="max-width:800px;margin:60px auto 0;padding:36px;background:linear-gradient(135deg,rgba(232,181,99,.1),rgba(232,181,99,.03));border:2px solid var(--gold);border-radius:16px" role="complementary" aria-label="Executive Summary">
           <div style="font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;font-weight:800;display:flex;align-items:center;gap:8px">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
-            Executive Summary
+            Executive Summary (SEO)
           </div>
           <div style="display:grid;gap:20px">
             <div>
@@ -1022,15 +976,15 @@ function declineCookies() {
             <div>
               <strong style="color:var(--orange)">Impact Na Overgang (2024-2025):</strong>
               <p style="margin-top:8px;font-size:16px;line-height:1.6">
-                248 keywords verloren (-38%) • 1,600 bezoekers/maand verloren (-21%) • 
-                Geschatte omzetimpact: €540K/jaar • Hersteltijd: 2-3 jaar
+                248 keywords verloren (-38%) • ~1.600 bezoekers/maand minder (-21%) binnen 12 maanden • 
+                Indicatieve hersteltijd: 2–3 jaar om keyword- en trafficniveau opnieuw op te bouwen
               </p>
             </div>
             <div>
-              <strong style="color:var(--white)">Key Lessons:</strong>
+              <strong style="color:var(--white)">Key SEO Lessons:</strong>
               <p style="margin-top:8px;font-size:16px;line-height:1.6">
-                SEO is marathon (6+ jaar) • Overgangen = grootste risico • Documentatie cruciaal • 
-                Long-tail keywords = echte waarde • Partnerschap > leverancier mentaliteit
+                SEO is marathon (6+ jaar) • Overgangen = hoogste risico • Documentatie cruciaal • 
+                Long-tail keywords = echte waarde • Partnerschap > leveranciersrelatie
               </p>
             </div>
           </div>
@@ -1042,8 +996,8 @@ function declineCookies() {
       <div class="container">
         <h2 class="section-title">De Journey</h2>
         <p class="section-subtitle">
-          Van nul organische aanwezigheid naar absolute dominantie. 
-          En wat er gebeurt als continuïteit verdwijnt.
+          Van nul organische aanwezigheid naar SEO-dominantie. 
+          En wat er gebeurt als continuïteit in keywords en traffic verdwijnt.
         </p>
         
         <div class="phase-grid">
@@ -1060,18 +1014,19 @@ function declineCookies() {
             
             <p class="phase-description">
               <strong>De Start (2018):</strong> Willems had minimale online zichtbaarheid. Wanneer mensen 
-              zochten naar "veranda", "pergola" of gerelateerde termen, waren ze onvindbaar.
+              zochten naar "veranda", "pergola" of gerelateerde termen, verschenen ze amper in de SERP's.
             </p>
             
             <p class="phase-description">
-              <strong>Onze Aanpak:</strong> We begonnen met de fundamenten. Technical SEO audit, keyword research, 
-              content strategie. Geen quick wins, maar duurzame groei. Maand na maand bouwden we op.
+              <strong>Onze Aanpak:</strong> We begonnen met de fundamenten: technische SEO-audit, 
+              keywordonderzoek, informatiearchitectuur en contentstrategie. 
+              Geen hacks, maar consistente groei in rankings en traffic.
             </p>
             
             <p class="phase-description">
-              <strong>De Doorbraak (2021-2024):</strong> Het cumulatief effect van jaren SEO werk begon te renderen. 
-              Rankings accelereerden. Content ecosysteem was volledig opgebouwd. 
-              Google vertrouwde de site volledig.
+              <strong>De Doorbraak (2021-2024):</strong> Het cumulatief effect van jaren SEO-werk begon te renderen. 
+              Steeds meer keywords schoven door naar top 10 en top 3. 
+              Google vertrouwde het domein als referentie voor veranda- en pergola-zoekopdrachten.
             </p>
             
             <div class="metrics-grid">
@@ -1106,14 +1061,14 @@ function declineCookies() {
             </div>
             
             <p class="phase-description">
-              Na 6 jaar samenwerking besloot Willems om met een ander digitaal marketing bureau te werken. 
-              Een nieuwe website werd ontwikkeld. URL structuur veranderde. Content werd geherstructureerd.
+              Na 6 jaar samenwerking besloot Willems om met een ander digitaal marketingbureau te werken. 
+              Een nieuwe website werd ontwikkeld, met een nieuwe URL-structuur en inhoudelijke indeling.
             </p>
             
             <p class="phase-description">
-              <strong>Het Risico:</strong> Website overgangen zijn het meest risicovolle moment voor SEO. 
-              6 jaar van vertrouwen opbouwen bij Google kan in weken verdwijnen als redirects en 
-              technical setup niet perfect zijn.
+              <strong>Het SEO-risico:</strong> Website-overgangen zijn het meest risicovolle moment voor SEO. 
+              Alles wat in keywords en traffic is opgebouwd, kan in weken verschuiven als redirects, 
+              technische setup en contentmapping niet pixel perfect gebeuren.
             </p>
           </div>
 
@@ -1124,13 +1079,13 @@ function declineCookies() {
               </div>
               <div class="phase-meta">
                 <div class="phase-year">Oktober 2025</div>
-                <div class="phase-title">De Realiteit Check</div>
+                <div class="phase-title">De Reality Check</div>
               </div>
             </div>
             
             <p class="phase-description">
-              12 maanden na de overgang checken we de publieke SEO data via Semrush. 
-              De cijfers vertellen een duidelijk verhaal.
+              12 maanden na de overgang checken we de publieke SEO-data via Semrush. 
+              De cijfers tonen de impact op keywords en traffic.
             </p>
             
             <div class="metrics-grid">
@@ -1144,14 +1099,14 @@ function declineCookies() {
               </div>
               <div class="metric">
                 <div class="metric-value red">-21%</div>
-                <div class="metric-label">Traffic<br>Impact</div>
+                <div class="metric-label">Geschatte<br>Traffic</div>
               </div>
             </div>
             
             <p class="phase-description" style="margin-top:20px;font-style:italic;opacity:.8;font-size:15px">
               <strong>Note:</strong> Dit is geen attack op het nieuwe bureau of op Willems' beslissing. 
-              Dit is wat gebeurt bij overgangen - vaak, overal. Het is een structureel probleem, 
-              geen individueel falen.
+              Dit is wat bij SEO vaak gebeurt bij overgangen – in veel sectoren, bij veel merken. 
+              Het is een structureel risico in SEO-transities, geen individueel falen.
             </p>
           </div>
         </div>
@@ -1170,7 +1125,7 @@ function declineCookies() {
             <div class="achievement-number">51</div>
             <div class="achievement-title">Keywords Top 3</div>
             <div class="achievement-desc">
-              Inclusief "leefveranda met plat dak" (+99 posities) en andere money keywords.
+              Inclusief "leefveranda met plat dak" (+99 posities) en andere high-intent zoektermen.
             </div>
           </div>
           
@@ -1181,7 +1136,7 @@ function declineCookies() {
             <div class="achievement-number">+28%</div>
             <div class="achievement-title">Visibility Groei</div>
             <div class="achievement-desc">
-              Totale zichtbaarheidsgroei over 6 jaar. Van onzichtbaar naar marktdominant.
+              Totale zichtbaarheidsgroei over 6 jaar. Van onzichtbaar naar dominante SEO-positie.
             </div>
           </div>
           
@@ -1192,7 +1147,7 @@ function declineCookies() {
             <div class="achievement-number">535</div>
             <div class="achievement-title">Total Rankings</div>
             <div class="achievement-desc">
-              Comprehensive coverage over alle relevante zoektermen.
+              Brede dekking over generieke én long-tail zoekopdrachten rondom veranda's en pergola's.
             </div>
           </div>
           
@@ -1203,7 +1158,7 @@ function declineCookies() {
             <div class="achievement-number">3x</div>
             <div class="achievement-title">Merk van het Jaar</div>
             <div class="achievement-desc">
-              3 jaar op rij (2021-2023) industry award winner.
+              3 jaar op rij (2021-2023) industry award winner – ondersteund door sterke SEO-positie.
             </div>
           </div>
         </div>
@@ -1212,15 +1167,15 @@ function declineCookies() {
 
     <section class="section section-alt" id="lessons">
       <div class="container">
-        <h2 class="section-title">Wat We Hiervan Leren</h2>
+        <h2 class="section-title">Wat We Hiervan Leren (SEO)</h2>
         
         <div class="lessons-grid">
           <div class="lesson-card">
             <div class="lesson-number">1</div>
             <div class="lesson-title">SEO Is Een Marathon</div>
             <div class="lesson-text">
-              6 jaar om naar 535 keywords te groeien. Het is niet quick wins of hacks. 
-              Het is consistent werk, maand na maand, jaar na jaar.
+              6 jaar om naar 535 keywords te groeien. Geen trucjes, maar consistente opbouw van 
+              rankings, visibility en traffic – maand na maand, jaar na jaar.
             </div>
           </div>
           
@@ -1228,8 +1183,8 @@ function declineCookies() {
             <div class="lesson-number">2</div>
             <div class="lesson-title">Overgangen = Grootste Risico</div>
             <div class="lesson-text">
-              Website migrations en bureau switches zijn waar SEO het meest kwetsbaar is. 
-              Zonder perfecte kennisoverdracht crasht alles.
+              Website migrations en bureau-switches zijn waar SEO het meest kwetsbaar is. 
+              Zonder perfecte kennisoverdracht en redirectmapping schuiven keywords en traffic weg.
             </div>
           </div>
           
@@ -1237,8 +1192,8 @@ function declineCookies() {
             <div class="lesson-number">3</div>
             <div class="lesson-title">Long-Tail = De Waarde</div>
             <div class="lesson-text">
-              Die 248 verloren keywords? Specifieke long-tail queries van mensen klaar om te kopen. 
-              Die posities duurden jaren om op te bouwen.
+              Die 248 verloren keywords? Vooral specifieke long-tail queries van mensen met hoge intentie. 
+              Net die posities vragen jaren opbouw in SEO.
             </div>
           </div>
           
@@ -1246,8 +1201,8 @@ function declineCookies() {
             <div class="lesson-number">4</div>
             <div class="lesson-title">Documentatie Is Alles</div>
             <div class="lesson-text">
-              Bij een overgang moet elk URL, elke redirect gedocumenteerd zijn. 
-              Zonder die documentatie begint het nieuwe team vanaf nul.
+              Bij een overgang moet elke URL, elke redirect en elk SEO-template gedocumenteerd zijn. 
+              Zonder die documentatie start een nieuw team quasi vanaf nul in Google.
             </div>
           </div>
           
@@ -1255,8 +1210,8 @@ function declineCookies() {
             <div class="lesson-number">5</div>
             <div class="lesson-title">Herstel Duurt Langer</div>
             <div class="lesson-text">
-              6 jaar opbouwen. 1 jaar verliezen. 2-3 jaar recovery. 
-              Preventie is altijd goedkoper dan herstel.
+              6 jaar opbouwen. 1 jaar verliezen. 2–3 jaar recovery. 
+              Keywords en traffic dalen snel, maar terug naar het oude niveau klimmen duurt veel langer.
             </div>
           </div>
           
@@ -1264,8 +1219,8 @@ function declineCookies() {
             <div class="lesson-number">6</div>
             <div class="lesson-title">Partnership > Vendor</div>
             <div class="lesson-text">
-              SEO vereist lange-termijn thinking. De echte waarde komt na jaar 3, 4, 5. 
-              Partnership mentality is cruciaal.
+              SEO vraagt lange-termijndenken. De echte waarde van rankings en traffic komt pas na jaar 3–5. 
+              Dat werkt alleen met een partnership-mentaliteit, niet met korte vendor-contracten.
             </div>
           </div>
         </div>
@@ -1277,8 +1232,8 @@ function declineCookies() {
         <div class="cta-box">
           <h2 class="cta-title">Bouw Jouw SEO Dominantie</h2>
           <p class="cta-text">
-            23 jaar ervaring in organische groei. We bouwen voor de lange termijn. 
-            Geen quick wins. Alleen duurzame strategieën die blijven werken.
+            23 jaar ervaring in organische groei. We bouwen aan keywords, visibility en traffic 
+            voor de lange termijn. Geen quick wins, wel duurzame SEO-structuur die blijft werken.
           </p>
           <a href="/#contact" class="cta-button">Start Het Gesprek</a>
           <p class="cta-note">Gratis strategiegesprek • Zero pressure • Alleen als we fit zijn</p>
@@ -1291,7 +1246,7 @@ function declineCookies() {
   <aside style="padding:60px 24px;background:rgba(255,255,255,.02);border-top:1px solid rgba(232,181,99,.12);border-bottom:1px solid rgba(232,181,99,.12)" aria-label="Deel deze case study">
     <div style="max-width:700px;margin:0 auto;text-align:center">
       <div style="font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:700">Vond je dit waardevol?</div>
-      <h3 style="font-size:24px;font-weight:800;margin-bottom:24px">Deel deze case study</h3>
+      <h3 style="font-size:24px;font-weight:800;margin-bottom:24px">Deel deze SEO case study</h3>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://cnip.be/cases/willems-veranda.html" target="_blank" rel="noopener" style="padding:12px 24px;background:rgba(255,255,255,.08);border:1px solid rgba(232,181,99,.2);border-radius:999px;color:inherit;text-decoration:none;font-size:14px;font-weight:600;transition:all .3s;display:inline-flex;align-items:center;gap:8px" aria-label="Deel op LinkedIn" onmouseenter="this.style.borderColor='var(--gold)';this.style.background='rgba(232,181,99,.1)'" onmouseleave="this.style.borderColor='rgba(232,181,99,.2)';this.style.background='rgba(255,255,255,.08)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -1344,13 +1299,54 @@ function declineCookies() {
     <div class="footer-bottom">© 2025 CNIP | SEO Bureau Gent | Boutique Marketing Expertise</div>
   </footer>
 
+  <!-- COOKIE BANNER - Net voor </body> -->
+  <div id="cookieBanner" class="cookie-banner">
+    <span class="cookie-icon">🍪</span>
+    <p>Wij gebruiken cookies voor analytics. Cool?</p>
+    <div class="cookie-buttons">
+      <button onclick="acceptCookies()" class="cookie-btn accept">Prima</button>
+      <button onclick="declineCookies()" class="cookie-btn decline">Nee</button>
+    </div>
+    <a href="/privacy.html" class="cookie-link">Meer info</a>
+  </div>
+
   <!-- Back to top button -->
   <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Terug naar boven">
     ↑
   </button>
 
-  <a href="mailto:info@cnip.be">info@cnip.be</a>
   <script>
+    // Cookie consent
+    (function() {
+      var banner = document.getElementById('cookieBanner');
+      var consent = localStorage.getItem('cookieConsent');
+      if (consent === 'accepted') {
+        if (banner) banner.classList.add('hidden');
+      } else if (consent === 'declined') {
+        if (banner) banner.classList.add('hidden');
+        window['ga-disable-G-XXXXXXX'] = true;
+      }
+    })();
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      var banner = document.getElementById('cookieBanner');
+      if (banner) banner.classList.add('hidden');
+      // GTM is al geladen, dus analytics werkt automatisch
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      var banner = document.getElementById('cookieBanner');
+      if (banner) banner.classList.add('hidden');
+      // Optioneel: verwijder bestaande GA-cookies
+      document.cookie.split(";").forEach(function(c) {
+        if (c.trim().startsWith("_ga")) {
+          document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+        }
+      });
+    }
+
     // Back to top button visibility
     const backToTop = document.querySelector('.back-to-top');
     if(backToTop) {
@@ -1408,7 +1404,7 @@ function declineCookies() {
       });
     });
 
-    // Track reading progress for analytics (optional)
+    // Track reading progress for analytics (optioneel)
     let maxScroll = 0;
     window.addEventListener('scroll', () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
