@@ -1294,25 +1294,26 @@ function declineCookies() {
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
-    // Page loader - premium but fast
-    (function(){
-      const pl = document.querySelector('.page-loader');
-      if(!pl) return;
-      
-      const hideLoader = () => {
-        pl.classList.add('hidden');
-        setTimeout(() => { 
-          pl.classList.add('force-hide');
-          pl.style.display = 'none';
-        }, 600);
-      };
-      
-      // Hide after load or max 1 second (whichever comes first)
-      window.addEventListener('load', () => {
-        setTimeout(hideLoader, 200);
-      });
-      setTimeout(hideLoader, 1000);
-    })();
+
+// Page loader - Safari fix
+(function(){
+  var pl = document.querySelector('.page-loader');
+  if(!pl) return;
+  
+  function hideLoader() {
+    pl.style.opacity = '0';
+    pl.style.visibility = 'hidden';
+    pl.style.pointerEvents = 'none';
+    setTimeout(function() { 
+      pl.style.display = 'none';
+    }, 600);
+  }
+  
+  // Force hide after 800ms max
+  setTimeout(hideLoader, 800);
+})();
+
+    
 
     document.addEventListener('DOMContentLoaded', () => {
       
