@@ -8,15 +8,17 @@
     <meta name="robots" content="noindex, nofollow">
     
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M3QJK6VR');</script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+    </script>
     <!-- End Google Tag Manager -->
     
     <title>Bedankt! — CNIP Boutique Marketing Bureau Gent</title>
-    <meta name="description" content="Bedankt voor je interesse. We nemen zo snel mogelijk contact met je op.">
+    <meta name="description" content="Bedankt voor je aanvraag. We nemen zo snel mogelijk contact met je op om je strategiesessie in te plannen.">
     
     <style>
         * {
@@ -28,9 +30,10 @@
         :root {
             --black: #0a0a0a;
             --white: #ffffff;
-            --gray: #666;
+            --gray: #666666;
             --light-gray: #f8f8f8;
             --gold: #E8B563;
+            --gold-dark: #d4a049;
         }
 
         html {
@@ -44,6 +47,10 @@
             background: var(--white);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
         }
 
         /* Header */
@@ -71,6 +78,7 @@
             font-weight: 900;
             text-decoration: none;
             color: var(--black);
+            letter-spacing: 0.05em;
         }
 
         .logo-badge {
@@ -81,12 +89,19 @@
             border-radius: 999px;
             margin-left: 8px;
             vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        /* Hero - Compact */
+        main {
+            display: block;
+        }
+
+        /* Hero */
         .hero {
             min-height: 70vh;
             display: flex;
+            flex-direction: column; /* content + scroll indicator onder elkaar */
             align-items: center;
             justify-content: center;
             padding: 100px 24px 40px;
@@ -97,6 +112,7 @@
         .hero-content {
             text-align: center;
             max-width: 700px;
+            margin: 0 auto;
         }
 
         /* Success Animation */
@@ -183,6 +199,14 @@
             color: var(--black);
         }
 
+        .hero-subnote {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards 0.65s;
+        }
+
         .hero-buttons {
             display: flex;
             gap: 12px;
@@ -199,10 +223,15 @@
             font-weight: 700;
             border-radius: 999px;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold), #d4a049);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             color: var(--black);
         }
 
@@ -227,12 +256,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll Indicator - Opvallend */
+        /* Scroll Indicator */
         .scroll-indicator {
-            position: absolute;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -247,7 +273,7 @@
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
-            background: linear-gradient(135deg, var(--gold), #d4a049);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             border-radius: 999px;
             color: var(--black);
             font-size: 13px;
@@ -256,6 +282,10 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 20px rgba(232,181,99,.4);
             transition: all 0.3s;
+        }
+
+        .scroll-badge span:last-child {
+            font-size: 16px;
         }
 
         .scroll-badge:hover {
@@ -310,7 +340,6 @@
             font-size: 16px;
         }
 
-        /* Horizontal Timeline */
         .timeline-track {
             max-width: 900px;
             margin: 0 auto;
@@ -323,7 +352,7 @@
             left: 10%;
             right: 10%;
             height: 3px;
-            background: linear-gradient(90deg, var(--gold), #d4a049);
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
             border-radius: 2px;
         }
 
@@ -435,7 +464,7 @@
         footer {
             padding: 24px;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #eeeeee;
         }
 
         footer p {
@@ -476,6 +505,10 @@
             .btn {
                 width: 100%;
                 text-align: center;
+            }
+
+            .scroll-indicator {
+                margin-top: 24px;
             }
 
             .scroll-badge {
@@ -523,111 +556,130 @@
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
         <div class="header-content">
-            <a href="/" class="logo-text">CNIP <span class="logo-badge">Since 2002</span></a>
+            <a href="/" class="logo-text">
+                CNIP
+                <span class="logo-badge">Since 2002</span>
+            </a>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <!-- Animated Checkmark -->
-            <div class="success-icon">
-                <div class="success-circle">
-                    <svg class="checkmark" viewBox="0 0 40 40">
-                        <path d="M10 20 L17 27 L30 13"/>
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <!-- Animated Checkmark -->
+                <div class="success-icon" aria-hidden="true">
+                    <div class="success-circle">
+                        <svg class="checkmark" viewBox="0 0 40 40">
+                            <path d="M10 20 L17 27 L30 13"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="hero-label">Aanvraag ontvangen</div>
+                <h1 id="hero-title">Bedankt voor je interesse!</h1>
+                <p class="hero-text">
+                    We nemen <strong>binnen 24 uur</strong> contact met je op om je strategiesessie in te plannen.
+                </p>
+                <p class="hero-subnote">
+                    Je zit dus goed. Ondertussen kun je hieronder al bekijken hoe het vervolg eruitziet.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/#work" class="btn btn-primary">Bekijk ons werk</a>
+                    <a href="/" class="btn btn-secondary">Terug naar home</a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#timeline" class="scroll-indicator" aria-label="Scroll naar wat er nu gebeurt">
+                <div class="scroll-badge">
+                    <span>Bekijk wat er nu gebeurt</span>
+                    <span>↓</span>
+                </div>
+                <div class="scroll-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M19 9l-7 7-7-7"/>
                     </svg>
                 </div>
+            </a>
+        </section>
+
+        <section class="timeline" id="timeline" aria-label="Volgende stappen">
+            <div class="timeline-header">
+                <h2>Wat gebeurt er nu?</h2>
+                <p>Drie simpele stappen naar jouw strategiesessie.</p>
             </div>
 
-            <div class="hero-label">Aanvraag ontvangen</div>
-            <h1>Bedankt voor je interesse!</h1>
-            <p class="hero-text">
-                We nemen <strong>binnen 24 uur</strong> contact met je op om je strategiesessie in te plannen.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="/#work" class="btn btn-primary">Bekijk ons werk</a>
-                <a href="/" class="btn btn-secondary">Terug naar home</a>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <a href="#timeline" class="scroll-indicator">
-            <div class="scroll-badge">
-                <span>Bekijk wat er nu gebeurt</span>
-                <span>↓</span>
-            </div>
-            <div class="scroll-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M19 9l-7 7-7-7"/>
-                </svg>
-            </div>
-        </a>
-    </section>
-
-    <section class="timeline" id="timeline">
-        <div class="timeline-header">
-            <h2>Wat gebeurt er nu?</h2>
-            <p>Drie simpele stappen naar jouw strategiesessie</p>
-        </div>
-
-        <div class="timeline-track">
-            <div class="timeline-line"></div>
-            <div class="timeline-steps">
-                <div class="timeline-step">
-                    <div class="step-dot">1</div>
-                    <div>
-                        <div class="step-title">Bevestiging</div>
-                        <p class="step-desc">Je ontvangt een bevestigingsmail met alle details.</p>
-                        <span class="step-time">Direct</span>
+            <div class="timeline-track">
+                <div class="timeline-line"></div>
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <div class="step-dot">1</div>
+                        <div>
+                            <div class="step-title">Bevestiging</div>
+                            <p class="step-desc">Je ontvangt een bevestigingsmail met alle details van je aanvraag.</p>
+                            <span class="step-time">Direct</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-step">
-                    <div class="step-dot">2</div>
-                    <div>
-                        <div class="step-title">We bellen je</div>
-                        <p class="step-desc">Om een moment te vinden dat jou past.</p>
-                        <span class="step-time">Binnen 24u</span>
+                    <div class="timeline-step">
+                        <div class="step-dot">2</div>
+                        <div>
+                            <div class="step-title">We bellen je</div>
+                            <p class="step-desc">We zoeken samen een moment dat je past voor de strategiesessie.</p>
+                            <span class="step-time">Binnen 24 uur</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-step">
-                    <div class="step-dot">3</div>
-                    <div>
-                        <div class="step-title">Strategiesessie</div>
-                        <p class="step-desc">30 min gratis advies over jouw groei.</p>
-                        <span class="step-time">Op afspraak</span>
+                    <div class="timeline-step">
+                        <div class="step-dot">3</div>
+                        <div>
+                            <div class="step-title">Strategiesessie</div>
+                            <p class="step-desc">30 minuten scherp advies over jouw groei en commerciële structuur.</p>
+                            <span class="step-time">Op afspraak</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact-bar">
-        <div class="contact-bar-inner">
-            <h3>Liever <span>direct</span> contact?</h3>
-            <div class="contact-links">
-                <a href="tel:+3293965883" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    +32 9 396 58 83
-                </a>
-                <a href="mailto:info@cnip.be" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    info@cnip.be
-                </a>
-                <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    LinkedIn
-                </a>
+        <section class="contact-bar" aria-label="Direct contact">
+            <div class="contact-bar-inner">
+                <h3>Liever <span>direct</span> contact?</h3>
+                <div class="contact-links">
+                    <a href="tel:+3293965883" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        +32 9 396 58 83
+                    </a>
+                    <a href="mailto:info@cnip.be" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                        info@cnip.be
+                    </a>
+                    <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>© 2025 CNIP — Boutique Marketing Bureau Gent</p>
@@ -635,24 +687,25 @@
 
     <script>
         // ========================================
-        // CONVERSIE TRACKING - Form Submit Event
+        // CONVERSIE TRACKING - Bedankpagina Event
         // ========================================
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            'event': 'form_submit',
-            'form_name': 'CNIP Contact Form',
-            'form_destination': 'bedankt.html',
-            'form_type': 'strategiesessie'
+            event: 'strategiesessie_thankyou_view',
+            form_name: 'CNIP Contact Form',
+            form_destination: 'bedankt.html',
+            form_type: 'strategiesessie'
         });
-        
-        console.log('✅ Form submit event triggered for Google Analytics');
+
+        console.log('✅ Thank you event gestuurd naar dataLayer');
 
         // ========================================
         // 🎉 CONFETTI CELEBRATION
         // ========================================
         function createConfetti() {
             const colors = ['#E8B563', '#d4a049', '#f5d89a', '#0a0a0a', '#ffffff'];
-            const confettiCount = 100;
+            const baseCount = window.innerWidth < 768 ? 60 : 100;
+            const confettiCount = baseCount;
 
             for (let i = 0; i < confettiCount; i++) {
                 setTimeout(() => {
