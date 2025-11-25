@@ -239,20 +239,20 @@
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 40px 100px;position:relative}
     .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
-    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-trans:uppercase;margin-bottom:24px}
     .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
     .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
     .cta-primary,.cta-secondary{padding:16px 32px;border-radius:999px;text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
     .cta-primary{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
-    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
+    .cta-primary:hover{trans:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
     .cta-secondary{border:2px solid var(--gold);color:var(--gold)}
     .cta-secondary:hover{background:rgba(232,181,99,.1)}
 
     /* Services */
     .services-section{padding:80px 20px;max-width:1600px;margin:0 auto}
     .section-header{text-align:center;margin-bottom:64px}
-    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+    .section-eyebrow{font-size:11px;color:var(--gold);text-trans:uppercase;letter-spacing:3px;margin-bottom:12px}
     .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .services-bento{
       display:grid;
@@ -270,7 +270,7 @@
       min-height:240px;
     }
     .service-card:hover{
-      transform:translateY(-8px);
+      trans:translateY(-8px);
       border-color:var(--gold);
       background:rgba(255,255,255,.05);
       box-shadow:0 20px 60px rgba(232,181,99,.22);
@@ -315,7 +315,7 @@
     }
     .work-item:hover::before{opacity:1}
     .work-item:hover{
-      transform:translateY(-8px);
+      trans:translateY(-8px);
       border-color:var(--gold);
       box-shadow:0 30px 80px rgba(232,181,99,.3);
     }
@@ -330,12 +330,12 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:transform .8s cubic-bezier(.4,0,.2,1), filter .8s ease;
+      transition:trans .8s cubic-bezier(.4,0,.2,1), filter .8s ease;
       filter:brightness(1) saturate(1);
     }
     .work-item:hover .work-visual img,
     .work-item:hover .work-visual video{
-      transform:scale(1.08);
+      trans:scale(1.08);
       filter:brightness(1.1) saturate(1.2);
     }
     .work-overlay{
@@ -1229,28 +1229,28 @@ function declineCookies() {
           <p style="font-size: clamp(14px,3vw,16px); opacity: .8; line-height: 1.6; margin-bottom: 24px;">Geen verkooppraatje — enkel concrete quick wins voor jouw merk.</p>
         </div>
 
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-          <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
-          
-          <div class="form-group">
-            <label for="name">Naam *</label>
-            <input id="name" name="name" type="text" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" required>
-          </div>
-          <div class="form-group">
-            <label for="company">Bedrijf</label>
-            <input id="company" name="company" type="text">
-          </div>
-          <div class="form-group">
-            <label for="message">Bericht *</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button class="submit-btn" type="submit">Verstuur Bericht</button>
-        </form>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="dataLayer.push({'event': 'form_submit'});">
+  <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
+  <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+  
+  <div class="form-group">
+    <label for="name">Naam *</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" required>
+  </div>
+  <div class="form-group">
+    <label for="company">Bedrijf</label>
+    <input id="company" name="company" type="text">
+  </div>
+  <div class="form-group">
+    <label for="message">Bericht *</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+  <button class="submit-btn" type="submit">Verstuur Bericht</button>
+</form>
       </div>
     </section>
   </main>
