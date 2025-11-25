@@ -1,1022 +1,1270 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://api.web3forms.com">
+  
   <!-- Google Tag Manager -->
   <script>
-  window.dataLayer = window.dataLayer || [];
-  (function(w,d,s,l,i){
-    if(!w[l]){w[l]=[];}
-    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),
-    dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
-  })(window,document,'script','dataLayer','GTM-M3QJK6VR');
+    window.dataLayer = window.dataLayer || [];
+    (function(w,d,s,l,i){
+      if(!w[l]){w[l]=[];}
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),
+      dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
+    })(window,document,'script','dataLayer','GTM-M3QJK6VR');
   </script>
   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <title>Marketing Uitbesteden | CNIP Marketing Bureau Gent</title>
-  <meta name="description" content="Marketing uitbesteden aan experts? CNIP helpt marktleiders in België met SEO, Google Ads, social media en HubSpot. Van Hof van Cleve tot BMW.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Marketing uitbesteden aan experts? CNIP helpt marktleiders in België met SEO, Google Ads, social media en HubSpot. Van Hof van Cleve tot BMW. Eén cockpit, meetbare groei.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Marketing Uitbesteden | CNIP Marketing Bureau Gent">
+  <meta property="og:description" content="Geen juniors. Geen losse freelancers. Wél een senior team dat marktleiders helpt domineren via één cockpit. Al 23 jaar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cnip.be/marketing-uitbesteden">
+  <meta property="og:locale" content="nl_BE">
   
   <link rel="canonical" href="https://cnip.be/marketing-uitbesteden">
   
+  <!-- Schema.org Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CNIP Marketing Bureau",
+    "description": "Marketing bureau gespecialiseerd in SEO, Google Ads, social media en HubSpot voor marktleiders in België.",
+    "url": "https://cnip.be",
+    "telephone": "+3293965883",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ottergemsesteenweg Zuid 808",
+      "addressLocality": "Gent",
+      "postalCode": "9000",
+      "addressCountry": "BE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.0259,
+      "longitude": 3.7117
+    },
+    "areaServed": "België",
+    "priceRange": "€€€",
+    "foundingDate": "2002",
+    "knowsAbout": ["SEO", "Google Ads", "Social Media Marketing", "HubSpot", "Video Productie", "Marketing Strategie"]
+  }
+  </script>
+  
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563;--green:#22c55e}
-    html{scroll-behavior:smooth;overflow-x:hidden}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-      background:var(--black);
-      color:var(--white);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.6;
-    }
-    img{max-width:100%;height:auto;display:block}
-    
-    /* Header */
-    .header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      padding:20px 40px;
-      z-index:100;
-      background:linear-gradient(180deg,rgba(10,10,10,.9) 0%,transparent 100%);
-    }
-    .header-inner{
-      max-width:1400px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo{
-      font-size:28px;
-      font-weight:900;
-      color:var(--white);
-      text-decoration:none;
-      letter-spacing:-0.5px;
-    }
-    .header-cta{
-      padding:12px 28px;
-      background:var(--gold);
-      color:var(--black);
-      text-decoration:none;
-      border-radius:999px;
-      font-weight:800;
-      font-size:14px;
-      transition:all .3s;
-    }
-    .header-cta:hover{
-      transform:scale(1.05);
-      box-shadow:0 8px 24px rgba(232,181,99,.4);
+    /* ============================================
+       CSS Reset & Variables
+    ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     
-    /* Hero - Full visual impact */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gold: #E8B563;
+      --gold-dark: #d4a049;
+      --gold-light: #f0c87a;
+      --gray-900: #1a1a1a;
+      --gray-800: #2a2a2a;
+      --gray-600: #666666;
+      --gray-400: #999999;
+      --green: #22c55e;
+      --red: #ef4444;
+      
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.3);
+      --shadow-gold: 0 8px 32px rgba(232, 181, 99, 0.3);
+      
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.4s ease;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
     }
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(135deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,.7) 50%, rgba(10,10,10,.9) 100%),
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--black);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    
+    /* Focus styles for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    
+    /* ============================================
+       Header
+    ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 40px;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, transparent 100%);
+    }
+    
+    .header__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header__logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      transition: opacity var(--transition-fast);
+    }
+    
+    .header__logo:hover {
+      opacity: 0.8;
+    }
+    
+    .header__cta {
+      padding: 12px 28px;
+      background: var(--gold);
+      color: var(--black);
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .header__cta:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-gold);
+    }
+    
+    /* ============================================
+       Hero Section
+    ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.72) 50%, rgba(10, 10, 10, 0.92) 100%),
         url('/images/Hof van Cleve.jpg') center/cover no-repeat;
     }
-    .hero-bg::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.15), transparent 60%);
-    }
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:1400px;
-      margin:0 auto;
-      padding:160px 40px 100px;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:60px;
-    }
-    .hero-text{
-      max-width:700px;
-    }
-    .hero-label{
-      display:inline-block;
-      padding:8px 16px;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      font-size:11px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-weight:700;
-      margin-bottom:24px;
-    }
-    .hero h1{
-      font-size:clamp(42px,8vw,80px);
-      font-weight:900;
-      line-height:1.05;
-      margin-bottom:24px;
-      letter-spacing:-2px;
-    }
-    .hero h1 span{
-      background:linear-gradient(135deg,var(--gold),#d4a049);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .hero-sub{
-      font-size:clamp(18px,2.5vw,24px);
-      opacity:.9;
-      line-height:1.5;
-      margin-bottom:40px;
-      max-width:600px;
-    }
-    .hero-cta{
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      padding:20px 40px;
-      background:linear-gradient(135deg,var(--gold),#d4a049);
-      color:var(--black);
-      text-decoration:none;
-      border-radius:999px;
-      font-weight:900;
-      font-size:17px;
-      transition:all .3s;
-    }
-    .hero-cta:hover{
-      transform:translateY(-3px);
-      box-shadow:0 16px 40px rgba(232,181,99,.5);
-    }
-    .hero-cta svg{
-      transition:transform .3s;
-    }
-    .hero-cta:hover svg{
-      transform:translateX(4px);
+    
+    .hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(232, 181, 99, 0.12), transparent 60%);
     }
     
-    /* Client logos in hero */
-    .hero-clients{
-      padding-top:60px;
-      border-top:1px solid rgba(232,181,99,.2);
-    }
-    .hero-clients-label{
-      font-size:11px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      opacity:.5;
-      margin-bottom:24px;
-    }
-    .hero-logos{
-      display:flex;
-      gap:32px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .hero-logos img{
-      height:28px;
-      width:auto;
-      filter:brightness(0) invert(1);
-      opacity:.7;
-      transition:opacity .3s;
-    }
-    .hero-logos img:hover{
-      opacity:1;
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 160px 40px 100px;
     }
     
-    /* Stats bar */
-    .stats-bar{
-      background:rgba(255,255,255,.03);
-      border-top:1px solid rgba(232,181,99,.1);
-      border-bottom:1px solid rgba(232,181,99,.1);
-      padding:60px 40px;
-    }
-    .stats-inner{
-      max-width:1200px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:40px;
-    }
-    .stat{
-      text-align:center;
-    }
-    .stat-num{
-      font-size:clamp(36px,6vw,56px);
-      font-weight:900;
-      color:var(--gold);
-      line-height:1;
-      margin-bottom:8px;
-      letter-spacing:-2px;
-    }
-    .stat-label{
-      font-size:13px;
-      opacity:.7;
-      text-transform:uppercase;
-      letter-spacing:1px;
+    .hero__text {
+      max-width: 720px;
     }
     
-    /* Problem section - visual */
-    .problem-section{
-      padding:120px 40px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-    .problem-grid{
-      display:grid;
-      grid-template-columns:380px 1fr;
-      gap:80px;
-      align-items:center;
-    }
-    .problem-visual{
-      position:relative;
-      max-width:400px;
-      margin:0 auto;
-    }
-    .problem-visual::before{
-      content:'';
-      position:absolute;
-      inset:-16px;
-      border:2px solid rgba(232,181,99,.25);
-      border-radius:20px;
-      transform:rotate(-2deg);
-    }
-    .problem-img{
-      border-radius:16px;
-      width:100%;
-      aspect-ratio:3/4;
-      object-fit:cover;
-      object-position:center 15%;
-      position:relative;
-      z-index:1;
-      border:1px solid rgba(232,181,99,.15);
-    }
-    .problem-content h2{
-      font-size:clamp(32px,5vw,48px);
-      font-weight:900;
-      margin-bottom:32px;
-      line-height:1.1;
-      letter-spacing:-1px;
-    }
-    .problem-content h2 span{
-      color:var(--gold);
-    }
-    .problem-list{
-      list-style:none;
-    }
-    .problem-list li{
-      padding:16px 0;
-      border-bottom:1px solid rgba(255,255,255,.1);
-      font-size:17px;
-      display:flex;
-      align-items:flex-start;
-      gap:16px;
-    }
-    .problem-list li:last-child{
-      border-bottom:none;
-    }
-    .problem-list svg{
-      flex-shrink:0;
-      margin-top:4px;
+    .hero__label {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
     
-    /* What we do - no bullshit */
-    .services-section{
-      padding:120px 40px;
-      background:linear-gradient(180deg,rgba(232,181,99,.05) 0%,transparent 100%);
-    }
-    .services-header{
-      text-align:center;
-      max-width:700px;
-      margin:0 auto 80px;
-    }
-    .services-header h2{
-      font-size:clamp(32px,5vw,56px);
-      font-weight:900;
-      margin-bottom:20px;
-      letter-spacing:-1px;
-    }
-    .services-header p{
-      font-size:18px;
-      opacity:.8;
-    }
-    .services-grid{
-      max-width:1200px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-    .service-card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(232,181,99,.15);
-      border-radius:20px;
-      padding:40px 32px;
-      transition:all .4s;
-      position:relative;
-      overflow:hidden;
-    }
-    .service-card::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:3px;
-      background:linear-gradient(90deg,var(--gold),transparent);
-      opacity:0;
-      transition:opacity .4s;
-    }
-    .service-card:hover{
-      border-color:var(--gold);
-      transform:translateY(-8px);
-      box-shadow:0 24px 64px rgba(232,181,99,.2);
-    }
-    .service-card:hover::before{
-      opacity:1;
-    }
-    .service-num{
-      font-size:48px;
-      font-weight:900;
-      color:transparent;
-      -webkit-text-stroke:1px rgba(232,181,99,.3);
-      line-height:1;
-      margin-bottom:20px;
-    }
-    .service-card h3{
-      font-size:22px;
-      font-weight:800;
-      margin-bottom:12px;
-    }
-    .service-card p{
-      font-size:15px;
-      opacity:.75;
-      line-height:1.6;
+    .hero__title {
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
     }
     
-    /* Case visual */
-    .case-section{
-      padding:120px 40px;
-      position:relative;
-      overflow:hidden;
-    }
-    .case-section::before{
-      content:'';
-      position:absolute;
-      top:50%;
-      left:0;
-      width:40%;
-      height:120%;
-      transform:translateY(-50%);
-      background:linear-gradient(90deg,rgba(232,181,99,.08),transparent);
-    }
-    .case-inner{
-      max-width:1400px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:center;
-      position:relative;
-      z-index:1;
-    }
-    .case-visual{
-      position:relative;
-    }
-    .case-img{
-      border-radius:20px;
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      border:2px solid rgba(232,181,99,.2);
-    }
-    .case-badge{
-      position:absolute;
-      bottom:-20px;
-      right:-20px;
-      background:var(--gold);
-      color:var(--black);
-      padding:20px 28px;
-      border-radius:16px;
-      text-align:center;
-      box-shadow:0 16px 40px rgba(232,181,99,.4);
-    }
-    .case-badge-num{
-      font-size:36px;
-      font-weight:900;
-      line-height:1;
-    }
-    .case-badge-label{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      font-weight:700;
-    }
-    .case-content{
-      padding:20px 0;
-    }
-    .case-label{
-      font-size:11px;
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-weight:700;
-      margin-bottom:16px;
-    }
-    .case-content h2{
-      font-size:clamp(28px,4vw,42px);
-      font-weight:900;
-      margin-bottom:24px;
-      line-height:1.15;
-      letter-spacing:-1px;
-    }
-    .case-content p{
-      font-size:17px;
-      opacity:.85;
-      line-height:1.7;
-      margin-bottom:32px;
-    }
-    .case-stats{
-      display:flex;
-      gap:32px;
-      padding-top:24px;
-      border-top:1px solid rgba(232,181,99,.2);
-    }
-    .case-stat{
-      text-align:left;
-    }
-    .case-stat-num{
-      font-size:28px;
-      font-weight:900;
-      color:var(--gold);
-      line-height:1;
-      margin-bottom:4px;
-    }
-    .case-stat-label{
-      font-size:12px;
-      opacity:.6;
-      text-transform:uppercase;
-      letter-spacing:1px;
+    .hero__title span {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     
-    /* Social proof logos */
-    .logos-section{
-      padding:80px 40px;
-      background:rgba(255,255,255,.02);
-      border-top:1px solid rgba(232,181,99,.08);
-      border-bottom:1px solid rgba(232,181,99,.08);
-    }
-    .logos-label{
-      text-align:center;
-      font-size:12px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      opacity:.5;
-      margin-bottom:40px;
-    }
-    .logos-grid{
-      max-width:1200px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(6,1fr);
-      gap:24px;
-    }
-    .logo-item{
-      aspect-ratio:3/2;
-      padding:20px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(232,181,99,.1);
-      border-radius:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:all .3s;
-    }
-    .logo-item:hover{
-      border-color:var(--gold);
-      transform:translateY(-4px);
-    }
-    .logo-item img{
-      max-width:80%;
-      max-height:70%;
-      filter:brightness(0) invert(1);
-      opacity:.7;
-      transition:opacity .3s;
-    }
-    .logo-item:hover img{
-      opacity:1;
+    .hero__subtitle {
+      font-size: clamp(17px, 2.2vw, 22px);
+      opacity: 0.9;
+      line-height: 1.55;
+      margin-bottom: 40px;
+      max-width: 580px;
     }
     
-    /* Form section - FIXED 2-COLUMN LAYOUT */
-    .form-section{
-      padding:120px 40px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:start;
-    }
-    .form-content{
-      position:sticky;
-      top:120px;
-    }
-    .form-content h2{
-      font-size:clamp(32px,5vw,52px);
-      font-weight:900;
-      margin-bottom:24px;
-      line-height:1.1;
-      letter-spacing:-1px;
-    }
-    .form-content h2 span{
-      color:var(--gold);
-    }
-    .form-content p{
-      font-size:18px;
-      opacity:.85;
-      line-height:1.6;
-      margin-bottom:32px;
-    }
-    .form-features{
-      list-style:none;
-    }
-    .form-features li{
-      padding:12px 0;
-      display:flex;
-      align-items:center;
-      gap:16px;
-      font-size:16px;
-    }
-    .form-features svg{
-      color:var(--gold);
-      flex-shrink:0;
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 40px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border-radius: var(--radius-full);
+      font-weight: 900;
+      font-size: 17px;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     }
     
-    .contact-form{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(232,181,99,.2);
-      border-radius:24px;
-      padding:48px;
-    }
-    .form-group{
-      margin-bottom:24px;
-    }
-    .form-group label{
-      display:block;
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:10px;
-      color:rgba(255,255,255,.9);
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select{
-      width:100%;
-      padding:16px 20px;
-      border:2px solid rgba(232,181,99,.15);
-      border-radius:12px;
-      background:rgba(255,255,255,.03);
-      color:var(--white);
-      font-size:16px;
-      font-family:inherit;
-      transition:all .2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus{
-      outline:none;
-      border-color:var(--gold);
-      background:rgba(232,181,99,.05);
-    }
-    .form-group select option{
-      background:var(--black);
+    .hero__cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(232, 181, 99, 0.45);
     }
     
-    /* Honeypot */
-    .ohnohoney{
-      opacity:0;
-      position:absolute;
-      top:0;
-      left:0;
-      height:0;
-      width:0;
-      z-index:-1;
+    .hero__cta svg {
+      transition: transform var(--transition-normal);
     }
     
-    .submit-btn{
-      width:100%;
-      padding:20px;
-      border:none;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--gold),#d4a049);
-      color:var(--black);
-      font-weight:900;
-      font-size:17px;
-      cursor:pointer;
-      transition:all .3s;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-    }
-    .submit-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 32px rgba(232,181,99,.4);
+    .hero__cta:hover svg {
+      transform: translateX(4px);
     }
     
-    /* Footer */
-    .footer{
-      padding:40px;
-      text-align:center;
-      border-top:1px solid rgba(232,181,99,.1);
-      font-size:14px;
-      opacity:.5;
-    }
-    .footer a{
-      color:var(--gold);
-      text-decoration:none;
+    /* Hero clients */
+    .hero__clients {
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(232, 181, 99, 0.2);
     }
     
-    /* Responsive */
-    @media (max-width:1024px){
-      .services-grid{grid-template-columns:1fr 1fr}
-      .logos-grid{grid-template-columns:repeat(3,1fr)}
+    .hero__clients-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 24px;
     }
     
-    @media (max-width:768px){
-      .header{padding:16px 24px}
-      .hero-content{padding:140px 24px 80px}
-      .hero-logos{gap:20px}
-      .hero-logos img{height:22px}
-      .stats-bar{padding:40px 24px}
-      .stats-inner{grid-template-columns:repeat(2,1fr);gap:32px}
-      .problem-section{padding:80px 24px}
-      .problem-grid{grid-template-columns:1fr;gap:48px}
-      .problem-visual{order:2;max-width:280px}
-      .services-section{padding:80px 24px}
-      .services-grid{grid-template-columns:1fr}
-      .case-section{padding:80px 24px}
-      .case-inner{grid-template-columns:1fr;gap:48px}
-      .case-badge{bottom:-16px;right:16px;padding:16px 20px}
-      .case-badge-num{font-size:28px}
-      .logos-section{padding:60px 24px}
-      .logos-grid{grid-template-columns:repeat(2,1fr)}
-      .form-section{padding:80px 24px}
-      .form-grid{grid-template-columns:1fr;gap:48px}
-      .form-content{position:static}
-      .contact-form{padding:32px 24px}
+    .hero__logos {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      align-items: center;
     }
-  </style>
-</head>
-<body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="https://cnip.be" class="logo">CNIP</a>
-      <a href="#contact" class="header-cta">Gratis gesprek</a>
-    </div>
-  </header>
-
-  <!-- Hero with Hof van Cleve background -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-label">Marketing Bureau Gent</div>
-        <h1>Marketing uitbesteden<br>aan <span>wie het écht kan</span></h1>
-        <p class="hero-sub">
-          Geen juniors. Geen bandwerk. Wél een senior team dat marktleiders 
-          helpt domineren. Al 23 jaar.
-        </p>
-        <a href="#contact" class="hero-cta">
-          Plan een gesprek
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      
-      <div class="hero-clients">
-        <div class="hero-clients-label">Vertrouwd door marktleiders</div>
-        <div class="hero-logos">
-          <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve">
-          <img src="/images/klanten/15.png" alt="BMW">
-          <img src="/images/klanten/7-2.png" alt="GE Healthcare">
-          <img src="/images/klanten/3-4.png" alt="Willems Veranda">
-          <img src="/images/klanten/13.png" alt="DSM Keukens">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-num">23</div>
-        <div class="stat-label">Jaar ervaring</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">52K</div>
-        <div class="stat-label">Volgers voor Hof van Cleve</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">240</div>
-        <div class="stat-label">Leads/maand voor bouwklant</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">51</div>
-        <div class="stat-label">Keywords top 3</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Problem section -->
-  <section class="problem-section">
-    <div class="problem-grid">
-      <div class="problem-visual">
-        <img src="/images/christophecnip.png" alt="Christophe Dejaeghere - Founder CNIP" class="problem-img">
-      </div>
-      <div class="problem-content">
-        <h2>Marketing uitbesteden <span>zonder gedoe</span></h2>
-        <ul class="problem-list">
-          <li>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B563" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Eén aanspreekpunt. Geen 5 freelancers managen.</span>
-          </li>
-          <li>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B563" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Senior expertise. Geen stagiairs die leren op jouw budget.</span>
-          </li>
-          <li>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B563" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Meetbare resultaten. Je ziet exact waar je geld naartoe gaat.</span>
-          </li>
-          <li>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B563" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Geen langlopende contracten. Resultaat is onze retentie.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="services-section">
-    <div class="services-header">
-      <h2>Wat wij overnemen</h2>
-      <p>Alles onder één dak. Geen losse eindjes.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h3>SEO & Content</h3>
-        <p>Organische zichtbaarheid die blijft werken. 51+ keywords top 3 voor Willems Veranda.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h3>Google Ads</h3>
-        <p>ROI-focused campagnes. Geen geld verbranden aan verkeerde zoekwoorden.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h3>Social Media</h3>
-        <p>Van 0 naar 52K volgers voor Hof van Cleve. 100% organisch.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h3>HubSpot & CRM</h3>
-        <p>Marketing automation die leads opvolgt terwijl jij slaapt. Gold Partner.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">05</div>
-        <h3>Video Productie</h3>
-        <p>Cinema-kwaliteit. 500+ producties voor merken als DSM Keukens.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-num">06</div>
-        <h3>Strategie</h3>
-        <p>Geen losse acties. Eén systeem dat samenwerkt en schaalt.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Study -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-visual">
-        <img src="/images/1-3.png" alt="Lead generatie case study" class="case-img">
-        <div class="case-badge">
-          <div class="case-badge-num">240</div>
-          <div class="case-badge-label">Leads/maand</div>
-        </div>
-      </div>
-      <div class="case-content">
-        <div class="case-label">Case Study</div>
-        <h2>Van wisselende instroom naar 240 leads per maand</h2>
-        <p>
-          Een Belgisch bouwbedrijf met inconsistente leads. Soms 80, soms 150. 
-          We implementeerden HubSpot als cockpit, SEO voor organisch verkeer, 
-          Google Ads voor directe vraag en social voor merkbekendheid. 
-          Resultaat: stabiele groei, zelfs tijdens de bouwcrisis.
-        </p>
-        <div class="case-stats">
-          <div class="case-stat">
-            <div class="case-stat-num">40%</div>
-            <div class="case-stat-label">Via SEO</div>
-          </div>
-          <div class="case-stat">
-            <div class="case-stat-num">35%</div>
-            <div class="case-stat-label">Via Google Ads</div>
-          </div>
-          <div class="case-stat">
-            <div class="case-stat-num">25%</div>
-            <div class="case-stat-label">Via Social</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Client logos -->
-  <section class="logos-section">
-    <div class="logos-label">Marktleiders die ons vertrouwen</div>
-    <div class="logos-grid">
-      <div class="logo-item"><img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve"></div>
-      <div class="logo-item"><img src="/images/klanten/15.png" alt="BMW"></div>
-      <div class="logo-item"><img src="/images/klanten/7-2.png" alt="GE Healthcare"></div>
-      <div class="logo-item"><img src="/images/klanten/3-4.png" alt="Willems Veranda"></div>
-      <div class="logo-item"><img src="/images/klanten/13.png" alt="DSM Keukens"></div>
-      <div class="logo-item"><img src="/images/klanten/1-4.png" alt="Decospan"></div>
-      <div class="logo-item"><img src="/images/klanten/8-2.png" alt="Citrosuco"></div>
-      <div class="logo-item"><img src="/images/klanten/11-1.png" alt="Haelvoet"></div>
-      <div class="logo-item"><img src="/images/klanten/4-2.png" alt="Skylux"></div>
-      <div class="logo-item"><img src="/images/klanten/19.png" alt="Keolis"></div>
-      <div class="logo-item"><img src="/images/klanten/20.png" alt="Nuscience"></div>
-      <div class="logo-item"><img src="/images/klanten/17.png" alt="Medina"></div>
-    </div>
-  </section>
-
-  <!-- Form -->
-  <section class="form-section" id="contact">
-    <div class="form-grid">
-      <div class="form-content">
-        <h2>Klaar om te<br><span>domineren?</span></h2>
-        <p>
-          30 minuten. Geen verkooppraatje. Concrete inzichten voor jouw situatie. 
-          We reageren binnen 24 uur.
-        </p>
-        <ul class="form-features">
-          <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Analyse van je huidige situatie
-          </li>
-          <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Quick wins die je direct kunt toepassen
-          </li>
-          <li>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Helder voorstel als er een fit is
-          </li>
-        </ul>
-      </div>
-      
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="dataLayer.push({'event': 'form_submit'});">
-        <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
-        <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
-        
-        <!-- Honeypot -->
-        <input type="checkbox" name="botcheck" class="ohnohoney" tabindex="-1" autocomplete="off">
-        
-        <div class="form-group">
-          <label>Naam *</label>
-          <input type="text" name="name" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Bedrijf</label>
-          <input type="text" name="company">
-        </div>
-        
-        <div class="form-group">
-          <label>Maandelijks marketingbudget</label>
-          <select name="budget">
-            <option value="">Selecteer...</option>
-            <option value="< €2.000">< €2.000/maand</option>
-            <option value="€2.000 - €5.000">€2.000 - €5.000/maand</option>
-            <option value="€5.000 - €10.000">€5.000 - €10.000/maand</option>
-            <option value="> €10.000">> €10.000/maand</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label>Grootste uitdaging *</label>
-          <textarea name="message" rows="4" required placeholder="Waar loop je tegenaan?"></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">
-          Plan mijn gesprek
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    © 2025 CNIP | Ottergemsesteenweg Zuid 808, 9000 Gent | 
-    <a href="tel:+3293965883">+32 9 396 58 83</a> |
-    <a href="/privacy.html">Privacy</a>
-  </footer>
-
-  <!-- Cookie Banner -->
-  <div id="cookieBanner" class="cookie-banner">
-    <span class="cookie-icon">🍪</span>
-    <p>Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-buttons">
-      <button onclick="acceptCookies()" class="cookie-btn accept">Prima</button>
-      <button onclick="declineCookies()" class="cookie-btn decline">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-link">Meer info</a>
-  </div>
-
-  <style>
+    
+    .hero__logos img {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+      transition: opacity var(--transition-normal);
+    }
+    
+    .hero__logos img:hover {
+      opacity: 1;
+    }
+    
+    /* ============================================
+       Stats Bar
+    ============================================ */
+    .stats {
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(232, 181, 99, 0.1);
+      border-bottom: 1px solid rgba(232, 181, 99, 0.1);
+      padding: 60px 40px;
+    }
+    
+    .stats__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+    
+    .stats__item {
+      text-align: center;
+    }
+    
+    .stats__number {
+      font-size: clamp(36px, 5.5vw, 54px);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -2px;
+    }
+    
+    .stats__label {
+      font-size: 13px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* ============================================
+       Problem Section (Herkenning)
+    ============================================ */
+    .problem {
+      padding: 120px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .problem__grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .problem__visual {
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .problem__visual::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 2px solid rgba(232, 181, 99, 0.25);
+      border-radius: var(--radius-lg);
+      transform: rotate(-2deg);
+    }
+    
+    .problem__image {
+      border-radius: var(--radius-md);
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 15%;
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(232, 181, 99, 0.15);
+    }
+    
+    .problem__content h2 {
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.12;
+      letter-spacing: -1px;
+    }
+    
+    .problem__content h2 span {
+      color: var(--gold);
+    }
+    
+    .problem__intro {
+      font-size: 17px;
+      opacity: 0.85;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    
+    .problem__list {
+      list-style: none;
+    }
+    
+    .problem__list li {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .problem__list li:last-child {
+      border-bottom: none;
+    }
+    
+    .problem__list svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    
+    /* ============================================
+       Cockpit Section (USP)
+    ============================================ */
+    .cockpit {
+      padding: 120px 40px;
+      background: linear-gradient(180deg, rgba(232, 181, 99, 0.06) 0%, transparent 100%);
+      position: relative;
+    }
+    
+    .cockpit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+    }
+    
+    .cockpit__inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .cockpit__label {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(232, 181, 99, 0.15);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      margin-bottom: 24px;
+    }
+    
+    .cockpit__title {
+      font-size: clamp(28px, 4.5vw, 44px);
+      font-weight: 900;
+      margin-bottom: 24px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+    
+    .cockpit__title span {
+      color: var(--gold);
+    }
+    
+    .cockpit__description {
+      font-size: 18px;
+      opacity: 0.85;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+    
+    .cockpit__features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .cockpit__feature {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(232, 181, 99, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      transition: border-color var(--transition-normal), transform var(--transition-normal);
+    }
+    
+    .cockpit__feature:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    
+    .cockpit__feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(232, 181, 99, 0.1);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    
+    .cockpit__feature-icon svg {
+      color: var(--gold);
+    }
+    
+    .cockpit__feature h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .cockpit__feature p {
+      font-size: 14px;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+    
+    /* ============================================
+       Services Section
+    ============================================ */
+    .services {
+      padding: 120px 40px;
+    }
+    
+    .services__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px;
+    }
+    
+    .services__header h2 {
+      font-size: clamp(30px, 4.5vw, 52px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    
+    .services__header p {
+      font-size: 17px;
+      opacity: 0.8;
+    }
+    
+    .services__grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .service-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(232, 181, 99, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-slow);
+    }
+    
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(232, 181, 99, 0.15);
+    }
+    
+    .service-card:hover::before {
+      opacity: 1;
+    }
+    
+    .service-card__number {
+      font-size: 44px;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(232, 181, 99, 0.25);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    
+    .service-card p {
+      font-size: 14px;
+      opacity: 0.75;
+      line-height: 1.6;
+    }
+    
+    /* ============================================
+       Case Studies Section
+    ============================================ */
+    .cases {
+      padding: 120px 40px;
+      background: rgba(255, 255, 255, 0.01);
+    }
+    
+    .cases__header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 80px;
+    }
+    
+    .cases__label {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(232, 181, 99, 0.1);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+    
+    .cases__header h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+    
+    /* Individual case */
+    .case {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .case + .case {
+      margin-top: 100px;
+      padding-top: 100px;
+      border-top: 1px solid rgba(232, 181, 99, 0.1);
+    }
+    
+    .case__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    
+    .case:nth-child(even) .case__grid {
+      direction: rtl;
+    }
+    
+    .case:nth-child(even) .case__grid > * {
+      direction: ltr;
+    }
+    
+    .case__visual {
+      position: relative;
+    }
+    
+    .case__image {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid rgba(232, 181, 99, 0.15);
+    }
+    
+    .case__badge {
+      position: absolute;
+      bottom: -16px;
+      right: 24px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(232, 181, 99, 0.35);
+    }
+    
+    .case__badge-number {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    
+    .case__badge-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    
+    .case__content {
+      padding: 16px 0;
+    }
+    
+    .case__client {
+      font-size: 11px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .case__title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    
+    /* Case narrative: Situatie, Aanpak, Resultaat */
+    .case__narrative {
+      margin-bottom: 28px;
+    }
+    
+    .case__narrative-item {
+      margin-bottom: 16px;
+    }
+    
+    .case__narrative-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    
+    .case__narrative-text {
+      font-size: 15px;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+    
+    .case__stats {
+      display: flex;
+      gap: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(232, 181, 99, 0.15);
+    }
+    
+    .case__stat-number {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    
+    .case__stat-label {
+      font-size: 11px;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* ============================================
+       Logos Section
+    ============================================ */
+    .logos {
+      padding: 80px 40px;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(232, 181, 99, 0.08);
+      border-bottom: 1px solid rgba(232, 181, 99, 0.08);
+    }
+    
+    .logos__label {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 40px;
+    }
+    
+    .logos__grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    
+    .logos__item {
+      aspect-ratio: 3 / 2;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(232, 181, 99, 0.1);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-normal);
+    }
+    
+    .logos__item:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+    
+    .logos__item img {
+      max-width: 80%;
+      max-height: 65%;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+      transition: opacity var(--transition-normal);
+    }
+    
+    .logos__item:hover img {
+      opacity: 1;
+    }
+    
+    /* ============================================
+       Contact Form Section
+    ============================================ */
+    .contact {
+      padding: 120px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    
+    .contact__content {
+      position: sticky;
+      top: 120px;
+    }
+    
+    .contact__title {
+      font-size: clamp(30px, 4.5vw, 50px);
+      font-weight: 900;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    
+    .contact__title span {
+      color: var(--gold);
+    }
+    
+    .contact__description {
+      font-size: 17px;
+      opacity: 0.85;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    
+    /* What you get in the call */
+    .contact__promise {
+      background: rgba(232, 181, 99, 0.08);
+      border: 1px solid rgba(232, 181, 99, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+    
+    .contact__promise-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--gold);
+    }
+    
+    .contact__promise-list {
+      list-style: none;
+    }
+    
+    .contact__promise-list li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+    }
+    
+    .contact__promise-list svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    
+    .contact__guarantee {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+    
+    .contact__guarantee svg {
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    
+    /* Form styling */
+    .form {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(232, 181, 99, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+    }
+    
+    .form__group {
+      margin-bottom: 24px;
+    }
+    
+    .form__label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .form__input,
+    .form__textarea,
+    .form__select {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid rgba(232, 181, 99, 0.15);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      font-size: 16px;
+      font-family: inherit;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    }
+    
+    .form__input:focus,
+    .form__textarea:focus,
+    .form__select:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(232, 181, 99, 0.05);
+    }
+    
+    .form__input::placeholder,
+    .form__textarea::placeholder {
+      color: var(--gray-600);
+    }
+    
+    .form__select option {
+      background: var(--black);
+      color: var(--white);
+    }
+    
+    /* Honeypot - hidden from users */
+    .form__honeypot {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 0;
+      z-index: -1;
+    }
+    
+    .form__submit {
+      width: 100%;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      font-weight: 900;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .form__submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(232, 181, 99, 0.4);
+    }
+    
+    .form__submit svg {
+      transition: transform var(--transition-normal);
+    }
+    
+    .form__submit:hover svg {
+      transform: translateX(4px);
+    }
+    
+    /* ============================================
+       Footer
+    ============================================ */
+    .footer {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(232, 181, 99, 0.1);
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+    
+    .footer a {
+      color: var(--gold);
+      transition: opacity var(--transition-fast);
+    }
+    
+    .footer a:hover {
+      opacity: 0.8;
+    }
+    
+    /* ============================================
+       Cookie Banner
+    ============================================ */
     .cookie-banner {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      background: #1a1a1a;
-      border: 1px solid rgba(232,181,99,.2);
-      border-radius: 16px;
+      background: var(--gray-900);
+      border: 1px solid rgba(232, 181, 99, 0.2);
+      border-radius: var(--radius-md);
       padding: 16px 20px;
       display: flex;
       align-items: center;
       gap: 12px;
       font-size: 14px;
-      color: #fff;
       z-index: 9999;
-      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      box-shadow: var(--shadow-lg);
       animation: slideUp 0.4s ease-out;
       max-width: calc(100% - 40px);
     }
+    
     @keyframes slideUp {
-      from { transform: translateY(100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
-    .cookie-banner.hidden { display: none; }
-    .cookie-icon { font-size: 24px; flex-shrink: 0; }
-    .cookie-banner p { margin: 0; color: rgba(255,255,255,.9); }
-    .cookie-buttons { display: flex; gap: 8px; flex-shrink: 0; }
-    .cookie-btn {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
+    
+    .cookie-banner.is-hidden {
+      display: none;
     }
-    .cookie-btn.accept {
-      background: linear-gradient(135deg, #E8B563, #d4a049);
-      color: #0a0a0a;
-    }
-    .cookie-btn.accept:hover { transform: scale(1.05); }
-    .cookie-btn.decline {
-      background: transparent;
-      color: rgba(255,255,255,.6);
-      border: 1px solid rgba(255,255,255,.2);
-    }
-    .cookie-btn.decline:hover {
-      border-color: rgba(255,255,255,.4);
-      color: #fff;
-    }
-    .cookie-link {
-      color: rgba(255,255,255,.4);
-      font-size: 11px;
-      text-decoration: none;
+    
+    .cookie-banner__icon {
+      font-size: 24px;
       flex-shrink: 0;
     }
-    .cookie-link:hover { color: #E8B563; }
-    @media (max-width: 600px) {
+    
+    .cookie-banner__text {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .cookie-banner__buttons {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    
+    .cookie-banner__btn {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+    
+    .cookie-banner__btn--accept {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+    
+    .cookie-banner__btn--accept:hover {
+      transform: scale(1.05);
+    }
+    
+    .cookie-banner__btn--decline {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .cookie-banner__btn--decline:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
+    
+    .cookie-banner__link {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    
+    .cookie-banner__link:hover {
+      color: var(--gold);
+    }
+    
+    /* ============================================
+       Responsive Styles
+    ============================================ */
+    @media (max-width: 1024px) {
+      .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .logos__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .cockpit__features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        padding: 16px 24px;
+      }
+      
+      .hero__content {
+        padding: 140px 24px 80px;
+      }
+      
+      .hero__logos {
+        gap: 20px;
+      }
+      
+      .hero__logos img {
+        height: 22px;
+      }
+      
+      .stats {
+        padding: 40px 24px;
+      }
+      
+      .stats__inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      
+      .problem {
+        padding: 80px 24px;
+      }
+      
+      .problem__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      
+      .problem__visual {
+        order: 2;
+        max-width: 280px;
+      }
+      
+      .cockpit {
+        padding: 80px 24px;
+      }
+      
+      .cockpit__features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .services {
+        padding: 80px 24px;
+      }
+      
+      .services__grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cases {
+        padding: 80px 24px;
+      }
+      
+      .case__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .case:nth-child(even) .case__grid {
+        direction: ltr;
+      }
+      
+      .case__badge {
+        bottom: -12px;
+        right: 16px;
+        padding: 14px 18px;
+      }
+      
+      .case__badge-number {
+        font-size: 26px;
+      }
+      
+      .logos {
+        padding: 60px 24px;
+      }
+      
+      .logos__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .contact {
+        padding: 80px 24px;
+      }
+      
+      .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      
+      .contact__content {
+        position: static;
+      }
+      
+      .form {
+        padding: 32px 24px;
+      }
+      
       .cookie-banner {
         flex-wrap: wrap;
         bottom: 12px;
@@ -1024,50 +1272,577 @@
         right: 12px;
         max-width: none;
       }
-      .cookie-banner p { flex: 1 1 100%; order: 1; }
-      .cookie-icon { order: 0; }
-      .cookie-buttons { order: 2; margin-top: 8px; }
-      .cookie-link { order: 3; margin-top: 8px; margin-left: auto; }
+      
+      .cookie-banner__text {
+        flex: 1 1 100%;
+        order: 1;
+      }
+      
+      .cookie-banner__icon {
+        order: 0;
+      }
+      
+      .cookie-banner__buttons {
+        order: 2;
+        margin-top: 8px;
+      }
+      
+      .cookie-banner__link {
+        order: 3;
+        margin-top: 8px;
+        margin-left: auto;
+      }
     }
   </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="https://cnip.be" class="header__logo" aria-label="CNIP Homepage">CNIP</a>
+      <a href="#contact" class="header__cta">Gratis gesprek</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <span class="hero__label">Marketing Bureau Gent</span>
+        <h1 id="hero-title" class="hero__title">
+          Marketing uitbesteden<br>aan <span>wie het écht kan</span>
+        </h1>
+        <p class="hero__subtitle">
+          Geen juniors. Geen 5 freelancers managen. Wél een senior team met één cockpit 
+          waarin je ziet wat werkt — en waarom. Al 23 jaar voor marktleiders.
+        </p>
+        <a href="#contact" class="hero__cta">
+          Start met een gratis analyse
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="hero__clients">
+        <p class="hero__clients-label">Vertrouwd door marktleiders</p>
+        <div class="hero__logos">
+          <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy">
+          <img src="/images/klanten/15.png" alt="BMW" loading="lazy">
+          <img src="/images/klanten/7-2.png" alt="GE Healthcare" loading="lazy">
+          <img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy">
+          <img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" aria-label="Resultaten in cijfers">
+    <div class="stats__inner">
+      <div class="stats__item">
+        <div class="stats__number">23</div>
+        <div class="stats__label">Jaar ervaring</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__number">52K</div>
+        <div class="stats__label">Volgers voor Hof van Cleve</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__number">240</div>
+        <div class="stats__label">Leads/maand voor bouwklant</div>
+      </div>
+      <div class="stats__item">
+        <div class="stats__number">51</div>
+        <div class="stats__label">Keywords top 3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section - Herkenning -->
+  <section class="problem" aria-labelledby="problem-title">
+    <div class="problem__grid">
+      <div class="problem__visual">
+        <img src="/images/christophecnip.png" alt="Christophe Dejaeghere - Oprichter CNIP" class="problem__image" loading="lazy">
+      </div>
+      <div class="problem__content">
+        <h2 id="problem-title">Herken je dit <span>als ondernemer?</span></h2>
+        <p class="problem__intro">
+          Je wilt marketing die werkt, maar je hebt geen tijd om een intern team aan te sturen, 
+          freelancers te coördineren of zelf alles te leren. Ondertussen verlies je overzicht en geld.
+        </p>
+        <ul class="problem__list">
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span><strong>Losse freelancers</strong> — geen overzicht, veel afstemming, wisselende kwaliteit</span>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span><strong>Junior teams bij grote bureaus</strong> — jouw budget betaalt hun leercurve</span>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span><strong>Geen inzicht in ROI</strong> — je geeft uit maar weet niet wat het oplevert</span>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+            <span><strong>Marketing en sales los van elkaar</strong> — leads vallen tussen wal en schip</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cockpit Section - USP -->
+  <section class="cockpit" aria-labelledby="cockpit-title">
+    <div class="cockpit__inner">
+      <span class="cockpit__label">Onze aanpak</span>
+      <h2 id="cockpit-title" class="cockpit__title">Eén cockpit. <span>Volledig overzicht.</span></h2>
+      <p class="cockpit__description">
+        Wij zijn geen bureau dat losse campagnes draait. We bouwen een marketingmotor met één dashboard 
+        waar je ziet wat werkt, wat niet, en waar je geld naartoe gaat. Marketing wordt pas strategie 
+        als je de cijfers hebt om te sturen.
+      </p>
+      
+      <div class="cockpit__features">
+        <div class="cockpit__feature">
+          <div class="cockpit__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 20V10M18 20V4M6 20v-4"/>
+            </svg>
+          </div>
+          <h3>Realtime inzicht</h3>
+          <p>Alle kanalen in één dashboard. Je ziet exact welk kanaal wat oplevert.</p>
+        </div>
+        <div class="cockpit__feature">
+          <div class="cockpit__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Eén aanspreekpunt</h3>
+          <p>Senior teamlead die alles coördineert. Geen 5 contacten managen.</p>
+        </div>
+        <div class="cockpit__feature">
+          <div class="cockpit__feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Resultaat = retentie</h3>
+          <p>Geen langlopende contracten. Je blijft omdat het werkt, niet omdat het moet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" aria-labelledby="services-title">
+    <header class="services__header">
+      <h2 id="services-title">Wat wij overnemen</h2>
+      <p>Alles onder één dak. Geen losse eindjes. Volledig geïntegreerd in je cockpit.</p>
+    </header>
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-card__number">01</div>
+        <h3>SEO &amp; Content</h3>
+        <p>Organische zichtbaarheid die blijft werken. 51+ keywords top 3 voor Willems Veranda.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">02</div>
+        <h3>Google Ads</h3>
+        <p>ROI-focused campagnes. Geen geld verbranden aan verkeerde zoekwoorden.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">03</div>
+        <h3>Social Media</h3>
+        <p>Thought leadership dat converteert. Van 0 naar 52K volgers voor Hof van Cleve.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">04</div>
+        <h3>HubSpot &amp; CRM</h3>
+        <p>Marketing automation die leads opvolgt terwijl jij slaapt. Gold Partner.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">05</div>
+        <h3>Video Productie</h3>
+        <p>Cinema-kwaliteit. 500+ producties voor merken als DSM Keukens.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-card__number">06</div>
+        <h3>Strategie</h3>
+        <p>Geen losse acties. Eén systeem dat samenwerkt, schaalt en meetbaar is.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="cases" aria-labelledby="cases-title">
+    <header class="cases__header">
+      <span class="cases__label">Bewijs dat het werkt</span>
+      <h2 id="cases-title">Situatie → Aanpak → Resultaat</h2>
+    </header>
+    
+    <!-- Case 1: Bouwbedrijf -->
+    <article class="case">
+      <div class="case__grid">
+        <div class="case__visual">
+          <img src="/images/1-3.png" alt="Lead generatie dashboard" class="case__image" loading="lazy">
+          <div class="case__badge">
+            <div class="case__badge-number">240</div>
+            <div class="case__badge-label">Leads/maand</div>
+          </div>
+        </div>
+        <div class="case__content">
+          <span class="case__client">Belgisch Bouwbedrijf</span>
+          <h3 class="case__title">Van wisselende instroom naar voorspelbare groei</h3>
+          <div class="case__narrative">
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Situatie</div>
+              <p class="case__narrative-text">Inconsistente leads: soms 80, soms 150. Geen overzicht welk kanaal wat opleverde. Marketing en sales werkten langs elkaar.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Aanpak</div>
+              <p class="case__narrative-text">HubSpot als centrale cockpit. SEO voor organisch verkeer, Google Ads voor directe vraag, social voor merkbekendheid. Alles meetbaar in één dashboard.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Resultaat</div>
+              <p class="case__narrative-text">Stabiele 240 leads per maand. Volledige attributie per kanaal. Groei zelfs tijdens de bouwcrisis.</p>
+            </div>
+          </div>
+          <div class="case__stats">
+            <div class="case__stat">
+              <div class="case__stat-number">40%</div>
+              <div class="case__stat-label">Via SEO</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">35%</div>
+              <div class="case__stat-label">Via Google Ads</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">25%</div>
+              <div class="case__stat-label">Via Social</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Case 2: Hof van Cleve -->
+    <article class="case">
+      <div class="case__grid">
+        <div class="case__visual">
+          <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve social media" class="case__image" loading="lazy">
+          <div class="case__badge">
+            <div class="case__badge-number">52K</div>
+            <div class="case__badge-label">Volgers</div>
+          </div>
+        </div>
+        <div class="case__content">
+          <span class="case__client">Hof van Cleve</span>
+          <h3 class="case__title">3-sterrenrestaurant naar social media autoriteit</h3>
+          <div class="case__narrative">
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Situatie</div>
+              <p class="case__narrative-text">Beperkte online aanwezigheid ondanks wereldwijde culinaire reputatie. Geen consistente contentstrategie.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Aanpak</div>
+              <p class="case__narrative-text">Thought leadership strategie: behind-the-scenes content, seizoensgebonden storytelling, community building. 100% organische groei, geen advertenties.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Resultaat</div>
+              <p class="case__narrative-text">52.000+ volgers organisch opgebouwd. Internationaal bereik. Reserveringsdruk via social kanalen.</p>
+            </div>
+          </div>
+          <div class="case__stats">
+            <div class="case__stat">
+              <div class="case__stat-number">100%</div>
+              <div class="case__stat-label">Organisch</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">52K</div>
+              <div class="case__stat-label">Volgers</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">Int'l</div>
+              <div class="case__stat-label">Bereik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Case 3: Willems Veranda -->
+    <article class="case">
+      <div class="case__grid">
+        <div class="case__visual">
+          <img src="/images/klanten/3-4.png" alt="Willems Veranda SEO resultaten" class="case__image" style="object-fit: contain; background: rgba(255,255,255,0.05); padding: 40px;" loading="lazy">
+          <div class="case__badge">
+            <div class="case__badge-number">51+</div>
+            <div class="case__badge-label">Top 3 keywords</div>
+          </div>
+        </div>
+        <div class="case__content">
+          <span class="case__client">Willems Veranda</span>
+          <h3 class="case__title">Van onzichtbaar naar SEO-dominantie</h3>
+          <div class="case__narrative">
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Situatie</div>
+              <p class="case__narrative-text">Sterke lokale reputatie, maar online nauwelijks vindbaar. Concurrent domineerde alle relevante zoektermen.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Aanpak</div>
+              <p class="case__narrative-text">Technische SEO-audit, content gap analyse, strategische linkbuilding. Focus op high-intent keywords met koopintentie.</p>
+            </div>
+            <div class="case__narrative-item">
+              <div class="case__narrative-label">Resultaat</div>
+              <p class="case__narrative-text">51+ keywords in top 3 Google. Organisch verkeer verdrievoudigd. Structurele stroom kwalitatieve offerteaanvragen.</p>
+            </div>
+          </div>
+          <div class="case__stats">
+            <div class="case__stat">
+              <div class="case__stat-number">51+</div>
+              <div class="case__stat-label">Top 3 keywords</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">3x</div>
+              <div class="case__stat-label">Meer verkeer</div>
+            </div>
+            <div class="case__stat">
+              <div class="case__stat-number">↑</div>
+              <div class="case__stat-label">Offerte-aanvragen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="logos" aria-label="Klanten">
+    <p class="logos__label">Marktleiders die ons vertrouwen</p>
+    <div class="logos__grid">
+      <div class="logos__item"><img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/15.png" alt="BMW" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/7-2.png" alt="GE Healthcare" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/1-4.png" alt="Decospan" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/8-2.png" alt="Citrosuco" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/11-1.png" alt="Haelvoet" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/4-2.png" alt="Skylux" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/19.png" alt="Keolis" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/20.png" alt="Nuscience" loading="lazy"></div>
+      <div class="logos__item"><img src="/images/klanten/17.png" alt="Medina" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__grid">
+      <div class="contact__content">
+        <h2 id="contact-title" class="contact__title">Klaar voor <span>voorspelbare groei?</span></h2>
+        <p class="contact__description">
+          In 30 minuten analyseren we je huidige situatie en laten we zien waar 
+          je marketing geld lekt — en waar de grootste kansen liggen.
+        </p>
+        
+        <div class="contact__promise">
+          <p class="contact__promise-title">Wat je krijgt in dit gesprek:</p>
+          <ul class="contact__promise-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Quick scan van je huidige kanalen en resultaten
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              2-3 concrete quick wins die je direct kunt toepassen
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Eerlijk advies of wij de juiste fit zijn (of niet)
+            </li>
+          </ul>
+        </div>
+        
+        <p class="contact__guarantee">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Geen verkooppraatje. Geen verplichtingen. Binnen 24 uur reactie.
+        </p>
+      </div>
+      
+      <form class="form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
+        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+        <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
+        
+        <!-- Honeypot spam protection -->
+        <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
+        
+        <div class="form__group">
+          <label for="name" class="form__label">Naam *</label>
+          <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
+        </div>
+        
+        <div class="form__group">
+          <label for="email" class="form__label">Email *</label>
+          <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+        </div>
+        
+        <div class="form__group">
+          <label for="company" class="form__label">Bedrijf</label>
+          <input type="text" id="company" name="company" class="form__input" autocomplete="organization">
+        </div>
+        
+        <div class="form__group">
+          <label for="budget" class="form__label">Maandelijks marketingbudget</label>
+          <select id="budget" name="budget" class="form__select">
+            <option value="">Selecteer...</option>
+            <option value="< €2.000">&lt; €2.000/maand</option>
+            <option value="€2.000 - €5.000">€2.000 - €5.000/maand</option>
+            <option value="€5.000 - €10.000">€5.000 - €10.000/maand</option>
+            <option value="> €10.000">&gt; €10.000/maand</option>
+          </select>
+        </div>
+        
+        <div class="form__group">
+          <label for="message" class="form__label">Grootste uitdaging *</label>
+          <textarea id="message" name="message" class="form__textarea" rows="4" required placeholder="Waar loop je tegenaan met je huidige marketing?"></textarea>
+        </div>
+        
+        <button type="submit" class="form__submit">
+          Start mijn gratis analyse
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <p>
+      © 2025 CNIP | Ottergemsesteenweg Zuid 808, 9000 Gent | 
+      <a href="tel:+3293965883">+32 9 396 58 83</a> | 
+      <a href="/privacy.html">Privacy</a>
+    </p>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie toestemming">
+    <span class="cookie-banner__icon" aria-hidden="true">🍪</span>
+    <p class="cookie-banner__text">Wij gebruiken cookies voor analytics. Cool?</p>
+    <div class="cookie-banner__buttons">
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="acceptCookies">Prima</button>
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--decline" id="declineCookies">Nee</button>
+    </div>
+    <a href="/privacy.html" class="cookie-banner__link">Meer info</a>
+  </div>
 
   <script>
-    // Cookie consent
+    // Cookie consent management
     (function() {
+      'use strict';
+      
+      var banner = document.getElementById('cookieBanner');
+      var acceptBtn = document.getElementById('acceptCookies');
+      var declineBtn = document.getElementById('declineCookies');
+      
+      // Check existing consent
       var consent = localStorage.getItem('cookieConsent');
       if (consent === 'accepted' || consent === 'declined') {
-        document.getElementById('cookieBanner').classList.add('hidden');
+        banner.classList.add('is-hidden');
       }
+      
+      // Disable GA if declined
       if (consent === 'declined') {
         window['ga-disable-G-XXXXXXX'] = true;
       }
+      
+      // Accept cookies
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.add('is-hidden');
+        // Trigger GTM consent update if needed
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'cookie_consent',
+            'consent_status': 'accepted'
+          });
+        }
+      });
+      
+      // Decline cookies
+      declineBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.classList.add('is-hidden');
+        // Clear existing GA cookies
+        document.cookie.split(';').forEach(function(c) {
+          var name = c.trim().split('=')[0];
+          if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
+            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/;domain=' + window.location.hostname;
+            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/';
+          }
+        });
+      });
     })();
 
-    function acceptCookies() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      document.getElementById('cookieBanner').classList.add('hidden');
-    }
-
-    function declineCookies() {
-      localStorage.setItem('cookieConsent', 'declined');
-      document.getElementById('cookieBanner').classList.add('hidden');
-      document.cookie.split(";").forEach(function(c) {
-        if (c.trim().startsWith("_ga")) {
-          document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        }
-      });
-    }
-  </script>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       });
+    });
+
+    // Form submission tracking
+    document.querySelector('.form').addEventListener('submit', function() {
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'form_submit',
+          'form_name': 'marketing_uitbesteden_contact'
+        });
+      }
     });
   </script>
 </body>
