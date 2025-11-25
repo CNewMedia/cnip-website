@@ -518,7 +518,7 @@
       opacity:1;
     }
     
-    /* Form section */
+    /* Form section - FIXED 2-COLUMN LAYOUT */
     .form-section{
       padding:120px 40px;
       max-width:1400px;
@@ -529,6 +529,10 @@
       grid-template-columns:1fr 1fr;
       gap:80px;
       align-items:start;
+    }
+    .form-content{
+      position:sticky;
+      top:120px;
     }
     .form-content h2{
       font-size:clamp(32px,5vw,52px);
@@ -672,6 +676,7 @@
       .logos-grid{grid-template-columns:repeat(2,1fr)}
       .form-section{padding:80px 24px}
       .form-grid{grid-template-columns:1fr;gap:48px}
+      .form-content{position:static}
       .contact-form{padding:32px 24px}
     }
   </style>
@@ -890,13 +895,13 @@
         </ul>
       </div>
       
-      <<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="dataLayer.push({'event': 'form_submit'});">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="dataLayer.push({'event': 'form_submit'});">
         <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
         <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
         <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
         
         <!-- Honeypot -->
-        <input type="text" name="website" class="ohnohoney" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="ohnohoney" tabindex="-1" autocomplete="off">
         
         <div class="form-group">
           <label>Naam *</label>
