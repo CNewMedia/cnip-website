@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://api.web3forms.com">
   
+  <!-- NIEUW: Preload kritieke hero afbeelding alleen voor desktop -->
+  <link rel="preload" as="image" href="/images/Hof van Cleve.jpg" media="(min-width: 769px)">
+  
   <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -220,7 +223,7 @@
     }
     
     /* ============================================
-       Hero Section
+       Hero Section - MOBILE OPTIMIZED
     ============================================ */
     .hero {
       min-height: 100vh;
@@ -230,19 +233,27 @@
       overflow: hidden;
     }
     
+    /* MOBILE: Geen achtergrondafbeelding, alleen gradient */
     .hero__bg {
       position: absolute;
       inset: 0;
-      background: 
-        linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.72) 50%, rgba(10, 10, 10, 0.92) 100%),
-        url('/images/Hof van Cleve.jpg') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(10, 10, 10, 1) 0%, rgba(26, 26, 26, 1) 50%, rgba(10, 10, 10, 1) 100%);
     }
     
     .hero__bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(232, 181, 99, 0.12), transparent 60%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(232, 181, 99, 0.15), transparent 60%);
+    }
+    
+    /* DESKTOP: Laad de afbeelding alleen op grotere schermen */
+    @media (min-width: 769px) {
+      .hero__bg {
+        background: 
+          linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.72) 50%, rgba(10, 10, 10, 0.92) 100%),
+          url('/images/Hof van Cleve.jpg') center/cover no-repeat;
+      }
     }
     
     .hero__content {
@@ -1023,7 +1034,7 @@
       color: var(--white);
     }
     
-    /* Honeypot - hidden from users */
+    /* Honeypot - hidden from users, accessible for screen readers */
     .form__honeypot {
       opacity: 0;
       position: absolute;
@@ -1083,7 +1094,7 @@
     }
     
     /* ============================================
-       Cookie Banner
+       Cookie Banner - FIXED CONTRAST
     ============================================ */
     .cookie-banner {
       position: fixed;
@@ -1161,14 +1172,17 @@
       color: var(--white);
     }
     
+    /* FIX: Verhoogd contrast voor "Meer info" link - was rgba(255,255,255,0.4), nu var(--gold) */
     .cookie-banner__link {
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 11px;
+      color: var(--gold);
+      font-size: 12px;
       flex-shrink: 0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
     
     .cookie-banner__link:hover {
-      color: var(--gold);
+      color: var(--gold-light);
     }
     
     /* ============================================
@@ -1320,6 +1334,21 @@
         margin-top: 8px;
         margin-left: auto;
       }
+    }
+    
+    /* ============================================
+       Screen reader only class
+    ============================================ */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
   </style>
 </head>
@@ -1737,8 +1766,9 @@
         <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
         <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
         
-        <!-- Honeypot spam protection -->
-        <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
+        <!-- Honeypot spam protection - FIX: Added aria-label for accessibility -->
+        <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
+        <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-label="Laat dit veld leeg indien je een mens bent">
         
         <div class="form__group">
           <label for="name" class="form__label">Naam *</label>
