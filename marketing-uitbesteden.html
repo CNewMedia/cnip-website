@@ -8,6 +8,34 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://api.web3forms.com">
   
+  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Set default consent state (denied until user accepts)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    
+    // Check for existing consent and update immediately if already accepted
+    (function() {
+      var consent = localStorage.getItem('cookieConsent');
+      if (consent === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    })();
+  </script>
+  
   <!-- Google Tag Manager -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -1774,7 +1802,7 @@
   </div>
 
   <script>
-    // Cookie consent management
+    // Cookie consent management with Google Consent Mode v2
     (function() {
       'use strict';
       
@@ -1788,16 +1816,20 @@
         banner.classList.add('is-hidden');
       }
       
-      // Disable GA if declined
-      if (consent === 'declined') {
-        window['ga-disable-G-XXXXXXX'] = true;
-      }
-      
       // Accept cookies
       acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         banner.classList.add('is-hidden');
-        // Trigger GTM consent update if needed
+        
+        // Update Google Consent Mode v2
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        
+        // Trigger GTM consent update event
         if (window.dataLayer) {
           window.dataLayer.push({
             'event': 'cookie_consent',
@@ -1810,6 +1842,15 @@
       declineBtn.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'declined');
         banner.classList.add('is-hidden');
+        
+        // Ensure consent stays denied (already default, but explicit)
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        
         // Clear existing GA cookies
         document.cookie.split(';').forEach(function(c) {
           var name = c.trim().split('=')[0];
@@ -1818,6 +1859,14 @@
             document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/';
           }
         });
+        
+        // Trigger GTM consent update event
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'cookie_consent',
+            'consent_status': 'declined'
+          });
+        }
       });
     })();
 
