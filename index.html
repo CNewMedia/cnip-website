@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
-  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    // Set default consent state (denied until user accepts)
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
+
+// Update Google Consent Mode v2
+gtag('consent', 'update', {
+  'ad_storage': 'granted',
+  'ad_user_data': 'granted',
+  'ad_personalization': 'granted',
+  'analytics_storage': 'granted'
+});
+
+// Send page_view with granted consent
+gtag('event', 'page_view', {
+  page_location: window.location.href,
+  page_title: document.title
+});
+
+  
     
     // Check for existing consent and update immediately if already accepted
     (function() {
