@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
-<script>
-// Update Google Consent Mode v2
-gtag('consent', 'update', {
-  'ad_storage': 'granted',
-  'ad_user_data': 'granted',
-  'ad_personalization': 'granted',
-  'analytics_storage': 'granted'
-});
-
-// Send page_view with granted consent
-gtag('event', 'page_view', {
-  page_location: window.location.href,
-  page_title: document.title
-});
-
-  
+  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    // Set default consent state (denied until user accepts)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
     
     // Check for existing consent and update immediately if already accepted
     (function() {
@@ -270,20 +267,20 @@ gtag('event', 'page_view', {
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 40px 100px;position:relative}
     .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%)}
     .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
-    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-trans:uppercase;margin-bottom:24px}
+    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
     .hero-title{font-size:clamp(48px,9vw,160px);font-weight:900;line-height:1;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px}
     .hero-subtitle{font-size:clamp(18px,2.5vw,32px);opacity:.95;margin-bottom:24px}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
     .cta-primary,.cta-secondary{padding:16px 32px;border-radius:999px;text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
     .cta-primary{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
-    .cta-primary:hover{trans:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
+    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
     .cta-secondary{border:2px solid var(--gold);color:var(--gold)}
     .cta-secondary:hover{background:rgba(232,181,99,.1)}
 
     /* Services */
     .services-section{padding:80px 20px;max-width:1600px;margin:0 auto}
     .section-header{text-align:center;margin-bottom:64px}
-    .section-eyebrow{font-size:11px;color:var(--gold);text-trans:uppercase;letter-spacing:3px;margin-bottom:12px}
+    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
     .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .services-bento{
       display:grid;
@@ -301,7 +298,7 @@ gtag('event', 'page_view', {
       min-height:240px;
     }
     .service-card:hover{
-      trans:translateY(-8px);
+      transform:translateY(-8px);
       border-color:var(--gold);
       background:rgba(255,255,255,.05);
       box-shadow:0 20px 60px rgba(232,181,99,.22);
@@ -346,7 +343,7 @@ gtag('event', 'page_view', {
     }
     .work-item:hover::before{opacity:1}
     .work-item:hover{
-      trans:translateY(-8px);
+      transform:translateY(-8px);
       border-color:var(--gold);
       box-shadow:0 30px 80px rgba(232,181,99,.3);
     }
@@ -361,12 +358,12 @@ gtag('event', 'page_view', {
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:trans .8s cubic-bezier(.4,0,.2,1), filter .8s ease;
+      transition:transform .8s cubic-bezier(.4,0,.2,1), filter .8s ease;
       filter:brightness(1) saturate(1);
     }
     .work-item:hover .work-visual img,
     .work-item:hover .work-visual video{
-      trans:scale(1.08);
+      transform:scale(1.08);
       filter:brightness(1.1) saturate(1.2);
     }
     .work-overlay{
@@ -1288,7 +1285,6 @@ gtag('event', 'page_view', {
     <a href="/privacy.html" class="cookie-link">Meer info</a>
   </div>
 
-  <script src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     // Page loader - Safari fix
     (function(){
@@ -1328,12 +1324,20 @@ gtag('event', 'page_view', {
         banner.classList.add('hidden');
         
         // Update Google Consent Mode v2
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+          
+          // Send page_view with granted consent
+          gtag('event', 'page_view', {
+            page_location: window.location.href,
+            page_title: document.title
+          });
+        }
         
         // Trigger GTM consent update event
         if (window.dataLayer) {
@@ -1350,12 +1354,14 @@ gtag('event', 'page_view', {
         banner.classList.add('hidden');
         
         // Ensure consent stays denied
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
         
         // Clear existing GA cookies
         document.cookie.split(';').forEach(function(c) {
