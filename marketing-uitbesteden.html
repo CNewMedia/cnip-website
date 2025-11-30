@@ -299,8 +299,70 @@
       font-size: clamp(17px, 2.2vw, 22px);
       opacity: 0.9;
       line-height: 1.55;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       max-width: 580px;
+    }
+    
+    /* NIEUW: Hero telefoon prominent */
+    .hero__phone {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding: 16px 24px;
+      background: rgba(232, 181, 99, 0.1);
+      border: 1px solid rgba(232, 181, 99, 0.3);
+      border-radius: var(--radius-md);
+      width: fit-content;
+      transition: all var(--transition-normal);
+    }
+    
+    .hero__phone:hover {
+      background: rgba(232, 181, 99, 0.15);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    
+    .hero__phone-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .hero__phone-icon svg {
+      color: var(--black);
+    }
+    
+    .hero__phone-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .hero__phone-label {
+      font-size: 12px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .hero__phone-number {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    
+    /* Hero CTA's container */
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
     }
     
     .hero__cta {
@@ -327,6 +389,17 @@
     
     .hero__cta:hover svg {
       transform: translateX(4px);
+    }
+    
+    .hero__cta--secondary {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+    }
+    
+    .hero__cta--secondary:hover {
+      border-color: var(--white);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
     }
     
     /* Hero clients */
@@ -1084,6 +1157,13 @@
       color: var(--gray-400);
     }
     
+    /* Extra padding voor mobile sticky CTA */
+    @media (max-width: 768px) {
+      .footer {
+        padding-bottom: 100px;
+      }
+    }
+    
     .footer a {
       color: var(--gold);
       transition: opacity var(--transition-fast);
@@ -1108,7 +1188,7 @@
       align-items: center;
       gap: 12px;
       font-size: 14px;
-      z-index: 9999;
+      z-index: 9998;
       box-shadow: var(--shadow-lg);
       animation: slideUp 0.4s ease-out;
       max-width: calc(100% - 40px);
@@ -1186,6 +1266,77 @@
     }
     
     /* ============================================
+       NIEUW: Sticky Mobile CTA
+    ============================================ */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--gray-900);
+      border-top: 1px solid rgba(232, 181, 99, 0.3);
+      padding: 12px 16px;
+      z-index: 9999;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .sticky-cta__inner {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .sticky-cta__btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 14px;
+      transition: all var(--transition-fast);
+    }
+    
+    .sticky-cta__btn--primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+    
+    .sticky-cta__btn--primary:hover {
+      transform: scale(1.02);
+    }
+    
+    .sticky-cta__btn--secondary {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+    }
+    
+    .sticky-cta__btn--secondary:hover {
+      background: rgba(232, 181, 99, 0.1);
+    }
+    
+    .sticky-cta__btn svg {
+      flex-shrink: 0;
+    }
+    
+    /* Toon sticky CTA alleen op mobile */
+    @media (max-width: 768px) {
+      .sticky-cta {
+        display: block;
+      }
+      
+      /* Pas cookie banner positie aan voor sticky CTA */
+      .cookie-banner {
+        bottom: 80px;
+      }
+    }
+    
+    /* ============================================
        Responsive Styles
     ============================================ */
     @media (max-width: 1024px) {
@@ -1209,6 +1360,26 @@
       
       .hero__content {
         padding: 140px 24px 80px;
+      }
+      
+      .hero__phone {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      
+      .hero__phone-number {
+        font-size: 20px;
+      }
+      
+      .hero__ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .hero__cta {
+        justify-content: center;
+        padding: 18px 32px;
       }
       
       .hero__logos {
@@ -1309,7 +1480,6 @@
       
       .cookie-banner {
         flex-wrap: wrap;
-        bottom: 12px;
         left: 12px;
         right: 12px;
         max-width: none;
@@ -1362,7 +1532,7 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="https://cnip.be" class="header__logo" aria-label="CNIP Homepage">CNIP</a>
-      <a href="#contact" class="header__cta">Gratis gesprek</a>
+      <a href="https://oryen.be/meetings/cdj/online-meeting" class="header__cta">Plan een gesprek</a>
     </div>
   </header>
 
@@ -1379,12 +1549,28 @@
           Geen juniors. Geen 5 freelancers managen. Wél een senior team met één cockpit 
           waarin je ziet wat werkt — en waarom. Al 23 jaar voor marktleiders.
         </p>
-        <a href="#contact" class="hero__cta">
-          Start met een gratis analyse
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+        
+        <!-- NIEUW: Telefoon prominent -->
+        <a href="tel:+3293965883" class="hero__phone">
+          <div class="hero__phone-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="hero__phone-text">
+            <span class="hero__phone-label">Bel ons direct</span>
+            <span class="hero__phone-number">09 396 58 83</span>
+          </div>
         </a>
+        
+        <div class="hero__ctas">
+          <a href="https://oryen.be/meetings/cdj/online-meeting" class="hero__cta">
+            Plan een gesprek
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
       </div>
       
       <div class="hero__clients">
@@ -1722,7 +1908,7 @@
       <div class="contact__content">
         <h2 id="contact-title" class="contact__title">Klaar voor <span>voorspelbare groei?</span></h2>
         <p class="contact__description">
-          In 30 minuten analyseren we je huidige situatie en laten we zien waar 
+          In 30 minuten bespreken we je huidige situatie en laten we zien waar 
           je marketing geld lekt — en waar de grootste kansen liggen.
         </p>
         
@@ -1766,7 +1952,7 @@
         <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
         <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
         
-        <!-- Honeypot spam protection - FIX: Added aria-label for accessibility -->
+        <!-- Honeypot spam protection -->
         <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
         <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-label="Laat dit veld leeg indien je een mens bent">
         
@@ -1785,16 +1971,7 @@
           <input type="text" id="company" name="company" class="form__input" autocomplete="organization">
         </div>
         
-        <div class="form__group">
-          <label for="budget" class="form__label">Maandelijks marketingbudget</label>
-          <select id="budget" name="budget" class="form__select">
-            <option value="">Selecteer...</option>
-            <option value="< €2.000">&lt; €2.000/maand</option>
-            <option value="€2.000 - €5.000">€2.000 - €5.000/maand</option>
-            <option value="€5.000 - €10.000">€5.000 - €10.000/maand</option>
-            <option value="> €10.000">&gt; €10.000/maand</option>
-          </select>
-        </div>
+        <!-- VERWIJDERD: Budget vraag -->
         
         <div class="form__group">
           <label for="message" class="form__label">Grootste uitdaging *</label>
@@ -1802,7 +1979,7 @@
         </div>
         
         <button type="submit" class="form__submit">
-          Start mijn gratis analyse
+          Plan een gesprek
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -1815,10 +1992,31 @@
   <footer class="footer" role="contentinfo">
     <p>
       © 2025 CNIP | Ottergemsesteenweg Zuid 808, 9000 Gent | 
-      <a href="tel:+3293965883">+32 9 396 58 83</a> | 
+      <a href="tel:+3293965883">09 396 58 83</a> | 
       <a href="/privacy.html">Privacy</a>
     </p>
   </footer>
+
+  <!-- NIEUW: Sticky Mobile CTA -->
+  <div class="sticky-cta" role="navigation" aria-label="Snelle acties">
+    <div class="sticky-cta__inner">
+      <a href="tel:+3293965883" class="sticky-cta__btn sticky-cta__btn--secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Bellen
+      </a>
+      <a href="https://oryen.be/meetings/cdj/online-meeting" class="sticky-cta__btn sticky-cta__btn--primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Plan een gesprek
+      </a>
+    </div>
+  </div>
 
   <!-- Cookie Banner -->
   <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie toestemming">
@@ -1900,15 +2098,18 @@
       });
     })();
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links (updated for sticky CTA)
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         var target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          // Account for sticky CTA on mobile
+          var offset = window.innerWidth <= 768 ? 80 : 0;
+          var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
