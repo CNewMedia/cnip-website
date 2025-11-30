@@ -54,12 +54,12 @@
     })(window,document,'script','dataLayer','GTM-M3QJK6VR');
   </script>
   
-  <title>Marketing Uitbesteden | CNIP Marketing Bureau Gent</title>
-  <meta name="description" content="Marketing uitbesteden aan experts? CNIP helpt marktleiders in België met SEO, Google Ads, social media en HubSpot. Van Hof van Cleve tot BMW. Eén cockpit, meetbare groei.">
+  <title>Marketing uitbesteden in Gent | CNIP marketingbureau voor marktleiders</title>
+  <meta name="description" content="Marketing uitbesteden aan een senior team in Gent? CNIP helpt marktleiders in België met SEO, Google Ads, social media en HubSpot. Eén cockpit, duidelijk zicht op ROI.">
   <meta name="robots" content="index, follow">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Marketing Uitbesteden | CNIP Marketing Bureau Gent">
+  <meta property="og:title" content="Marketing uitbesteden in Gent | CNIP marketingbureau voor marktleiders">
   <meta property="og:description" content="Geen juniors. Geen losse freelancers. Wél een senior team dat marktleiders helpt domineren via één cockpit. Al 23 jaar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cnip.be/marketing-uitbesteden">
@@ -76,6 +76,7 @@
     "description": "Marketing bureau gespecialiseerd in SEO, Google Ads, social media en HubSpot voor marktleiders in België.",
     "url": "https://cnip.be",
     "telephone": "+3293965883",
+    "image": "https://cnip.be/images/cnip-logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Ottergemsesteenweg Zuid 808",
@@ -91,7 +92,12 @@
     "areaServed": "België",
     "priceRange": "€€€",
     "foundingDate": "2002",
-    "knowsAbout": ["SEO", "Google Ads", "Social Media Marketing", "HubSpot", "Video Productie", "Marketing Strategie"]
+    "knowsAbout": ["SEO", "Google Ads", "Social Media Marketing", "HubSpot", "Video Productie", "Marketing Strategie"],
+    "sameAs": [
+      "https://www.facebook.com/Oryen.be",
+      "https://www.instagram.com/oryen.be/",
+      "https://www.linkedin.com/company/cnipagency/"
+    ]
   }
   </script>
   
@@ -2019,7 +2025,7 @@
   </div>
 
   <!-- Cookie Banner -->
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie toestemming">
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="false" aria-label="Cookie toestemming">
     <span class="cookie-banner__icon" aria-hidden="true">🍪</span>
     <p class="cookie-banner__text">Wij gebruiken cookies voor analytics. Cool?</p>
     <div class="cookie-banner__buttons">
@@ -2030,13 +2036,21 @@
   </div>
 
   <script>
+    // Defensive gtag definition
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+
     // Cookie consent management with Google Consent Mode v2
     (function() {
       'use strict';
       
       var banner = document.getElementById('cookieBanner');
+      if (!banner) return;
+      
       var acceptBtn = document.getElementById('acceptCookies');
       var declineBtn = document.getElementById('declineCookies');
+      
+      if (!acceptBtn || !declineBtn) return;
       
       // Check existing consent
       var consent = localStorage.getItem('cookieConsent');
@@ -2098,13 +2112,15 @@
       });
     })();
 
-    // Smooth scroll for anchor links (updated for sticky CTA)
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return; // Skip empty anchors
+        
         e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
+        var target = document.querySelector(href);
         if (target) {
-          // Account for sticky CTA on mobile
           var offset = window.innerWidth <= 768 ? 80 : 0;
           var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({
@@ -2115,15 +2131,18 @@
       });
     });
 
-    // Form submission tracking
-    document.querySelector('.form').addEventListener('submit', function() {
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          'event': 'form_submit',
-          'form_name': 'marketing_uitbesteden_contact'
-        });
-      }
-    });
+    // Form submission tracking with fallback
+    var form = document.querySelector('.form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'form_submit',
+            'form_name': 'marketing_uitbesteden_contact'
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
