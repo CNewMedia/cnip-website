@@ -1448,8 +1448,22 @@
     });
 
     // GSAP animations
-    if(typeof gsap !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
-        gsap.from(el, {
-          opacity: 0,
+if(typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
+    gsap.from(el, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      delay: i * 0.1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
