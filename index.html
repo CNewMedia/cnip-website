@@ -1210,29 +1210,29 @@
           <p style="font-size: clamp(14px,3vw,16px); opacity: .8; line-height: 1.6; margin-bottom: 24px;">Geen verkooppraatje — enkel concrete quick wins voor jouw merk.</p>
         </div>
 
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="dataLayer.push({'event': 'form_submit'});">
-  <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-  <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-  <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
-  
-  <div class="form-group">
-    <label for="name">Naam *</label>
-    <input id="name" name="name" type="text" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Email *</label>
-    <input id="email" name="email" type="email" required>
-  </div>
-  <div class="form-group">
-    <label for="company">Bedrijf</label>
-    <input id="company" name="company" type="text">
-  </div>
-  <div class="form-group">
-    <label for="message">Bericht *</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-  </div>
-  <button class="submit-btn" type="submit">Verstuur Bericht</button>
-</form>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+          <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+          
+          <div class="form-group">
+            <label for="name">Naam *</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Bedrijf</label>
+            <input id="company" name="company" type="text">
+          </div>
+          <div class="form-group">
+            <label for="message">Bericht *</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Verstuur Bericht</button>
+        </form>
       </div>
     </section>
   </main>
@@ -1245,7 +1245,7 @@
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
+          <a href="/cdn-cgi/l/email-protection#d2bbbcb4bd92b1bcbba2fcb0b7" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="751c1b131a35161b1c055b1710">[email&#160;protected]</span></a>
         </address>
       </div>
       <div>
@@ -1266,7 +1266,7 @@
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="mailto:info@cnip.be">Email</a>
+        <a href="/cdn-cgi/l/email-protection#2c45424a436c4f42455c024e49">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -1285,8 +1285,12 @@
     <a href="/privacy.html" class="cookie-link">Meer info</a>
   </div>
 
-  <script src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
+    // Defensive gtag definition - ensures gtag works even if GTM fails to load
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+
     // Page loader - Safari fix
     (function(){
       var pl = document.querySelector('.page-loader');
@@ -1313,6 +1317,8 @@
       var acceptBtn = document.getElementById('acceptCookies');
       var declineBtn = document.getElementById('declineCookies');
       
+      if (!banner || !acceptBtn || !declineBtn) return;
+      
       // Check existing consent
       var consent = localStorage.getItem('cookieConsent');
       if (consent === 'accepted' || consent === 'declined') {
@@ -1325,20 +1331,18 @@
         banner.classList.add('hidden');
         
         // Update Google Consent Mode v2
-        if (typeof gtag === 'function') {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
-          
-          // Send page_view with granted consent
-          gtag('event', 'page_view', {
-            page_location: window.location.href,
-            page_title: document.title
-          });
-        }
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        
+        // Send page_view with granted consent
+        gtag('event', 'page_view', {
+          page_location: window.location.href,
+          page_title: document.title
+        });
         
         // Trigger GTM consent update event
         if (window.dataLayer) {
@@ -1355,14 +1359,12 @@
         banner.classList.add('hidden');
         
         // Ensure consent stays denied
-        if (typeof gtag === 'function') {
-          gtag('consent', 'update', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-          });
-        }
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
         
         // Clear existing GA cookies
         document.cookie.split(';').forEach(function(c) {
@@ -1383,15 +1385,15 @@
       });
     })();
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
       
       // Floating CTA visibility
-      const floatingCta = document.getElementById('floatingCta');
-      const hero = document.querySelector('.hero');
+      var floatingCta = document.getElementById('floatingCta');
+      var hero = document.querySelector('.hero');
       
       if(floatingCta && hero) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
             if(!entry.isIntersecting) {
               floatingCta.classList.add('visible');
             } else {
@@ -1402,15 +1404,28 @@
         
         observer.observe(hero);
       }
+      
+      // Form submission tracking with form_name
+      var form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function() {
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              'event': 'form_submit',
+              'form_name': 'homepage_contact'
+            });
+          }
+        });
+      }
     });
 
     // Video
-    document.querySelectorAll('.play-btn').forEach(btn => {
+    document.querySelectorAll('.play-btn').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
-        const video = this.previousElementSibling;
-        const card = this.closest('.work-video');
-        const overlay = card ? card.querySelector('.work-overlay') : null;
+        var video = this.previousElementSibling;
+        var card = this.closest('.work-video');
+        var overlay = card ? card.querySelector('.work-overlay') : null;
         
         if(video && video.tagName === 'VIDEO') {
           if(video.paused) {
@@ -1435,21 +1450,6 @@
     // GSAP animations
     if(typeof gsap !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('.service-card, .work-item, .client-card').forEach((el, i) => {
+      gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
         gsap.from(el, {
           opacity: 0,
-          y: 30,
-          duration: 0.8,
-          delay: i * 0.03,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            once: true
-          }
-        });
-      });
-    }
-  </script>
-</body>
-</html>
