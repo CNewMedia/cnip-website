@@ -99,7 +99,7 @@
     "alternateName": ["CNIP Agency", "CNIP Gent", "CNIP Marketing"],
     "description": "Boutique marketing bureau in Gent met 23 jaar ervaring. Marketing advies gebaseerd op praktijk, niet theorie. HubSpot Gold Partner.",
     "url": "https://cnip.be",
-    "logo": "https://cnip.be/images/CNIP-LOGO-MAIN.svg",
+    "logo": "https://cnip.be/images/cnip-logo.png",
     "image": "https://cnip.be/images/og-image.jpg",
     "foundingDate": "2002",
     "founder": [
@@ -332,8 +332,22 @@
     }
     
     .header__logo {
-      height: 32px;
-      width: auto;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .header__badge {
+      font-size: 9px;
+      color: var(--gold);
+      padding: 6px 12px;
+      border: 1px solid rgba(232, 181, 99, 0.3);
+      border-radius: 999px;
+      margin-left: 10px;
     }
     
     .header__nav {
@@ -1226,8 +1240,10 @@
       gap: 16px;
     }
     
-    .footer__logo {
-      height: 28px;
+    .footer__logo-text {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
     }
     
     .footer__copy {
@@ -1562,8 +1578,8 @@
 
   <!-- Header -->
   <header class="header">
-    <a href="/" aria-label="CNIP Home">
-      <img src="/images/CNIP-LOGO-MAIN.svg" alt="CNIP" class="header__logo">
+    <a href="/" class="header__logo" aria-label="CNIP Home">
+      CNIP <span class="header__badge">Since 2002</span>
     </a>
     <nav class="header__nav" aria-label="Hoofdnavigatie">
       <a href="tel:+32470108452" class="header__link">
@@ -1620,10 +1636,10 @@
       <div class="hero__trust">
         <span class="hero__trust-text">Advies gegeven aan o.a.</span>
         <div class="hero__logos">
-          <img src="/images/clients/Hof-van-cleve.svg" alt="Hof van Cleve" loading="lazy">
-          <img src="/images/clients/DSM-keukens.svg" alt="DSM Keukens" loading="lazy">
-          <img src="/images/clients/BMW-le-couter-lemmens.svg" alt="BMW Le Couter & Lemmens" loading="lazy">
-          <img src="/images/clients/Willems-veranda.svg" alt="Willems Veranda" loading="lazy">
+          <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy">
+          <img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy">
+          <img src="/images/klanten/15.png" alt="BMW Le Couter & Lemmens" loading="lazy">
+          <img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy">
         </div>
       </div>
     </div>
@@ -1938,40 +1954,40 @@
     </header>
     <div class="logos__grid">
       <div class="logo-card">
-        <img src="/images/clients/Hof-van-cleve.svg" alt="Hof van Cleve" loading="lazy">
+        <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/DSM-keukens.svg" alt="DSM Keukens" loading="lazy">
+        <img src="/images/klanten/7-2.png" alt="GE Healthcare" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/BMW-le-couter-lemmens.svg" alt="BMW Le Couter & Lemmens" loading="lazy">
+        <img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Willems-veranda.svg" alt="Willems Veranda" loading="lazy">
+        <img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Dovy.svg" alt="Dovy Keukens" loading="lazy">
+        <img src="/images/klanten/15.png" alt="BMW" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/BK-Construct.svg" alt="BK Construct" loading="lazy">
+        <img src="/images/klanten/1-4.png" alt="Decospan" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Care-cosmetics.svg" alt="Care Cosmetics" loading="lazy">
+        <img src="/images/klanten/8-2.png" alt="Citrosuco" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Rybens.svg" alt="Rybens" loading="lazy">
+        <img src="/images/klanten/11-1.png" alt="Haelvoet" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Mex.svg" alt="Mex" loading="lazy">
+        <img src="/images/klanten/4-2.png" alt="Skylux" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Diosynth.svg" alt="Diosynth" loading="lazy">
+        <img src="/images/klanten/19.png" alt="Keolis" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Meubelen-jonckheere.svg" alt="Meubelen Jonckheere" loading="lazy">
+        <img src="/images/klanten/20.png" alt="Nuscience" loading="lazy">
       </div>
       <div class="logo-card">
-        <img src="/images/clients/Elien-Migalski.svg" alt="Elien Migalski" loading="lazy">
+        <img src="/images/klanten/17.png" alt="Medina" loading="lazy">
       </div>
     </div>
   </section>
@@ -2048,7 +2064,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
-        <img src="/images/CNIP-LOGO-MAIN.svg" alt="CNIP" class="footer__logo">
+        <span class="footer__logo-text">CNIP</span>
         <span class="footer__copy">© 2024 CNIP. Alle rechten voorbehouden.</span>
       </div>
       <nav class="footer__links" aria-label="Footer navigatie">
