@@ -265,7 +265,7 @@
     .hero__partner-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 10px 20px;
       background: linear-gradient(135deg, rgba(255,122,89,0.2), rgba(255,92,53,0.1));
       border: 1px solid rgba(255,122,89,0.4);
@@ -273,14 +273,14 @@
       margin-bottom: 24px;
     }
     .hero__partner-badge img {
-      height: 24px;
+      height: 32px;
       width: auto;
     }
     .hero__partner-badge span {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--hubspot-orange);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
     .hero__title {
       font-size: clamp(42px, 6vw, 72px);
@@ -689,6 +689,97 @@
     /* Cases Section */
     .cases {
       padding: 100px 40px;
+    }
+    
+    /* Preview Section */
+    .preview {
+      padding: 100px 40px;
+      background: linear-gradient(180deg, rgba(255,122,89,0.02), transparent, rgba(255,122,89,0.02));
+    }
+    .preview__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .preview__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .preview__label {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(255,122,89,0.15);
+      color: var(--hubspot-orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+    .preview__title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .preview__subtitle {
+      font-size: 18px;
+      opacity: 0.8;
+    }
+    .preview__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .preview__card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,122,89,0.15);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+    .preview__card:hover {
+      border-color: var(--hubspot-orange);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(255,122,89,0.15);
+    }
+    .preview__card-header {
+      padding: 24px 28px 16px;
+    }
+    .preview__card-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, var(--hubspot-orange), var(--hubspot-dark));
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .preview__card-header h3 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .preview__card-image {
+      background: #f5f5f5;
+      border-top: 1px solid rgba(255,122,89,0.1);
+      border-bottom: 1px solid rgba(255,122,89,0.1);
+      overflow: hidden;
+    }
+    .preview__card-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .preview__card:hover .preview__card-image img {
+      transform: scale(1.02);
+    }
+    .preview__card-desc {
+      padding: 20px 28px 28px;
+      font-size: 15px;
+      opacity: 0.8;
+      line-height: 1.6;
     }
     .cases__inner {
       max-width: 1200px;
@@ -1184,6 +1275,7 @@
       .hero__content { grid-template-columns: 1fr; }
       .hero__card { max-width: 400px; }
       .solution__grid { grid-template-columns: repeat(2, 1fr); }
+      .preview__grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
       .cases__grid { grid-template-columns: 1fr; }
       .why__inner { grid-template-columns: 1fr; gap: 48px; }
       .why__card { max-width: 400px; margin: 0 auto; }
@@ -1201,6 +1293,8 @@
       .problem__grid { grid-template-columns: 1fr; }
       .solution { padding: 60px 24px; }
       .solution__grid { grid-template-columns: 1fr; }
+      .preview { padding: 60px 24px; }
+      .preview__grid { grid-template-columns: 1fr; }
       .process { padding: 60px 24px; }
       .process__step { grid-template-columns: 60px 1fr; gap: 20px; padding: 32px 0; }
       .process__step-number { width: 60px; height: 60px; font-size: 24px; }
@@ -1247,7 +1341,7 @@
     <div class="hero__content">
       <div class="hero__text">
         <div class="hero__partner-badge">
-          <img src="/images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner Badge">
+          <img src="/images/certificaten/SolutionPartnerTierBadges_FINAL_GOLD_ORANGE.svg" alt="HubSpot Gold Solutions Partner Badge">
           <span>Gold Partner sinds 2019</span>
         </div>
         
@@ -1426,6 +1520,41 @@
           </div>
           <h3>Reporting & Attributie</h3>
           <p>Welk kanaal levert de meeste omzet? Eindelijk weten waar je marketing euro's naartoe gaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HubSpot Interface Preview -->
+  <section class="preview">
+    <div class="preview__inner">
+      <div class="preview__header">
+        <span class="preview__label">Zo ziet het eruit</span>
+        <h2 class="preview__title">HubSpot in actie</h2>
+        <p class="preview__subtitle">Eén platform voor al je marketing, sales en klantdata</p>
+      </div>
+      
+      <div class="preview__grid">
+        <div class="preview__card">
+          <div class="preview__card-header">
+            <span class="preview__card-badge">Marketing Hub</span>
+            <h3>Visuele campagne planning</h3>
+          </div>
+          <div class="preview__card-image">
+            <img src="/images/certificaten/Marketing%20Hub%20-%20Visual%20Planning.png" alt="HubSpot Marketing Hub - Visuele campagne planning interface" loading="lazy">
+          </div>
+          <p class="preview__card-desc">Plan en beheer al je campagnes visueel. Social posts, landing pages, emails — alles op één plek.</p>
+        </div>
+        
+        <div class="preview__card">
+          <div class="preview__card-header">
+            <span class="preview__card-badge">Smart CRM</span>
+            <h3>360° klantoverzicht</h3>
+          </div>
+          <div class="preview__card-image">
+            <img src="/images/certificaten/Smart%20CRM%20-%20Smart%20CRM%20Contact%20Record.png" alt="HubSpot Smart CRM - Contact record met volledige klanthistorie" loading="lazy">
+          </div>
+          <p class="preview__card-desc">Elke interactie op één scherm: emails, calls, website bezoeken, deals. Nooit meer zoeken naar context.</p>
         </div>
       </div>
     </div>
