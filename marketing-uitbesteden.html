@@ -11,33 +11,9 @@
   <!-- Preload kritieke hero afbeelding alleen voor desktop -->
   <link rel="preload" as="image" href="/images/Hof van Cleve.jpg" media="(min-width: 769px)">
   
-  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    // Set default consent state (denied until user accepts)
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    
-    // Check for existing consent and update immediately if already accepted
-    (function() {
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    })();
-  </script>
+  <!-- Start CookieYes banner - MUST be BEFORE GTM -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
+  <!-- End CookieYes banner -->
   
   <!-- Google Tag Manager -->
   <script>
@@ -1357,98 +1333,6 @@
     }
     
     /* ============================================
-       Cookie Banner - FIXED CONTRAST
-    ============================================ */
-    .cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: var(--gray-900);
-      border: 1px solid rgba(232, 181, 99, 0.2);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      z-index: 9998;
-      box-shadow: var(--shadow-lg);
-      animation: slideUp 0.4s ease-out;
-      max-width: calc(100% - 40px);
-    }
-    
-    @keyframes slideUp {
-      from {
-        transform: translateY(100px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    
-    .cookie-banner.is-hidden {
-      display: none;
-    }
-    
-    .cookie-banner__icon {
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    
-    .cookie-banner__text {
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .cookie-banner__buttons {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    
-    .cookie-banner__btn {
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      transition: all var(--transition-fast);
-    }
-    
-    .cookie-banner__btn--accept {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--black);
-    }
-    
-    .cookie-banner__btn--accept:hover {
-      transform: scale(1.05);
-    }
-    
-    .cookie-banner__btn--decline {
-      background: transparent;
-      color: rgba(255, 255, 255, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .cookie-banner__btn--decline:hover {
-      border-color: rgba(255, 255, 255, 0.4);
-      color: var(--white);
-    }
-    
-    /* FIX: Verhoogd contrast voor "Meer info" link */
-    .cookie-banner__link {
-      color: var(--gold);
-      font-size: 12px;
-      flex-shrink: 0;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    
-    .cookie-banner__link:hover {
-      color: var(--gold-light);
-    }
-    
-    /* ============================================
        Sticky Mobile CTA
     ============================================ */
     .sticky-cta {
@@ -1511,11 +1395,6 @@
     @media (max-width: 768px) {
       .sticky-cta {
         display: block;
-      }
-      
-      /* Pas cookie banner positie aan voor sticky CTA */
-      .cookie-banner {
-        bottom: 80px;
       }
     }
     
@@ -1659,33 +1538,6 @@
       
       .form {
         padding: 32px 24px;
-      }
-      
-      .cookie-banner {
-        flex-wrap: wrap;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-      }
-      
-      .cookie-banner__text {
-        flex: 1 1 100%;
-        order: 1;
-      }
-      
-      .cookie-banner__icon {
-        order: 0;
-      }
-      
-      .cookie-banner__buttons {
-        order: 2;
-        margin-top: 8px;
-      }
-      
-      .cookie-banner__link {
-        order: 3;
-        margin-top: 8px;
-        margin-left: auto;
       }
     }
     
@@ -2199,105 +2051,12 @@
     </div>
   </div>
 
-  <!-- Cookie Banner -->
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="false" aria-label="Cookie toestemming">
-    <span class="cookie-banner__icon" aria-hidden="true">🍪</span>
-    <p class="cookie-banner__text">Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-banner__buttons">
-      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="acceptCookies">Prima</button>
-      <button type="button" class="cookie-banner__btn cookie-banner__btn--decline" id="declineCookies">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-banner__link">Meer info</a>
-  </div>
-
   <script>
-    // Defensive gtag definition
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-
-    // Cookie consent management with Google Consent Mode v2
-    (function() {
-      'use strict';
-      
-      var banner = document.getElementById('cookieBanner');
-      if (!banner) return;
-      
-      var acceptBtn = document.getElementById('acceptCookies');
-      var declineBtn = document.getElementById('declineCookies');
-      
-      if (!acceptBtn || !declineBtn) return;
-      
-      // Check existing consent
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted' || consent === 'declined') {
-        banner.classList.add('is-hidden');
-      }
-      
-      // Accept cookies
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.classList.add('is-hidden');
-        
-        // Update Google Consent Mode v2
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-        
-        // Send page_view with granted consent (zoals in index.html)
-        gtag('event', 'page_view', {
-          page_location: window.location.href,
-          page_title: document.title
-        });
-        
-        // Trigger GTM consent update event
-        if (window.dataLayer) {
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_status': 'accepted'
-          });
-        }
-      });
-      
-      // Decline cookies
-      declineBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.classList.add('is-hidden');
-        
-        // Ensure consent stays denied (already default, but explicit)
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        
-        // Clear existing GA cookies
-        document.cookie.split(';').forEach(function(c) {
-          var name = c.trim().split('=')[0];
-          if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
-            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/;domain=' + window.location.hostname;
-            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/';
-          }
-        });
-        
-        // Trigger GTM consent update event
-        if (window.dataLayer) {
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_status': 'declined'
-          });
-        }
-      });
-    })();
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         var href = this.getAttribute('href');
-        if (href === '#') return; // Skip empty anchors
+        if (href === '#') return;
         
         e.preventDefault();
         var target = document.querySelector(href);
@@ -2312,7 +2071,7 @@
       });
     });
 
-    // Form submission tracking with fallback
+    // Form submission tracking
     var form = document.querySelector('.form');
     if (form) {
       form.addEventListener('submit', function() {
