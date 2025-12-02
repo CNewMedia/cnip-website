@@ -11,33 +11,9 @@
   <!-- Preload kritieke hero afbeelding alleen voor desktop -->
   <link rel="preload" as="image" href="/images/Hof van Cleve.jpg" media="(min-width: 769px)">
   
-  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    // Set default consent state (denied until user accepts)
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    
-    // Check for existing consent and update immediately if already accepted
-    (function() {
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    })();
-  </script>
+  <!-- Start CookieYes banner - MUST be BEFORE GTM -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
+  <!-- End CookieYes banner -->
   
   <!-- Google Tag Manager -->
   <script>
@@ -1268,99 +1244,6 @@
     }
     
     /* ============================================
-       Cookie Banner
-    ============================================ */
-    .cookie-banner {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      right: 24px;
-      max-width: 480px;
-      background: var(--gray-800);
-      border: 1px solid rgba(232, 181, 99, 0.2);
-      border-radius: var(--radius-lg);
-      padding: 20px 24px;
-      z-index: 10000;
-      display: none;
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
-    }
-    
-    .cookie-banner.show {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    
-    .cookie-banner__content {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    
-    .cookie-banner__icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(232, 181, 99, 0.1);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    
-    .cookie-banner__icon svg {
-      color: var(--gold);
-    }
-    
-    .cookie-banner__text {
-      font-size: 13px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .cookie-banner__actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    
-    .cookie-banner__btn {
-      padding: 10px 20px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      transition: all var(--transition-fast);
-    }
-    
-    .cookie-banner__btn--accept {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--black);
-    }
-    
-    .cookie-banner__btn--accept:hover {
-      transform: scale(1.03);
-    }
-    
-    .cookie-banner__btn--decline {
-      background: transparent;
-      color: rgba(255, 255, 255, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .cookie-banner__btn--decline:hover {
-      border-color: rgba(255, 255, 255, 0.4);
-      color: var(--white);
-    }
-    
-    .cookie-banner__link {
-      color: var(--gold);
-      font-size: 12px;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      margin-left: auto;
-    }
-    
-    /* ============================================
        Sticky Mobile CTA
     ============================================ */
     .sticky-cta {
@@ -1539,12 +1422,6 @@
       
       .sticky-cta {
         display: block;
-      }
-      
-      .cookie-banner {
-        bottom: 80px;
-        left: 12px;
-        right: 12px;
       }
     }
     
@@ -2076,26 +1953,6 @@
     </div>
   </footer>
 
-  <!-- Cookie Banner -->
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
-    <div class="cookie-banner__content">
-      <div class="cookie-banner__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
-          <path d="M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01M7 14v.01"/>
-        </svg>
-      </div>
-      <p class="cookie-banner__text" id="cookie-desc">
-        We gebruiken cookies om je ervaring te verbeteren en onze marketing te optimaliseren.
-      </p>
-    </div>
-    <div class="cookie-banner__actions">
-      <button class="cookie-banner__btn cookie-banner__btn--accept" id="acceptCookies">Accepteren</button>
-      <button class="cookie-banner__btn cookie-banner__btn--decline" id="declineCookies">Weigeren</button>
-      <a href="/privacy" class="cookie-banner__link">Meer info</a>
-    </div>
-  </div>
-
   <!-- Sticky Mobile CTA -->
   <div class="sticky-cta">
     <div class="sticky-cta__inner">
@@ -2112,88 +1969,17 @@
   </div>
 
   <script>
-    // Defensive gtag definition - ensures gtag works even if GTM fails to load
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-    
-    // Cookie Banner Logic with Consent Mode v2
-    (function() {
-      var banner = document.getElementById('cookieBanner');
-      var acceptBtn = document.getElementById('acceptCookies');
-      var declineBtn = document.getElementById('declineCookies');
-      
-      // Check if user has already made a choice
-      var consent = localStorage.getItem('cookieConsent');
-      
-      if (!consent && banner) {
-        banner.classList.add('show');
-      }
-      
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function() {
-          localStorage.setItem('cookieConsent', 'accepted');
-          if (banner) banner.classList.remove('show');
-          
-          // Update consent state to granted
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
-          
-          // Send page_view with granted consent
-          gtag('event', 'page_view', {
-            page_location: window.location.href,
-            page_title: document.title
-          });
-          
-          // Track consent event
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_action': 'accepted'
-          });
-        });
-      }
-      
-      if (declineBtn) {
-        declineBtn.addEventListener('click', function() {
-          localStorage.setItem('cookieConsent', 'declined');
-          if (banner) banner.classList.remove('show');
-          
-          // Keep consent denied (already default)
-          gtag('consent', 'update', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-          });
-          
-          // Track decline event
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_action': 'declined'
-          });
-          
-          // Clear any existing cookies
-          document.cookie.split(";").forEach(function(c) {
-            if (c.trim().startsWith("_ga") || c.trim().startsWith("_gid")) {
-              document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-            }
-          });
-        });
-      }
-    })();
-    
-    // Form submission tracking with form_name
+    // Form submission tracking
     (function() {
       var form = document.getElementById('contactForm');
       if (form) {
         form.addEventListener('submit', function() {
-          window.dataLayer.push({
-            'event': 'form_submit',
-            'form_name': 'marketing_advies_contact'
-          });
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              'event': 'form_submit',
+              'form_name': 'marketing_advies_contact'
+            });
+          }
         });
       }
     })();
