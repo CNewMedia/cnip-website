@@ -7,32 +7,11 @@
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://api.web3forms.com">
+  <link rel="preconnect" href="https://cdn-cookieyes.com">
   
-  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    
-    (function() {
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    })();
-  </script>
+  <!-- Start cookieyes banner -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
+  <!-- End cookieyes banner -->
   
   <!-- Google Tag Manager -->
   <script>
@@ -70,6 +49,15 @@
   <meta property="og:description" content="Van marketing chaos naar meetbare resultaten. Officiële HubSpot Gold Partner met 23 jaar marketing ervaring.">
   <meta property="og:image" content="https://cnip.be/images/og-image.jpg">
   <meta property="og:locale" content="nl_BE">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HubSpot Gold Partner België | CNIP sinds 2019">
+  <meta name="twitter:description" content="Van marketing chaos naar meetbare resultaten. Officiële HubSpot Gold Partner met 23 jaar marketing ervaring.">
+  <meta name="twitter:image" content="https://cnip.be/images/og-image.jpg">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0a">
   
   <!-- Structured Data - Organization -->
   <script type="application/ld+json">
@@ -1236,45 +1224,6 @@
       color: var(--hubspot-orange);
     }
     
-    /* Cookie Banner */
-    .cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: var(--gray-900);
-      border: 1px solid rgba(255,122,89,0.2);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      z-index: 9998;
-      max-width: calc(100% - 40px);
-    }
-    .cookie-banner.is-hidden { display: none; }
-    .cookie-banner__btn {
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-    }
-    .cookie-banner__btn--accept {
-      background: linear-gradient(135deg, var(--hubspot-orange), var(--hubspot-dark));
-      color: var(--white);
-    }
-    .cookie-banner__btn--decline {
-      background: transparent;
-      color: rgba(255,255,255,0.6);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .cookie-banner__link {
-      color: var(--hubspot-orange);
-      font-size: 12px;
-    }
-    
     /* Responsive */
     @media (max-width: 1024px) {
       .hero__content { grid-template-columns: 1fr; }
@@ -1310,7 +1259,6 @@
       .form__row { grid-template-columns: 1fr; }
       .footer { padding: 40px 24px 100px; }
       .sticky-cta { display: block; }
-      .cookie-banner { bottom: 80px; flex-wrap: wrap; }
     }
     
     .sr-only {
@@ -1885,66 +1833,7 @@
     </div>
   </div>
 
-  <!-- Cookie Banner -->
-  <div id="cookieBanner" class="cookie-banner">
-    <span>🍪</span>
-    <p>Wij gebruiken cookies voor analytics.</p>
-    <div style="display:flex;gap:8px;">
-      <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="acceptCookies">Prima</button>
-      <button type="button" class="cookie-banner__btn cookie-banner__btn--decline" id="declineCookies">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-banner__link">Meer info</a>
-  </div>
-
   <script>
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-
-    (function() {
-      var banner = document.getElementById('cookieBanner');
-      if (!banner) return;
-      
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted' || consent === 'declined') {
-        banner.classList.add('is-hidden');
-      }
-      
-      document.getElementById('acceptCookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.classList.add('is-hidden');
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-        gtag('event', 'page_view', {
-          page_location: window.location.href,
-          page_title: document.title
-        });
-        if (window.dataLayer) {
-          window.dataLayer.push({'event': 'cookie_consent', 'consent_status': 'accepted'});
-        }
-      });
-      
-      document.getElementById('declineCookies').addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.classList.add('is-hidden');
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        document.cookie.split(';').forEach(function(c) {
-          var name = c.trim().split('=')[0];
-          if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
-            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/';
-          }
-        });
-      });
-    })();
-
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
