@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
-  <!-- Google Consent Mode v2 - MUST be BEFORE GTM -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    // Set default consent state (denied until user accepts)
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    
-    // Check for existing consent and update immediately if already accepted
-    (function() {
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    })();
-  </script>
+  <!-- Start CookieYes banner - MUST be BEFORE GTM -->
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
+  <!-- End CookieYes banner -->
 
   <!-- Google Tag Manager -->
   <script>
@@ -780,124 +756,6 @@
       .contact-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
       .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;text-align:left}
     }
-
-    /* Cookie Banner */
-    .cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #1a1a1a;
-      border: 1px solid rgba(232,181,99,.2);
-      border-radius: 16px;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 14px;
-      color: #fff;
-      z-index: 9999;
-      box-shadow: 0 8px 32px rgba(0,0,0,.4);
-      animation: slideUp 0.4s ease-out;
-      max-width: calc(100% - 40px);
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .cookie-banner.hidden {
-      display: none;
-    }
-
-    .cookie-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-
-    .cookie-banner p {
-      margin: 0;
-      color: rgba(255,255,255,.9);
-    }
-
-    .cookie-buttons {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .cookie-btn {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .cookie-btn.accept {
-      background: linear-gradient(135deg, #E8B563, #d4a049);
-      color: #0a0a0a;
-    }
-
-    .cookie-btn.accept:hover {
-      transform: scale(1.05);
-    }
-
-    .cookie-btn.decline {
-      background: transparent;
-      color: rgba(255,255,255,.6);
-      border: 1px solid rgba(255,255,255,.2);
-    }
-
-    .cookie-btn.decline:hover {
-      border-color: rgba(255,255,255,.4);
-      color: #fff;
-    }
-
-    .cookie-link {
-      color: rgba(255,255,255,.4);
-      font-size: 11px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .cookie-link:hover {
-      color: #E8B563;
-    }
-
-    /* Mobile cookie banner */
-    @media (max-width: 600px) {
-      .cookie-banner {
-        flex-wrap: wrap;
-        bottom: 12px;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-      }
-      
-      .cookie-banner p {
-        flex: 1 1 100%;
-        order: 1;
-      }
-      
-      .cookie-icon {
-        order: 0;
-      }
-      
-      .cookie-buttons {
-        order: 2;
-        margin-top: 8px;
-      }
-      
-      .cookie-link {
-        order: 3;
-        margin-top: 8px;
-        margin-left: auto;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1245,7 +1103,7 @@
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="/cdn-cgi/l/email-protection#d2bbbcb4bd92b1bcbba2fcb0b7" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="751c1b131a35161b1c055b1710">[email&#160;protected]</span></a>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
         </address>
       </div>
       <div>
@@ -1266,7 +1124,7 @@
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="/cdn-cgi/l/email-protection#2c45424a436c4f42455c024e49">Email</a>
+        <a href="mailto:info@cnip.be">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -1274,23 +1132,7 @@
     <div class="footer-bottom">© 2025 CNIP | Boutique Marketing Bureau Gent</div>
   </footer>
 
-  <!-- Cookie Banner -->
-  <div id="cookieBanner" class="cookie-banner">
-    <span class="cookie-icon">🍪</span>
-    <p>Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-buttons">
-      <button id="acceptCookies" class="cookie-btn accept">Prima</button>
-      <button id="declineCookies" class="cookie-btn decline">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-link">Meer info</a>
-  </div>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
-    // Defensive gtag definition - ensures gtag works even if GTM fails to load
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-
     // Page loader - Safari fix
     (function(){
       var pl = document.querySelector('.page-loader');
@@ -1307,82 +1149,6 @@
       
       // Force hide after 1200ms max
       setTimeout(hideLoader, 1200);
-    })();
-
-    // Cookie consent management with Google Consent Mode v2
-    (function() {
-      'use strict';
-      
-      var banner = document.getElementById('cookieBanner');
-      var acceptBtn = document.getElementById('acceptCookies');
-      var declineBtn = document.getElementById('declineCookies');
-      
-      if (!banner || !acceptBtn || !declineBtn) return;
-      
-      // Check existing consent
-      var consent = localStorage.getItem('cookieConsent');
-      if (consent === 'accepted' || consent === 'declined') {
-        banner.classList.add('hidden');
-      }
-      
-      // Accept cookies
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.classList.add('hidden');
-        
-        // Update Google Consent Mode v2
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-        
-        // Send page_view with granted consent
-        gtag('event', 'page_view', {
-          page_location: window.location.href,
-          page_title: document.title
-        });
-        
-        // Trigger GTM consent update event
-        if (window.dataLayer) {
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_status': 'accepted'
-          });
-        }
-      });
-      
-      // Decline cookies
-      declineBtn.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.classList.add('hidden');
-        
-        // Ensure consent stays denied
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        
-        // Clear existing GA cookies
-        document.cookie.split(';').forEach(function(c) {
-          var name = c.trim().split('=')[0];
-          if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
-            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/;domain=' + window.location.hostname;
-            document.cookie = name + '=;expires=' + new Date(0).toUTCString() + ';path=/';
-          }
-        });
-        
-        // Trigger GTM consent update event
-        if (window.dataLayer) {
-          window.dataLayer.push({
-            'event': 'cookie_consent',
-            'consent_status': 'declined'
-          });
-        }
-      });
     })();
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -1448,22 +1214,22 @@
     });
 
     // GSAP animations
-if(typeof gsap !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      delay: i * 0.1,
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none'
-      }
-    });
-  });
-}
-</script>
+    if(typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
+        gsap.from(el, {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>
