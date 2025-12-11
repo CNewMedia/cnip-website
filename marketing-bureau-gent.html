@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://api.web3forms.com">
   
   <!-- Start CookieYes banner - MUST be BEFORE GTM -->
+  <!-- BELANGRIJK: Configureer in CookieYes dashboard:
+       1. Ga naar Settings > Banner Settings
+       2. Kies "Simple" layout
+       3. Verwijder "Voorkeuren" knop
+       4. Houd alleen: "Accepteren" + "Alleen noodzakelijk"
+       5. Of gebruik onderstaande inline config -->
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
   <!-- End CookieYes banner -->
   
@@ -377,7 +383,7 @@
     }
     
     /* ============================================
-       Hero Section
+       Hero Section - OPTIMIZED WITH FORM
     ============================================ */
     .hero {
       min-height: 100vh;
@@ -413,11 +419,15 @@
       z-index: 2;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 160px 40px 100px;
+      padding: 140px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
     }
     
     .hero__text {
-      max-width: 720px;
+      max-width: 620px;
     }
     
     .hero__label {
@@ -433,10 +443,10 @@
     }
     
     .hero__title {
-      font-size: clamp(40px, 7vw, 76px);
+      font-size: clamp(36px, 5.5vw, 64px);
       font-weight: 900;
       line-height: 1.05;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       letter-spacing: -2px;
     }
     
@@ -448,144 +458,193 @@
     }
     
     .hero__subtitle {
-      font-size: clamp(17px, 2.2vw, 22px);
+      font-size: clamp(16px, 2vw, 19px);
       opacity: 0.9;
       line-height: 1.55;
-      margin-bottom: 32px;
-      max-width: 580px;
-    }
-    
-    /* Hero telefoon prominent */
-    .hero__phone {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       margin-bottom: 28px;
-      padding: 16px 24px;
-      background: rgba(232, 181, 99, 0.1);
-      border: 1px solid rgba(232, 181, 99, 0.3);
-      border-radius: var(--radius-md);
-      width: fit-content;
-      transition: all var(--transition-normal);
+      max-width: 520px;
     }
     
-    .hero__phone:hover {
-      background: rgba(232, 181, 99, 0.15);
-      border-color: var(--gold);
-      transform: translateY(-2px);
-    }
-    
-    .hero__phone-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    
-    .hero__phone-icon svg {
-      color: var(--black);
-    }
-    
-    .hero__phone-text {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .hero__phone-label {
-      font-size: 12px;
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .hero__phone-number {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--gold);
-      letter-spacing: 1px;
-    }
-    
-    /* Hero CTA's container */
-    .hero__ctas {
+    /* Hero trust signals */
+    .hero__trust {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    
+    .hero__trust-item {
+      display: flex;
       align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      opacity: 0.85;
     }
     
-    .hero__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 40px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--black);
-      border-radius: var(--radius-full);
-      font-weight: 900;
-      font-size: 17px;
-      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    }
-    
-    .hero__cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(232, 181, 99, 0.45);
-    }
-    
-    .hero__cta svg {
-      transition: transform var(--transition-normal);
-    }
-    
-    .hero__cta:hover svg {
-      transform: translateX(4px);
-    }
-    
-    .hero__cta--secondary {
-      background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: var(--white);
-    }
-    
-    .hero__cta--secondary:hover {
-      border-color: var(--white);
-      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+    .hero__trust-item svg {
+      color: var(--gold);
+      flex-shrink: 0;
     }
     
     /* Hero clients */
     .hero__clients {
-      margin-top: 80px;
-      padding-top: 48px;
+      padding-top: 32px;
       border-top: 1px solid rgba(232, 181, 99, 0.2);
     }
     
     .hero__clients-label {
       font-size: 11px;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       opacity: 0.5;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     
     .hero__logos {
       display: flex;
-      gap: 32px;
+      gap: 24px;
       flex-wrap: wrap;
       align-items: center;
     }
     
     .hero__logos img {
-      height: 28px;
+      height: 24px;
       width: auto;
       filter: brightness(0) invert(1);
-      opacity: 0.7;
+      opacity: 0.6;
       transition: opacity var(--transition-normal);
     }
     
     .hero__logos img:hover {
       opacity: 1;
+    }
+    
+    /* ============================================
+       HERO FORM - THE KEY CONVERSION ELEMENT
+    ============================================ */
+    .hero__form-container {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(232, 181, 99, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .hero__form-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    
+    .hero__form-subtitle {
+      font-size: 14px;
+      opacity: 0.75;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    
+    .hero__form .form__group {
+      margin-bottom: 16px;
+    }
+    
+    .hero__form .form__label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .hero__form .form__input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid rgba(232, 181, 99, 0.2);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    }
+    
+    .hero__form .form__input:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(232, 181, 99, 0.08);
+    }
+    
+    .hero__form .form__input::placeholder {
+      color: var(--gray-600);
+    }
+    
+    .hero__form .form__submit {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      font-weight: 900;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      margin-top: 20px;
+    }
+    
+    .hero__form .form__submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(232, 181, 99, 0.4);
+    }
+    
+    .hero__form-guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 12px;
+      opacity: 0.65;
+    }
+    
+    .hero__form-guarantee svg {
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    
+    /* Alternative: Phone CTA under form */
+    .hero__form-alt {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(232, 181, 99, 0.15);
+    }
+    
+    .hero__form-alt-label {
+      font-size: 12px;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+    
+    .hero__form-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 800;
+      transition: opacity var(--transition-fast);
+    }
+    
+    .hero__form-phone:hover {
+      opacity: 0.8;
+    }
+    
+    .hero__form-phone svg {
+      width: 18px;
+      height: 18px;
     }
     
     /* ============================================
@@ -982,7 +1041,7 @@
     }
     
     /* ============================================
-       Contact Form Section
+       Contact Form Section - SIMPLIFIED
     ============================================ */
     .contact {
       padding: 120px 40px;
@@ -1066,7 +1125,7 @@
       flex-shrink: 0;
     }
     
-    /* Form styling */
+    /* Form styling - SIMPLIFIED */
     .form {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(232, 181, 99, 0.2);
@@ -1234,6 +1293,15 @@
        Responsive Styles
     ============================================ */
     @media (max-width: 1024px) {
+      .hero__content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      
+      .hero__form-container {
+        max-width: 480px;
+      }
+      
       .services__grid,
       .cases__grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1254,29 +1322,24 @@
       }
       
       .hero__content {
-        padding: 140px 24px 80px;
+        padding: 120px 24px 60px;
       }
       
-      .hero__phone {
-        width: 100%;
+      .hero__form-container {
+        padding: 28px 24px;
       }
       
-      .hero__ctas {
+      .hero__trust {
         flex-direction: column;
-        align-items: stretch;
-      }
-      
-      .hero__cta {
-        justify-content: center;
-        padding: 18px 32px;
+        gap: 12px;
       }
       
       .hero__logos {
-        gap: 20px;
+        gap: 16px;
       }
       
       .hero__logos img {
-        height: 22px;
+        height: 20px;
       }
       
       .stats {
@@ -1361,58 +1424,116 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="https://cnip.be" class="header__logo" aria-label="CNIP Homepage">CNIP</a>
-      <a href="https://oryen.be/meetings/cdj/online-meeting" class="header__cta">Plan een gesprek</a>
+      <a href="tel:+3293965883" class="header__cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px; vertical-align: -2px;" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        09 396 58 83
+      </a>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with FORM -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__text">
-        <span class="hero__label">Sinds 2002</span>
+        <span class="hero__label">Marketing Bureau Gent</span>
         <h1 id="hero-title" class="hero__title">
-          Marketing bureau Gent<br><span>voor marktleiders</span>
+          Eén team.<br>Alle marketing.<br><span>Meetbaar resultaat.</span>
         </h1>
         <p class="hero__subtitle">
-          Zoek je een marketing bureau dat écht levert? Geen juniors, geen losse freelancers. 
-          Wél een senior team met één cockpit waarin je ziet wat werkt — en waarom. Al 23 jaar.
+          Geen juniors. Geen losse freelancers. Eén senior team dat SEO, ads, social en video combineert in één dashboard. Al 23 jaar.
         </p>
         
-        <!-- Telefoon prominent -->
-        <a href="tel:+3293965883" class="hero__phone">
-          <div class="hero__phone-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        <!-- Trust signals -->
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
+            23 jaar ervaring
           </div>
-          <div class="hero__phone-text">
-            <span class="hero__phone-label">Bel ons direct</span>
-            <span class="hero__phone-number">09 396 58 83</span>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            HubSpot Gold Partner
           </div>
-        </a>
+          <div class="hero__trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Geen langlopende contracten
+          </div>
+        </div>
         
-        <div class="hero__ctas">
-          <a href="#contact" class="hero__cta">
-            Gratis strategiesessie
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#cases" class="hero__cta hero__cta--secondary">
-            Bekijk resultaten
-          </a>
+        <div class="hero__clients">
+          <p class="hero__clients-label">Klanten zoals</p>
+          <div class="hero__logos">
+            <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy">
+            <img src="/images/klanten/15.png" alt="BMW" loading="lazy">
+            <img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy">
+            <img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy">
+          </div>
         </div>
       </div>
       
-      <div class="hero__clients">
-        <p class="hero__clients-label">Vertrouwd door marktleiders</p>
-        <div class="hero__logos">
-          <img src="/images/klanten/2-Nov-04-2021-12-50-59-44-PM.png" alt="Hof van Cleve" loading="lazy">
-          <img src="/images/klanten/15.png" alt="BMW" loading="lazy">
-          <img src="/images/klanten/7-2.png" alt="GE Healthcare" loading="lazy">
-          <img src="/images/klanten/3-4.png" alt="Willems Veranda" loading="lazy">
-          <img src="/images/klanten/13.png" alt="DSM Keukens" loading="lazy">
+      <!-- HERO FORM - Above the fold! -->
+      <div class="hero__form-container">
+        <h2 class="hero__form-title">Gratis marketing scan</h2>
+        <p class="hero__form-subtitle">In 30 min. tonen we waar je marketing geld lekt — en waar de kansen liggen.</p>
+        
+        <form class="hero__form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
+          <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+          <input type="hidden" name="subject" value="Lead via Hero Form - Marketing Bureau Gent">
+          <input type="hidden" name="from_name" value="CNIP Website Lead">
+          
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
+          
+          <div class="form__group">
+            <label for="hero-name" class="form__label">Naam *</label>
+            <input type="text" id="hero-name" name="name" class="form__input" placeholder="Je naam" required autocomplete="name">
+          </div>
+          
+          <div class="form__group">
+            <label for="hero-email" class="form__label">Zakelijk email *</label>
+            <input type="email" id="hero-email" name="email" class="form__input" placeholder="naam@bedrijf.be" required autocomplete="email">
+          </div>
+          
+          <div class="form__group">
+            <label for="hero-phone" class="form__label">Telefoon (optioneel)</label>
+            <input type="tel" id="hero-phone" name="phone" class="form__input" placeholder="Voor sneller contact" autocomplete="tel">
+          </div>
+          
+          <button type="submit" class="form__submit">
+            Plan mijn gratis scan
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          
+          <p class="hero__form-guarantee">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Binnen 24 uur reactie. Geen verplichtingen.
+          </p>
+        </form>
+        
+        <div class="hero__form-alt">
+          <p class="hero__form-alt-label">Liever direct bellen?</p>
+          <a href="tel:+3293965883" class="hero__form-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            09 396 58 83
+          </a>
         </div>
       </div>
     </div>
@@ -1634,7 +1755,7 @@
     </div>
   </section>
 
-  <!-- Contact Form -->
+  <!-- Contact Form - SIMPLIFIED -->
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__grid">
       <div class="contact__content">
@@ -1679,10 +1800,11 @@
         </p>
       </div>
       
+      <!-- SIMPLIFIED FORM - Only essential fields -->
       <form class="form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
         <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
-        <input type="hidden" name="subject" value="Lead via Marketing Bureau Gent pagina">
+        <input type="hidden" name="subject" value="Lead via Contact Form - Marketing Bureau Gent">
         
         <!-- Honeypot spam protection -->
         <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
@@ -1694,18 +1816,13 @@
         </div>
         
         <div class="form__group">
-          <label for="email" class="form__label">Email *</label>
-          <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
+          <label for="email" class="form__label">Zakelijk email *</label>
+          <input type="email" id="email" name="email" class="form__input" placeholder="naam@bedrijf.be" required autocomplete="email">
         </div>
         
         <div class="form__group">
-          <label for="company" class="form__label">Bedrijf</label>
-          <input type="text" id="company" name="company" class="form__input" autocomplete="organization">
-        </div>
-        
-        <div class="form__group">
-          <label for="message" class="form__label">Waar kan een marketing bureau jou bij helpen? *</label>
-          <textarea id="message" name="message" class="form__textarea" rows="4" required placeholder="Vertel ons over je marketing uitdagingen..."></textarea>
+          <label for="phone" class="form__label">Telefoon (optioneel)</label>
+          <input type="tel" id="phone" name="phone" class="form__input" placeholder="Voor sneller contact" autocomplete="tel">
         </div>
         
         <button type="submit" class="form__submit">
@@ -1743,7 +1860,7 @@
           <line x1="8" y1="2" x2="8" y2="6"/>
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        Gratis gesprek
+        Gratis scan
       </a>
     </div>
   </div>
@@ -1769,8 +1886,7 @@
     });
 
     // Form submission tracking
-    var form = document.querySelector('.form');
-    if (form) {
+    document.querySelectorAll('form').forEach(function(form) {
       form.addEventListener('submit', function() {
         if (window.dataLayer) {
           window.dataLayer.push({
@@ -1779,7 +1895,7 @@
           });
         }
       });
-    }
+    });
   </script>
 </body>
 </html>
