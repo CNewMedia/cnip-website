@@ -2,14 +2,8 @@
   "name": "cnip-mollie-oauth",
   "version": "1.0.0",
   "description": "Mollie OAuth backend voor CNIP",
-  "dependencies": {
-    "@vercel/kv": "^1.0.0"
-  },
-"engines": {
-  "node": "24.x"
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  }
 }
-}
-
-
-
-
