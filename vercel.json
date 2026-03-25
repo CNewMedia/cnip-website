@@ -1,15 +1,9 @@
 {
-  "version": 2,
-  "functions": {
-    "api/*.js": {
-      "runtime": "@vercel/node"
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://jouw-github-pages-url.github.io" },
+        { "key": "Access-Control-Allow-Origin", "value": "https://cnip-website.vercel.app" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" }
       ]
     }
