@@ -26,8 +26,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>CNIP | Wordt u wel gevonden om de juiste reden? | Marketingbureau Gent</title>
-  <meta name="description" content="CNIP vertaalt wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising die gezien wordt door de juiste mensen. Merken in de kijker plaatsen sinds 2002.">
+  <!-- SEO: Primary Meta Tags -->
+  <title>CNIP | Marketingbureau Gent | Wordt u wel gevonden om de juiste reden?</title>
+  <meta name="description" content="Boutique marketingbureau Gent — sinds 2002. CNIP vertaalt wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising. Voor merken die online juist begrepen willen worden.">
   <meta name="author" content="CNIP">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="Dutch">
@@ -38,20 +39,23 @@
 
   <link rel="canonical" href="https://cnip.be/">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cnip.be/">
   <meta property="og:title" content="CNIP | Wordt u wel gevonden om de juiste reden?">
-  <meta property="og:description" content="Wij vertalen wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising. Zodat de juiste mensen u juist begrijpen.">
+  <meta property="og:description" content="Wij vertalen wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising. Merken in de kijker plaatsen sinds 2002.">
   <meta property="og:image" content="https://cnip.be/images/og-image.jpg">
   <meta property="og:locale" content="nl_BE">
   <meta property="og:site_name" content="CNIP">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://cnip.be/">
   <meta name="twitter:title" content="CNIP | Wordt u wel gevonden om de juiste reden?">
-  <meta name="twitter:description" content="Online wordt u sneller vergeleken dan begrepen. CNIP zorgt dat de markt u juist begrijpt vóór ze u beoordeelt.">
+  <meta name="twitter:description" content="CNIP vertaalt wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising.">
   <meta name="twitter:image" content="https://cnip.be/images/og-image.jpg">
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,7 +95,7 @@
       "https://www.facebook.com/cnipagency"
     ],
     "slogan": "Merken in de kijker plaatsen sinds 2002",
-    "knowsAbout": ["Websitecopy", "SEO", "Lokale SEO", "AI Search Optimization", "Content Marketing", "Video Productie", "Social Media", "Google Ads", "HubSpot", "Marketing Automation", "Branding"],
+    "knowsAbout": ["Websitecopy", "SEO", "Lokale SEO", "AI Search Optimization", "Video Productie", "Content Marketing", "Social Media", "Google Ads", "HubSpot", "Marketing Automation"],
     "award": ["HubSpot Gold Partner", "Google Ads Certified", "Cambridge Certified"]
   }
   </script>
@@ -136,40 +140,20 @@
     *{margin:0;padding:0;box-sizing:border-box;min-width:0}
     :root{--black:#0a0a0a;--white:#fff;--gold:#E8B563}
 
-    html{
-      width:100%;
-      max-width:100%;
-      -webkit-text-size-adjust:100%;
-      overflow-x:hidden;
-      scroll-behavior:auto;
-    }
-
+    html{-webkit-text-size-adjust:100%;overflow-x:hidden;scroll-behavior:auto}
     body{
-      width:100%;
-      max-width:100%;
       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
       background:var(--black);
       color:var(--white);
       overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
     }
-
-    main{overflow:hidden}
     img,video{max-width:100%;height:auto;display:block}
-    section{scroll-margin-top:120px}
 
-    .page-loader{
-      position:fixed;
-      inset:0;
-      background:#0a0a0a;
-      z-index:10000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:opacity .6s,visibility .6s;
-    }
-
+    /* Loader */
+    .page-loader{position:fixed;inset:0;background:#0a0a0a;z-index:10000;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
     .page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .page-loader.force-hide{display:none!important}
 
     .loader-text{
       font-size:clamp(72px,15vw,180px);
@@ -181,691 +165,68 @@
       -webkit-text-fill-color:transparent;
       animation:shimmer 3s ease-in-out infinite;
       letter-spacing:-4px;
-      line-height:1.12;
-      padding-bottom:.12em;
     }
 
     @keyframes shimmer{to{background-position:-200% center}}
 
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      background:rgba(10,10,10,.92);
-      backdrop-filter:blur(24px);
-      border-bottom:1px solid rgba(232,181,99,.12);
-      z-index:1000;
-      padding:22px 40px;
-    }
-
-    .header-content{
-      max-width:1600px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:28px;
-    }
-
-    .logo-text{
-      font-size:28px;
-      font-weight:900;
-      letter-spacing:-.5px;
-      color:#fff;
-      text-decoration:none;
-      white-space:nowrap;
-    }
-
-    .badge{
-      font-size:9px;
-      color:var(--gold);
-      padding:6px 12px;
-      border:1px solid rgba(232,181,99,.3);
-      border-radius:999px;
-      margin-left:10px;
-      white-space:nowrap;
-    }
-
-    nav{
-      display:flex;
-      gap:28px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      font-size:14px;
-      position:relative;
-      transition:color .2s;
-      white-space:nowrap;
-    }
-
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.9);backdrop-filter:blur(24px);border-bottom:1px solid rgba(232,181,99,.12);z-index:1000;padding:22px 40px}
+    .header-content{max-width:1600px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .logo-text{font-size:28px;font-weight:900;letter-spacing:-.5px;color:#fff;text-decoration:none}
+    .badge{font-size:9px;color:var(--gold);padding:6px 12px;border:1px solid rgba(232,181,99,.3);border-radius:999px;margin-left:10px}
+    nav{display:flex;gap:28px}
+    nav a{color:#fff;text-decoration:none;font-size:14px;position:relative;transition:color .2s}
     nav a:hover{color:var(--gold)}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:160px 24px 100px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(ellipse at 20% 30%, rgba(232,181,99,.10), transparent 55%),
-        radial-gradient(ellipse at 80% 70%, rgba(232,181,99,.06), transparent 50%);
-    }
-
-    .hero-glow{
-      position:absolute;
-      top:40%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80%;
-      max-width:900px;
-      height:600px;
-      background:radial-gradient(ellipse at center, rgba(232,181,99,.08) 0%, transparent 60%);
-      pointer-events:none;
-      filter:blur(40px);
-    }
-
-    .hero-content{
-      width:min(100%,1200px);
-      margin:0 auto;
-      text-align:center;
-      position:relative;
-      z-index:2;
-      padding:0 12px;
-      overflow:visible;
-    }
-
-    .hero-eyebrow{
-      display:inline-block;
-      font-size:11px;
-      letter-spacing:4px;
-      color:var(--gold);
-      text-transform:uppercase;
-      margin-bottom:32px;
-      padding:8px 18px;
-      border:1px solid rgba(232,181,99,.25);
-      border-radius:999px;
-      background:rgba(232,181,99,.04);
-      font-weight:700;
-    }
-
-    .hero-title{
-      font-size:clamp(44px,8vw,128px);
-      font-weight:900;
-      line-height:1.05;
-      max-width:1100px;
-      margin:0 auto 28px;
-      padding-bottom:.14em;
-      background:linear-gradient(180deg,#ffffff 0%,#ffffff 60%,var(--gold) 100%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      text-wrap:balance;
-      overflow:visible;
-      overflow-wrap:normal;
-      word-break:normal;
-      letter-spacing:-2px;
-    }
-
-    .hero-lead{
-      font-size:clamp(18px,2vw,22px);
-      line-height:1.55;
-      max-width:780px;
-      margin:0 auto 44px;
-      opacity:.85;
-      text-wrap:balance;
-      color:rgba(255,255,255,.92);
-    }
-
-    .hero-cta{
-      display:flex;
-      gap:24px;
-      justify-content:center;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .cta-link{
-      color:rgba(255,255,255,.7);
-      text-decoration:none;
-      font-size:15px;
-      font-weight:600;
-      letter-spacing:.5px;
-      padding:8px 4px;
-      transition:color .2s;
-      position:relative;
-    }
-
-    .cta-link:hover{color:var(--gold)}
-
-    .hero-scroll{
-      position:absolute;
-      bottom:40px;
-      left:50%;
-      transform:translateX(-50%);
-      width:24px;
-      height:40px;
-      border:2px solid rgba(232,181,99,.4);
-      border-radius:14px;
-      display:flex;
-      justify-content:center;
-      padding-top:8px;
-      z-index:2;
-      opacity:.8;
-    }
-
-    .hero-scroll span{
-      width:3px;
-      height:8px;
-      background:var(--gold);
-      border-radius:2px;
-      animation:scrollDot 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollDot{
-      0%,100%{transform:translateY(0);opacity:1}
-      50%{transform:translateY(10px);opacity:.3}
-    }
-
-    /* HERO PAIN BLOCK */
-    .hero-pain-section{
-      padding:0 20px 80px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-
-    .hero-pain-inner{
-      max-width:1100px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .hero-pain-lead{
-      font-size:clamp(18px,2.2vw,24px);
-      line-height:1.5;
-      color:rgba(255,255,255,.78);
-      max-width:760px;
-      margin:0 auto 48px;
-      font-style:italic;
-      text-wrap:balance;
-    }
-
-    .hero-pain-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-    }
-
-    .hero-pain-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
-      border:1px solid rgba(232,181,99,.14);
-      border-radius:18px;
-      padding:32px 24px;
-      text-align:center;
-      transition:all .35s ease;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-pain-card::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at 50% 0%, rgba(232,181,99,.12), transparent 60%);
-      opacity:0;
-      transition:opacity .35s;
-      pointer-events:none;
-    }
-
-    .hero-pain-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(232,181,99,.35);
-      box-shadow:0 16px 40px rgba(232,181,99,.08);
-    }
-
-    .hero-pain-card:hover::after{opacity:1}
-
-    .hero-pain-icon{
-      width:54px;
-      height:54px;
-      margin:0 auto 18px;
-      border-radius:50%;
-      background:rgba(232,181,99,.08);
-      border:1px solid rgba(232,181,99,.3);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--gold);
-      font-size:24px;
-      font-weight:700;
-      box-shadow:0 0 24px rgba(232,181,99,.15);
-    }
-
-    .hero-pain-card p{
-      font-size:clamp(15px,1.7vw,17px);
-      line-height:1.55;
-      color:rgba(255,255,255,.88);
-    }
-
-    .cta-primary,.cta-secondary{
-      padding:16px 32px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:1px;
-      transition:all .2s;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .cta-primary{
-      background:linear-gradient(135deg,var(--gold),#d4a049);
-      color:#0a0a0a;
-    }
-
-    .cta-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 24px rgba(232,181,99,.4);
-    }
-
-    .cta-secondary{
-      border:2px solid var(--gold);
-      color:var(--gold);
-    }
-
+    /* Hero */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 40px 100px;position:relative}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 30% 50%, rgba(232,181,99,.08), transparent 50%)}
+    .hero-content{max-width:1400px;text-align:center;position:relative;z-index:1}
+    .hero-eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+    .hero-title{font-size:clamp(44px,8vw,128px);font-weight:900;line-height:1.05;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:28px;text-wrap:balance;padding-bottom:.08em}
+    .hero-subtitle{font-size:clamp(18px,2.2vw,28px);opacity:.95;margin-bottom:36px;max-width:900px;margin-left:auto;margin-right:auto;line-height:1.4;text-wrap:balance}
+    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .cta-primary,.cta-secondary{padding:16px 32px;border-radius:999px;text-decoration:none;font-weight:800;letter-spacing:1px;transition:all .2s}
+    .cta-primary{background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a}
+    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,181,99,.4)}
+    .cta-secondary{border:2px solid var(--gold);color:var(--gold)}
     .cta-secondary:hover{background:rgba(232,181,99,.1)}
 
-    /* LOGO STRIP */
-    .logo-strip{
-      padding:48px 20px 80px;
-      max-width:1600px;
-      margin:0 auto;
-      border-top:1px solid rgba(232,181,99,.10);
-    }
+    /* Services */
+    .services-section{padding:80px 20px;max-width:1600px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:64px}
+    .section-eyebrow{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+    .section-title{font-size:clamp(36px,7vw,92px);font-weight:900;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;padding-bottom:.06em}
 
-    .logo-strip-inner{text-align:center}
-
-    .logo-strip-eyebrow{
-      color:var(--gold);
-      font-size:11px;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      font-weight:800;
-    }
-
-    .logo-strip-label{
-      color:rgba(255,255,255,.78);
-      font-size:clamp(15px,1.7vw,18px);
-      line-height:1.5;
-      max-width:760px;
-      margin:0 auto 44px;
-      text-wrap:balance;
-      font-style:italic;
-    }
-
-    .logo-track{
+    .services-bento{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:1fr;
       gap:18px;
-      align-items:center;
+      grid-auto-rows:auto;
     }
 
-    .logo-item{
-      min-height:110px;
-      padding:26px;
-      border:1px solid rgba(232,181,99,.14);
+    .service-card{
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(232,181,99,.16);
       border-radius:20px;
+      padding:34px;
+      position:relative;
+      transition:all .3s ease;
+      min-height:240px;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
       background:rgba(255,255,255,.05);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:all .3s ease;
+      box-shadow:0 20px 60px rgba(232,181,99,.22);
     }
 
-    .logo-item:hover{
-      background:rgba(255,255,255,.08);
-      border-color:rgba(232,181,99,.35);
-      transform:translateY(-3px);
-    }
+    .service-number{position:absolute;top:-10px;right:14px;font-size:72px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(232,181,99,.25);pointer-events:none}
+    .service-title{font-size:24px;font-weight:800;margin-bottom:10px;line-height:1.15}
+    .service-desc{opacity:.88;line-height:1.55;font-size:15px}
 
-    .logo-item img{
-      max-width:100%;
-      max-height:56px;
-      object-fit:contain;
-      filter:brightness(0) invert(1);
-      opacity:.88;
-      transition:opacity .3s ease;
-    }
-
-    .logo-item:hover img{opacity:1}
-
-    /* PROBLEM SECTION */
-    .problem-section{
-      padding:80px 20px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    .problem-eyebrow{
-      font-size:11px;
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      margin-bottom:14px;
-      text-align:center;
-    }
-
-    .problem-title{
-      font-size:clamp(34px,6vw,72px);
-      font-weight:900;
-      line-height:1.12;
-      padding-bottom:.06em;
-      color:#ffffff;
-      text-align:center;
-      margin-bottom:40px;
-      text-wrap:balance;
-      letter-spacing:-.5px;
-    }
-
-    .problem-title em{
-      font-style:normal;
-      color:var(--gold);
-      font-weight:900;
-    }
-
-    .problem-lead{
-      font-size:clamp(17px,2vw,21px);
-      line-height:1.55;
-      max-width:780px;
-      margin:0 auto 32px;
-      text-align:center;
-      opacity:.92;
-    }
-
-    .problem-list{
-      max-width:920px;
-      margin:0 auto 40px;
-      list-style:none;
-      padding:0;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
-    }
-
-    .problem-list li{
-      font-size:clamp(16px,1.9vw,19px);
-      line-height:1.55;
-      padding:20px 24px 20px 56px;
-      position:relative;
-      opacity:1;
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(232,181,99,.10);
-      border-radius:14px;
-      transition:all .3s ease;
-    }
-
-    .problem-list li:hover{
-      background:rgba(255,255,255,.04);
-      border-color:rgba(232,181,99,.25);
-      transform:translateX(4px);
-    }
-
-    .problem-list li::before{
-      content:'';
-      position:absolute;
-      left:24px;
-      top:50%;
-      transform:translateY(-50%);
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--gold);
-      box-shadow:0 0 16px rgba(232,181,99,.5);
-    }
-
-    .problem-conclusion{
-      max-width:780px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .problem-conclusion p{
-      font-size:clamp(17px,2vw,20px);
-      line-height:1.6;
-      margin-bottom:18px;
-      opacity:.92;
-    }
-
-    .problem-conclusion strong{
-      color:var(--gold);
-      font-weight:800;
-      font-style:italic;
-    }
-
-    /* WHAT CNIP DOES */
-    .does-section{
-      padding:80px 20px;
-      margin:0 auto;
-      background:radial-gradient(ellipse at top, rgba(232,181,99,.05), transparent 60%), linear-gradient(180deg, transparent, rgba(255,255,255,.015), transparent);
-      position:relative;
-    }
-
-    .does-section-inner{
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    .does-title{
-      font-size:clamp(34px,6vw,72px);
-      font-weight:900;
-      line-height:1.12;
-      padding-bottom:.06em;
-      color:#ffffff;
-      text-align:center;
-      margin-bottom:36px;
-      text-wrap:balance;
-      letter-spacing:-.5px;
-    }
-
-    .does-title em{
-      font-style:normal;
-      color:var(--gold);
-      font-weight:900;
-    }
-
-    .does-lead{
-      max-width:820px;
-      margin:0 auto 32px;
-      text-align:center;
-    }
-
-    .does-lead p{
-      font-size:clamp(17px,2vw,20px);
-      line-height:1.6;
-      margin-bottom:14px;
-      opacity:.92;
-    }
-
-    .does-list{
-      max-width:920px;
-      margin:0 auto;
-      list-style:none;
-      padding:0;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:12px;
-    }
-
-    .does-list li{
-      font-size:clamp(16px,1.9vw,19px);
-      line-height:1.55;
-      padding:20px 24px 20px 56px;
-      position:relative;
-      opacity:1;
-      background:rgba(232,181,99,.04);
-      border:1px solid rgba(232,181,99,.18);
-      border-radius:14px;
-      transition:all .3s ease;
-    }
-
-    .does-list li:hover{
-      background:rgba(232,181,99,.07);
-      border-color:rgba(232,181,99,.35);
-      transform:translateX(4px);
-    }
-
-    .does-list li::before{
-      content:'✓';
-      position:absolute;
-      left:24px;
-      top:50%;
-      transform:translateY(-50%);
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      background:var(--gold);
-      color:#0a0a0a;
-      font-size:13px;
-      font-weight:900;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 0 16px rgba(232,181,99,.4);
-    }
-
-    /* APPROACH SECTION */
-    .approach-section{
-      padding:80px 20px;
-      max-width:1600px;
-      margin:0 auto;
-    }
-
-    .section-header{
-      text-align:center;
-      margin-bottom:56px;
-    }
-
-    .section-eyebrow{
-      font-size:11px;
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      margin-bottom:12px;
-    }
-
-    .section-title{
-      font-size:clamp(34px,6vw,72px);
-      font-weight:900;
-      line-height:1.12;
-      padding-bottom:.08em;
-      color:#ffffff;
-      overflow:visible;
-      overflow-wrap:normal;
-      word-break:normal;
-      text-wrap:balance;
-      letter-spacing:-.5px;
-    }
-
-    .section-title.gradient{
-      background:linear-gradient(135deg,#fff 0%,var(--gold) 70%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .section-title em{
-      font-style:normal;
-      color:var(--gold);
-      font-weight:900;
-    }
-
-    .approach-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      max-width:1100px;
-      margin:0 auto;
-    }
-
-    .approach-step{
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(232,181,99,.14);
-      border-radius:24px;
-      padding:40px 36px;
-      transition:all .35s ease;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .approach-step::before{
-      content:attr(data-num);
-      position:absolute;
-      top:-30px;
-      right:-10px;
-      font-size:200px;
-      font-weight:900;
-      color:transparent;
-      -webkit-text-stroke:1.5px rgba(232,181,99,.10);
-      pointer-events:none;
-      line-height:1;
-      letter-spacing:-8px;
-    }
-
-    .approach-step:hover{
-      border-color:rgba(232,181,99,.35);
-      background:rgba(255,255,255,.045);
-      transform:translateY(-6px);
-      box-shadow:0 20px 60px rgba(232,181,99,.12);
-    }
-
-    .approach-step:hover::before{
-      -webkit-text-stroke-color:rgba(232,181,99,.2);
-    }
-
-    .approach-step-num{
-      font-size:11px;
-      letter-spacing:4px;
-      color:var(--gold);
-      font-weight:900;
-      margin-bottom:14px;
-      position:relative;
-    }
-
-    .approach-step-title{
-      font-size:clamp(22px,3vw,28px);
-      font-weight:800;
-      margin-bottom:18px;
-      line-height:1.2;
-      color:#ffffff;
-      position:relative;
-      letter-spacing:-.3px;
-    }
-
-    .approach-step-body{position:relative}
-
-    .approach-step-body p{
-      font-size:clamp(15px,1.7vw,17px);
-      line-height:1.65;
-      opacity:.85;
-      margin-bottom:12px;
-    }
-
-    .approach-step-body p:last-child{margin-bottom:0}
-
-    /* WORK / CASES */
+    /* WORK SHOWCASE */
     .work-section{
       padding:80px 20px;
       background:linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
@@ -971,16 +332,15 @@
     }
 
     .work-title{
-      font-size:clamp(24px,5vw,40px);
+      font-size:clamp(24px, 5vw, 40px);
       font-weight:900;
       margin-bottom:12px;
-      line-height:1.12;
-      padding-bottom:.04em;
+      line-height:1.1;
     }
 
     .work-desc{
-      font-size:clamp(14px,3vw,16px);
-      opacity:.88;
+      font-size:clamp(14px, 3vw, 16px);
+      opacity:.85;
       line-height:1.6;
       margin-bottom:20px;
     }
@@ -996,7 +356,7 @@
     .work-stat{display:flex;flex-direction:column}
 
     .work-stat-num{
-      font-size:clamp(22px,4vw,32px);
+      font-size:clamp(22px, 4vw, 32px);
       font-weight:900;
       color:var(--gold);
       line-height:1;
@@ -1020,7 +380,6 @@
       color:var(--gold);
       align-self:flex-start;
     }
-
     .case-link:hover{text-decoration:underline}
 
     .play-btn{
@@ -1069,40 +428,9 @@
       visibility:hidden!important;
     }
 
-    /* AI SECTION */
-    .ai-section{
-      padding:80px 20px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-
-    .ai-lead{
-      max-width:820px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .ai-lead p{
-      font-size:clamp(17px,2vw,20px);
-      line-height:1.65;
-      margin-bottom:18px;
-      opacity:.92;
-    }
-
-    .ai-lead strong{color:var(--gold);font-weight:700}
-
-    /* FOUNDER SECTION */
-    .founder-section{
-      padding:80px 20px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-
-    .founder-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:40px;
-    }
+    /* Founder */
+    .founder-section{padding:80px 20px;max-width:1400px;margin:0 auto}
+    .founder-grid{display:grid;grid-template-columns:1fr;gap:40px}
 
     .founder-card{
       width:100%;
@@ -1114,56 +442,19 @@
       box-shadow:0 14px 60px rgba(232,181,99,.24);
     }
 
-    .founder-media{
-      width:100%;
-      aspect-ratio:3/4;
-      border-radius:16px 16px 0 0;
-      overflow:hidden;
-      background:#0b0b0b;
-    }
+    .founder-media{width:100%;aspect-ratio:3/4;border-radius:16px 16px 0 0;overflow:hidden;background:#0b0b0b}
+    .founder-media img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+    .founder-info{padding:18px;border-top:2px solid var(--gold)}
+    .founder-label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:800}
+    .founder-name{font-size:17px;font-weight:800;margin-bottom:4px}
+    .founder-role{font-size:12px;opacity:.75}
 
-    .founder-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center 20%;
-    }
-
-    .founder-info{
-      padding:18px;
-      border-top:2px solid var(--gold);
-    }
-
-    .founder-label{
-      font-size:10px;
-      color:var(--gold);
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:6px;
-      font-weight:800;
-    }
-
-    .founder-name{
-      font-size:17px;
-      font-weight:800;
-      margin-bottom:4px;
-    }
-
-    .founder-role{
-      font-size:12px;
-      opacity:.75;
-    }
-
-    .founder-text{
-      font-size:clamp(16px,4vw,20px);
-      line-height:1.75;
-      opacity:.92;
-    }
-
-    .founder-text p{margin-bottom:18px}
+    .founder-text{font-size:clamp(16px,4vw,20px);line-height:1.7;opacity:.92}
+    .founder-text p{margin-bottom:16px}
+    .founder-text p:last-child{margin-bottom:0}
     .founder-text strong{color:var(--gold);font-weight:700}
 
-    /* ORYEN SECTION */
+    /* Oryen Section */
     .oryen-section{
       padding:100px 20px;
       background:linear-gradient(135deg, rgba(232,181,99,.08) 0%, transparent 50%);
@@ -1221,13 +512,14 @@
 
     .oryen-text{
       font-size:clamp(16px,4vw,18px);
-      line-height:1.75;
+      line-height:1.7;
       opacity:.92;
       max-width:800px;
       margin:0 auto 32px;
     }
 
     .oryen-text p{margin-bottom:16px}
+    .oryen-text p:last-child{margin-bottom:0}
     .oryen-text strong{color:var(--gold);font-weight:700}
 
     .oryen-btn{
@@ -1241,6 +533,7 @@
       letter-spacing:1px;
       transition:all .3s;
       font-size:16px;
+      margin-top:18px;
     }
 
     .oryen-btn:hover{
@@ -1248,159 +541,105 @@
       box-shadow:0 12px 32px rgba(232,181,99,.4);
     }
 
-    /* CLIENTS */
-    .clients-section{
-      padding:80px 20px;
-      max-width:1600px;
-      margin:0 auto;
-    }
-
+    /* Clients */
+    .clients-section{padding:80px 20px;max-width:1600px;margin:0 auto}
     .clients-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-      margin-top:48px;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      margin-top:40px;
     }
 
     .client-card{
       aspect-ratio:3/2;
-      padding:28px;
+      padding:20px;
       background:rgba(255,255,255,.05);
-      border:1px solid rgba(232,181,99,.14);
-      border-radius:18px;
+      border:1px solid rgba(232,181,99,.12);
+      border-radius:14px;
       display:flex;
       align-items:center;
       justify-content:center;
-      transition:all .3s ease;
+      transition:all .25s;
     }
 
     .client-card img{
       max-width:100%;
       max-height:100%;
       object-fit:contain;
-      filter:brightness(0) invert(1);
-      opacity:.85;
-      transition:all .3s ease;
+      filter:brightness(0) invert(1) grayscale(1);
+      opacity:.8;
+      transition:transform .25s;
     }
 
     .client-card:hover{
       transform:translateY(-4px);
-      border-color:rgba(232,181,99,.4);
-      background:rgba(255,255,255,.08);
+      border-color:var(--gold);
+      background:rgba(255,255,255,.07);
     }
 
-    .client-card:hover img{
-      opacity:1;
-      transform:scale(1.06);
-    }
+    .client-card:hover img{transform:scale(1.06)}
 
-    /* CERTS */
-    .certs-section{
-      padding:80px 20px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-
+    /* Certificaten */
+    .certs-section{padding:80px 20px;max-width:1400px;margin:0 auto}
     .cert-grid{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
       justify-content:center;
-      margin-top:48px;
+      margin-top:40px;
     }
 
     .cert-badge{
-      padding:18px 24px;
-      border-radius:14px;
-      background:rgba(255,255,255,.035);
-      border:1px solid rgba(232,181,99,.18);
+      padding:14px 22px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:2px solid rgba(232,181,99,.24);
       display:flex;
       align-items:center;
-      gap:14px;
-      transition:all .3s ease;
+      gap:12px;
+      transition:all .3s;
       position:relative;
       overflow:hidden;
     }
 
+    .cert-badge::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(135deg, rgba(232,181,99,0) 40%, rgba(232,181,99,.25) 60%, rgba(232,181,99,0) 80%);
+      transform:translateX(-120%);
+      transition:transform .5s ease;
+    }
+
+    .cert-badge:hover::after{transform:translateX(120%)}
+
     .cert-badge img{
-      height:32px;
-      opacity:.9;
+      height:36px;
+      opacity:.95;
       transition:transform .25s;
     }
 
     .cert-badge span{
-      color:rgba(255,255,255,.92);
-      font-size:13px;
+      color:#ffffff;
+      font-size:14px;
       font-weight:700;
-      letter-spacing:.3px;
       transition:color .25s;
     }
 
     .cert-badge:hover{
-      transform:translateY(-3px);
-      border-color:rgba(232,181,99,.45);
-      background:rgba(232,181,99,.08);
+      transform:translateY(-4px) scale(1.03);
+      border-color:var(--gold);
+      background:linear-gradient(135deg, rgba(232,181,99,.18), rgba(215,162,78,.22));
+      box-shadow:0 12px 40px rgba(232,181,99,.28);
     }
 
-    .cert-badge:hover img{transform:scale(1.06)}
-    .cert-badge:hover span{color:#ffffff}
+    .cert-badge:hover img{transform:scale(1.08)}
+    .cert-badge:hover span{color:var(--black)}
 
-    /* CONTACT */
-    .contact-section{
-      padding:80px 20px;
-      max-width:1400px;
-      margin:0 auto;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:40px;
-    }
-
-    .contact-intro p{
-      font-size:clamp(16px,2vw,18px);
-      line-height:1.6;
-      opacity:.92;
-      margin-bottom:16px;
-    }
-
-    .contact-intro strong{font-weight:700}
-
-    .contact-symptoms{
-      list-style:none;
-      padding:0;
-      margin:18px 0 24px;
-      display:grid;
-      gap:8px;
-    }
-
-    .contact-symptoms li{
-      font-size:clamp(15px,1.8vw,17px);
-      line-height:1.5;
-      padding:14px 16px 14px 44px;
-      position:relative;
-      opacity:.92;
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(232,181,99,.10);
-      border-radius:10px;
-      transition:all .25s ease;
-    }
-
-    .contact-symptoms li:hover{
-      background:rgba(255,255,255,.04);
-      border-color:rgba(232,181,99,.25);
-    }
-
-    .contact-symptoms li::before{
-      content:'—';
-      position:absolute;
-      left:18px;
-      top:50%;
-      transform:translateY(-50%);
-      color:var(--gold);
-      font-weight:900;
-    }
+    /* Contact */
+    .contact-section{padding:80px 20px;max-width:1400px;margin:0 auto}
+    .contact-grid{display:grid;grid-template-columns:1fr;gap:40px}
 
     .contact-form{
       background:rgba(255,255,255,.035);
@@ -1412,47 +651,14 @@
     }
 
     .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+    .form-group input,.form-group textarea{width:100%;border-radius:14px;border:2px solid rgba(232,181,99,.2);background:rgba(255,255,255,.06);padding:14px;color:#fff;font-size:16px;font-family:inherit}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
 
-    .form-group label{
-      display:block;
-      font-size:12px;
-      color:var(--gold);
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    }
-
-    .form-group input,.form-group textarea{
-      width:100%;
-      border-radius:14px;
-      border:2px solid rgba(232,181,99,.2);
-      background:rgba(255,255,255,.06);
-      padding:14px;
-      color:#fff;
-      font-size:16px;
-      font-family:inherit;
-    }
-
-    .form-group input:focus,.form-group textarea:focus{
-      outline:none;
-      border-color:var(--gold);
-    }
-
-    .submit-btn{
-      width:100%;
-      padding:16px;
-      border:none;
-      border-radius:14px;
-      background:linear-gradient(135deg,var(--gold),#d4a049);
-      color:#0a0a0a;
-      font-weight:900;
-      letter-spacing:1px;
-      cursor:pointer;
-      transition:transform .2s;
-    }
-
+    .submit-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--gold),#d4a049);color:#0a0a0a;font-weight:900;letter-spacing:1px;cursor:pointer;transition:transform .2s}
     .submit-btn:hover{transform:translateY(-2px)}
 
+    /* Floating CTA Button */
     .floating-cta{
       position:fixed;
       bottom:24px;
@@ -1482,102 +688,60 @@
       box-shadow:0 12px 40px rgba(232,181,99,.6);
     }
 
-    /* FOOTER */
-    footer{
-      border-top:1px solid rgba(232,181,99,.12);
-      padding:60px 20px 36px;
-      max-width:1600px;
-      margin:0 auto;
+    @media (max-width:767px){
+      .floating-cta{
+        bottom:16px;
+        right:16px;
+        padding:14px 24px;
+        font-size:14px;
+      }
     }
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:40px;
-      margin-bottom:36px;
-      text-align:center;
-    }
-
-    .footer-heading{
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      color:var(--gold);
-      margin-bottom:12px;
-    }
-
-    .footer-grid a{
-      color:rgba(255,255,255,.75);
-      text-decoration:none;
-      display:block;
-      margin-bottom:8px;
-    }
-
+    /* Footer */
+    footer{border-top:1px solid rgba(232,181,99,.12);padding:60px 20px 36px;max-width:1600px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:36px;text-align:center}
+    .footer-heading{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:12px}
+    .footer-grid a{color:rgba(255,255,255,.75);text-decoration:none;display:block;margin-bottom:8px}
     .footer-grid a:hover{color:var(--gold)}
+    .footer-bottom{text-align:center;font-size:12px;opacity:.65;border-top:1px solid rgba(232,181,99,.12);padding-top:20px;margin-top:20px}
 
-    .footer-bottom{
-      text-align:center;
-      font-size:12px;
-      opacity:.65;
-      border-top:1px solid rgba(232,181,99,.12);
-      padding-top:20px;
-      margin-top:20px;
-    }
-
-    /* DESKTOP */
+    /* Desktop */
     @media (min-width:768px){
       html{scroll-behavior:smooth}
       header{padding:22px 80px}
-      .hero{padding:160px 40px 100px}
+      .hero{padding:160px 80px 100px}
 
-      .logo-strip{padding:64px 80px 100px}
-      .logo-track{grid-template-columns:repeat(6,1fr);gap:22px}
-      .logo-item{min-height:120px;padding:28px}
-      .logo-item img{max-height:60px}
-
-      .problem-section{padding:140px 80px}
-
-      .hero-pain-section{padding:0 80px 110px}
-      .hero-pain-grid{grid-template-columns:repeat(3,1fr);gap:22px}
-      .hero-pain-card{padding:40px 28px}
-      .hero-pain-icon{width:60px;height:60px;font-size:26px}
-      .does-section{padding:140px 80px}
-      .approach-section{padding:140px 80px}
-      .approach-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+      .services-section{padding:140px 80px}
+      .services-bento{
+        grid-template-columns:repeat(4,1fr);
+        grid-auto-rows:280px;
+      }
+      .service-card{min-height:auto}
+      .service-card.large{grid-column:span 2;grid-row:span 2}
+      .service-card.wide{grid-column:span 2}
+      .service-number{font-size:92px}
+      .service-title{font-size:26px}
+      .service-desc{font-size:16px}
 
       .work-section{padding:160px 40px}
-      .work-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+      .work-grid{grid-template-columns:repeat(2, 1fr);gap:32px}
       .work-visual{aspect-ratio:4/3}
       .work-overlay{padding:40px}
-      .work-title{font-size:clamp(28px,4vw,40px)}
+      .work-title{font-size:clamp(28px, 4vw, 40px)}
       .work-desc{font-size:16px}
       .work-stats{flex-wrap:nowrap;gap:32px}
 
       .play-btn{width:80px;height:80px}
-      .play-btn::after{
-        border-left:20px solid var(--black);
-        border-top:14px solid transparent;
-        border-bottom:14px solid transparent;
-      }
-
-      .ai-section{padding:140px 80px}
+      .play-btn::after{border-left:20px solid var(--black);border-top:14px solid transparent;border-bottom:14px solid transparent}
 
       .founder-section{padding:140px 80px}
-      .founder-grid{
-        grid-template-columns:1fr 260px;
-        gap:72px;
-        align-items:center;
-      }
+      .founder-grid{grid-template-columns:1fr 260px;gap:72px;align-items:center}
       .founder-card{position:sticky;top:100px}
       .founder-media{aspect-ratio:13/16}
       .founder-text{font-size:20px}
 
       .oryen-section{padding:140px 80px}
-      .oryen-grid{
-        grid-template-columns:400px 1fr;
-        gap:80px;
-        text-align:left;
-      }
+      .oryen-grid{grid-template-columns:400px 1fr;gap:80px;text-align:left}
       .oryen-content{text-align:left}
       .oryen-text{text-align:left;font-size:18px}
 
@@ -1591,347 +755,17 @@
       .cert-badge span{font-size:15px}
 
       .contact-section{padding:140px 40px}
-      .contact-grid{
-        grid-template-columns:1fr 1fr;
-        gap:72px;
-        align-items:center;
-      }
+      .contact-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 
-      .footer-grid{
-        grid-template-columns:2fr 1fr 1fr 1fr;
-        gap:56px;
-        text-align:left;
-      }
-    }
-
-    /* MOBILE */
-    @media (max-width:767px){
-      body{font-size:16px}
-
-      header{
-        position:sticky;
-        top:0;
-        left:auto;
-        right:auto;
-        width:100%;
-        padding:28px 28px 24px;
-        background:rgba(10,10,10,.96);
-        backdrop-filter:blur(24px);
-      }
-
-      .header-content{
-        width:100%;
-        max-width:none;
-        display:grid;
-        grid-template-columns:1fr;
-        gap:22px;
-        align-items:start;
-      }
-
-      .logo-text{
-        display:inline-flex;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:14px;
-        font-size:38px;
-        line-height:.9;
-        letter-spacing:.5px;
-      }
-
-      .badge{
-        display:inline-block;
-        margin-left:0;
-        padding:9px 22px;
-        font-size:13px;
-        line-height:1;
-      }
-
-      nav{
-        width:100%;
-        display:flex;
-        flex-wrap:wrap;
-        gap:14px 22px;
-        align-items:center;
-        justify-content:flex-start;
-      }
-
-      nav a{
-        font-size:18px;
-        line-height:1.15;
-        white-space:nowrap;
-        letter-spacing:.2px;
-      }
-
-      .hero{
-        min-height:auto;
-        padding:120px 26px 100px;
-      }
-
-      .hero-content{width:100%;padding:0}
-
-      .hero-eyebrow{
-        margin-bottom:30px;
-        font-size:11px;
-        line-height:1;
-        letter-spacing:4px;
-        padding:9px 18px;
-      }
-
-      .hero-title{
-        font-size:clamp(38px,10vw,54px);
-        line-height:1.1;
-        max-width:380px;
-        margin:0 auto 26px;
-        padding-bottom:.16em;
-        letter-spacing:-1px;
-      }
-
-      .hero-lead{
-        max-width:380px;
-        margin:0 auto 40px;
-        font-size:17px;
-        line-height:1.55;
-      }
-
-      .hero-cta{
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        gap:20px;
-        justify-content:center;
-        align-items:center;
-      }
-
-      .cta-primary,
-      .cta-secondary{
-        width:min(100%,330px);
-        text-align:center;
-        padding:18px 26px;
-        font-size:17px;
-        line-height:1.2;
-      }
-
-      .cta-link{
-        font-size:15px;
-        opacity:.9;
-      }
-
-      .hero-scroll{display:none}
-
-      .hero-pain-section{padding:0 24px 70px}
-      .hero-pain-lead{
-        font-size:18px;
-        line-height:1.5;
-        max-width:360px;
-        margin-bottom:36px;
-      }
-      .hero-pain-grid{gap:14px}
-      .hero-pain-card{padding:28px 22px}
-      .hero-pain-icon{width:48px;height:48px;font-size:22px;margin-bottom:14px}
-      .hero-pain-card p{font-size:16px;line-height:1.5}
-
-      .logo-strip,
-      .hero-pain-section,
-      .problem-section,
-      .does-section,
-      .approach-section,
-      .work-section,
-      .ai-section,
-      .founder-section,
-      .oryen-section,
-      .clients-section,
-      .certs-section,
-      .contact-section{
-        padding-left:24px;
-        padding-right:24px;
-      }
-
-      .logo-strip-label{font-size:16px;margin-bottom:36px}
-
-      .section-header{margin-bottom:44px}
-
-      .section-eyebrow,
-      .problem-eyebrow{
-        font-size:12px;
-        line-height:1.6;
-        letter-spacing:5px;
-      }
-
-      .section-title,
-      .problem-title,
-      .does-title{
-        font-size:clamp(34px,9.5vw,52px);
-        line-height:1.16;
-        padding-bottom:.1em;
-      }
-
-      .problem-lead{font-size:17px;line-height:1.55}
-      .problem-list li{
-        font-size:16px;
-        line-height:1.5;
-        padding:18px 20px 18px 48px;
-      }
-
-      .problem-list li::before{
-        left:20px;
-        width:8px;
-        height:8px;
-      }
-
-      .does-list li{
-        font-size:16px;
-        line-height:1.5;
-        padding:18px 20px 18px 48px;
-      }
-
-      .does-list li::before{
-        left:18px;
-        width:20px;
-        height:20px;
-        font-size:11px;
-      }
-      .problem-conclusion p{font-size:17px;line-height:1.55}
-
-      .does-lead p{font-size:17px;line-height:1.55}
-
-      .approach-grid{gap:18px}
-      .approach-step{padding:32px 28px;border-radius:22px}
-      .approach-step::before{font-size:140px;top:-15px;right:-5px;letter-spacing:-6px}
-      .approach-step-title{font-size:22px;line-height:1.2}
-      .approach-step-body p{font-size:16px;line-height:1.6}
-
-      .work-grid{gap:36px}
-      .work-item{border-radius:24px;overflow:hidden}
-      .work-visual{aspect-ratio:4/5;min-height:480px}
-
-      .work-overlay{
-        opacity:1;
-        padding:80px 28px 30px;
-        justify-content:flex-end;
-        background:linear-gradient(180deg,
-          rgba(10,10,10,.24) 0%,
-          rgba(10,10,10,.58) 36%,
-          rgba(10,10,10,.88) 70%,
-          rgba(10,10,10,.98) 100%);
-      }
-
-      .work-tag{
-        position:absolute;
-        top:22px;
-        left:24px;
-        right:24px;
-        z-index:3;
-        width:fit-content;
-        max-width:calc(100% - 48px);
-        margin:0;
-        padding:10px 20px;
-        font-size:11px;
-        line-height:1;
-        letter-spacing:3px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
-      }
-
-      .work-title{font-size:34px;line-height:1.14;margin-bottom:16px}
-      .work-desc{font-size:17px;line-height:1.55;margin-bottom:22px}
-      .work-stats{gap:28px;padding-top:20px}
-      .work-stat-num{font-size:30px}
-      .work-stat-label{font-size:11px;letter-spacing:2px}
-      .case-link{margin-top:24px;font-size:13px;letter-spacing:2.5px}
-
-      .ai-lead p{font-size:17px;line-height:1.6}
-
-      .founder-grid{gap:40px}
-      .founder-text{font-size:18px;line-height:1.7}
-      .founder-card{max-width:280px}
-
-      .oryen-logo-container{padding:32px 24px}
-      .oryen-logo{max-width:220px}
-      .oryen-text{font-size:17px;line-height:1.7}
-      .oryen-btn{
-        width:min(100%,330px);
-        text-align:center;
-        padding:18px 24px;
-        font-size:17px;
-      }
-
-      .clients-grid{grid-template-columns:repeat(2,1fr);gap:14px}
-      .client-card{padding:18px;border-radius:16px}
-
-      .cert-grid{justify-content:flex-start}
-      .cert-badge{
-        width:100%;
-        justify-content:flex-start;
-        padding:16px 20px;
-      }
-
-      .contact-intro p{font-size:17px;line-height:1.55}
-
-      .contact-symptoms li{
-        font-size:15px;
-        line-height:1.5;
-        padding:12px 14px 12px 36px;
-      }
-
-      .contact-symptoms li::before{left:14px}
-
-      .contact-form{padding:24px}
-      .form-group input,
-      .form-group textarea{font-size:16px;padding:14px}
-      .submit-btn{padding:18px;font-size:16px}
-
-      .floating-cta{
-        left:90px;
-        right:20px;
-        bottom:calc(20px + env(safe-area-inset-bottom));
-        width:auto;
-        max-width:calc(100vw - 110px);
-        padding:16px 20px;
-        font-size:15px;
-        line-height:1.1;
-        text-align:center;
-        white-space:nowrap;
-        z-index:998;
-      }
-
-      footer{padding-left:24px;padding-right:24px}
-      .footer-grid{text-align:left;gap:32px}
-      .footer-grid a{font-size:16px;line-height:1.5}
-    }
-
-    @media (max-width:390px){
-      header{padding-left:20px;padding-right:20px}
-      nav{gap:12px 16px}
-      nav a{font-size:16px}
-      .hero-title{
-        font-size:clamp(34px,9.5vw,46px);
-        line-height:1.12;
-        padding-bottom:.18em;
-        letter-spacing:-.8px;
-      }
-      .hero-lead{font-size:16px}
-      .hero-pain-card p{font-size:15px}
-      .work-title{font-size:30px}
-      .work-desc{font-size:16px}
-      .floating-cta{
-        left:80px;
-        right:16px;
-        max-width:calc(100vw - 96px);
-        font-size:14px;
-      }
+      .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;text-align:left}
     }
   </style>
 </head>
-
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
 
-  <div class="page-loader">
-    <div class="loader-text">CNIP</div>
-  </div>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3QJK6VR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="page-loader"><div class="loader-text">CNIP</div></div>
 
   <header>
     <div class="header-content">
@@ -1939,10 +773,11 @@
         CNIP <span class="badge">Since 2002</span>
       </a>
       <nav>
-        <a href="#aanpak">Onze aanpak</a>
-        <a href="#work">Cases</a>
+        <a href="/#services">Aanpak</a>
+        <a href="/#work">Cases</a>
+        <a href="/#story">Christophe</a>
         <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN</a>
-        <a href="#contact">Contact</a>
+        <a href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -1950,158 +785,65 @@
   <a href="#contact" class="floating-cta" id="floatingCta">Bespreek uw zichtbaarheid →</a>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-bg"></div>
-      <div class="hero-glow"></div>
       <div class="hero-content">
-        <div class="hero-eyebrow">Merken in de kijker · Sinds 2002</div>
+        <div class="hero-eyebrow">Marketingbureau Gent — sinds 2002</div>
         <h1 class="hero-title">Wordt u wel gevonden<br>om de juiste reden?</h1>
-        <p class="hero-lead">
-          CNIP vertaalt wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising — zodat de juiste mensen u juist begrijpen.
-        </p>
+        <p class="hero-subtitle">CNIP vertaalt wat uw bedrijf echt onderscheidt naar website, vindbaarheid, video, content en digital advertising — zodat de juiste mensen u juist begrijpen.</p>
         <div class="hero-cta">
           <a class="cta-primary" href="#contact">Bespreek uw zichtbaarheid</a>
-          <a class="cta-link" href="#work">Bekijk het werk →</a>
-        </div>
-      </div>
-      <div class="hero-scroll" aria-hidden="true">
-        <span></span>
-      </div>
-    </section>
-
-    <!-- LOGO STRIP -->
-    <section class="logo-strip" aria-label="Merken waarvoor CNIP werkte">
-      <div class="logo-strip-inner">
-        <div class="logo-strip-eyebrow">Merken in de kijker plaatsen sinds 2002</div>
-        <p class="logo-strip-label">Voor bedrijven waar het verhaal, de uitstraling en de zichtbaarheid beter moesten kloppen met wie ze echt zijn.</p>
-        <div class="logo-track">
-          <div class="logo-item"><img src="/images/klanten/dsmkeukens.png" alt="DSM Keukens" loading="lazy"></div>
-          <div class="logo-item"><img src="/images/klanten/WillemsVerandas.png" alt="Willems Veranda" loading="lazy"></div>
-          <div class="logo-item"><img src="/images/klanten/bmw%20Le%20couter.png" alt="BMW Le Couter" loading="lazy"></div>
-          <div class="logo-item"><img src="/images/klanten/GEHealtcare.png" alt="GE Healthcare" loading="lazy"></div>
-          <div class="logo-item"><img src="/images/klanten/decospan.png" alt="Decospan" loading="lazy"></div>
-          <div class="logo-item"><img src="/images/klanten/Soubry.png" alt="Soubry" loading="lazy"></div>
+          <a class="cta-secondary" href="#work">Bekijk het werk</a>
         </div>
       </div>
     </section>
 
-    <!-- HERO PAIN BLOCK -->
-    <section class="hero-pain-section">
-      <div class="hero-pain-inner">
-        <p class="hero-pain-lead">Uw klanten oriënteren zich online nog vóór ze u bellen, mailen of bezoeken.</p>
-        <div class="hero-pain-grid">
-          <div class="hero-pain-card">
-            <div class="hero-pain-icon">↗</div>
-            <p>Als uw website niet gevonden wordt, krijgt u geen kans.</p>
-          </div>
-          <div class="hero-pain-card">
-            <div class="hero-pain-icon">≈</div>
-            <p>Als uw advertenties klinken zoals iedereen, bent u snel weer vergeten.</p>
-          </div>
-          <div class="hero-pain-card">
-            <div class="hero-pain-icon">!</div>
-            <p>Als uw verhaal verkeerd of te vlak overkomt, trekt u de verkeerde verwachtingen aan.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEM SECTION -->
-    <section class="problem-section">
-      <div class="problem-eyebrow">De realiteit</div>
-      <h2 class="problem-title">Online wordt u sneller<br>vergeleken dan begrepen.</h2>
-      <p class="problem-lead">
-        De meeste klanten beginnen niet met een gesprek. Ze beginnen met zoeken, vergelijken, klikken, lezen en beoordelen. En daar gaat het vaak mis.
-      </p>
-      <ul class="problem-list">
-        <li>Uw website wordt niet gevonden op de juiste vragen.</li>
-        <li>Uw advertenties klinken zoals die van concurrenten.</li>
-        <li>Uw teksten zijn correct, maar generiek.</li>
-        <li>AI maakt alles sneller, maar niet automatisch scherper.</li>
-        <li>Uw nuance, reputatie en echte verschil komen niet genoeg naar buiten.</li>
-      </ul>
-      <div class="problem-conclusion">
-        <p>U concurreert met tientallen gelijkaardige spelers. U wordt even snel vergeten als gevonden. En als mensen u wél contacteren, komen ze soms binnen met verkeerde verwachtingen.</p>
-        <p><strong>Niets is zo duur als tijd verliezen aan de verkeerde prospect.</strong></p>
-      </div>
-    </section>
-
-    <!-- WHAT CNIP DOES -->
-    <section class="does-section">
-      <div class="does-section-inner">
-        <h2 class="does-title">Wij vertalen uw bedrijf<br>naar de buitenwereld.</h2>
-        <div class="does-lead">
-          <p>Niet met standaardmarketing. Niet met generieke AI-teksten. Niet met advertenties die roepen dat u "de beste in uw vak" bent.</p>
-          <p>CNIP zoekt wat uw bedrijf herkenbaar maakt: uw aanpak, uw mensen, uw bewijs, uw reputatie, uw klanten, uw stijl en uw manier van werken.</p>
-          <p>Daarna vertalen we dat naar marketing die klopt vóór iemand contact opneemt.</p>
-        </div>
-        <ul class="does-list">
-          <li>Een website die duidelijk maakt waarom u anders bent.</li>
-          <li>Vindbaarheid op zoekvragen die commercieel tellen.</li>
-          <li>Video en content die vertrouwen opbouwen.</li>
-          <li>Advertising die niet zomaar aandacht koopt, maar de juiste verwachtingen zet.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="aanpak" class="approach-section">
+    <section class="services-section" id="services">
       <div class="section-header">
         <div class="section-eyebrow">Onze aanpak</div>
-        <h2 class="section-title">Eerst juist begrijpen.<br>Dan juist naar buiten brengen.</h2>
+        <h2 class="section-title">Online tonen<br>wie u echt bent</h2>
       </div>
 
-      <div class="approach-grid">
-        <div class="approach-step" data-num="01">
-          <div class="approach-step-num">01</div>
-          <h3 class="approach-step-title">We halen de kern boven</h3>
-          <div class="approach-step-body">
-            <p>We luisteren naar hoe u werkt, waarom klanten voor u kiezen, welke misverstanden vaak ontstaan en welke klanten u net wél of niet wil aantrekken.</p>
-            <p>Niet om een mooi verhaal te verzinnen. Wel om helder te krijgen wat de markt moet begrijpen vóór ze u beoordeelt.</p>
+      <div class="services-bento">
+        <article class="service-card large">
+          <div class="service-number">01</div>
+          <div>
+            <h3 class="service-title">Website<br>&amp; copy</h3>
+            <p class="service-desc">Een website die duidelijk maakt waarom klanten voor u moeten kiezen. Geen visitekaartje, wel een platform dat snel laadt, vertrouwen wekt en de juiste klant overtuigt om contact op te nemen.</p>
           </div>
-        </div>
+        </article>
 
-        <div class="approach-step" data-num="02">
-          <div class="approach-step-num">02</div>
-          <h3 class="approach-step-title">We maken het scherp</h3>
-          <div class="approach-step-body">
-            <p>Veel bedrijven zeggen ongeveer hetzelfde: kwaliteit, service, ervaring, maatwerk. Dat is niet genoeg.</p>
-            <p>Wij zoeken wat dat concreet betekent bij ú. Waar zit het bewijs? Wat maakt uw aanpak anders? Waarom blijven klanten? Wat moet een prospect voelen of begrijpen om juist te kiezen?</p>
-          </div>
-        </div>
+        <article class="service-card">
+          <div class="service-number">02</div>
+          <h3 class="service-title">Vindbaarheid</h3>
+          <p class="service-desc">Lokale en nationale SEO, plus optimalisatie voor AI-zoekmachines. Gevonden worden waar uw klanten kijken.</p>
+        </article>
 
-        <div class="approach-step" data-num="03">
-          <div class="approach-step-num">03</div>
-          <h3 class="approach-step-title">We vertalen het naar marketing</h3>
-          <div class="approach-step-body">
-            <p>Die kern vertalen we naar websitecopy, SEO-pagina's, video, cases, LinkedIn-content, advertenties en landingspagina's.</p>
-            <p>Alles ondersteunt hetzelfde: waarom u relevant bent, voor wie u de juiste keuze bent en waarom iemand beter niet enkel op prijs vergelijkt.</p>
-          </div>
-        </div>
+        <article class="service-card">
+          <div class="service-number">03</div>
+          <h3 class="service-title">Content<br>&amp; video</h3>
+          <p class="service-desc">Video, beeld en content die het echte gezicht achter uw bedrijf tonen — en die de juiste klanten aantrekken in plaats van prijsjagers.</p>
+        </article>
 
-        <div class="approach-step" data-num="04">
-          <div class="approach-step-num">04</div>
-          <h3 class="approach-step-title">We zorgen dat het gezien wordt</h3>
-          <div class="approach-step-body">
-            <p>Een goed verhaal dat niemand ziet, brengt niets op. Daarom koppelen we inhoud aan zichtbaarheid: websitevindbaarheid, Google Ads, social advertising, video en contentdistributie.</p>
-            <p>Niet om zomaar meer verkeer te krijgen. Wel om de juiste mensen met de juiste verwachting binnen te brengen.</p>
-          </div>
-        </div>
+        <article class="service-card wide">
+          <div class="service-number">04</div>
+          <h3 class="service-title">Campagnes &amp; opvolging</h3>
+          <p class="service-desc">Gerichte Google Ads en social campagnes, gekoppeld aan HubSpot-opvolging. Geen verspild budget — wel kwalitatieve instroom, met systemen die ervoor zorgen dat geen lead koud wordt.</p>
+        </article>
       </div>
     </section>
 
-    <!-- WORK / CASES -->
     <section id="work" class="work-section">
       <div class="section-header">
         <div class="section-eyebrow">Het bewijs</div>
-        <h2 class="section-title">Merken die online laten zien<br>wie ze echt zijn</h2>
+        <h2 class="section-title">Merken die online<br>tonen wie ze zijn</h2>
         <p style="margin-top:16px;font-size:14px;opacity:.75;">
           <a href="/cases/" style="color:var(--gold);text-decoration:none;font-weight:700;">Bekijk alle cases →</a>
         </p>
       </div>
 
       <div class="work-grid">
+
         <article class="work-item work-video">
           <div class="work-visual">
             <video
@@ -2116,9 +858,9 @@
             <button class="play-btn" aria-label="Speel video af"></button>
           </div>
           <div class="work-overlay">
-            <span class="work-tag">Merkgezicht & herkenbaarheid</span>
+            <span class="work-tag">Merkgezicht &amp; herkenbaarheid</span>
             <h3 class="work-title">DSM Keukens</h3>
-            <p class="work-desc">Jarenlang bouwden we mee aan het herkenbare gezicht van DSM Keukens via nationale tv-commercials, video en radio — inclusief een herkenbare tune. Niet alleen reclame, wel herkenning, vertrouwen en merkgevoel opbouwen.</p>
+            <p class="work-desc">Jarenlang bouwden we mee aan het herkenbare gezicht van DSM Keukens via nationale tv-commercials, video en radio — inclusief een herkenbare tune. Niet alleen reclame, wel herkenning en vertrouwen opbouwen.</p>
             <div class="work-stats">
               <div class="work-stat">
                 <div class="work-stat-num">5+ jaar</div>
@@ -2134,12 +876,12 @@
 
         <article class="work-item">
           <div class="work-visual">
-            <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve - 3-sterren restaurant - Case Study CNIP" loading="lazy">
+            <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve Social Media Case Study - 3-sterren restaurant" loading="lazy">
           </div>
           <div class="work-overlay">
-            <span class="work-tag">Merkverhaal & menselijkheid</span>
+            <span class="work-tag">Merkverhaal &amp; menselijkheid</span>
             <h3 class="work-title">Hof van Cleve</h3>
-            <p class="work-desc">Een ijzersterke reputatie die mocht zichtbaar worden op een manier die klasse behield, maar meer verbinding maakte met een nieuwe generatie.</p>
+            <p class="work-desc">Een ijzersterke reputatie mocht zichtbaar worden op een manier die klasse behield, maar meer verbinding maakte met een nieuwe generatie.</p>
             <div class="work-stats">
               <div class="work-stat">
                 <div class="work-stat-num">50K+</div>
@@ -2159,9 +901,9 @@
             <img src="/images/willems_2.jpg" alt="Willems Veranda - Rebranding en SEO Case Study CNIP" loading="lazy">
           </div>
           <div class="work-overlay">
-            <span class="work-tag">Nieuw gezicht & vindbaarheid</span>
+            <span class="work-tag">Nieuw gezicht &amp; vindbaarheid</span>
             <h3 class="work-title">Willems Veranda</h3>
-            <p class="work-desc">Vakmanschap en reputatie kregen een nieuw gezicht én werden online beter gevonden, begrepen en onderscheiden in een competitieve markt.</p>
+            <p class="work-desc">Vakmanschap en reputatie kregen een nieuw gezicht én werden online beter gevonden, begrepen en onderscheiden.</p>
             <div class="work-stats">
               <div class="work-stat">
                 <div class="work-stat-num">51</div>
@@ -2181,36 +923,23 @@
             <img src="/images/BMW%20LE%20Couter.jpg" alt="BMW Le Couter - lokale dealer met op maat gemaakte socials en lokale SEO" loading="lazy" style="object-position:center 42%;">
           </div>
           <div class="work-overlay">
-            <span class="work-tag">Lokaal gezicht & lokale SEO</span>
+            <span class="work-tag">Lokaal gezicht &amp; lokale SEO</span>
             <h3 class="work-title">BMW Le Couter</h3>
-            <p class="work-desc">BMW is overal herkenbaar. Een lokale dealer moet dus méér doen dan het automerk tonen. CNIP hielp BMW Le Couter lokaler, menselijker en herkenbaarder naar buiten komen.</p>
+            <p class="work-desc">BMW is overal herkenbaar. Een lokale dealer moet dus méér doen dan het automerk tonen. CNIP hielp BMW Le Couter lokaler, menselijker en herkenbaarder naar buiten komen via op-maat-gemaakte socials, een gepersonaliseerde website en lokale SEO.</p>
           </div>
         </article>
+
       </div>
     </section>
 
-    <!-- AI SECTION -->
-    <section class="ai-section">
-      <div class="section-header">
-        <div class="section-eyebrow">AI &amp; eigenheid</div>
-        <h2 class="section-title">AI maakt marketing sneller.<br>Niet automatisch beter.</h2>
-      </div>
-      <div class="ai-lead">
-        <p>Vandaag kan iedereen snel teksten, advertenties en beelden maken. Maar daardoor begint veel marketing net méér op elkaar te lijken: correcte zinnen, vlotte slogans, algemene claims, weinig eigenheid.</p>
-        <p>CNIP gebruikt AI waar het helpt om sneller te verwerken, structureren en produceren. Maar de inhoud komt uit uw bedrijf — uw mensen, uw bewijs, uw klanten, uw reputatie, uw manier van werken.</p>
-        <p><strong>Want alleen dat maakt u moeilijker te kopiëren.</strong></p>
-      </div>
-    </section>
-
-    <!-- FOUNDER SECTION -->
     <section id="story" class="founder-section">
       <div class="founder-grid">
         <div>
           <div class="section-eyebrow">Wie u rechtstreeks spreekt</div>
-          <h2 class="section-title" style="margin-bottom:26px;">Klein genoeg om scherp te blijven.<br>Ervaren genoeg om verschil te maken.</h2>
+          <h2 class="section-title" style="margin-bottom: 26px;">Klein genoeg om<br>scherp te blijven</h2>
           <div class="founder-text">
             <p>U werkt rechtstreeks met Christophe Dejaeghere, ondersteund door een vaste kern en een netwerk van specialisten voor ontwikkeling, content, video en digitale uitvoering.</p>
-            <p>Sinds 2002 helpt CNIP Belgische bedrijven hun verhaal, vakmanschap en reputatie scherper naar buiten te brengen. Geen lagen accountmanagement, wel directe lijnen en duidelijke keuzes.</p>
+            <p>Sinds 2002 helpt CNIP Belgische bedrijven hun verhaal, vakmanschap en reputatie scherper naar buiten te brengen. <strong>Geen lagen accountmanagement, wel directe lijnen en duidelijke keuzes.</strong></p>
           </div>
         </div>
 
@@ -2227,27 +956,24 @@
       </div>
     </section>
 
-    <!-- ORYEN -->
     <section class="oryen-section">
       <div class="oryen-grid">
         <div class="oryen-logo-container">
-          <img src="/images/Oryen_logo_v5112025.png" alt="ORYEN - brede commerciële diagnose" class="oryen-logo" loading="lazy">
+          <img src="/images/Oryen_logo_v5112025.png" alt="ORYEN - brede commerciële diagnose" class="oryen-logo">
         </div>
 
         <div class="oryen-content">
           <div class="section-eyebrow">Wanneer het breder zit</div>
-          <h2 class="section-title" style="margin-bottom:26px;">CNIP maakt zichtbaar.<br>ORYEN maakt helder.</h2>
+          <h2 class="section-title" style="margin-bottom: 26px;">CNIP maakt zichtbaar.<br>ORYEN maakt helder.</h2>
           <div class="oryen-text">
             <p>Soms ligt de blokkade niet bij website, vindbaarheid of online uitstraling — maar bij <strong>sales, opvolging, CRM, winkelbeleving of de financiële draagkracht</strong> van uw commerciële investering.</p>
             <p>In die gevallen begint Christophe onder <strong>ORYEN</strong> met een <strong>Reality Check</strong>: een brede commerciële doorlichting die uitwijst waar resultaat verloren gaat — en wat eerst moet gebeuren vóór er opnieuw budget naar tools, mensen of campagnes gaat.</p>
-            <p style="margin-bottom:0">De scheiding is helder: <strong>ORYEN bepaalt waar het commercieel echt vastloopt. CNIP voert uit wanneer online zichtbaarheid de zwakke schakel blijkt.</strong></p>
           </div>
           <a href="https://oryen.be" target="_blank" rel="noopener" class="oryen-btn">Ontdek ORYEN →</a>
         </div>
       </div>
     </section>
 
-    <!-- CLIENTS -->
     <section id="clients" class="clients-section">
       <div class="section-header">
         <div class="section-eyebrow">Vertrouwd door</div>
@@ -2269,7 +995,6 @@
       </div>
     </section>
 
-    <!-- CERTS -->
     <section class="certs-section">
       <div class="section-header">
         <div class="section-eyebrow">Validatie</div>
@@ -2277,48 +1002,39 @@
       </div>
       <div class="cert-grid">
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner">
+          <img loading="lazy" src="/images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold Partner Certificering - CNIP">
           <span>HubSpot Gold</span>
         </div>
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge Judge Business School">
+          <img loading="lazy" src="/images/certificaten/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge Judge Business School Certificaat - CNIP">
           <span>Cambridge</span>
         </div>
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Gecertificeerd">
+          <img loading="lazy" src="/images/certificaten/Google-Adwords-Certification.png" alt="Google Ads Gecertificeerd - CNIP">
           <span>Google Ads</span>
         </div>
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/GA-certified.png" alt="Google Analytics Gecertificeerd">
+          <img loading="lazy" src="/images/certificaten/GA-certified.png" alt="Google Analytics Gecertificeerd - CNIP">
           <span>Analytics</span>
         </div>
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Gecertificeerd">
+          <img loading="lazy" src="/images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube Gecertificeerd - CNIP">
           <span>YouTube</span>
         </div>
         <div class="cert-badge">
-          <img loading="lazy" src="/images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner">
+          <img loading="lazy" src="/images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush Agency Partner - CNIP">
           <span>Semrush</span>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <div class="contact-grid">
-        <div class="contact-intro">
+        <div>
           <div class="section-eyebrow">Bespreek uw zichtbaarheid</div>
-          <h2 class="section-title" style="margin-bottom:24px;">Wilt u dat de juiste<br>mensen u juist begrijpen?</h2>
-          <p>Dan begint het niet met "meer marketing". Het begint met juist zichtbaar worden.</p>
-          <p style="margin-top:18px;">Vertel kort waar het vandaag wringt:</p>
-          <ul class="contact-symptoms">
-            <li>U wordt niet genoeg gevonden.</li>
-            <li>U krijgt verkeerde aanvragen.</li>
-            <li>Uw website overtuigt niet genoeg.</li>
-            <li>Uw advertenties klinken te algemeen.</li>
-            <li>Uw bedrijf lijkt online te veel op concurrenten.</li>
-            <li>Uw echte verhaal komt niet sterk genoeg naar buiten.</li>
-          </ul>
+          <h2 class="section-title" style="margin-bottom: 28px;">Wilt u dat de juiste<br>mensen u juist begrijpen?</h2>
+          <p style="font-size: clamp(18px,4vw,22px); opacity: .95; line-height: 1.6; margin-bottom: 16px; font-weight: 600;">Dan begint het niet met "meer marketing". Het begint met juist zichtbaar worden.</p>
+          <p style="font-size: clamp(15px,3vw,17px); opacity: .85; line-height: 1.6; margin-bottom: 24px;">Vertel kort waar het vandaag wringt — bijvoorbeeld dat u niet gevonden wordt, de verkeerde aanvragen krijgt, uw website niet overtuigt, of uw verhaal niet sterk genoeg naar buiten komt.</p>
         </div>
 
         <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
@@ -2330,22 +1046,18 @@
             <label for="name">Naam *</label>
             <input id="name" name="name" type="text" required>
           </div>
-
           <div class="form-group">
             <label for="email">Email *</label>
             <input id="email" name="email" type="email" required>
           </div>
-
           <div class="form-group">
             <label for="company">Bedrijf</label>
             <input id="company" name="company" type="text">
           </div>
-
           <div class="form-group">
             <label for="message">Bericht *</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-
           <button class="submit-btn" type="submit">Bespreek uw zichtbaarheid</button>
         </form>
       </div>
@@ -2363,22 +1075,21 @@
           <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
         </address>
       </div>
-
       <div>
-        <div class="footer-heading">Onze aanpak</div>
-        <a href="#aanpak">Werkwijze</a>
-        <a href="#work">Cases</a>
-        <a href="#clients">Klanten</a>
+        <div class="footer-heading">Aanpak</div>
+        <a href="#services">Website &amp; copy</a>
+        <a href="#services">Vindbaarheid</a>
+        <a href="#services">Content &amp; video</a>
+        <a href="#services">Campagnes &amp; opvolging</a>
       </div>
-
       <div>
         <div class="footer-heading">CNIP</div>
-        <a href="#story">Hoe we werken</a>
+        <a href="#story">Christophe</a>
+        <a href="#work">Cases</a>
         <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN</a>
         <a href="#contact">Contact</a>
         <a href="/privacy.html">Privacy</a>
       </div>
-
       <div>
         <div class="footer-heading">Connect</div>
         <a href="mailto:info@cnip.be">Email</a>
@@ -2386,25 +1097,23 @@
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-
     <div class="footer-bottom">© 2026 CNIP — Merken in de kijker plaatsen sinds 2002</div>
   </footer>
 
   <script>
+    // Page loader
     (function(){
       var pl = document.querySelector('.page-loader');
       if(!pl) return;
-
       var hidden = false;
-      function hideLoader(){
+      function hideLoader() {
         if(hidden) return;
         hidden = true;
-        pl.style.opacity='0';
-        pl.style.visibility='hidden';
-        pl.style.pointerEvents='none';
-        setTimeout(function(){ pl.style.display='none'; }, 600);
+        pl.style.opacity = '0';
+        pl.style.visibility = 'hidden';
+        pl.style.pointerEvents = 'none';
+        setTimeout(function() { pl.style.display = 'none'; }, 600);
       }
-
       if(document.readyState === 'complete'){
         hideLoader();
       } else {
@@ -2413,75 +1122,74 @@
       setTimeout(hideLoader, 2500);
     })();
 
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
       var floatingCta = document.getElementById('floatingCta');
       var hero = document.querySelector('.hero');
 
-      if(floatingCta && hero && 'IntersectionObserver' in window){
-        var observer = new IntersectionObserver(function(entries){
-          entries.forEach(function(entry){
-            if(!entry.isIntersecting){
+      if(floatingCta && hero && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if(!entry.isIntersecting) {
               floatingCta.classList.add('visible');
-            }else{
+            } else {
               floatingCta.classList.remove('visible');
             }
           });
-        }, {threshold:0.1});
-
+        }, { threshold: 0.1 });
         observer.observe(hero);
       }
 
       var form = document.getElementById('contactForm');
-      if(form){
-        form.addEventListener('submit', function(){
-          if(window.dataLayer){
+      if (form) {
+        form.addEventListener('submit', function() {
+          if (window.dataLayer) {
             window.dataLayer.push({
-              'event':'form_submit',
-              'form_name':'homepage_contact'
+              'event': 'form_submit',
+              'form_name': 'homepage_contact'
             });
           }
         });
       }
 
-      document.querySelectorAll('.play-btn').forEach(function(btn){
-        btn.addEventListener('click', function(e){
+      document.querySelectorAll('.play-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
           e.stopPropagation();
           var video = this.previousElementSibling;
           var card = this.closest('.work-video');
           var overlay = card ? card.querySelector('.work-overlay') : null;
 
-          if(video && video.tagName === 'VIDEO'){
-            if(video.paused){
+          if(video && video.tagName === 'VIDEO') {
+            if(video.paused) {
               video.play();
-              if(card){
+              if(card) {
                 card.classList.add('playing');
-                this.style.display='none';
-                if(overlay) overlay.style.display='none';
+                this.style.display = 'none';
+                if(overlay) overlay.style.display = 'none';
               }
-            }else{
+            } else {
               video.pause();
-              if(card){
+              if(card) {
                 card.classList.remove('playing');
-                this.style.display='flex';
-                if(overlay) overlay.style.display='flex';
+                this.style.display = 'flex';
+                if(overlay) overlay.style.display = 'flex';
               }
             }
           }
         });
       });
 
-      if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
+      if(typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.hero-pain-card, .approach-step, .work-item, .client-card, .problem-list li, .does-list li').forEach(function(el, i){
+        gsap.utils.toArray('.service-card, .work-item, .client-card').forEach(function(el, i) {
           gsap.from(el, {
-            opacity:0,
-            y:30,
-            duration:0.7,
-            delay:(i % 5) * 0.06,
-            scrollTrigger:{
-              trigger:el,
-              start:'top 90%',
-              toggleActions:'play none none none'
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            delay: i * 0.1,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
             }
           });
         });
