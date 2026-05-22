@@ -743,16 +743,19 @@
     .christophe-portrait{
       aspect-ratio:4/5;
       overflow:hidden;
-      background:#222;
-      max-width:420px;
+      background:#e8dfd0;
+      max-width:340px;
       width:100%;
       margin:0 auto;
+      border-radius:2px;
     }
     .christophe-portrait img{
       width:100%;height:100%;
       object-fit:cover;
-      object-position:center 20%;
-      filter:grayscale(.1) contrast(1.05);
+      object-position:center 12%;
+      transform:scale(1.18);
+      transform-origin:center 22%;
+      filter:grayscale(.08) contrast(1.04);
     }
     .christophe-content h2{
       font-size:clamp(32px,5vw,60px);
@@ -873,8 +876,8 @@
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:1px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
     }
     .client-cell{
       aspect-ratio:5/3;
@@ -882,19 +885,19 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:22px;
+      padding:28px;
       transition:background .3s;
     }
-    .client-cell:hover{background:#181818}
+    .client-cell:hover{background:#161616}
     .client-cell img{
       max-width:100%;
-      max-height:60%;
+      max-height:62%;
       object-fit:contain;
       filter:brightness(0) invert(1);
-      opacity:.5;
+      opacity:.82;
       transition:all .3s;
     }
-    .client-cell:hover img{opacity:.95;transform:scale(1.05)}
+    .client-cell:hover img{opacity:1;transform:scale(1.04)}
 
     /* === CERTIFICATES === */
     .certs{
@@ -920,19 +923,17 @@
     }
     .cert{
       padding:11px 18px;
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(0,0,0,.08);
       border-radius:999px;
       display:flex;
       align-items:center;
       gap:10px;
       transition:all .25s;
-      background:rgba(255,255,255,.02);
+      background:#f4ede1;
     }
-    .cert img{height:22px;opacity:.75}
-    .cert span{font-size:12.5px;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.2px}
-    .cert:hover{border-color:var(--gold-soft);background:rgba(189,139,63,.05)}
-    .cert:hover img{opacity:1}
-    .cert:hover span{color:#fff}
+    .cert img{height:24px;opacity:1}
+    .cert span{font-size:12.5px;color:#2a2620;font-weight:600;letter-spacing:.2px}
+    .cert:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
 
     /* === CONTACT === */
     .contact{
@@ -1104,7 +1105,7 @@
       .ai-section{padding:200px 48px}
 
       .christophe{padding:180px 80px 180px 100px}
-      .christophe-wrap{grid-template-columns:420px 1fr;gap:100px}
+      .christophe-wrap{grid-template-columns:340px 1fr;gap:90px}
 
       .oryen{padding:180px 48px}
       .oryen-wrap{grid-template-columns:380px 1fr;gap:80px}
@@ -1198,8 +1199,8 @@
 
     <!-- STATEMENT -->
     <section class="statement">
-      <div class="statement-num">23</div>
-      <p class="statement-text">Drieëntwintig jaar Belgische bedrijven<br>helpen <em>scherper</em> naar buiten komen.</p>
+      <div class="statement-num">24</div>
+      <p class="statement-text">Vierentwintig jaar Belgische bedrijven<br>helpen <em>scherper</em> naar buiten komen.</p>
     </section>
 
     <!-- PROBLEEM -->
