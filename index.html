@@ -850,66 +850,69 @@
     .oryen-btn:hover::after{transform:translateX(4px)}
 
     /* === CLIENTS === */
-    /* === CLIENTS (LIGHT) === */
+    /* === CLIENTS (DARK, premium logo wall) === */
     .clients{
-      padding:120px 24px 100px;
-      background:var(--paper);
-      color:var(--ink);
-      border-top:none;
+      padding:120px 24px 80px;
+      background:var(--black);
+      color:var(--white);
+      border-top:1px solid rgba(255,255,255,.06);
     }
     .clients-wrap{max-width:1300px;margin:0 auto}
-    .clients-head{text-align:center;margin-bottom:56px;max-width:740px;margin-left:auto;margin-right:auto}
-    .clients .label{color:var(--gold)}
+    .clients-head{text-align:center;margin-bottom:72px;max-width:740px;margin-left:auto;margin-right:auto}
+    .clients .label{color:var(--gold-soft)}
     .clients-head h2{
       font-size:clamp(30px,4.5vw,56px);
       line-height:1.05;
       letter-spacing:-1.3px;
       font-weight:800;
-      color:var(--ink);
+      color:#fff;
       margin-bottom:18px;
       text-wrap:balance;
     }
-    .clients-head h2 em{color:var(--gold)}
+    .clients-head h2 em{color:var(--gold-soft)}
     .clients-head p{
       font-size:clamp(15px,1.5vw,17px);
       line-height:1.6;
-      color:#5a544a;
+      color:rgba(255,255,255,.55);
     }
+
+    /* Invisible grid — no tiles, no lines */
     .clients-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:1px;
-      background:rgba(0,0,0,.08);
-      border:1px solid rgba(0,0,0,.08);
+      gap:0;
+      background:transparent;
+      border:none;
     }
     .client-cell{
       aspect-ratio:5/3;
-      background:#ffffff;
+      background:transparent;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:28px;
-      transition:background .3s;
+      padding:32px 28px;
     }
-    .client-cell:hover{background:#fafafa}
     .client-cell img{
-      max-width:100%;
-      max-height:62%;
+      max-width:140px;
+      max-height:50px;
+      width:auto;
+      height:auto;
       object-fit:contain;
-      transition:transform .3s;
+      opacity:.55;
+      transition:opacity .3s, transform .3s;
     }
-    .client-cell:hover img{transform:scale(1.04)}
+    .client-cell:hover img{opacity:1;transform:scale(1.05)}
 
-    /* === CERTIFICATES (LIGHT) === */
+    /* === CERTIFICATES (DARK, subtle pills) === */
     .certs{
       padding:60px 24px 120px;
-      background:var(--paper);
+      background:var(--black);
       text-align:center;
     }
     .certs-label{
       font-size:11px;
       letter-spacing:3px;
-      color:var(--gold);
+      color:var(--gold-soft);
       text-transform:uppercase;
       font-weight:600;
       margin-bottom:36px;
@@ -923,18 +926,20 @@
       margin:0 auto;
     }
     .cert{
-      padding:11px 18px;
-      border:1px solid rgba(0,0,0,.1);
+      padding:10px 18px;
+      border:1px solid rgba(255,255,255,.12);
       border-radius:999px;
       display:flex;
       align-items:center;
       gap:10px;
       transition:all .25s;
-      background:#ffffff;
+      background:rgba(255,255,255,.03);
     }
-    .cert img{height:24px;opacity:1}
-    .cert span{font-size:12.5px;color:#2a2620;font-weight:600;letter-spacing:.2px}
-    .cert:hover{background:#fafafa;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+    .cert img{height:22px;opacity:.85;filter:grayscale(.2)}
+    .cert span{font-size:12.5px;color:rgba(255,255,255,.75);font-weight:500;letter-spacing:.2px}
+    .cert:hover{background:rgba(255,255,255,.06);border-color:rgba(189,139,63,.4);transform:translateY(-2px)}
+    .cert:hover img{opacity:1;filter:none}
+    .cert:hover span{color:#fff}
 
     /* === CONTACT === */
     .contact{
