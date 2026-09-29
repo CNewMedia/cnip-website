@@ -6,8 +6,6 @@
   
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://api.web3forms.com">
-  
   <!-- Start CookieYes banner - MUST be BEFORE GTM -->
   <!-- BELANGRIJK: Configureer in CookieYes dashboard:
        1. Ga naar Settings > Banner Settings
@@ -1487,11 +1485,8 @@
         <h2 class="hero__form-title">Gratis marketing scan</h2>
         <p class="hero__form-subtitle">In 30 min. tonen we waar je marketing geld lekt — en waar de kansen liggen.</p>
         
-        <form class="hero__form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-          <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+        <form class="hero__form" action="/api/contact" method="POST">
           <input type="hidden" name="subject" value="Lead via Hero Form - Marketing Bureau Gent">
-          <input type="hidden" name="from_name" value="CNIP Website Lead">
           
           <!-- Honeypot -->
           <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
@@ -1801,9 +1796,7 @@
       </div>
       
       <!-- SIMPLIFIED FORM - Only essential fields -->
-      <form class="form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="3d439c1d-f54e-4c3e-8a3b-ac3cb2ef1fbc">
-        <input type="hidden" name="redirect" value="https://cnip.be/bedankt.html">
+      <form class="form" action="/api/contact" method="POST">
         <input type="hidden" name="subject" value="Lead via Contact Form - Marketing Bureau Gent">
         
         <!-- Honeypot spam protection -->
