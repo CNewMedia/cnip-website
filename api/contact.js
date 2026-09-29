@@ -33,14 +33,6 @@ async function parseBody(req) {
   return Object.fromEntries(new URLSearchParams(raw));
 }
 
-function splitName(fullName) {
-  const parts = fullName.split(/\s+/).filter(Boolean);
-  return {
-    firstname: parts.shift() || '',
-    lastname: parts.join(' '),
-  };
-}
-
 function sourceFromRequest(req, body) {
   if (body.subject) return clean(body.subject, 250);
   if (body.form_name) return clean(body.form_name, 250);
@@ -113,48 +105,6 @@ async function sendResend({ email, name, company, phone, interest, message, sour
   return { ok: true };
 }
 
-async function upsertHubSpot({ email, name, company, phone, interest, message, source }) {
-  const token = process.env.HUBSPOT_ACCESS_TOKEN;
-  if (!token) return { ok: false, skipped: true, reason: 'HUBSPOT_ACCESS_TOKEN ontbreekt' };
-
-  const { firstname, lastname } = splitName(name);
-  const combinedMessage = [
-    source ? `Bron: ${source}` : '',
-    interest ? `Interesse: ${interest}` : '',
-    message || '',
-  ].filter(Boolean).join('\n');
-
-  const properties = {};
-  if (firstname) properties.firstname = firstname;
-  if (lastname) properties.lastname = lastname;
-  if (company) properties.company = company;
-  if (phone) properties.phone = phone;
-  if (combinedMessage) properties.message = combinedMessage.slice(0, 5000);
-
-  const response = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/batch/upsert', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      inputs: [
-        {
-          idProperty: 'email',
-          id: email,
-          properties,
-        },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`HubSpot fout ${response.status}: ${await response.text()}`);
-  }
-
-  return { ok: true };
-}
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -182,23 +132,10 @@ export default async function handler(req, res) {
       return res.status(400).send('Naam en geldig e-mailadres zijn verplicht.');
     }
 
-    const results = await Promise.allSettled([
-      sendResend({ email, name, company, phone, interest, message, source }),
-      upsertHubSpot({ email, name, company, phone, interest, message, source }),
-    ]);
+    const delivered = await sendResend({ email, name, company, phone, interest, message, source });
 
-    const resend = results[0];
-    const hubspot = results[1];
-
-    if (resend.status === 'rejected') console.error(resend.reason);
-    if (hubspot.status === 'rejected') console.error(hubspot.reason);
-
-    const delivered =
-      (resend.status === 'fulfilled' && resend.value.ok) ||
-      (hubspot.status === 'fulfilled' && hubspot.value.ok);
-
-    if (!delivered) {
-      console.error('CNIP contactformulier: geen afleverpad beschikbaar of beide paden faalden.');
+    if (!delivered.ok) {
+      console.error('CNIP contactformulier: e-mailaflevering is niet geconfigureerd.');
       return res.status(500).send('Je aanvraag kon niet worden verstuurd. Probeer later opnieuw.');
     }
 
