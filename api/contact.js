@@ -53,7 +53,7 @@ async function sendResend({ email, name, company, phone, interest, message, sour
   if (!apiKey) return { ok: false, skipped: true, reason: 'Resend API key ontbreekt' };
 
   const to = process.env.CONTACT_TO_EMAIL || 'christophe@cnip.be';
-  const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <contact@oryen.be>';
+  const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <onboarding@resend.dev>';
 
   const rows = [
     ['Naam', name],
