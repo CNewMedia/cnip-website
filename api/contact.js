@@ -49,8 +49,8 @@ function sourceFromRequest(req, body) {
 }
 
 async function sendResend({ email, name, company, phone, interest, message, source }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { ok: false, skipped: true, reason: 'RESEND_API_KEY ontbreekt' };
+  const apiKey = process.env.RESEND_API_KEY || process.env.CNIP;
+  if (!apiKey) return { ok: false, skipped: true, reason: 'Resend API key ontbreekt' };
 
   const to = process.env.CONTACT_TO_EMAIL || 'christophe@cnip.be';
   const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <contact@oryen.be>';
