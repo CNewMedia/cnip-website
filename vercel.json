@@ -1,5 +1,23 @@
 {
+  "redirects": [
+    { "source": "/diensten.html", "destination": "/#expertise", "permanent": true },
+    { "source": "/diensten", "destination": "/#expertise", "permanent": true },
+    { "source": "/marketing-advies", "destination": "/marketing-advies.html", "permanent": true },
+    { "source": "/marketing-uitbesteden", "destination": "/marketing-uitbesteden.html", "permanent": true },
+    { "source": "/marketing-bureau-gent", "destination": "/marketing-bureau-gent.html", "permanent": true },
+    { "source": "/hubspot-gold-partner-gent", "destination": "/hubspot-gold-partner-gent.html", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/gtm-test.html", "destination": "/", "permanent": true }
+  ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
     {
       "source": "/api/(.*)",
       "headers": [

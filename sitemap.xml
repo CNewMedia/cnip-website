@@ -4,16 +4,16 @@
 
   <!-- ══════════════════════════════════════════════════════════════════
        CNIP.BE SITEMAP
-       Marketing Bureau Gent | Video, SEO & Social Media sinds 2002
+       Marketinguitvoering vanuit Gent sinds 2002
        
-       Last updated: 2025-12-05
-       Total URLs: 11 (excl. privacy & bedankt - noindex)
+       Last updated: 2026-09-29
+       Total URLs: 10 (excl. privacy & bedankt - noindex)
        ══════════════════════════════════════════════════════════════════ -->
 
   <!-- HOMEPAGE -->
   <url>
     <loc>https://cnip.be/</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -34,22 +34,10 @@
        SERVICE & LANDING PAGES
        ═══════════════════════════════════════════════════════════════════ -->
 
-  <!-- DIENSTEN -->
-  <url>
-    <loc>https://cnip.be/diensten.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://cnip.be/images/DSMKeukens%20commercial.jpg</image:loc>
-      <image:title>DSM Keukens Video Productie - Cinema kwaliteit commercials</image:title>
-    </image:image>
-  </url>
-
   <!-- MARKETING BUREAU GENT -->
   <url>
     <loc>https://cnip.be/marketing-bureau-gent.html</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -61,7 +49,7 @@
   <!-- MARKETING UITBESTEDEN -->
   <url>
     <loc>https://cnip.be/marketing-uitbesteden.html</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -73,7 +61,7 @@
   <!-- MARKETING ADVIES -->
   <url>
     <loc>https://cnip.be/marketing-advies.html</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -85,7 +73,7 @@
   <!-- HUBSPOT GOLD PARTNER -->
   <url>
     <loc>https://cnip.be/hubspot-gold-partner-gent.html</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -101,7 +89,7 @@
   <!-- CASES OVERVIEW -->
   <url>
     <loc>https://cnip.be/cases/</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

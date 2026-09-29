@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
+  <!-- Google Consent Mode v2: standaard geen toestemming tot CookieYes die bijwerkt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 2000
+    });
+    gtag('set', 'ads_data_redaction', true);
+  </script>
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
   <!-- Google Tag Manager -->
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +39,7 @@
   
   <!-- SEO: Primary Meta Tags -->
   <title>Cases & Portfolio | Marketing Bureau CNIP Gent</title>
-  <meta name="description" content="Bekijk onze marketing cases: SEO dominantie, social media groei, lead generatie en systematische digitale marketing. Bewezen resultaten voor B2B en B2C klanten.">
+  <meta name="description" content="Bekijk de cases van CNIP: SEO, social media groei, lead generatie en systematische digitale marketing. Bewezen resultaten voor B2B en B2C klanten.">
   <meta name="keywords" content="marketing cases, seo case study, social media portfolio, lead generatie resultaten, marketing bureau gent, digitale marketing cases">
   <meta name="author" content="CNIP Marketing Bureau">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -65,7 +82,7 @@
           "@type": "ListItem",
           "position": 1,
           "url": "https://cnip.be/cases/case-willems-veranda.html",
-          "name": "Willems Veranda's: 6 Jaar SEO Dominantie"
+          "name": "Willems Veranda's: 6 jaar SEO-opbouw"
         },
         {
           "@type": "ListItem",
@@ -586,173 +603,12 @@
         text-align:left;
       }
     }
-  </style>
-</head>
-  <!-- 
-  COOKIE BANNER - Plak dit NET VOOR </body> in alle pagina's
-  Vriendelijk, klein, niet vervelend 🍪
--->
-
-<div id="cookieBanner" class="cookie-banner">
-    <span class="cookie-icon">🍪</span>
-    <p>Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="cookie-btn accept">Prima</button>
-        <button onclick="declineCookies()" class="cookie-btn decline">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-link">Meer info</a>
-</div>
-
-<style>
-.cookie-banner {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #1a1a1a;
-    border: 1px solid rgba(232,181,99,.2);
-    border-radius: 16px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    color: #fff;
-    z-index: 9999;
-    box-shadow: 0 8px 32px rgba(0,0,0,.4);
-    animation: slideUp 0.4s ease-out;
-    max-width: calc(100% - 40px);
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.cookie-banner.hidden {
-    display: none;
-}
-
-.cookie-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.cookie-banner p {
-    margin: 0;
-    color: rgba(255,255,255,.9);
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.cookie-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.cookie-btn.accept {
-    background: linear-gradient(135deg, #E8B563, #d4a049);
-    color: #0a0a0a;
-}
-
-.cookie-btn.accept:hover {
-    transform: scale(1.05);
-}
-
-.cookie-btn.decline {
-    background: transparent;
-    color: rgba(255,255,255,.6);
-    border: 1px solid rgba(255,255,255,.2);
-}
-
-.cookie-btn.decline:hover {
-    border-color: rgba(255,255,255,.4);
-    color: #fff;
-}
-
-.cookie-link {
-    color: rgba(255,255,255,.4);
-    font-size: 11px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.cookie-link:hover {
-    color: #E8B563;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .cookie-banner {
-        flex-wrap: wrap;
-        bottom: 12px;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-    }
-    
-    .cookie-banner p {
-        flex: 1 1 100%;
-        order: 1;
-    }
-    
-    .cookie-icon {
-        order: 0;
-    }
-    
-    .cookie-buttons {
-        order: 2;
-        margin-top: 8px;
-    }
-    
-    .cookie-link {
-        order: 3;
-        margin-top: 8px;
-        margin-left: auto;
-    }
-}
+      .hero > .container{width:100%;min-width:0}
+    .hero h1,.hero-subtitle{overflow-wrap:break-word}
+    .hero-stats{grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr))}
 </style>
-
-<script>
-// Check of consent al gegeven is
-(function() {
-    var consent = localStorage.getItem('cookieConsent');
-    if (consent === 'accepted') {
-        // Laad GA4 (GTM doet dit al via je bestaande setup)
-        document.getElementById('cookieBanner').classList.add('hidden');
-    } else if (consent === 'declined') {
-        document.getElementById('cookieBanner').classList.add('hidden');
-        // Disable GA4 cookies
-        window['ga-disable-G-XXXXXXX'] = true;
-    }
-})();
-
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // GTM is al geladen, dus analytics werkt automatisch
-}
-
-function declineCookies() {
-    localStorage.setItem('cookieConsent', 'declined');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // Optioneel: verwijder bestaande cookies
-    document.cookie.split(";").forEach(function(c) {
-        if (c.trim().startsWith("_ga")) {
-            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        }
-    });
-}
-</script>
+</head>
+  
 <body>
   <a href="#main-content" class="skip-link">Spring naar inhoud</a>
   
@@ -760,7 +616,7 @@ function declineCookies() {
   
   <header>
     <div class="header-content">
-      <a href="/" class="logo-text">CNIP <span class="badge">Since 2002</span></a>
+      <a href="/" class="logo-text">CNIP <span class="badge">Sinds 2002</span></a>
     </div>
   </header>
 
@@ -789,7 +645,7 @@ function declineCookies() {
         <div class="hero-badge">Portfolio</div>
         <h1>Cases & Resultaten</h1>
         <p class="hero-subtitle">
-          Bewezen resultaten voor B2B en B2C klanten. Van SEO dominantie tot social media groei, 
+          Wat CNIP uitvoerde voor B2B- en B2C-klanten. Van SEO tot social media, 
           van lead generatie tot systematische digitale marketing.
         </p>
       </div>
@@ -803,8 +659,8 @@ function declineCookies() {
           <a href="/cases/case-willems-veranda.html" class="case-card card-seo">
             <div class="case-card-header">
               <span class="case-card-tag tag-seo">SEO Case Study</span>
-              <h2 class="case-card-title">Willems Veranda's: 6 Jaar SEO Dominantie</h2>
-              <p class="case-card-desc">Van onzichtbaar naar marktleider. Complete SEO transformatie over 6 jaar.</p>
+              <h2 class="case-card-title">Willems Veranda's: 6 jaar SEO-opbouw</h2>
+              <p class="case-card-desc">Van nul naar 51 zoekwoorden in de top 3 en 77 in de top 10 (2018–2024).</p>
             </div>
             <div class="case-card-stats">
               <div class="case-stat">
@@ -812,8 +668,8 @@ function declineCookies() {
                 <div class="case-stat-label">Keywords Top 3</div>
               </div>
               <div class="case-stat">
-                <div class="case-stat-number">332</div>
-                <div class="case-stat-label">Totaal Rankings</div>
+                <div class="case-stat-number">77</div>
+                <div class="case-stat-label">Keywords Top 10</div>
               </div>
               <div class="case-stat">
                 <div class="case-stat-number">6 jaar</div>
@@ -896,10 +752,6 @@ function declineCookies() {
                 <div class="case-stat-number">12-18</div>
                 <div class="case-stat-label">Maanden</div>
               </div>
-              <div class="case-stat">
-                <div class="case-stat-number">3-5x</div>
-                <div class="case-stat-label">Traffic Groei</div>
-              </div>
             </div>
             <div class="case-card-cta">
               Bekijk methodologie
@@ -925,7 +777,7 @@ function declineCookies() {
           We delen graag meer details in een persoonlijk gesprek.
         </p>
         <a href="/#contact" class="nda-cta">
-          Plan een gesprek
+          Vraag een voorstel
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
       </div>
@@ -933,12 +785,12 @@ function declineCookies() {
 
     <section class="cta-section">
       <div class="cta-box">
-        <h2>Klaar Voor Jouw Succesverhaal?</h2>
+        <h2>Weet je wat er moet gebeuren?</h2>
         <p>
-          Van SEO dominantie tot social media groei. Van lead generatie tot systematische marketing. 
-          Ontdek wat we voor jouw bedrijf kunnen betekenen.
+          CNIP voert uit: paid media, SEO en content, HubSpot en websites. 
+          Twijfel je nog wat eerst zinvol is? Start dan bij <a href="https://oryen.be" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">ORYEN</a>.
         </p>
-        <a href="/#contact" class="btn-primary">Start Gesprek</a>
+        <a href="/#contact" class="btn-primary">Vraag een voorstel</a>
       </div>
     </section>
   </main>
@@ -964,9 +816,9 @@ function declineCookies() {
       </div>
       <div>
         <div class="footer-heading">Bedrijf</div>
-        <a href="/#story">Story</a>
+        <a href="/#over-cnip">Over CNIP</a>
         <a href="/cases/">Cases</a>
-        <a href="/#clients">Klanten</a>
+        <a href="/#klanten">Klanten</a>
         <a href="/#contact">Contact</a>
       </div>
       <div>
@@ -976,7 +828,7 @@ function declineCookies() {
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 CNIP | Marketing Bureau Gent | Since 2002</div>
+    <div class="footer-bottom">© 2026 CNIP · Marketinguitvoering vanuit Gent sinds 2002</div>
   </footer>
 
   <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Terug naar boven">

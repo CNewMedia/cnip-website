@@ -1,3 +1,32 @@
+// Eenvoudige rate limiting per IP. Werkt per serverless-instantie: geen harde
+// garantie, maar houdt herhaalde bot-inzendingen tegen zonder extra diensten.
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const RATE_MAX = 5;
+const hits = new Map();
+
+function clientIp(req) {
+  const fwd = String(req.headers['x-forwarded-for'] || '');
+  return fwd.split(',')[0].trim() || req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown';
+}
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter(ts => now - ts < RATE_WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) {
+    for (const [key, list] of hits) {
+      if (!list.some(ts => now - ts < RATE_WINDOW_MS)) hits.delete(key);
+    }
+  }
+  return recent.length > RATE_MAX;
+}
+
+function looksLikeSpam(text) {
+  const links = (text.match(/https?:\/\/|www\./gi) || []).length;
+  return links > 5;
+}
+
 function clean(value, max = 5000) {
   if (value === undefined || value === null) return '';
   return String(value).trim().slice(0, max);
@@ -53,7 +82,7 @@ async function sendResend({ email, name, company, phone, interest, message, sour
   if (!apiKey) return { ok: false, skipped: true, reason: 'Resend API key ontbreekt' };
 
   const to = process.env.CONTACT_TO_EMAIL || 'christophe@cnip.be';
-  const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <onboarding@resend.dev>';
+  const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <website@cnip.be>';
 
   const rows = [
     ['Naam', name],
@@ -112,6 +141,10 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (isRateLimited(clientIp(req))) {
+      return res.status(429).send('Te veel aanvragen op korte tijd. Probeer het binnen enkele minuten opnieuw of mail naar info@cnip.be.');
+    }
+
     const body = await parseBody(req);
 
     // Honeypot. Bots krijgen een normale redirect, maar er wordt niets verstuurd.
@@ -130,6 +163,11 @@ export default async function handler(req, res) {
 
     if (!name || !email || !email.includes('@')) {
       return res.status(400).send('Naam en geldig e-mailadres zijn verplicht.');
+    }
+
+    if (looksLikeSpam(message)) {
+      res.setHeader('Location', '/bedankt.html');
+      return res.status(303).end();
     }
 
     const delivered = await sendResend({ email, name, company, phone, interest, message, source });

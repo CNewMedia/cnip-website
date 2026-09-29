@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
+  <!-- Google Consent Mode v2: standaard geen toestemming tot CookieYes die bijwerkt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 2000
+    });
+    gtag('set', 'ads_data_redaction', true);
+  </script>
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
 
   <script>
@@ -21,8 +37,8 @@
   <link rel="icon" href="/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>CNIP | Marketingbureau Gent | Zet uw bedrijf authentiek op de markt</title>
-  <meta name="description" content="CNIP haalt naar boven wat u echt onderscheidt en vertaalt dat naar website, vindbaarheid, content, video en campagnes. Bedrijven authentiek naar de markt brengen sinds 2002.">
+  <title>CNIP | Marketingbureau Gent | Google Ads, SEO, HubSpot &amp; websites</title>
+  <meta name="description" content="CNIP voert uit: Google Ads en performance, SEO en content, HubSpot (Gold Partner) en websites die converteren. Senior uitvoering vanuit Gent, sinds 2002.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="geo.region" content="BE-VOV">
   <meta name="geo.placename" content="Gent">
@@ -30,13 +46,13 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cnip.be/">
-  <meta property="og:title" content="CNIP | Zet uw bedrijf authentiek op de markt">
-  <meta property="og:description" content="CNIP haalt naar boven wat u echt onderscheidt en vertaalt dat naar website, vindbaarheid, content, video en campagnes.">
-  <meta property="og:image" content="https://cnip.be/images/og-image.jpg">
+  <meta property="og:title" content="CNIP | Marketinguitvoering vanuit Gent">
+  <meta property="og:description" content="Google Ads en performance, SEO en content, HubSpot en websites die converteren. Senior uitvoering sinds 2002.">
+  <meta property="og:image" content="https://cnip.be/images/Hof%20van%20Cleve.jpg">
   <meta property="og:locale" content="nl_BE">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"CNIP","description":"CNIP haalt naar boven wat bedrijven echt onderscheidt en vertaalt dat naar website, vindbaarheid, content, video en campagnes.","url":"https://cnip.be","foundingDate":"2002","founders":[{"@type":"Person","name":"Christophe Dejaeghere","jobTitle":"Founder"}],"address":{"@type":"PostalAddress","streetAddress":"Ottergemsesteenweg Zuid 808","addressLocality":"Gent","postalCode":"9000","addressCountry":"BE"},"contactPoint":{"@type":"ContactPoint","telephone":"+32 9 298 57 20","contactType":"Customer Service","email":"info@cnip.be","areaServed":"BE"},"slogan":"Bedrijven authentiek naar de markt brengen sinds 2002"}
+  {"@context":"https://schema.org","@type":"Organization","name":"CNIP","description":"CNIP is een marketingbureau uit Gent dat uitvoert: Google Ads en performance, SEO en content, HubSpot, CRM en automation, en websites die converteren.","url":"https://cnip.be","foundingDate":"2002","founders":[{"@type":"Person","name":"Christophe Dejaeghere","jobTitle":"Founder"}],"address":{"@type":"PostalAddress","streetAddress":"Ottergemsesteenweg Zuid 808","addressLocality":"Gent","postalCode":"9000","addressCountry":"BE"},"contactPoint":{"@type":"ContactPoint","telephone":"+32 9 396 58 83","contactType":"Customer Service","email":"info@cnip.be","areaServed":"BE"},"slogan":"Marketinguitvoering vanuit Gent sinds 2002"}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -430,78 +446,6 @@
       color:rgba(255,255,255,.85);
     }
 
-    /* === STATEMENT === */
-    .statement{
-      padding:100px 24px;
-      text-align:center;
-      background:var(--black);
-      position:relative;
-    }
-    .statement-num{
-      font-size:clamp(100px,18vw,260px);
-      line-height:.85;
-      letter-spacing:-6px;
-      font-weight:700;
-      color:transparent;
-      -webkit-text-stroke:1px rgba(189,139,63,.4);
-      margin-bottom:24px;
-    }
-    .statement-text{
-      font-size:clamp(20px,2.2vw,30px);
-      line-height:1.35;
-      max-width:780px;
-      margin:0 auto;
-      color:rgba(255,255,255,.85);
-      font-weight:400;
-      letter-spacing:-.3px;
-          text-wrap:balance;
-    }
-    .statement-text em{color:var(--gold-soft)}
-
-    /* === PROBLEM === */
-    .problem{
-      padding:120px 24px;
-      background:var(--black);
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    .problem-wrap{
-      max-width:1200px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:48px;
-      align-items:start;
-    }
-    .problem-headline{
-      font-size:clamp(34px,5.2vw,64px);
-      line-height:1.05;
-      letter-spacing:-1.8px;
-      font-weight:800;
-      color:#fff;
-          text-wrap:balance;
-    }
-    .problem-headline em{color:var(--gold-soft)}
-    .problem-body{
-      font-size:clamp(16px,1.6vw,18px);
-      line-height:1.7;
-      color:rgba(255,255,255,.72);
-    }
-    .problem-body p{margin-bottom:18px}
-    .problem-body p:last-child{margin-bottom:0}
-    .problem-body strong{color:#fff;font-weight:500}
-
-    .problem-pull{
-      margin-top:24px;
-      padding:24px 28px;
-      border-left:2px solid var(--gold);
-      background:rgba(189,139,63,.04);
-      font-size:clamp(18px,1.9vw,22px);
-      line-height:1.45;
-      color:rgba(255,255,255,.92);
-      font-weight:300;
-      letter-spacing:-.3px;
-    }
-
     /* === WHAT (LIGHT) === */
     .what{
       background:var(--paper);
@@ -796,53 +740,6 @@
     .play-btn:hover{transform:translate(-50%,-50%) scale(1.08);background:var(--gold)}
     .case.playing .play-btn{display:none}
 
-    /* === AI === */
-    .ai-section{
-      padding:140px 24px;
-      background:var(--ink);
-      border-top:1px solid rgba(255,255,255,.06);
-      position:relative;
-      overflow:hidden;
-    }
-    .ai-section::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:radial-gradient(ellipse 60% 40% at 50% 50%, rgba(189,139,63,.06), transparent 70%);
-      pointer-events:none;
-    }
-    .ai-wrap{max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2}
-    .ai-headline{
-      font-size:clamp(38px,7vw,92px);
-      line-height:.98;
-      letter-spacing:-2.5px;
-      font-weight:800;
-      color:#fff;
-      margin-bottom:44px;
-          text-wrap:balance;
-    }
-    .ai-headline em{color:var(--gold-soft);display:block}
-    .ai-body{
-      max-width:760px;
-      margin:0 auto;
-      font-size:clamp(16px,1.6vw,19px);
-      line-height:1.7;
-      color:rgba(255,255,255,.72);
-    }
-    .ai-body p{margin-bottom:18px}
-    .ai-body p:last-child{margin-bottom:0}
-    .ai-quote{
-      margin-top:44px;
-      padding-top:44px;
-      border-top:1px solid rgba(255,255,255,.1);
-      font-size:clamp(22px,2.5vw,32px);
-      line-height:1.35;
-      color:var(--gold-soft);
-      max-width:760px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
     /* === CHRISTOPHE (LIGHT) === */
     .christophe{
       background:var(--paper);
@@ -908,47 +805,6 @@
     }
     .christophe-signature-role{font-size:13px;color:#6a6259;letter-spacing:.3px}
 
-    /* === ORYEN === */
-    .oryen{
-      padding:140px 24px;
-      background:var(--black);
-      position:relative;
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    .oryen-wrap{
-      max-width:1300px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:48px;
-      align-items:center;
-    }
-    .oryen-logo-card{
-      padding:56px 36px;
-      border:1px solid rgba(189,139,63,.2);
-      background:linear-gradient(180deg, rgba(189,139,63,.04), transparent);
-      border-radius:4px;
-      text-align:center;
-    }
-    .oryen-logo-card img{max-width:220px;margin:0 auto;filter:brightness(1.1)}
-    .oryen-content h2{
-      font-size:clamp(30px,4.5vw,56px);
-      line-height:1.05;
-      letter-spacing:-1.3px;
-      font-weight:800;
-      color:#fff;
-      margin-bottom:32px;
-          text-wrap:balance;
-    }
-    .oryen-content h2 em{color:var(--gold-soft);display:block}
-    .oryen-text{
-      font-size:clamp(15px,1.6vw,18px);
-      line-height:1.7;
-      color:rgba(255,255,255,.72);
-    }
-    .oryen-text p{margin-bottom:18px}
-    .oryen-text p:last-child{margin-bottom:0}
-    .oryen-text strong{color:var(--gold-soft);font-weight:500}
     .oryen-btn{
       display:inline-flex;
       align-items:center;
@@ -970,13 +826,13 @@
     /* === CLIENTS === */
     /* === CLIENTS (WHITE — logos belong on light) === */
     .clients{
-      padding:100px 24px 60px;
+      padding:72px 24px 24px;
       background:#ffffff;
       color:var(--ink);
       border-top:none;
     }
     .clients-wrap{max-width:1300px;margin:0 auto}
-    .clients-head{text-align:center;margin-bottom:64px;max-width:740px;margin-left:auto;margin-right:auto}
+    .clients-head{text-align:center;margin-bottom:28px;max-width:740px;margin-left:auto;margin-right:auto}
     .clients .label{color:var(--gold)}
     .clients-head h2{
       font-size:clamp(28px,4vw,48px);
@@ -1003,16 +859,16 @@
       border:none;
     }
     .client-cell{
-      aspect-ratio:5/3;
+      height:84px;
       background:transparent;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:24px 20px;
+      padding:12px 16px;
     }
     .client-cell img{
-      max-width:150px;
-      max-height:60px;
+      max-width:140px;
+      max-height:52px;
       width:auto;
       height:auto;
       object-fit:contain;
@@ -1022,7 +878,7 @@
 
     /* === CERTIFICATES (WHITE, continuation) === */
     .certs{
-      padding:40px 24px 100px;
+      padding:24px 24px 72px;
       background:#ffffff;
       text-align:center;
     }
@@ -1032,7 +888,7 @@
       color:var(--gold);
       text-transform:uppercase;
       font-weight:600;
-      margin-bottom:32px;
+      margin-bottom:20px;
     }
     .certs-row{
       display:flex;
@@ -1191,6 +1047,77 @@
       letter-spacing:.3px;
     }
 
+
+    /* === NAV extra === */
+    nav{align-items:center}
+    nav a.nav-cta{padding:10px 18px;border-radius:999px;background:#fff;color:var(--ink);font-weight:600}
+    nav a.nav-cta::after{display:none}
+    nav a.nav-cta:hover{background:var(--gold-soft);color:var(--ink)}
+
+    /* === VOOR WIE === */
+    .fit-list{list-style:none;margin-bottom:8px}
+    .fit-list li{position:relative;padding:0 0 18px 28px;margin-bottom:18px;border-bottom:1px solid rgba(0,0,0,.08)}
+    .fit-list li:last-child{border-bottom:none;margin-bottom:0}
+    .fit-list li::before{content:'';position:absolute;left:0;top:.72em;width:14px;height:1px;background:var(--gold)}
+
+    /* === KEUZE CNIP / ORYEN === */
+    .choice{padding:120px 24px;background:var(--black);border-top:1px solid rgba(255,255,255,.06)}
+    .choice-wrap{max-width:1300px;margin:0 auto}
+    .choice-heading{font-size:clamp(32px,4.6vw,56px);line-height:1.05;letter-spacing:-1.5px;font-weight:800;color:#fff;margin-bottom:48px;text-wrap:balance}
+    .choice-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .choice-card{padding:40px 30px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:#121212;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+    .choice-card--oryen{border-color:rgba(189,139,63,.28);background:linear-gradient(180deg,rgba(189,139,63,.07),rgba(189,139,63,.01))}
+    .choice-kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--gold-soft)}
+    .choice-card h3{font-size:clamp(26px,3vw,38px);line-height:1.05;letter-spacing:-1px;font-weight:800;color:#fff}
+    .choice-card p{font-size:clamp(15px,1.5vw,17px);line-height:1.65;color:rgba(255,255,255,.7);max-width:520px;flex-grow:1}
+    .choice-card .btn-primary,.choice-card .oryen-btn{margin-top:10px}
+    .choice-logo{height:26px;width:auto;margin-bottom:6px}
+
+    /* === EXPERTISE extra === */
+    .services-intro{margin-top:24px;font-size:clamp(16px,1.6vw,18px);line-height:1.6;color:#3a342c;max-width:620px}
+    .service-desc{margin-bottom:20px}
+    .service-list{list-style:none;font-size:15px;line-height:1.5;color:#2a2620}
+    .service-list li{padding:9px 0 9px 22px;position:relative;border-top:1px solid rgba(0,0,0,.08)}
+    .service-list li::before{content:'';position:absolute;left:0;top:1.05em;width:10px;height:1px;background:var(--gold)}
+    .service-foot{margin-top:28px}
+    .service-proof{font-size:14px;line-height:1.55;color:#4a4238;padding:14px 16px;background:rgba(189,139,63,.08);border-left:2px solid var(--gold);margin-bottom:22px}
+    .service-proof strong{color:var(--ink);font-weight:600}
+    .service-links{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+    .service-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:14px;transition:background .2s,transform .2s}
+    .service-cta::after{content:'→';transition:transform .2s}
+    .service-cta:hover{background:var(--gold);transform:translateY(-2px)}
+    .service-cta:hover::after{transform:translateX(3px)}
+    .service-more{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(0,0,0,.25);padding-bottom:2px}
+    .service-more:hover{border-color:var(--gold);color:var(--gold)}
+    .services-note{margin-top:28px;font-size:15px;color:#4a4238}
+
+    /* === CASES extra === */
+    .case{display:flex;flex-direction:column}
+    .case-content{display:flex;flex-direction:column;flex-grow:1}
+    .case-steps{margin-bottom:24px}
+    .case-steps div{padding:12px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .case-steps dt{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45);margin-bottom:4px}
+    .case-steps dd{font-size:15px;line-height:1.55;color:rgba(255,255,255,.78)}
+    .case-stats{margin-top:auto}
+    .case-visual--stat{aspect-ratio:auto;min-height:260px;display:flex;flex-direction:column;justify-content:center;padding:32px 28px;background:radial-gradient(ellipse 80% 70% at 20% 20%,rgba(189,139,63,.16),transparent 70%),#151515}
+    .case-bigstat{font-size:clamp(72px,9vw,128px);line-height:.9;font-weight:800;letter-spacing:-4px;color:var(--gold-soft)}
+    .case-bigstat-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin:12px 0 28px}
+    .case-bars{display:flex;flex-direction:column;gap:10px;max-width:420px}
+    .case-bars span{position:relative;display:block;font-size:12.5px;color:rgba(255,255,255,.8);padding:7px 10px;background:rgba(255,255,255,.04);border-radius:3px;overflow:hidden}
+    .case-bars span::before{content:'';position:absolute;left:0;top:0;bottom:0;width:calc(var(--w)*2);background:rgba(189,139,63,.28);z-index:0}
+    .case-bars span{isolation:isolate}
+    .case-bars span::before{z-index:-1}
+    .cases-more{margin-top:40px;text-align:center}
+
+    /* === CONTACT extra === */
+    .contact-text a,.form-note a{color:var(--gold-soft)}
+    .contact-oryen{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:15px !important}
+    .form-group select{width:100%;border-radius:4px;border:1px solid rgba(255,255,255,.1);background:#161616;padding:13px 14px;color:#fff;font-size:15px;font-family:inherit}
+    .form-group select:focus{outline:none;border-color:var(--gold-soft)}
+    .form-note{margin-top:14px;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.45);text-align:center}
+    .hp-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+    .footer-col-heading--spaced{margin-top:24px}
+
     /* === DESKTOP === */
     @media (min-width:768px){
       html{scroll-behavior:smooth}
@@ -1204,13 +1131,12 @@
       .hero-grid{grid-template-columns:1.3fr 1fr;gap:80px}
       .hero-side{display:block}
 
-      .statement{padding:140px 48px}
-
-      .problem{padding:160px 48px}
-      .problem-wrap{grid-template-columns:1fr 1fr;gap:120px}
-
       .what{padding:180px 80px 180px 100px}
       .what-wrap{grid-template-columns:1fr 1fr;gap:120px;align-items:start}
+
+      .choice{padding:160px 48px}
+      .choice-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .choice-card{padding:52px 48px}
 
       .approach{padding:180px 48px}
       .approach-step{grid-template-columns:1fr 2fr;gap:80px;padding:60px 0}
@@ -1223,18 +1149,14 @@
       .cases-list{grid-template-columns:1fr 1fr;gap:32px}
       .case-content{padding:36px 36px 40px}
 
-      .ai-section{padding:200px 48px}
-
       .christophe{padding:180px 80px 180px 100px}
       .christophe-wrap{grid-template-columns:340px 1fr;gap:90px}
 
-      .oryen{padding:180px 48px}
-      .oryen-wrap{grid-template-columns:380px 1fr;gap:80px}
-
-      .clients{padding:160px 48px 140px}
+      .clients{padding:96px 48px 24px}
       .clients-grid{grid-template-columns:repeat(6,1fr)}
+      .client-cell{height:96px}
 
-      .certs{padding:100px 48px 140px}
+      .certs{padding:24px 48px 96px}
 
       .contact{padding:180px 48px 120px}
       .contact-wrap{grid-template-columns:1fr 1fr;gap:100px}
@@ -1263,13 +1185,12 @@
   <header>
     <div class="header-content">
       <a href="/" class="logo-text">CNIP <small>EST. 2002</small></a>
-      <nav>
-        <a href="#aanpak">Aanpak</a>
-        <a href="#diensten">Diensten</a>
+      <nav aria-label="Hoofdnavigatie">
+        <a href="#expertise">Expertise</a>
         <a href="#cases">Cases</a>
-        <a href="#christophe">Over CNIP</a>
-        <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN</a>
-        <a href="#contact">Contact</a>
+        <a href="#over-cnip">Over CNIP</a>
+        <a href="#cnip-of-oryen" class="nav-oryen">ORYEN</a>
+        <a href="#contact" class="nav-cta">Vraag een voorstel</a>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
         <span></span>
@@ -1280,30 +1201,29 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatie">
-    <a href="#aanpak">Aanpak</a>
-    <a href="#diensten">Diensten</a>
+    <a href="#expertise">Expertise</a>
     <a href="#cases">Cases</a>
-    <a href="#christophe">Over CNIP</a>
-    <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN</a>
-    <a href="#contact" class="mobile-menu-cta">Bespreek uw marketing</a>
+    <a href="#over-cnip">Over CNIP</a>
+    <a href="#cnip-of-oryen">ORYEN</a>
+    <a href="#contact" class="mobile-menu-cta">Vraag een voorstel</a>
   </div>
 
-  <a href="#contact" class="floating-cta" id="floatingCta">Bespreek uw marketing →</a>
+  <a href="#contact" class="floating-cta" id="floatingCta">Vraag een voorstel →</a>
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO: wat we uitvoeren -->
     <section class="hero">
       <div class="hero-wrap">
         <div class="hero-grid">
           <div>
             <div class="hero-eyebrow">Marketingbureau Gent · Sinds 2002</div>
-            <h1 class="hero-title">Zet uw bedrijf<br><em>authentiek</em> op de markt.</h1>
-            <p class="hero-subtitle">Uw bedrijf heeft meer te vertellen dan "kwaliteit", "service" of "jaren ervaring".</p>
-            <p class="hero-deeper">CNIP haalt naar boven wat u echt onderscheidt — uw kennis, waarden, reputatie en manier van werken — en vertaalt dat naar website, vindbaarheid, content, video en campagnes. Zo spreekt u de juiste mensen aan, nog vóór ze met u in gesprek gaan.</p>
+            <h1 class="hero-title">Wij voeren uw marketing <em>uit.</em></h1>
+            <p class="hero-subtitle">Paid media, SEO en content, HubSpot en CRM, websites en conversie.</p>
+            <p class="hero-deeper">Voor Belgische bedrijven die weten wat er moet gebeuren en een partij zoeken die het goed bouwt, lanceert en opvolgt. U werkt rechtstreeks met senior mensen. CNIP is HubSpot Gold Partner.</p>
             <div class="hero-cta">
-              <a class="btn-primary" href="#contact"><span>Bespreek uw marketing</span></a>
-              <a class="btn-secondary" href="#cases">Bekijk voorbeelden</a>
+              <a class="btn-primary" href="#contact"><span>Vraag een voorstel</span></a>
+              <a class="btn-secondary" href="#cases">Bekijk de cases</a>
             </div>
           </div>
 
@@ -1327,136 +1247,142 @@
       </div>
     </section>
 
-    <!-- STATEMENT -->
-    <section class="statement">
-      <div class="statement-num reveal" id="countNum" data-target="24">24</div>
-      <p class="statement-text reveal">Vierentwintig jaar Belgische bedrijven<br>helpen <em>scherper</em> naar buiten komen.</p>
-    </section>
-
-    <!-- PROBLEEM -->
-    <section class="problem">
-      <div class="problem-wrap">
-        <div>
-          <span class="label">Het probleem</span>
-          <h2 class="problem-headline">Veel bedrijven zijn <em>zichtbaar.</em><br>Maar te weinig <em>onderscheidend.</em></h2>
-        </div>
-        <div class="problem-body">
-          <p>Ze hebben een website. Ze posten op sociale media. Ze adverteren. Ze zijn misschien zelfs goed vindbaar.</p>
-          <p>Maar toch voelt een potentiële klant niet meteen waarom hij net voor hén zou kiezen.</p>
-          <p><strong>Dat is waar CNIP begint.</strong> Niet bij meer lawaai. Niet bij nog een campagne.</p>
-          <div class="problem-pull">Wat maakt dit bedrijf echt de moeite waard — en komt dat vandaag wel naar buiten?</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT (LIGHT) -->
-    <section class="what">
+    <!-- VOOR WIE -->
+    <section class="what" id="voor-wie">
       <div class="what-wrap">
         <div>
-          <span class="label">Wat CNIP doet</span>
-          <h2 class="what-heading">Wij vertalen <em>wie u bent</em> naar de markt.</h2>
+          <span class="label">Voor wie</span>
+          <h2 class="what-heading">Voor bedrijven met een <em>concrete</em> marketingvraag.</h2>
         </div>
         <div class="what-body">
-          <p>CNIP kijkt verder dan wat u verkoopt.</p>
-          <p>We zoeken naar wat uw bedrijf herkenbaar maakt: uw aanpak, uw kennis, uw vakmanschap, uw waarden, uw reputatie en de manier waarop klanten u ervaren.</p>
-          <p>Daarna vertalen we dat naar communicatie die klopt.</p>
-          <p class="what-callout">Niet als opgepoetst verhaal. Niet als holle marketingtaal. Wel als een heldere vertaling van uw bedrijf naar de buitenwereld.</p>
+          <ul class="fit-list">
+            <li><strong>Belgische KMO's en middelgrote bedrijven</strong>, B2B en B2C, met een eigen marketingbudget.</li>
+            <li><strong>Een duidelijke opdracht:</strong> meer en betere leads, beter gevonden worden, HubSpot dat echt gebruikt wordt, een site die aanvragen oplevert.</li>
+            <li><strong>Liever één senior team</strong> dan zelf freelancers en tools aan elkaar knopen.</li>
+          </ul>
+          <p class="what-callout">U bepaalt wat er moet gebeuren. CNIP zorgt dat het gebeurt, vakkundig en meetbaar.</p>
         </div>
       </div>
     </section>
 
-    <!-- APPROACH -->
-    <section class="approach" id="aanpak">
-      <div class="approach-wrap">
-        <div class="approach-head">
-          <span class="label">Onze aanpak</span>
-          <h2>Van eigenheid<br>naar <em>onderscheidende</em> marketing.</h2>
-        </div>
-
-        <div class="approach-step">
-          <div class="approach-step-meta">
-            <span class="approach-step-num">01</span>
-            <h3 class="approach-step-name">We halen de kern boven</h3>
+    <!-- KEUZEMOMENT CNIP / ORYEN -->
+    <section class="choice" id="cnip-of-oryen">
+      <div class="choice-wrap">
+        <span class="label">CNIP of ORYEN?</span>
+        <h2 class="choice-heading">Waar staat u vandaag?</h2>
+        <div class="choice-grid">
+          <div class="choice-card choice-card--cnip">
+            <span class="choice-kicker">Weet u wat er moet gebeuren?</span>
+            <h3>CNIP voert het uit.</h3>
+            <p>De richting is duidelijk: een campagne, SEO, HubSpot, een nieuwe site. U zoekt een partij die het goed uitvoert en opvolgt.</p>
+            <a class="btn-primary" href="#contact"><span>Bespreek de uitvoering</span></a>
           </div>
-          <div class="approach-step-body">
-            Veel bedrijven weten perfect wat ze doen, maar vinden het moeilijk om uit te leggen waarom klanten juist voor hen zouden kiezen. CNIP luistert, bevraagt en zoekt naar de kern: waar u voor staat, wat u anders doet, waarom klanten u vertrouwen en welke verwachtingen u wél of net niet wil aantrekken.
-          </div>
-        </div>
-
-        <div class="approach-step">
-          <div class="approach-step-meta">
-            <span class="approach-step-num">02</span>
-            <h3 class="approach-step-name">We maken uw verschil concreet</h3>
-          </div>
-          <div class="approach-step-body">
-            "Kwaliteit", "service" en "maatwerk" zeggen weinig als iedereen hetzelfde beweert. Daarom vertalen we uw sterktes naar concrete taal: helder, herkenbaar en geloofwaardig. Zodat klanten niet alleen zien wat u doet, maar ook voelen waarom u de juiste keuze kunt zijn.
-          </div>
-        </div>
-
-        <div class="approach-step">
-          <div class="approach-step-meta">
-            <span class="approach-step-num">03</span>
-            <h3 class="approach-step-name">We brengen het naar buiten</h3>
-          </div>
-          <div class="approach-step-body">
-            Uw verhaal moet zichtbaar worden op de juiste plaatsen. Daarom vertalen we het naar websitecopy, SEO, content, video, cases, advertenties en campagnes. Niet als losse acties, maar als één herkenbare lijn naar de markt.
-          </div>
-        </div>
-
-        <div class="approach-step">
-          <div class="approach-step-meta">
-            <span class="approach-step-num">04</span>
-            <h3 class="approach-step-name">We trekken de juiste mensen aan</h3>
-          </div>
-          <div class="approach-step-body">
-            Marketing moet niet iedereen aantrekken. Ze moet vooral de mensen aantrekken die passen bij uw bedrijf, uw manier van werken en uw waarde. Zo vermijdt u verkeerde verwachtingen, oppervlakkige prijsvergelijkingen en tijdverlies aan aanvragen die nooit echt klant hadden moeten worden.
-            <div class="approach-step-pull">Verkeerde leads kosten geld.<br>Geen leads kosten omzet.</div>
+          <div class="choice-card choice-card--oryen">
+            <img src="/images/Oryen_logo_v5112025.png" alt="ORYEN" class="choice-logo" loading="lazy">
+            <span class="choice-kicker">Twijfelt u wat eerst zinvol is?</span>
+            <h3>Start bij ORYEN.</h3>
+            <p>Is nog niet duidelijk waar u commercieel moet investeren of wat eerst moet? ORYEN helpt eerst bepalen wat commercieel zinvol is, zodat u daarna een onderbouwde beslissing neemt.</p>
+            <a class="oryen-btn" href="https://oryen.be" target="_blank" rel="noopener">Naar oryen.be</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (LIGHT) -->
-    <section class="services" id="diensten">
+    <!-- EXPERTISE -->
+    <section class="services" id="expertise">
       <div class="services-wrap">
         <div class="services-head">
-          <span class="label">Diensten</span>
-          <h2>Waarmee we uw bedrijf <em>authentiek</em> naar buiten brengen.</h2>
+          <span class="label">Expertise</span>
+          <h2>Vier domeinen die we <em>zelf</em> uitvoeren.</h2>
+          <p class="services-intro">Geen catalogus van twintig diensten. Dit is wat CNIP dagelijks bouwt en beheert, met cases als bewijs.</p>
         </div>
 
         <div class="services-grid">
-          <div class="service-tile">
+          <article class="service-tile">
             <div>
-              <span class="service-num">i.</span>
-              <h3 class="service-name">Website &amp; copy</h3>
+              <span class="service-num">01</span>
+              <h3 class="service-name">Paid media &amp; performance</h3>
+              <p class="service-desc">Voor bedrijven die meer aanvragen willen tegen een kost die klopt.</p>
+              <ul class="service-list">
+                <li>Google Ads: search en remarketing</li>
+                <li>Meta- en LinkedIn-campagnes met leadformulieren</li>
+                <li>Conversietracking via GTM en GA4</li>
+                <li>Maandelijks bijsturen op kost per lead</li>
+              </ul>
             </div>
-            <p class="service-desc">Een website moet meer doen dan tonen wat u aanbiedt. Ze moet duidelijk maken <em>wie u bent</em>, waar u voor staat en waarom iemand u zou vertrouwen.</p>
-          </div>
+            <div class="service-foot">
+              <p class="service-proof"><strong>Bewijs:</strong> Google Ads leverde 35% van gemiddeld 240 leads per maand bij een Belgisch bouwbedrijf.</p>
+              <div class="service-links">
+                <a href="#contact" data-interest="Paid media &amp; performance" class="service-cta">Bespreek je campagne</a>
+                <a href="/cases/case-lead-gen-marketing.html" class="service-more">Case</a>
+              </div>
+            </div>
+          </article>
 
-          <div class="service-tile">
+          <article class="service-tile">
             <div>
-              <span class="service-num">ii.</span>
-              <h3 class="service-name">Vindbaarheid</h3>
+              <span class="service-num">02</span>
+              <h3 class="service-name">SEO &amp; content</h3>
+              <p class="service-desc">Voor bedrijven die gevonden willen worden op zoektermen met koopintentie.</p>
+              <ul class="service-list">
+                <li>Technische SEO-audit en optimalisatie</li>
+                <li>Zoekwoordonderzoek en site-architectuur</li>
+                <li>Content, local SEO en maandelijkse rapportering</li>
+                <li>Foto en video voor site en social</li>
+              </ul>
             </div>
-            <p class="service-desc">Gevonden worden is belangrijk. Maar gevonden worden op <em>de juiste vragen</em> is belangrijker. Zichtbaar op de momenten waarop klanten kiezen.</p>
-          </div>
+            <div class="service-foot">
+              <p class="service-proof"><strong>Bewijs:</strong> Willems Veranda (2018–2024) groeide van nul naar 51 zoekwoorden in de top 3 en 77 in de top 10.</p>
+              <div class="service-links">
+                <a href="#contact" data-interest="SEO &amp; content" class="service-cta">Vraag een SEO-voorstel</a>
+                <a href="/cases/case-willems-veranda.html" class="service-more">Case</a>
+              </div>
+            </div>
+          </article>
 
-          <div class="service-tile">
+          <article class="service-tile">
             <div>
-              <span class="service-num">iii.</span>
-              <h3 class="service-name">Content &amp; video</h3>
+              <span class="service-num">03</span>
+              <h3 class="service-name">HubSpot, CRM &amp; automation</h3>
+              <p class="service-desc">Voor bedrijven waar leads tussen marketing en sales verloren gaan.</p>
+              <ul class="service-list">
+                <li>HubSpot-implementatie en onboarding</li>
+                <li>Pipelines, workflows en lead nurturing</li>
+                <li>Dashboards met rapportering per kanaal</li>
+                <li>Koppeling met website en formulieren</li>
+              </ul>
             </div>
-            <p class="service-desc">Content mag geen vulling zijn. Goede content toont <em>uw mensen, uw kennis, uw bewijs</em>. Met tekst, beeld en video maken we voelbaar waarom u anders bent.</p>
-          </div>
+            <div class="service-foot">
+              <p class="service-proof"><strong>Bewijs:</strong> HubSpot Gold Partner sinds 2019. HubSpot vormt de centrale cockpit in de leadcase van 240 leads per maand.</p>
+              <div class="service-links">
+                <a href="/hubspot-gold-partner-gent.html" class="service-cta">HubSpot bij CNIP</a>
+                <a href="/cases/case-lead-gen-marketing.html" class="service-more">Case</a>
+              </div>
+            </div>
+          </article>
 
-          <div class="service-tile">
+          <article class="service-tile">
             <div>
-              <span class="service-num">iv.</span>
-              <h3 class="service-name">Campagnes &amp; opvolging</h3>
+              <span class="service-num">04</span>
+              <h3 class="service-name">Websites &amp; conversie</h3>
+              <p class="service-desc">Voor bedrijven met verkeer maar te weinig aanvragen.</p>
+              <ul class="service-list">
+                <li>Websites en landingspagina's die SEO-ready zijn</li>
+                <li>Formulieren en opvolging tot in de mailbox of CRM</li>
+                <li>Snelheid, tracking en technische basis</li>
+                <li>Copy die zegt wat u doet en voor wie</li>
+              </ul>
             </div>
-            <p class="service-desc">Campagnes werken beter wanneer het verhaal klopt vóór het budget begint te lopen. Google Ads, social en HubSpot — voor <em>betere instroom met minder ruis</em>.</p>
-          </div>
+            <div class="service-foot">
+              <p class="service-proof"><strong>Bewijs:</strong> landingspagina's en formulieren op maat maakten deel uit van de aanpak in de bouwcase met gemiddeld 240 leads per maand.</p>
+              <div class="service-links">
+                <a href="#contact" data-interest="Websites &amp; conversie" class="service-cta">Vraag een voorstel</a>
+              </div>
+            </div>
+          </article>
         </div>
+
+        <p class="services-note">Video, tv en radio produceren we binnen campagnes, zoals jarenlang voor DSM Keukens.</p>
       </div>
     </section>
 
@@ -1465,10 +1391,91 @@
       <div class="cases-wrap">
         <div class="cases-head">
           <span class="label">Cases</span>
-          <h2>Bedrijven die <em>sterker</em> naar buiten kwamen.</h2>
+          <h2>Wat CNIP <em>uitvoerde</em>, en wat het opleverde.</h2>
         </div>
 
         <div class="cases-list">
+
+          <article class="case">
+            <div class="case-visual case-visual--stat" aria-hidden="true">
+              <div class="case-bigstat">240</div>
+              <div class="case-bigstat-label">leads per maand, gemiddeld</div>
+              <div class="case-bars">
+                <span style="--w:40%">Inbound &amp; SEO 40%</span>
+                <span style="--w:35%">Google Ads 35%</span>
+                <span style="--w:25%">Social 25%</span>
+              </div>
+            </div>
+            <div class="case-content">
+              <span class="case-tag">HubSpot · Google Ads · SEO · 2018–2023</span>
+              <h3 class="case-title">Belgisch bouwbedrijf</h3>
+              <dl class="case-steps">
+                <div><dt>Situatie</dt><dd>Wisselende instroom, van 80 tot 150 leads per maand, zonder centraal overzicht.</dd></div>
+                <div><dt>Wat CNIP deed</dt><dd>HubSpot als centrale cockpit, landingspagina's, SEO, Google Ads en social.</dd></div>
+              </dl>
+              <div class="case-stats">
+                <div>
+                  <div class="case-stat-num">80–150</div>
+                  <div class="case-stat-label">Leads/maand vooraf</div>
+                </div>
+                <div>
+                  <div class="case-stat-num">35%</div>
+                  <div class="case-stat-label">Via Google Ads</div>
+                </div>
+              </div>
+              <a href="/cases/case-lead-gen-marketing.html" class="case-link">Lees de case</a>
+            </div>
+          </article>
+
+          <article class="case">
+            <div class="case-visual">
+              <img src="/images/willems_2.jpg" alt="Willems Veranda" loading="lazy">
+            </div>
+            <div class="case-content">
+              <span class="case-tag">SEO · 2018–2024</span>
+              <h3 class="case-title">Willems Veranda</h3>
+              <dl class="case-steps">
+                <div><dt>Situatie</dt><dd>Nauwelijks zichtbaar op zoektermen als veranda en pergola.</dd></div>
+                <div><dt>Wat CNIP deed</dt><dd>Technische basis, zoekwoordarchitectuur, content en linkprofiel, zes jaar lang.</dd></div>
+              </dl>
+              <div class="case-stats">
+                <div>
+                  <div class="case-stat-num">51</div>
+                  <div class="case-stat-label">Zoekwoorden top 3</div>
+                </div>
+                <div>
+                  <div class="case-stat-num">77</div>
+                  <div class="case-stat-label">Zoekwoorden top 10</div>
+                </div>
+              </div>
+              <a href="/cases/case-willems-veranda.html" class="case-link">Lees de case</a>
+            </div>
+          </article>
+
+          <article class="case">
+            <div class="case-visual">
+              <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve" loading="lazy">
+            </div>
+            <div class="case-content">
+              <span class="case-tag">Content &amp; social · 2018–2023</span>
+              <h3 class="case-title">Hof van Cleve</h3>
+              <dl class="case-steps">
+                <div><dt>Situatie</dt><dd>Een sterke reputatie, maar online nauwelijks aanwezig.</dd></div>
+                <div><dt>Wat CNIP deed</dt><dd>Beeldlijn, vaste rubrieken en een vol te houden ritme op Instagram.</dd></div>
+              </dl>
+              <div class="case-stats">
+                <div>
+                  <div class="case-stat-num">52K</div>
+                  <div class="case-stat-label">Instagram-volgers</div>
+                </div>
+                <div>
+                  <div class="case-stat-num">€0</div>
+                  <div class="case-stat-label">Advertentiebudget</div>
+                </div>
+              </div>
+              <a href="/cases/case-hof-van-cleve.html" class="case-link">Lees de case</a>
+            </div>
+          </article>
 
           <article class="case">
             <div class="case-visual">
@@ -1478,169 +1485,121 @@
               <button class="play-btn" aria-label="Speel video af"></button>
             </div>
             <div class="case-content">
-              <span class="case-tag">Herkenbaarheid &amp; vertrouwen</span>
+              <span class="case-tag">Video · tv · radio</span>
               <h3 class="case-title">DSM Keukens</h3>
-              <p class="case-desc">Jarenlang een herkenbaar gezicht via video, tv-commercials, radio en een eigen tune. Niet alleen reclame — wel herkenning, vertrouwen en aanwezigheid in het hoofd van de klant.</p>
-              <div class="case-stats">
-                <div>
-                  <div class="case-stat-num">5+ jaar</div>
-                  <div class="case-stat-label">Partnership</div>
-                </div>
-                <div>
-                  <div class="case-stat-num">TV · Radio</div>
-                  <div class="case-stat-label">Nationaal</div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-visual">
-              <img src="/images/Hof van Cleve.jpg" alt="Hof van Cleve" loading="lazy">
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Klasse &amp; menselijkheid</span>
-              <h3 class="case-title">Hof van Cleve</h3>
-              <p class="case-desc">Een ijzersterke reputatie mocht zichtbaar worden op een manier die klasse behield, maar meer verbinding maakte met een nieuwe generatie.</p>
-              <div class="case-stats">
-                <div>
-                  <div class="case-stat-num">50K+</div>
-                  <div class="case-stat-label">Volgers</div>
-                </div>
-                <div>
-                  <div class="case-stat-num">2.5M+</div>
-                  <div class="case-stat-label">Views/maand</div>
-                </div>
-              </div>
-              <a href="/cases/case-hof-van-cleve.html" class="case-link">Lees de volledige case</a>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-visual">
-              <img src="/images/willems_2.jpg" alt="Willems Veranda" loading="lazy">
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Vakmanschap &amp; vindbaarheid</span>
-              <h3 class="case-title">Willems Veranda</h3>
-              <p class="case-desc">Vakmanschap en reputatie kregen een nieuw gezicht én werden online beter gevonden, scherper gepositioneerd en duidelijker onderscheiden.</p>
-              <div class="case-stats">
-                <div>
-                  <div class="case-stat-num">51</div>
-                  <div class="case-stat-label">Keywords Top 3</div>
-                </div>
-                <div>
-                  <div class="case-stat-num">77</div>
-                  <div class="case-stat-label">Keywords Top 10</div>
-                </div>
-              </div>
-              <a href="/cases/case-willems-veranda.html" class="case-link">Lees de volledige case</a>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-visual">
-              <img src="/images/BMW%20LE%20Couter.jpg" alt="BMW Le Couter" loading="lazy" style="object-position:center 42%;">
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Lokaal gezicht &amp; vertrouwen</span>
-              <h3 class="case-title">BMW Le Couter</h3>
-              <p class="case-desc">BMW is overal herkenbaar. Een lokale dealer moet dus meer doen dan het automerk tonen. CNIP hielp BMW Le Couter lokaler, menselijker en herkenbaarder naar buiten komen.</p>
+              <dl class="case-steps">
+                <div><dt>Situatie</dt><dd>Een keukenbouwer die naar nationale naamsbekendheid wilde.</dd></div>
+                <div><dt>Wat CNIP deed</dt><dd>Jarenlang tv-commercials, radiospots, video en een eigen tune.</dd></div>
+              </dl>
             </div>
           </article>
 
         </div>
-      </div>
-    </section>
 
-    <!-- AI -->
-    <section class="ai-section">
-      <div class="ai-wrap">
-        <span class="label" style="text-align:center;display:block;">AI &amp; eigenheid</span>
-        <h2 class="ai-headline">AI maakt marketing sneller.<br><em>Niet automatisch onderscheidender.</em></h2>
-        <div class="ai-body">
-          <p>Vandaag kan iedereen snel teksten, beelden en campagnes maken. Maar daardoor begint veel marketing net meer op elkaar te lijken: correcte zinnen, vlotte slogans, algemene claims, weinig eigenheid.</p>
-          <p>CNIP gebruikt AI waar het helpt om sneller te structureren, verwerken en produceren. Maar de inhoud komt uit uw bedrijf: uw kennis, uw mensen, uw bewijs, uw reputatie en uw manier van werken.</p>
-        </div>
-        <p class="ai-quote">Want precies dát maakt u moeilijker te kopiëren.</p>
-      </div>
-    </section>
-
-    <!-- CHRISTOPHE (LIGHT) -->
-    <section class="christophe" id="christophe">
-      <div class="christophe-wrap">
-        <div class="christophe-portrait">
-          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere, Founder CNIP" loading="lazy">
-        </div>
-        <div class="christophe-content">
-          <span class="label">Christophe</span>
-          <h2>Rechtstreeks werken met iemand die naar de <em>kern</em> zoekt.</h2>
-          <div class="christophe-text">
-            <p>U werkt rechtstreeks met Christophe Dejaeghere, ondersteund door een vaste kern en een netwerk van specialisten voor ontwikkeling, content, video en digitale uitvoering.</p>
-            <p>Sinds 2002 helpt CNIP Belgische bedrijven hun eigenheid, vakmanschap en reputatie sterker naar buiten brengen.</p>
-            <p><strong>Geen lagen accountmanagement. Geen generieke marketingaanpak.</strong> Wel directe lijnen, scherpe keuzes en communicatie die vertrekt vanuit wat uw bedrijf echt maakt.</p>
-          </div>
-          <div class="christophe-signature">
-            <span class="christophe-signature-name">Christophe Dejaeghere</span>
-            <span class="christophe-signature-role">— Founder, sinds 2002</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ORYEN -->
-    <section class="oryen">
-      <div class="oryen-wrap">
-        <div class="oryen-logo-card">
-          <img src="/images/Oryen_logo_v5112025.png" alt="ORYEN" loading="lazy">
-        </div>
-        <div class="oryen-content">
-          <span class="label">Wanneer het niet alleen over marketing gaat</span>
-          <h2>CNIP brengt uw bedrijf authentiek naar buiten.<br><em>ORYEN onderzoekt waar groei vastloopt.</em></h2>
-          <div class="oryen-text">
-            <p>Soms ligt het probleem niet bij de website, de content of de campagnes zelf. Soms zit het dieper: in <strong>positionering, aanbod, sales, opvolging, CRM, winkelbeleving</strong> of de manier waarop commerciële keuzes worden gemaakt.</p>
-            <p>In die gevallen begint Christophe onder <strong>ORYEN</strong> met een <strong>Reality Check</strong>: een brede commerciële diagnose die duidelijk maakt waar resultaat verloren gaat — en wat eerst moet worden aangepakt vóór er opnieuw budget naar marketing, mensen of tools gaat.</p>
-          </div>
-          <a href="https://oryen.be" target="_blank" rel="noopener" class="oryen-btn">Ontdek ORYEN</a>
+        <div class="cases-more">
+          <a class="btn-secondary" href="/cases/">Alle cases</a>
         </div>
       </div>
     </section>
 
     <!-- CLIENTS -->
-    <section class="clients">
+    <section class="clients" id="klanten">
       <div class="clients-wrap">
         <div class="clients-head">
           <span class="label">Klanten</span>
-          <h2>Vertrouwd door bedrijven<br>met <em>reputatie</em>.</h2>
-          <p>Voor bedrijven waar uitstraling, vertrouwen en zichtbaarheid beter moesten aansluiten bij wie ze echt zijn.</p>
+          <h2>Bedrijven waarvoor CNIP <em>uitvoerde</em>.</h2>
+          <p>Een selectie uit meer dan twintig jaar campagnes, content, video, SEO en HubSpot voor Belgische bedrijven.</p>
         </div>
         <div class="clients-grid">
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/dsmkeukens.png" alt="DSM Keukens"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/WillemsVerandas.png" alt="Willems Veranda"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/bmw%20Le%20couter.png" alt="BMW Le Couter"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/GEHealtcare.png" alt="GE Healthcare"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/decospan.png" alt="Decospan"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/Soubry.png" alt="Soubry"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/JulesDeStrooper.png" alt="Jules De Strooper"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/Luxilon.png" alt="Luxilon"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/PeeterGoossens.png" alt="Peter Goossens"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/TerGroenePoorte.png" alt="Ter Groene Poorte"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/haelvoet.png" alt="Haelvoet"></div>
-          <div class="client-cell"><img loading="lazy" src="/images/klanten/azoudenaarde.png" alt="AZ Oudenaarde"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/dsmkeukens.png" alt="DSM Keukens"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/WillemsVerandas.png" alt="Willems Veranda"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/bmw%20Le%20couter.png" alt="BMW Le Couter"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/GEHealtcare.png" alt="GE Healthcare"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/decospan.png" alt="Decospan"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/Soubry.png" alt="Soubry"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/JulesDeStrooper.png" alt="Jules De Strooper"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/Luxilon.png" alt="Luxilon"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/PeeterGoossens.png" alt="Peter Goossens"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/TerGroenePoorte.png" alt="Ter Groene Poorte"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/haelvoet.png" alt="Haelvoet"></div>
+          <div class="client-cell"><img decoding="async" src="/images/klanten/azoudenaarde.png" alt="AZ Oudenaarde"></div>
         </div>
       </div>
     </section>
 
     <!-- CERTIFICATES -->
     <section class="certs">
-      <div class="certs-label">Certified Expertise</div>
+      <div class="certs-label">Certificeringen</div>
       <div class="certs-row">
-        <div class="cert"><img loading="lazy" src="/images/certificaten/gold-badge-color-1.png" alt="HubSpot Gold"><span>HubSpot Gold</span></div>
-        <div class="cert"><img loading="lazy" src="/images/certificaten/logo-university-of-cambridge-judge-business-school.png" alt="Cambridge"><span>Cambridge</span></div>
-        <div class="cert"><img loading="lazy" src="/images/certificaten/Google-Adwords-Certification.png" alt="Google Ads"><span>Google Ads</span></div>
-        <div class="cert"><img loading="lazy" src="/images/certificaten/GA-certified.png" alt="Analytics"><span>Analytics</span></div>
-        <div class="cert"><img loading="lazy" src="/images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt="YouTube"><span>YouTube</span></div>
-        <div class="cert"><img loading="lazy" src="/images/certificaten/Semrush Agency Partner Badge.png" alt="Semrush"><span>Semrush</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/gold-badge-color-1.png" alt=""><span>HubSpot Gold Partner</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/Google-Adwords-Certification.png" alt=""><span>Google Ads</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/GA-certified.png" alt=""><span>Google Analytics</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/Semrush Agency Partner Badge.png" alt=""><span>Semrush Agency Partner</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/YouTube-Certified-Badge-Light-cropped-1-1.png" alt=""><span>YouTube</span></div>
+        <div class="cert"><img loading="lazy" src="/images/certificaten/logo-university-of-cambridge-judge-business-school.png" alt=""><span>Cambridge Judge Business School</span></div>
+      </div>
+    </section>
+
+    <!-- SAMENWERKEN -->
+    <section class="approach" id="samenwerken">
+      <div class="approach-wrap">
+        <div class="approach-head">
+          <span class="label">Samenwerken</span>
+          <h2>Zo verloopt een <em>opdracht</em>.</h2>
+        </div>
+
+        <div class="approach-step">
+          <div class="approach-step-meta">
+            <span class="approach-step-num">01</span>
+            <h3 class="approach-step-name">Intake</h3>
+          </div>
+          <div class="approach-step-body">U beschrijft de opdracht: wat moet er gebeuren, tegen wanneer, en wat bestaat er al. We bekijken samen wat nodig is om het goed uit te voeren.</div>
+        </div>
+
+        <div class="approach-step">
+          <div class="approach-step-meta">
+            <span class="approach-step-num">02</span>
+            <h3 class="approach-step-name">Voorstel</h3>
+          </div>
+          <div class="approach-step-body">U krijgt een voorstel met scope, planning, budget en wie wat doet. Zo weet u vooraf waar u aan toe bent.</div>
+        </div>
+
+        <div class="approach-step">
+          <div class="approach-step-meta">
+            <span class="approach-step-num">03</span>
+            <h3 class="approach-step-name">Uitvoering</h3>
+          </div>
+          <div class="approach-step-body">Senior mensen voeren uit, met één vast aanspreekpunt. Geen juniors die op uw budget leren.</div>
+        </div>
+
+        <div class="approach-step">
+          <div class="approach-step-meta">
+            <span class="approach-step-num">04</span>
+            <h3 class="approach-step-name">Opvolging</h3>
+          </div>
+          <div class="approach-step-body">We rapporteren op wat vooraf is afgesproken, zoals leads, kost per lead en rankings, en sturen bij waar nodig.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVER CNIP -->
+    <section class="christophe" id="over-cnip">
+      <div class="christophe-wrap">
+        <div class="christophe-portrait">
+          <img src="/images/christophecnip.png" alt="Christophe Dejaeghere, founder CNIP" width="426" height="571" decoding="async">
+        </div>
+        <div class="christophe-content">
+          <span class="label">Over CNIP</span>
+          <h2>Sinds 2002 een <em>uitvoerend</em> bureau uit Gent.</h2>
+          <div class="christophe-text">
+            <p>U werkt rechtstreeks met Christophe Dejaeghere, met een vaste kern en een netwerk van specialisten voor development, content, video en campagnes.</p>
+            <p>Er zitten geen lagen accountmanagement tussen. De mensen die het voorstel maken, voeren het ook uit.</p>
+          </div>
+          <div class="christophe-signature">
+            <span class="christophe-signature-name">Christophe Dejaeghere</span>
+            <span class="christophe-signature-role">Founder CNIP en ORYEN</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1649,34 +1608,51 @@
       <div class="contact-wrap">
         <div class="contact-content">
           <span class="label">Contact</span>
-          <h2>Wilt u uw bedrijf<br>sterker en <em>authentieker</em> naar buiten brengen?</h2>
+          <h2>Weet u wat er moet gebeuren? <em>Vraag een voorstel.</em></h2>
           <div class="contact-text">
-            <p>Misschien voelt u dat uw website niet meer toont wie u vandaag bent. Of dat uw marketing te algemeen klinkt. Of dat u te veel verkeerde aanvragen krijgt. Of dat klanten pas tijdens een gesprek begrijpen waarom u eigenlijk de betere keuze bent.</p>
-            <div class="contact-pull">Dan gaat er waarde verloren vóór het eerste contact.</div>
-            <p style="margin-top:24px;">Vertel kort waar het vandaag wringt. CNIP bekijkt hoe uw kennis, waarden, reputatie en manier van werken sterker naar de markt vertaald kunnen worden.</p>
+            <p>Beschrijf kort de opdracht: wat moet er gebeuren, tegen wanneer, en wat bestaat er al. U krijgt een persoonlijk antwoord met de volgende stap.</p>
+            <p>Liever bellen? <a href="tel:+3293965883">+32 9 396 58 83</a></p>
+            <p class="contact-oryen">Nog niet zeker wat eerst moet? <a href="https://oryen.be" target="_blank" rel="noopener">Start bij ORYEN</a>.</p>
           </div>
         </div>
 
         <form class="contact-form" action="/api/contact" method="POST" id="contactForm">
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <input type="hidden" name="subject" value="CNIP website: homepage">
+          <div class="hp-field" aria-hidden="true">
+            <label for="botcheck">Laat dit veld leeg</label>
+            <input type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
 
           <div class="form-group">
             <label for="name">Naam</label>
-            <input id="name" name="name" type="text" required>
+            <input id="name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="form-group">
             <label for="company">Bedrijf</label>
-            <input id="company" name="company" type="text">
+            <input id="company" name="company" type="text" autocomplete="organization">
           </div>
           <div class="form-group">
-            <label for="message">Waar wringt het?</label>
+            <label for="interest">Waarover gaat het?</label>
+            <select id="interest" name="interest">
+              <option value="">Kies een domein (optioneel)</option>
+              <option>Paid media &amp; performance</option>
+              <option>SEO &amp; content</option>
+              <option>HubSpot, CRM &amp; automation</option>
+              <option>Websites &amp; conversie</option>
+              <option>Video &amp; campagnes</option>
+              <option>Iets anders</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Wat moet er gebeuren?</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button class="submit-btn" type="submit">Bespreek uw marketing</button>
+          <button class="submit-btn" type="submit">Vraag een voorstel</button>
+          <p class="form-note">We gebruiken uw gegevens alleen om op uw vraag te antwoorden. <a href="/privacy.html">Privacy</a></p>
         </form>
       </div>
     </section>
@@ -1690,30 +1666,34 @@
           <address class="footer-addr">
             Ottergemsesteenweg Zuid 808<br>
             9000 Gent, België<br><br>
-            <a href="tel:+3292985720" style="color:inherit">+32 9 298 57 20</a><br>
+            <a href="tel:+3293965883" style="color:inherit">+32 9 396 58 83</a><br>
             <a href="mailto:info@cnip.be" style="color:inherit">info@cnip.be</a>
           </address>
         </div>
         <div>
-          <div class="footer-col-heading">CNIP</div>
-          <a href="#aanpak">Aanpak</a>
-          <a href="#diensten">Diensten</a>
-          <a href="#cases">Cases</a>
-          <a href="#christophe">Christophe</a>
+          <div class="footer-col-heading">Expertise</div>
+          <a href="#expertise">Paid media &amp; performance</a>
+          <a href="#expertise">SEO &amp; content</a>
+          <a href="/hubspot-gold-partner-gent.html">HubSpot Gold Partner</a>
+          <a href="#expertise">Websites &amp; conversie</a>
         </div>
         <div>
-          <div class="footer-col-heading">Meer</div>
-          <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN</a>
+          <div class="footer-col-heading">CNIP</div>
+          <a href="/cases/">Cases</a>
+          <a href="#over-cnip">Over CNIP</a>
+          <a href="/marketing-uitbesteden.html">Marketing uitbesteden</a>
           <a href="#contact">Contact</a>
           <a href="/privacy.html">Privacy</a>
         </div>
         <div>
-          <div class="footer-col-heading">Connect</div>
+          <div class="footer-col-heading">Eerst richting nodig?</div>
+          <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN ↗</a>
+          <div class="footer-col-heading footer-col-heading--spaced">Volg ons</div>
           <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 CNIP — Bedrijven authentiek naar de markt brengen sinds 2002</div>
+      <div class="footer-bottom">© 2026 CNIP · Marketinguitvoering vanuit Gent sinds 2002</div>
     </div>
   </footer>
 
@@ -1781,6 +1761,18 @@
         observer.observe(hero);
       }
 
+      // Domein-CTA's vullen het keuzeveld in het contactformulier
+      var interestSelect = document.getElementById('interest');
+      document.querySelectorAll('[data-interest]').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(!interestSelect) return;
+          var val = link.getAttribute('data-interest');
+          for(var i=0;i<interestSelect.options.length;i++){
+            if(interestSelect.options[i].text === val){ interestSelect.selectedIndex = i; break; }
+          }
+        });
+      });
+
       var form = document.getElementById('contactForm');
       if (form) {
         form.addEventListener('submit', function() {
@@ -1839,35 +1831,6 @@
         updateThread();
       }
 
-      // Count-up for the statement number
-      var countNum = document.getElementById('countNum');
-      if(countNum && 'IntersectionObserver' in window){
-        var counted = false;
-        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if(!prefersReduced){ countNum.textContent = '0'; }
-        var countObserver = new IntersectionObserver(function(entries){
-          entries.forEach(function(entry){
-            if(entry.isIntersecting && !counted){
-              counted = true;
-              var target = parseInt(countNum.getAttribute('data-target'), 10) || 24;
-              if(prefersReduced){ countNum.textContent = target; return; }
-              countNum.textContent = '0';
-              var dur = 1400, start = null;
-              function step(ts){
-                if(!start) start = ts;
-                var p = Math.min((ts - start) / dur, 1);
-                var eased = 1 - Math.pow(1 - p, 3);
-                countNum.textContent = Math.round(eased * target);
-                if(p < 1) requestAnimationFrame(step);
-                else countNum.textContent = target;
-              }
-              requestAnimationFrame(step);
-            }
-          });
-        }, {threshold:0.5});
-        countObserver.observe(countNum);
-      }
-
       // Magnetic effect on primary buttons (desktop, fine pointer only)
       if(window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
         document.querySelectorAll('.btn-primary, .submit-btn').forEach(function(btn){
@@ -1888,7 +1851,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // Section headings + labels: refined rise with blur clearing
-        gsap.utils.toArray('.label, .problem-headline, .what-heading, .approach-head h2, .services-head h2, .cases-head h2, .ai-headline, .christophe-content h2, .oryen-content h2, .clients-head h2, .contact-content h2').forEach(function(el){
+        gsap.utils.toArray('.label, .what-heading, .choice-heading, .approach-head h2, .services-head h2, .cases-head h2, .christophe-content h2, .clients-head h2, .contact-content h2').forEach(function(el){
           gsap.from(el, {
             opacity: 0,
             y: 32,
@@ -1900,7 +1863,7 @@
         });
 
         // Body paragraphs + pull quotes: gentle fade-rise
-        gsap.utils.toArray('.problem-body, .what-body, .ai-body, .christophe-text, .oryen-text, .contact-text, .clients-head p').forEach(function(el){
+        gsap.utils.toArray('.what-body, .christophe-text, .contact-text, .services-intro').forEach(function(el){
           gsap.from(el, {
             opacity: 0,
             y: 20,
@@ -1912,7 +1875,7 @@
         });
 
         // Cards stagger in
-        gsap.utils.toArray('.approach-step, .service-tile, .case').forEach(function(el, i) {
+        gsap.utils.toArray('.approach-step, .service-tile, .case, .choice-card').forEach(function(el, i) {
           gsap.from(el, {
             opacity: 0,
             y: 36,
