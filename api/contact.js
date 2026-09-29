@@ -136,7 +136,7 @@ export default async function handler(req, res) {
 
     if (!delivered.ok) {
       console.error('CNIP contactformulier: e-mailaflevering is niet geconfigureerd.');
-      return res.status(500).send(`Je aanvraag kon niet worden verstuurd. Technische fout: ${error?.message || 'onbekend'}`);
+      return res.status(500).send('Je aanvraag kon niet worden verstuurd. Probeer later opnieuw.');
     }
 
     res.setHeader('Location', '/bedankt.html');
