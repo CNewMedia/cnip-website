@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl-BE">
 <head>
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e6950b75b1eff28e38163dfc0860477d/script.js"></script>
   <!-- Google Tag Manager -->
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -60,7 +61,7 @@
       "name": "CNIP",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cnip.be/images/cnip-logo.png"
+        "url": "https://cnip.be/images/logocnip/CNIP%20logo%2025%20zwart.png"
       }
     },
     "datePublished": "2025-11-23",
@@ -91,7 +92,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Cases",
-        "item": "https://cnip.be/#work"
+        "item": "https://cnip.be/cases/"
       },
       {
         "@type": "ListItem",
@@ -679,173 +680,12 @@
         text-align:left;
       }
     }
-  </style>
-</head>
-  <!-- 
-  COOKIE BANNER - Plak dit NET VOOR </body> in alle pagina's
-  Vriendelijk, klein, niet vervelend 🍪
--->
-
-<div id="cookieBanner" class="cookie-banner">
-    <span class="cookie-icon">🍪</span>
-    <p>Wij gebruiken cookies voor analytics. Cool?</p>
-    <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="cookie-btn accept">Prima</button>
-        <button onclick="declineCookies()" class="cookie-btn decline">Nee</button>
-    </div>
-    <a href="/privacy.html" class="cookie-link">Meer info</a>
-</div>
-
-<style>
-.cookie-banner {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #1a1a1a;
-    border: 1px solid rgba(232,181,99,.2);
-    border-radius: 16px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px;
-    color: #fff;
-    z-index: 9999;
-    box-shadow: 0 8px 32px rgba(0,0,0,.4);
-    animation: slideUp 0.4s ease-out;
-    max-width: calc(100% - 40px);
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.cookie-banner.hidden {
-    display: none;
-}
-
-.cookie-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-}
-
-.cookie-banner p {
-    margin: 0;
-    color: rgba(255,255,255,.9);
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.cookie-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.cookie-btn.accept {
-    background: linear-gradient(135deg, #E8B563, #d4a049);
-    color: #0a0a0a;
-}
-
-.cookie-btn.accept:hover {
-    transform: scale(1.05);
-}
-
-.cookie-btn.decline {
-    background: transparent;
-    color: rgba(255,255,255,.6);
-    border: 1px solid rgba(255,255,255,.2);
-}
-
-.cookie-btn.decline:hover {
-    border-color: rgba(255,255,255,.4);
-    color: #fff;
-}
-
-.cookie-link {
-    color: rgba(255,255,255,.4);
-    font-size: 11px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.cookie-link:hover {
-    color: #E8B563;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .cookie-banner {
-        flex-wrap: wrap;
-        bottom: 12px;
-        left: 12px;
-        right: 12px;
-        max-width: none;
-    }
-    
-    .cookie-banner p {
-        flex: 1 1 100%;
-        order: 1;
-    }
-    
-    .cookie-icon {
-        order: 0;
-    }
-    
-    .cookie-buttons {
-        order: 2;
-        margin-top: 8px;
-    }
-    
-    .cookie-link {
-        order: 3;
-        margin-top: 8px;
-        margin-left: auto;
-    }
-}
+      .hero > .container{width:100%;min-width:0}
+    .hero h1,.hero-subtitle{overflow-wrap:break-word}
+    .hero-stats{grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr))}
 </style>
-
-<script>
-// Check of consent al gegeven is
-(function() {
-    var consent = localStorage.getItem('cookieConsent');
-    if (consent === 'accepted') {
-        // Laad GA4 (GTM doet dit al via je bestaande setup)
-        document.getElementById('cookieBanner').classList.add('hidden');
-    } else if (consent === 'declined') {
-        document.getElementById('cookieBanner').classList.add('hidden');
-        // Disable GA4 cookies
-        window['ga-disable-G-XXXXXXX'] = true;
-    }
-})();
-
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // GTM is al geladen, dus analytics werkt automatisch
-}
-
-function declineCookies() {
-    localStorage.setItem('cookieConsent', 'declined');
-    document.getElementById('cookieBanner').classList.add('hidden');
-    // Optioneel: verwijder bestaande cookies
-    document.cookie.split(";").forEach(function(c) {
-        if (c.trim().startsWith("_ga")) {
-            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-        }
-    });
-}
-</script>
+</head>
+  
 <body>
   <a href="#main-content" class="skip-link">Spring naar inhoud</a>
   
@@ -853,7 +693,7 @@ function declineCookies() {
   
   <header>
     <div class="header-content">
-      <a href="/" class="logo-text">CNIP <span class="badge">Since 2002</span></a>
+      <a href="/" class="logo-text">CNIP <span class="badge">Sinds 2002</span></a>
     </div>
   </header>
 
@@ -1251,15 +1091,15 @@ function declineCookies() {
 
     <section class="cta-section">
       <div class="cta-box">
-        <h2>Wil je helder krijgen wat bij jou past?</h2>
+        <h2>Content en social laten uitvoeren?</h2>
         <p>
           Dit is geen blauwdruk die je één-op-één kopieert. 
           Elk merk heeft zijn eigen ritme, eigen grenzen en eigen manier van vertellen. 
-          Wat we wel kunnen doen: samen scherp krijgen waar je nu staat, 
-          welke kanalen er echt toe doen, en welk systeem nodig is om daar rustig naartoe te groeien.
+          Wat we wel doen: een beeldlijn, rubrieken en een ritme uitwerken dat bij jouw merk past, 
+          en dat consequent uitvoeren.
         </p>
         <div class="cta-buttons">
-          <a href="/#contact" class="btn-primary">Plan een gesprek</a>
+          <a href="/#contact" class="btn-primary">Vraag een voorstel</a>
           <a href="/cases" class="btn-secondary">Bekijk andere cases</a>
         </div>
       </div>
@@ -1275,7 +1115,7 @@ function declineCookies() {
           Ottergemsesteenweg Zuid 808<br>
           9000 Gent, België<br><br>
           <a href="tel:+3293965883" style="color:inherit;text-decoration:none">+32 9 396 58 83</a><br>
-          <a href="/cdn-cgi/l/email-protection#dfb6b1b9b09fbcb1b6aff1bdba" style="color:inherit;text-decoration:none"><span class="__cf_email__" data-cfemail="0a63646c654a6964637a24686f">[email&#160;protected]</span></a>
+          <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:none">info@cnip.be</a>
         </address>
       </div>
       <div>
@@ -1286,26 +1126,25 @@ function declineCookies() {
       </div>
       <div>
         <div class="footer-heading">Ontdek</div>
-        <a href="/#story">Ons verhaal</a>
+        <a href="/#over-cnip">Over CNIP</a>
         <a href="/cases">Cases</a>
-        <a href="/#clients">Klanten</a>
+        <a href="/#klanten">Klanten</a>
         <a href="/#contact">Contact</a>
       </div>
       <div>
         <div class="footer-heading">Connect</div>
-        <a href="/cdn-cgi/l/email-protection#ea83848c85aa8984839ac4888f">Email</a>
+        <a href="mailto:info@cnip.be">Email</a>
         <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 CNIP | Rust, helderheid en richting in digitale groei</div>
+    <div class="footer-bottom">© 2026 CNIP · Marketinguitvoering vanuit Gent sinds 2002</div>
   </footer>
 
   <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Terug naar boven">
     ↑
   </button>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     // Back to top button
     const backToTop = document.querySelector('.back-to-top');
