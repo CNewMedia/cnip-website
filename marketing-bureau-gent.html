@@ -86,8 +86,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CNIP Marketing Bureau",
-    "legalName": "CNIP Marketing Bureau",
+    "@id": "https://cnip.be/#organization",
+    "name": "CNIP",
     "alternateName": ["CNIP", "CNIP Agency", "CNIP Gent"],
     "description": "Marketing bureau in Gent gespecialiseerd in SEO, Google Ads, social media, video productie en marketing automation. HubSpot Gold Partner, actief sinds 2002.",
     "url": "https://cnip.be",
@@ -96,8 +96,13 @@
     "foundingDate": "2002",
     "founders": [{
       "@type": "Person",
+      "@id": "https://cnip.be/#christophe-dejaeghere",
       "name": "Christophe Dejaeghere",
-      "jobTitle": "Founder & CEO"
+      "jobTitle": "Founder & CEO",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Cambridge Certified"
+      }
     }],
     "address": {
       "@type": "PostalAddress",
@@ -122,7 +127,7 @@
     ],
     "slogan": "Marketinguitvoering vanuit Gent sinds 2002",
     "knowsAbout": ["SEO", "Google Ads", "Social Media Marketing", "Video Production", "Marketing Automation", "HubSpot", "Content Marketing"],
-    "award": ["HubSpot Gold Partner", "Google Ads Certified", "Cambridge Certified"]
+    "award": ["HubSpot Gold Partner", "Google Ads Certified"]
   }
   </script>
   
@@ -131,7 +136,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "CNIP Marketing Bureau Gent",
+    "@id": "https://cnip.be/#organization",
+    "name": "CNIP",
     "description": "Marketing bureau in Gent voor SEO, Google Ads, social media en video productie. Senior team, actief sinds 2002.",
     "image": "https://cnip.be/images/Hof%20van%20Cleve.jpg",
     "priceRange": "€€€",
@@ -174,7 +180,8 @@
     "serviceType": "Marketing Bureau Services",
     "provider": {
       "@type": "Organization",
-      "name": "CNIP Marketing Bureau"
+      "@id": "https://cnip.be/#organization",
+      "name": "CNIP"
     },
     "areaServed": {
       "@type": "Country",
@@ -226,40 +233,6 @@
         }
       ]
     }
-  }
-  </script>
-  
-  <!-- SEO: Structured Data - FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wat doet een marketing bureau?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Een marketing bureau helpt bedrijven groeien via strategische marketing. Dit omvat SEO, Google Ads, social media, content creatie, video productie en marketing automation. CNIP combineert al deze disciplines onder één dak met één aanspreekpunt."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat kost een marketing bureau?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "De kosten van een marketing bureau variëren op basis van scope en diensten. CNIP werkt met maandelijkse retainers voor premium merken. Beschrijf je opdracht en je ontvangt een voorstel op maat."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Waarom CNIP als marketing bureau kiezen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CNIP is een uitvoerend marketing bureau uit Gent, actief sinds 2002. Geen juniors, alleen seniors. Eén aanspreekpunt, volledig overzicht via één dashboard, en bewezen resultaten voor merken als Hof van Cleve, DSM Keukens en Willems Veranda."
-        }
-      }
-    ]
   }
   </script>
   
@@ -1730,7 +1703,7 @@
         <div class="case-card__content">
           <span class="case-card__tag">Lead Gen</span>
           <h3>Bouwbedrijf België</h3>
-          <p>Van 80 à 150 naar gemiddeld 240 leads per maand met HubSpot, SEO en Google Ads.</p>
+          <p>Van 80 à 150 naar gemiddeld 240 leads per maand over vijf jaar met HubSpot, SEO en Google Ads.</p>
           <div class="case-card__stat">
             <span class="case-card__stat-number">240</span>
             <span class="case-card__stat-label">leads/maand</span>
