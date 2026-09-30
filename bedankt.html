@@ -712,7 +712,9 @@
             if (!match) return;
             document.cookie = 'cnip_lead=; Max-Age=0; Path=/; SameSite=Lax; Secure';
             var parts = match[1].split('.');
-            var emailHash = /^[a-f0-9]{64}$/.test(parts[0]) ? parts[0] : '';
+            var ckyOk = false;
+            try { ckyOk = typeof getCkyConsent === 'function' && getCkyConsent().categories && getCkyConsent().categories.advertisement === true; } catch (e) {}
+            var emailHash = (ckyOk && /^[a-f0-9]{64}$/.test(parts[0])) ? parts[0] : '';
             var formPath = '';
             try { formPath = decodeURIComponent(parts.slice(1).join('.')); } catch (e) {}
             window.dataLayer.push({
