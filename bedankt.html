@@ -707,14 +707,24 @@
         // CONVERSIE TRACKING - Bedankpagina Event
         // ========================================
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'strategiesessie_thankyou_view',
-            form_name: 'CNIP Contact Form',
-            form_destination: 'bedankt.html',
-            form_type: 'strategiesessie'
-        });
-
-        console.log('✅ Thank you event gestuurd naar dataLayer');
+        (function () {
+            var match = document.cookie.match(/(?:^|;\s*)cnip_lead=([^;]+)/);
+            if (!match) return;
+            document.cookie = 'cnip_lead=; Max-Age=0; Path=/; SameSite=Lax; Secure';
+            var parts = match[1].split('.');
+            var ckyOk = false;
+            try { ckyOk = typeof getCkyConsent === 'function' && getCkyConsent().categories && getCkyConsent().categories.advertisement === true; } catch (e) {}
+            var emailHash = (ckyOk && /^[a-f0-9]{64}$/.test(parts[0])) ? parts[0] : '';
+            var formPath = '';
+            try { formPath = decodeURIComponent(parts.slice(1).join('.')); } catch (e) {}
+            window.dataLayer.push({
+                event: 'generate_lead',
+                form_name: 'cnip_contact',
+                form_page: formPath,
+                lead_id: emailHash ? emailHash.slice(0, 16) + '-' + Date.now() : String(Date.now()),
+                user_data: emailHash ? { sha256_email_address: emailHash } : undefined
+            });
+        })();
 
         // ========================================
         // 🎉 CONFETTI CELEBRATION
