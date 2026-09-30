@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Eenvoudige rate limiting per IP. Werkt per serverless-instantie: geen harde
 // garantie, maar houdt herhaalde bot-inzendingen tegen zonder extra diensten.
 const RATE_WINDOW_MS = 10 * 60 * 1000;
@@ -177,6 +178,14 @@ export default async function handler(req, res) {
       return res.status(500).send('Je aanvraag kon niet worden verstuurd. Probeer later opnieuw.');
     }
 
+    // Conversiesignaal voor de bedankpagina: alleen na een echt verstuurde aanvraag.
+    const emailHash = createHash('sha256').update(email).digest('hex');
+    let formPath = '';
+    try {
+      const ref = req.headers.referer || req.headers.referrer;
+      if (ref) formPath = new URL(ref).pathname.slice(0, 100);
+    } catch (_) {}
+    res.setHeader('Set-Cookie', `cnip_lead=${emailHash}.${encodeURIComponent(formPath || '/')}; Max-Age=300; Path=/; SameSite=Lax; Secure`);
     res.setHeader('Location', '/bedankt.html');
     return res.status(303).end();
   } catch (error) {
