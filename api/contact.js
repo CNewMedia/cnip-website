@@ -185,7 +185,13 @@ export default async function handler(req, res) {
       const ref = req.headers.referer || req.headers.referrer;
       if (ref) formPath = new URL(ref).pathname.slice(0, 100);
     } catch (_) {}
-    res.setHeader('Set-Cookie', `cnip_lead=${emailHash}.${encodeURIComponent(formPath || '/')}; Max-Age=300; Path=/; SameSite=Lax; Secure`);
+    const ckyCookie = String(req.headers.cookie || '').match(/(?:^|;\s*)cookieyes-consent=([^;]+)/);
+    let adsConsent = false;
+    try {
+      adsConsent = !!ckyCookie && /advertisement:yes/.test(decodeURIComponent(ckyCookie[1]));
+    } catch (_) {}
+    const leadValue = adsConsent ? emailHash : 'nc';
+    res.setHeader('Set-Cookie', `cnip_lead=${leadValue}.${encodeURIComponent(formPath || '/')}; Max-Age=300; Path=/; SameSite=Lax; Secure`);
     res.setHeader('Location', '/bedankt.html');
     return res.status(303).end();
   } catch (error) {
