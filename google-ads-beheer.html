@@ -50,7 +50,7 @@
   
   <link rel="icon" href="/favicon.ico">
   
-  <title>Google Ads-beheer | CNIP Gent - Campagnes gestuurd op kost per lead</title>
+  <title>Google Ads-beheer uitbesteden | CNIP Gent</title>
   <meta name="description" content="Google Ads-beheer door een senior team uit Gent: search en remarketing, conversietracking via GTM en GA4 en maandelijks bijsturen op kost per lead. Sinds 2002.">
   <meta name="author" content="CNIP">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -122,8 +122,8 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Werken jullie met langlopende contracten?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Nee. Je blijft omdat de campagnes werken, niet omdat een contract het oplegt." }
+        "name": "Is het advertentiebudget inbegrepen in de beheervergoeding?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nee. Het advertentiebudget voor Google Ads wordt afzonderlijk betaald. CNIP rekent een beheervergoeding volgens de scope die we samen afspreken." }
       },
       {
         "@type": "Question",
@@ -145,6 +145,8 @@
   </script>
 
   <style>
+    .form__privacy { font-size: 13px; line-height: 1.5; color: var(--gray-500); margin: 0; }
+    .form__privacy a { color: inherit; text-decoration: underline; }
     .steps { padding: 100px 5%; background: var(--gray-900); }
     .steps__inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
     .steps__header { max-width: 720px; display: flex; flex-direction: column; gap: 16px; }
@@ -1375,9 +1377,9 @@
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__text">
-        <span class="hero__label">Google Ads-beheer</span>
+        <span class="hero__label">Search en remarketing uit Gent</span>
         <h1 id="hero-title" class="hero__title">
-          Google Ads<br>gestuurd op<br><span>kost per lead.</span>
+          Google Ads-beheer <span>uitbesteden?</span>
         </h1>
         <p class="hero__subtitle">
           Search en remarketing, opgezet en beheerd door een senior team uit Gent. Met conversietracking die klopt en maandelijkse bijsturing op wat een aanvraag kost. Sinds 2002.
@@ -1398,18 +1400,11 @@
             </svg>
             Account blijft van jou
           </div>
-          <div class="hero__trust-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            Geen langlopende contracten
-          </div>
         </div>
       </div>
 
       <div class="hero__form-container">
-        <h2 class="hero__form-title">Bespreek je campagne</h2>
+        <h2 class="hero__form-title">Bespreek je Google Ads-beheer</h2>
         <p class="hero__form-subtitle">Laat je gegevens na. We bekijken je situatie en nemen contact op.</p>
 
         <form class="hero__form" action="/api/contact" method="POST">
@@ -1429,12 +1424,19 @@
           </div>
 
           <div class="form__group">
+            <label for="hero-company" class="form__label">Bedrijf</label>
+            <input type="text" id="hero-company" name="company" class="form__input" placeholder="Naam van je bedrijf" autocomplete="organization">
+          </div>
+
+          <div class="form__group">
             <label for="hero-phone" class="form__label">Telefoon (optioneel)</label>
             <input type="tel" id="hero-phone" name="phone" class="form__input" placeholder="Voor sneller contact" autocomplete="tel">
           </div>
 
+          <p class="form__privacy">We gebruiken je gegevens alleen om je aanvraag op te volgen. Lees onze <a href="/privacy.html">privacyverklaring</a>.</p>
+
           <button type="submit" class="form__submit">
-            Bespreek je campagne
+            Bespreek je Google Ads-beheer
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -1482,7 +1484,7 @@
       <article class="service-card">
         <div class="service-card__number">Tracking</div>
         <h3>Conversietracking via GTM en GA4</h3>
-        <p>Formulieren en aanvragen worden correct gemeten, zodat Google Ads optimaliseert op leads en niet op klikken.</p>
+        <p>Formulieren en aanvragen worden correct gemeten. Dat maakt het mogelijk om met de biedstrategie op aanvragen te sturen in plaats van op klikken.</p>
       </article>
       <article class="service-card">
         <div class="service-card__number">Bijsturen</div>
@@ -1545,8 +1547,8 @@
       <h2 id="faq-title">Veelgestelde vragen</h2>
       <div class="faq__list">
         <details class="faq__item">
-          <summary>Werken jullie met langlopende contracten?</summary>
-          <p>Nee. Je blijft omdat de campagnes werken, niet omdat een contract het oplegt.</p>
+          <summary>Is het advertentiebudget inbegrepen in de beheervergoeding?</summary>
+          <p>Nee. Het advertentiebudget voor Google Ads wordt afzonderlijk betaald. CNIP rekent een beheervergoeding volgens de scope die we samen afspreken.</p>
         </details>
         <details class="faq__item">
           <summary>Blijft het Google Ads-account van ons?</summary>
@@ -1568,7 +1570,7 @@
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__grid">
       <div class="contact__content">
-        <h2 id="contact-title" class="contact__title">Meer aanvragen uit Google Ads? <span>Bespreek je campagne.</span></h2>
+        <h2 id="contact-title" class="contact__title">Meer aanvragen uit Google Ads? <span>Bespreek je Google Ads-beheer.</span></h2>
         <p class="contact__description">
           Vertel kort waar je nu staat: nieuw account of bestaande campagnes, en wat je wil bereiken. We nemen contact op om het te bespreken.
         </p>
@@ -1588,7 +1590,7 @@
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een voorstel met aanpak, planning en budget
+              Een voorstel met aanpak, planning en beheervergoeding volgens de afgesproken scope. Het advertentiebudget betaal je afzonderlijk.
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -1626,6 +1628,11 @@
         </div>
 
         <div class="form__group">
+          <label for="company" class="form__label">Bedrijf</label>
+          <input type="text" id="company" name="company" class="form__input" placeholder="Naam van je bedrijf" autocomplete="organization">
+        </div>
+
+        <div class="form__group">
           <label for="phone" class="form__label">Telefoon (optioneel)</label>
           <input type="tel" id="phone" name="phone" class="form__input" placeholder="Voor sneller contact" autocomplete="tel">
         </div>
@@ -1635,8 +1642,10 @@
           <textarea id="message" name="message" class="form__input form__textarea" placeholder="Bijvoorbeeld: bestaand account, regio, maandbudget"></textarea>
         </div>
 
+        <p class="form__privacy">We gebruiken je gegevens alleen om je aanvraag op te volgen. Lees onze <a href="/privacy.html">privacyverklaring</a>.</p>
+
         <button type="submit" class="form__submit">
-          Bespreek je campagne
+          Bespreek je Google Ads-beheer
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
