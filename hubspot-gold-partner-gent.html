@@ -79,11 +79,21 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://cnip.be/#organization",
     "name": "CNIP",
     "description": "HubSpot Gold Partner in België sinds 2019. Marketing automation en CRM implementatie voor B2B bedrijven.",
     "url": "https://cnip.be",
     "logo": "https://cnip.be/images/logocnip/CNIP%20logo%2025%20zwart.png",
     "foundingDate": "2002",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://cnip.be/#christophe-dejaeghere",
+      "name": "Christophe Dejaeghere",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Cambridge Certified"
+      }
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Ottergemsesteenweg Zuid 808",
@@ -109,6 +119,7 @@
     "serviceType": "HubSpot Implementation & Consulting",
     "provider": {
       "@type": "Organization",
+      "@id": "https://cnip.be/#organization",
       "name": "CNIP"
     },
     "areaServed": "Belgium",
@@ -120,46 +131,12 @@
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "HubSpot Onboarding", "description": "Begeleide onboarding met training en best practices"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing Automation", "description": "Workflows, sequences en lead nurturing opzetten"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CRM & Sales Pipelines", "description": "Deal pipelines, forecasting en sales enablement"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dashboards & Reporting", "description": "Custom dashboards met ROI attributie per kanaal"}}
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dashboards & Reporting", "description": "Dashboards voor kanaalrapportage op basis van beschikbare trackingdata"}}
       ]
     }
   }
   </script>
   
-  <!-- Structured Data - FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wat kost HubSpot implementatie?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "HubSpot implementatie varieert van €5.000 tot €25.000 afhankelijk van scope, integraties en training. We starten met een intakegesprek om de juiste aanpak te bepalen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hoe lang duurt een HubSpot implementatie?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Een standaard implementatie duurt 4-8 weken. Dit omvat setup, data migratie, integraties, workflows en team training. Complexere trajecten kunnen 12 weken duren."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Waarom CNIP als HubSpot Partner?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CNIP is Gold Partner sinds 2019 en voert marketing uit sinds 2002. Wij begrijpen niet alleen de techniek, maar ook de strategie erachter. Geen juniors, alleen seniors die HubSpot dagelijks gebruiken."
-        }
-      }
-    ]
-  }
-  </script>
-
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -1360,15 +1337,15 @@
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Automatische lead opvolging terwijl je slaapt</span>
+            <span>Workflows kunnen terugkerende leadopvolging automatiseren</span>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>ROI per kanaal: weet wat écht werkt</span>
+            <span>Rapportage op basis van gekoppelde trackingdata</span>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Marketing & sales perfect afgestemd</span>
+            <span>Marketing en sales werken met gedeelde CRM-data</span>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1438,7 +1415,7 @@
     <div class="solution__inner">
       <div class="solution__header">
         <span class="solution__label">De oplossing</span>
-        <h2 class="solution__title">Eén cockpit. Volledig overzicht.</h2>
+        <h2 class="solution__title">Eén cockpit. Gedeelde klantdata.</h2>
       </div>
       
       <div class="solution__grid">
@@ -1447,7 +1424,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
           </div>
           <h3>Marketing Hub</h3>
-          <p>Email automation, landing pages, forms, social media scheduling. Alles meetbaar in één platform.</p>
+          <p>Email automation, landing pages, forms en social media scheduling. Prestaties volgen kan met gekoppelde tracking.</p>
         </div>
         
         <div class="solution__card">
@@ -1463,7 +1440,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <h3>CRM & Dashboards</h3>
-          <p>Alle contacten, bedrijven en deals op één plek. Custom dashboards met real-time ROI inzicht.</p>
+          <p>Contacten, bedrijven en deals op één plek. Dashboards rapporteren over gekoppelde klant- en campagnedata.</p>
         </div>
         
         <div class="solution__card">
@@ -1471,7 +1448,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <h3>Email Automation</h3>
-          <p>Gepersonaliseerde nurture sequences die leads opwarmen. Automatisch, 24/7, zonder handwerk.</p>
+          <p>Gepersonaliseerde nurture sequences voor terugkerende opvolging; inhoud en timing stem je af op je team en processen.</p>
         </div>
         
         <div class="solution__card">
@@ -1479,15 +1456,15 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Workflows & Triggers</h3>
-          <p>Automatische acties op basis van gedrag. Lead scoort? Sales krijgt notificatie. Zero handwerk.</p>
+          <p>Automatische acties op basis van ingestelde regels. Bijvoorbeeld een melding aan sales wanneer een lead aan afgesproken criteria voldoet.</p>
         </div>
         
         <div class="solution__card">
           <div class="solution__card-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
           </div>
-          <h3>Reporting & Attributie</h3>
-          <p>Welk kanaal levert de meeste omzet? Eindelijk weten waar je marketing euro's naartoe gaan.</p>
+          <h3>Reporting & Kanaaldata</h3>
+          <p>Breng kanaalprestaties in kaart op basis van beschikbare tracking- en CRM-data. Niet elke conversie is aan één kanaal toe te schrijven.</p>
         </div>
       </div>
     </div>
@@ -1629,15 +1606,15 @@
           <div class="case__content">
             <span class="case__client">Belgisch Bouwbedrijf</span>
             <h3 class="case__title">Van wisselende instroom naar gemiddeld 240 leads per maand</h3>
-            <p class="case__desc">Inconsistente leadstroom, geen overzicht welk kanaal wat opleverde. HubSpot als centrale cockpit met SEO, Google Ads en social geïntegreerd.</p>
+            <p class="case__desc">Gemiddeld 240 leads per maand over vijf jaar. HubSpot als centrale cockpit met SEO, Google Ads en social; kanaalrapportage is afhankelijk van beschikbare trackingdata.</p>
             <div class="case__stats">
               <div>
                 <div class="case__stat-number">240</div>
                 <div class="case__stat-label">Leads/maand</div>
               </div>
               <div>
-                <div class="case__stat-number">100%</div>
-                <div class="case__stat-label">Attributie</div>
+                <div class="case__stat-number">CRM</div>
+                <div class="case__stat-label">Centrale registratie</div>
               </div>
               <div>
                 <div class="case__stat-number">4</div>

@@ -84,8 +84,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://cnip.be/#organization",
     "name": "CNIP",
-    "legalName": "CNIP Marketing Bureau",
     "alternateName": ["CNIP Agency", "CNIP Gent", "CNIP Marketing"],
     "description": "Uitvoerend marketing bureau in Gent voor Google Ads, SEO en content, HubSpot en websites, sinds 2002. HubSpot Gold Partner met bewezen resultaten voor premium merken.",
     "url": "https://cnip.be",
@@ -94,8 +94,13 @@
     "foundingDate": "2002",
     "founders": [{
       "@type": "Person",
+      "@id": "https://cnip.be/#christophe-dejaeghere",
       "name": "Christophe Dejaeghere",
-      "jobTitle": "Founder & CEO"
+      "jobTitle": "Founder & CEO",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Cambridge Certified"
+      }
     }],
     "address": {
       "@type": "PostalAddress",
@@ -120,7 +125,7 @@
     ],
     "slogan": "Marketinguitvoering vanuit Gent sinds 2002",
     "knowsAbout": ["Video Production", "SEO", "Social Media Marketing", "Marketing Automation", "HubSpot", "Content Marketing", "Brand Strategy", "Google Ads"],
-    "award": ["HubSpot Gold Partner", "Google Ads Certified", "Cambridge Certified"]
+    "award": ["HubSpot Gold Partner", "Google Ads Certified"]
   }
   </script>
   
@@ -129,7 +134,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "CNIP Marketing Bureau Gent",
+    "@id": "https://cnip.be/#organization",
+    "name": "CNIP",
     "description": "Marketing bureau gespecialiseerd in SEO, Google Ads, social media en HubSpot voor Belgische bedrijven.",
     "image": "https://cnip.be/images/Hof%20van%20Cleve.jpg",
     "priceRange": "€€€",
@@ -172,6 +178,7 @@
     "serviceType": "Marketing Services",
     "provider": {
       "@type": "Organization",
+      "@id": "https://cnip.be/#organization",
       "name": "CNIP"
     },
     "areaServed": {
@@ -224,40 +231,6 @@
         }
       ]
     }
-  }
-  </script>
-  
-  <!-- SEO: Structured Data - FAQ (voor rich results) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wat kost marketing uitbesteden?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "De kosten voor marketing uitbesteden variëren op basis van scope en ambities. CNIP werkt met maandelijkse retainers voor premium merken. Beschrijf je opdracht en je ontvangt een voorstel op maat."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat zijn de voordelen van marketing uitbesteden?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Marketing uitbesteden biedt toegang tot senior expertise zonder de kosten van een intern team. Je krijgt één aanspreekpunt, volledig overzicht via één dashboard, en meetbare ROI per kanaal."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hoe lang duurt het voordat marketing resultaten oplevert?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Resultaten variëren per kanaal. Google Ads levert direct verkeer, SEO bouwt organische zichtbaarheid over 3-6 maanden, en social media groeit gestaag. Wij rapporteren maandelijks met concrete KPI's."
-        }
-      }
-    ]
   }
   </script>
   
@@ -1813,7 +1786,7 @@
             </div>
             <div class="case__narrative-item">
               <div class="case__narrative-label">Resultaat</div>
-              <p class="case__narrative-text">Gemiddeld 240 leads per maand (2018–2023). Minder volatiele pipeline, ook tijdens de bouwcrisis.</p>
+              <p class="case__narrative-text">Gemiddeld 240 leads per maand over vijf jaar. Minder volatiele pipeline, ook tijdens de bouwcrisis.</p>
             </div>
           </div>
           <div class="case__stats">
