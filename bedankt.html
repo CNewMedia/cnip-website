@@ -713,7 +713,15 @@
             document.cookie = 'cnip_lead=; Max-Age=0; Path=/; SameSite=Lax; Secure';
             var parts = match[1].split('.');
             var ckyOk = false;
-            try { ckyOk = typeof getCkyConsent === 'function' && getCkyConsent().categories && getCkyConsent().categories.advertisement === true; } catch (e) {}
+            try {
+                var cky = document.cookie.match(/(?:^|;\s*)cookieyes-consent=([^;]+)/);
+                if (cky) {
+                    ckyOk = /advertisement:yes/.test(decodeURIComponent(cky[1]));
+                } else if (typeof getCkyConsent === 'function') {
+                    var c = getCkyConsent();
+                    ckyOk = !!(c && c.categories && c.categories.advertisement === true);
+                }
+            } catch (e) {}
             var emailHash = (ckyOk && /^[a-f0-9]{64}$/.test(parts[0])) ? parts[0] : '';
             var formPath = '';
             try { formPath = decodeURIComponent(parts.slice(1).join('.')); } catch (e) {}
