@@ -6,8 +6,8 @@
        CNIP.BE SITEMAP
        Marketinguitvoering vanuit Gent sinds 2002
        
-       Last updated: 2026-09-29
-       Total URLs: 10 (excl. privacy & bedankt - noindex)
+       Last updated: 2026-09-30
+       Total URLs: 11 (excl. privacy & bedankt - noindex)
        ══════════════════════════════════════════════════════════════════ -->
 
   <!-- HOMEPAGE -->
@@ -55,6 +55,18 @@
     <image:image>
       <image:loc>https://cnip.be/images/christophecnip.png</image:loc>
       <image:title>Christophe Dejaeghere - Marketing uitbesteden aan CNIP</image:title>
+    </image:image>
+  </url>
+
+  <!-- GOOGLE ADS-BEHEER -->
+  <url>
+    <loc>https://cnip.be/google-ads-beheer.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cnip.be/images/1-3.png</image:loc>
+      <image:title>Google Ads-beheer door CNIP - leadgeneratie-case bouwbedrijf</image:title>
     </image:image>
   </url>
 
