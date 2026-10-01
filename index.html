@@ -1720,7 +1720,6 @@
           <a href="https://oryen.be" target="_blank" rel="noopener">ORYEN ↗</a>
           <div class="footer-col-heading footer-col-heading--spaced">Volg ons</div>
           <a href="https://linkedin.com/company/cnipagency" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://instagram.com/cnip.be" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
       <div class="footer-bottom">© 2026 CNIP · Marketinguitvoering vanuit Gent sinds 2002</div>
@@ -1743,6 +1742,30 @@
       if(document.readyState==='complete'){ hideLoader(); }
       else{ window.addEventListener('load', hideLoader); }
       setTimeout(hideLoader, 1600);
+    })();
+
+    // Links like /#contact from other pages: the browser jumps before lazy images and
+    // GSAP finish shifting the layout, so realign once after load unless the visitor scrolled.
+    (function(){
+      var id = location.hash.slice(1);
+      if(!id || !/^[\w-]+$/.test(id)) return;
+  var userMoved = false;
+  function markMoved(){ userMoved = true; }
+  // pointerdown/mousedown also fire when grabbing the page scrollbar. Scroll events can't be used:
+  // ScrollTrigger restores scroll positions after load, which looks identical to a scrollbar drag.
+  ['wheel','touchstart','keydown','pointerdown','mousedown'].forEach(function(ev){ window.addEventListener(ev, markMoved, {passive:true, once:true, capture:true}); });
+  function align(){
+  var target = document.getElementById(id);
+  if(!target || userMoved) return;
+  target.scrollIntoView({behavior:'instant', block:'start'});
+  }
+      function alignAfterLoad(){
+        align();
+        setTimeout(align, 400);
+        setTimeout(align, 1200);
+      }
+      if(document.readyState==='complete'){ alignAfterLoad(); }
+      else{ window.addEventListener('load', alignAfterLoad); }
     })();
 
     document.addEventListener('DOMContentLoaded', function() {
