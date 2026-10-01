@@ -208,9 +208,14 @@
     .need-card { display: flex; flex-direction: column; gap: 10px; padding: 26px; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); background: var(--gray-900); }
     .need-card h3 { color: var(--white); font-size: 1.08rem; font-weight: 700; line-height: 1.35; text-wrap: balance; }
     .need-card p { color: var(--gray-400); line-height: 1.6; font-size: 0.975rem; }
+    .need-card:not([data-default]),
+    body[data-intent] .need-card { display: none; }
+    body[data-intent="uitbesteden"] .need-card[data-group="uitbesteden"],
     body[data-intent="specialist"] .need-card[data-group="specialist"],
-    body[data-intent="beheer"] .need-card[data-group="beheer"] { order: -1; }
-    body[data-intent] .need-card[data-group] { transition: none; }
+    body[data-intent="beheer"] .need-card[data-group="beheer"] { display: flex; }
+    body .section-head__label, body .proof__label, body .evidence-card__who { font-size: 14px; }
+    body .form__choice legend { font-size: 15px; }
+    body .form__privacy { font-size: 14px; }
 
     .quality { padding: 100px 5%; background: var(--gray-900); }
     .quality__list { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: q; }
@@ -1605,7 +1610,8 @@
     })();
   </script>
 
-  <!-- Behoefte van de koper (volgorde afhankelijk van ?intent) -->
+  <!-- Behoefte van de koper: drie kaarten per ?intent, standaard één per groep -->
+
   <section class="needs" aria-labelledby="needs-title">
     <div class="section-inner">
       <header class="section-head">
@@ -1614,7 +1620,7 @@
         <p>Wie Google Ads uit handen geeft, zoekt meestal één van deze dingen. Zo pakken we elk ervan aan.</p>
       </header>
       <div class="needs__grid">
-        <article class="need-card" data-group="uitbesteden">
+        <article class="need-card" data-group="uitbesteden" data-default>
           <h3>Je wil Google Ads uit handen geven</h3>
           <p>CNIP neemt het beheer van je campagnes op zich. Jij blijft beslissen over aanbod, regio en budget.</p>
         </article>
@@ -1634,7 +1640,7 @@
           <h3>Je wil eerst weten waar je account staat</h3>
           <p>We controleren structuur, zoektermen, uitsluitingen, advertenties en instellingen voor we iets veranderen.</p>
         </article>
-        <article class="need-card" data-group="specialist">
+        <article class="need-card" data-group="specialist" data-default>
           <h3>Je weet niet welke aanvragen uit Google Ads komen</h3>
           <p>We controleren of formulieren en aanvragen correct als conversie binnenkomen in Google Ads en GA4.</p>
         </article>
@@ -1646,7 +1652,7 @@
           <h3>Je wil dat iemand blijft opvolgen</h3>
           <p>We volgen de binnenkomende aanvragen samen met jou op en passen campagnes aan op wat geschikt blijkt.</p>
         </article>
-        <article class="need-card" data-group="beheer">
+        <article class="need-card" data-group="beheer" data-default>
           <h3>Je wil commercieel zien wat het oplevert</h3>
           <p>We rapporteren op aanvragen en op wat jij daarvan als geschikt beoordeelt, niet alleen op klikken en vertoningen.</p>
         </article>
@@ -1845,32 +1851,32 @@
       <div class="contact__content">
         <h2 id="contact-title" class="contact__title">Geschikte aanvragen uit Google Ads? <span>Bespreek je Google Ads-beheer.</span></h2>
         <p class="contact__description">
-          Vertel kort waar je nu staat: nieuw account of bestaande campagnes, en wat je wil bereiken. We nemen contact op om het te bespreken.
+          Vertel kort waar je nu staat: nieuw account of bestaande campagnes, en wat je wil bereiken. In het gesprek maken we drie dingen concreet.
         </p>
 
         <div class="contact__promise">
-          <p class="contact__promise-title">Wat je van ons krijgt:</p>
+          <p class="contact__promise-title">Wat het gesprek oplevert:</p>
           <ul class="contact__promise-list">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een gesprek over je doelen en je huidige campagnes
+              <span><strong>Accountovername:</strong> welke toegang we nodig hebben, wat we van je bestaande campagnes overnemen en wat eerst moet gebeuren. Start je nieuw, dan wat er nodig is om te beginnen.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een voorstel met aanpak, planning en beheervergoeding volgens de afgesproken scope. Het advertentiebudget betaal je afzonderlijk.
+              <span><strong>Meetproblemen:</strong> of je aanvragen correct als conversie in Google Ads en GA4 binnenkomen, en wat er moet worden rechtgezet.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een eerlijk antwoord of Google Ads voor jou de juiste keuze is
+              <span><strong>Voorgestelde beheerscope:</strong> wat CNIP beheert, wat jij aanlevert en de beheervergoeding die daarbij hoort. Het advertentiebudget betaal je afzonderlijk.</span>
             </li>
           </ul>
         </div>
