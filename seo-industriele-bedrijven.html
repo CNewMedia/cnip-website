@@ -1453,11 +1453,14 @@
       white-space: nowrap;
       border: 0;
     }
-      .evidence__grid--two { grid-template-columns: repeat(2, 1fr); }
+    .evidence__grid--one { grid-template-columns: 1fr; max-width: 720px; }
     .pricing__grid--three { grid-template-columns: repeat(3, 1fr); }
     @media (max-width: 900px) {
-      .evidence__grid--two, .pricing__grid--three { grid-template-columns: 1fr; }
+      .pricing__grid--three { grid-template-columns: 1fr; }
     }
+    body .section-head__label, body .proof__label, body .evidence-card__who { font-size: 14px; }
+    body .form__choice legend { font-size: 15px; }
+    body .form__privacy { font-size: 14px; }
 </style>
 </head>
 <body>
@@ -1661,17 +1664,11 @@
         <h2 id="evidence-title">Industriële en productgerichte opdrachten</h2>
         <p>Klanten vermelden we anoniem, tenzij ze toestemming gaven voor publicatie.</p>
       </header>
-      <div class="evidence__grid evidence__grid--two">
+      <div class="evidence__grid evidence__grid--one">
         <article class="evidence-card">
           <span class="evidence-card__who">Een industriële textielproducent</span>
           <h3>SEO voor technische producten</h3>
           <p>Ervaring met SEO voor een producent van technische textielproducten, waar productkennis vertaald moet worden naar de zoekvragen van zakelijke kopers.</p>
-        </article>
-        <article class="evidence-card">
-          <span class="evidence-card__who">Een productbedrijf</span>
-          <h3>Website en SEO voor meertalige productacquisitie</h3>
-          <p>Een actuele opdracht rond productgerichte, meertalige acquisitie.</p>
-          <p class="evidence-card__status">Recent gestart: nog geen resultaten om te rapporteren.</p>
         </article>
       </div>
     </div>
