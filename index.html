@@ -1749,14 +1749,25 @@
     (function(){
       var id = location.hash.slice(1);
       if(!id || !/^[\w-]+$/.test(id)) return;
-      var userMoved = false;
-      function markMoved(){ userMoved = true; }
-      ['wheel','touchstart','keydown'].forEach(function(ev){ window.addEventListener(ev, markMoved, {passive:true, once:true}); });
-      function align(){
-        var target = document.getElementById(id);
-        if(!target || userMoved) return;
-        target.scrollIntoView({behavior:'instant', block:'start'});
-      }
+  var userMoved = false;
+  var alignedY = null;
+  function markMoved(){ userMoved = true; }
+  ['wheel','touchstart','keydown','pointerdown','mousedown'].forEach(function(ev){ window.addEventListener(ev, markMoved, {passive:true, once:true, capture:true}); });
+  // Scrollbar drags don't reliably fire pointer events in every browser, so also treat any
+  // scroll that isn't ours and leaves the target away from the top as the visitor taking over.
+  // Scroll anchoring keeps the target near the top, so it doesn't trigger this.
+  window.addEventListener('scroll', function onScroll(){
+  if(userMoved){ window.removeEventListener('scroll', onScroll); return; }
+  if(alignedY !== null && window.scrollY === alignedY) return;
+  var target = document.getElementById(id);
+  if(target && Math.abs(target.getBoundingClientRect().top) > 120){ markMoved(); window.removeEventListener('scroll', onScroll); }
+  }, {passive:true});
+  function align(){
+  var target = document.getElementById(id);
+  if(!target || userMoved) return;
+  target.scrollIntoView({behavior:'instant', block:'start'});
+  alignedY = window.scrollY;
+  }
       function alignAfterLoad(){
         align();
         setTimeout(align, 400);
