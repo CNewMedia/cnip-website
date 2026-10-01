@@ -51,7 +51,7 @@
   <link rel="icon" href="/favicon.ico">
   
   <title>Google Ads-beheer uitbesteden | CNIP Gent</title>
-  <meta name="description" content="Google Ads-beheer door een senior team uit Gent: search en remarketing, conversietracking via GTM en GA4 en maandelijks bijsturen op kost per lead. Sinds 2002.">
+  <meta name="description" content="Google Ads-beheer met zicht op geschikte aanvragen: Search, remarketing waar passend, aanvraagmeting en bijsturing. Budget en vergoeding apart.">
   <meta name="author" content="CNIP">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="Dutch">
@@ -65,16 +65,16 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cnip.be/google-ads-beheer.html">
   <meta property="og:title" content="Google Ads-beheer | CNIP Gent">
-  <meta property="og:description" content="Search en remarketing, conversietracking via GTM en GA4 en maandelijks bijsturen op kost per lead. Senior team sinds 2002.">
-  <meta property="og:image" content="https://cnip.be/images/1-3.png">
+  <meta property="og:description" content="Google Ads-beheer met zicht op geschikte aanvragen. Search, remarketing waar passend, aanvraagmeting en bijsturing vanuit Gent.">
+  <meta property="og:image" content="https://cnip.be/images/christophecnip.png">
   <meta property="og:locale" content="nl_BE">
   <meta property="og:site_name" content="CNIP">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://cnip.be/google-ads-beheer.html">
   <meta name="twitter:title" content="Google Ads-beheer | CNIP Gent">
-  <meta name="twitter:description" content="Google Ads-campagnes gestuurd op kost per lead. Senior team uit Gent, sinds 2002.">
-  <meta name="twitter:image" content="https://cnip.be/images/1-3.png">
+  <meta name="twitter:description" content="Google Ads-beheer met zicht op geschikte aanvragen. Vanuit Gent, sinds 2002.">
+  <meta name="twitter:image" content="https://cnip.be/images/christophecnip.png">
 
   <script type="application/ld+json">
   {
@@ -83,7 +83,7 @@
     "@id": "https://cnip.be/google-ads-beheer.html#service",
     "name": "Google Ads-beheer",
     "serviceType": "Google Ads-beheer",
-    "description": "Opzet en beheer van Google Ads-campagnes (search en remarketing) met conversietracking via GTM en GA4 en maandelijkse bijsturing op kost per lead.",
+    "description": "Beheer van Google Ads-campagnes: Search, remarketing waar passend, meting van aanvragen en bijsturing op basis van de aanvraagkwaliteit die de klant terugkoppelt. Advertentiebudget en beheervergoeding worden afzonderlijk afgesproken.",
     "url": "https://cnip.be/google-ads-beheer.html",
     "provider": {
       "@type": "Organization",
@@ -137,8 +137,18 @@
       },
       {
         "@type": "Question",
-        "name": "Hoe meten jullie resultaat?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Op aanvragen en kost per lead, gemeten via conversietracking in Google Tag Manager en GA4. Niet op klikken of vertoningen alleen." }
+        "name": "Wat is voor jullie een geschikte aanvraag?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dat spreken we vooraf met je af, op basis van je aanbod, regio en klanttype. Daarna geef jij aan welke binnengekomen aanvragen geschikt waren. Die feedback gebruiken we om campagnes bij te sturen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Garanderen jullie een aantal leads?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nee. We garanderen geen aantallen leads, omzet of rendement. We maken wel vooraf duidelijk wat we beheren, hoe we meten en hoe we rapporteren." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie voert het werk uit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Je werkt rechtstreeks met Christophe Dejaeghere. Waar nodig werken specialisten uit ons netwerk mee. Wie aan je account werkt, hoor je bij de start." }
       }
     ]
   }
@@ -187,8 +197,78 @@
 
     .form__textarea { min-height: 110px; resize: vertical; font-family: inherit; }
 
+    .section-head { max-width: 760px; display: flex; flex-direction: column; gap: 14px; }
+    .section-head__label { color: var(--gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .section-head h2 { color: var(--white); font-size: clamp(1.75rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.2; text-wrap: balance; }
+    .section-head p { color: var(--gray-400); font-size: 1.05rem; line-height: 1.6; text-wrap: pretty; }
+    .section-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+
+    .needs { padding: 100px 5%; background: var(--black); }
+    .needs__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .need-card { display: flex; flex-direction: column; gap: 10px; padding: 26px; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); background: var(--gray-900); }
+    .need-card h3 { color: var(--white); font-size: 1.08rem; font-weight: 700; line-height: 1.35; text-wrap: balance; }
+    .need-card p { color: var(--gray-400); line-height: 1.6; font-size: 0.975rem; }
+    .need-card:not([data-default]),
+    body[data-intent] .need-card { display: none; }
+    body[data-intent="uitbesteden"] .need-card[data-group="uitbesteden"],
+    body[data-intent="specialist"] .need-card[data-group="specialist"],
+    body[data-intent="beheer"] .need-card[data-group="beheer"] { display: flex; }
+    body .section-head__label, body .proof__label, body .evidence-card__who,
+    body .hero__label, body .services__label { font-size: 14px; }
+    body .hero__label { letter-spacing: 0.12em; }
+    body .form__choice legend { font-size: 15px; }
+    body .form__privacy { font-size: 14px; }
+
+    .quality { padding: 100px 5%; background: var(--gray-900); }
+    .quality__list { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: q; }
+    .quality__item { display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: var(--radius-md); background: var(--black); border: 1px solid rgba(255,255,255,0.08); }
+    .quality__item h3 { color: var(--white); font-size: 1.08rem; font-weight: 700; }
+    .quality__item h3::before { counter-increment: q; content: counter(q) ". "; color: var(--gold); }
+    .quality__item p { color: var(--gray-400); line-height: 1.6; font-size: 0.975rem; }
+    .quality__note { color: var(--gray-400); line-height: 1.6; max-width: 760px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; }
+
+    .people { padding: 100px 5%; background: var(--black); }
+    .people__inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 56px; }
+    .people__portrait { flex: 0 0 300px; border-radius: var(--radius-lg); overflow: hidden; background: var(--gray-900); }
+    .people__portrait img { display: block; width: 100%; height: auto; }
+    .people__text { display: flex; flex-direction: column; gap: 16px; }
+    .people__text p { color: var(--gray-400); line-height: 1.6; text-wrap: pretty; }
+    .people__name { color: var(--white); font-weight: 700; }
+    .people__name span { display: block; color: var(--gray-400); font-weight: 400; font-size: 0.95rem; }
+
+    .evidence { padding: 100px 5%; background: var(--gray-900); }
+    .evidence__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .evidence-card { display: flex; flex-direction: column; gap: 12px; padding: 26px; border-radius: var(--radius-md); background: var(--black); border: 1px solid rgba(255,255,255,0.08); }
+    .evidence-card__who { color: var(--gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .evidence-card h3 { color: var(--white); font-size: 1.08rem; font-weight: 700; line-height: 1.35; text-wrap: balance; }
+    .evidence-card p { color: var(--gray-400); line-height: 1.6; font-size: 0.975rem; }
+    .evidence-card__status { color: var(--white); font-size: 0.9rem; font-weight: 600; }
+
+    .pricing { padding: 100px 5%; background: var(--black); }
+    .pricing__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .pricing-card { display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.08); background: var(--gray-900); }
+    .pricing-card h3 { color: var(--white); font-size: 1.15rem; font-weight: 700; }
+    .pricing-card p { color: var(--gray-400); line-height: 1.6; }
+
+    .form__choice { border: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .form__choice legend { font-size: 13px; font-weight: 700; color: inherit; margin-bottom: 10px; padding: 0; }
+    .form__choice-options { display: flex; gap: 10px; flex-wrap: wrap; }
+    .form__choice-option { flex: 1 1 140px; position: relative; display: flex; }
+    .form__choice-option input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+    .form__choice-option span { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid rgba(128,128,128,0.45); font-weight: 600; font-size: 15px; text-align: center; }
+    .form__choice-option input:checked + span { border-color: var(--gold); background: rgba(232,181,99,0.14); }
+    .form__choice-option input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    @media (max-width: 900px) {
+      .needs__grid, .quality__list, .evidence__grid { grid-template-columns: 1fr; }
+      .people__inner { flex-direction: column; align-items: flex-start; gap: 32px; }
+      .people__portrait { flex-basis: auto; width: 220px; }
+    }
+
     @media (max-width: 768px) {
-      .steps, .proof, .faq { padding: 72px 5%; }
+      .steps, .proof, .faq, .needs, .quality, .people, .evidence, .pricing { padding: 72px 5%; }
+      .pricing__grid { grid-template-columns: 1fr; }
+      body .form__choice legend { font-size: 15px; }
       .steps__list { grid-template-columns: 1fr; }
       .proof__inner { grid-template-columns: 1fr; gap: 32px; }
 
@@ -1392,12 +1472,12 @@
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__text">
-        <span class="hero__label">Search en remarketing uit Gent</span>
+        <span class="hero__label">Google Ads-beheer met zicht op geschikte aanvragen</span>
         <h1 id="hero-title" class="hero__title">
           Google Ads-beheer <span>uitbesteden?</span>
         </h1>
-        <p class="hero__subtitle">
-          Search en remarketing, opgezet en beheerd door een senior team uit Gent. Met conversietracking die klopt en maandelijkse bijsturing op wat een aanvraag kost. Sinds 2002.
+        <p class="hero__subtitle" id="hero-intro">
+          CNIP beheert je Search-campagnes, remarketing waar die past, de meting van aanvragen en de bijsturing. Samen met jou beoordelen we welke aanvragen echt geschikt zijn.
         </p>
 
         <div class="hero__trust">
@@ -1424,9 +1504,22 @@
 
         <form class="hero__form" action="/api/contact" method="POST">
           <input type="hidden" name="subject" value="Lead via Hero Form - Google Ads-beheer">
-          <input type="hidden" name="interest" value="Google Ads-beheer">
 
           <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <fieldset class="form__choice">
+            <legend class="form__label">Waar sta je nu? *</legend>
+            <div class="form__choice-options">
+              <label class="form__choice-option">
+                <input type="radio" name="interest" value="Google Ads-beheer - Ik adverteer al" required>
+                <span>Ik adverteer al</span>
+              </label>
+              <label class="form__choice-option">
+                <input type="radio" name="interest" value="Google Ads-beheer - Ik wil starten">
+                <span>Ik wil starten</span>
+              </label>
+            </div>
+          </fieldset>
 
           <div class="form__group">
             <label for="hero-name" class="form__label">Naam *</label>
@@ -1478,12 +1571,103 @@
     </div>
   </section>
 
-  <!-- Wat we doen -->
+  <script>
+    (function () {
+      var variants = {
+        uitbesteden: {
+          title: ['Google Ads uitbesteden', 'met heldere afspraken'],
+          intro: 'Je wil Google Ads uit handen geven zonder het overzicht te verliezen. CNIP neemt het beheer op zich, met vooraf afgesproken verantwoordelijkheden en een vast aanspreekpunt.'
+        },
+        specialist: {
+          title: ['Een Google Ads-specialist', 'voor je bestaande campagnes'],
+          intro: 'Je campagnes draaien al, maar je twijfelt of ze de juiste aanvragen opleveren. We starten met een accountcontrole en kijken of je aanvraagmeting klopt voor we iets veranderen.',
+          preselect: 'Google Ads-beheer - Ik adverteer al'
+        },
+        beheer: {
+          title: ['Google Ads-beheer', 'dat uitgevoerd en opgevolgd wordt'],
+          intro: 'Je zoekt iemand die de campagnes uitvoert, de aanvragen samen met jou opvolgt en commercieel rapporteert over wat er binnenkomt.'
+        }
+      };
+      var key;
+      try { key = new URLSearchParams(window.location.search).get('intent'); } catch (e) { return; }
+      if (!key || !Object.prototype.hasOwnProperty.call(variants, key)) return;
+      var v = variants[key];
+      document.body.setAttribute('data-intent', key);
+      var h1 = document.getElementById('hero-title');
+      var intro = document.getElementById('hero-intro');
+      if (h1) {
+        var accent = document.createElement('span');
+        accent.textContent = v.title[1];
+        h1.textContent = v.title[0] + ' ';
+        h1.appendChild(accent);
+      }
+      if (intro) intro.textContent = v.intro;
+      if (v.preselect) {
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('input[name="interest"]').forEach(function (input) {
+            if (input.value === v.preselect) input.checked = true;
+          });
+        });
+      }
+    })();
+  </script>
+
+  <!-- Behoefte van de koper: drie kaarten per ?intent, standaard één per groep -->
+
+  <section class="needs" aria-labelledby="needs-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <span class="section-head__label">Waar je naar zoekt</span>
+        <h2 id="needs-title">Herken je je situatie?</h2>
+        <p>Wie Google Ads uit handen geeft, zoekt meestal één van deze dingen. Zo pakken we elk ervan aan.</p>
+      </header>
+      <div class="needs__grid">
+        <article class="need-card" data-group="uitbesteden" data-default>
+          <h3>Je wil Google Ads uit handen geven</h3>
+          <p>CNIP neemt het beheer van je campagnes op zich. Jij blijft beslissen over aanbod, regio en budget.</p>
+        </article>
+        <article class="need-card" data-group="uitbesteden">
+          <h3>Je wil weten wie wat doet</h3>
+          <p>Vooraf leggen we vast wat CNIP beheert, wat jij aanlevert en wie welke beslissing neemt.</p>
+        </article>
+        <article class="need-card" data-group="uitbesteden">
+          <h3>Je wil één vast aanspreekpunt</h3>
+          <p>Je werkt rechtstreeks met de mensen die je campagnes uitvoeren, zonder lagen accountmanagement ertussen.</p>
+        </article>
+        <article class="need-card" data-group="specialist">
+          <h3>Je campagnes draaien al, maar je twijfelt</h3>
+          <p>We vertrekken van wat er is. Niet opnieuw beginnen uit principe, wel bijsturen waar het nodig is.</p>
+        </article>
+        <article class="need-card" data-group="specialist">
+          <h3>Je wil eerst weten waar je account staat</h3>
+          <p>We controleren structuur, zoektermen, uitsluitingen, advertenties en instellingen voor we iets veranderen.</p>
+        </article>
+        <article class="need-card" data-group="specialist" data-default>
+          <h3>Je weet niet welke aanvragen uit Google Ads komen</h3>
+          <p>We controleren of formulieren en aanvragen correct als conversie binnenkomen in Google Ads en GA4.</p>
+        </article>
+        <article class="need-card" data-group="beheer">
+          <h3>Je wil dat het werk ook echt gebeurt</h3>
+          <p>We voeren het beheer uit: zoektermen, uitsluitingen, advertenties en budgetverdeling binnen de afgesproken scope.</p>
+        </article>
+        <article class="need-card" data-group="beheer">
+          <h3>Je wil dat iemand blijft opvolgen</h3>
+          <p>We volgen de binnenkomende aanvragen samen met jou op en passen campagnes aan op wat geschikt blijkt.</p>
+        </article>
+        <article class="need-card" data-group="beheer" data-default>
+          <h3>Je wil commercieel zien wat het oplevert</h3>
+          <p>We rapporteren op aanvragen en op wat jij daarvan als geschikt beoordeelt, niet alleen op klikken en vertoningen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat CNIP beheert -->
   <section class="services" id="aanpak" aria-labelledby="services-title">
     <header class="services__header">
       <span class="services__label">Wat CNIP beheert</span>
-      <h2 id="services-title">Google Ads zonder giswerk</h2>
-      <p>Voor bedrijven die meer aanvragen willen tegen een kost die klopt.</p>
+      <h2 id="services-title">Vier onderdelen, één beheer</h2>
+      <p>Wat binnen je scope valt, leggen we vooraf vast in het voorstel.</p>
     </header>
     <div class="services__grid">
       <article class="service-card">
@@ -1493,28 +1677,101 @@
       </article>
       <article class="service-card">
         <div class="service-card__number">Remarketing</div>
-        <h3>Warme bezoekers opnieuw bereiken</h3>
-        <p>Wie je site al bezocht maar nog geen aanvraag deed, krijgt een gerichte tweede kans. Binnen de toestemming die de bezoeker gaf.</p>
+        <h3>Waar het past, bezoekers opnieuw bereiken</h3>
+        <p>Alleen als het bij je aanbod past en binnen de toestemming die de bezoeker gaf. Niet elk account heeft remarketing nodig.</p>
       </article>
       <article class="service-card">
-        <div class="service-card__number">Tracking</div>
-        <h3>Conversietracking via GTM en GA4</h3>
-        <p>Formulieren en aanvragen worden correct gemeten. Dat maakt het mogelijk om met de biedstrategie op aanvragen te sturen in plaats van op klikken.</p>
+        <div class="service-card__number">Aanvraagmeting</div>
+        <h3>Aanvragen correct meten</h3>
+        <p>Formulieren en aanvragen worden gemeten via Google Tag Manager en GA4. Dat maakt het mogelijk om met de biedstrategie op aanvragen te sturen in plaats van op klikken.</p>
       </article>
       <article class="service-card">
-        <div class="service-card__number">Bijsturen</div>
-        <h3>Maandelijks op kost per lead</h3>
-        <p>Elke maand kijken we naar wat een aanvraag kost en per campagne oplevert. Budget schuift naar wat werkt.</p>
+        <div class="service-card__number">Bijsturing</div>
+        <h3>Bijsturen op geschikte aanvragen</h3>
+        <p>We bekijken wat een aanvraag kost en hoeveel aanvragen volgens jou geschikt waren. Budget en zoektermen schuiven naar wat werkt.</p>
       </article>
     </div>
   </section>
 
-  <!-- Werkwijze -->
+  <!-- Aanvraagkwaliteit -->
+  <section class="quality" aria-labelledby="quality-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <span class="section-head__label">Aanvraagkwaliteit</span>
+        <h2 id="quality-title">Hoe we beoordelen of een aanvraag geschikt is</h2>
+        <p>Een aanvraag tellen is eenvoudig. Weten of ze bruikbaar was, kan alleen met jouw feedback.</p>
+      </header>
+      <ol class="quality__list">
+        <li class="quality__item">
+          <h3>Samen afspreken</h3>
+          <p>We bepalen vooraf wat een geschikte aanvraag is voor jou: aanbod, regio, klanttype en omvang.</p>
+        </li>
+        <li class="quality__item">
+          <h3>Jouw terugkoppeling</h3>
+          <p>Jij geeft aan welke binnengekomen aanvragen geschikt waren en welke niet, op een manier die we samen afspreken.</p>
+        </li>
+        <li class="quality__item">
+          <h3>Bijsturen</h3>
+          <p>Met die feedback passen we zoektermen, uitsluitingen, advertenties en budgetverdeling aan.</p>
+        </li>
+      </ol>
+      <p class="quality__note">Correcte conversiemeting maakt sturen op aanvragen mogelijk. Waarop Google optimaliseert, hangt af van de gekozen biedstrategie. Die keuze maken we samen.</p>
+    </div>
+  </section>
+
+  <!-- Wie voert het werk uit -->
+  <section class="people" aria-labelledby="people-title">
+    <div class="people__inner">
+      <div class="people__portrait">
+        <img src="/images/christophecnip.png" alt="Portret van Christophe Dejaeghere, oprichter van CNIP" width="426" height="571" loading="lazy">
+      </div>
+      <div class="people__text">
+        <header class="section-head">
+          <span class="section-head__label">Wie het werk uitvoert</span>
+          <h2 id="people-title">Je werkt rechtstreeks met de uitvoerders</h2>
+        </header>
+        <p>Je werkt rechtstreeks met Christophe Dejaeghere, die CNIP in 2002 oprichtte in Gent. Er zitten geen lagen accountmanagement tussen: wie het voorstel maakt, voert het ook uit.</p>
+        <p>Waar nodig werken specialisten uit ons netwerk mee, bijvoorbeeld voor tracking, development of content. Wie aan je account werkt, hoor je bij de start.</p>
+        <p class="people__name">Christophe Dejaeghere <span>Oprichter CNIP</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bewijs -->
+  <section class="evidence" aria-labelledby="evidence-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <span class="section-head__label">Ervaring</span>
+        <h2 id="evidence-title">Waar we dit eerder deden</h2>
+        <p>Klanten vermelden we anoniem, tenzij ze toestemming gaven voor publicatie.</p>
+      </header>
+      <div class="evidence__grid">
+        <article class="evidence-card">
+          <span class="evidence-card__who">Een Belgisch bouwbedrijf</span>
+          <h3>Gemiddeld 240 aanvragen per maand over vijf jaar</h3>
+          <p>Via meerdere kanalen samen: Google Ads, SEO, social media en HubSpot als centrale opvolging. Het cijfer geldt voor alle kanalen samen, niet voor Google Ads alleen.</p>
+        </article>
+        <article class="evidence-card">
+          <span class="evidence-card__who">Een dienstverlener</span>
+          <h3>Sollicitaties en klantaanvragen gescheiden</h3>
+          <p>Ervaring met het onderscheid tussen sollicitaties en klantaanvragen en met de opvolging ervan in het CRM. Zo blijft zichtbaar welke aanvragen commercieel relevant zijn.</p>
+        </article>
+        <article class="evidence-card">
+          <span class="evidence-card__who">Een productbedrijf</span>
+          <h3>Productgerichte, meertalige acquisitie</h3>
+          <p>Een actuele opdracht waarin campagnes per product en per taal worden opgebouwd.</p>
+          <p class="evidence-card__status">Recent gestart: nog geen resultaten om te rapporteren.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope en werkwijze -->
   <section class="steps" aria-labelledby="steps-title">
     <div class="steps__inner">
       <header class="steps__header">
-        <h2 id="steps-title">Zo verloopt <span>de samenwerking</span></h2>
-        <p>Rechtstreeks met senior mensen. Geen juniors die op jouw budget leren.</p>
+        <h2 id="steps-title">Scope en <span>werkwijze</span></h2>
+        <p>Search, remarketing waar passend, aanvraagmeting, bijsturing en rapportering vallen binnen het beheer. Landingspagina&apos;s, andere kanalen of CRM-werk spreken we apart af.</p>
       </header>
       <ol class="steps__list">
         <li class="steps__item">
@@ -1537,21 +1794,22 @@
     </div>
   </section>
 
-  <!-- Bewijs -->
-  <section class="proof" aria-labelledby="proof-title">
-    <div class="proof__inner">
-      <div class="proof__image">
-        <img src="/images/1-3.png" alt="Leadgeneratie-case van een Belgisch bouwbedrijf" loading="lazy">
-      </div>
-      <div class="proof__text">
-        <span class="proof__label">Case</span>
-        <h2 id="proof-title">Google Ads als vaste pijler in een leadmachine</h2>
-        <div class="proof__figure">
-          <strong>35%</strong>
-          <span>van gemiddeld 240 leads per maand</span>
-        </div>
-        <p>Bij een Belgisch bouwbedrijf leverde Google Ads over een periode van vijf jaar 35% van gemiddeld 240 leads per maand. Zoekcampagnes op warme intenties, aangevuld met remarketing, samen met SEO, social media en HubSpot.</p>
-        <a href="/cases/case-lead-gen-marketing.html" class="proof__link">Lees de bouwcase</a>
+  <!-- Budget en vergoeding -->
+  <section class="pricing" aria-labelledby="pricing-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <span class="section-head__label">Kosten</span>
+        <h2 id="pricing-title">Advertentiebudget en beheervergoeding staan los van elkaar</h2>
+      </header>
+      <div class="pricing__grid">
+        <article class="pricing-card">
+          <h3>Advertentiebudget</h3>
+          <p>Wat je aan Google Ads uitgeeft voor de advertenties zelf. Dat budget wordt afzonderlijk betaald en bepaal jij.</p>
+        </article>
+        <article class="pricing-card">
+          <h3>Beheervergoeding</h3>
+          <p>Wat CNIP rekent voor het beheer, volgens de scope die we samen afspreken. Je krijgt die vergoeding vooraf in het voorstel.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1574,8 +1832,16 @@
           <p>Ja. We starten met een controle van de structuur, zoekwoorden en conversiemeting en zeggen eerlijk wat blijft en wat moet veranderen.</p>
         </details>
         <details class="faq__item">
-          <summary>Hoe meten jullie resultaat?</summary>
-          <p>Op aanvragen en kost per lead, gemeten via conversietracking in Google Tag Manager en GA4. Niet op klikken of vertoningen alleen.</p>
+          <summary>Wat is voor jullie een geschikte aanvraag?</summary>
+          <p>Dat spreken we vooraf met je af, op basis van je aanbod, regio en klanttype. Daarna geef jij aan welke binnengekomen aanvragen geschikt waren. Die feedback gebruiken we om campagnes bij te sturen.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Garanderen jullie een aantal leads?</summary>
+          <p>Nee. We garanderen geen aantallen leads, omzet of rendement. We maken wel vooraf duidelijk wat we beheren, hoe we meten en hoe we rapporteren.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Wie voert het werk uit?</summary>
+          <p>Je werkt rechtstreeks met Christophe Dejaeghere. Waar nodig werken specialisten uit ons netwerk mee. Wie aan je account werkt, hoor je bij de start.</p>
         </details>
       </div>
     </div>
@@ -1585,34 +1851,34 @@
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__grid">
       <div class="contact__content">
-        <h2 id="contact-title" class="contact__title">Meer aanvragen uit Google Ads? <span>Bespreek je Google Ads-beheer.</span></h2>
+        <h2 id="contact-title" class="contact__title">Geschikte aanvragen uit Google Ads? <span>Bespreek je Google Ads-beheer.</span></h2>
         <p class="contact__description">
-          Vertel kort waar je nu staat: nieuw account of bestaande campagnes, en wat je wil bereiken. We nemen contact op om het te bespreken.
+          Vertel kort waar je nu staat: nieuw account of bestaande campagnes, en wat je wil bereiken. In het gesprek maken we drie dingen concreet.
         </p>
 
         <div class="contact__promise">
-          <p class="contact__promise-title">Wat je van ons krijgt:</p>
+          <p class="contact__promise-title">Wat het gesprek oplevert:</p>
           <ul class="contact__promise-list">
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een gesprek over je doelen en je huidige campagnes
+              <span><strong>Accountovername:</strong> welke toegang we nodig hebben, wat we van je bestaande campagnes overnemen en wat eerst moet gebeuren. Start je nieuw, dan wat er nodig is om te beginnen.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een voorstel met aanpak, planning en beheervergoeding volgens de afgesproken scope. Het advertentiebudget betaal je afzonderlijk.
+              <span><strong>Meetproblemen:</strong> of je aanvragen correct als conversie in Google Ads en GA4 binnenkomen, en wat er moet worden rechtgezet.</span>
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
-              Een eerlijk antwoord of Google Ads voor jou de juiste keuze is
+              <span><strong>Voorgestelde beheerscope:</strong> wat CNIP beheert, wat jij aanlevert en de beheervergoeding die daarbij hoort. Het advertentiebudget betaal je afzonderlijk.</span>
             </li>
           </ul>
         </div>
@@ -1627,10 +1893,23 @@
 
       <form class="form" action="/api/contact" method="POST">
         <input type="hidden" name="subject" value="Lead via Contact Form - Google Ads-beheer">
-        <input type="hidden" name="interest" value="Google Ads-beheer">
 
         <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
         <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
+
+        <fieldset class="form__choice">
+          <legend class="form__label">Waar sta je nu? *</legend>
+          <div class="form__choice-options">
+            <label class="form__choice-option">
+              <input type="radio" name="interest" value="Google Ads-beheer - Ik adverteer al" required>
+              <span>Ik adverteer al</span>
+            </label>
+            <label class="form__choice-option">
+              <input type="radio" name="interest" value="Google Ads-beheer - Ik wil starten">
+              <span>Ik wil starten</span>
+            </label>
+          </div>
+        </fieldset>
 
         <div class="form__group">
           <label for="name" class="form__label">Naam *</label>
@@ -1743,7 +2022,7 @@
           if (entry.isIntersecting) visible.add(entry.target); else visible.delete(entry.target);
         });
         update();
-      }, { rootMargin: '0px 0px -40px 0px' });
+      }, { rootMargin: '0px 0px 120px 0px' });
       forms.forEach(function (form) { observer.observe(form); });
       document.addEventListener('focusin', update);
       document.addEventListener('focusout', function () { setTimeout(update, 0); });
