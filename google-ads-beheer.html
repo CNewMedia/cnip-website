@@ -191,6 +191,21 @@
       .steps, .proof, .faq { padding: 72px 5%; }
       .steps__list { grid-template-columns: 1fr; }
       .proof__inner { grid-template-columns: 1fr; gap: 32px; }
+
+      html { scroll-padding-bottom: 104px; }
+      body form .form__label,
+      body .hero__form .form__label { font-size: 15px; line-height: 1.4; margin-bottom: 8px; }
+      body .hero__form .form__input { font-size: 16px; }
+      body .form__privacy { font-size: 14px; line-height: 1.6; color: var(--gray-400); }
+      body .form__privacy a { display: inline-block; padding: 12px 4px; margin: -12px -4px; color: var(--gold); font-weight: 700; }
+      body .hero__form-guarantee,
+      body .hero__form-alt-label { font-size: 14px; }
+      body .hero__form-phone { min-height: 48px; padding: 8px 16px; justify-content: center; }
+      body .footer p { line-height: 2.2; }
+      body .footer a { display: inline-block; padding: 10px 4px; }
+      body .sticky-cta__btn { min-height: 48px; font-size: 15px; }
+      .sticky-cta { transition: transform 0.2s ease, visibility 0.2s; }
+      .sticky-cta.is-hidden { transform: translateY(110%); visibility: hidden; }
     }
   </style>
   
@@ -1711,6 +1726,28 @@
         }
       });
     });
+  </script>
+  <script>
+    (function () {
+      var bar = document.querySelector('.sticky-cta');
+      var forms = document.querySelectorAll('form');
+      if (!bar || !forms.length || !('IntersectionObserver' in window)) return;
+      var visible = new Set();
+      var update = function () {
+        var hide = visible.size > 0 || (document.activeElement && document.activeElement.closest && document.activeElement.closest('form'));
+        bar.classList.toggle('is-hidden', !!hide);
+        bar.setAttribute('aria-hidden', hide ? 'true' : 'false');
+      };
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) visible.add(entry.target); else visible.delete(entry.target);
+        });
+        update();
+      }, { rootMargin: '0px 0px -40px 0px' });
+      forms.forEach(function (form) { observer.observe(form); });
+      document.addEventListener('focusin', update);
+      document.addEventListener('focusout', function () { setTimeout(update, 0); });
+    })();
   </script>
 </body>
 </html>
