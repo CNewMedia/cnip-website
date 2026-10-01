@@ -1750,23 +1750,26 @@
       var id = location.hash.slice(1);
       if(!id || !/^[\w-]+$/.test(id)) return;
   var userMoved = false;
-  var alignedY = null;
+  var baseY = null, baseOffset = null;
   function markMoved(){ userMoved = true; }
   ['wheel','touchstart','keydown','pointerdown','mousedown'].forEach(function(ev){ window.addEventListener(ev, markMoved, {passive:true, once:true, capture:true}); });
-  // Scrollbar drags don't reliably fire pointer events in every browser, so also treat any
-  // scroll that isn't ours and leaves the target away from the top as the visitor taking over.
-  // Scroll anchoring keeps the target near the top, so it doesn't trigger this.
+  function targetOffset(t){ return t.getBoundingClientRect().top + window.scrollY; }
+  // Scrollbar drags don't fire pointer events in every browser. A drag changes scrollY while the
+  // target keeps its place in the document; layout shifts (lazy images, GSAP) move the target itself.
   window.addEventListener('scroll', function onScroll(){
-  if(userMoved){ window.removeEventListener('scroll', onScroll); return; }
-  if(alignedY !== null && window.scrollY === alignedY) return;
+  if(userMoved || baseY === null){ if(userMoved) window.removeEventListener('scroll', onScroll); return; }
   var target = document.getElementById(id);
-  if(target && Math.abs(target.getBoundingClientRect().top) > 120){ markMoved(); window.removeEventListener('scroll', onScroll); }
+  if(!target) return;
+  var offset = targetOffset(target);
+  if(Math.abs(offset - baseOffset) < 2 && Math.abs(window.scrollY - baseY) > 50){ markMoved(); window.removeEventListener('scroll', onScroll); return; }
+  if(Math.abs(offset - baseOffset) >= 2){ baseOffset = offset; baseY = window.scrollY; }
   }, {passive:true});
   function align(){
   var target = document.getElementById(id);
   if(!target || userMoved) return;
   target.scrollIntoView({behavior:'instant', block:'start'});
-  alignedY = window.scrollY;
+  baseY = window.scrollY;
+  baseOffset = targetOffset(target);
   }
       function alignAfterLoad(){
         align();
