@@ -243,6 +243,9 @@
     .evidence-card h3 { color: var(--white); font-size: 1.08rem; font-weight: 700; line-height: 1.35; text-wrap: balance; }
     .evidence-card p { color: var(--gray-400); line-height: 1.6; font-size: 0.975rem; }
     .evidence-card__status { color: var(--white); font-size: 0.9rem; font-weight: 600; }
+    .evidence-card__link { margin-top: auto; align-self: flex-start; color: var(--white); font-weight: 700; line-height: 1.45; text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+    .evidence-card__link:hover { color: var(--gold); }
+    .evidence-card__link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
     .pricing { padding: 100px 5%; background: var(--black); }
     .pricing__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -1753,8 +1756,9 @@
         </article>
         <article class="evidence-card">
           <span class="evidence-card__who">Een dienstverlener</span>
-          <h3>Sollicitaties en klantaanvragen gescheiden</h3>
-          <p>Ervaring met het onderscheid tussen sollicitaties en klantaanvragen en met de opvolging ervan in het CRM. Zo blijft zichtbaar welke aanvragen commercieel relevant zijn.</p>
+          <h3>Tellen je conversies ook echt klantaanvragen?</h3>
+          <p>Bij een dienstverlener met meerdere vestigingen konden sollicitaties als klantconversie meetellen. CNIP scheidde de meetroutes en beoordeelde de campagnes samen met de beschikbare capaciteit per vestiging.</p>
+          <a class="evidence-card__link" href="/cases/google-ads-klantaanvragen-sollicitaties.html">Bekijk hoe we klantaanvragen van sollicitaties onderscheidden</a>
         </article>
         <article class="evidence-card">
           <span class="evidence-card__who">Een productbedrijf</span>
