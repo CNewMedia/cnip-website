@@ -1558,8 +1558,11 @@
 
         <form class="hero__form" action="/api/contact" method="POST">
           <input type="hidden" name="subject" value="Lead via Hero Form - Google Ads-beheer">
+          <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="hp-3">Laat dit veld leeg</label>
+            <input type="text" id="hp-3" name="botcheck" value="" tabindex="-1" autocomplete="off">
+          </div>
 
-          <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <fieldset class="form__choice">
             <legend class="form__label">Wat wil je aanvragen? *</legend>
@@ -2007,9 +2010,11 @@
 
       <form class="form" action="/api/contact" method="POST">
         <input type="hidden" name="subject" value="Lead via Contact Form - Google Ads-beheer">
+        <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="hp-4">Laat dit veld leeg</label>
+          <input type="text" id="hp-4" name="botcheck" value="" tabindex="-1" autocomplete="off">
+        </div>
 
-        <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
-        <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
 
         <fieldset class="form__choice">
           <legend class="form__label">Wat wil je aanvragen? *</legend>
@@ -2181,5 +2186,6 @@
       document.addEventListener('DOMContentLoaded', function () { forms.forEach(sync); });
     })();
   </script>
+  <script src="/js/contact-form.js" defer></script>
 </body>
 </html>

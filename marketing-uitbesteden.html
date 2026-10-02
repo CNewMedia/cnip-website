@@ -1966,10 +1966,11 @@
       
       <form class="form" action="/api/contact" method="POST">
         <input type="hidden" name="subject" value="Lead via Marketing Uitbesteden pagina">
+        <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="hp-8">Laat dit veld leeg</label>
+          <input type="text" id="hp-8" name="botcheck" value="" tabindex="-1" autocomplete="off">
+        </div>
         
-        <!-- Honeypot spam protection -->
-        <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
-        <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off" aria-label="Laat dit veld leeg indien je een mens bent">
         
         <div class="form__group">
           <label for="name" class="form__label">Naam *</label>
@@ -2067,5 +2068,6 @@
       });
     }
   </script>
+  <script src="/js/contact-form.js" defer></script>
 </body>
 </html>

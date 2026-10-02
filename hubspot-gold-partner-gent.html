@@ -1747,7 +1747,10 @@
       
       <form class="form" action="/api/contact" method="POST">
         <input type="hidden" name="subject" value="HubSpot aanvraag via hubspot-gold-partner-gent pagina">
-        <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
+        <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="hp-7">Laat dit veld leeg</label>
+          <input type="text" id="hp-7" name="botcheck" value="" tabindex="-1" autocomplete="off">
+        </div>
         
         <h3 class="form__title">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -1860,5 +1863,6 @@
       });
     }
   </script>
+  <script src="/js/contact-form.js" defer></script>
 </body>
 </html>

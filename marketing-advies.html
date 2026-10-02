@@ -1843,7 +1843,10 @@
       
       <form class="contact-form" action="/api/contact" method="POST" id="contactForm">
         <input type="hidden" name="subject" value="Nieuw adviesaanvraag via marketing-advies pagina">
-        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="hp-2">Laat dit veld leeg</label>
+          <input type="text" id="hp-2" name="botcheck" value="" tabindex="-1" autocomplete="off">
+        </div>
         
         <div class="form-row">
           <div class="form-group">
@@ -1999,5 +2002,6 @@
       });
     });
   </script>
+  <script src="/js/contact-form.js" defer></script>
 </body>
 </html>
