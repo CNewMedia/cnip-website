@@ -620,6 +620,19 @@
       .hero > .container{width:100%;min-width:0}
     .hero h1,.hero-subtitle{overflow-wrap:break-word}
     .hero-stats{grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr))}
+    .cases-grid{grid-template-columns:minmax(0,1fr)}
+    .case-card-stats{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+    .case-stat{display:flex;align-items:baseline;gap:12px}
+    .case-stat-number{margin-bottom:0}
+    @media (min-width:768px){
+      .cases-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cases-grid > .case-card:first-child{grid-column:1 / -1}
+    }
+    @media (min-width:1200px){
+      .case-card-stats{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(0,1fr);gap:20px}
+      .case-stat{display:block}
+      .case-stat-number{margin-bottom:4px}
+    }
 </style>
 </head>
   
