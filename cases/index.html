@@ -620,6 +620,19 @@
       .hero > .container{width:100%;min-width:0}
     .hero h1,.hero-subtitle{overflow-wrap:break-word}
     .hero-stats{grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr))}
+    .cases-grid{grid-template-columns:minmax(0,1fr)}
+    .case-card-stats{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+    .case-stat{display:flex;align-items:baseline;gap:12px}
+    .case-stat-number{margin-bottom:0}
+    @media (min-width:768px){
+      .cases-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cases-grid > .case-card:first-child{grid-column:1 / -1}
+    }
+    @media (min-width:1200px){
+      .case-card-stats{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(0,1fr);gap:20px}
+      .case-stat{display:block}
+      .case-stat-number{margin-bottom:4px}
+    }
 </style>
 </head>
   
@@ -668,6 +681,34 @@
     <section class="section">
       <div class="container">
         <div class="cases-grid">
+          
+          <!-- Uitgelicht: Google Ads klantaanvragen vs sollicitaties (Paid Media) -->
+          <a href="/cases/google-ads-klantaanvragen-sollicitaties.html" class="case-card card-leads">
+            <div class="case-card-header">
+              <span class="case-card-tag tag-leads">Google Ads Case</span>
+              <h2 class="case-card-title">Google Ads telde sollicitaties mee als klantaanvragen</h2>
+              <p class="case-card-desc">Klantaanvragen gescheiden van sollicitaties en campagnes beoordeeld op de beschikbare capaciteit per vestiging.</p>
+            </div>
+            <div class="case-card-stats">
+              <div class="case-stat">
+                <div class="case-stat-number">25</div>
+                <div class="case-stat-label">Lokale profielen</div>
+              </div>
+              <div class="case-stat">
+  <div class="case-stat-number">2</div>
+  <div class="case-stat-label">Aanvraagstromen</div>
+  <div class="case-stat-sublabel">Klanten en sollicitanten apart gemeten</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat-number">4</div>
+                <div class="case-stat-label">Regio&rsquo;s</div>
+              </div>
+            </div>
+            <div class="case-card-cta">
+              Bekijk case study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </div>
+          </a>
           
           <!-- Case 1: Willems Veranda (SEO) -->
           <a href="/cases/case-willems-veranda.html" class="case-card card-seo">
@@ -770,34 +811,6 @@
             <div class="case-card-cta">
               Bekijk methodologie
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </div>
-          </a>
-          
-          <!-- Case 5: Google Ads klantaanvragen vs sollicitaties (Paid Media) -->
-          <a href="/cases/google-ads-klantaanvragen-sollicitaties.html" class="case-card card-leads">
-            <div class="case-card-header">
-              <span class="case-card-tag tag-leads">Google Ads Case</span>
-              <h2 class="case-card-title">Google Ads telde sollicitaties mee als klantaanvragen</h2>
-              <p class="case-card-desc">Klantaanvragen gescheiden van sollicitaties en campagnes beoordeeld op de beschikbare capaciteit per vestiging.</p>
-            </div>
-            <div class="case-card-stats">
-              <div class="case-stat">
-                <div class="case-stat-number">25</div>
-                <div class="case-stat-label">Lokale profielen</div>
-              </div>
-              <div class="case-stat">
-  <div class="case-stat-number">2</div>
-  <div class="case-stat-label">Aanvraagstromen</div>
-  <div class="case-stat-sublabel">Klanten en sollicitanten apart gemeten</div>
-              </div>
-              <div class="case-stat">
-                <div class="case-stat-number">4</div>
-                <div class="case-stat-label">Regio&rsquo;s</div>
-              </div>
-            </div>
-            <div class="case-card-cta">
-              Bekijk case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </div>
           </a>
           

@@ -805,6 +805,17 @@
       .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;text-align:left}
       nav[aria-label="Breadcrumb"]{padding:0 80px!important}
     }
+    .metrics-grid{grid-template-columns:minmax(0,1fr)}
+    .achievements-grid{grid-template-columns:minmax(0,1fr)}
+    @media (max-width:767px){
+      .meta-row{flex-direction:column;gap:8px!important}
+    }
+    @media (min-width:600px){
+      .metrics-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+    }
+    @media (min-width:640px){
+      .achievements-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
   </style>
 </head>
 <body>
@@ -860,7 +871,7 @@
         </p>
         
         <!-- Reading time & metadata -->
-        <div style="display:flex;gap:20px;justify-content:center;margin-bottom:32px;font-size:14px;opacity:.7;flex-wrap:wrap;align-items:center">
+        <div class="meta-row" style="display:flex;gap:20px;justify-content:center;margin-bottom:32px;font-size:14px;opacity:.7;flex-wrap:wrap;align-items:center">
           <span style="display:flex;align-items:center;gap:6px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             8 min leestijd
@@ -1196,7 +1207,7 @@
     <div style="max-width:700px;margin:0 auto;text-align:center">
       <div style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:700">Vond je dit waardevol?</div>
       <h3 style="font-size:24px;font-weight:800;margin-bottom:24px">Deel deze SEO case study</h3>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <div class="meta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://cnip.be/cases/case-willems-veranda.html" target="_blank" rel="noopener" style="padding:12px 24px;background:rgba(255,255,255,.08);border:1px solid rgba(232,181,99,.2);border-radius:999px;color:inherit;text-decoration:none;font-size:14px;font-weight:600;transition:all .3s;display:inline-flex;align-items:center;gap:8px" aria-label="Deel op LinkedIn" onmouseenter="this.style.borderColor='var(--gold)';this.style.background='rgba(232,181,99,.1)'" onmouseleave="this.style.borderColor='rgba(232,181,99,.2)';this.style.background='rgba(255,255,255,.08)'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           LinkedIn
