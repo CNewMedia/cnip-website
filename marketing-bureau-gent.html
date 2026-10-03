@@ -1466,10 +1466,13 @@
         <p class="hero__form-subtitle">Laat je gegevens na. We nemen contact op om de opdracht te bespreken.</p>
         
         <form class="hero__form" action="/api/contact" method="POST">
+<noscript><p class="cf-noscript" style="margin:0 0 16px;padding:12px 14px;border:1px solid currentColor;border-left-width:4px;border-radius:8px;font-size:15px;line-height:1.5">Dit formulier heeft JavaScript nodig voor de beveiligingscontrole. Neem rechtstreeks contact op: bel <a href="tel:+3292985720" style="color:inherit;text-decoration:underline">+32 9 298 57 20</a> of mail <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:underline">info@cnip.be</a>.</p></noscript>
           <input type="hidden" name="subject" value="Lead via Hero Form - Marketing Bureau Gent">
+          <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label for="hp-5">Laat dit veld leeg</label>
+            <input type="text" id="hp-5" name="botcheck" value="" tabindex="-1" autocomplete="off">
+          </div>
           
-          <!-- Honeypot -->
-          <input type="checkbox" name="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
           
           <div class="form__group">
             <label for="hero-name" class="form__label">Naam *</label>
@@ -1777,11 +1780,13 @@
       
       <!-- SIMPLIFIED FORM - Only essential fields -->
       <form class="form" action="/api/contact" method="POST">
+<noscript><p class="cf-noscript" style="margin:0 0 16px;padding:12px 14px;border:1px solid currentColor;border-left-width:4px;border-radius:8px;font-size:15px;line-height:1.5">Dit formulier heeft JavaScript nodig voor de beveiligingscontrole. Neem rechtstreeks contact op: bel <a href="tel:+3292985720" style="color:inherit;text-decoration:underline">+32 9 298 57 20</a> of mail <a href="mailto:info@cnip.be" style="color:inherit;text-decoration:underline">info@cnip.be</a>.</p></noscript>
         <input type="hidden" name="subject" value="Lead via Contact Form - Marketing Bureau Gent">
+        <div class="hp-field" aria-hidden="true" inert style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="hp-6">Laat dit veld leeg</label>
+          <input type="text" id="hp-6" name="botcheck" value="" tabindex="-1" autocomplete="off">
+        </div>
         
-        <!-- Honeypot spam protection -->
-        <label for="botcheck" class="sr-only">Laat dit veld leeg</label>
-        <input type="checkbox" name="botcheck" id="botcheck" class="form__honeypot" tabindex="-1" autocomplete="off">
         
         <div class="form__group">
           <label for="name" class="form__label">Naam *</label>
@@ -1873,5 +1878,6 @@
       });
     });
   </script>
+  <script src="/js/contact-form.js" defer></script>
 </body>
 </html>
