@@ -141,6 +141,10 @@ export default async function handler(req, res) {
   };
 
   try {
+    // Before any early rejection, so repeated trivial bot requests cannot bypass the limit or flood the block log.
+    const ipLimit = await checkRateLimit('ip', ip);
+    if (ipLimit.limited) return respond(req, res, 'rate_limited', { retryAfter: ipLimit.retryAfter });
+
     if (!originMatchesHost(req)) return block('origin wijkt af');
 
     let body;
@@ -151,9 +155,6 @@ export default async function handler(req, res) {
     }
 
     if (String(body.botcheck || '').trim() !== '') return block('honeypot ingevuld');
-
-    const ipLimit = await checkRateLimit('ip', ip);
-    if (ipLimit.limited) return respond(req, res, 'rate_limited', { retryAfter: ipLimit.retryAfter });
 
     const { fields, errors, valid } = validate(body);
     if (!valid) return respond(req, res, 'invalid', { fields: errors });
@@ -187,7 +188,11 @@ export default async function handler(req, res) {
     }
 
     if (!isProduction()) {
-      await storePreviewSubmission(record);
+      const stored = await storePreviewSubmission(record);
+      if (!stored) {
+        await claim.release();
+        return respond(req, res, 'error');
+      }
       return respond(req, res, 'preview_ok');
     }
 
