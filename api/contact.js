@@ -1,6 +1,8 @@
+import { waitUntil } from '@vercel/functions';
 import {
   PHONE_DISPLAY,
   PHONE_HREF,
+  CONTACT_EMAIL,
   isProduction,
   sha256,
   clientIp,
@@ -8,7 +10,6 @@ import {
   checkRateLimit,
   claimSubmission,
   storeForReview,
-  REVIEW_TTL_DAYS,
   logBlocked,
   storePreviewSubmission,
   verifyTurnstile,
@@ -16,8 +17,10 @@ import {
   suspicionReasons,
   fingerprint,
 } from '../lib/contact-guard.js';
+import { escapeHtml, sendResend } from '../lib/contact-mail.js';
+import { notifyReviewer, autoRetryPendingNotifications } from '../lib/review-notify.js';
 
-const PHONE_HINT = `Liever meteen contact? Bel ${PHONE_DISPLAY}.`;
+const PHONE_HINT = `Liever meteen contact? Bel ${PHONE_DISPLAY} of mail ${CONTACT_EMAIL}.`;
 
 const RESPONSES = {
   blocked: [400, 'We konden deze aanvraag niet verwerken. ' + PHONE_HINT],
@@ -64,62 +67,6 @@ function formPathFrom(req) {
   return '';
 }
 
-const escapeHtml = value => String(value)
-  .replaceAll('&', '&amp;')
-  .replaceAll('<', '&lt;')
-  .replaceAll('>', '&gt;')
-  .replaceAll('"', '&quot;');
-
-async function sendResend({ email, name, company, phone, interest, message, source, reviewReasons }) {
-  const apiKey = process.env.RESEND_API_KEY || process.env.CNIP;
-  if (!apiKey) return { ok: false, reason: 'Resend API key ontbreekt' };
-
-  const to = process.env.CONTACT_TO_EMAIL || 'christophe@cnip.be';
-  const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <website@cnip.be>';
-  const review = Array.isArray(reviewReasons) && reviewReasons.length > 0;
-  const heading = review ? 'CNIP-aanvraag ter beoordeling' : 'Nieuwe CNIP-aanvraag';
-  const reviewNote = review
-    ? `Deze aanvraag is niet automatisch als lead verwerkt en de afzender kreeg geen bedankpagina. Controleer ze voor je antwoordt. Ze blijft maximaal ${REVIEW_TTL_DAYS} dagen bewaard.`
-    : '';
-
-  const rows = [
-    ...(review ? [['Reden beoordeling', reviewReasons.join('; ')]] : []),
-    ['Naam', name],
-    ['E-mail', email],
-    ['Bedrijf', company],
-    ['Telefoon', phone],
-    ['Interesse', interest],
-    ['Bron', source],
-    ['Bericht', message],
-  ].filter(([, value]) => value);
-
-  const html = `
-    <h2>${heading}</h2>
-    ${reviewNote ? `<p>${escapeHtml(reviewNote)}</p>` : ''}
-    <table cellpadding="6" cellspacing="0" border="0">
-      ${rows.map(([label, value]) => `<tr><td><strong>${label}</strong></td><td>${escapeHtml(value).replaceAll('\n', '<br>')}</td></tr>`).join('')}
-    </table>
-  `;
-  const text = [heading, ...(reviewNote ? ['', reviewNote] : []), '', ...rows.map(([label, value]) => `${label}: ${value}`)].join('\n');
-
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: email,
-      subject: `${review ? '[Ter beoordeling] CNIP-aanvraag' : 'Nieuwe CNIP-aanvraag'}${company ? ` | ${company.replace(/[\r\n]+/g, ' ')}` : ''}`,
-      html,
-      text,
-    }),
-    signal: AbortSignal.timeout(10000),
-  });
-
-  if (!response.ok) throw new Error(`Resend fout ${response.status}: ${await response.text()}`);
-  return { ok: true };
-}
-
 function respond(req, res, status, extra = {}) {
   const [code, message] = RESPONSES[status];
   if (extra.retryAfter) res.setHeader('Retry-After', String(extra.retryAfter));
@@ -131,7 +78,7 @@ function respond(req, res, status, extra = {}) {
 
   const details = extra.fields ? `<ul>${Object.values(extra.fields).map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul>` : '';
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  return res.status(code).send(`<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>CNIP contactformulier</title></head><body style="font-family:system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1.25rem;line-height:1.5"><h1 style="font-size:1.4rem">CNIP contactformulier</h1><p>${escapeHtml(message)}</p>${details}<p><a href="javascript:history.back()">Terug naar het formulier</a> · <a href="${PHONE_HREF}">Bel ${PHONE_DISPLAY}</a> · <a href="mailto:info@cnip.be">info@cnip.be</a></p></body></html>`);
+  return res.status(code).send(`<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>CNIP contactformulier</title></head><body style="font-family:system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1.25rem;line-height:1.5"><h1 style="font-size:1.4rem">CNIP contactformulier</h1><p>${escapeHtml(message)}</p>${details}<p><a href="javascript:history.back()">Terug naar het formulier</a> · <a href="${PHONE_HREF}">Bel ${PHONE_DISPLAY}</a> · <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p></body></html>`);
 }
 
 export default async function handler(req, res) {
@@ -148,6 +95,9 @@ export default async function handler(req, res) {
     await logBlocked({ ts: new Date().toISOString(), reason, path, ipHash });
     return respond(req, res, 'blocked');
   };
+
+  // Runs after the response, at most once per 10 minutes across instances; never delays the visitor.
+  if (isProduction()) waitUntil(autoRetryPendingNotifications());
 
   try {
     // Before any early rejection, so repeated trivial bot requests cannot bypass the limit or flood the block log.
@@ -190,23 +140,24 @@ export default async function handler(req, res) {
 
     const reasons = suspicionReasons(fields, body);
     if (reasons.length) {
-      const stored = await storeForReview({ ...record, reasons });
-      // Production also mails the reviewer, so a held request is never only sitting in Redis.
+      const notify = isProduction();
+      // Stored as "melding openstaand" first; a failed mail then stays visible on /api/beoordeling and is retried.
+      const reviewId = await storeForReview({ ...record, reasons }, { notify });
       let notified = false;
-      if (isProduction()) {
-        try {
-          notified = (await sendResend({ ...fields, source, reviewReasons: reasons })).ok;
-        } catch (error) {
-          console.error('CNIP contactformulier: beoordelingsmelding mislukt', error);
-        }
+      if (notify) {
+        notified = reviewId
+          ? await notifyReviewer({ ...record, reasons, id: reviewId, notification: { status: 'pending', attempts: 0 } })
+          : await sendResend({ ...fields, source, reviewReasons: reasons }).then(() => true, error => {
+              console.error('CNIP contactformulier: beoordelingsmelding mislukt zonder opslag', error);
+              return false;
+            });
       }
-      if (!stored && !notified) {
+      if (!reviewId && !notified) {
         await claim.release();
         return respond(req, res, 'error');
       }
-      if (isProduction() && !notified) console.error('CNIP contactformulier: ter beoordeling bewaard zonder e-mailmelding', path);
       await claim.complete('review');
-      console.warn('CNIP contactformulier: ter beoordeling:', reasons.join('; '), path, { stored, notified });
+      console.warn('CNIP contactformulier: ter beoordeling:', reasons.join('; '), path, { reviewId, notified });
       return respond(req, res, 'review');
     }
 
@@ -220,14 +171,13 @@ export default async function handler(req, res) {
       return respond(req, res, 'preview_ok');
     }
 
-    let delivered;
+    let delivered = false;
     try {
-      delivered = await sendResend({ ...fields, source });
+      delivered = (await sendResend({ ...fields, source })).ok;
     } catch (error) {
       console.error('CNIP contactformulier: Resend mislukt', error);
-      delivered = { ok: false };
     }
-    if (!delivered.ok) {
+    if (!delivered) {
       await claim.release();
       return respond(req, res, 'delivery_failed');
     }

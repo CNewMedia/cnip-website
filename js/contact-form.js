@@ -5,6 +5,7 @@
   if (!forms.length || !window.fetch || !window.URLSearchParams) return;
 
   var PHONE = { display: '+32 9 298 57 20', href: 'tel:+3292985720' };
+  var EMAIL = 'info@cnip.be';
   var config = null;
   var configPromise = null;
   var scriptPromise = null;
@@ -27,7 +28,7 @@
     if (!configPromise) {
       configPromise = fetch('/api/form-config', { credentials: 'same-origin' })
         .then(function (r) { if (!r.ok) throw new Error('config ' + r.status); return r.json(); })
-        .then(function (c) { config = c; if (c.phone) PHONE = c.phone; return c; })
+        .then(function (c) { config = c; if (c.phone) PHONE = c.phone; if (c.email) EMAIL = c.email; return c; })
         .catch(function (e) { configPromise = null; throw e; });
     }
     return configPromise;
@@ -83,7 +84,13 @@
         var phone = document.createElement('a');
         phone.href = PHONE.href;
         phone.textContent = 'Bel ' + PHONE.display;
+        var mail = document.createElement('a');
+        mail.href = 'mailto:' + EMAIL;
+        mail.textContent = 'mail ' + EMAIL;
+        row.appendChild(document.createTextNode('Of neem rechtstreeks contact op: '));
         row.appendChild(phone);
+        row.appendChild(document.createTextNode(' of '));
+        row.appendChild(mail);
         status.appendChild(row);
         var retry = document.createElement('button');
         retry.type = 'button';

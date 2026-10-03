@@ -1,4 +1,4 @@
-import { turnstileConfig, TURNSTILE_ACTION, PHONE_DISPLAY, PHONE_HREF } from '../lib/contact-guard.js';
+import { turnstileConfig, TURNSTILE_ACTION, PHONE_DISPLAY, PHONE_HREF, CONTACT_EMAIL } from '../lib/contact-guard.js';
 
 export default function handler(req, res) {
   if (req.method !== 'GET') {
@@ -12,5 +12,6 @@ export default function handler(req, res) {
     action: TURNSTILE_ACTION,
     testing,
     phone: { display: PHONE_DISPLAY, href: PHONE_HREF },
+    email: CONTACT_EMAIL,
   });
 }
