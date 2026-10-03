@@ -206,8 +206,9 @@
           if (result.status === 'preview_ok' || result.status === 'review' || result.status === 'duplicate') {
             showStatus(msg, 'info', false);
             if (result.status !== 'duplicate') form.reset();
-          } else if (result.status === 'expired') {
-            showStatus(msg, 'error', true);
+          } else if (result.status === 'processing') {
+            // Keep the data: if the first request ultimately fails, the visitor can still resend it.
+            showStatus(msg, 'info', false);
           } else {
             showStatus(msg, 'error', true);
           }

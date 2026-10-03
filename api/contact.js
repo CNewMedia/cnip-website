@@ -8,6 +8,7 @@ import {
   checkRateLimit,
   claimSubmission,
   storeForReview,
+  REVIEW_TTL_DAYS,
   logBlocked,
   storePreviewSubmission,
   verifyTurnstile,
@@ -24,7 +25,8 @@ const RESPONSES = {
   expired: [409, 'De beveiligingscontrole is verlopen. Probeer opnieuw te verzenden; je gegevens blijven ingevuld.'],
   verification_unavailable: [503, 'De beveiligingscontrole is tijdelijk niet beschikbaar. Je aanvraag is nog niet verstuurd. Probeer het opnieuw. ' + PHONE_HINT],
   invalid: [422, 'Controleer de gemarkeerde velden.'],
-  duplicate: [409, 'Deze aanvraag hebben we net al ontvangen. Je hoeft ze niet opnieuw te versturen.'],
+  processing: [409, 'Deze aanvraag wordt op dit moment nog verwerkt. Wacht even en verstuur ze niet opnieuw. Geen bevestiging binnen een paar minuten? Bel ' + PHONE_DISPLAY + '.'],
+  duplicate: [409, 'Deze aanvraag hebben we al succesvol ontvangen. Je hoeft ze niet opnieuw te versturen.'],
   review: [202, 'Je bericht is ontvangen, maar wordt eerst manueel nagekeken voor we antwoorden. Dringend? Bel ' + PHONE_DISPLAY + '.'],
   delivery_failed: [502, 'Je aanvraag kon niet worden verstuurd. Probeer het opnieuw. ' + PHONE_HINT],
   error: [500, 'Er ging iets mis; je aanvraag is niet verstuurd. Probeer het opnieuw. ' + PHONE_HINT],
@@ -68,14 +70,20 @@ const escapeHtml = value => String(value)
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;');
 
-async function sendResend({ email, name, company, phone, interest, message, source }) {
+async function sendResend({ email, name, company, phone, interest, message, source, reviewReasons }) {
   const apiKey = process.env.RESEND_API_KEY || process.env.CNIP;
   if (!apiKey) return { ok: false, reason: 'Resend API key ontbreekt' };
 
   const to = process.env.CONTACT_TO_EMAIL || 'christophe@cnip.be';
   const from = process.env.CONTACT_FROM_EMAIL || 'CNIP Website <website@cnip.be>';
+  const review = Array.isArray(reviewReasons) && reviewReasons.length > 0;
+  const heading = review ? 'CNIP-aanvraag ter beoordeling' : 'Nieuwe CNIP-aanvraag';
+  const reviewNote = review
+    ? `Deze aanvraag is niet automatisch als lead verwerkt en de afzender kreeg geen bedankpagina. Controleer ze voor je antwoordt. Ze blijft maximaal ${REVIEW_TTL_DAYS} dagen bewaard.`
+    : '';
 
   const rows = [
+    ...(review ? [['Reden beoordeling', reviewReasons.join('; ')]] : []),
     ['Naam', name],
     ['E-mail', email],
     ['Bedrijf', company],
@@ -86,12 +94,13 @@ async function sendResend({ email, name, company, phone, interest, message, sour
   ].filter(([, value]) => value);
 
   const html = `
-    <h2>Nieuwe CNIP-aanvraag</h2>
+    <h2>${heading}</h2>
+    ${reviewNote ? `<p>${escapeHtml(reviewNote)}</p>` : ''}
     <table cellpadding="6" cellspacing="0" border="0">
       ${rows.map(([label, value]) => `<tr><td><strong>${label}</strong></td><td>${escapeHtml(value).replaceAll('\n', '<br>')}</td></tr>`).join('')}
     </table>
   `;
-  const text = ['Nieuwe CNIP-aanvraag', '', ...rows.map(([label, value]) => `${label}: ${value}`)].join('\n');
+  const text = [heading, ...(reviewNote ? ['', reviewNote] : []), '', ...rows.map(([label, value]) => `${label}: ${value}`)].join('\n');
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -100,7 +109,7 @@ async function sendResend({ email, name, company, phone, interest, message, sour
       from,
       to: [to],
       reply_to: email,
-      subject: `Nieuwe CNIP-aanvraag${company ? ` | ${company.replace(/[\r\n]+/g, ' ')}` : ''}`,
+      subject: `${review ? '[Ter beoordeling] CNIP-aanvraag' : 'Nieuwe CNIP-aanvraag'}${company ? ` | ${company.replace(/[\r\n]+/g, ' ')}` : ''}`,
       html,
       text,
     }),
@@ -171,7 +180,10 @@ export default async function handler(req, res) {
     if (emailLimit.limited) return respond(req, res, 'rate_limited', { retryAfter: emailLimit.retryAfter });
 
     const claim = await claimSubmission(fingerprint(fields));
-    if (claim.duplicate) return respond(req, res, 'duplicate');
+    if (claim.duplicate) {
+      if (claim.state === 'pending') return respond(req, res, 'processing');
+      return respond(req, res, claim.state === 'review' ? 'review' : 'duplicate');
+    }
 
     const source = fields.subject || (path ? `CNIP website: ${path}` : 'CNIP website');
     const record = { ts: new Date().toISOString(), path, ipHash, source, ...fields };
@@ -179,11 +191,22 @@ export default async function handler(req, res) {
     const reasons = suspicionReasons(fields, body);
     if (reasons.length) {
       const stored = await storeForReview({ ...record, reasons });
-      if (!stored) {
+      // Production also mails the reviewer, so a held request is never only sitting in Redis.
+      let notified = false;
+      if (isProduction()) {
+        try {
+          notified = (await sendResend({ ...fields, source, reviewReasons: reasons })).ok;
+        } catch (error) {
+          console.error('CNIP contactformulier: beoordelingsmelding mislukt', error);
+        }
+      }
+      if (!stored && !notified) {
         await claim.release();
         return respond(req, res, 'error');
       }
-      console.warn('CNIP contactformulier: ter beoordeling bewaard:', reasons.join('; '), path);
+      if (isProduction() && !notified) console.error('CNIP contactformulier: ter beoordeling bewaard zonder e-mailmelding', path);
+      await claim.complete('review');
+      console.warn('CNIP contactformulier: ter beoordeling:', reasons.join('; '), path, { stored, notified });
       return respond(req, res, 'review');
     }
 
@@ -193,6 +216,7 @@ export default async function handler(req, res) {
         await claim.release();
         return respond(req, res, 'error');
       }
+      await claim.complete('done');
       return respond(req, res, 'preview_ok');
     }
 
@@ -207,6 +231,7 @@ export default async function handler(req, res) {
       await claim.release();
       return respond(req, res, 'delivery_failed');
     }
+    await claim.complete('done');
 
     // Conversiesignaal voor de bedankpagina: alleen na een echt verstuurde, niet-verdachte aanvraag.
     const ckyCookie = String(req.headers.cookie || '').match(/(?:^|;\s*)cookieyes-consent=([^;]+)/);
