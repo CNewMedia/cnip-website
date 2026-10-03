@@ -70,6 +70,14 @@
     </image:image>
   </url>
 
+  <!-- SEO VOOR INDUSTRIELE BEDRIJVEN -->
+  <url>
+    <loc>https://cnip.be/seo-industriele-bedrijven.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- MARKETING ADVIES -->
   <url>
     <loc>https://cnip.be/marketing-advies.html</loc>
