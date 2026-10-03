@@ -18,7 +18,7 @@ import {
   fingerprint,
 } from '../lib/contact-guard.js';
 import { escapeHtml, sendResend } from '../lib/contact-mail.js';
-import { notifyReviewer, autoRetryPendingNotifications } from '../lib/review-notify.js';
+import { notifyReviewer, retryPendingNotifications } from '../lib/review-notify.js';
 
 const PHONE_HINT = `Liever meteen contact? Bel ${PHONE_DISPLAY} of mail ${CONTACT_EMAIL}.`;
 
@@ -97,7 +97,7 @@ export default async function handler(req, res) {
   };
 
   // Runs after the response, at most once per 10 minutes across instances; never delays the visitor.
-  if (isProduction()) waitUntil(autoRetryPendingNotifications());
+  if (isProduction()) waitUntil(retryPendingNotifications());
 
   try {
     // Before any early rejection, so repeated trivial bot requests cannot bypass the limit or flood the block log.
@@ -141,7 +141,7 @@ export default async function handler(req, res) {
     const reasons = suspicionReasons(fields, body);
     if (reasons.length) {
       const notify = isProduction();
-      // Stored as "melding openstaand" first; a failed mail then stays visible on /api/beoordeling and is retried.
+      // Stored as "melding openstaand" first; a failed mail stays pending in Redis and is retried in the background.
       const reviewId = await storeForReview({ ...record, reasons }, { notify });
       let notified = false;
       if (notify) {
